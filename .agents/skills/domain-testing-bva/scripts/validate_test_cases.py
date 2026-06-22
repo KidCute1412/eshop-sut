@@ -1,51 +1,41 @@
 #!/usr/bin/env python3
-"""Validate Markdown test cases for Domain Testing/BVA reports."""
+"""Read-only validator for black-box Domain Testing/BVA Markdown cases."""
 
 from __future__ import annotations
 
 import argparse
 import re
-import sys
 from collections import Counter
 from difflib import SequenceMatcher
 from pathlib import Path
 
 
-REQUIRED_FIELDS = [
-    "Test Case ID",
-    "Technique",
-    "Objective",
-    "Requirement or Rule Reference",
-    "Preconditions",
-    "Test Data",
-    "Steps",
-    "Expected Result",
-    "Actual Result",
-    "Status",
-    "Evidence",
-    "Partition or Boundary Covered",
-    "Source Code Reference",
+FEATURE_ID_RE = re.compile(r"(?:FR|D)-\d{2}")
+TEST_CASE_ID_RE = re.compile(r"(?:FR|D)\d{2}-(?:DT|BVA)-\d{3}")
+ALLOWED_STATUSES = {"Not Executed", "Pass", "Fail", "Blocked"}
+REQUIRED_FIELDS = (
+    "Test Case ID", "Technique", "Objective", "Requirement or Rule Reference",
+    "Preconditions", "Test Data", "Steps", "Expected Result", "Actual Result",
+    "Status", "Evidence", "Partition or Boundary Covered", "Test Basis Reference",
     "Notes and Assumptions",
-]
-
-ID_RE = re.compile(r"\b(FR\d{2}-(?:DT|BVA)-\d{3})\b")
-FIELD_RE = re.compile(r"^\s*-?\s*([^:\n]+):\s*(.*)$")
+)
+KNOWN_FIELDS = set(REQUIRED_FIELDS) | {"Blocking Reason"}
+FIELD_RE = re.compile(r"^\s*-\s*([^:\n]+):\s*(.*)$")
+EMPTY_VALUES = {"", "todo", "tbd", "n/a"}
 
 
 def split_cases(text: str) -> list[str]:
-    starts = [m.start() for m in re.finditer(r"(?m)^##\s+", text)]
-    if not starts:
-        return [text] if "Test Case ID:" in text else []
-    starts.append(len(text))
-    return [text[starts[i] : starts[i + 1]].strip() for i in range(len(starts) - 1)]
+    matches = list(re.finditer(r"(?m)^##\s+(?:(?:FR|D)\d{2}-(?:DT|BVA)-\d{3})\s*$", text))
+    return [text[m.start():(matches[i + 1].start() if i + 1 < len(matches) else len(text))].strip()
+            for i, m in enumerate(matches)]
 
 
 def fields_for(case: str) -> dict[str, str]:
     fields: dict[str, str] = {}
-    current = None
+    current: str | None = None
     for line in case.splitlines():
         match = FIELD_RE.match(line)
-        if match and match.group(1).strip() in REQUIRED_FIELDS:
+        if match and match.group(1).strip() in KNOWN_FIELDS:
             current = match.group(1).strip()
             fields[current] = match.group(2).strip()
         elif current and line.strip() and not line.startswith("#"):
@@ -53,113 +43,124 @@ def fields_for(case: str) -> dict[str, str]:
     return fields
 
 
-def normalize_for_similarity(fields: dict[str, str]) -> str:
-    parts = [fields.get("Objective", ""), fields.get("Test Data", ""), fields.get("Steps", ""), fields.get("Expected Result", "")]
-    return " ".join(parts).lower()
+def empty(value: str) -> bool:
+    return value.strip().lower() in EMPTY_VALUES
 
 
-def validate_file(path: Path) -> list[str]:
+def expected_feature(path: Path) -> str | None:
+    for parent in [path.parent, *path.parents]:
+        candidate = parent.name.upper()
+        if FEATURE_ID_RE.fullmatch(candidate):
+            return candidate.replace("-", "")
+    return None
+
+
+def fingerprint(fields: dict[str, str]) -> str:
+    return " ".join(fields.get(key, "") for key in ("Objective", "Test Data", "Steps", "Expected Result")).lower()
+
+
+def validate_file(path: Path) -> tuple[list[str], list[tuple[str, str]]]:
     errors: list[str] = []
-    text = path.read_text(encoding="utf-8")
+    records: list[tuple[str, str]] = []
+    try:
+        text = path.read_text(encoding="utf-8")
+    except (OSError, UnicodeError) as exc:
+        return [f"{path}: cannot read UTF-8 Markdown: {exc}"], []
     cases = split_cases(text)
-    ids = []
-    fingerprints = []
-
     if not cases:
-        return [f"{path}: no test cases found"]
+        return [f"{path}: zero test cases parsed; use a level-two heading such as '## FR01-DT-001'"], []
 
+    feature = expected_feature(path)
     for index, case in enumerate(cases, 1):
         fields = fields_for(case)
         tc_id = fields.get("Test Case ID", "")
         label = tc_id or f"case #{index}"
-        if not tc_id:
-            errors.append(f"{path}: {label}: missing Test Case ID")
-        elif not ID_RE.fullmatch(tc_id):
-            errors.append(f"{path}: {tc_id}: invalid ID format; expected FR01-DT-001 or FR01-BVA-001")
-        else:
-            ids.append(tc_id)
-
         for field in REQUIRED_FIELDS:
-            if not fields.get(field):
-                errors.append(f"{path}: {label}: missing or empty field '{field}'")
-
-        expected = fields.get("Expected Result", "")
-        if not expected or expected.lower() in {"tbd", "n/a", "none"}:
-            errors.append(f"{path}: {label}: missing actionable expected result")
+            if field not in fields or empty(fields[field]):
+                errors.append(f"{path}: {label}: missing, empty, or placeholder field '{field}'")
+        if not TEST_CASE_ID_RE.fullmatch(tc_id):
+            errors.append(f"{path}: {label}: invalid ID; expected FR01-DT-001, FR01-BVA-001, D01-DT-001, or D01-BVA-001")
+        elif feature and not tc_id.startswith(feature + "-"):
+            errors.append(f"{path}: {tc_id}: ID does not match feature directory {feature}")
 
         status = fields.get("Status", "")
         evidence = fields.get("Evidence", "")
-        if status in {"Pass", "Fail"} and evidence.lower() in {"none", "not executed", ""}:
-            errors.append(f"{path}: {label}: Pass/Fail requires real evidence")
-        if status != "Not Executed" and evidence.lower() == "none":
-            errors.append(f"{path}: {label}: executed status cannot use Evidence: None")
+        actual = fields.get("Actual Result", "")
+        if status not in ALLOWED_STATUSES:
+            errors.append(f"{path}: {label}: invalid Status '{status}'; allowed: {', '.join(sorted(ALLOWED_STATUSES))}")
+        if status in {"Pass", "Fail"} and evidence.strip().lower() in {"", "none", "not executed", "todo", "tbd"}:
+            errors.append(f"{path}: {label}: {status} requires a real evidence reference")
+        if status == "Blocked" and empty(fields.get("Blocking Reason", "")):
+            errors.append(f"{path}: {label}: Blocked requires a non-empty 'Blocking Reason' field")
+        if status == "Not Executed":
+            if actual != "Not Executed":
+                errors.append(f"{path}: {label}: Not Executed status requires 'Actual Result: Not Executed'")
+            if evidence != "None":
+                errors.append(f"{path}: {label}: Not Executed must use 'Evidence: None'")
 
         coverage = fields.get("Partition or Boundary Covered", "")
-        if not coverage:
-            errors.append(f"{path}: {label}: missing partition or boundary reference")
-
-        if not fields.get("Requirement or Rule Reference", ""):
-            errors.append(f"{path}: {label}: missing requirement reference")
-        if not fields.get("Source Code Reference", ""):
-            errors.append(f"{path}: {label}: missing source-code reference")
-
         technique = fields.get("Technique", "")
-        if tc_id:
-            if "-DT-" in tc_id and "Domain" not in technique:
-                errors.append(f"{path}: {label}: DT ID should use Domain Testing technique")
-            if "-BVA-" in tc_id and "Boundary" not in technique:
-                errors.append(f"{path}: {label}: BVA ID should use Boundary Value Analysis technique")
-        if "Boundary" in technique and not re.search(r"\b(min|max|boundary|threshold|length|count|attempt|date|expiration|zero|one|capacity|[+-]1)\b", coverage, re.I):
-            errors.append(f"{path}: {label}: BVA case lacks detectable boundary wording")
-
-        fingerprints.append((label, normalize_for_similarity(fields)))
-
-    for dup_id, count in Counter(ids).items():
-        if count > 1:
-            errors.append(f"{path}: duplicate test case ID {dup_id}")
-
-    for i in range(len(fingerprints)):
-        for j in range(i + 1, len(fingerprints)):
-            a_id, a_text = fingerprints[i]
-            b_id, b_text = fingerprints[j]
-            if a_text and b_text and SequenceMatcher(None, a_text, b_text).ratio() > 0.94:
-                errors.append(f"{path}: highly similar test cases: {a_id} and {b_id}")
-    return errors
+        if "-DT-" in tc_id:
+            if technique != "Domain Testing":
+                errors.append(f"{path}: {label}: DT ID requires 'Technique: Domain Testing'")
+            if not re.search(r"\b(?:partition|ep)[-_ ]?[a-z0-9]+\b", coverage, re.I):
+                errors.append(f"{path}: {label}: DT case must reference a partition ID")
+        if "-BVA-" in tc_id:
+            if technique != "Boundary Value Analysis":
+                errors.append(f"{path}: {label}: BVA ID requires 'Technique: Boundary Value Analysis'")
+            if not re.search(r"\bboundary[-_ ]?[a-z0-9]+\b", coverage, re.I):
+                errors.append(f"{path}: {label}: BVA case must reference a Boundary ID")
+        records.append((tc_id or label, fingerprint(fields)))
+    return errors, records
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Validate Markdown Domain Testing/BVA test cases.")
-    parser.add_argument("paths", nargs="+", help="Markdown files or directories containing test-cases.md.")
+    parser = argparse.ArgumentParser(description="Validate black-box DT/BVA Markdown test cases without modifying them.")
+    parser.add_argument("paths", nargs="+", help="test-cases.md files or feature/report directories.")
     args = parser.parse_args()
 
     targets: list[Path] = []
+    errors: list[str] = []
     for raw in args.paths:
         path = Path(raw)
-        if path.is_dir():
-            candidate = path / "test-cases.md"
-            if candidate.exists():
-                targets.append(candidate)
-            else:
-                targets.extend(path.rglob("*test-cases*.md"))
+        if not path.exists():
+            errors.append(f"{path}: path not found")
+        elif path.is_dir():
+            direct = path / "test-cases.md"
+            found = [direct] if direct.is_file() else sorted(path.rglob("test-cases.md"))
+            targets.extend(found)
         else:
             targets.append(path)
+    # Stable de-duplication for overlapping input paths.
+    targets = list(dict.fromkeys(targets))
+    if not targets:
+        errors.append("no test-case files found")
 
-    errors: list[str] = []
+    all_records: list[tuple[str, str, Path]] = []
     for target in targets:
-        if not target.exists():
-            errors.append(f"{target}: file not found")
-            continue
-        errors.extend(validate_file(target))
+        file_errors, records = validate_file(target)
+        errors.extend(file_errors)
+        all_records.extend((case_id, fp, target) for case_id, fp in records)
+    for case_id, count in Counter(case_id for case_id, _, _ in all_records if TEST_CASE_ID_RE.fullmatch(case_id)).items():
+        if count > 1:
+            errors.append(f"duplicate test case ID across inputs: {case_id}")
+    for i, (left_id, left_fp, left_path) in enumerate(all_records):
+        for right_id, right_fp, right_path in all_records[i + 1:]:
+            left_technique = left_id.split("-")[1] if TEST_CASE_ID_RE.fullmatch(left_id) else ""
+            right_technique = right_id.split("-")[1] if TEST_CASE_ID_RE.fullmatch(right_id) else ""
+            if left_technique != right_technique:
+                continue
+            if left_fp and right_fp and SequenceMatcher(None, left_fp, right_fp).ratio() >= 0.95:
+                errors.append(f"probable duplicate cases: {left_id} ({left_path}) and {right_id} ({right_path}); review or differentiate them")
 
     if errors:
         print("Validation failed:")
         for error in errors:
             print(f"  - {error}")
         return 1
-    print(f"Validation passed for {len(targets)} file(s).")
+    print(f"Validation passed: {len(all_records)} test case(s) in {len(targets)} file(s).")
     return 0
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
