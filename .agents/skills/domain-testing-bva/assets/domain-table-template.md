@@ -1,11 +1,12 @@
 # Domain Testing - {{FEATURE_ID}} {{FEATURE_NAME}}
 
-## Domain Model
+| Partition ID | Variable / Condition | Type | Input Source | Constraint | Valid Partitions | Invalid Partitions | Representative Values | Dependencies | Test Basis Reference | Assumptions |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 
-| Variable / Condition | Type | Input Source | Constraint / Rule | Valid Partitions | Invalid Partitions | Dependencies | Evidence Source | Assumptions |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+## Partition Derivation
 
-## Domain Test Design Notes
+For every Partition ID, explain the source rule, how the valid and invalid classes were separated, why representatives are equivalent, dependencies, and any assumptions.
 
-Explain how partitions were selected and combined. Note any partitions intentionally not covered and why.
+## Coverage Decisions
 
+List covered partitions and justify any intentionally uncovered partition.

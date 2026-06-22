@@ -1,15 +1,15 @@
 # AI Gap Analysis - {{FEATURE_ID}} {{FEATURE_NAME}}
 
-## AI Output Reviewed
+## Comparison
 
-List generated artifacts and prompts reviewed by the human.
+| Initial AI-generated Test / Output | Human Correction | Human-added Test | Behaviour or Bug Missed by AI | Runtime Finding | Reason for Gap |
+| --- | --- | --- | --- | --- | --- |
 
-## Gaps Found
+Do not describe a runtime miss before execution. Link preserved initial output and corrected output.
 
-| Gap | Why AI Missed It | Human Correction | Affected Test Cases |
-| --- | --- | --- | --- |
+## Human Review
 
-## Human Review Status
-
-Pending.
-
+- Reviewer:
+- Review time:
+- Corrections recorded:
+- Approved for execution: No

@@ -1,9 +1,8 @@
 # Traceability Matrix - {{FEATURE_ID}} {{FEATURE_NAME}}
 
-| Requirement / Rule | Evidence Source | Domain Partition | Boundary | Test Case IDs | Status |
-| --- | --- | --- | --- | --- | --- |
+| Rule ID | Test Basis Reference | Partition IDs | Boundary IDs | Test Case IDs | Execution Status | Evidence | Bug IDs |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 
 ## Uncovered Items
 
-- None recorded yet.
-
+Record every uncovered rule, partition, or boundary and its justification.

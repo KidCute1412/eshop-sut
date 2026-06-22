@@ -18,29 +18,22 @@ For inclusive min/max ranges, consider:
 
 For lower-only constraints, consider `min-1`, `min`, `min+1`, and a nominal valid value. For upper-only constraints, consider a nominal valid value, `max-1`, `max`, and `max+1`.
 
-## Common EShop Boundaries
+## Supported Boundary Types
 
-- Password minimum length: 7, 8, 9 characters when min is 8.
-- Lockout attempts: 2, 3, 4 when threshold is 3.
-- Lockout duration: before, at, after expiration.
-- Quantity minimum: 0, 1, 2.
-- Coupon minimum order amount: threshold-1, threshold, threshold+1.
-- Coupon max uses per user: max-1, max, max+1.
-- Date expiration: before, on, after expiration date, based on requirement semantics.
-- Product price: 0, 1, and negative for positive-only constraints.
-- `max_uses_per_user`: 0, 1, 2 when minimum is 1.
+- Lower-only and upper-only constraints.
+- Inclusive ranges and domain precision.
+- Counts, lengths, quantities, attempts, and capacities.
+- Dates and times immediately before, at, and after a documented cutoff.
+- Ordered public state transitions when the requirement defines an order.
 
 ## BVA Table Fields
 
 Record:
 
-- Variable.
-- Boundary rule.
-- Boundary source.
-- Test values.
-- Expected classification.
-- Justification.
-- Requirement/code reference.
+- Boundary ID, variable, and rule.
+- Test basis and Test Basis Reference.
+- On point, off point, and in point when relevant.
+- Selected values, expected classification, and justification.
 
 ## Classification
 

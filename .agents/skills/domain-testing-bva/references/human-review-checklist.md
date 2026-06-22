@@ -1,20 +1,16 @@
-# Human Review Checklist
+# Human Review Gate
 
-Before submission, a human reviewer must verify:
+Before execution, a human must verify and explicitly confirm:
 
-- Feature ID, name, pool, role, and module are correct.
-- Assignment allocation inconsistency is documented when present.
-- Requirement, API, UI, backend, and database evidence are separated.
-- Each rule has a source reference or is marked as an assumption.
-- Contradictions are explicit and not silently resolved by the AI.
-- Domain partitions include valid and invalid cases.
-- Cross-field dependencies are covered.
-- BVA is applied only to ordered or bounded domains.
-- Test case IDs are unique and correctly formatted.
-- Expected results are observable.
-- Test data is concrete and reproducible.
-- Actual results and statuses are not fabricated.
-- Evidence links or screenshots exist for executed tests.
-- AI gap analysis includes missed cases or states that no gaps were found after review.
-- Bug reports are created only for executed or otherwise verified failures.
-- Final reports are understandable without reading the AI chat.
+- Feature, pool, actor, surface, requirements, and API/UI location are accurate.
+- Only approved black-box test bases were used and every rule has a Test Basis Reference.
+- Requirement ambiguities, assumptions, and observed contradictions are explicit.
+- Valid/invalid partitions are complete and their derivations explained.
+- BVA is limited to ordered/bounded domains; boundaries and adjacent values are correct.
+- Dependencies, concrete test data, and observable expected results are complete.
+- Technique labels, IDs, partition/boundary references, and traceability are correct.
+- Probable duplicates are removed or justified and missing cases are added.
+- No status, result, evidence, screenshot, bug, or Issue link is fabricated.
+- Initial AI output, human corrections, and human-added cases remain auditable.
+
+Record reviewer, date/time, corrections, missing cases, and `Approved for execution: Yes/No`. Reports remain non-final and execution remains prohibited until approval is Yes.

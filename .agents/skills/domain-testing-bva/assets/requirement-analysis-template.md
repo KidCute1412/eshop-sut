@@ -2,34 +2,21 @@
 
 ## Feature Intake
 
-| Field | Value |
-| --- | --- |
-| Feature ID | {{FEATURE_ID}} |
-| Feature Name | {{FEATURE_NAME}} |
-| Pool | {{POOL}} |
-| User Role |  |
-| Application Module |  |
-| Requirement Source |  |
-| Output Directory |  |
+| Feature ID | Feature Name | Pool | Actor | Application Surface | Requirement Source | API Endpoint / UI Location | Output Directory | Execution Environment |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| {{FEATURE_ID}} | {{FEATURE_NAME}} | {{POOL}} |  |  |  |  |  |  |
 
-## Allocation Notes
+## Pool Rule Review
 
-Record whether the feature allocation is consistent with the assignment pool rule.
+Record whether the user-supplied selection follows the official pool rule. Do not select or reallocate a feature.
 
-## Evidence Summary
+## Black-box Rules
 
-| Rule ID | Rule | Evidence Class | Source Reference | Notes |
-| --- | --- | --- | --- | --- |
+| Rule ID | Rule | Test Basis Type | Test Basis Reference | Observable Expected Behaviour | Ambiguity | Assumption |
+| --- | --- | --- | --- | --- | --- | --- |
 
-## Assumptions
-
-- None recorded yet.
-
-## Contradictions
-
-- None recorded yet.
+Allowed test basis types: Official requirement, API specification, Observable UI behaviour, Observable API behaviour, Execution evidence, Assumption, Requirement ambiguity, Observed contradiction.
 
 ## Coverage Gaps
 
 - None recorded yet.
-
