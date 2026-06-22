@@ -1,48 +1,36 @@
-# Domain Testing Method
+# Black-box Domain Testing Method
 
-## Purpose
-
-Use Domain Testing to model the input and state space of a feature, partition it into equivalent classes, then design representative tests for valid and invalid partitions.
+Domain Testing is a functional black-box technique. Model the feature's input, output, condition, and public state space from approved test bases, partition it into equivalence classes, and select representative tests.
 
 ## Procedure
 
-1. Identify feature scope and actor.
-2. Extract all inputs, state variables, environmental conditions, and dependent entities.
-3. For each variable, collect constraints from requirements, API docs, UI code, backend code, and database schema.
-4. Classify each variable into valid and invalid equivalence partitions.
-5. Identify cross-variable dependencies and state-dependent rules.
-6. Select representative values for each partition.
-7. Combine variables using risk-based reasoning; avoid testing every Cartesian product unless interactions require it.
-8. Remove duplicates only when they cover the same rule, same partition, and same observable outcome.
-9. Record assumptions, contradictions, and gaps.
+1. Identify the selected feature, actor, surface, and public interface.
+2. Extract variables, conditions, dependencies, and observable outcomes from official requirements, API specifications, and observable UI/API behaviour.
+3. Give every rule a Rule ID, evidence class, Test Basis Reference, expected behaviour, ambiguity, and assumption.
+4. Define valid and invalid partitions for each relevant variable or condition.
+5. Explain how each partition follows from its test basis and choose concrete representative values.
+6. Model cross-variable and state dependencies instead of treating all inputs independently.
+7. Combine representatives by risk and interaction; avoid an unjustified Cartesian product.
+8. Remove cases only when rule, partition, data intent, and observable outcome are materially identical.
+9. Trace every test case back to a partition and rule.
 
-## Evidence Classes
+## Approved Evidence Classes
 
-Use separate notes for:
+- Official requirement
+- API specification
+- Observable UI behaviour
+- Observable API behaviour
+- Execution evidence
+- Assumption
+- Requirement ambiguity
+- Observed contradiction
 
-- Requirement rule.
-- API contract.
-- Frontend implementation.
-- Backend implementation.
-- Database enforcement.
-- Assumption.
-- Contradiction.
+Implementation source, internal tests, and database constraints are not test bases or oracles.
 
 ## Typical Partitions
 
-Use only when relevant:
-
-- Required value present, missing, empty string, whitespace-only, null.
-- Valid and invalid format.
-- Valid and invalid length.
-- Valid and invalid numeric range.
-- Existing and non-existing entity.
-- Duplicate and unique entity.
-- Authenticated, unauthenticated, wrong role.
-- Allowed and disallowed state transition.
-- Temporal before, at, after cutoff.
-- Collection empty, one item, multiple items.
+Use only when relevant: present/missing, empty/whitespace/null, valid/invalid format, valid/invalid length or range, existing/non-existing public identity, duplicate/unique, authenticated/unauthenticated/role, allowed/disallowed state, before/at/after time, and empty/one/many collection states.
 
 ## Expected Results
 
-Expected results must describe observable behavior: UI message, HTTP status, database state, redirect, token presence, state transition, or unchanged state. Do not write "works correctly" as an expected result.
+Describe public outcomes such as a UI message, rendered state, HTTP status/body, redirect, token presence, or externally visible state transition. Do not use hidden database state, implementation behaviour, or vague phrases such as "works correctly."
