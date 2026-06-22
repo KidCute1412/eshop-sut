@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create a feature report workspace from skill templates."""
+"""Create a complete black-box DT/BVA feature workspace atomically."""
 
 from __future__ import annotations
 
@@ -9,77 +9,88 @@ import sys
 from pathlib import Path
 
 
+FEATURE_ID_RE = re.compile(r"(?:FR|D)-\d{2}")
 FILES = {
     "requirement-analysis.md": "requirement-analysis-template.md",
     "domain-testing.md": "domain-table-template.md",
     "boundary-value-analysis.md": "bva-table-template.md",
     "test-cases.md": "test-case-template.md",
     "traceability-matrix.md": "traceability-template.md",
+    "execution-summary.md": "execution-summary-template.md",
+    "bug-report.md": "bug-report-template.md",
     "ai-gap-analysis.md": "ai-gap-analysis-template.md",
+    "evidence/evidence-index.md": "evidence-index-template.md",
 }
 
 
-def compact_id(feature_id: str) -> str:
-    return feature_id.replace("-", "").upper()
+def non_empty(value: str) -> str:
+    value = value.strip()
+    if not value:
+        raise argparse.ArgumentTypeError("value cannot be empty")
+    return value
 
 
 def render(text: str, feature_id: str, feature_name: str, pool: str) -> str:
-    return (
-        text.replace("{{FEATURE_ID}}", feature_id)
-        .replace("{{FEATURE_COMPACT}}", compact_id(feature_id))
-        .replace("{{FEATURE_NAME}}", feature_name)
-        .replace("{{POOL}}", pool)
-    )
+    return (text.replace("{{FEATURE_ID}}", feature_id)
+            .replace("{{FEATURE_COMPACT}}", feature_id.replace("-", ""))
+            .replace("{{FEATURE_NAME}}", feature_name)
+            .replace("{{POOL}}", pool))
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Create a Domain Testing/BVA feature workspace.")
-    parser.add_argument("--feature-id", required=True, help="Feature ID such as FR-01.")
-    parser.add_argument("--feature-name", required=True, help="Feature name.")
-    parser.add_argument("--pool", required=True, help="Feature pool, such as A, B, C, or D.")
-    parser.add_argument("--output", required=True, help="Output root directory.")
+    parser = argparse.ArgumentParser(description="Create a complete black-box Domain Testing/BVA workspace.")
+    parser.add_argument("--feature-id", required=True, help="Feature ID: FR-01 or D-01.")
+    parser.add_argument("--feature-name", required=True, type=non_empty, help="Non-empty feature name.")
+    parser.add_argument("--pool", required=True, type=str.upper, choices="ABCD", help="Official pool A, B, C, or D.")
+    parser.add_argument("--output", required=True, type=non_empty, help="Output root; feature ID is appended.")
     parser.add_argument("--force", action="store_true", help="Overwrite existing report files.")
     args = parser.parse_args()
 
-    feature_id = args.feature_id.upper()
-    if not re.fullmatch(r"FR-\d{2}", feature_id):
-        print(f"ERROR: invalid feature ID '{args.feature_id}'. Expected format FR-01.", file=sys.stderr)
+    feature_id = args.feature_id.strip().upper()
+    if not FEATURE_ID_RE.fullmatch(feature_id):
+        print(f"ERROR: invalid feature ID '{args.feature_id}'; expected FR-01 or D-01.", file=sys.stderr)
         return 2
+    if feature_id.startswith("D-") and args.pool != "D":
+        print(f"WARNING: {feature_id} appears to be a mobile feature but pool is {args.pool}.", file=sys.stderr)
+    if feature_id.startswith("FR-") and args.pool == "D":
+        print(f"WARNING: {feature_id} prefix appears inconsistent with mobile Pool D.", file=sys.stderr)
 
-    skill_root = Path(__file__).resolve().parents[1]
-    assets = skill_root / "assets"
+    assets = Path(__file__).resolve().parents[1] / "assets"
+    missing = [str(assets / template) for template in FILES.values() if not (assets / template).is_file()]
+    if missing:
+        print("ERROR: required templates are missing; no output was written:", file=sys.stderr)
+        for item in missing:
+            print(f"  - {item}", file=sys.stderr)
+        return 3
+
+    # Read and render every template before creating directories or files.
+    rendered = {
+        relative: render((assets / template).read_text(encoding="utf-8"), feature_id, args.feature_name, args.pool)
+        for relative, template in FILES.items()
+    }
     out_dir = Path(args.output) / feature_id
-    evidence_dir = out_dir / "evidence"
-
-    out_dir.mkdir(parents=True, exist_ok=True)
-    evidence_dir.mkdir(parents=True, exist_ok=True)
-
-    created = []
-    skipped = []
-    for output_name, template_name in FILES.items():
-        target = out_dir / output_name
+    created: list[str] = []
+    skipped: list[str] = []
+    failed: list[str] = []
+    for relative, content in rendered.items():
+        target = out_dir / relative
         if target.exists() and not args.force:
             skipped.append(str(target))
             continue
-        template = assets / template_name
-        if not template.exists():
-            print(f"ERROR: missing template {template}", file=sys.stderr)
-            return 3
-        target.write_text(render(template.read_text(encoding="utf-8"), feature_id, args.feature_name, args.pool), encoding="utf-8")
-        created.append(str(target))
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(content, encoding="utf-8")
+            created.append(str(target))
+        except OSError as exc:
+            failed.append(f"{target}: {exc}")
 
-    print(f"Workspace ready: {out_dir}")
-    if created:
-        print("Created/updated:")
-        for item in created:
+    print(f"Workspace: {out_dir}")
+    for label, items in (("Created/updated", created), ("Skipped existing", skipped), ("Failed", failed)):
+        print(f"{label}: {len(items)}")
+        for item in items:
             print(f"  - {item}")
-    if skipped:
-        print("Skipped existing files (use --force to overwrite):")
-        for item in skipped:
-            print(f"  - {item}")
-    return 0
+    return 1 if failed else 0
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
