@@ -93,7 +93,7 @@
 ### Human Review
 
 - Reviewer: Nguyen Thanh Tien
-- Review Date and Time: 2026-06-23 18:30 GMT+7
+- Review Date and Time: 2026-06-23 19:30 GMT+7
 - Review Scope: Domain Modeling for FR-01 Account Registration
 - Human Review Status: Completed
 - Approved for BVA: Yes
@@ -115,3 +115,76 @@
 
 - Updated Step 1, Step 2, Step 3, Partition Derivation, and Coverage Decisions in `reports/FR-01/domain-testing.md`.
 - Confirmed that Phase 3 still contains no BVA, test cases, execution results, evidence, bug reports, or GitHub Issues.
+
+---
+
+## AI Interaction
+
+- AI Tool: ChatGPT 5.5
+- Date and Time: 2026-06-23 / 20:47
+- Feature ID: FR-01
+- Task: FR-01 Phase 4 Boundary Value Analysis for Account Registration
+
+### Prompt Reference
+
+- Prompt file: [phase-04-prompt.md](../evidence/agent-skill/FR-01/phase-04-prompt.md)
+
+### AI Output References
+
+- AI output file: [phase-04-bva-ai-output.md](../evidence/agent-skill/FR-01/phase-04-bva-ai-output.md)
+- Generated report: [reports/FR-01/boundary-value-analysis.md](../reports/FR-01/boundary-value-analysis.md)
+
+### AI Output Summary
+
+- Created a Boundary Value Analysis report for FR-01 Account Registration.
+- Used only the approved black-box requirement analysis, human-reviewed Domain Testing report, and approved BVA method.
+- Assessed 26 candidate domains and variables for BVA applicability.
+- Classified password length as the only domain with a documented numeric boundary.
+- Classified full-name length, email length, and registration Step Indicator applicability as undetermined because no approved numeric limits or step count were documented.
+- Classified the remaining categorical, relational, structural, state-based, UI, response, outcome, and navigation domains as not applicable to BVA.
+- Created one inclusive lower-boundary model for the minimum password length of 8 characters.
+- Derived the following concrete values:
+  - `Abcd1!x`: 7 characters, `min-1`, expected Invalid.
+  - `Abcd1!xy`: 8 characters, `min`, expected Valid.
+  - `Abcd1!xyz`: 9 characters, `min+1`, expected Valid.
+  - `ValidPass1!`: 11 characters, nominal internal value, expected Valid.
+
+- Kept uppercase, lowercase, digit, special-character, email, full-name, actor, and request-shape conditions nominal so that password length was the only changing factor.
+- Did not create an upper-boundary model because no maximum password length was documented.
+- Did not create test cases.
+- Did not execute the application or send HTTP requests.
+- Did not capture screenshots or execution evidence.
+- Did not assign Actual Results or Pass/Fail statuses.
+- Did not infer or report bugs.
+- Did not create GitHub Issues.
+- Did not inspect implementation source code, database schema, controllers, services, routes, middleware, models, or internal tests.
+
+### Human Review
+
+- Reviewer: Nguyen Thanh Tien
+- Review Date and Time: 2026-06-23 19:30 GMT+7
+- Review Scope: Boundary Value Analysis for FR-01 Account Registration
+- Human Review Status: Completed
+- Missing Boundaries Added: None
+- Incorrect Boundaries Removed: None
+- Approved for Test-Case Derivation: Yes
+- Approved for Test Execution: No
+
+### Human Corrections
+
+- Verified that BVA is applicable only to the documented password minimum-length boundary.
+- Confirmed that the selected password values contain exactly 7, 8, 9, and 11 displayed ASCII characters.
+- Standardized abbreviated requirement references to feature-scoped IDs, including `FR01-API01` through `FR01-API05`, `FR01-SF01` through `FR01-SF05`, and `FR01-R01` through `FR01-R14`.
+- Expanded the ambiguous reference `FR01-R06-R10` into the explicit rule IDs `FR01-R06`, `FR01-R07`, `FR01-R08`, `FR01-R09`, and `FR01-R10`.
+- Added explicit Domain Testing partition references:
+  - `PASSWORD-LENGTH-I01` for the 7-character invalid value.
+  - `PASSWORD-LENGTH-V01` for the 8-, 9-, and 11-character valid values.
+
+- Clarified the nominal API request conditions used for each boundary value.
+- Clarified that UI execution assumes the Confirm Password control exists and contains the same selected password.
+- Clarified that a missing Confirm Password control belongs to Domain Testing partition `CONFIRM-CONTROL-I01`, not to the password-length BVA model.
+- Expanded the boundary derivation to explain why password length is the only factor that changes classification.
+- Clarified that the 11-character value is a nominal internal value and not a boundary point.
+- Confirmed that no maximum password length is documented, so no `max-1`, `max`, or `max+1` values were created.
+- Removed the redundant Black-box Test Basis Summary from the final reviewed report.
+- Confirmed that Phase 4 contains no test cases, execution results, evidence, bug reports, or GitHub Issues.

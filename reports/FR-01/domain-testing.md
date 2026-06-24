@@ -178,7 +178,7 @@ Each entry below states basis/classification, representative rationale, nominal 
 ## Human Review - Phase 3
 
 - Reviewer: Nguyen Thanh Tien
-- Review Date and Time: 2026-06-23 18:30 GMT+7
+- Review Date and Time: 2026-06-23 19:30 GMT+7
 - Review Scope: Domain Modeling for FR-01 Account Registration
 - Corrections Made:
   - Split the original `CONFIRM-PRESENCE-V01/I01` partitions into separate control-existence, value-presence, and matching-relation partitions.

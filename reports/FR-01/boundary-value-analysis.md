@@ -1,0 +1,106 @@
+# Boundary Value Analysis - FR-01 Account Registration
+
+## Step 1: Candidate Domain Assessment
+
+| Domain or Variable                | Rule ID                                  | Domain Type                 | Documented Constraint                                                                | BVA Applicability | Reason                                                                        | Test Basis Reference                                                        |
+| --------------------------------- | ---------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------ | ----------------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| Full-name presence                | FR01-R01                                 | Categorical presence        | Full name must be provided.                                                          | Not applicable    | Present/absent is categorical, not an ordered magnitude.                      | `requirement-analysis.md` - FR01-R01; `domain-testing.md` - NAME-PRESENCE   |
+| Full-name length                  | FR01-R01, FR01-API02                     | String length               | No minimum or maximum documented.                                                    | Undetermined      | Length is ordered, but no approved numeric boundary exists.                   | `requirement-analysis.md` - ambiguities                                     |
+| Email presence                    | FR01-R02                                 | Categorical presence        | Email must be provided.                                                              | Not applicable    | Present/absent is categorical.                                                | `domain-testing.md` - EMAIL-PRESENCE                                        |
+| Email format                      | FR01-R04                                 | Format category             | Must be valid; example `user@domain.com`.                                            | Not applicable    | Syntax classes are not an ordered numeric scale.                              | `domain-testing.md` - EMAIL-FORMAT                                          |
+| Email uniqueness                  | FR01-R05                                 | State category              | Email is unused or already registered.                                               | Not applicable    | Unique/duplicate is state-based and unordered.                                | `domain-testing.md` - EMAIL-UNIQUENESS                                      |
+| Email length                      | FR01-R04, FR01-API03                     | String length               | No minimum or maximum documented.                                                    | Undetermined      | Possible ordered domain lacks documented limits.                              | `requirement-analysis.md` - ambiguities                                     |
+| Password presence                 | FR01-R03                                 | Categorical presence        | Password must be provided.                                                           | Not applicable    | Present/absent is categorical.                                                | `domain-testing.md` - PASSWORD-PRESENCE                                     |
+| Password length                   | FR01-R06                                 | Lower-bounded string length | Minimum 8 characters, inclusive; no maximum.                                         | Applicable        | Explicit ordered lower boundary supports lower-only BVA.                      | `requirement-analysis.md` - FR01-R06; `domain-testing.md` - PASSWORD-LENGTH |
+| Uppercase presence                | FR01-R07                                 | Character-class category    | At least one uppercase letter.                                                       | Not applicable    | Modeled as categorical presence; no upper count is specified.                 | `domain-testing.md` - PASSWORD-UPPERCASE                                    |
+| Lowercase presence                | FR01-R08                                 | Character-class category    | At least one lowercase letter.                                                       | Not applicable    | Presence/absence is categorical.                                              | `domain-testing.md` - PASSWORD-LOWERCASE                                    |
+| Digit presence                    | FR01-R09                                 | Character-class category    | At least one digit.                                                                  | Not applicable    | Presence/absence is categorical.                                              | `domain-testing.md` - PASSWORD-DIGIT                                        |
+| Special-character presence        | FR01-R10                                 | Character-class category    | At least one documented special character.                                           | Not applicable    | Presence/absence and identity are unordered categories.                       | `domain-testing.md` - PASSWORD-SPECIAL                                      |
+| Confirm-password control presence | FR01-R11                                 | UI structure category       | Confirmation control must exist.                                                     | Not applicable    | Control existence is Boolean.                                                 | `domain-testing.md` - CONFIRM-CONTROL                                       |
+| Confirm-password value presence   | FR01-R11                                 | Categorical presence        | Confirmation value must be provided.                                                 | Not applicable    | Provided/empty is categorical; no length limit is documented.                 | `domain-testing.md` - CONFIRM-VALUE                                         |
+| Password-confirmation equality    | FR01-R12                                 | Relational category         | Values match or mismatch.                                                            | Not applicable    | Equality is relational, not ordered.                                          | `domain-testing.md` - CONFIRM-MATCH                                         |
+| API request properties            | FR01-API02–FR01-API04, FR01-R01–FR01-R03 | Contract structure          | `name`, `email`, and `password` are documented and required.                         | Not applicable    | Named-property presence is categorical; no property-count range is specified. | `domain-testing.md` - API-REQUEST                                           |
+| Guest actor state                 | FR01-API01; Feature Intake               | State category              | Guest/unauthenticated actor uses public registration.                                | Not applicable    | Actor state is unordered.                                                     | `domain-testing.md` - ACTOR-GUEST                                           |
+| Required-field marker             | FR01-SF01                                | UI property                 | Required labels show adjacent `*`.                                                   | Not applicable    | Marker presence is Boolean.                                                   | `domain-testing.md` - FORM-REQUIRED-MARKER                                  |
+| Email control type                | FR01-SF02                                | UI property                 | Email control uses `type="email"`.                                                   | Not applicable    | Control types are unordered.                                                  | `domain-testing.md` - FORM-EMAIL-TYPE                                       |
+| Password control type/masking     | FR01-SF03                                | UI property                 | Password uses `type="password"` and is masked.                                       | Not applicable    | Type and visibility are categorical.                                          | `domain-testing.md` - FORM-PASSWORD-TYPE                                    |
+| Error placement                   | FR01-SF04                                | UI spatial category         | Error appears above, not below, Submit.                                              | Not applicable    | Named placement categories have no measurable boundary.                       | `domain-testing.md` - FORM-ERROR-PLACEMENT                                  |
+| Registration step indicator       | FR01-SF05                                | Conditional UI rule         | Required only for forms with at least two steps; registration step count is unknown. | Undetermined      | Approved basis does not establish registration as multi-step.                 | `domain-testing.md` - FORM-STEP-INDICATOR-A01                               |
+| API success response              | FR01-API05                               | Contract/output category    | HTTP 200 with documented message and identifier.                                     | Not applicable    | Status and response shape are categorical; identifier bounds are unspecified. | `domain-testing.md` - API-SUCCESS                                           |
+| UI successful outcome             | FR01-R13                                 | Outcome state               | Valid registration completes successfully.                                           | Not applicable    | Success/non-success is state-based.                                           | `domain-testing.md` - REGISTRATION-COMPLETE                                 |
+| Validation rejection              | FR01-R01–FR01-R12                        | Outcome state               | Invalid documented input is rejected.                                                | Not applicable    | Rejection is categorical; undocumented statuses cannot form boundaries.       | `domain-testing.md` - VALIDATION-REJECTION                                  |
+| Redirect destination              | FR01-R14                                 | Navigation category         | Successful registration goes to Login page.                                          | Not applicable    | Destination is categorical; timing has no documented limit.                   | `domain-testing.md` - REDIRECT-SUCCESS                                      |
+
+## Step 2: Applicable Boundary Model
+
+| Boundary Model ID        | Variable                 | Rule                 | Test Basis                        | Boundary Type        | Off Point | On Point | In Point | Nominal Internal Value | Expected Classification   | Justification                                                                                          |
+| ------------------------ | ------------------------ | -------------------- | --------------------------------- | -------------------- | --------- | -------- | -------- | ---------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------ |
+| FR01-PASSWORD-LENGTH-M01 | Password character count | Minimum 8 characters | FR01-R06; PASSWORD-LENGTH-V01/I01 | Inclusive lower-only | 7         | 8        | 9        | 11                     | 7 Invalid; 8, 9, 11 Valid | Integer counts below, at, and inside the inclusive minimum isolate the only approved numeric boundary. |
+
+No upper-bound model is created because the approved test basis documents no maximum password length.
+
+## Step 3: Concrete Boundary Values
+
+| Boundary ID              | Variable        | Rule ID  | Boundary Position      | Concrete Value | Character Count | Expected Classification | Dependencies and Nominal Values                                                                                                                                                                                                                            | Applicable Surface                                                         | Test Basis Reference                                                                                                    | Justification                                                                              | Assumptions                        |
+| ------------------------ | --------------- | -------- | ---------------------- | -------------- | --------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ---------------------------------- |
+| FR01-PASSWORD-LENGTH-B01 | Password length | FR01-R06 | `min-1` / off point    | `Abcd1!x`      | 7               | Invalid                 | Name `Nguyen Van A`; unique valid email; guest actor; API request shape is nominal. For UI surface, this assumes the Confirm Password control exists and its value equals the selected password. Includes uppercase, lowercase, digit, and documented `!`. | UI and API; UI execution depends on Confirm Password control availability. | `requirement-analysis.md` - FR01-R06, FR01-R07, FR01-R08, FR01-R09, FR01-R10; `domain-testing.md` - PASSWORD-LENGTH-I01 | Exactly one character below the minimum while every other password rule remains satisfied. | Seven displayed ASCII characters.  |
+| FR01-PASSWORD-LENGTH-B02 | Password length | FR01-R06 | `min` / on point       | `Abcd1!xy`     | 8               | Valid                   | Name `Nguyen Van A`; unique valid email; guest actor; API request shape is nominal. For UI surface, this assumes the Confirm Password control exists and its value equals the selected password. All character classes are satisfied.                      | UI and API; UI execution depends on Confirm Password control availability. | `requirement-analysis.md` - FR01-R06, FR01-R07, FR01-R08, FR01-R09, FR01-R10; `domain-testing.md` - PASSWORD-LENGTH-V01 | Exactly at the inclusive minimum.                                                          | Eight displayed ASCII characters.  |
+| FR01-PASSWORD-LENGTH-B03 | Password length | FR01-R06 | `min+1` / in point     | `Abcd1!xyz`    | 9               | Valid                   | Name `Nguyen Van A`; unique valid email; guest actor; API request shape is nominal. For UI surface, this assumes the Confirm Password control exists and its value equals the selected password. All character classes are satisfied.                      | UI and API; UI execution depends on Confirm Password control availability. | `requirement-analysis.md` - FR01-R06, FR01-R07, FR01-R08, FR01-R09, FR01-R10; `domain-testing.md` - PASSWORD-LENGTH-V01 | Immediately inside the valid domain.                                                       | Nine displayed ASCII characters.   |
+| FR01-PASSWORD-LENGTH-N01 | Password length | FR01-R06 | Nominal internal value | `ValidPass1!`  | 11              | Valid                   | Name `Nguyen Van A`; unique valid email; guest actor; API request shape is nominal. For UI surface, this assumes the Confirm Password control exists and its value equals the selected password. All character classes are satisfied.                      | UI and API; UI execution depends on Confirm Password control availability. | `requirement-analysis.md` - FR01-R06, FR01-R07, FR01-R08, FR01-R09, FR01-R10; `domain-testing.md` - PASSWORD-LENGTH-V01 | Clearly internal valid value distinct from adjacent boundary points.                       | Eleven displayed ASCII characters. |
+
+## Boundary Derivation
+
+FR01-R06 states “at least 8 characters,” creating an inclusive lower boundary over integer character counts. Therefore, 8 is the on point, 7 is the adjacent off point, and 9 is the adjacent in point. The value 11 is retained as a nominal internal valid value, not as a boundary point.
+
+Each concrete password value is selected so that password length is the only factor changing the expected classification. `Abcd1!x`, `Abcd1!xy`, `Abcd1!xyz`, and `ValidPass1!` all contain an uppercase letter, lowercase letters, a digit, and the explicitly documented special character `!`. This preserves the nominal conditions from FR01-R07, FR01-R08, FR01-R09, and FR01-R10 while testing the FR01-R06 length boundary.
+
+For API-surface use, the request body remains nominal except for the selected password value. For UI-surface use, the selected password must be repeated in the Confirm Password field so that password-confirmation equality remains nominal. If the UI does not provide a Confirm Password control, that issue belongs to the Domain Testing partition `CONFIRM-CONTROL-I01`, not to the password-length BVA model.
+
+Verified counts:
+
+- `Abcd1!x` = 7 characters.
+- `Abcd1!xy` = 8 characters.
+- `Abcd1!xyz` = 9 characters.
+- `ValidPass1!` = 11 characters.
+
+Classification is design-time analysis, not execution. No Actual Result, Pass/Fail status, screenshot, evidence, bug report, or GitHub Issue is created in Phase 4.
+
+## Coverage Decisions and Exclusions
+
+- BVA is included only for the documented password minimum length boundary.
+- No `max-1`, `max`, or `max+1` password boundary is created because no password maximum is documented.
+- Presence, format, uniqueness, equality, actor, property, UI control, placement, response, outcome, and redirect domains remain categorical Domain Testing domains.
+- Character-class rules remain presence partitions; no undocumented maximum character-class counts are invented.
+- Step-indicator applicability is undetermined because the approved test basis does not establish the FR-01 registration form as a multi-step form.
+- Full-name length, email length, and confirmation length have no approved numeric limits.
+- The UI absence of a Confirm Password control is covered by Domain Testing, not by BVA.
+- Test-case coverage is reserved for Phase 5; no BVA test case is created here.
+
+## Assumptions and Gaps
+
+- Selected password values use displayed ASCII characters to avoid unspecified Unicode counting semantics.
+- Maximum password length, full-name length limits, email length limits, and confirmation length limits are undocumented.
+- Email normalization, invalid API statuses/bodies, duplicate-email response details, exact redirect URL/timing, and UI success text provide no numeric BVA oracle.
+- UI execution of password-length BVA assumes that the Confirm Password control exists and can be filled with the same selected password value.
+- If the current UI does not provide a Confirm Password control, that observation should be handled later as a Domain Testing execution result, not as a BVA boundary result.
+- No public UI observation or execution evidence supplements the reviewed reports in this Phase 4 analysis.
+- Human review must approve this model before Phase 5 Test-Case Derivation.
+
+## Human Review - Phase 4
+
+- Reviewer: Nguyen Thanh Tien
+- Review Date and Time: 2026-06-23 21:00 GMT+7
+- Review Scope: Boundary Value Analysis for FR-01 Account Registration
+- Corrections Made:
+  - Verified that BVA is applicable only to the documented password minimum length boundary.
+  - Confirmed that password values have exact lengths of 7, 8, 9, and 11 characters.
+  - Expanded the test basis reference from `FR01-R06-R10` to explicit rule IDs `FR01-R06`, `FR01-R07`, `FR01-R08`, `FR01-R09`, and `FR01-R10`.
+  - Clarified that UI execution of password-length BVA assumes the Confirm Password control exists and its value matches the selected password.
+  - Clarified that if the UI does not provide a Confirm Password control, that issue belongs to Domain Testing, not BVA.
+  - Confirmed that no maximum password length is documented, so no upper-bound BVA is created.
+
+- Missing Boundaries Added: None
+- Incorrect Boundaries Removed: None
+- Status: Completed
+- Approved for Test-Case Derivation: Yes
+- Approved for Test Execution: No
