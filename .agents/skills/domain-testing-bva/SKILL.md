@@ -14,7 +14,7 @@ Use this skill for one selected feature at a time. Domain Testing (DT) and Bound
 - Read `references/eshop-analysis-guide.md` for approved EShop test bases and safe startup guidance.
 - Read `references/domain-testing-method.md` and `references/bva-method.md` while modeling.
 - Read `references/test-case-schema.md` before deriving or validating cases.
-- Use `references/human-review-checklist.md` at the review gate.
+- Use `references/human-review-checklist.md` in Phase 6 before any test execution.
 - Use `assets/` and `scripts/` to create and validate the feature workspace.
 
 ## Integrity Rules
@@ -72,21 +72,21 @@ Apply BVA only to ordered or bounded domains. For each boundary record Boundary 
 
 Support lower-only, upper-only, inclusive-range, count, length, date, time, quantity, attempt, capacity, and ordered-state boundaries. Do not apply numeric BVA to unordered categories. Use only justified adjacent values; account for domain precision and whether the boundary is inclusive.
 
-## Phase 5: Test-Case Derivation
+## Phase 5: AI Test-Case Generation
 
-Derive every case from identified partitions or boundaries. IDs are `<compact-feature>-DT-###` or `<compact-feature>-BVA-###`, for example `FR01-DT-001` and `D01-BVA-001`.
+The AI derives test cases from the approved partitions and boundaries. IDs are `<compact-feature>-DT-###` or `<compact-feature>-BVA-###`, for example `FR01-DT-001` and `D01-BVA-001`.
 
 Every case must include:
 
-- Test Case ID, Technique, Objective.
+- Test Case ID, Technique, and Objective.
 - Requirement or Rule Reference.
-- Preconditions, Test Data, Steps, Expected Result.
-- Actual Result, Status, Evidence.
-- Partition or Boundary Covered.
+- Preconditions, Test Data, Steps, and Expected Result.
+- Actual Result, Status, and Evidence.
 - Test Basis Reference.
-- Notes and Assumptions.
 
-For each case, explain which rule produced the partition or boundary, why the chosen data represents it, and why the expected result is observable. Before genuine execution use exactly:
+Keep DT and BVA cases separate. Remove unjustified duplication, but do not omit distinct partitions, boundaries, surfaces, or dependency conditions merely to reduce the number of cases.
+
+The AI must not execute tests in this phase. Before genuine execution, write exactly:
 
 ```text
 Actual Result: Not Executed
@@ -94,25 +94,158 @@ Status: Not Executed
 Evidence: None
 ```
 
-## Phase 6: Black-box Test Execution
+Preserve the initial prompt and AI-generated output before any human correction. Stop after generating the cases and request human review.
 
-Execute only when the user explicitly requests it, the environment is available, and human review is complete. Use only UI or public API interfaces. For each executed case record date/time, environment, Actual Result, status (`Pass`, `Fail`, or `Blocked`), and real evidence; include a blocking reason for `Blocked`. Never infer results from source inspection.
+## Phase 6: Human Review and Black-box Test Execution
 
-## Phase 7: Evidence and Bug Reporting
+This phase requires human control and explicit confirmation. The AI may assist with execution, recording, formatting, and validation, but it must not approve its own test cases or fabricate observations.
 
-Save evidence as `reports/<FEATURE-ID>/evidence/<TEST-CASE-ID>.<extension>` and add it to `evidence/evidence-index.md` with Test Case ID, path, type, execution time, environment, and notes.
+### Step 1: Human Review
 
-Report a bug only after reproducing an observable failure against a documented expected result. Record Bug ID, title, related case, requirement, preconditions, reproduction steps, expected and actual results, severity, evidence, GitHub Issue link, and status. Leave the Issue link explicitly pending until a real issue exists.
+The human reviewer uses `references/human-review-checklist.md` to verify:
+
+- Feature scope, requirements, and test bases are correct.
+- Valid and invalid partitions are complete and correctly represented.
+- BVA is applied only to ordered or bounded domains.
+- Boundary values and adjacent values are correct.
+- Preconditions and test data are concrete and reproducible.
+- Expected results are observable and supported by an approved test basis.
+- DT and BVA classifications are correct.
+- Duplicate or unjustified cases are removed.
+- Missing cases and dependency conditions are added.
+- Assumptions, ambiguities, and contradictions are explicit.
+- No result, evidence, screenshot, bug, or Issue link is fabricated.
+
+Record in `test-cases.md` or the AI Audit:
+
+- Reviewer and review date/time.
+- Review scope.
+- Human corrections.
+- Human-added, removed, or reclassified cases.
+- Duplicate-case decisions.
+- `Approved for Test Execution: Yes/No`.
+
+Do not execute tests while approval is `No` or missing.
+
+### Step 2: Black-box Test Execution
+
+After human approval, execute each case through only the public UI or public API. The human may execute manually or explicitly supervise AI-assisted browser/API execution.
+
+For every attempted case, record:
+
+- Execution date and time.
+- Environment.
+- Actual Result.
+- Status: `Pass`, `Fail`, or `Blocked`.
+- Blocking Reason when status is `Blocked`.
+- Real evidence reference.
+
+Determine the status as follows:
+
+- `Pass`: the observable actual result matches the documented expected result.
+- `Fail`: the observable actual result contradicts the documented expected result.
+- `Blocked`: execution cannot reach the intended observation because a real precondition, environment, dependency, or product condition prevents it.
+
+Do not infer results from source inspection. A result is not final until its evidence is captured and human-verified in Phase 7.
+
+## Phase 7: Human-verified Evidence and Bug Reporting
+
+This phase requires human verification. The AI may assist with capturing, organizing, naming, linking, and summarizing evidence, but the human must confirm that every evidence file represents the actual observed execution result.
+
+Capture evidence during or immediately after each test execution while the observable result is still available. Save it under:
+
+`reports/<FEATURE-ID>/evidence/<TEST-CASE-ID>.<extension>`
+
+Evidence requirements:
+
+- UI evidence shows the relevant input, displayed result, error, navigation, state, or blocking condition.
+- API evidence shows the method, URL, request body, status code, and response body.
+- Blocked evidence clearly demonstrates the real blocking condition.
+- Evidence belongs to the exact test case and execution being reported.
+- Evidence does not expose unnecessary secrets or personal information.
+
+After human verification, update the corresponding case with the real evidence path. Do not leave a `Pass`, `Fail`, or `Blocked` case with `Evidence: None`.
+
+### Bug Reporting
+
+Create a bug report only when:
+
+1. The test has a documented expected result.
+2. The observable actual result contradicts it.
+3. The failure has been reproduced.
+4. Human-verified evidence exists.
+
+For every confirmed bug, record:
+
+- Bug ID, title, severity, and status.
+- Related test case and requirement.
+- Preconditions and reproduction steps.
+- Expected and actual results.
+- Evidence links.
+- GitHub Issue link.
+
+Create the bug on the group's GitHub Issues page and attach the relevant screenshots. Leave the Issue link as `Pending` until a real issue exists, then replace it with the actual link. Do not create separate bug records for identical failures unless they have materially different causes or observable impacts.
 
 ## Phase 8: AI Gap Analysis
 
-Compare initial AI-generated tests, human corrections, human-added tests, behaviours or bugs missed by AI, runtime findings, and the reason for every gap. Do not claim AI missed a runtime bug before execution. Preserve generated output files for audit and append AI interactions with `scripts/append_ai_audit.py`.
+Create `reports/<FEATURE-ID>/ai-gap-analysis.md`.
 
-## Phase 9: Final Validation and Output
+Compare:
 
-Validate requirement, partition, and boundary coverage; execution metrics; evidence completeness; bug traceability; AI-gap completeness; and human-review status. Run `scripts/validate_test_cases.py` and correct every error.
+- Initial AI-generated partitions, boundaries, and test cases.
+- Human corrections and reclassifications.
+- Human-added or removed test cases.
+- Incorrect, incomplete, or unsupported AI assumptions.
+- Behaviours and bugs discovered during execution.
+- Important cases or bugs missed by the AI.
+- The reason for every identified gap.
 
-The complete workspace is:
+For each gap, record:
+
+- Gap ID and category.
+- Initial AI output.
+- Human correction or runtime finding.
+- Why the AI missed or mishandled it.
+- Corrective action.
+- Related requirement, partition, boundary, test case, evidence, or bug.
+
+Distinguish prompt-quality gaps, AI reasoning limitations, missing test-basis information, application complexity, and findings that were knowable only through execution. Do not claim the AI missed a runtime bug before that bug was actually observed.
+
+Preserve the original AI output and append the relevant interactions to the AI Audit with `scripts/append_ai_audit.py`. Human review is required before the AI gap analysis is final.
+
+## Phase 9: Traceability and Final Validation
+
+Create `reports/<FEATURE-ID>/traceability-matrix.md`.
+
+Trace:
+
+- Requirement or rule to partition.
+- Partition to Domain Testing test case.
+- Requirement or rule to boundary.
+- Boundary to BVA test case.
+- Test case to execution status and evidence.
+- Failed test case to Bug ID and GitHub Issue.
+- Explicit gaps, ambiguities, and exclusions.
+
+Validate:
+
+- Every relevant requirement has coverage or an explicit justified gap.
+- Every selected partition and boundary maps to at least one appropriate case.
+- Test data, expected results, and technique classifications are correct.
+- Execution statuses and evidence links are complete and consistent.
+- Blocked cases contain real blocking reasons and evidence.
+- Confirmed bugs are reproducible and traceable to failed cases.
+- AI-gap entries are supported by preserved AI output and human corrections.
+- Human-review approval is recorded.
+- All internal links resolve.
+
+Run:
+
+`python .agents/skills/domain-testing-bva/scripts/validate_test_cases.py reports/<FEATURE-ID>/test-cases.md`
+
+Correct every validation error before finalizing. Record feature-level metrics in the assignment's final `README.md`; do not require a separate per-feature execution-summary file.
+
+The complete feature workspace is:
 
 ```text
 reports/<FEATURE-ID>/
@@ -121,11 +254,11 @@ reports/<FEATURE-ID>/
 |-- boundary-value-analysis.md
 |-- test-cases.md
 |-- traceability-matrix.md
-|-- execution-summary.md
 |-- bug-report.md
 |-- ai-gap-analysis.md
 `-- evidence/
-    `-- evidence-index.md
+    |-- <TEST-CASE-ID>.png
+    `-- <other-real-evidence-files>
 ```
 
 Demonstrate end-to-end use on one complete feature. A demonstration video may use voice-over or captions. More comprehensive, high-quality cases, real evidence, and confirmed bugs improve the assessment, but volume never permits fabrication.
