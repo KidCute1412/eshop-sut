@@ -69,17 +69,14 @@ def split_cases(text: str) -> list[str]:
         ## D01-DT-001
         ## D01-BVA-001
     """
-    matches = list(TEST_CASE_HEADING_RE.finditer(text))
-    return [
-        text[
-            match.start() : (
-                matches[index + 1].start()
-                if index + 1 < len(matches)
-                else len(text)
-            )
-        ].strip()
-        for index, match in enumerate(matches)
-    ]
+    # Stop at the next level-two heading, including report sections such as
+    # "## Human Review - Phase 5". Otherwise fields in that section can
+    # overwrite fields belonging to the final test case.
+    case_section_re = re.compile(
+        r"(?ms)^##\s+(?:FR|D)\d{2}-(?:DT|BVA)-\d{3}\s*$"
+        r".*?(?=^##\s+|\Z)"
+    )
+    return [match.group(0).strip() for match in case_section_re.finditer(text)]
 
 
 def heading_id(case: str) -> str | None:
@@ -244,8 +241,9 @@ def looks_like_boundary_reference(value: str) -> bool:
     if re.search(r"\bboundary[-_ ]?[a-z0-9][a-z0-9_-]*\b", value, re.I):
         return True
 
-    # Accept concise IDs such as PASSWORD-B01, LENGTH-B02, AGE-B03.
-    if re.search(r"\b[A-Z][A-Z0-9]*-B\d{2}\b", value):
+    # Accept boundary IDs (Bxx) and approved nominal internal points (Nxx),
+    # such as PASSWORD-B01 or FR01-PASSWORD-LENGTH-N01.
+    if re.search(r"\b[A-Z][A-Z0-9_-]*-(?:B|N)\d{2}\b", value):
         return True
 
     # Accept IDs/descriptions containing boundary semantics.
@@ -313,10 +311,10 @@ def validate_evidence_for_executed_case(
     return errors
 
 
-def validate_file(path: Path) -> tuple[list[str], list[tuple[str, str]]]:
+def validate_file(path: Path) -> tuple[list[str], list[tuple[str, str, str]]]:
     """Validate one test-cases.md file."""
     errors: list[str] = []
-    records: list[tuple[str, str]] = []
+    records: list[tuple[str, str, str]] = []
 
     try:
         text = path.read_text(encoding="utf-8")
@@ -434,7 +432,7 @@ def validate_file(path: Path) -> tuple[list[str], list[tuple[str, str]]]:
                     "Boundary ID"
                 )
 
-        records.append((tc_id or label, fingerprint(fields)))
+        records.append((tc_id or label, fingerprint(fields), coverage))
 
     return errors, records
 
@@ -469,21 +467,25 @@ def collect_targets(paths: list[str]) -> tuple[list[Path], list[str]]:
 
 
 def detect_global_duplicates(
-    all_records: list[tuple[str, str, Path]],
+    all_records: list[tuple[str, str, str, Path]],
 ) -> list[str]:
     """Detect duplicate IDs and probable duplicate test cases."""
     errors: list[str] = []
 
     for case_id, count in Counter(
         case_id
-        for case_id, _, _ in all_records
+        for case_id, _, _, _ in all_records
         if TEST_CASE_ID_RE.fullmatch(case_id)
     ).items():
         if count > 1:
             errors.append(f"duplicate test case ID across inputs: {case_id}")
 
-    for index, (left_id, left_fp, left_path) in enumerate(all_records):
-        for right_id, right_fp, right_path in all_records[index + 1 :]:
+    for index, (left_id, left_fp, left_coverage, left_path) in enumerate(
+        all_records
+    ):
+        for right_id, right_fp, right_coverage, right_path in all_records[
+            index + 1 :
+        ]:
             left_technique = (
                 left_id.split("-")[1]
                 if TEST_CASE_ID_RE.fullmatch(left_id)
@@ -496,6 +498,11 @@ def detect_global_duplicates(
             )
 
             if left_technique != right_technique:
+                continue
+
+            # Similar procedures that cover different equivalence partitions
+            # or boundary points are intentional, not duplicate test cases.
+            if left_coverage.strip().lower() != right_coverage.strip().lower():
                 continue
 
             if (
@@ -526,12 +533,15 @@ def main() -> int:
 
     targets, errors = collect_targets(args.paths)
 
-    all_records: list[tuple[str, str, Path]] = []
+    all_records: list[tuple[str, str, str, Path]] = []
 
     for target in targets:
         file_errors, records = validate_file(target)
         errors.extend(file_errors)
-        all_records.extend((case_id, fp, target) for case_id, fp in records)
+        all_records.extend(
+            (case_id, fp, coverage, target)
+            for case_id, fp, coverage in records
+        )
 
     errors.extend(detect_global_duplicates(all_records))
 
