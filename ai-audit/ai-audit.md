@@ -188,3 +188,65 @@
 - Confirmed that no maximum password length is documented, so no `max-1`, `max`, or `max+1` values were created.
 - Removed the redundant Black-box Test Basis Summary from the final reviewed report.
 - Confirmed that Phase 4 contains no test cases, execution results, evidence, bug reports, or GitHub Issues.
+
+---
+
+## AI Interaction
+
+- AI Tool: ChatGPT 5.5
+- Date and Time: 2026-06-24 / 12:45
+- Feature ID: FR-01
+- Task: FR-01 Phase 5 Test-Case Design for Account Registration
+
+### Prompt Reference
+
+- Prompt file: [phase-05-prompt.md](../evidence/agent-skill/FR-01/phase-05-prompt.md)
+
+### AI Output References
+
+- AI output file: [phase-05-test-case-design-ai-output.md](../evidence/agent-skill/FR-01/phase-05-test-case-design-ai-output.md)
+- Generated report: [reports/FR-01/test-cases.md](../reports/FR-01/test-cases.md)
+
+### AI Output Summary
+
+- Created black-box test cases for FR-01 Account Registration.
+- Generated 21 Domain Testing cases and 8 BVA cases.
+- Covered valid and invalid UI/API partitions.
+- Created separate UI and API BVA cases for password lengths 7, 8, 9, and 11.
+- Added an Exploratory Backlog for four candidates without approved oracles.
+- Added a preliminary coverage summary.
+- Kept all cases as `Not Executed`.
+- Did not inspect implementation source code.
+- Did not execute tests or create evidence.
+- Did not report bugs or create GitHub Issues.
+
+### Human Review
+
+- Reviewer: Nguyen Thanh Tien
+- Review Date and Time: 2026-06-24 13:08
+- Review Scope: FR-01 Test-Case Design
+- Human Review Status: Completed
+- Test Cases Before Review: 21 DT and 8 BVA
+- Test Cases After Review: 29 DT and 8 BVA
+- Missing Cases Added: 8
+- Duplicate Cases Removed: None
+- Incorrect Cases Removed: None
+- Approved for Validation: Yes
+- Approved for Traceability and Quality Review: Yes
+- Approved for Test Execution: No
+
+### Human Corrections
+
+- Replaced nominal placeholders with concrete test data.
+- Rewrote unclear or duplicated test steps.
+- Standardized Rule IDs and test-basis references.
+- Removed `Source Code Reference` from black-box cases.
+- Added UI and API password-length cases using `Ab1!`.
+- Added missing API cases for invalid email and duplicate email.
+- Added missing API cases for passwords without uppercase, lowercase, digit, or special character.
+- Updated the coverage table for the new cases.
+- Kept undocumented API status codes and messages outside the oracle.
+- Updated the validator to accept partition IDs, boundary IDs, and nominal BVA IDs.
+- Updated the validator to stop before Human Review sections.
+- Updated duplicate detection to distinguish different partitions and boundaries.
+- Confirmed that all cases remain unexecuted.
