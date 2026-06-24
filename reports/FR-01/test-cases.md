@@ -1,4 +1,4 @@
-﻿# Test Cases - FR-01 Account Registration
+# Test Cases - FR-01 Account Registration
 
 ## Domain Testing Test Cases
 
@@ -19,11 +19,10 @@
   3. Activate the registration submit control.
   4. Observe whether registration completes, any displayed validation error, and navigation.
 - Expected Result: Registration completes successfully and the UI navigates to the Login page. No exact success text, URL, or timing is asserted.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: NAME-PRESENCE-V01; EMAIL-PRESENCE-V01; EMAIL-FORMAT-V01; EMAIL-UNIQUENESS-V01; PASSWORD-PRESENCE-V01; PASSWORD-LENGTH-V01; PASSWORD-UPPERCASE-V01; PASSWORD-LOWERCASE-V01; PASSWORD-DIGIT-V01; PASSWORD-SPECIAL-V01; CONFIRM-VALUE-V01; CONFIRM-MATCH-V01; REGISTRATION-COMPLETE-V01; REDIRECT-SUCCESS-V01; ACTOR-GUEST-V01
-- Notes and Assumptions: Uses a controlled unused email; exact success message is outside the oracle.
+- Actual Result: The registration page loaded, but no Confirm Password label or input control was present. Execution stopped before form submission.
+- Status: Blocked
+- Blocking Reason: Step 2 requires a Confirm Password control, but the public registration UI does not provide one.
+- Evidence: [FR01-DT-001.png](./evidence/FR01-DT-001.png)
 
 ## FR01-DT-002
 
@@ -41,11 +40,9 @@
   2. Send `POST http://localhost:3000/api/register`.
   3. Observe the public HTTP status and JSON response.
 - Expected Result: The response is `200 OK` JSON containing message `User registered successfully` and an `id` value; the literal ID is not fixed.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: API-REQUEST-V01; API-SUCCESS-V01; ACTOR-GUEST-V01; NAME-PRESENCE-V01; EMAIL-PRESENCE-V01; EMAIL-FORMAT-V01; EMAIL-UNIQUENESS-V01; PASSWORD-PRESENCE-V01; PASSWORD-LENGTH-V01; PASSWORD-UPPERCASE-V01; PASSWORD-LOWERCASE-V01; PASSWORD-DIGIT-V01; PASSWORD-SPECIAL-V01
-- Notes and Assumptions: Confirm Password is not added because it is absent from the approved API contract.
+- Actual Result: The API returned `200 OK` with the documented success message and id 3.
+- Status: Pass
+- Evidence: [FR01-DT-002.png](./evidence/FR01-DT-002.png)
 
 ## FR01-DT-003
 
@@ -64,11 +61,10 @@
   3. Enter Email `fr01.dt003@example.com` and `ValidPass1!` in Password and Confirm Password.
   4. Submit the form and observe completion, errors, and navigation.
 - Expected Result: Registration is rejected and does not complete. If an error is displayed, it appears above the submit control; exact text is unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: NAME-PRESENCE-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: Isolates one invalid partition; no undocumented message is asserted.
+- Actual Result: The registration page loaded, but no Confirm Password label or input control was present. Execution stopped before form submission.
+- Status: Blocked
+- Blocking Reason: The test requires a valid Confirm Password value to isolate the missing-name partition, but the UI does not provide this control.
+- Evidence: [FR01-DT-003.png](./evidence/FR01-DT-003.png)
 
 ## FR01-DT-004
 
@@ -87,11 +83,10 @@
   3. Enter `ValidPass1!` in Password and Confirm Password.
   4. Submit the form and observe completion, errors, and navigation.
 - Expected Result: Registration is rejected and does not complete. If an error is displayed, it appears above the submit control; exact text is unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: EMAIL-PRESENCE-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: Isolates one invalid partition; no undocumented message is asserted.
+- Actual Result: The registration page loaded, but no Confirm Password label or input control was present. Execution stopped before form submission.
+- Status: Blocked
+- Blocking Reason: The test requires a valid Confirm Password value to isolate the missing-email partition, but the UI does not provide this control.
+- Evidence: [FR01-DT-004.png](./evidence/FR01-DT-004.png)
 
 ## FR01-DT-005
 
@@ -110,11 +105,10 @@
   3. Enter `ValidPass1!` in Password and Confirm Password.
   4. Submit the form and observe completion, errors, and navigation.
 - Expected Result: Registration is rejected and does not complete. If an error is displayed, it appears above the submit control; exact text is unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: EMAIL-FORMAT-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: Isolates one invalid partition; no undocumented message is asserted.
+- Actual Result: The registration page loaded, but no Confirm Password label or input control was present. Execution stopped before form submission.
+- Status: Blocked
+- Blocking Reason: The test requires a valid Confirm Password value to isolate the invalid-email partition, but the UI does not provide this control.
+- Evidence: [FR01-DT-005.png](./evidence/FR01-DT-005.png)
 
 ## FR01-DT-006
 
@@ -133,11 +127,10 @@
   3. Enter `ValidPass1!` in Password and Confirm Password.
   4. Submit the form and observe completion, errors, and navigation.
 - Expected Result: Registration is rejected and does not complete. If an error is displayed, it appears above the submit control; exact text is unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: EMAIL-UNIQUENESS-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: Isolates one invalid partition; no undocumented message is asserted.
+- Actual Result: The registration page loaded, but no Confirm Password label or input control was present. Execution stopped before form submission.
+- Status: Blocked
+- Blocking Reason: The test requires a valid Confirm Password value to isolate the duplicate-email partition, but the UI does not provide this control.
+- Evidence: [FR01-DT-006.png](./evidence/FR01-DT-006.png)
 
 ## FR01-DT-007
 
@@ -156,11 +149,10 @@
   3. Leave Password and Confirm Password empty.
   4. Submit the form and observe completion, errors, and navigation.
 - Expected Result: Registration is rejected and does not complete. If an error is displayed, it appears above the submit control; exact text is unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: PASSWORD-PRESENCE-I01; CONFIRM-VALUE-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: This UI dependency case cannot isolate empty Password from empty Confirm Password; the API missing-password case isolates password requiredness.
+- Actual Result: Execution could not continue because The approved steps require a Confirm Password control, but the public registration UI exposes no Confirm Password label or control.
+- Status: Blocked
+- Blocking Reason: The approved steps require a Confirm Password control, but the public registration UI exposes no Confirm Password label or control.
+- Evidence: [FR01-DT-007.png](./evidence/FR01-DT-007.png)
 
 ## FR01-DT-008
 
@@ -179,11 +171,10 @@
   3. Enter `validpass1!` in Password and Confirm Password.
   4. Submit the form and observe completion, errors, and navigation.
 - Expected Result: Registration is rejected and does not complete. If an error is displayed, it appears above the submit control; exact text is unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: PASSWORD-UPPERCASE-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: Isolates one invalid partition; no undocumented message is asserted.
+- Actual Result: Execution could not continue because The approved steps require a Confirm Password control, but the public registration UI exposes no Confirm Password label or control.
+- Status: Blocked
+- Blocking Reason: The approved steps require a Confirm Password control, but the public registration UI exposes no Confirm Password label or control.
+- Evidence: [FR01-DT-008.png](./evidence/FR01-DT-008.png)
 
 ## FR01-DT-009
 
@@ -202,11 +193,10 @@
   3. Enter `VALIDPASS1!` in Password and Confirm Password.
   4. Submit the form and observe completion, errors, and navigation.
 - Expected Result: Registration is rejected and does not complete. If an error is displayed, it appears above the submit control; exact text is unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: PASSWORD-LOWERCASE-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: Isolates one invalid partition; no undocumented message is asserted.
+- Actual Result: The registration page loaded, but no Confirm Password label or input control was present. Execution stopped before form submission.
+- Status: Blocked
+- Blocking Reason: The test requires a matching Confirm Password value to isolate the missing-lowercase partition, but the UI does not provide this control.
+- Evidence: [FR01-DT-009.png](./evidence/FR01-DT-009.png)
 
 ## FR01-DT-010
 
@@ -225,11 +215,10 @@
   3. Enter `ValidPass!` in Password and Confirm Password.
   4. Submit the form and observe completion, errors, and navigation.
 - Expected Result: Registration is rejected and does not complete. If an error is displayed, it appears above the submit control; exact text is unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: PASSWORD-DIGIT-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: Isolates one invalid partition; no undocumented message is asserted.
+- Actual Result: The registration page loaded, but no Confirm Password label or input control was present. Execution stopped before form submission.
+- Status: Blocked
+- Blocking Reason: The test requires a matching Confirm Password value to isolate the missing-digit partition, but the UI does not provide this control.
+- Evidence: [FR01-DT-010.png](./evidence/FR01-DT-010.png)
 
 ## FR01-DT-011
 
@@ -248,11 +237,10 @@
   3. Enter `ValidPass12` in Password and Confirm Password.
   4. Submit the form and observe completion, errors, and navigation.
 - Expected Result: Registration is rejected and does not complete. If an error is displayed, it appears above the submit control; exact text is unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: PASSWORD-SPECIAL-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: Isolates one invalid partition; no undocumented message is asserted.
+- Actual Result: The registration page loaded, but no Confirm Password label or input control was present. Execution stopped before form submission.
+- Status: Blocked
+- Blocking Reason: The test requires a matching Confirm Password value to isolate the missing-special-character partition, but the UI does not provide this control.
+- Evidence: [FR01-DT-011.png](./evidence/FR01-DT-011.png)
 
 ## FR01-DT-012
 
@@ -269,11 +257,9 @@
   1. Open `/register` as a guest.
   2. Inspect the relevant public form control or label.
 - Expected Result: The registration form visibly contains a Confirm Password input control. Absence is the observation that would indicate non-conformance.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: CONFIRM-CONTROL-V01; non-conforming observation CONFIRM-CONTROL-I01
-- Notes and Assumptions: The invalid partition is an observable non-conformance, not a state forced by the tester.
+- Actual Result: No Confirm Password label or control was visible.
+- Status: Fail
+- Evidence: [FR01-DT-012.png](./evidence/FR01-DT-012.png);
 
 ## FR01-DT-013
 
@@ -292,11 +278,10 @@
   3. Leave Confirm Password empty.
   4. Submit the form and observe completion, errors, and navigation.
 - Expected Result: Registration is rejected and does not complete. If an error is displayed, it appears above the submit control; exact text is unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: CONFIRM-VALUE-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: Isolates one invalid partition; no undocumented message is asserted.
+- Actual Result: The registration page loaded, but no Confirm Password label or input control was present. Execution stopped before form submission.
+- Status: Blocked
+- Blocking Reason: The test requires a Confirm Password control whose value can be left empty, but the UI does not provide this control.
+- Evidence: [FR01-DT-013.png](./evidence/FR01-DT-013.png)
 
 ## FR01-DT-014
 
@@ -315,11 +300,10 @@
   3. Enter Password `ValidPass1!` and Confirm Password `ValidPass2!`.
   4. Submit the form and observe completion, errors, and navigation.
 - Expected Result: Registration is rejected and does not complete. If an error is displayed, it appears above the submit control; exact text is unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: CONFIRM-MATCH-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: Isolates one invalid partition; no undocumented message is asserted.
+- Actual Result: The registration page loaded, but no Confirm Password label or input control was present. Execution stopped before form submission.
+- Status: Blocked
+- Blocking Reason: The test requires a Confirm Password control to create the documented password-mismatch condition, but the UI does not provide this control.
+- Evidence: [FR01-DT-014.png](./evidence/FR01-DT-014.png)
 
 ## FR01-DT-015
 
@@ -336,11 +320,9 @@
   1. Open `/register` as a guest.
   2. Inspect the relevant public form control or label.
 - Expected Result: Every unequivocally required label displays adjacent `*`; a missing marker is the non-conforming observation.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: FORM-REQUIRED-MARKER-V01; non-conforming observation FORM-REQUIRED-MARKER-I01
-- Notes and Assumptions: The invalid partition is an observable non-conformance, not a state forced by the tester.
+- Actual Result: Required labels displayed no adjacent `*` markers.
+- Status: Fail
+- Evidence: [FR01-DT-015.png](./evidence/FR01-DT-015.png)
 
 ## FR01-DT-016
 
@@ -357,11 +339,9 @@
   1. Open `/register` as a guest.
   2. Inspect the relevant public form control or label.
 - Expected Result: The Email control exposes `type="email"`; another type is the non-conforming observation.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: FORM-EMAIL-TYPE-V01; non-conforming observation FORM-EMAIL-TYPE-I01
-- Notes and Assumptions: The invalid partition is an observable non-conformance, not a state forced by the tester.
+- Actual Result: Email input again exposed `type="text"`; pilot failure reproduced.
+- Status: Fail
+- Evidence: [FR01-DT-016.png](./evidence/FR01-DT-016.png)
 
 ## FR01-DT-017
 
@@ -379,11 +359,9 @@
   2. Inspect the relevant public form control or label.
   3. Enter `ValidPass1!` in Password and observe its display.
 - Expected Result: The Password control exposes `type="password"` and entered characters are not shown in clear text.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: FORM-PASSWORD-TYPE-V01; non-conforming observation FORM-PASSWORD-TYPE-I01
-- Notes and Assumptions: The invalid partition is an observable non-conformance, not a state forced by the tester.
+- Actual Result: Password input exposed `type="password"` and masked the entered value.
+- Status: Pass
+- Evidence: [FR01-DT-017.png](./evidence/FR01-DT-017.png)
 
 ## FR01-DT-018
 
@@ -402,11 +380,10 @@
   3. Submit the form.
   4. Observe the location of any displayed registration error relative to the submit control.
 - Expected Result: A validation error is displayed above, not below, the submit control; exact text is unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: FORM-ERROR-PLACEMENT-V01; non-conforming observation FORM-ERROR-PLACEMENT-I01
-- Notes and Assumptions: The invalid partition is an observable non-conformance, not a state forced by the tester.
+- Actual Result: The registration page loaded, but no Confirm Password label or input control was present. Execution stopped before form submission.
+- Status: Blocked
+- Blocking Reason: The test requires a valid matching Confirm Password value so error placement can be isolated, but the UI does not provide this control.
+- Evidence: [FR01-DT-018.png](./evidence/FR01-DT-018.png)
 
 ## FR01-DT-019
 
@@ -424,11 +401,9 @@
   2. Send `POST http://localhost:3000/api/register`.
   3. Observe the public HTTP status and JSON response.
 - Expected Result: The response does not satisfy the documented successful-registration contract of HTTP 200 with the success message and an `id`. Exact invalid status and response body are unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: API-REQUEST-I01; NAME-PRESENCE-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: No Confirm Password property is added; invalid response details are undocumented.
+- Actual Result: The API returned `200 OK` with the documented success message and id 4, contradicting the rejection oracle. The pilot failure reproduced.
+- Status: Fail
+- Evidence: [FR01-DT-019](./evidence/FR01-DT-019.png)
 
 ## FR01-DT-020
 
@@ -446,11 +421,9 @@
   2. Send `POST http://localhost:3000/api/register`.
   3. Observe the public HTTP status and JSON response.
 - Expected Result: The response does not satisfy the documented successful-registration contract of HTTP 200 with the success message and an `id`. Exact invalid status and response body are unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: API-REQUEST-I02; EMAIL-PRESENCE-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: No Confirm Password property is added; invalid response details are undocumented.
+- Actual Result: The API returned `200 OK` with the documented success message and id 5, contradicting the rejection oracle.
+- Status: Fail
+- Evidence: [FR01-DT-020](./evidence/FR01-DT-020.png)
 
 ## FR01-DT-021
 
@@ -468,11 +441,9 @@
   2. Send `POST http://localhost:3000/api/register`.
   3. Observe the public HTTP status and JSON response.
 - Expected Result: The response does not satisfy the documented successful-registration contract of HTTP 200 with the success message and an `id`. Exact invalid status and response body are unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: API-REQUEST-I03; PASSWORD-PRESENCE-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: No Confirm Password property is added; invalid response details are undocumented.
+- Actual Result: The API returned `200 OK` with the documented success message and id 6, contradicting the rejection oracle.
+- Status: Fail
+- Evidence: [FR01-DT-021](./evidence/FR01-DT-021.png)
 
 ## FR01-DT-022
 
@@ -491,11 +462,10 @@
   3. Enter `Ab1!` in Password and Confirm Password.
   4. Submit the form and observe completion, errors, and navigation.
 - Expected Result: Registration is rejected, does not complete, and does not navigate to Login. If a form error is displayed, it appears above the submit control; exact text is unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: PASSWORD-LENGTH-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: `Ab1!` retains uppercase, lowercase, digit, and special-character classes; only the non-boundary length partition is invalid.
+- Actual Result: The registration page loaded, but no Confirm Password label or input control was present. Execution stopped before form submission.
+- Status: Blocked
+- Blocking Reason: The test requires a matching Confirm Password value to isolate the invalid password-length partition, but the UI does not provide this control.
+- Evidence: [FR01-DT-022](./evidence/FR01-DT-022.png)
 
 ## FR01-DT-023
 
@@ -512,12 +482,10 @@
   1. Prepare JSON `{"name":"Nguyen Van A","email":"fr01-invalid-email","password":"ValidPass1!"}`.
   2. Send `POST http://localhost:3000/api/register`.
   3. Observe the public HTTP status and JSON response.
-- Expected Result: The response does not satisfy the documented successful-registration contract of HTTP 200 with the success message and an `id`. Exact invalid status and response body are unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: EMAIL-FORMAT-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: The selected value isolates the named invalid partition; Confirm Password is not part of the approved API contract.
+- Expected Result: The response does not satisfy the documented successful-registration contract of HTTP 200 with the success message and an `id` = 7. Exact invalid status and response body are unspecified.
+- Actual Result: The API returned `200 OK` with the documented success message and id 8, contradicting the rejection oracle.
+- Status: Fail
+- Evidence: [FR01-DT-023](./evidence/FR01-DT-023.png)
 
 ## FR01-DT-024
 
@@ -535,11 +503,9 @@
   2. Send `POST http://localhost:3000/api/register`.
   3. Observe the public HTTP status and JSON response.
 - Expected Result: The response does not satisfy the documented successful-registration contract of HTTP 200 with the success message and an `id`. Exact invalid status and response body are unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: EMAIL-UNIQUENESS-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: Email is controlled existing; all other properties remain nominal.
+- Actual Result: The API returned `200 OK` with the documented success message and id 8, contradicting the rejection oracle.
+- Status: Fail
+- Evidence: [FR01-DT-024](./evidence/FR01-DT-024.png)
 
 ## FR01-DT-025
 
@@ -557,11 +523,9 @@
   2. Send `POST http://localhost:3000/api/register`.
   3. Observe the public HTTP status and JSON response.
 - Expected Result: The response does not satisfy the documented successful-registration contract of HTTP 200 with the success message and an `id`. Exact invalid status and response body are unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: PASSWORD-LENGTH-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: The selected value isolates the named invalid partition; Confirm Password is not part of the approved API contract.
+- Actual Result: The API returned `200 OK` with the documented success message and id 9, contradicting the rejection oracle.
+- Status: Fail
+- Evidence: [FR01-DT-025](./evidence/FR01-DT-025.png)
 
 ## FR01-DT-026
 
@@ -579,11 +543,9 @@
   2. Send `POST http://localhost:3000/api/register`.
   3. Observe the public HTTP status and JSON response.
 - Expected Result: The response does not satisfy the documented successful-registration contract of HTTP 200 with the success message and an `id`. Exact invalid status and response body are unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: PASSWORD-UPPERCASE-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: The selected value isolates the named invalid partition; Confirm Password is not part of the approved API contract.
+- Actual Result: The API returned `200 OK` with the documented success message and id 10, contradicting the rejection oracle.
+- Status: Fail
+- Evidence: [FR01-DT-026](./evidence/FR01-DT-026.png)
 
 ## FR01-DT-027
 
@@ -601,11 +563,9 @@
   2. Send `POST http://localhost:3000/api/register`.
   3. Observe the public HTTP status and JSON response.
 - Expected Result: The response does not satisfy the documented successful-registration contract of HTTP 200 with the success message and an `id`. Exact invalid status and response body are unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: PASSWORD-LOWERCASE-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: The selected value isolates the named invalid partition; Confirm Password is not part of the approved API contract.
+- Actual Result: The API returned `200 OK` with the documented success message and id 11, contradicting the rejection oracle.
+- Status: Fail
+- Evidence: [FR01-DT-027](./evidence/FR01-DT-027.png)
 
 ## FR01-DT-028
 
@@ -623,11 +583,9 @@
   2. Send `POST http://localhost:3000/api/register`.
   3. Observe the public HTTP status and JSON response.
 - Expected Result: The response does not satisfy the documented successful-registration contract of HTTP 200 with the success message and an `id`. Exact invalid status and response body are unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: PASSWORD-DIGIT-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: The selected value isolates the named invalid partition; Confirm Password is not part of the approved API contract.
+- Actual Result: The API returned `200 OK` with the documented success message and id 12, contradicting the rejection oracle.
+- Status: Fail
+- Evidence: [FR01-DT-028](./evidence/FR01-DT-028.png)
 
 ## FR01-DT-029
 
@@ -645,11 +603,9 @@
   2. Send `POST http://localhost:3000/api/register`.
   3. Observe the public HTTP status and JSON response.
 - Expected Result: The response does not satisfy the documented successful-registration contract of HTTP 200 with the success message and an `id`. Exact invalid status and response body are unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: PASSWORD-SPECIAL-I01; VALIDATION-REJECTION-V01
-- Notes and Assumptions: The selected value isolates the named invalid partition; Confirm Password is not part of the approved API contract.
+- Actual Result: The API returned `200 OK` with the documented success message and id 13, contradicting the rejection oracle.
+- Status: Fail
+- Evidence: [FR01-DT-029](./evidence/FR01-DT-029.png)
 
 ## Boundary Value Analysis Test Cases
 
@@ -670,11 +626,10 @@
   3. Activate the registration submit control.
   4. Observe whether registration completes, any displayed validation error, and navigation.
 - Expected Result: Registration is rejected because the password is shorter than 8 characters; it does not complete. Exact UI error text is unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: FR01-PASSWORD-LENGTH-B01
-- Notes and Assumptions: All character-class rules remain valid. Execution depends on Confirm Password control availability. This case is distinct by surface and boundary position.
+- Actual Result: The registration page loaded, but no Confirm Password label or input control was present. Execution stopped before form submission.
+- Status: Blocked
+- Blocking Reason: The test requires Confirm Password to match the 7-character password so the min-1 boundary is isolated, but the UI does not provide this control.
+- Evidence: [FR01-BVA-001.png](./evidence/FR01-BVA-001.png)
 
 ## FR01-BVA-002
 
@@ -693,11 +648,10 @@
   3. Activate the registration submit control.
   4. Observe whether registration completes, any displayed validation error, and navigation.
 - Expected Result: Registration completes successfully and navigates to the Login page; no exact URL, timing, or success text is asserted.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: FR01-PASSWORD-LENGTH-B02
-- Notes and Assumptions: All character-class rules remain valid. Execution depends on Confirm Password control availability. This case is distinct by surface and boundary position.
+- Actual Result: The registration page loaded, but no Confirm Password label or input control was present. Execution stopped before form submission.
+- Status: Blocked
+- Blocking Reason: The test requires Confirm Password to match the 8-character password so the minimum boundary is isolated, but the UI does not provide this control.
+- Evidence: [FR01-BVA-002.png](./evidence/FR01-BVA-002.png)
 
 ## FR01-BVA-003
 
@@ -716,11 +670,10 @@
   3. Activate the registration submit control.
   4. Observe whether registration completes, any displayed validation error, and navigation.
 - Expected Result: Registration completes successfully and navigates to the Login page; no exact URL, timing, or success text is asserted.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: FR01-PASSWORD-LENGTH-B03
-- Notes and Assumptions: All character-class rules remain valid. Execution depends on Confirm Password control availability. This case is distinct by surface and boundary position.
+- Actual Result: The registration page loaded, but no Confirm Password label or input control was present. Execution stopped before form submission.
+- Status: Blocked
+- Blocking Reason: The test requires Confirm Password to match the 9-character password so the min+1 boundary is isolated, but the UI does not provide this control.
+- Evidence: [FR01-BVA-003.png](./evidence/FR01-BVA-003.png)
 
 ## FR01-BVA-004
 
@@ -739,11 +692,10 @@
   3. Activate the registration submit control.
   4. Observe whether registration completes, any displayed validation error, and navigation.
 - Expected Result: Registration completes successfully and navigates to the Login page; no exact URL, timing, or success text is asserted.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: FR01-PASSWORD-LENGTH-N01
-- Notes and Assumptions: All character-class rules remain valid. Execution depends on Confirm Password control availability. This case is distinct by surface and boundary position.
+- Actual Result: The registration page loaded, but no Confirm Password label or input control was present. Execution stopped before form submission.
+- Status: Blocked
+- Blocking Reason: The test requires Confirm Password to match the 11-character nominal password, but the UI does not provide this control.
+- Evidence: [FR01-BVA-004.png](./evidence/FR01-BVA-004.png)
 
 ## FR01-BVA-005
 
@@ -761,11 +713,9 @@
   2. Send `POST http://localhost:3000/api/register`.
   3. Observe the public HTTP status and JSON response.
 - Expected Result: The response does not satisfy the documented successful-registration contract because the password is shorter than 8 characters. Exact invalid status and response body are unspecified.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: FR01-PASSWORD-LENGTH-B01
-- Notes and Assumptions: All character-class rules remain valid. Confirm Password is omitted from the API body per contract. This case is distinct by surface and boundary position.
+- Actual Result: The API returned `200 OK` with the documented success message and id 14, contradicting the rejection oracle.
+- Status: Fail
+- Evidence: [FR01-BVA-005](./evidence/FR01-BVA-005.png)
 
 ## FR01-BVA-006
 
@@ -783,11 +733,9 @@
   2. Send `POST http://localhost:3000/api/register`.
   3. Observe the public HTTP status and JSON response.
 - Expected Result: The response is `200 OK` JSON containing the documented success message and an `id` value.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: FR01-PASSWORD-LENGTH-B02
-- Notes and Assumptions: All character-class rules remain valid. Confirm Password is omitted from the API body per contract. This case is distinct by surface and boundary position.
+- Actual Result: The API returned `200 OK` with the documented success message and id 15.
+- Status: Pass
+- Evidence: [FR01-BVA-006](./evidence/FR01-BVA-006.png)
 
 ## FR01-BVA-007
 
@@ -805,11 +753,9 @@
   2. Send `POST http://localhost:3000/api/register`.
   3. Observe the public HTTP status and JSON response.
 - Expected Result: The response is `200 OK` JSON containing the documented success message and an `id` value.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: FR01-PASSWORD-LENGTH-B03
-- Notes and Assumptions: All character-class rules remain valid. Confirm Password is omitted from the API body per contract. This case is distinct by surface and boundary position.
+- Actual Result: The API returned `200 OK` with the documented success message and id 16.
+- Status: Pass
+- Evidence: [FR01-BVA-007](./evidence/FR01-BVA-007.png)
 
 ## FR01-BVA-008
 
@@ -827,11 +773,9 @@
   2. Send `POST http://localhost:3000/api/register`.
   3. Observe the public HTTP status and JSON response.
 - Expected Result: The response is `200 OK` JSON containing the documented success message and an `id` value.
-- Actual Result: Not Executed
-- Status: Not Executed
-- Evidence: None
-- Partition or Boundary Covered: FR01-PASSWORD-LENGTH-N01
-- Notes and Assumptions: All character-class rules remain valid. Confirm Password is omitted from the API body per contract. This case is distinct by surface and boundary position.
+- Actual Result: The API returned `200 OK` with the documented success message and id 18.
+- Status: Pass
+- Evidence: [FR01-BVA-008](./evidence/FR01-BVA-008.png)
 
 ## Exploratory Backlog
 
@@ -899,7 +843,7 @@
   - Avoided undocumented API status codes and error messages.
   - Updated the coverage table for all new cases.
   - Confirmed that all eight BVA cases remain covered.
-  - Confirmed that all cases remain unexecuted.
+  - Confirmed that all cases were unexecuted at the time of the Phase 5 design review.
 
 - Missing Cases Added: 8
   - `FR01-DT-022`: Short password through UI.
@@ -925,4 +869,4 @@
 
 - Approved for Traceability and Quality Review: Yes
 
-- Approved for Test Execution: No
+- Approved for Test Execution: Yes

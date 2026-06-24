@@ -94,25 +94,21 @@ Status: Not Executed
 Evidence: None
 ```
 
-## Phase 6: Human Review Gate
-
-Stop before execution and require explicit user confirmation that a human reviewed the work. The reviewer verifies requirement accuracy, partition completeness, boundary correctness, concrete data, observable expected results, duplicate removal, technique classification, traceability, assumptions, and missing cases. Record corrections and review status. Do not mark reports final or execute tests while review is pending.
-
-## Phase 7: Black-box Test Execution
+## Phase 6: Black-box Test Execution
 
 Execute only when the user explicitly requests it, the environment is available, and human review is complete. Use only UI or public API interfaces. For each executed case record date/time, environment, Actual Result, status (`Pass`, `Fail`, or `Blocked`), and real evidence; include a blocking reason for `Blocked`. Never infer results from source inspection.
 
-## Phase 8: Evidence and Bug Reporting
+## Phase 7: Evidence and Bug Reporting
 
 Save evidence as `reports/<FEATURE-ID>/evidence/<TEST-CASE-ID>.<extension>` and add it to `evidence/evidence-index.md` with Test Case ID, path, type, execution time, environment, and notes.
 
 Report a bug only after reproducing an observable failure against a documented expected result. Record Bug ID, title, related case, requirement, preconditions, reproduction steps, expected and actual results, severity, evidence, GitHub Issue link, and status. Leave the Issue link explicitly pending until a real issue exists.
 
-## Phase 9: AI Gap Analysis
+## Phase 8: AI Gap Analysis
 
 Compare initial AI-generated tests, human corrections, human-added tests, behaviours or bugs missed by AI, runtime findings, and the reason for every gap. Do not claim AI missed a runtime bug before execution. Preserve generated output files for audit and append AI interactions with `scripts/append_ai_audit.py`.
 
-## Phase 10: Final Validation and Output
+## Phase 9: Final Validation and Output
 
 Validate requirement, partition, and boundary coverage; execution metrics; evidence completeness; bug traceability; AI-gap completeness; and human-review status. Run `scripts/validate_test_cases.py` and correct every error.
 
