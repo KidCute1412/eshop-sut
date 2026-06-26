@@ -10,9 +10,10 @@ Domain Testing is a functional black-box technique. Model the feature's input, o
 4. Define valid and invalid partitions for each relevant variable or condition.
 5. Explain how each partition follows from its test basis and choose concrete representative values.
 6. Model cross-variable and state dependencies instead of treating all inputs independently.
-7. Combine representatives by risk and interaction; avoid an unjustified Cartesian product.
-8. Remove cases only when rule, partition, data intent, and observable outcome are materially identical.
-9. Trace every test case back to a partition and rule.
+7. Split public control/property existence, value presence, and value relationship partitions when they can produce different observations or blockers.
+8. Combine representatives by risk and interaction; avoid an unjustified Cartesian product.
+9. Remove cases only when rule, partition, data intent, surface, and observable outcome are materially identical.
+10. Trace every test case back to a partition and rule.
 
 ## Approved Evidence Classes
 
@@ -31,6 +32,12 @@ Implementation source, internal tests, and database constraints are not test bas
 
 Use only when relevant: present/missing, empty/whitespace/null, valid/invalid format, valid/invalid length or range, existing/non-existing public identity, duplicate/unique, authenticated/unauthenticated/role, allowed/disallowed state, before/at/after time, and empty/one/many collection states.
 
+For public forms and API contracts, model these separately when applicable: control/property exists or is absent, value is provided or missing, two values match or mismatch, and output/navigation succeeds or is rejected. Do not collapse a missing public control into an empty value partition.
+
 ## Expected Results
 
 Describe public outcomes such as a UI message, rendered state, HTTP status/body, redirect, token presence, or externally visible state transition. Do not use hidden database state, implementation behaviour, or vague phrases such as "works correctly."
+
+## Surface Coverage Check
+
+For every normative partition, decide whether it applies to UI, API, or both. Coverage on one surface does not cover another public surface unless the requirement or contract says so. Record every excluded surface with a reason, such as no public input on that surface, no oracle, ambiguity, or dependency on a separate conformance condition.

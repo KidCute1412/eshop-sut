@@ -27,6 +27,15 @@ Use this skill for one selected feature at a time. Domain Testing (DT) and Bound
 - Encourage frequent, focused Git commits for every demonstrated step.
 - Agent Skills are normally individual work; never assume another member's allocation or work.
 
+## Coverage Discipline Learned from Pilot Features
+
+- Separate UI/control existence, value presence, and cross-field relationships into distinct domains when they have different observability, controllability, dependencies, or blocking effects.
+- Build an explicit partition-by-surface coverage check for every public surface in scope, such as UI and API. Do not treat coverage on one surface as coverage on another unless the test basis explicitly limits the rule to one surface.
+- Cover broad invalid equivalence partitions and BVA boundaries separately when both are meaningful. Boundary coverage does not automatically replace a non-boundary invalid DT representative.
+- Keep conformance checks that can block many cases, such as missing controls or unavailable public states, visible as their own cases and execute or review them early.
+- Keep unsupported behaviours in ambiguity or exploratory sections. Do not turn missing maximum lengths, normalization, exact messages, undocumented status codes, or implementation-only behaviour into normative expectations.
+- Attribute runtime findings carefully: a bug exposed by an AI-generated test is a successful runtime discovery, not an AI-missed bug. A human-added test that exposes a bug may be both a missed-case gap and a runtime finding.
+
 ## Phase 1: Feature Intake
 
 Ask the user to select the feature; never select one automatically. Collect and record:
@@ -66,6 +75,15 @@ For every input, state, or condition, record:
 
 Explain how every partition follows from a rule, specification, observable domain, or explicit assumption. Model relevant missing, empty, null, format, length, range, count, uniqueness, identity, actor, state, time, and cross-field partitions without forcing irrelevant categories.
 
+When modeling forms or public contracts, distinguish:
+
+- Whether a public control or request property exists.
+- Whether the user or request supplies a value.
+- Whether two or more values satisfy a relationship.
+- Whether an output or navigation result is observable.
+
+Record ambiguous or exploratory partitions separately from normative valid/invalid partitions.
+
 ## Phase 4: Boundary Value Analysis
 
 Apply BVA only to ordered or bounded domains. For each boundary record Boundary ID, variable, rule, test basis, on point, off point, in point when relevant, selected values, expected classification, and justification.
@@ -85,6 +103,15 @@ Every case must include:
 - Test Basis Reference.
 
 Keep DT and BVA cases separate. Remove unjustified duplication, but do not omit distinct partitions, boundaries, surfaces, or dependency conditions merely to reduce the number of cases.
+
+Before stopping for human review, produce or verify a coverage summary that maps:
+
+- Each normative partition to at least one DT case on each applicable public surface.
+- Each selected boundary value to at least one BVA case on each applicable public surface.
+- Each omitted surface, partition, or boundary to a documented exclusion reason.
+- Each dependency or blocking-prone conformance condition to a dedicated case when it can affect many later cases.
+
+Use concrete representative data that isolates one invalid condition where practical. Keep unrelated variables nominally valid, and do not use vague placeholders when a reproducible public value can be chosen.
 
 The AI must not execute tests in this phase. Before genuine execution, write exactly:
 
@@ -130,6 +157,8 @@ Do not execute tests while approval is `No` or missing.
 ### Step 2: Black-box Test Execution
 
 After human approval, execute each case through only the public UI or public API. The human may execute manually or explicitly supervise AI-assisted browser/API execution.
+
+Execute dependency and public-conformance cases early when their result can block later cases. If a real public condition blocks a case, mark only the dependent cases as `Blocked`, give the concrete blocking reason, and preserve evidence of the blocker.
 
 For every attempted case, record:
 
@@ -211,39 +240,14 @@ For each gap, record:
 
 Distinguish prompt-quality gaps, AI reasoning limitations, missing test-basis information, application complexity, and findings that were knowable only through execution. Do not claim the AI missed a runtime bug before that bug was actually observed.
 
+Classify findings precisely:
+
+- AI-missed test case: a required partition, boundary, surface, or dependency condition absent from the preserved initial AI suite.
+- Human improvement: an existing case made clearer, more executable, better traced, or better isolated without changing its core coverage target.
+- Runtime bug from AI-generated test: a failure discovered by executing a case that already existed in the preserved initial AI output.
+- Runtime bug from human-added test: a failure discovered by a case added during human review.
+
 Preserve the original AI output and append the relevant interactions to the AI Audit with `scripts/append_ai_audit.py`. Human review is required before the AI gap analysis is final.
-
-## Phase 9: Traceability and Final Validation
-
-Create `reports/<FEATURE-ID>/traceability-matrix.md`.
-
-Trace:
-
-- Requirement or rule to partition.
-- Partition to Domain Testing test case.
-- Requirement or rule to boundary.
-- Boundary to BVA test case.
-- Test case to execution status and evidence.
-- Failed test case to Bug ID and GitHub Issue.
-- Explicit gaps, ambiguities, and exclusions.
-
-Validate:
-
-- Every relevant requirement has coverage or an explicit justified gap.
-- Every selected partition and boundary maps to at least one appropriate case.
-- Test data, expected results, and technique classifications are correct.
-- Execution statuses and evidence links are complete and consistent.
-- Blocked cases contain real blocking reasons and evidence.
-- Confirmed bugs are reproducible and traceable to failed cases.
-- AI-gap entries are supported by preserved AI output and human corrections.
-- Human-review approval is recorded.
-- All internal links resolve.
-
-Run:
-
-`python .agents/skills/domain-testing-bva/scripts/validate_test_cases.py reports/<FEATURE-ID>/test-cases.md`
-
-Correct every validation error before finalizing. Record feature-level metrics in the assignment's final `README.md`; do not require a separate per-feature execution-summary file.
 
 The complete feature workspace is:
 
@@ -253,7 +257,6 @@ reports/<FEATURE-ID>/
 |-- domain-testing.md
 |-- boundary-value-analysis.md
 |-- test-cases.md
-|-- traceability-matrix.md
 |-- bug-report.md
 |-- ai-gap-analysis.md
 `-- evidence/
