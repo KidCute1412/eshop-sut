@@ -62,3 +62,17 @@
      - Thiết lập bảng Phân tích giá trị biên (BVA Table) tập trung vào biên phân quyền (giá trị chuỗi vai trò), biên hiệu lực Token JWT (lệch đúng 1 giây còn hạn hay hết hạn), và biên định dạng header Authorization.
      - Thiết kế bộ test case chi tiết cho Domain Testing (FR12-DT-01 đến FR12-DT-07) và BVA (FR12-BVA-01 đến FR12-BVA-06) với đầy đủ ánh xạ truy vết.
      ```
+
+4. **Tương tác #4**:
+   * **AI Tool Name**: Gemini (Antigravity Coding Assistant)
+   * **Date & Time**: 2026-06-26 20:38 (GMT+7)
+   * **Yêu cầu (Your Prompt)**:
+     ```text
+     tôi đã thêm 1 hình ảnh fr10-dt05-fail, đó thể hiện bên admin đã ship nhưng bên user vẫn có thể ấn hủy được.
+     ```
+   * **Kết quả (AI Output)**:
+     ```text
+     Đã cập nhật chi tiết lỗi FR10-DT-05 và FR10-BVA-05 (User tự hủy đơn hàng đang giao hàng) kèm theo hình ảnh minh chứng fr10-DT05-fail.png vào các tài liệu:
+     - main_report.md: Mục 2.3 AI Gap Analysis & Screenshot Proofs (giải thích lỗi ở cả Frontend lẫn Backend).
+     - bug_report.md: Cập nhật chi tiết lỗi BUG-001 bao gồm mô tả lỗi, các bước tái hiện, kết quả mong đợi và thực tế.
+     ```

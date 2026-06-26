@@ -200,13 +200,16 @@ Vì trạng thái là biến quy trình (state variable), việc phân tích bi�
 ---
 
 ### 2.3. AI Gap Analysis & Screenshot Proofs
-*Identify missed test cases or bugs by AI tools, and explain why they were missed.*
+- **AI Gap Analysis**:
+  * **FR10-DT-05 & FR10-BVA-05 (Lỗi User tự hủy đơn hàng ở trạng thái shipping)**: Thiết kế test case của AI đã chỉ ra rằng khi trạng thái đơn hàng đã sang `shipping`, hệ thống phải chặn không cho User tự hủy và trả về lỗi `400 Bad Request`. Tuy nhiên, trong thực tế, hệ thống SUT bị lỗi đồng bộ quyền và kiểm tra logic ở cả Frontend lẫn Backend. Ở phía Frontend của User, nút "Hủy đơn hàng" vẫn xuất hiện và hoạt động bình thường đối với đơn hàng đang ở trạng thái `shipping` (đã được Admin xác nhận giao hàng). Khi click vào, API xử lý cập nhật trạng thái đơn hàng của Backend không xác thực điều kiện chặn này đối với vai trò `User`, cho phép chuyển đổi trạng thái từ `shipping` sang `canceled` thành công.
+  * **FR10-BVA-04 (Lỗi chuyển từ canceled sang delivered)**: Đặc tả yêu cầu trạng thái `canceled` là trạng thái kết thúc (Final State) và không thể chuyển đi đâu khác. Tuy nhiên, hệ thống thực tế (Backend) thiếu kiểm tra điều kiện này, dẫn đến việc Admin vẫn có thể gửi request chuyển một đơn hàng đã hủy (`canceled`) sang trạng thái đã giao (`delivered`) mà không bị hệ thống từ chối.
 
 #### Minh chứng kết quả chạy test / lỗi phát hiện (Screenshots):
-*(Dán hình ảnh minh chứng từ thư mục `images/` vào đây)*
-```markdown
-![FR10 Verification](images/fr10_verification.png)
-```
+![Lỗi User tự hủy đơn hàng khi đã ở trạng thái shipping (FR10-DT-05)](images/fr10-DT05-fail.png)
+*Hình 2.1: Minh chứng lỗi cho kịch bản **FR10-DT-05** - Admin đã chuyển đơn hàng sang trạng thái shipping (đang giao hàng) nhưng bên giao diện User vẫn có nút Hủy và thực hiện hủy thành công đơn hàng.*
+
+![Lỗi Admin cập nhật đơn hàng đã hủy thành công sang đã giao (FR10-BVA-04)](images/fr10-BVA04-fail.png)
+*Hình 2.2: Minh chứng lỗi cho kịch bản **FR10-BVA-04** - Giao diện quản lý đơn hàng của Admin hiển thị đơn hàng đã ở trạng thái kết thúc "Đã hủy" (canceled) nhưng vẫn cho phép bấm nút "Đánh dấu Đã giao" (delivered).*
 
 ---
 ---
