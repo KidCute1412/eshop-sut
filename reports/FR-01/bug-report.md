@@ -1,17 +1,5 @@
 # Bug Report - FR-01 Account Registration
 
-## Summary
-
-| Bug ID       | Title                                                               | Severity | Related Test Cases                            | GitHub Issue |
-| ------------ | ------------------------------------------------------------------- | -------- | --------------------------------------------- | ------------ |
-| BUG-FR01-001 | Registration UI is missing Confirm Password                         | Medium   | FR01-DT-012                                   | Pending      |
-| BUG-FR01-002 | Required registration labels are missing `*` markers                | Low      | FR01-DT-015                                   | Pending      |
-| BUG-FR01-003 | Email input uses `type="text"` instead of `type="email"`            | Low      | FR01-DT-016                                   | Pending      |
-| BUG-FR01-004 | Registration API accepts requests with missing required properties  | High     | FR01-DT-019, FR01-DT-020, FR01-DT-021         | Pending      |
-| BUG-FR01-005 | Registration API accepts malformed email addresses                  | Medium   | FR01-DT-023                                   | Pending      |
-| BUG-FR01-006 | Registration API accepts duplicate email addresses                  | High     | FR01-DT-024                                   | Pending      |
-| BUG-FR01-007 | Registration API accepts passwords that violate the strength policy | High     | FR01-DT-025 through FR01-DT-029; FR01-BVA-005 | Pending      |
-
 ## BUG-FR01-001: Registration UI Is Missing Confirm Password
 
 - Status: Confirmed
