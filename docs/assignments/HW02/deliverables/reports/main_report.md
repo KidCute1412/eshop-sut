@@ -72,7 +72,7 @@ Chúng tôi xác định các biến và điều kiện hệ thống sau cho tí
 | FR06-DT-03 | Xem trang chi tiết của sản phẩm không tồn tại. | Product ID = 9999 | Hiển thị thông báo lỗi "Sản phẩm không tồn tại" hoặc điều hướng an toàn (không bị trắng trang). | Fail | EP-INV-05 |
 | FR06-DT-04 | Thêm vào giỏ hàng với số lượng là số nguyên dương hợp lệ. | Product ID = 1, Quantity = 3 | Sản phẩm được thêm vào giỏ, cập nhật badge giỏ hàng, hiển thị thông báo toast hoặc badge cập nhật trực quan. | Fail | EP-VAL-01, EP-VAL-02 |
 | FR06-DT-05 | Thêm vào giỏ hàng với số lượng âm. | Product ID = 1, Quantity = -5 | Từ chối đầu vào, hiển thị thông báo lỗi hoặc reset về giá trị mặc định. | Fail | EP-INV-01, EP-VAL-02 |
-| FR06-DT-06 | Thêm vào giỏ hàng với số lượng không phải là số. | Product ID = 1, Quantity = "abc" | Từ chối đầu vào, hiển thị thông báo lỗi hoặc đặt lại về 1. | Fail | EP-INV-03, EP-VAL-02 |
+| FR06-DT-06 | Thêm vào giỏ hàng với số lượng không phải là số. | Product ID = 1, Quantity = "abc" | Từ chối đầu vào, hiển thị thông báo lỗi hoặc đặt lại về 1. | Pass | EP-INV-03, EP-VAL-02 |
 | FR06-DT-07 | Thêm vào giỏ hàng với số lượng là số thập phân. | Product ID = 1, Quantity = 2.5 | Từ chối đầu vào hoặc làm tròn có thông báo cảnh báo cho người dùng. | Fail | EP-INV-02, EP-VAL-02 |
 
 #### 1.1.4. Giải thích áp dụng kỹ thuật
@@ -107,13 +107,28 @@ Chúng tôi xác định các biến và điều kiện hệ thống sau cho tí
 ---
 
 ### 1.3. AI Gap Analysis & Screenshot Proofs
-*Identify missed test cases or bugs by AI tools, and explain why they were missed.*
+- **AI Gap Analysis**:
+  * **FR06-DT-03 (Lỗi xem sản phẩm không tồn tại)**: Kịch bản kiểm thử thiết kế bởi AI đã bao phủ trường hợp kiểm thử biên và lớp tương đương không hợp lệ (Mã sản phẩm không tồn tại). Tuy nhiên, trên hệ thống SUT thực tế, mã nguồn React/Frontend chưa có cơ chế bắt lỗi (Error Boundary) hoặc kiểm tra dữ liệu null/undefined trước khi render thông tin chi tiết sản phẩm. Khi API trả về null hoặc rỗng cho Product ID không tồn tại, frontend cố gắng truy cập các thuộc tính của đối tượng rỗng dẫn đến crash ứng dụng và gây ra lỗi trắng trang.
+  * **FR06-DT-04 (Lỗi click đúp để thêm vào giỏ)**: AI thiết kế kịch bản kiểm thử giả định hành động thêm sản phẩm sẽ hoạt động ngay lập tức sau 1 lần click như thông thường. Tuy nhiên, trong thực tế, lỗi đồng bộ trạng thái (state synchronization) hoặc lỗi bất đồng bộ trong hàm xử lý sự kiện onClick tại frontend đã khiến cho click đầu tiên bị bỏ qua (hoặc chỉ cập nhật state nội bộ mà không gọi dispatch/API), bắt buộc người dùng phải click lần thứ 2 liên tiếp thì hành động thêm vào giỏ hàng mới thành công. *(Lưu ý: Lỗi này cũng xuất hiện tương tự trên các kịch bản BVA là FR06-BVA-01, FR06-BVA-03 và FR06-BVA-04)*.
+  * **FR06-DT-05 (Lỗi thêm số lượng âm vào giỏ hàng)**: AI đã thiết lập các phân hoạch tương đương không hợp lệ để kiểm thử các giá trị đầu vào sai như số lượng âm. Tuy nhiên, hệ thống SUT thực tế ở cả phía frontend và backend API đều thiếu cơ chế validate (kiểm tra tính hợp lệ) đầu vào cho trường số lượng. Hệ thống vẫn chấp nhận cho phép thêm sản phẩm với số lượng âm (ví dụ: -5) vào giỏ hàng mà không có bất kỳ cảnh báo hay ngăn chặn nào, dẫn đến lỗi logic nghiệp vụ nghiêm trọng.
+  * **FR06-DT-07 (Lỗi thêm số lượng thập phân không cảnh báo)**: AI thiết kế kịch bản kiểm thử với đầu vào là số thập phân và mong đợi hệ thống từ chối hoặc làm tròn kèm theo thông báo cảnh báo trực quan cho người dùng. Trong thực tế, hệ thống vẫn chấp nhận số lượng thập phân nhập từ ô input (ví dụ: 2.5), âm thầm làm tròn xuống thành số nguyên (ví dụ: 2) khi lưu vào giỏ hàng mà không hiển thị bất kỳ thông báo lỗi hay cảnh báo nào, gây hiểu nhầm về trải nghiệm người dùng.
+  * **FR06-BVA-02 (Lỗi thêm số lượng bằng 0 vào giỏ hàng)**: Kỹ thuật phân tích giá trị biên đã xác định giá trị `0` là điểm cận biên không hợp lệ dưới biên dưới 1. Tuy nhiên, mã nguồn xử lý thêm sản phẩm trong `CartContext` không kiểm tra giá trị của số lượng truyền vào, dẫn đến việc sản phẩm có số lượng bằng `0` vẫn được thêm vào giỏ hàng một cách bất thường mà không gặp bất kỳ lỗi hay thông báo ngăn chặn nào.
 
 #### Minh chứng kết quả chạy test / lỗi phát hiện (Screenshots):
-*(Dán hình ảnh minh chứng từ thư mục `images/` vào đây)*
-```markdown
-![FR06 Verification](images/fr06_verification.png)
-```
+![Lỗi trắng trang khi xem sản phẩm không tồn tại (FR06-DT-03)](images/fr06-DT03-fail.png)
+*Hình 1.1: Minh chứng lỗi trắng trang (crashed) khi truy cập sản phẩm không tồn tại (FR06-DT-03).*
+
+![Lỗi phải nhấn 2 lần nút Thêm vào giỏ hàng (FR06-DT-04)](images/fr06-DT04-fail.png)
+*Hình 1.2: Trang chi tiết sản phẩm chuẩn bị thêm vào giỏ hàng với số lượng bằng 3 (cần click 2 lần nút "Thêm vào giỏ hàng" mới có tác dụng) (FR06-DT-04).*
+
+![Lỗi thêm số lượng âm vào giỏ hàng (FR06-DT-05)](images/fr06-DT05-fail.png)
+*Hình 1.3: Giao diện giỏ hàng chấp nhận số lượng sản phẩm âm sau khi thêm thành công (FR06-DT-05).*
+
+![Lỗi thêm số lượng thập phân (FR06-DT-07)](images/fr06-DT07-fail.png)
+*Hình 1.4: Hệ thống cho phép nhập và thêm số lượng 2.5 nhưng âm thầm làm tròn xuống thành 2 trong giỏ hàng (FR06-DT-07).*
+
+![Lỗi thêm số lượng bằng 0 (FR06-BVA-02)](images/fr06-BVA02-fail.png)
+*Hình 1.5: Sản phẩm được thêm vào giỏ hàng thành công với số lượng bằng 0 (FR06-BVA-02).*
 
 ---
 ---
