@@ -250,3 +250,49 @@
 - Updated the validator to stop before Human Review sections.
 - Updated duplicate detection to distinguish different partitions and boundaries.
 - Confirmed that all cases remain unexecuted.
+
+## Manual Activity - 2026-06-24
+
+- Feature ID: FR-01
+- Phase: Phase 6 Human Review and Black-box Test Execution; Phase 7 Evidence Capture and Bug Reporting
+- Performer: Nguyen Thanh Tien
+- AI Tool: None
+- Work Type: Manual human review, manual black-box execution, manual evidence capture, and manual bug reporting
+
+### Manual Work Summary
+
+- Reviewed the 37 human-approved FR-01 test cases before execution.
+- Executed the cases through only the public registration UI and public registration API.
+- Updated `reports/FR-01/test-cases.md` with real Actual Results, Status values, blocking reasons, and evidence references.
+- Recorded final execution metrics:
+  - 37 total test cases
+  - 5 Pass
+  - 14 Fail
+  - 18 Blocked
+  - 0 Not Executed
+- Captured 37 real evidence PNG files under `reports/FR-01/evidence/`.
+- Created `reports/FR-01/bug-report.md` with 7 confirmed bug records.
+- Left GitHub Issue links as `Pending` because real GitHub Issues had not yet been created.
+- Did not inspect implementation source code to determine expected results.
+- Did not fabricate execution results, screenshots, bugs, evidence paths, or GitHub Issue links.
+
+---
+
+### Manual Review Notes
+
+- UI-dependent cases requiring the Confirm Password control were marked `Blocked` when the public registration UI did not provide that control.
+- The Confirm Password control-conformance case itself was marked `Fail`.
+- API failures were recorded only when the public API response contradicted a documented expected result.
+- Evidence files were manually checked against their corresponding test cases.
+
+## AI Interaction - 2026-06-24T20:18:47+07:00
+
+- AI Tool: ChatGPT 5.5
+- Date and Time: 2026-06-24T20:18:47+07:00
+- Feature ID: FR-01
+- Task: Phase 8 AI Gap Analysis for Account Registration
+- Prompt file: [phase-08-ai-gap-analysis-prompt.md](../evidence/agent-skill/FR-01/phase-08-ai-gap-analysis-prompt.md)
+- AI output file: [phase-08-ai-gap-analysis-ai-output.md](../evidence/agent-skill/FR-01/phase-08-ai-gap-analysis-ai-output.md)
+- Generated report: [reports/FR-01/ai-gap-analysis.md](../reports/FR-01/ai-gap-analysis.md)
+- AI Output Summary: Compared preserved Phase 3-5 AI outputs with reviewed reports, 37 execution results, 37 evidence files, and 7 confirmed bug records. Identified 14 supported gaps/findings while distinguishing eight AI-missed cases, human improvements, and runtime bugs exposed by AI-generated tests.
+- Human Review: Completed by Nguyen Thanh Tien on 2026-06-26 7:14
