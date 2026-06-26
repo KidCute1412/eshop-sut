@@ -121,37 +121,66 @@ Chúng tôi xác định các biến và điều kiện hệ thống sau cho tí
 ## 2. FR-10: Order State Machine
 
 ### 2.1. Domain Testing
-#### 2.1.1. Input Variables & Condition Identification
-*List all input variables, state variables, or environmental conditions.*
+#### 2.1.1. Xác định các biến đầu vào & Điều kiện hệ thống
+Chúng tôi xác định các biến đầu vào, biến trạng thái và điều kiện hệ thống sau cho tính năng Trạng thái Đơn hàng (FR-10):
+1. **Current Status (Trạng thái hiện tại)**: Trạng thái hiện tại của đơn hàng trong hệ thống (`pending`, `confirmed`, `shipping`, `delivered`, `canceled`).
+2. **Target Status (Trạng thái đích)**: Trạng thái mà người dùng hoặc admin muốn chuyển đổi tới (`pending`, `confirmed`, `shipping`, `delivered`, `canceled`).
+3. **Actor Role (Vai trò thực hiện)**: Quyền hạn của người thực hiện hành động chuyển đổi trạng thái (`User`, `Admin`).
 
-#### 2.1.2. Equivalence Partitioning Table
-| Input Variable / Condition | Valid Equivalence Classes (ID) | Invalid Equivalence Classes (ID) |
+#### 2.1.2. Bảng Phân hoạch tương đương (Equivalence Partitioning)
+| Biến đầu vào / Điều kiện | Lớp tương đương hợp lệ (ID) | Lớp tương đương không hợp lệ (ID) |
 | :--- | :--- | :--- |
-| | | |
+| **Actor Role (Vai trò)** | **EP-VAL-01**: Admin<br>**EP-VAL-02**: User | **EP-INV-01**: Khách chưa đăng nhập (Guest) |
+| **Current Status (Trạng thái hiện tại)** | **EP-VAL-03**: `pending`<br>**EP-VAL-04**: `confirmed`<br>**EP-VAL-05**: `shipping`<br>**EP-VAL-06**: `delivered`<br>**EP-VAL-07**: `canceled` | **EP-INV-02**: Trạng thái không xác định / rỗng |
+| **Target Status (Trạng thái đích)** | **EP-VAL-08**: Trạng thái chuyển đổi đúng nghiệp vụ tương ứng với trạng thái hiện tại và vai trò của tác nhân. | **EP-INV-03**: Trạng thái chuyển đổi sai nghiệp vụ (không theo sơ đồ trạng thái hoặc sai vai trò). |
 
-#### 2.1.3. Test Cases Designed (Domain Testing)
-| Test Case ID | Test Description | Inputs | Expected Outcome | Status | Traceability Mapping |
+#### 2.1.3. Các kịch bản kiểm thử (Domain Testing)
+| Mã Kịch bản | Mô tả kiểm thử | Đầu vào | Kết quả mong đợi | Trạng thái | Ánh xạ truy vết |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| FR10-DT-01 | | | | | |
+| FR10-DT-01 | Admin chuyển đơn hàng từ `pending` sang `confirmed`. | Actor = Admin, Current = `pending`, Target = `confirmed` | Chuyển đổi thành công, trả về 200 OK. | Pass | EP-VAL-01, EP-VAL-03, EP-VAL-08 |
+| FR10-DT-02 | Admin chuyển đơn hàng từ `confirmed` sang `shipping`. | Actor = Admin, Current = `confirmed`, Target = `shipping` | Chuyển đổi thành công, trả về 200 OK. | Pass | EP-VAL-01, EP-VAL-04, EP-VAL-08 |
+| FR10-DT-03 | Admin chuyển đơn hàng từ `shipping` sang `delivered`. | Actor = Admin, Current = `shipping`, Target = `delivered` | Chuyển đổi thành công, trả về 200 OK. | Pass | EP-VAL-01, EP-VAL-05, EP-VAL-08 |
+| FR10-DT-04 | User hủy đơn hàng ở trạng thái `pending`. | Actor = User, Current = `pending`, Target = `canceled` | Hủy đơn hàng thành công, trả về 200 OK. | Pass | EP-VAL-02, EP-VAL-03, EP-VAL-08 |
+| FR10-DT-05 | User tự hủy đơn hàng ở trạng thái `shipping`. | Actor = User, Current = `shipping`, Target = `canceled` | Hệ thống từ chối, báo lỗi (chỉ Admin mới được thao tác khi đã giao hàng), trả về 400 Bad Request. | Fail | EP-VAL-02, EP-VAL-05, EP-INV-03 |
+| FR10-DT-06 | Admin chuyển đơn hàng từ `pending` sang một trạng thái không hợp lệ (ví dụ: `delivered`). | Actor = Admin, Current = `pending`, Target = `delivered` | Từ chối chuyển đổi, trả về 400 Bad Request. | Pass | EP-VAL-01, EP-VAL-03, EP-INV-03 |
+| FR10-DT-07 | Người dùng chưa đăng nhập (Guest) cố gắng hủy hoặc cập nhật trạng thái đơn hàng. | Actor = Guest, Current = `pending`, Target = `canceled` | Yêu cầu đăng nhập, trả về 401 Unauthorized. | Pass | EP-INV-01, EP-VAL-03, EP-INV-03 |
 
-#### 2.1.4. Application Explanation
-*Step-by-step explanation of how the domain testing technique was applied.*
+#### 2.1.4. Giải thích áp dụng kỹ thuật
+1. **Xác định các biến & điều kiện**: Phân tích sơ đồ chuyển đổi trạng thái của FR-10 và xác định ba yếu tố quyết định tính hợp lệ: vai trò người thực hiện (Actor), trạng thái hiện tại (Current Status) và trạng thái mục tiêu (Target Status).
+2. **Thiết lập phân hoạch**:
+   - Đối với vai trò, chia thành hợp lệ (User, Admin) và không hợp lệ (Guest).
+   - Đối với các cặp chuyển đổi `Current -> Target`, chia làm các chuyển đổi được phép (theo sơ đồ của đặc tả) và các chuyển đổi bị cấm (như quay lui trạng thái, bỏ bước hoặc chuyển từ trạng thái kết thúc).
+3. **Thiết kế test suite**: Xây dựng các kịch bản kiểm thử bao phủ tất cả các phân hoạch tương đương của các biến và điều kiện hệ thống.
 
 ---
 
-### 2.2. Boundary Value Analysis (BVA)
-#### 2.2.1. Boundary Analysis Table
-| Variable / Property | Boundary Condition (ID) | On-Point | Off-Point | In-Point |
+### 2.2. Phân tích giá trị biên (Boundary Value Analysis)
+#### 2.2.1. Bảng Phân tích giá trị biên
+Vì trạng thái là biến quy trình (state variable), việc phân tích biên tập trung vào **các trạng thái kết thúc (Final States)** nơi không được phép chuyển đi bất kỳ đâu khác, và **điểm giới hạn đặc quyền (Constraint boundaries)** giữa User và Admin.
+- Biên trạng thái kết thúc: Trạng thái `delivered` và `canceled` không được chuyển sang trạng thái khác.
+- Biên quyền hạn: Trạng thái `shipping` (User không được phép tự hủy, chỉ Admin mới được làm).
+
+| Đối tượng kiểm thử | Điều kiện biên (ID) | Điểm biên (On-Point) | Điểm cận biên (Off-Point) | Điểm trong biên (In-Point) |
 | :--- | :--- | :--- | :--- | :--- |
-| | | | | |
+| **Trạng thái kết thúc** | Không chuyển trạng thái từ `delivered` (BVA-BND-01) | `delivered` -> Không chuyển (giữ nguyên) | `delivered` -> `pending` (không hợp lệ)<br>`delivered` -> `canceled` (không hợp lệ) | `shipping` -> `delivered` (hợp lệ) |
+| **Trạng thái kết thúc** | Không chuyển trạng thái từ `canceled` (BVA-BND-02) | `canceled` -> Không chuyển (giữ nguyên) | `canceled` -> `delivered` (không hợp lệ)<br>`canceled` -> `confirmed` (không hợp lệ) | `pending` -> `canceled` (hợp lệ) |
+| **Quyền hủy ở `shipping`** | Chỉ Admin được thao tác ở `shipping` (BVA-BND-03) | Actor = Admin thực hiện chuyển đổi ở `shipping` | Actor = User cố gắng hủy ở `shipping` (không hợp lệ) | Actor = User hủy ở `pending` (hợp lệ) |
 
-#### 2.2.2. Test Cases Designed (BVA)
-| Test Case ID | Test Description | Inputs | Expected Outcome | Status | Traceability Mapping |
+#### 2.2.2. Các kịch bản kiểm thử (BVA)
+| Mã Kịch bản | Mô tả kiểm thử | Đầu vào | Kết quả mong đợi | Trạng thái | Ánh xạ truy vết |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| FR10-BVA-01 | | | | | |
+| FR10-BVA-01 | Admin cố gắng chuyển trạng thái từ `delivered` sang `canceled`. | Actor = Admin, Current = `delivered`, Target = `canceled` | Hệ thống từ chối, báo lỗi chuyển đổi trạng thái kết thúc, trả về 400 Bad Request. | Pass | BVA-BND-01 (Off-Point) |
+| FR10-BVA-02 | Admin cố gắng chuyển trạng thái từ `delivered` sang `pending`. | Actor = Admin, Current = `delivered`, Target = `pending` | Hệ thống từ chối, báo lỗi chuyển đổi trạng thái kết thúc, trả về 400 Bad Request. | Pass | BVA-BND-01 (Off-Point) |
+| FR10-BVA-03 | Admin cố gắng chuyển trạng thái từ `canceled` sang `confirmed`. | Actor = Admin, Current = `canceled`, Target = `confirmed` | Hệ thống từ chối, báo lỗi chuyển đổi trạng thái kết thúc, trả về 400 Bad Request. | Pass | BVA-BND-02 (Off-Point) |
+| FR10-BVA-04 | Admin cố gắng chuyển trạng thái từ `canceled` sang `delivered`. | Actor = Admin, Current = `canceled`, Target = `delivered` | Hệ thống từ chối, báo lỗi chuyển đổi trạng thái kết thúc, trả về 400 Bad Request. | Fail | BVA-BND-02 (Off-Point) |
+| FR10-BVA-05 | User cố gắng hủy đơn hàng đang ở trạng thái `shipping`. | Actor = User, Current = `shipping`, Target = `canceled` | Hệ thống từ chối, báo lỗi người dùng không có quyền hủy đơn hàng khi đang giao hàng, trả về 400 Bad Request. | Fail | BVA-BND-03 (Off-Point) |
 
-#### 2.2.3. Application Explanation
-*Step-by-step explanation of how BVA was applied.*
+#### 2.2.3. Giải thích áp dụng kỹ thuật
+1. **Xác định các giá trị biên**: Với máy trạng thái, biên chính là các trạng thái kết thúc nơi luồng xử lý dừng lại (`delivered`, `canceled`) và các điểm giới hạn đặc quyền của người dùng (tại trạng thái `shipping`, quyền tự hủy bị thu hồi).
+2. **Lựa chọn điểm kiểm thử**:
+   - **On-point**: Hành vi đúng quy trình khi đạt đến trạng thái đó (ví dụ: chuyển từ `shipping` sang `delivered` thành công hoặc User hủy ở `pending` thành công).
+   - **Off-point**: Các chuyển đổi cố tình vi phạm biên trạng thái kết thúc (ví dụ: chuyển từ `canceled` sang `delivered` hoặc `delivered` sang trạng thái khác) hoặc vi phạm biên quyền hạn (User hủy ở trạng thái `shipping`).
+3. **Thiết lập kết quả mong đợi**: Mọi hành vi vi phạm biên (Off-point không hợp lệ) phải bị hệ thống ngăn chặn và trả về mã lỗi 400 Bad Request.
 
 ---
 

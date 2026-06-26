@@ -31,3 +31,18 @@
      - Mô tả chi tiết các bước thực hiện kỹ thuật kiểm thử.
      ```
 
+2. **Tương tác #2**:
+   * **AI Tool Name**: Gemini (Antigravity Coding Assistant)
+   * **Date & Time**: 2026-06-26 18:07 (GMT+7)
+   * **Yêu cầu (Your Prompt)**:
+     ```text
+     Apply the custom skill `domain-bva-tester` to generate Equivalence Partitioning (EP) and Boundary Value Analysis (BVA) test cases for "FR-10: Trạng thái Đơn hàng" as specified in README.md. Append the tables into docs/assignments/HW02/deliverables/reports/main_report.md.
+     ```
+   * **Kết quả (AI Output)**:
+     ```text
+     Đã áp dụng thành công kỹ thuật Phân hoạch tương đương (Equivalence Partitioning) và Phân tích giá trị biên (Boundary Value Analysis - BVA) cho yêu cầu "FR-10: Trạng thái Đơn hàng" (Order State Machine) bằng tiếng Việt vào tài liệu main_report.md:
+     - Xác định các biến đầu vào & điều kiện: Current Status (Trạng thái hiện tại), Target Status (Trạng thái đích), và Actor Role (Vai trò thực hiện).
+     - Thiết lập bảng Phân hoạch tương đương (EP Table) chia các lớp vai trò hợp lệ/không hợp lệ, trạng thái hiện tại hợp lệ/không xác định, và trạng thái đích hợp lệ/không hợp lệ theo nghiệp vụ.
+     - Thiết lập bảng Phân tích giá trị biên (BVA Table) tập trung vào các trạng thái kết thúc (delivered, canceled) và giới hạn quyền hạn tại trạng thái shipping.
+     - Thiết kế bộ test case chi tiết cho Domain Testing (FR10-DT-01 đến FR10-DT-07) và BVA (FR10-BVA-01 đến FR10-BVA-05), có ánh xạ truy vết (Traceability Mapping) rõ ràng.
+     ```
