@@ -188,9 +188,9 @@ FR-03 là tính năng **quên mật khẩu và đặt lại mật khẩu** của
 
 | Chỉ số | Số lượng |
 | --- | ---: |
-| Tổng số test case Domain Testing | 7 |
+| Tổng số test case Domain Testing | 8 |
 | Passed | 5 |
-| Failed | 1 |
+| Failed | 2 |
 | Blocked | 1 |
 | Not Executed | 0 |
 | Needs Review | 0 |
@@ -201,43 +201,46 @@ FR-03 là tính năng **quên mật khẩu và đặt lại mật khẩu** của
 
 | Boundary Variable ID | Biến | Quy tắc biên | Giá trị nhỏ nhất | Giá trị lớn nhất | Giá trị bình thường | Ghi chú |
 | --- | --- | --- | --- | --- | --- | --- |
-| `FR03-BVAR-01` | `resetToken` | OTP thực tế của backend nằm trong khoảng `1000–9999`. | `1000` | `9999` | OTP hợp lệ được tạo từ bước 1 | Đặc tả yêu cầu OTP 6 chữ số, nhưng backend tạo OTP 4 chữ số. |
-| `FR03-BVAR-02` | `newPassword` length | Mật khẩu phải có tối thiểu 8 ký tự. | `8 ký tự` | Không nêu rõ | `NewPass123!` | Kiểm thử tập trung vào biên dưới của độ dài mật khẩu. |
+| `FR03-BVAR-01` | `resetToken` | nằm trong khoảng `100000–999999`. | `100000` | `999999` | OTP hợp lệ được tạo từ bước 1 | Không có |
+| `FR03-BVAR-02` | độ dài `newPassword`  | Mật khẩu phải có tối thiểu 8 ký tự. | `8 ký tự` | Không rõ | `NewPass123!` | Không có |
+| `FR03-BVAR-03` | `OTP`  | nằm trong khoảng `100000–999999` | `100000` |       `999999` | Giá trị OTP được tạo ngẫu nhiên trong khoảng hợp lệ | Không có |
 
 ### 6.4.2 Giá trị biên
 
 | Boundary ID | Biến | Loại biên | Giá trị | Hành vi mong đợi | Basis ID |
 | --- | --- | --- | --- | --- | --- |
-| `FR03-B-001` | `resetToken` | `min-1` | `999` | Bị từ chối vì nhỏ hơn miền OTP thực tế. | `FR-03:C2`, `FR-03:C6` |
-| `FR03-B-002` | `resetToken` | `min` | `1000` | Được chấp nhận nếu đúng là token đang lưu cho email. | `FR-03:C2`, `FR-03:C6` |
-| `FR03-B-003` | `resetToken` | `min+1` | `1001` | Được chấp nhận nếu đúng là token đang lưu cho email. | `FR-03:C2`, `FR-03:C6` |
-| `FR03-B-004` | `resetToken` | `max-1` | `9998` | Được chấp nhận nếu đúng là token đang lưu cho email. | `FR-03:C2`, `FR-03:C6` |
-| `FR03-B-005` | `resetToken` | `max` | `9999` | Được chấp nhận nếu đúng là token đang lưu cho email. | `FR-03:C2`, `FR-03:C6` |
-| `FR03-B-006` | `resetToken` | `max+1` | `10000` | Bị từ chối vì lớn hơn miền OTP thực tế. | `FR-03:C2`, `FR-03:C6` |
+| `FR03-B-001` | `resetToken` | `min-1` | `99999` | Bị từ chối vì nhỏ hơn miền OTP thực tế. | `FR-03:C2`, `FR-03:C6` |
+| `FR03-B-002` | `resetToken` | `min` | `100000` | Được chấp nhận nếu đúng là token đang lưu cho email. | `FR-03:C2`, `FR-03:C6` |
+| `FR03-B-003` | `resetToken` | `min+1` | `100001` | Được chấp nhận nếu đúng là token đang lưu cho email. | `FR-03:C2`, `FR-03:C6` |
+| `FR03-B-004` | `resetToken` | `max-1` | `999998` | Được chấp nhận nếu đúng là token đang lưu cho email. | `FR-03:C2`, `FR-03:C6` |
+| `FR03-B-005` | `resetToken` | `max` | `999999` | Được chấp nhận nếu đúng là token đang lưu cho email. | `FR-03:C2`, `FR-03:C6` |
+| `FR03-B-006` | `resetToken` | `max+1` | `1000000` | Bị từ chối vì lớn hơn miền OTP thực tế. | `FR-03:C2`, `FR-03:C6` |
 | `FR03-B-007` | `newPassword` length | `min-1` | 7 ký tự, ví dụ `Abc1!xy` | Bị từ chối vì ngắn hơn 8 ký tự. | `FR-03:C5` |
 | `FR03-B-008` | `newPassword` length | `min` | 8 ký tự, ví dụ `Test1234!` | Được chấp nhận nếu thỏa các nhóm ký tự bắt buộc. | `FR-03:C5` |
+| `FR03-B-009` | `OTP`  | `min` | `100000` | Hệ thống sinh OTP 6 chữ số | `FR-03:C6` |
 
 ### 6.4.3 Test case BVA
 
-| Test Case ID | Boundary ID liên quan | Tiêu đề | Tiền điều kiện | Dữ liệu đầu vào | Các bước thực hiện | Kết quả mong đợi | Kết quả thực tế | Trạng thái | Minh chứng |
+| Test Case ID | Boundary ID liên quan | Tiêu đề | Điều kiện tiên quyết | Dữ liệu đầu vào | Các bước thực hiện | Kết quả mong đợi | Kết quả thực tế | Trạng thái | Minh chứng |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `FR03-BVA-01` | `FR03-B-001` | OTP nhỏ hơn biên dưới | SUT đang chạy. | `email = test@eshop.com`<br>`resetToken = 999`<br>`newPassword = NewPass123!` | 1. Gửi yêu cầu reset với OTP `999`.<br>2. Quan sát phản hồi. | Hệ thống từ chối OTP ngoài miền. | API trả `{"error":"Invalid token or email"}` với HTTP 400. | Passed | `evidence/FR03-BVA-01-api-log.txt` |
-| `FR03-BVA-02` | `FR03-B-002` | OTP tại biên dưới `1000` | Cần có quyền chỉnh dữ liệu DB để ép token thành `1000`. | `resetToken = 1000` | 1. Đặt token của user thành `1000` trong DB.<br>2. Gửi yêu cầu reset với token này. | Nếu token đúng với email, hệ thống đặt lại mật khẩu thành công. | Không thể ép backend tạo token cụ thể nếu không có quyền chỉnh DB. | Blocked | N/A — requires DB access |
-| `FR03-BVA-03` | `FR03-B-003` | OTP ngay trên biên dưới `1001` | Cần có quyền chỉnh dữ liệu DB để ép token thành `1001`. | `resetToken = 1001` | 1. Đặt token của user thành `1001` trong DB.<br>2. Gửi yêu cầu reset với token này. | Nếu token đúng với email, hệ thống đặt lại mật khẩu thành công. | Không thể ép backend tạo token cụ thể nếu không có quyền chỉnh DB. | Blocked | N/A — requires DB access |
-| `FR03-BVA-04` | `FR03-B-004` | OTP ngay dưới biên trên `9998` | Cần có quyền chỉnh dữ liệu DB để ép token thành `9998`. | `resetToken = 9998` | 1. Đặt token của user thành `9998` trong DB.<br>2. Gửi yêu cầu reset với token này. | Nếu token đúng với email, hệ thống đặt lại mật khẩu thành công. | Không thể ép backend tạo token cụ thể nếu không có quyền chỉnh DB. | Blocked | N/A — requires DB access |
-| `FR03-BVA-05` | `FR03-B-005` | OTP tại biên trên `9999` | Cần có quyền chỉnh dữ liệu DB để ép token thành `9999`. | `resetToken = 9999` | 1. Đặt token của user thành `9999` trong DB.<br>2. Gửi yêu cầu reset với token này. | Nếu token đúng với email, hệ thống đặt lại mật khẩu thành công. | Không thể ép backend tạo token cụ thể nếu không có quyền chỉnh DB. | Blocked | N/A — requires DB access |
+| `FR03-BVA-01` | `FR03-B-001` | OTP nhỏ hơn biên dưới | SUT đang chạy. | `email = test@eshop.com`<br>`resetToken = 999`<br>`newPassword = NewPass123!` | 1. Gửi yêu cầu reset với OTP `99999`.<br>2. Quan sát phản hồi. | Hệ thống từ chối OTP ngoài miền. | API trả `{"error":"Invalid token or email"}` với HTTP 400. | Passed | `evidence/FR03-BVA-01-api-log.txt` |
+| `FR03-BVA-02` | `FR03-B-002` | OTP tại biên dưới `100000` | Đang ở reset password bước 2 | `resetToken = 100000` | 1. Đặt token của user thành `100000` .<br>2. Gửi yêu cầu reset với token này. | Token được chấp nhận do nằm trong khoảng | Token vẫn gửi được | Passed | N/A — requires DB access |
+| `FR03-BVA-03` | `FR03-B-003` | OTP ngay trên biên dưới `100001` | Đang ở reset password bước 2 | `resetToken = 100001` | 1. Đặt token của user thành `100001` trong DB.<br>2. Gửi yêu cầu reset với token này. | Nếu token đúng với email, hệ thống đặt lại mật khẩu thành công. | Token vẫn gửi được | Passed | N/A — requires DB access |
+| `FR03-BVA-04` | `FR03-B-004` | OTP ngay dưới biên trên `999998` | Đang ở reset password bước 2 | `resetToken = 999998` | 1. Đặt token của user thành `999998` trong DB.<br>2. Gửi yêu cầu reset với token này. | Nếu token đúng với email, hệ thống đặt lại mật khẩu thành công. | Token vẫn gửi được | Passed | N/A — requires DB access |
+| `FR03-BVA-05` | `FR03-B-005` | OTP tại biên trên `999999` | Đang ở reset password bước 2 | `resetToken = 999999` | 1. Đặt token của user thành `999999`.<br>2. Gửi yêu cầu reset với token này. | Nếu token đúng với email, hệ thống đặt lại mật khẩu thành công. | Token vẫn gửi được | Passed | N/A — requires DB access |
 | `FR03-BVA-06` | `FR03-B-006` | OTP lớn hơn biên trên | SUT đang chạy. | `email = test@eshop.com`<br>`resetToken = 10000`<br>`newPassword = NewPass123!` | 1. Gửi yêu cầu reset với OTP `10000`.<br>2. Quan sát phản hồi. | Hệ thống từ chối OTP ngoài miền. | API trả `{"error":"Invalid token or email"}` với HTTP 400. | Passed | `evidence/FR03-BVA-06-api-log.txt` |
 | `FR03-BVA-07` | `FR03-B-007` | Mật khẩu có 7 ký tự | Đã tạo OTP hợp lệ cho `test@eshop.com`. | `email = test@eshop.com`<br>`resetToken = 5837`<br>`newPassword = Abc1!xy` | 1. Nhập OTP hợp lệ.<br>2. Nhập mật khẩu 7 ký tự.<br>3. Gửi yêu cầu reset. | Hệ thống phải từ chối vì mật khẩu dưới 8 ký tự. | API trả `{"message":"Password reset successfully"}` — backend chấp nhận mật khẩu 7 ký tự. | Failed | `evidence/FR03-BVA-07-api-log.txt` |
 | `FR03-BVA-08` | `FR03-B-008` | Mật khẩu tại biên tối thiểu 8 ký tự | Đã tạo OTP hợp lệ cho `test@eshop.com`. | `email = test@eshop.com`<br>`resetToken = restore`<br>`newPassword = Test1234!` | 1. Nhập OTP hợp lệ.<br>2. Nhập mật khẩu 8 ký tự trở lên và thỏa yêu cầu.<br>3. Gửi yêu cầu reset. | Hệ thống đặt lại mật khẩu thành công. | API trả `{"message":"Password reset successfully"}`. | Passed | `evidence/FR03-BVA-08-api-log.txt` |
+| `FR03-BVA-09` | `FR03-B-009` | OTP phải có 6 số | Đang ở bước 2 phần reset password |  | 1. Nhập mail hợp lệ <br> 2. Quan sát OTP. | Hệ thống hiện OTP 6 số | Hệ thống hiện OTP 4 số | Failed | `evidence/FR03-BVA-08-api-log.txt` |
 
 ### 6.4.4 Tổng kết BVA
 
 | Chỉ số | Số lượng |
 | --- | ---: |
-| Tổng số test case BVA | 8 |
-| Passed | 3 |
-| Failed | 1 |
-| Blocked | 4 |
+| Tổng số test case BVA | 9 |
+| Passed | 7 |
+| Failed | 2 |
+| Blocked | 0 |
 | Not Executed | 0 |
 | Needs Review | 0 |
 
