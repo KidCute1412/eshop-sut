@@ -46,3 +46,19 @@
      - Thiết lập bảng Phân tích giá trị biên (BVA Table) tập trung vào các trạng thái kết thúc (delivered, canceled) và giới hạn quyền hạn tại trạng thái shipping.
      - Thiết kế bộ test case chi tiết cho Domain Testing (FR10-DT-01 đến FR10-DT-07) và BVA (FR10-BVA-01 đến FR10-BVA-05), có ánh xạ truy vết (Traceability Mapping) rõ ràng.
      ```
+
+3. **Tương tác #3**:
+   * **AI Tool Name**: Gemini (Antigravity Coding Assistant)
+   * **Date & Time**: 2026-06-26 18:09 (GMT+7)
+   * **Yêu cầu (Your Prompt)**:
+     ```text
+     Apply the custom skill `domain-bva-tester` to generate Equivalence Partitioning (EP) and Boundary Value Analysis (BVA) test cases for "FR-12: Kiểm soát truy cập" as specified in README.md. Append the tables into docs/assignments/HW02/deliverables/reports/main_report.md.
+     ```
+   * **Kết quả (AI Output)**:
+     ```text
+     Đã áp dụng thành công kỹ thuật Phân hoạch tương đương (Equivalence Partitioning) và Phân tích giá trị biên (Boundary Value Analysis - BVA) cho yêu cầu "FR-12: Kiểm soát truy cập" (Access Control) bằng tiếng Việt vào tài liệu main_report.md:
+     - Xác định các biến đầu vào & điều kiện: JWT Token (Trạng thái xác thực), User Role (Vai trò người dùng), và Target API Path (Đường dẫn API đích).
+     - Thiết lập bảng Phân hoạch tương đương (EP Table) phân loại token JWT hợp lệ/không hợp lệ, vai trò admin/user, và các API yêu cầu quyền admin hoặc API công khai.
+     - Thiết lập bảng Phân tích giá trị biên (BVA Table) tập trung vào biên phân quyền (giá trị chuỗi vai trò), biên hiệu lực Token JWT (lệch đúng 1 giây còn hạn hay hết hạn), và biên định dạng header Authorization.
+     - Thiết kế bộ test case chi tiết cho Domain Testing (FR12-DT-01 đến FR12-DT-07) và BVA (FR12-BVA-01 đến FR12-BVA-06) với đầy đủ ánh xạ truy vết.
+     ```

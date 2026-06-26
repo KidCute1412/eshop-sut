@@ -199,37 +199,66 @@ Vì trạng thái là biến quy trình (state variable), việc phân tích bi�
 ## 3. FR-12: Access Control
 
 ### 3.1. Domain Testing
-#### 3.1.1. Input Variables & Condition Identification
-*List all input variables, state variables, or environmental conditions.*
+#### 3.1.1. Xác định các biến đầu vào & Điều kiện hệ thống
+Chúng tôi xác định các biến đầu vào, biến trạng thái và điều kiện hệ thống sau cho tính năng Kiểm soát truy cập (FR-12):
+1. **JWT Token**: Token xác thực người dùng gửi qua header `Authorization: Bearer <token>`.
+2. **User Role (Vai trò người dùng)**: Trường `role` được mã hóa bên trong JWT Token (`admin`, `user`, hoặc vai trò khác).
+3. **Target API Path (Đường dẫn API đích)**: Đường dẫn endpoint của request (`/api/admin/*`, `POST/PUT/DELETE /api/products`, `POST/PUT/DELETE /api/categories`, `POST/PUT/DELETE /api/coupons`, hoặc các API công khai/thông thường khác).
 
-#### 3.1.2. Equivalence Partitioning Table
-| Input Variable / Condition | Valid Equivalence Classes (ID) | Invalid Equivalence Classes (ID) |
+#### 3.1.2. Bảng Phân hoạch tương đương (Equivalence Partitioning)
+| Biến đầu vào / Điều kiện | Lớp tương đương hợp lệ (ID) | Lớp tương đương không hợp lệ (ID) |
 | :--- | :--- | :--- |
-| | | |
+| **JWT Token**<br>*(Trạng thái xác thực)* | **EP-VAL-01**: Token JWT hợp lệ, chưa hết hạn và được ký đúng cấu trúc. | **EP-INV-01**: Token JWT không hợp lệ (hết hạn, sai chữ ký, sai định dạng).<br>**EP-INV-02**: Không có Token JWT (thiếu header Authorization hoặc header rỗng). |
+| **User Role (Vai trò)**<br>*(Từ Token)* | **EP-VAL-02**: Vai trò Admin (`role = 'admin'`). | **EP-INV-03**: Vai trò User thường (`role = 'user'`).<br>**EP-INV-04**: Vai trò khác không xác định hoặc không có thuộc tính `role`. |
+| **Target API Path**<br>*(Loại tài nguyên)* | **EP-VAL-03**: API yêu cầu quyền Admin (ví dụ: `/api/admin/dashboard`, `POST /api/products`, `PUT /api/categories`, `DELETE /api/coupons`).<br>**EP-VAL-04**: API công khai hoặc API của người dùng thường (ví dụ: `GET /api/products`, `POST /api/cart`). | *Không có* |
 
-#### 3.1.3. Test Cases Designed (Domain Testing)
-| Test Case ID | Test Description | Inputs | Expected Outcome | Status | Traceability Mapping |
+#### 3.1.3. Các kịch bản kiểm thử (Domain Testing)
+| Mã Kịch bản | Mô tả kiểm thử | Đầu vào | Kết quả mong đợi | Trạng thái | Ánh xạ truy vết |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| FR12-DT-01 | | | | | |
+| FR12-DT-01 | Truy cập API Admin (`/api/admin/*`) với JWT Token hợp lệ của tài khoản Admin. | Path = `/api/admin/dashboard`, Token = Hợp lệ, Role = `admin` | Truy cập thành công, trả về dữ liệu dashboard và mã trạng thái 200 OK. | Pass | EP-VAL-01, EP-VAL-02, EP-VAL-03 |
+| FR12-DT-02 | Tạo sản phẩm mới (API ảnh hưởng dữ liệu) với JWT Token hợp lệ của tài khoản Admin. | Path = `POST /api/products`, Token = Hợp lệ, Role = `admin` | Thao tác thành công, trả về 201 Created hoặc 200 OK. | Pass | EP-VAL-01, EP-VAL-02, EP-VAL-03 |
+| FR12-DT-03 | Truy cập API Admin (`/api/admin/*`) với JWT Token hợp lệ của tài khoản User thường. | Path = `/api/admin/dashboard`, Token = Hợp lệ, Role = `user` | Hệ thống từ chối truy cập, trả về mã trạng thái 403 Forbidden. | Fail | EP-VAL-01, EP-INV-03, EP-VAL-03 |
+| FR12-DT-04 | Sửa đổi danh mục sản phẩm với JWT Token hợp lệ của tài khoản User thường. | Path = `PUT /api/categories/1`, Token = Hợp lệ, Role = `user` | Hệ thống từ chối truy cập, trả về mã trạng thái 403 Forbidden. | Fail | EP-VAL-01, EP-INV-03, EP-VAL-03 |
+| FR12-DT-05 | Truy cập API Admin (`/api/admin/*`) khi sử dụng Token JWT không hợp lệ/hết hạn. | Path = `/api/admin/dashboard`, Token = Không hợp lệ, Role = `admin` | Hệ thống từ chối truy cập, trả về mã trạng thái 401 Unauthorized. | Pass | EP-INV-01, EP-VAL-02, EP-VAL-03 |
+| FR12-DT-06 | Truy cập API Admin (`/api/admin/*`) mà không gửi kèm Token JWT. | Path = `/api/admin/dashboard`, Token = Không gửi | Hệ thống từ chối truy cập, trả về mã trạng thái 401 Unauthorized. | Pass | EP-INV-02, EP-VAL-03 |
+| FR12-DT-07 | Người dùng thường truy cập API công khai (không yêu cầu quyền Admin). | Path = `GET /api/products`, Token = Hợp lệ, Role = `user` | Truy cập thành công, trả về danh sách sản phẩm và mã trạng thái 200 OK. | Pass | EP-VAL-01, EP-INV-03, EP-VAL-04 |
 
-#### 3.1.4. Application Explanation
-*Step-by-step explanation of how the domain testing technique was applied.*
+#### 3.1.4. Giải thích áp dụng kỹ thuật
+1. **Xác định biến**: Phân tích đặc tả FR-12 để xác định các yếu tố kiểm soát truy cập bao gồm sự hiện diện của Token JWT, thuộc tính vai trò (`role`) giải mã từ token, và đường dẫn API đích của yêu cầu.
+2. **Xác định các phân hoạch**: Với mỗi biến, chia thành các lớp hợp lệ (Token đúng cấu trúc, vai trò admin, API thông thường) và không hợp lệ (không token/token hỏng, vai trò user, API được bảo vệ của admin) dựa trên nghiệp vụ.
+3. **Thiết kế kịch bản**: Tạo các kịch bản kiểm thử kết hợp để bao phủ việc cho phép (người dùng admin truy cập tài nguyên admin) và ngăn chặn (người dùng thường hoặc người dùng không xác thực truy cập tài nguyên admin), đảm bảo toàn bộ phân hoạch được ánh xạ truy vết đầy đủ.
 
 ---
 
-### 3.2. Boundary Value Analysis (BVA)
-#### 3.2.1. Boundary Analysis Table
-| Variable / Property | Boundary Condition (ID) | On-Point | Off-Point | In-Point |
+### 3.2. Phân tích giá trị biên (Boundary Value Analysis)
+#### 3.2.1. Bảng Phân tích giá trị biên
+Đối với các tính năng phân quyền (Access Control), "biên" không nằm ở khoảng số mà nằm ở **biên quyền hạn tối thiểu (Minimum Privilege Boundaries)** và **biên thời gian sống của phiên (Session/Token Expiration Boundaries)**:
+- Biên phân quyền: Sự khác biệt nhỏ nhất giữa tài khoản `user` và `admin` (ví dụ: chỉ khác nhau giá trị trường `role` trong payload của token).
+- Biên hiệu lực Token: Thời điểm token chuyển từ trạng thái còn hạn sang hết hạn (đúng thời điểm `exp` trong JWT).
+- Biên định dạng Token: Token trống, token thiếu 1 ký tự cuối, token thừa ký tự.
+
+| Đối tượng kiểm thử | Điều kiện biên (ID) | Điểm biên (On-Point) | Điểm cận biên (Off-Point) | Điểm trong biên (In-Point) |
 | :--- | :--- | :--- | :--- | :--- |
-| | | | | |
+| **Quyền hạn vai trò** | Phân quyền truy cập theo `role = 'admin'` (BVA-BND-01) | Payload token có `role: 'admin'` | Payload token có `role: 'admin '` (thêm khoảng trắng - không hợp lệ)<br>Payload token có `role: 'user'` (không hợp lệ) | Payload token có `role: 'admin'` |
+| **Thời hạn Token** | Thời gian hết hạn của token JWT (BVA-BND-02) | Token vừa đúng thời gian hiện tại trùng với hạn dùng `exp` (hết hạn) | Token còn hạn 1 giây trước khi hết hạn (hợp lệ)<br>Token hết hạn 1 giây (không hợp lệ) | Token còn hạn lâu dài (hợp lệ) |
+| **Độ dài/Định dạng Header** | Cấu trúc chuỗi prefix Bearer (BVA-BND-03) | Gửi `"Bearer <token>"` | Gửi `"Bearer"` (thiếu token - không hợp lệ)<br>Gửi `"bearer <token>"` (chữ thường - tùy thuộc parser, kiểm tra biên) | Gửi `"Bearer <token_hợp_lệ>"` |
 
-#### 3.2.2. Test Cases Designed (BVA)
-| Test Case ID | Test Description | Inputs | Expected Outcome | Status | Traceability Mapping |
+#### 3.2.2. Các kịch bản kiểm thử (BVA)
+| Mã Kịch bản | Mô tả kiểm thử | Đầu vào | Kết quả mong đợi | Trạng thái | Ánh xạ truy vết |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| FR12-BVA-01 | | | | | |
+| FR12-BVA-01 | Gửi token có thuộc tính vai trò bị viết sai lệch một ký tự (ví dụ: `"role": "admin "`). | Path = `/api/admin/dashboard`, Token có `"role": "admin "` | Hệ thống từ chối truy cập, trả về mã trạng thái 403 Forbidden. | Fail | BVA-BND-01 (Off-Point) |
+| FR12-BVA-02 | Gửi token có thuộc tính vai trò là `"user"` để gọi API admin. | Path = `POST /api/products`, Token có `"role": "user"` | Hệ thống từ chối truy cập, trả về mã trạng thái 403 Forbidden. | Fail | BVA-BND-01 (Off-Point) |
+| FR12-BVA-03 | Sử dụng Token JWT vừa hết hạn chính xác 1 giây. | Path = `/api/admin/dashboard`, Token hết hạn 1 giây | Hệ thống từ chối truy cập, trả về mã trạng thái 401 Unauthorized. | Pass | BVA-BND-02 (Off-Point, không hợp lệ) |
+| FR12-BVA-04 | Sử dụng Token JWT còn hạn đúng 1 giây. | Path = `/api/admin/dashboard`, Token còn hạn 1 giây | Cho phép truy cập thành công và trả về mã trạng thái 200 OK. | Pass | BVA-BND-02 (Off-Point, hợp lệ) |
+| FR12-BVA-05 | Gửi header Authorization không có khoảng trắng sau Bearer (ví dụ: `"Bearer<token>"`). | Path = `/api/admin/dashboard`, Header = `"Bearer<token>"` | Hệ thống không thể parse token và từ chối, trả về 401 Unauthorized. | Pass | BVA-BND-03 (Off-Point) |
+| FR12-BVA-06 | Gửi header Authorization với prefix viết thường `"bearer <token>"`. | Path = `/api/admin/dashboard`, Header = `"bearer <token>"` | Hệ thống chấp nhận parse token và cho phép truy cập (nếu parser chuẩn hóa case-insensitive), hoặc từ chối an toàn. | Pass | BVA-BND-03 (Off-Point) |
 
-#### 3.2.3. Application Explanation
-*Step-by-step explanation of how BVA was applied.*
+#### 3.2.3. Giải thích áp dụng kỹ thuật
+1. **Xác định các giá trị biên**: Biên quyền hạn được định nghĩa ở sự thay đổi tối thiểu của giá trị chuỗi định danh vai trò (`admin` so với `admin ` hoặc `user`). Biên thời gian được định nghĩa bằng ranh giới giây cuối cùng còn hiệu lực và giây đầu tiên hết hiệu lực của JWT Token (`exp`).
+2. **Lựa chọn điểm kiểm thử**:
+   - **On-point**: Thời điểm ranh giới hết hạn của token, hoặc giá trị vai trò chính xác.
+   - **Off-point**: Các trường hợp cận biên như lệch 1 giây (còn hạn hoặc hết hạn), sai lệch khoảng trắng hoặc chữ hoa/thường trong header và payload.
+3. **Xây dựng kịch bản kiểm thử**: Triển khai các kịch bản kiểm thử tương ứng để xác minh cơ chế kiểm tra token và phân quyền của hệ thống hoạt động chính xác tại các điểm biên nhạy cảm này.
 
 ---
 
