@@ -1,14 +1,3 @@
-# AI Audit
-
-## AI Interaction - 2026-06-26T08:07:24+07:00
-
-- AI Tool: ChatGPT 5.5
-- Date and Time: 2026-06-26T08:07:24+07:00
-- Feature ID: FR-02
-- Task: FR-02 Phase 1-5 black-box DT/BVA design through human review gate
-- Prompt (verbatim):
-
-```text
 Use the `domain-testing-bva` Agent Skill to complete FR-02 using the same report style, formatting, naming conventions, and quality level as the completed FR-01 artifacts.
 
 Project root: current repository
@@ -27,41 +16,41 @@ Do not redesign the workflow, do not add extra phases, and do not create Phase 9
 
 Use FR-01 as the formatting and quality model. Study these completed FR-01 artifacts before creating FR-02:
 
-* `reports/FR-01/requirement-analysis.md`
-* `reports/FR-01/domain-testing.md`
-* `reports/FR-01/boundary-value-analysis.md`
-* `reports/FR-01/test-cases.md`
-* `reports/FR-01/bug-report.md`
-* `reports/FR-01/ai-gap-analysis.md`
-* `ai-audit/ai-audit.md`
-* `evidence/agent-skill/FR-01/`
+- `reports/FR-01/requirement-analysis.md`
+- `reports/FR-01/domain-testing.md`
+- `reports/FR-01/boundary-value-analysis.md`
+- `reports/FR-01/test-cases.md`
+- `reports/FR-01/bug-report.md`
+- `reports/FR-01/ai-gap-analysis.md`
+- `ai-audit/ai-audit.md`
+- `evidence/agent-skill/FR-01/`
 
 Use FR-01 only as a template for:
 
-* File structure.
-* Heading structure.
-* Table format.
-* Rule ID naming style.
-* Partition ID naming style.
-* Test case format.
-* Coverage summary format.
-* Human review block format.
-* Bug report format.
-* AI gap analysis format.
-* AI audit style.
-* Evidence naming style.
+- File structure.
+- Heading structure.
+- Table format.
+- Rule ID naming style.
+- Partition ID naming style.
+- Test case format.
+- Coverage summary format.
+- Human review block format.
+- Bug report format.
+- AI gap analysis format.
+- AI audit style.
+- Evidence naming style.
 
 Do not copy FR-01 requirements, partitions, test data, bugs, execution results, or conclusions into FR-02 unless they are explicitly supported by the FR-02 approved test basis.
 
 Read all required skill references before working:
 
-* `.agents/skills/domain-testing-bva/references/instructor-clarifications.md`
-* `.agents/skills/domain-testing-bva/references/assignment-requirements.md`
-* `.agents/skills/domain-testing-bva/references/eshop-analysis-guide.md`
-* `.agents/skills/domain-testing-bva/references/domain-testing-method.md`
-* `.agents/skills/domain-testing-bva/references/bva-method.md`
-* `.agents/skills/domain-testing-bva/references/test-case-schema.md`
-* `.agents/skills/domain-testing-bva/references/human-review-checklist.md`
+- `.agents/skills/domain-testing-bva/references/instructor-clarifications.md`
+- `.agents/skills/domain-testing-bva/references/assignment-requirements.md`
+- `.agents/skills/domain-testing-bva/references/eshop-analysis-guide.md`
+- `.agents/skills/domain-testing-bva/references/domain-testing-method.md`
+- `.agents/skills/domain-testing-bva/references/bva-method.md`
+- `.agents/skills/domain-testing-bva/references/test-case-schema.md`
+- `.agents/skills/domain-testing-bva/references/human-review-checklist.md`
 
 Strict rules:
 
@@ -94,29 +83,29 @@ reports/FR-02/
 
 Do not create or require:
 
-* `traceability-matrix.md`
-* `execution-summary.md`
-* `evidence-index.md`
+- `traceability-matrix.md`
+- `execution-summary.md`
+- `evidence-index.md`
 
 The final execution summary will be written in the assignment-level `README.md` later.
 
 For FR-02, extract the official login and account lockout requirements from approved black-box bases only. Pay attention to any documented rules about:
 
-* Login identifier, such as email or username.
-* Password.
-* Required login fields.
-* Successful login.
-* Failed login.
-* Invalid credentials.
-* Existing and non-existing accounts.
-* Account lockout.
-* Failed-attempt threshold.
-* Lockout duration.
-* Unlock or reset conditions.
-* Error message or error placement.
-* Post-login redirect or user state.
-* Shared form requirements relevant to the login form.
-* Public login API contract, if documented.
+- Login identifier, such as email or username.
+- Password.
+- Required login fields.
+- Successful login.
+- Failed login.
+- Invalid credentials.
+- Existing and non-existing accounts.
+- Account lockout.
+- Failed-attempt threshold.
+- Lockout duration.
+- Unlock or reset conditions.
+- Error message or error placement.
+- Post-login redirect or user state.
+- Shared form requirements relevant to the login form.
+- Public login API contract, if documented.
 
 For `reports/FR-02/requirement-analysis.md`, follow the same structure and level of detail as `reports/FR-01/requirement-analysis.md`. Create FR-02-specific rule IDs and test basis references. Record ambiguities, assumptions, observable behaviours, and exclusions clearly.
 
@@ -126,10 +115,10 @@ For `reports/FR-02/boundary-value-analysis.md`, follow the same structure and le
 
 For `reports/FR-02/test-cases.md`, follow the same format as `reports/FR-01/test-cases.md`. Generate both Domain Testing and BVA cases according to the current skill schema. Use IDs such as:
 
-* `FR02-DT-001`
-* `FR02-DT-002`
-* `FR02-BVA-001`
-* `FR02-BVA-002`
+- `FR02-DT-001`
+- `FR02-DT-002`
+- `FR02-BVA-001`
+- `FR02-BVA-002`
 
 Before execution, every test case must contain exactly:
 
@@ -143,10 +132,10 @@ The AI must not execute tests during test-case generation.
 
 Inside `reports/FR-02/test-cases.md`, include a coverage summary in the same style as FR-01. The coverage summary must map:
 
-* Each normative FR-02 partition to at least one DT case on each applicable public surface.
-* Each selected FR-02 boundary value to at least one BVA case on each applicable public surface.
-* Each omitted surface, partition, or boundary to a documented exclusion reason.
-* Each dependency or blocking-prone conformance condition to a dedicated case when it can affect many later cases.
+- Each normative FR-02 partition to at least one DT case on each applicable public surface.
+- Each selected FR-02 boundary value to at least one BVA case on each applicable public surface.
+- Each omitted surface, partition, or boundary to a documented exclusion reason.
+- Each dependency or blocking-prone conformance condition to a dedicated case when it can affect many later cases.
 
 Run the validator after test-case generation only if the validator exists and matches the current skill schema:
 
@@ -160,24 +149,24 @@ When the skill reaches a human review gate, stop and request human confirmation.
 
 After human review, record in `reports/FR-02/test-cases.md` or `ai-audit/ai-audit.md`:
 
-* Reviewer.
-* Review date and time.
-* Review scope.
-* Human corrections.
-* Human-added, removed, or reclassified cases.
-* Duplicate-case decisions.
-* `Approved for Test Execution: Yes/No`.
+- Reviewer.
+- Review date and time.
+- Review scope.
+- Human corrections.
+- Human-added, removed, or reclassified cases.
+- Duplicate-case decisions.
+- `Approved for Test Execution: Yes/No`.
 
 Do not execute tests while approval is `No` or missing.
 
 After human approval, execute only through public UI or public API. Do not inspect implementation code or database contents. For each attempted case, record:
 
-* Execution date and time.
-* Environment.
-* Actual Result.
-* Status: `Pass`, `Fail`, or `Blocked`.
-* Blocking Reason when status is `Blocked`.
-* Real evidence reference.
+- Execution date and time.
+- Environment.
+- Actual Result.
+- Status: `Pass`, `Fail`, or `Blocked`.
+- Blocking Reason when status is `Blocked`.
+- Real evidence reference.
 
 Save evidence under:
 
@@ -189,8 +178,8 @@ Evidence must match the exact test case and execution result. Do not leave a `Pa
 
 After execution evidence is available, create or update:
 
-* `reports/FR-02/bug-report.md`
-* `reports/FR-02/ai-gap-analysis.md`
+- `reports/FR-02/bug-report.md`
+- `reports/FR-02/ai-gap-analysis.md`
 
 For `reports/FR-02/bug-report.md`, follow the same format as `reports/FR-01/bug-report.md`. Create bug records only when:
 
@@ -201,45 +190,45 @@ For `reports/FR-02/bug-report.md`, follow the same format as `reports/FR-01/bug-
 
 For every confirmed bug, record:
 
-* Bug ID.
-* Title.
-* Severity.
-* Status.
-* Related test case.
-* Related requirement.
-* Preconditions.
-* Reproduction steps.
-* Expected result.
-* Actual result.
-* Evidence links.
-* GitHub Issue link.
+- Bug ID.
+- Title.
+- Severity.
+- Status.
+- Related test case.
+- Related requirement.
+- Preconditions.
+- Reproduction steps.
+- Expected result.
+- Actual result.
+- Evidence links.
+- GitHub Issue link.
 
 Leave GitHub Issue links as `Pending` until real GitHub Issues are created.
 
 For `reports/FR-02/ai-gap-analysis.md`, follow the same format as `reports/FR-01/ai-gap-analysis.md`. Compare preserved initial AI outputs with the current human-reviewed and executed artifacts. Separate:
 
-* AI-missed test cases.
-* Human improvements to existing tests.
-* Runtime bugs exposed by AI-generated tests.
-* Runtime bugs exposed by human-added tests.
-* Runtime-only findings.
-* Prompt-quality or reasoning gaps.
+- AI-missed test cases.
+- Human improvements to existing tests.
+- Runtime bugs exposed by AI-generated tests.
+- Runtime bugs exposed by human-added tests.
+- Runtime-only findings.
+- Prompt-quality or reasoning gaps.
 
 Do not claim runtime bugs were missed by AI if the AI generated the tests that exposed them.
 
 At the end, report:
 
-* Created and modified files.
-* DT case count.
-* BVA case count.
-* Total test case count.
-* Execution status counts.
-* Evidence count.
-* Confirmed bug count.
-* Pending GitHub Issue count.
-* Validator result, if the validator was run.
-* Remaining blockers.
-* Suggested git commits.
+- Created and modified files.
+- DT case count.
+- BVA case count.
+- Total test case count.
+- Execution status counts.
+- Evidence count.
+- Confirmed bug count.
+- Pending GitHub Issue count.
+- Validator result, if the validator was run.
+- Remaining blockers.
+- Suggested git commits.
 
 Suggested commit:
 
@@ -247,61 +236,3 @@ Suggested commit:
 git add reports/FR-02 evidence/agent-skill/FR-02 ai-audit/ai-audit.md
 git commit -m "test(fr02): complete black-box DT and BVA workflow"
 ```
-
-```
-
-- AI Output or Output File References: reports/FR-02/requirement-analysis.md; reports/FR-02/domain-testing.md; reports/FR-02/boundary-value-analysis.md; reports/FR-02/test-cases.md; reports/FR-02/bug-report.md; reports/FR-02/ai-gap-analysis.md; evidence/agent-skill/FR-02/phase-01-05-design-ai-output.md
-- Human Review: Pending
-- Human Corrections: None yet
-
-## AI Interaction - 2026-06-26T08:38:09+07:00
-
-- AI Tool: ChatGPT 5.5
-- Date and Time: 2026-06-26T08:38:09+07:00
-- Feature ID: FR-02
-- Task: FR-02 phase-separated AI audit consolidation
-- Prompt (verbatim):
-
-```text
-User requested that all FR-02 output files be placed into AI audit with clear phase separation, using the provided old requirement-analysis content as context.
-
-Scope:
-
-- Create/update FR-02 AI audit records.
-- Preserve all FR-02 report outputs by phase.
-- Include the provided old requirement-analysis output.
-- Do not modify FR-02 report content.
-- Do not execute tests.
-- Do not inspect implementation source.
-
-```
-
-- AI Output or Output File References: ai-audit/FR02/ai-audit.md; evidence/agent-skill/FR-02/phase-audit-consolidation-ai-output.md
-- Human Review: Pending
-- Human Corrections: None yet
-
-## AI Interaction - 2026-06-26T09:57:03+07:00
-
-- AI Tool: ChatGPT 5.5
-- Date and Time: 2026-06-26T09:57:03+07:00
-- Feature ID: FR-02
-- Task: FR-02 execute remaining approved test cases and capture evidence
-- Prompt (verbatim):
-
-```text
-User requested execution of remaining FR-02 test cases after using FR02-DT-001 through FR02-DT-005 as examples, with screenshots saved using the existing evidence naming pattern.
-
-Scope:
-
-- Execute remaining FR-02 test cases through public UI/API only.
-- Save screenshots as `reports/FR-02/evidence/<TEST-CASE-ID>.png`.
-- Update `reports/FR-02/test-cases.md` with actual results, status, and evidence references.
-- Do not inspect implementation source code, database schema, controllers, services, routes, middleware, models, or internal tests.
-- Do not fabricate results or evidence.
-- Do not create GitHub Issues.
-
-```
-
-- AI Output or Output File References: reports/FR-02/test-cases.md; reports/FR-02/evidence/; evidence/agent-skill/FR-02/phase-06-07-execution-ai-output.md
-- Human Review: Pending evidence/bug verification
-- Human Corrections: None yet

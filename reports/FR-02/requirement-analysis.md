@@ -1,0 +1,129 @@
+# Requirement Analysis - FR-02 Login and Account Lockout
+
+## Feature Intake
+
+| Field                 | Value                                                                                                                                                   |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Feature ID            | FR-02                                                                                                                                                   |
+| Feature Name          | Login and Account Lockout                                                                                                                               |
+| Pool                  | A                                                                                                                                                       |
+| Actor                 | Guest, unauthenticated user, or user attempting to authenticate                                                                                         |
+| Application Surface   | EShop User Web login form and public login API                                                                                                          |
+| Requirement Source    | `README.md` - FR-02 and Shared Form Requirements; `api_specification.md` - `POST /api/login`; `2026.HW02.Domain Testing_En.pdf`                         |
+| Public API Endpoint   | `POST /api/login`                                                                                                                                       |
+| API Base URL          | `http://localhost:3000`                                                                                                                                 |
+| UI Location           | `/login`                                                                                                                                                |
+| Output Directory      | `reports/FR-02/`                                                                                                                                        |
+| Execution Environment | Not started or inspected; Phase 1-5 design only                                                                                                         |
+| Pool Rule Review      | FR-02 is listed under Pool A in the official assignment PDF. The supplied Pool A classification is consistent. No other feature allocation was assumed. |
+
+## Approved Black-box Test Bases
+
+| Test Basis                                     | Type                    | Use in This Analysis                                                                                                                                     |
+| ---------------------------------------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `2026.HW02.Domain Testing_En.pdf`              | Official requirement    | Identifies FR-02 Login and account lockout as a Pool A feature and establishes the individual, AI-audited assignment context.                            |
+| `README.md` - FR-02                            | Official requirement    | Defines login inputs, failed-attempt incrementing, account lockout threshold and duration, login success token behaviour, and Email control type.        |
+| `README.md` - Shared Form Requirements (FR-22) | Official requirement    | Defines required-field markers, Email and Password control types, error placement, and the conditional multi-step indicator rule.                        |
+| `api_specification.md` - `POST /api/login`     | API specification       | Defines the public method, endpoint, JSON request example, and documented successful response containing JWT `token` and `user` information.             |
+| Public UI observations                         | Observable UI behaviour | Not used. The application was not started, and no previously recorded public UI observation was supplied as a test basis for FR-02 in this design phase. |
+
+No implementation source, internal test, database record/schema, controller, route, service, middleware, model, or inferred implementation behaviour was used.
+
+## Requirement Rules
+
+| Rule ID  | Rule                                                                              | Test Basis Type      | Test Basis Reference | Observable Expected Behaviour                                                                                                                       | Ambiguity                                                                                                                           | Assumption                                                                                                 |
+| -------- | --------------------------------------------------------------------------------- | -------------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| FR02-R01 | The user enters Email and Password to log in.                                     | Official requirement | `README.md` - FR-02  | A login attempt uses both an Email value and a Password value.                                                                                      | The exact UI labels, placeholder text, and whether the login identifier can be username instead of email are not specified.         | The login identifier is Email because FR-02 and the API contract name `email`.                             |
+| FR02-R02 | Email is required for login.                                                      | Official requirement | `README.md` - FR-02  | A login attempt without Email is not accepted as a valid login.                                                                                     | Missing, empty, whitespace-only, and null Email handling are not distinguished.                                                     | Requiredness follows from the statement that the user enters Email and from the documented API body.       |
+| FR02-R03 | Password is required for login.                                                   | Official requirement | `README.md` - FR-02  | A login attempt without Password is not accepted as a valid login.                                                                                  | Missing, empty, whitespace-only, and null Password handling are not distinguished.                                                  | Requiredness follows from the statement that the user enters Password and from the documented API body.    |
+| FR02-R04 | A correct Email and Password combination logs the user in successfully.           | Official requirement | `README.md` - FR-02  | A valid login reaches an authenticated outcome and obtains the documented token behaviour.                                                          | The exact UI success message, route after login, and visible authenticated indicator are not specified.                             | Existing account with matching password is the nominal valid-credentials state.                            |
+| FR02-R05 | A failed login attempt increments the failed-attempt counter by exactly one unit. | Official requirement | `README.md` - FR-02  | After each failed login, the public behaviour reflects one additional consecutive failed attempt for that account.                                  | The counter is not directly exposed; reset timing, per-account versus per-email scope, and persistence across sessions are unclear. | Counter effects may be inferred only through public lockout behaviour, not hidden storage.                 |
+| FR02-R06 | Three or more consecutive failed login attempts temporarily lock the account.     | Official requirement | `README.md` - FR-02  | At the third consecutive failed attempt and beyond, the account enters a locked state.                                                              | Whether different invalid credential types count equally is not explicitly enumerated.                                              | Wrong password for an existing account is the cleanest representative of a failed login.                   |
+| FR02-R07 | The lockout duration is 30 seconds in the demo environment.                       | Official requirement | `README.md` - FR-02  | A locked account remains temporarily locked for the documented 30-second duration and should no longer be rejected solely for lockout after expiry. | Exact timing precision, start time, clock source, and behaviour exactly at 30.000 seconds are unspecified.                          | Use whole-second observations for BVA and record timing precision as a test assumption.                    |
+| FR02-R08 | During lockout, the system returns an appropriate error message.                  | Official requirement | `README.md` - FR-02  | Login while locked produces an observable error rather than successful authentication.                                                              | The exact text, status code, response body, and UI placement for the lockout error are unspecified.                                 | The error must be visible through the public UI/API surface used for the login attempt.                    |
+| FR02-R09 | Lockout and failed-login errors must not reveal detailed cause information.       | Official requirement | `README.md` - FR-02  | Invalid or locked login responses avoid exposing sensitive account-existence or internal cause details.                                             | The allowed and prohibited wording is not defined; the exact non-leaky message cannot be asserted.                                  | Treat obvious disclosure of account existence or internal lockout cause details as non-conforming.         |
+| FR02-R10 | Successful login returns a JWT token.                                             | Official requirement | `README.md` - FR-02  | Successful login produces a JWT token through the public response or observable client state.                                                       | The JWT claims, expiry, signing details, and exact token format beyond being a token are unspecified.                               | Token structure is not decoded or validated beyond observable presence unless a public contract states it. |
+| FR02-R11 | The token is stored on the client side.                                           | Official requirement | `README.md` - FR-02  | After successful UI login, the token is observable in client-side storage available to the web application.                                         | Storage location, key name, persistence lifetime, and security attributes are unspecified.                                          | Only public browser-observable storage is in scope; no implementation source is inspected.                 |
+| FR02-R12 | Authenticated requests send the token using `Authorization: Bearer <token>`.      | Official requirement | `README.md` - FR-02  | A request requiring authentication includes the documented Authorization header shape.                                                              | Which post-login request must be inspected is not specified by FR-02; header timing and target endpoint are unspecified.            | Use a documented authenticated API such as `GET /api/users/me` only after a successful login.              |
+| FR02-R13 | The login Email field must use `type="email"` and HTML5 email validation.         | Official requirement | `README.md` - FR-02  | The public login Email control exposes standard email-input behaviour.                                                                              | Browser-specific validation text and full accepted email grammar are unspecified.                                                   | This rule applies to the EShop User Web login form, not to the API request body unless separately stated.  |
+
+## API Specification Rules
+
+| Rule ID    | Rule                                                                                    | Test Basis Type   | Test Basis Reference                                        | Observable Expected Behaviour                                                                    | Ambiguity                                                                                                                 | Assumption                                                                                     |
+| ---------- | --------------------------------------------------------------------------------------- | ----------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| FR02-API01 | Public login uses HTTP `POST /api/login`.                                               | API specification | `api_specification.md` - `POST /api/login`                  | A login request is submitted to the documented method and endpoint.                              | Authentication headers and content-type requirements are not fully specified.                                             | The endpoint is public because it is the supplied authentication contract.                     |
+| FR02-API02 | The documented JSON login request contains `email`.                                     | API specification | `api_specification.md` - `POST /api/login` request body     | The documented API request body contains an `email` property. such as `test@domain.com`.         | Requiredness, type enforcement, format-error response, normalization, and case handling are unspecified.                  | API `email` corresponds to the FR-02 Email login field.                                        |
+| FR02-API03 | The documented JSON login request contains `password`.                                  | API specification | `api_specification.md` - `POST /api/login` request body     | The documented API request body contains a `password` property. such as `Password123!`.          | Requiredness, empty handling, invalid-input status, and message are unspecified.                                          | API `password` corresponds to the FR-02 Password login field.                                  |
+| FR02-API04 | A documented successful login returns `200 OK` with JWT `token` and `user` information. | API specification | `api_specification.md` - `POST /api/login` success response | A successful request returns HTTP 200 and a response body containing token and user information. | The exact `user` schema, token claims, additional fields, headers, and whether the example is exhaustive are unspecified. | Treat presence of `token` and `user` as the success contract; do not assume exact user fields. |
+| FR02-API05 | Authenticated user APIs require `Authorization: Bearer <token>`.                        | API specification | `api_specification.md` - Users section                      | Authenticated API requests use the documented Bearer token header shape.                         | Exact unauthorized status, response body, and token validation errors are unspecified.                                    | This supports FR02-R12 without inspecting implementation source.                               |
+| FR02-API06 | `GET /api/users/me` is a documented authenticated endpoint.                             | API specification | `api_specification.md` - `GET /api/users/me`                | After a successful login, this endpoint can be used as a public authenticated request surface.   | Exact success response schema is not specified.                                                                           | Use it only to observe authenticated request behaviour after obtaining a token.                |
+
+## Shared Form Rules
+
+| Rule ID   | Rule                                                                                    | Test Basis Type      | Test Basis Reference                           | Observable Expected Behaviour                                           | Ambiguity                                                                                   | Assumption                                                                                          |
+| --------- | --------------------------------------------------------------------------------------- | -------------------- | ---------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| FR02-SF01 | Every required field has a `*` beside its label.                                        | Official requirement | `README.md` - Shared Form Requirements (FR-22) | Required login controls visibly show `*` adjacent to their labels.      | FR-22 does not define exact label text or styling.                                          | Email and Password are required for login.                                                          |
+| FR02-SF02 | The Email field uses `type="email"`.                                                    | Official requirement | `README.md` - Shared Form Requirements (FR-22) | The login Email control exposes `type="email"`.                         | This duplicates FR02-R13 but FR-22 applies the rule broadly to forms.                       | Keep it as shared-form traceability; do not create a separate API format oracle from it.            |
+| FR02-SF03 | The Password field uses `type="password"` and does not display its value in clear text. | Official requirement | `README.md` - Shared Form Requirements (FR-22) | Entered password characters are masked in the public login form.        | Browser-specific masking display is not specified.                                          | This governs the UI Password control only.                                                          |
+| FR02-SF04 | Form error messages appear above the submit button, not below it.                       | Official requirement | `README.md` - Shared Form Requirements (FR-22) | Any displayed login validation or authentication error is above Submit. | Exact text, styling, multiple-error order, inline field errors, and timing are unspecified. | Applies to UI errors that the login form displays.                                                  |
+| FR02-SF05 | Forms with two or more steps display a clear Step Indicator.                            | Official requirement | `README.md` - Shared Form Requirements (FR-22) | If login is a multi-step form, a visible step indicator is shown.       | Neither FR-02 nor the API specification states that login has two or more steps.            | Do not require a Step Indicator unless an approved test basis establishes that login is multi-step. |
+
+## Shared Form Rules Relevant to FR-02
+
+| Rule ID   | Rule                                                 | Test Basis Type      | Test Basis Reference | Observable Expected Behaviour                                                          | Ambiguity                                                      | Assumption                                                 |
+| --------- | ---------------------------------------------------- | -------------------- | -------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------- | ---------------------------------------------------------- |
+| FR02-SF01 | Required login fields display adjacent `*` markers.  | Official requirement | `README.md` - FR-22  | Email and Password labels show required-field markers.                                 | Exact visual spacing and styling are unspecified.              | Email and Password are required login fields.              |
+| FR02-SF02 | The login Password field uses `type="password"`.     | Official requirement | `README.md` - FR-22  | Password input masks entered characters.                                               | Whether visibility-toggle controls are allowed is unspecified. | Masking is required unless explicitly toggled by the user. |
+| FR02-SF03 | Login error messages appear above the submit button. | Official requirement | `README.md` - FR-22  | A displayed login validation or authentication error appears above the submit control. | Exact message text is unspecified.                             | This applies when the login form displays an error.        |
+| FR02-SF04 | Step Indicator is not applicable to the login form.  | Official requirement | `README.md` - FR-22  | No step indicator is required for a one-step login form.                               | If the login flow becomes multi-step, this must be reassessed. | FR-02 login is treated as a one-step form.                 |
+
+## Requirement Ambiguities
+
+- The exact login UI path is not specified in the approved requirement text; `/login` is used as the conventional public UI location for this feature.
+- Exact invalid-credential, missing-field, and lockout API status codes and response bodies are unspecified.
+- Exact UI error message text, styling, and timing are unspecified.
+- The non-leakage rule says not to expose detailed cause information, but does not define the allowed wording.
+- Failed-attempt counter visibility, storage, reset conditions, and scope are unspecified.
+- Whether failed attempts for non-existing accounts count toward lockout is unspecified.
+- Whether successful login resets the failed-attempt counter is unspecified.
+- Email case sensitivity, normalization, whitespace trimming, and Unicode handling are unspecified.
+- The exact meaning of "30 seconds" at the instant of expiry and the tolerated timing precision are unspecified.
+- The exact post-login redirect target, authenticated UI state, token storage key, token storage mechanism, and token lifetime are unspecified.
+- The API success response does not define the `user` object schema.
+- It is not established whether login is single-step or multi-step, so the Step Indicator rule cannot yet be classified as applicable.
+
+## Assumptions
+
+- FR-02 covers the public user-facing login form and public login API, not admin-only authentication.
+- The documented default user account `test@eshop.com` / `Test1234!` may be used later as a controlled existing account during execution, but this design phase does not inspect database records.
+- Wrong password for an existing controlled account is the primary representative for invalid credentials and failed attempts.
+- Public lockout behaviour is the only approved way to infer failed-attempt counter changes; hidden counter storage is not inspected.
+- No undocumented validation rule, status code, message, token claim, storage key, redirect URL, or implementation behaviour is assumed.
+
+## Coverage Gaps
+
+## Coverage Gaps
+
+- An authoritative clarification is needed for all ambiguities listed above before they can become exact expected results.
+- No approved public UI observation was available in this design phase, so actual controls, labels, navigation target, token storage location, and messages have not been corroborated observationally.
+- The API specification documents the successful `POST /api/login` response and authenticated Bearer-token usage, but it does not define exact invalid-login, missing-field, malformed-email, wrong-password, or lockout response status/body contracts.
+- `GET /api/users/me` is documented as an authenticated endpoint and may be used as a public surface to observe Bearer-token usage, but its exact response schema is not specified.
+- Reset/unlock semantics beyond the documented 30-second lockout duration are not fully specified.
+- This Phase 1-2 analysis records test bases and rules only. Partitions, boundaries, and test cases are created separately in later sections and remain unexecuted pending human review.
+
+## Human Review - Phase 1 and Phase 2
+
+- Reviewer: Nguyen Thanh Tien
+- Review Date and Time: 2026-06-26 08:32 GMT+7
+- Review Scope: Feature Intake and Black-box Test Basis Collection for FR-02
+- Corrections Made:
+  - Refined API login request rules to avoid overclaiming undocumented validation behaviour.
+  - Added Bearer-token and `GET /api/users/me` API basis for authenticated request checking.
+  - Added relevant shared-form rules for required markers, email/password controls, error placement, and step-indicator applicability.
+  - Updated coverage gaps to reflect missing invalid-login, missing-field, lockout, and exact response contracts.
+  - Confirmed that no implementation source, database, internal route, service, or hidden state was used as a test basis.
+
+- Missing Rules or Test Bases: None after review.
+- Status: Completed
+- Approved for Domain Modeling: Yes
+- Approved for Test Execution: No
