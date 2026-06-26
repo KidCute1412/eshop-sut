@@ -10,28 +10,24 @@
 
 ## 2. AI Audit Report (Mandatory Appendix)
 
-*Choose the appropriate declaration below and list your AI interaction details.*
-
-> [!NOTE]
-> Choose **Option A** if you used AI, or **Option B** if you did not use any AI. Remove the unused option.
-
 ### Option A: Used AI
 "I use AI tools for the following tasks,"
 
-#### Interaction Log
-1. **Interaction #1**:
-   * **AI Tool Name**: 
-   * **Date & Time**: 
-   * **Your Prompt**:
+#### Nhật ký tương tác (Interaction Log)
+1. **Tương tác #1**:
+   * **AI Tool Name**: Gemini (Antigravity Coding Assistant)
+   * **Date & Time**: 2026-06-26 17:45 (GMT+7)
+   * **Yêu cầu (Your Prompt)**:
      ```text
-     [Insert Prompt Here]
+     apply @[.agents/skills/domain-bva-tester] for FR-06 in @[docs/assignments/HW02/deliverables/reports/main_report.md]
      ```
-   * **AI Output**:
+   * **Kết quả (AI Output)**:
      ```text
-     [Insert Output Here]
+     Đã áp dụng kỹ thuật Phân hoạch tương đương (Equivalence Partitioning) và Phân tích giá trị biên (Boundary Value Analysis - BVA) cho yêu cầu FR-06 (Product Detail View) trong tài liệu main_report.md bao gồm:
+     - Xác định các biến đầu vào: Số lượng (Quantity), Mã sản phẩm (Product ID), và Trạng thái đăng nhập (Authentication State).
+     - Thiết lập bảng Phân hoạch tương đương (EP Table) gồm các phân hoạch hợp lệ (EP-VAL-01 đến EP-VAL-04) và không hợp lệ (EP-INV-01 đến EP-INV-06).
+     - Thiết lập bảng Phân tích giá trị biên (BVA Table) cho biến Số lượng với các điểm: On-point (1), Off-point (0 và 2), In-point (5).
+     - Thiết kế bộ test case chi tiết cho Domain Testing (FR06-DT-01 đến FR06-DT-07) và BVA (FR06-BVA-01 đến FR06-BVA-04), có ánh xạ truy vết (Traceability Mapping) rõ ràng.
+     - Mô tả chi tiết các bước thực hiện kỹ thuật kiểm thử.
      ```
 
----
-
-### Option B: Did Not Use AI
-"I do not use any AI help in this exercise."
