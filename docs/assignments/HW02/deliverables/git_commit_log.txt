@@ -1,0 +1,4 @@
+[Git Commit Log Placeholder]
+
+Run the following command at the end of the homework to export your commits to this file:
+git log --oneline > git_commit_log.txt
