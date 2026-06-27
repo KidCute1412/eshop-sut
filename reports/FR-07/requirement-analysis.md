@@ -99,7 +99,7 @@
 ## Human Review
 
 - Reviewer: Nguyen Thanh Tien
-- Review Date and Time: 2026-06-26 15:47 GMT+7
+- Review Date and Time: 2026-06-26 15:47
 - Review Scope: FR-07 Requirement Analysis and Black-box Test Basis
 - Human Review Status: Completed
 - Approved for Domain Modeling: Yes
