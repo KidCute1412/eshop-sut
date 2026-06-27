@@ -341,3 +341,66 @@ System.ArgumentException: The value cannot be an empty string. (Parameter 'oldVa
 2026-06-26 22:19:15.009 - Image copied to clipboard.
 2026-06-26 22:19:15.019 - Image saved to file: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\Screenshots\2026-06\xlxrzJAwEq.png
 2026-06-26 22:19:15.031 - Task completed. File name: xlxrzJAwEq.png, Duration: 38 ms
+2026-06-27 15:04:10.062 - Hotkey triggered. Hotkey: Ctrl + Print Screen, Description: Chụp theo vùng, Job: RectangleRegion
+2026-06-27 15:04:10.069 - Executing: Chụp theo vùng
+2026-06-27 15:04:14.695 - Task in queue. Job: Job, Type: Image, Host: 
+2026-06-27 15:04:14.761 - Task status: Preparing
+2026-06-27 15:04:14.792 - Image copied to clipboard.
+2026-06-27 15:04:14.816 - Image saved to file: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\Screenshots\2026-06\chrome_zRVktJV3nn.png
+2026-06-27 15:04:14.831 - Task completed. File name: chrome_zRVktJV3nn.png, Duration: 69 ms
+2026-06-27 15:05:51.632 - Hotkey triggered. Hotkey: Ctrl + Print Screen, Description: Chụp theo vùng, Job: RectangleRegion
+2026-06-27 15:05:51.632 - Executing: Chụp theo vùng
+2026-06-27 15:05:57.454 - Task in queue. Job: Job, Type: Image, Host: 
+2026-06-27 15:05:57.479 - Task status: Preparing
+2026-06-27 15:05:57.496 - Image copied to clipboard.
+2026-06-27 15:05:57.509 - Image saved to file: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\Screenshots\2026-06\chrome_0hHPkhAwDS.png
+2026-06-27 15:05:57.521 - Task completed. File name: chrome_0hHPkhAwDS.png, Duration: 43 ms
+2026-06-27 17:24:45.905 - Hotkey triggered. Hotkey: Ctrl + Print Screen, Description: Chụp theo vùng, Job: RectangleRegion
+2026-06-27 17:24:45.908 - Executing: Chụp theo vùng
+2026-06-27 17:24:50.267 - Task in queue. Job: Job, Type: Image, Host: 
+2026-06-27 17:24:50.316 - Task status: Preparing
+2026-06-27 17:24:50.361 - Image copied to clipboard.
+2026-06-27 17:24:50.399 - Image saved to file: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\Screenshots\2026-06\chrome_1xnyNTkRVW.png
+2026-06-27 17:24:50.421 - Task completed. File name: chrome_1xnyNTkRVW.png, Duration: 104 ms
+2026-06-27 17:27:21.106 - Hotkey triggered. Hotkey: Ctrl + Print Screen, Description: Chụp theo vùng, Job: RectangleRegion
+2026-06-27 17:27:21.106 - Executing: Chụp theo vùng
+2026-06-27 17:27:22.468 - Task in queue. Job: Job, Type: Image, Host: 
+2026-06-27 17:27:22.495 - Task status: Preparing
+2026-06-27 17:27:22.524 - Image copied to clipboard.
+2026-06-27 17:27:22.547 - Image saved to file: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\Screenshots\2026-06\chrome_ioodAnP1BI.png
+2026-06-27 17:27:22.564 - Task completed. File name: chrome_ioodAnP1BI.png, Duration: 70 ms
+2026-06-27 17:32:18.240 - Hotkey triggered. Hotkey: Ctrl + Print Screen, Description: Chụp theo vùng, Job: RectangleRegion
+2026-06-27 17:32:18.241 - Executing: Chụp theo vùng
+2026-06-27 17:32:18.926 - Task in queue. Job: Job, Type: Image, Host: 
+2026-06-27 17:32:18.956 - Task status: Preparing
+2026-06-27 17:32:18.987 - Image copied to clipboard.
+2026-06-27 17:32:19.012 - Image saved to file: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\Screenshots\2026-06\chrome_EZtSKudUfd.png
+2026-06-27 17:32:19.030 - Task completed. File name: chrome_EZtSKudUfd.png, Duration: 74 ms
+2026-06-27 17:33:10.870 - Hotkey triggered. Hotkey: Ctrl + Print Screen, Description: Chụp theo vùng, Job: RectangleRegion
+2026-06-27 17:33:10.871 - Executing: Chụp theo vùng
+2026-06-27 17:33:11.470 - Task in queue. Job: Job, Type: Image, Host: 
+2026-06-27 17:33:11.500 - Task status: Preparing
+2026-06-27 17:33:11.530 - Image copied to clipboard.
+2026-06-27 17:33:11.553 - Image saved to file: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\Screenshots\2026-06\chrome_9eAfX9tXmR.png
+2026-06-27 17:33:11.568 - Task completed. File name: chrome_9eAfX9tXmR.png, Duration: 68 ms
+2026-06-27 17:34:01.066 - Hotkey triggered. Hotkey: Ctrl + Print Screen, Description: Chụp theo vùng, Job: RectangleRegion
+2026-06-27 17:34:01.066 - Executing: Chụp theo vùng
+2026-06-27 17:34:01.568 - Task in queue. Job: Job, Type: Image, Host: 
+2026-06-27 17:34:01.598 - Task status: Preparing
+2026-06-27 17:34:01.627 - Image copied to clipboard.
+2026-06-27 17:34:01.652 - Image saved to file: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\Screenshots\2026-06\chrome_eNAEwwTysP.png
+2026-06-27 17:34:01.667 - Task completed. File name: chrome_eNAEwwTysP.png, Duration: 69 ms
+2026-06-27 17:35:34.147 - Hotkey triggered. Hotkey: Ctrl + Print Screen, Description: Chụp theo vùng, Job: RectangleRegion
+2026-06-27 17:35:34.147 - Executing: Chụp theo vùng
+2026-06-27 17:35:34.858 - Task in queue. Job: Job, Type: Image, Host: 
+2026-06-27 17:35:34.891 - Task status: Preparing
+2026-06-27 17:35:34.920 - Image copied to clipboard.
+2026-06-27 17:35:34.942 - Image saved to file: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\Screenshots\2026-06\chrome_ce2ccKsHQR.png
+2026-06-27 17:35:34.958 - Task completed. File name: chrome_ce2ccKsHQR.png, Duration: 68 ms
+2026-06-27 17:46:27.052 - Hotkey triggered. Hotkey: Ctrl + Print Screen, Description: Chụp theo vùng, Job: RectangleRegion
+2026-06-27 17:46:27.053 - Executing: Chụp theo vùng
+2026-06-27 17:46:31.292 - Task in queue. Job: Job, Type: Image, Host: 
+2026-06-27 17:46:31.345 - Task status: Preparing
+2026-06-27 17:46:31.371 - Image copied to clipboard.
+2026-06-27 17:46:31.390 - Image saved to file: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\Screenshots\2026-06\Postman_e2lGaJgmg6.png
+2026-06-27 17:46:31.402 - Task completed. File name: Postman_e2lGaJgmg6.png, Duration: 58 ms

@@ -1,0 +1,17 @@
+﻿Test: DT-FR13-3 - Dashboard with mix of delivered and non-delivered orders
+Date: 2026-06-27 13:05:06
+Environment: localhost:3000 (API), localhost:5174 (Admin Frontend)
+
+Admin API Request: GET /api/admin/orders
+Authorization: Bearer <admin_token>
+
+Actual Results:
+- Total Orders: 15
+- Delivered Orders Count: 
+- Total Revenue (from delivered): 399 VND
+
+Admin Frontend (localhost:5174) expected to display:
+- Total Orders: 15
+- Total Revenue: 399 ₫
+
+Verification: PASS - Revenue = sum of delivered orders' total_amount (FR-13 requirement)
