@@ -132,7 +132,7 @@
 ## Human Review - Phase 3
 
 - Reviewer: Nguyen Thanh Tien
-- Review Date and Time: 2026-06-26 08:45 GMT+7
+- Review Date and Time: 2026-06-26 08:45
 - Review Scope: Domain Modeling for FR-02 Login and Account Lockout
 - Corrections Made:
   - Verified FR-02 input, state, output, UI, and API variables.

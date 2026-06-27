@@ -27,8 +27,6 @@
 | `api_specification.md` - `POST /api/login`     | API specification       | Defines the public method, endpoint, JSON request example, and documented successful response containing JWT `token` and `user` information.             |
 | Public UI observations                         | Observable UI behaviour | Not used. The application was not started, and no previously recorded public UI observation was supplied as a test basis for FR-02 in this design phase. |
 
-No implementation source, internal test, database record/schema, controller, route, service, middleware, model, or inferred implementation behaviour was used.
-
 ## Requirement Rules
 
 | Rule ID  | Rule                                                                              | Test Basis Type      | Test Basis Reference | Observable Expected Behaviour                                                                                                                       | Ambiguity                                                                                                                           | Assumption                                                                                                 |
@@ -102,8 +100,6 @@ No implementation source, internal test, database record/schema, controller, rou
 
 ## Coverage Gaps
 
-## Coverage Gaps
-
 - An authoritative clarification is needed for all ambiguities listed above before they can become exact expected results.
 - No approved public UI observation was available in this design phase, so actual controls, labels, navigation target, token storage location, and messages have not been corroborated observationally.
 - The API specification documents the successful `POST /api/login` response and authenticated Bearer-token usage, but it does not define exact invalid-login, missing-field, malformed-email, wrong-password, or lockout response status/body contracts.
@@ -114,7 +110,7 @@ No implementation source, internal test, database record/schema, controller, rou
 ## Human Review - Phase 1 and Phase 2
 
 - Reviewer: Nguyen Thanh Tien
-- Review Date and Time: 2026-06-26 08:32 GMT+7
+- Review Date and Time: 2026-06-26 08:32
 - Review Scope: Feature Intake and Black-box Test Basis Collection for FR-02
 - Corrections Made:
   - Refined API login request rules to avoid overclaiming undocumented validation behaviour.

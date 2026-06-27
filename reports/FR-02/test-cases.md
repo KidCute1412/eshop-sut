@@ -624,7 +624,7 @@
 ## Human Review - Phase 5
 
 - Reviewer: Nguyen Thanh Tien
-- Review Date and Time: 2026-06-26 11:15 GMT+7
+- Review Date and Time: 2026-06-26 11:15
 - Review Scope: FR-02 Test-Case Design after duplicate merge
 - Corrections Made:
   - Merged duplicate DT lockout cases into existing BVA cases where the same UI/API threshold or active-lockout timing was already covered.

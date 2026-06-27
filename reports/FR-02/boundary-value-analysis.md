@@ -67,7 +67,7 @@ No Actual Result, Pass/Fail status, screenshot, evidence, bug report, or GitHub 
 ## Human Review - Phase 4
 
 - Reviewer: Nguyen Thanh Tien
-- Review Date and Time: 2026-06-26 08:58 GMT+7
+- Review Date and Time: 2026-06-26 08:58
 - Review Scope: Boundary Value Analysis for FR-02 Login and Account Lockout
 - Corrections Made:
   - Confirmed that BVA applies only to the documented failed-attempt threshold and 30-second lockout duration.

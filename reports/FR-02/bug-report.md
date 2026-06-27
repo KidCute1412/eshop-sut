@@ -122,27 +122,6 @@
 - GitHub Issue Link: Pending
 - Notes: `FR02-DT-021` passed in the current merged test-case file for the general expired-lockout state. This bug is limited to the UI BVA observations at the documented 30-second and 31-second boundary points.
 
-## Failed Test Cases to Bug Mapping
-
-| Failed Test Case | Status | Bug ID       |
-| ---------------- | ------ | ------------ |
-| FR02-DT-005      | Fail   | BUG-FR02-001 |
-| FR02-DT-014      | Fail   | BUG-FR02-002 |
-| FR02-DT-015      | Fail   | BUG-FR02-001 |
-| FR02-DT-016      | Fail   | BUG-FR02-003 |
-| FR02-DT-017      | Fail   | BUG-FR02-004 |
-| FR02-BVA-001     | Fail   | BUG-FR02-005 |
-| FR02-BVA-005     | Fail   | BUG-FR02-005 |
-| FR02-BVA-010     | Fail   | BUG-FR02-006 |
-| FR02-BVA-011     | Fail   | BUG-FR02-006 |
-
-## Non-Bug Notes
-
-- Passing cases are not listed as bugs.
-- No bug is recorded for removed or merged duplicate cases.
-- No GitHub Issue links are invented; all issue links remain `Pending` until real issues are created.
-- Runtime failures exposed by AI-generated or human-reviewed tests are recorded as runtime findings, not as automatically AI-missed bugs.
-
 ## Human Review
 
 - Reviewer: Nguyen Thanh Tien
