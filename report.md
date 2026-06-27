@@ -469,6 +469,7 @@ Các test plan bổ sung cũng kiểm tra cách Dashboard xử lý từng trạn
 | `FR13-DT-06` | `FR13-D-V-06`, `FR13-D-V-07` | Dashboard với đơn shipping | Admin đăng nhập thành công; có đơn shipping. | 1 đơn `shipping`, `total_amount = 150000`. | 1. Đăng nhập admin.<br>2. Đảm bảo có đơn shipping.<br>3. Vào Dashboard. | Doanh thu không bao gồm đơn shipping. | Doanh thu không gồm đơn shipping | Passed |  |
 | `FR13-DT-07` | `FR13-D-V-02`, `FR13-D-V-08` | Dashboard với nhiều đơn delivered | Admin đăng nhập thành công; có nhiều đơn delivered. | 3 đơn delivered: `100000 + 200000 + 300000 = 600000`. | 1. Đăng nhập admin.<br>2. Đảm bảo có 3 đơn delivered như dữ liệu đầu vào.<br>3. Vào Dashboard. | Doanh thu hiển thị `600000₫`. | Doanh thu hiển thị `1200000₫`, gấp đôi giá trị mong đợi. | Failed | Quan sát Dashboard với dữ liệu test `TC-DASH-07` |
 | `FR13-DT-08` | `FR13-D-I-01` | User thường không được truy cập admin API/dashboard | Có token của user thường hoặc token không có quyền admin. | Token hợp lệ nhưng role không phải Admin. | 1. Gửi request đến API/admin resource bằng token user thường.<br>2. Quan sát phản hồi. | Hệ thống từ chối bằng `401` hoặc `403`. | Request của user không phải Admin vẫn được chấp nhận cho tài nguyên admin. | Failed | Quan sát phản hồi API bằng token user thường |
+| `FR13-DT-09` | `FR13-D-V-02`, `FR13-D-V-08` | Đơn hàng delivered có giá trị âm | Admin đăng nhập thành công; có đơn hàng đã giao giá trị âm | 1 đơn đã giao giá trị `-1` | 1. Đăng nhập admin.<br>2. Đảm bảo có 1 đơn delivered như dữ liệu đầu vào.<br>3. Vào Dashboard. | Doanh thu hiển thị lỗi doanh thu âm. | Doanh thu hiển thị `-2` | Failed | Quan sát Dashboard với dữ liệu test `TC-DASH-07` |
 
 ### 8.3.4 Tổng kết Domain Testing
 
@@ -476,7 +477,7 @@ Các test plan bổ sung cũng kiểm tra cách Dashboard xử lý từng trạn
 | --- | ---: |
 | Tổng số test case Domain Testing | 8 |
 | Passed | 1 |
-| Failed | 3 |
+| Failed | 4 |
 | Blocked | 1 |
 | Not Executed | 3 |
 | Needs Review | 0 |
@@ -487,24 +488,28 @@ Các test plan bổ sung cũng kiểm tra cách Dashboard xử lý từng trạn
 
 | Boundary Variable ID | Biến | Quy tắc biên | Giá trị nhỏ nhất | Giá trị lớn nhất | Giá trị bình thường |
 | --- | --- | --- | --- | --- | --- |
-| `FR13-BVAR-01` | `total_amount` | Số tiền đơn hàng hợp lệ khi `total_amount >= 0`; áp dụng 3-point BVA tại biên dưới. | `0` | Không rõ | `100000` |
-| `FR13-BVAR-02` | `total_revenue` | Doanh thu hiển thị phải bằng tổng `total_amount` của đơn `delivered`, không nhân đôi. | `0` | Không rõ | `100000` |
+| `FR13-BVAR-01` | `total_amount` | Số đơn hàng | `0` | Không rõ | `1` |
+| `FR13-BVAR-02` | `total_revenue` | Doanh thu hiển thị phải bằng tổng  của đơn đã giao | `0` | Không rõ | `100000` |
 
 ### 8.4.2 Giá trị biên
 
 | Boundary ID | Biến | Loại biên | Giá trị | Hành vi mong đợi | Basis ID |
 | --- | --- | --- | --- | --- | --- |
-| `FR13-B-001` | `total_amount` | `min-1` | `-1` | Không nên tồn tại hoặc không được chấp nhận vì số tiền âm. | `FR-13:C6` |
-| `FR13-B-002` | `total_amount` | `min` | `0` | Nếu đơn delivered có amount `0`, doanh thu hiển thị `0₫`. | `FR-13:C1`, `FR-13:C6` |
-| `FR13-B-003` | `total_amount` | `min+1` | `1` | Nếu đơn delivered có amount `1`, doanh thu hiển thị `1₫`, không phải `2₫`. | `FR-13:C1`, `FR-13:C6` |
+| `FR13-B-001` | `total_order` | `min-1` | `-1` | Không nên tồn tại hoặc không được chấp nhận vì số đơn âm. | `FR-13:C6` |
+| `FR13-B-002` | `total_order` | `min` | `0` | Nếu đơn delivered có amount `0`, doanh thu hiển thị `0₫`. | `FR-13:C1`, `FR-13:C6` |
+| `FR13-B-003` | `total_order` | `min+1` | `1` | Nếu đơn delivered có order `1`, doanh thu hiển thị `1₫`, không phải `2₫`. | `FR-13:C1`, `FR-13:C6` |
+| `FR13-B-003` | `total_revenue` | `min-1` | `-1` | Không bao giờ có doanh thu `-1` | `FR-13:C1`, `FR-13:C6` |
+| `FR13-B-004` | `total_revenue` | `min` | `0` | Nếu không có đơn hàng đã giao, doanh thu bằng `0` | `FR-13:C1`, `FR-13:C6` |
+
 
 ### 8.4.3 Test case BVA
 
 | Test Case ID | Boundary ID liên quan | Tiêu đề | Điều kiện tiên quyết | Dữ liệu đầu vào | Các bước thực hiện | Kết quả mong đợi | Kết quả thực tế | Trạng thái | Minh chứng |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `FR13-BVA-01` | `FR13-B-001` | `total_amount` nhỏ hơn biên dưới | Có thể tạo hoặc mô phỏng đơn hàng với amount âm. | `total_amount = -1` | 1. Tạo/mô phỏng đơn hàng có amount âm.<br>2. Kiểm tra Dashboard/API. | Hệ thống không chấp nhận hoặc không hiển thị dữ liệu âm. | Chưa thực thi vì cần dữ liệu âm không hợp lệ. | Not Executed |  |
-| `FR13-BVA-02` | `FR13-B-002` | `total_amount` tại biên dưới | Admin đăng nhập; có đơn delivered với amount `0`. | `status = delivered`, `total_amount = 0` | 1. Đăng nhập admin.<br>2. Vào Dashboard.<br>3. Quan sát doanh thu. | Doanh thu hiển thị `0₫`. | Chưa thực thi trong execution summary. | Not Executed |  |
-| `FR13-BVA-03` | `FR13-B-003` | `total_amount` ngay trên biên dưới | Admin đăng nhập; có đơn delivered với amount `1`. | `status = delivered`, `total_amount = 1` | 1. Đăng nhập admin.<br>2. Vào Dashboard.<br>3. Quan sát doanh thu. | Doanh thu hiển thị `1₫`. | Doanh thu có nguy cơ hiển thị `2₫`, gấp đôi giá trị mong đợi. | Failed | Quan sát Dashboard với dữ liệu biên `total_amount = 1` |
+| `FR13-BVA-01` | `FR13-B-001` | `total_order` nhỏ hơn biên dưới | Có thể tạo hoặc mô phỏng đơn hàng với order âm. | `total_order = -1` | 1. Tạo/mô phỏng đơn hàng có số order âm.<br>2. Kiểm tra Dashboard/API. | Hệ thống không chấp nhận hoặc không hiển thị dữ liệu âm. | Chưa thực thi vì cần dữ liệu âm không hợp lệ. | Not Executed |  |
+| `FR13-BVA-02` | `FR13-B-002` | `total_order` tại biên dưới | Admin đăng nhập; có đơn delivered với amount `0`. | `status = delivered`, `total_amount = 0` | 1. Đăng nhập admin.<br>2. Vào Dashboard.<br>3. Quan sát doanh thu. | Doanh thu hiển thị `0₫`. | Doanh thu hiển thị | Not Executed |  |
+| `FR13-BVA-03` | `FR13-B-003` | `total_revenue` ngay trên biên dưới | Admin đăng nhập; có đơn delivered với amount `1`. | `status = delivered`, `total_revenue = 1` | 1. Đăng nhập admin.<br>2. Vào Dashboard.<br>3. Quan sát doanh thu. | Doanh thu hiển thị `1₫`. | Doanh thu có hiển thị `2₫`, gấp đôi giá trị mong đợi. | Failed | Quan sát Dashboard với dữ liệu biên `total_amount = 1` |
+| `FR13-BVA-04` | `FR13-B-004` | `total_revenue` ngay dưới biên dưới | Admin đăng nhập; có đơn delivered với amount `-1`. | `status = delivered`, `total_revenue = 1` | 1. Đăng nhập admin.<br>2. Vào Dashboard.<br>3. Quan sát doanh thu. | Doanh thu hiển thị lỗi. | Doanh thu hiển thị `-2` | Failed | Quan sát Dashboard với dữ liệu biên `total_amount = 1` |
 
 ### 8.4.4 Tổng kết BVA
 

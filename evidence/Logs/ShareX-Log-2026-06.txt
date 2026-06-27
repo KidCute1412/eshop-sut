@@ -404,3 +404,65 @@ System.ArgumentException: The value cannot be an empty string. (Parameter 'oldVa
 2026-06-27 17:46:31.371 - Image copied to clipboard.
 2026-06-27 17:46:31.390 - Image saved to file: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\Screenshots\2026-06\Postman_e2lGaJgmg6.png
 2026-06-27 17:46:31.402 - Task completed. File name: Postman_e2lGaJgmg6.png, Duration: 58 ms
+2026-06-27 17:48:55.271 - UploadersConfig save started: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\UploadersConfig.json
+2026-06-27 17:48:55.271 - ApplicationConfig save started: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\ApplicationConfig.json
+2026-06-27 17:48:55.274 - HotkeysConfig save started: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\HotkeysConfig.json
+2026-06-27 17:48:55.333 - HotkeysConfig save successful: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\HotkeysConfig.json
+2026-06-27 17:48:55.367 - UploadersConfig save successful: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\UploadersConfig.json
+2026-06-27 17:48:55.455 - ApplicationConfig save successful: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\ApplicationConfig.json
+2026-06-27 17:49:04.938 - ShareX closing.
+2026-06-27 17:49:04.959 - ApplicationConfig save started: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\ApplicationConfig.json
+2026-06-27 17:49:05.119 - ApplicationConfig save successful: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\ApplicationConfig.json
+2026-06-27 17:49:05.119 - UploadersConfig save started: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\UploadersConfig.json
+2026-06-27 17:49:05.156 - UploadersConfig save successful: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\UploadersConfig.json
+2026-06-27 17:49:05.156 - HotkeysConfig save started: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\HotkeysConfig.json
+2026-06-27 17:49:05.165 - HotkeysConfig save successful: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\HotkeysConfig.json
+2026-06-27 17:49:05.165 - ShareX closed.
+2026-06-28 02:09:46.508 - ShareX starting.
+2026-06-28 02:09:46.510 - Version: 18.0.1
+2026-06-28 02:09:46.511 - Build: Release
+2026-06-28 02:09:46.511 - Command line: "C:\Program Files\ShareX\ShareX.dll"
+2026-06-28 02:09:46.511 - Personal path: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence
+2026-06-28 02:09:46.511 - Personal path detection method: PersonalPath.cfg file (C:\Users\Windows\Documents\ShareX\PersonalPath.cfg)
+2026-06-28 02:09:46.512 - Operating system: Windows 10 Pro (64-bit)
+2026-06-28 02:09:46.512 - .NET version: 9.0.8
+2026-06-28 02:09:46.512 - Running as elevated process: False
+2026-06-28 02:09:46.666 - ApplicationConfig load started: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\ApplicationConfig.json
+2026-06-28 02:09:47.768 - ApplicationConfig load finished: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\ApplicationConfig.json
+2026-06-28 02:09:48.172 - Language changed to: Tiếng Việt (Việt Nam)
+2026-06-28 02:09:48.173 - MainForm init started.
+2026-06-28 02:09:48.173 - UploadersConfig load started: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\UploadersConfig.json
+2026-06-28 02:09:48.352 - UploadersConfig load finished: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\UploadersConfig.json
+2026-06-28 02:09:48.353 - HotkeysConfig load started: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\HotkeysConfig.json
+2026-06-28 02:09:48.378 - HotkeysConfig load finished: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\HotkeysConfig.json
+2026-06-28 02:09:48.705 - MainForm init finished.
+2026-06-28 02:09:48.794 - Hotkey registered: Hotkey: Ctrl + Print Screen, Description: Chụp theo vùng, Job: RectangleRegion
+2026-06-28 02:09:48.794 - Hotkey registered: Hotkey: Print Screen, Description: Chụp toàn màn hình, Job: PrintScreen
+2026-06-28 02:09:48.794 - Hotkey registered: Hotkey: Alt + Print Screen, Description: Chụp cửa sổ đang hoạt động, Job: ActiveWindow
+2026-06-28 02:09:48.794 - Hotkey registered: Hotkey: Shift + Print Screen, Description: Bắt đầu/Dừng ghi lại màn hình sử dụng vùng tự chọn, Job: ScreenRecorder
+2026-06-28 02:09:48.794 - Hotkey registered: Hotkey: Ctrl + Shift + Print Screen, Description: Bắt đầu/Dừng ghi lại màn hình (dạng ảnh GIF) sử dụng vùng tự chọn, Job: ScreenRecorderGIF
+2026-06-28 02:09:48.795 - HotkeyManager started.
+2026-06-28 02:09:48.795 - WatchFolderManager started.
+2026-06-28 02:09:48.825 - Startup time: 7282 ms
+2026-06-28 02:09:53.430 - Hotkey triggered. Hotkey: Ctrl + Print Screen, Description: Chụp theo vùng, Job: RectangleRegion
+2026-06-28 02:09:53.433 - Executing: Chụp theo vùng
+2026-06-28 02:09:55.741 - Task in queue. Job: Job, Type: Image, Host: 
+2026-06-28 02:09:55.855 - Task status: Preparing
+2026-06-28 02:09:55.898 - Image copied to clipboard.
+2026-06-28 02:09:55.926 - Image saved to file: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\Screenshots\2026-06\chrome_IMLYqs39VP.png
+2026-06-28 02:09:55.951 - Task completed. File name: chrome_IMLYqs39VP.png, Duration: 93 ms
+2026-06-28 02:10:00.655 - URL opened: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\Screenshots\2026-06\chrome_IMLYqs39VP.png
+2026-06-28 02:14:27.874 - Hotkey triggered. Hotkey: Ctrl + Print Screen, Description: Chụp theo vùng, Job: RectangleRegion
+2026-06-28 02:14:27.874 - Executing: Chụp theo vùng
+2026-06-28 02:14:29.066 - Task in queue. Job: Job, Type: Image, Host: 
+2026-06-28 02:14:29.077 - Task status: Preparing
+2026-06-28 02:14:29.108 - Image copied to clipboard.
+2026-06-28 02:14:29.136 - Image saved to file: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\Screenshots\2026-06\chrome_20E81DX7pq.png
+2026-06-28 02:14:29.150 - Task completed. File name: chrome_20E81DX7pq.png, Duration: 72 ms
+2026-06-28 02:29:24.463 - Hotkey triggered. Hotkey: Ctrl + Print Screen, Description: Chụp theo vùng, Job: RectangleRegion
+2026-06-28 02:29:24.463 - Executing: Chụp theo vùng
+2026-06-28 02:29:25.449 - Task in queue. Job: Job, Type: Image, Host: 
+2026-06-28 02:29:25.460 - Task status: Preparing
+2026-06-28 02:29:25.490 - Image copied to clipboard.
+2026-06-28 02:29:25.515 - Image saved to file: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\Screenshots\2026-06\chrome_UQwg8qU614.png
+2026-06-28 02:29:25.529 - Task completed. File name: chrome_UQwg8qU614.png, Duration: 68 ms
