@@ -1,0 +1,30 @@
+- Name of the AI tool: GitHub Copilot
+- Date and time: 27/06/2026 11:14
+- Full text of given prompt: I want to create an agent skill for domain testing, this skill will be used to apply the methods of domain testing and equivalence partitioning whenever appropriate for making tests, this skill will also record and write down any session of test making to logs.md following the rules of logs editing. This agent skill will be purely black-box, meaning it cannot access nor have a clear grasp on the source code, however, it can gain access to the program's info and setup, as well as the requirements. The process will be as follows:
+  - The agent will be given (or is already given) info about the program and how it is run
+  - The agent will be assigned a functional requirement to create test-cases.
+  - Following the methods of black-box testing, domain testing and equivalence partitioning with boundary values, a list of equivalence classes will be identified and similarly, a list of test cases from those classes.
+  - Using the templates, the agent will first create tables (if not yet existed) and add tests and equivalence classes, while updating the 3 types of traceability matrices about functional requirements, equivalence classes and test cases.
+  - The agent will then write down in a file in step-by-step details about how techniques of domain testing and boundary value analysis are used for test cases creation. This part must be written with clear, precise concepts, maintaining truths and avoiding hallucinations.
+  - If possible, the agent can use scripts to view and execute some test cases, otherwise this will be done manually by the user.
+  - The bug screenshots and documentation will be done primarily by the user.
+  - After any session of the agent, a log must be recorded within logs.md following the format.
+  Note that after this session also, a log should also be written in logs.md
+- Attached file names: setup/skills/domain-testing.md; setup/skills/equivalence-partitioning.md; setup/skills/logs-editing.md; setup/logs/logs.md; setup/templates/traceability_matrix.md; setup/templates/bug_table.md; setup/templates/equivalence_class_table.md; setup/templates/test_table.md; setup/info/functional_requirements.md
+- Text Output: Created a new skill file at .github/skills/domain-testing/SKILL.md with workflow instructions for black-box domain testing, equivalence partitioning, boundary value analysis, artifact maintenance, reasoning notes, and session logging.
+- File Outputs: .github/skills/domain-testing/SKILL.md
+------
+- Name of the AI tool: GitHub Copilot
+- Date and time: 27/06/2026 11:24
+- Full text of given prompt: can i modify it to automatically access the info folder, the skills folder and the templates folder for instructions, while also automatically access the logs folder and the tables folder to write down the outputs?
+- Attached file names: .github/skills/domain-testing/SKILL.md; setup/tables
+- Text Output: Updated the skill so it explicitly reads from setup/info, setup/skills, and setup/templates, and writes outputs to setup/logs and setup/tables.
+- File Outputs: .github/skills/domain-testing/SKILL.md; setup/tables
+------
+- Name of the AI tool: GitHub Copilot
+- Date and time: 27/06/2026 11:25
+- Full text of given prompt: i've added the tables file while also added this file, the agent should have access to this file to write the explanation of explaining how the equivalence classes and boundary values are used
+- Attached file names: .github/skills/domain-testing/SKILL.md; report-deliverables/domain_bva_raw.txt
+- Text Output: Updated the skill so it explicitly reads the explanation/output file at report-deliverables/domain_bva_raw.txt as part of the workflow for documenting how equivalence classes and boundary values are used.
+- File Outputs: .github/skills/domain-testing/SKILL.md
+------
