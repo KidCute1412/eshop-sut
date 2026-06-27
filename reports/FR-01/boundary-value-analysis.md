@@ -50,20 +50,13 @@ No upper-bound model is created because the approved test basis documents no max
 
 ## Boundary Derivation
 
-FR01-R06 states “at least 8 characters,” creating an inclusive lower boundary over integer character counts. Therefore, 8 is the on point, 7 is the adjacent off point, and 9 is the adjacent in point. The value 11 is retained as a nominal internal valid value, not as a boundary point.
+FR01-R06 defines password length as “at least 8 characters,” so the inclusive lower boundary is 8. Therefore, 7 is the adjacent off point, 8 is the on point, and 9 is the adjacent in point. `ValidPass1!` with 11 characters is kept as a nominal valid value, not a boundary point.
 
-Each concrete password value is selected so that password length is the only factor changing the expected classification. `Abcd1!x`, `Abcd1!xy`, `Abcd1!xyz`, and `ValidPass1!` all contain an uppercase letter, lowercase letters, a digit, and the explicitly documented special character `!`. This preserves the nominal conditions from FR01-R07, FR01-R08, FR01-R09, and FR01-R10 while testing the FR01-R06 length boundary.
+The selected passwords vary only by length. `Abcd1!x`, `Abcd1!xy`, `Abcd1!xyz`, and `ValidPass1!` all include uppercase, lowercase, digit, and the documented special character `!`, keeping FR01-R07 to FR01-R10 nominal while testing FR01-R06.
 
-For API-surface use, the request body remains nominal except for the selected password value. For UI-surface use, the selected password must be repeated in the Confirm Password field so that password-confirmation equality remains nominal. If the UI does not provide a Confirm Password control, that issue belongs to the Domain Testing partition `CONFIRM-CONTROL-I01`, not to the password-length BVA model.
+For API testing, only the password value changes in an otherwise nominal request body. For UI testing, the same value must also be entered in Confirm Password to keep confirmation matching nominal. If Confirm Password is missing from the UI, that belongs to `CONFIRM-CONTROL-I01`, not this password-length BVA model.
 
-Verified counts:
-
-- `Abcd1!x` = 7 characters.
-- `Abcd1!xy` = 8 characters.
-- `Abcd1!xyz` = 9 characters.
-- `ValidPass1!` = 11 characters.
-
-Classification is design-time analysis, not execution. No Actual Result, Pass/Fail status, screenshot, evidence, bug report, or GitHub Issue is created in Phase 4.
+Verified counts: `Abcd1!x` = 7, `Abcd1!xy` = 8, `Abcd1!xyz` = 9, `ValidPass1!` = 11.
 
 ## Coverage Decisions and Exclusions
 
@@ -74,7 +67,6 @@ Classification is design-time analysis, not execution. No Actual Result, Pass/Fa
 - Step-indicator applicability is undetermined because the approved test basis does not establish the FR-01 registration form as a multi-step form.
 - Full-name length, email length, and confirmation length have no approved numeric limits.
 - The UI absence of a Confirm Password control is covered by Domain Testing, not by BVA.
-- Test-case coverage is reserved for Phase 5; no BVA test case is created here.
 
 ## Assumptions and Gaps
 
@@ -89,7 +81,7 @@ Classification is design-time analysis, not execution. No Actual Result, Pass/Fa
 ## Human Review - Phase 4
 
 - Reviewer: Nguyen Thanh Tien
-- Review Date and Time: 2026-06-23 21:00 GMT+7
+- Review Date and Time: 2026-06-23 21:00
 - Review Scope: Boundary Value Analysis for FR-01 Account Registration
 - Corrections Made:
   - Verified that BVA is applicable only to the documented password minimum length boundary.
@@ -102,5 +94,3 @@ Classification is design-time analysis, not execution. No Actual Result, Pass/Fa
 - Missing Boundaries Added: None
 - Incorrect Boundaries Removed: None
 - Status: Completed
-- Approved for Test-Case Derivation: Yes
-- Approved for Test Execution: No

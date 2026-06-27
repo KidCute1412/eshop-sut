@@ -1,9 +1,5 @@
 # AI Gap Analysis - FR-01 Account Registration
 
-## Scope and Sources
-
-This Phase 8 analysis compares the preserved initial AI artifacts for Domain Modeling, BVA, and test-case generation with the current human-reviewed reports, execution records, evidence, bug report, and AI Audit. It does not inspect implementation source or change any test result.
-
 ## Verified Baseline
 
 | Artifact                                      |    Preserved Initial AI Output | Current Human-reviewed State | Verified Difference                                                          |
@@ -57,28 +53,8 @@ BUG-FR01-001 through BUG-FR01-004 were exposed by tests already present in the i
 
 BUG-FR01-005 and BUG-FR01-006 were exposed by human-added FR01-DT-023 and DT-024. The expanded character-class and invalid-partition coverage within BUG-FR01-007 came from human-added DT-025 through DT-029.
 
-## AI Gap Summary
-
-- Phase 3: one conflated Confirm Password domain was corrected by replacing 2 partitions with 4 precise partitions; normative count increased from 41 to 43.
-- Phase 4: all 4 boundary values were retained; human work improved references and dependency handling rather than boundary selection.
-- Phase 5: 8 cases were added, 0 removed, and 0 reclassified; all 29 retained cases received documented corrections.
-- Execution: 37 cases produced 5 Pass, 14 Fail, and 18 Blocked.
-- Bug reporting: 7 confirmed bug records exist. No GitHub Issue link has been created; all remain Pending.
-- The strongest AI weakness was incomplete cross-surface coverage. Its strongest contribution was generating several cases that genuinely exposed runtime defects.
-
-## Lessons Learned
-
-1. Partition coverage is not enough by itself; each applicable UI/API surface needs an explicit coverage decision.
-2. UI control existence, input value presence, and cross-field relations must be modeled separately because they create different tests and blockers.
-3. BVA arithmetic can be correct while traceability and execution dependencies remain incomplete.
-4. Concrete data, isolated invalid conditions, and exact rule/partition IDs turn plausible AI output into executable, auditable tests.
-5. A bug discovered by running an AI-generated test is evidence that the test was useful, not evidence that the AI missed that bug.
-6. Runtime dependency checks should run early so blocked cases are classified individually and honestly.
-7. Initial AI output, human corrections, runtime evidence, and bug records must remain distinct to support a defensible audit.
-
 ## Human Review
 
 Reviewer: Nguyen Thanh Tien
 Review Date and Time: 2026-06-24 20:44
 Human Review Status: Completed
-Human Corrections: Reviewed AI gaps, runtime findings, counts, and references; no further corrections required.

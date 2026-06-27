@@ -11,7 +11,6 @@
 | Application Surface   | EShop User Web and public registration API                                                                                                          |
 | Requirement Source    | `README.md` - FR-01 and Shared Form Requirements; `api_specification.md` - `POST /api/register`; `2026.HW02.Domain Testing_En.pdf`                  |
 | Public API Endpoint   | `POST /api/register`                                                                                                                                |
-| API Base URL          | `http://localhost:3000`                                                                                                                             |
 | UI Location           | `/register`                                                                                                                                         |
 | Output Directory      | `reports/FR-01/`                                                                                                                                    |
 | Execution Environment | Not started or inspected; Phase 1-2 analysis only                                                                                                   |
@@ -26,6 +25,8 @@
 | `README.md` - Shared Form Requirements (FR-22) | Official requirement    | Defines required-field markers, email/password control types, error placement, and the conditional multi-step indicator rule.                                       |
 | `api_specification.md` - `POST /api/register`  | API specification       | Defines the public method, endpoint, JSON request example, and documented successful response.                                                                      |
 | Public UI observations                         | Observable UI behaviour | Not used. The application was not started, and no previously recorded public UI observation was supplied as a test basis.                                           |
+
+No implementation source, internal test, database record/schema, or inferred implementation behaviour was used.
 
 ## Requirement Rules
 
@@ -68,17 +69,28 @@
 
 ## Requirement Ambiguities
 
-- Field length limits are unspecified for full name, email, password, and confirm password.
-- Full-name validation is unclear, including minimum length, allowed characters, Unicode, digits, punctuation, whitespace handling, and name-component rules.
-- Input trimming and handling of leading, trailing, repeated, or whitespace-only values are unspecified for all fields.
-- Email validation, normalization, case sensitivity, and duplicate-check behavior are not fully defined.
-- API behavior is unclear for duplicate, missing, malformed, weak-password, or mismatched-confirmation inputs, including status codes, response bodies, and UI messages.
-- Password rules are ambiguous regarding the exact special-character set, ASCII vs. Unicode handling, and definitions of uppercase, lowercase, digit, special character, and length.
-- Confirm password is required in the UI but absent from the documented API request, so the validation layer is unclear.
-- Confirm-password UI details are unspecified, including control type, masking, label, and required indicator.
-- Successful registration behavior is unclear, including Login destination URL, redirect timing, and success message.
-- The API success example does not clarify whether `id: 1` is illustrative.
-- It is unclear whether registration is single-step or multi-step, so Step Indicator applicability cannot be determined.
+- Maximum lengths are unspecified for full name, email, password, and confirm password.
+- Minimum full-name length, allowed characters, number of name components, punctuation, digits, Unicode, and exact full-name rules are unspecified.
+- Trimming and acceptance of leading, trailing, internal repeated, or whitespace-only input are unspecified for all fields.
+- Email comparison/uniqueness case sensitivity and normalization are unspecified.
+- The complete valid-email grammar is unspecified beyond the `user@domain.com` example and the UI `type="email"` rule.
+- The duplicate-email API status, response body, error message, and UI message are unspecified.
+- Status codes and messages for missing, malformed, weak-password, or mismatched-confirmation input are unspecified.
+- The special-character list may be exhaustive or illustrative; treatment of other symbols is unspecified.
+- ASCII versus Unicode semantics for uppercase, lowercase, digit, special character, and password length are unspecified.
+- Confirm password is required on the UI, but it is absent from the documented API request; the layer responsible for matching is unspecified.
+- The confirm-password control type, masking requirement, label, and required marker are not explicit.
+- The exact successful Login destination URL, redirect timing, and any UI success message are unspecified.
+- The API success example does not clarify whether `id: 1` is illustrative, though a fixed ID would be inappropriate to assume.
+- It is not established whether registration is single-step or multi-step, so the Step Indicator rule cannot yet be classified as applicable.
+
+## Assumptions
+
+- The user-supplied `/register` location identifies the intended public web registration page; it was not verified through execution.
+- The user-supplied actor and application surfaces define the analysis scope.
+- API `name`, `email`, and `password` correspond to the same FR-01 concepts documented in `README.md` because they are specified for the public registration operation.
+- The API success response’s `id: 1` is an example value; the observable contract is the presence of an identifier, not the literal value `1`.
+- No undocumented validation rule, status code, message, normalization rule, field length, or implementation behaviour is assumed.
 
 ## Coverage Gaps
 
@@ -90,13 +102,5 @@
 
 ## Human Review - Phase 1 and Phase 2
 
-- Reviewer: Nguyen Thanh Tien
-- Review Date and Time: 2026-06-22 21:18
-- Review Scope: Feature Intake and Black-box Test Basis Collection
-- Corrections Made:
-  - Added API Base URL `http://localhost:3000` from `api_specification.md`.
-  - Clarified that no public UI observation was used because the application was not started.
-- Missing Rules or Test Bases: None identified after comparison with `README.md`, `api_specification.md`, and `2026.HW02.Domain Testing_En.pdf`.
-- Status: Completed
-- Approved for Domain Modeling: Yes
-- Approved for Test Execution: No
+- Status: Pending
+- Approved for Domain Modeling: No

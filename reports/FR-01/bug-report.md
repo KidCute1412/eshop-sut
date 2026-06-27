@@ -282,7 +282,3 @@ Every tested password was accepted with `200 OK`, the documented success message
 - [Missing digit](./evidence/FR01-DT-028.png)
 - [Missing special character](./evidence/FR01-DT-029.png)
 - [Seven-character boundary](./evidence/FR01-BVA-005.png)
-
-### GitHub Issue
-
-- Pending - attach all relevant API screenshots to the issue.

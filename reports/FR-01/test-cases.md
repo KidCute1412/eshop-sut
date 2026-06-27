@@ -777,15 +777,6 @@
 - Status: Pass
 - Evidence: [FR01-BVA-008](./evidence/FR01-BVA-008.png)
 
-## Exploratory Backlog
-
-| Candidate ID            | Input or Observation             | Missing Oracle                         | Clarification Required                | Reason Excluded from Normative Coverage |
-| ----------------------- | -------------------------------- | -------------------------------------- | ------------------------------------- | --------------------------------------- |
-| NAME-WHITESPACE-A01     | Full name `"   "`                | Whether whitespace counts as provided  | Trimming/whitespace policy            | FR01-R01 does not define it.            |
-| EMAIL-CASE-A01          | Case variants of one email       | Whether variants are the same identity | Case/normalization policy             | FR01-R05 does not define it.            |
-| PASSWORD-SPECIAL-A01    | Password containing unlisted `#` | Whether `#` qualifies                  | Whether special list is exhaustive    | FR01-R10 is ambiguous.                  |
-| FORM-STEP-INDICATOR-A01 | Observe step count/indicator     | Whether registration is multi-step     | Authoritative registration step model | SF05 is conditional.                    |
-
 ## Preliminary Coverage Summary
 
 | Rule ID                       | Partition or Boundary ID                        | Technique      | Covering Test Case ID      | Surface | Coverage Status         | Notes                                                            |
@@ -814,21 +805,10 @@
 | FR01-R06                      | FR01-PASSWORD-LENGTH-B01/B02/B03/N01            | BVA            | FR01-BVA-001-008           | UI/API  | Covered                 | Four approved values covered separately on both surfaces.        |
 | FR01 ambiguities              | Four A01 candidates                             | Exploratory    | None                       | UI/API  | Exploratory - No Oracle | Listed in backlog; excluded from normative coverage.             |
 
-## Design Gaps and Assumptions
-
-- Controlled email state must be prepared without treating hidden data as an oracle.
-- UI BVA execution depends on the approved Confirm Password control being available.
-- The API contract has no Confirm Password property, so none is added.
-- Invalid API outcomes use rejection/non-completion only; exact status/body needs clarification.
-- No normative tests cover undocumented whitespace, case normalization, unlisted symbols, step count, maximum lengths, Unicode semantics, exact Login URL/timing, or UI message text.
-- Each case states its exact rule, test basis, partition or boundary, concrete representative data, dependencies, surface, and observable expected result.
-
 ## Human Review - Phase 5
 
 - Reviewer: Nguyen Thanh Tien
-
 - Review Date and Time: 2026-06-24 13:08
-
 - Review Scope: FR-01 Test-Case Design
 
 - Corrections Made:
@@ -856,17 +836,9 @@
   - `FR01-DT-029`: Missing special character through API.
 
 - Test Cases Before Review: 21 DT and 8 BVA
-
 - Test Cases After Review: 29 DT and 8 BVA
-
 - Duplicate Cases Removed: None
-
 - Incorrect Cases Removed: None
-
 - Status: Completed
-
 - Approved for Validation: Yes
-
-- Approved for Traceability and Quality Review: Yes
-
 - Approved for Test Execution: Yes
