@@ -6,7 +6,7 @@ Use `FRNN-DT-###`, `FRNN-BVA-###`, `DNN-DT-###`, or `DNN-BVA-###`. The prefix mu
 
 ## Derivation and Traceability
 
-After each case, explain the derivation: originating rule, partition or Boundary ID, why the data is representative, and how the expected result follows from an approved black-box test basis. DT cases name a partition ID; BVA cases name a Boundary ID. `Test Basis Reference` points to a requirement, specification section, or recorded observable behaviour—not implementation source.
+After each case, explain the derivation: originating rule, partition or Boundary ID, why the data is representative, and how the expected result follows from an approved black-box test basis. DT cases name a partition ID; BVA cases name a Boundary ID. `Test Basis Reference` points to a requirement, specification section, or recorded observable behaviour, not implementation source. Do not include `Source Code Reference` in black-box test cases.
 
 Before human review, include a coverage summary that maps each normative partition and boundary to the test cases that cover it. The summary must show the applicable surface (`UI`, `API`, or both), the coverage status, and the reason for any omission.
 
@@ -16,4 +16,6 @@ For invalid cases, choose concrete data that isolates the target invalid conditi
 
 ## Execution Integrity
 
-Allowed statuses are `Not Executed`, `Pass`, `Fail`, and `Blocked`. Before execution use exactly `Actual Result: Not Executed`, `Status: Not Executed`, and `Evidence: None`. Pass and Fail require real evidence. Blocked requires a reason. Not Executed must not cite execution evidence.
+Allowed statuses are `Not Executed`, `Pass`, `Fail`, and `Blocked`. Before execution use exactly `Actual Result: Not Executed`, `Status: Not Executed`, and `Evidence: None`. Pass and Fail require a concrete observed `Actual Result` and real evidence. Blocked requires a `Blocking Reason` field plus evidence showing the blocker. Do not use Blocked when the target behaviour was actually observable. Not Executed must not cite execution evidence.
+
+Before handoff and after execution updates, run the provided validation script when available. Fix missing partition or boundary references, missing evidence, invalid statuses, duplicate IDs, and missing `Blocking Reason` fields before reporting completion.

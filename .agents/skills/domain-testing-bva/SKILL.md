@@ -35,6 +35,8 @@ Use this skill for one selected feature at a time. Domain Testing (DT) and Bound
 - Keep conformance checks that can block many cases, such as missing controls or unavailable public states, visible as their own cases and execute or review them early.
 - Keep unsupported behaviours in ambiguity or exploratory sections. Do not turn missing maximum lengths, normalization, exact messages, undocumented status codes, or implementation-only behaviour into normative expectations.
 - Attribute runtime findings carefully: a bug exposed by an AI-generated test is a successful runtime discovery, not an AI-missed bug. A human-added test that exposes a bug may be both a missed-case gap and a runtime finding.
+- When a case is `Blocked`, include a concrete `Blocking Reason` field and evidence showing the blocker. Do not mark all downstream cases blocked unless the dependency truly prevents the target observation.
+- Use `Test Basis Reference` only. Do not include source-code provenance fields such as `Source Code Reference` in black-box cases.
 
 ## Phase 1: Feature Intake
 
@@ -84,6 +86,8 @@ When modeling forms or public contracts, distinguish:
 
 Record ambiguous or exploratory partitions separately from normative valid/invalid partitions.
 
+Before leaving Phase 3, perform a surface matrix review: for every normative partition, mark whether it applies to UI, API, both, or neither, and document any omitted surface with a black-box reason. Do this before BVA so later boundary cases do not hide missing DT partition coverage.
+
 ## Phase 4: Boundary Value Analysis
 
 Apply BVA only to ordered or bounded domains. For each boundary record Boundary ID, variable, rule, test basis, on point, off point, in point when relevant, selected values, expected classification, and justification.
@@ -112,6 +116,8 @@ Before stopping for human review, produce or verify a coverage summary that maps
 - Each dependency or blocking-prone conformance condition to a dedicated case when it can affect many later cases.
 
 Use concrete representative data that isolates one invalid condition where practical. Keep unrelated variables nominally valid, and do not use vague placeholders when a reproducible public value can be chosen.
+
+Run `scripts/validate_test_cases.py <feature>/test-cases.md` before handoff. Fix schema problems before execution, especially missing `Partition or Boundary Covered`, missing evidence for executed cases, and missing `Blocking Reason` for blocked cases.
 
 The AI must not execute tests in this phase. Before genuine execution, write exactly:
 
