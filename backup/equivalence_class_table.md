@@ -1,9 +1,9 @@
 |ID|Partition|Input Values|Expected Output Values|Applied Boundary Values|
 |---|---|---|---|---|
-|EC01|Standard matching search term|Search query matching an existing product name, e.g. "Macbook"|Only matching products are shown|No|
+|EC01|Matching search term|Search query matching an existing product name, e.g. "Macbook"|Only matching products are shown|No|
 |EC02|Non-matching search term|Search query with no matching product, e.g. "zzzzz"|Empty state is shown and no product cards appear|No|
 |EC03|Unsafe search input|Search input containing HTML-like text, e.g. "&lt;script>alert(1)&lt;/script>"|The input is displayed safely as text and does not break the UI. Empty state is shown and no product cards appear|No|
-|EC04|Blank search input|Empty string or whitespace-only input|The full product list is shown again|Yes|
+|EC04|Blank search input|Empty string or whitespace-only input|The full product list is shown again|No|
 |EC05|Matching Unicode search term|Search query matching an existing product name with Unicode, e.g. "Bàn phím"|Only matching products are shown|No|
 |EC06|Matching Products Only|Any non-empty valid search query|Only matching products are shown|No|
 |EC07|Empty Product List|Any invalid search query or a valid search query with zero matching products|Empty state is shown and no product cards appear|No|
@@ -20,10 +20,3 @@
 |EC18|History appends a new order|Any valid order of items of a user's account|The history appends a new order, displaying the status "Chờ xác nhận"|No|
 |EC19|History changes the status of an order|Any update confirmation of an existing order|The history updates the order and changes the status|No|
 |EC20|History does not update|Any incomplete order of items of a user's account or any valid order of items of another user's account|The history does not update, remaining the same|No|
-|EC21|Valid standard category name|A non-empty standard category name such as "Electronics"|The category is created and appears in the category list|No|
-|EC22|Valid Unicode category name|A non-empty Unicode category name such as "Máy tính"|The category is created and appears in the category list|No|
-|EC23|Whitespace-only category name|A value containing only spaces such as "   "|The create action is rejected with a validation error and no category is added|Yes|
-|EC24|Category Deletion|Delete confirmation of a category|The corresponding category is deleted.|No|
-|EC25|New Category|Any valid category name|The category is created and appears in the category list|No|
-|EC26|No Category Updates|Any invalid category name|The create action is rejected with a validation error and no category is added|No
-|EC27|Deleted Category|Delete confirmation of a category|The corresponding category is deleted.|No|

@@ -35,3 +35,10 @@
 - Text Output: Recreated the FR-05 domain-testing artifacts with updated equivalence classes, test cases, matrices, and explanation content.
 - File Outputs: setup/tables/equivalence_class_table.md; setup/tables/test_table.md; setup/tables/test_requirement_matrix.md; setup/tables/test_class_matrix.md; report-deliverables/domain_bva_raw.txt
 ------
+- Name of the AI tool: GitHub Copilot
+- Date and time: 28/06/2026 21:48
+- Full text of given prompt: run the domain-testing skill on FR-14
+- Attached file names: setup/info/functional_requirements.md; setup/info/README.md; setup/tables/equivalence_class_table.md; setup/tables/test_table.md; setup/tables/test_requirement_matrix.md; setup/tables/test_class_matrix.md; report-deliverables/domain_bva_raw.txt
+- Text Output: Added FR-14 domain-testing artifacts for category-name validation with equivalence classes, boundary-aware test cases, and traceability matrix updates.
+- File Outputs: setup/tables/equivalence_class_table.md; setup/tables/test_table.md; setup/tables/test_requirement_matrix.md; setup/tables/test_class_matrix.md; report-deliverables/domain_bva_raw.txt
+------

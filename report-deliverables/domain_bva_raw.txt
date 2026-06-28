@@ -23,3 +23,26 @@ Boundary value analysis
 
 Why these classes are sufficient
 Each class represents a distinct expected behavior from the black-box perspective. Testing one representative value from each class gives good coverage without unnecessary redundancy.
+
+FR-14: Category management (CRUD)
+
+Objective
+Use domain testing and boundary value analysis to derive black-box test cases for the category-name validation rule used when an admin creates a category.
+
+Inputs and observable outputs
+- Input: category name entered by the admin when creating a category.
+- Output: category created successfully or a validation error preventing creation.
+
+Equivalence classes identified
+- EC21: Valid non-empty category name -> the category should be created successfully.
+- EC22: Empty string name -> creation must be rejected.
+- EC23: Whitespace-only name -> creation must be rejected.
+- EC24: Missing name field -> creation must be rejected.
+
+Boundary value analysis
+- The minimum valid length is one character, so the boundary just below the minimum is the empty or whitespace-only input.
+- A single-character or short normal name is a good representative on the valid side of the boundary.
+- An omitted field is a separate boundary case because the requirement says the field is required.
+
+Why these classes are sufficient
+Each class maps to a distinct observable behavior: success, empty-input rejection, blank-input rejection, and missing-field rejection. Testing one representative value from each class covers the required rule without unnecessary redundancy.
