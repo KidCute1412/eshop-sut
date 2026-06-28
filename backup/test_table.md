@@ -1,9 +1,0 @@
-|ID|Objective|Input|Steps|Expected|Actual|Verdict|
-|---|---|---|---|---|---|---|
-|TC01|Verify default product listing|Open homepage with no search term|1. Open the homepage. 2. Observe the product area.|A product grid is shown; each product card displays image, name, and price.|5 Products are shown in a grid, each with a name, a price, but the images are blank placeholders with only titles on it.|**Failed**|
-|TC02|Verify matching search|Search term: "Macbook"|1. Open the homepage. 2. Enter "Macbook". 3. Submit search.|Only products whose names match the keyword are shown.|1 product named MacBook Pro M3 is shown |**Passed**|
-|TC03|Verify non-matching search and loading state|Search term: "zzzzz"|1. Open the homepage. 2. Enter "zzzzz". 3. Submit search.|No product cards appear and a loading indicator is visible during the process.|No products are shown, but no loading indicator can be seen either. |**Failed**|
-|TC04|Verify safe rendering of special characters|Search term: "&lt;script>alert(1)&lt;/script>"|1. Open the homepage. 2. Enter the unsafe string. 3. Submit search.|The text is rendered safely as text and does not break the UI.|No products appear, the website is still operational. |**Passed**|
-|TC05|Verify blank search resets the listing|Empty or whitespace-only search|1. Open the homepage. 2. Enter a blank value. 3. Submit search.|The full product list is shown again.|All 5 products are fully shown again. |**Passed**|
-|TC06|Verify matching Unicode search|Search term: "Bàn phím"|1. Open the homepage. 2. Enter "Bàn phím". 3. Submit search.|Only products whose names match the keyword are shown.|1 product named Bàn phím cơ Keychron Q1 is shown |**Passed**|
-|TC07|Verify page heading structure|Homepage view|1. Open the homepage. 2. Inspect the page headings.|Exactly one h1 is present on the page.|Two h1 elements can be found, one for "Danh sách sản phẩm", the other one is for "Hiển thị X sản phẩm" |**Failed**|

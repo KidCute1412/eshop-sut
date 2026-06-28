@@ -1,9 +1,0 @@
-| Identifiers | FR-05 |
-| --- | --- |
-| TC01 | X |
-| TC02 | X |
-| TC03 | X |
-| TC04 | X |
-| TC05 | X |
-| TC06 | X |
-| TC07 | X |
