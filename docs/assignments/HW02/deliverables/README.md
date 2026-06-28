@@ -16,12 +16,12 @@
 ## 📈 Test Summary Report
 
 * **Number of Features Tested**: 4
-* **Number of Test Cases Designed**: 0
-* **Number of Test Cases Executed**: 0
-  * **Passed**: 0
-  * **Failed**: 0
+* **Number of Test Cases Designed**: 45
+* **Number of Test Cases Executed**: 45
+  * **Passed**: 27
+  * **Failed**: 18
   * **Not yet executed**: 0
-* **Number of Bugs Discovered**: 0
+* **Number of Bugs Discovered**: 8 (BUG-001 to BUG-008)
 
 ---
 

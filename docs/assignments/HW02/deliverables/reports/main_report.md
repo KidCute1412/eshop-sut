@@ -31,19 +31,19 @@
 ## MỤC LỤC (TABLE OF CONTENTS)
 1. [FR-06: Product Detail View](#1-fr-06-product-detail-view)
    - 1.1. Domain Testing
-   - 1.2. Boundary Value Analysis (BVA)
+   - 1.2. Phân tích giá trị biên (Boundary Value Analysis)
    - 1.3. AI Gap Analysis & Screenshot Proofs
 2. [FR-10: Order State Machine](#2-fr-10-order-state-machine)
    - 2.1. Domain Testing
-   - 2.2. Boundary Value Analysis (BVA)
+   - 2.2. Phân tích giá trị biên (Boundary Value Analysis)
    - 2.3. AI Gap Analysis & Screenshot Proofs
 3. [FR-12: Access Control](#3-fr-12-access-control)
    - 3.1. Domain Testing
-   - 3.2. Boundary Value Analysis (BVA)
+   - 3.2. Phân tích giá trị biên (Boundary Value Analysis)
    - 3.3. AI Gap Analysis & Screenshot Proofs
-4. [FR-23: Product detail view (mobile)](#4-fr-23-product-detail-view-mobile)
+4. [FR-23: Product Detail View (Mobile)](#4-fr-23-product-detail-view-mobile)
    - 4.1. Domain Testing
-   - 4.2. Boundary Value Analysis (BVA)
+   - 4.2. Phân tích giá trị biên (Boundary Value Analysis)
    - 4.3. AI Gap Analysis & Screenshot Proofs
 
 ---
@@ -60,7 +60,7 @@ Chúng tôi xác định các biến và điều kiện hệ thống sau cho tí
 #### 1.1.2. Bảng Phân hoạch tương đương (Equivalence Partitioning)
 | Biến đầu vào / Điều kiện | Lớp tương đương hợp lệ (ID) | Lớp tương đương không hợp lệ (ID) |
 | :--- | :--- | :--- |
-| **Quantity (Số lượng)**<br>*(Kiểu: Số nguyên)* | **EP-VAL-01**: Số nguyên dương $\ge 1$ (ví dụ: 1, 5, 99) | **EP-INV-01**: Số nguyên $< 1$ (ví dụ: 0, -5)<br>**EP-INV-02**: Số thập phân / số thực (ví dụ: 1.5, 2.7)<br>**EP-INV-03**: Chuỗi không phải số / ký tự đặc biệt / để trống (ví dụ: "abc", "@", "")<br>**EP-INV-04**: Số nguyên cực kỳ lớn gây tràn viền (ví dụ: 99999999999) |
+| **Quantity (Số lượng)**<br>*(Kiểu: Số nguyên)* | **EP-VAL-01**: Số nguyên dương $\ge 1$ (ví dụ: 1, 5, 99) | **EP-INV-01**: Số nguyên $< 1$ (ví dụ: 0, -5)<br>**EP-INV-02**: Số thập phân / số thực (ví dụ: 1.5, 2.7)<br>**EP-INV-03**: Chuỗi không phải số / ký tự đặc biệt / để trống (ví dụ: "abc", "@", "")<br>**EP-INV-04**: Số nguyên cực kỳ lớn gây tràn số (integer overflow) (ví dụ: 99999999999) |
 | **Product ID (Mã sản phẩm)**<br>*(Kiểu: Số nguyên)* | **EP-VAL-02**: Mã sản phẩm tồn tại trong cơ sở dữ liệu (ví dụ: ID = 1) | **EP-INV-05**: Mã sản phẩm không tồn tại (ví dụ: ID = 9999)<br>**EP-INV-06**: Định dạng ID không hợp lệ (ví dụ: số âm, chuỗi chữ "abc") |
 | **User Authentication State**<br>*(Trạng thái)* | **EP-VAL-03**: Người dùng đã đăng nhập<br>**EP-VAL-04**: Khách vãng lai (chưa đăng nhập) | *Không có* |
 
@@ -311,7 +311,7 @@ Chúng tôi xác định các biến đầu vào, biến trạng thái và đi�
 ---
 ---
 
-## 4. FR-23: Product detail view (mobile)
+## 4. FR-23: Product Detail View (Mobile)
 
 ### 4.1. Domain Testing
 #### 4.1.1. Xác định các biến đầu vào & Điều kiện hệ thống

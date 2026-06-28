@@ -1,4 +1,10 @@
-[Git Commit Log Placeholder]
-
-Run the following command at the end of the homework to export your commits to this file:
-git log --oneline > git_commit_log.txt
+3d5abd9 test(hw02):execute test cases for FR-23
+906b628 test(hw02):execute test cases for FR-12
+b4a7b34 test(hw02):execute test cases for FR-10
+7657c49 test(hw02):execute test cases for FR-06
+7ecf229 test(hw2): domain test and boundary value analysis for FR-12
+a0aa871 test(hw2): domain test and boundary value analysis for FR-10
+433efea test(hw2): domain test and boundary value analysis for FR-06
+b70fae4 Docs: Setup initial report structure and agents skills
+85af3ba first upload
+2f9bf2b Initial commit

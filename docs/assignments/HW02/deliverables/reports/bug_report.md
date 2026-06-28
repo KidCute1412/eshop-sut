@@ -17,6 +17,12 @@ This document records the details of all bugs discovered during Domain and Bound
 | BUG-006 | FR-23 | Lỗi bất đồng bộ dữ liệu UI và giỏ hàng khi nhập số lượng <= 0 trên Mobile | High | Open | |
 | BUG-007 | FR-23 | Lỗi tự động làm tròn số lượng thập phân không cảnh báo trên Mobile | High | Open | |
 | BUG-008 | FR-23 | Lỗi tự động thêm số lượng bằng 1 khi để trống ô nhập liệu trên Mobile | High | Open | |
+| BUG-009 | FR-06 | Lỗi trắng trang (crash) khi truy cập xem chi tiết sản phẩm không tồn tại trên Desktop | High | Open | |
+| BUG-010 | FR-06 | Lỗi nút "Thêm vào giỏ hàng" phải click đúp (2 lần liên tiếp) mới hoạt động trên Desktop | Medium | Open | |
+| BUG-011 | FR-06 | Lỗi cho phép thêm sản phẩm vào giỏ hàng với số lượng âm trên Desktop | High | Open | |
+| BUG-012 | FR-06 | Lỗi tự động làm tròn số lượng thập phân không cảnh báo trong giỏ hàng trên Desktop | Medium | Open | |
+| BUG-013 | FR-06 | Lỗi cho phép thêm sản phẩm vào giỏ hàng với số lượng bằng 0 trên Desktop | High | Open | |
+| BUG-014 | FR-12 | Hệ thống chấp nhận JWT token có vai trò chứa khoảng trắng không hợp lệ (ví dụ: 'admin ') | High | Open | |
 
 ---
 
@@ -125,4 +131,83 @@ This document records the details of all bugs discovered during Domain and Bound
 * **Actual Result**: Hệ thống vẫn báo thêm thành công và tự gán số lượng bằng 1 vào giỏ hàng.
 * **Screenshots**:
   ![Lỗi để trống số lượng nhưng vẫn thêm thành công là 1 (FR23-DT-05)](images/fr23-DT05-fail.png)
+
+### BUG-009: Lỗi trắng trang (crash) khi truy cập xem chi tiết sản phẩm không tồn tại trên Desktop
+* **Feature**: FR-06 (Product Detail View)
+* **Description**: Trên giao diện Desktop, khi người dùng cố gắng xem chi tiết một sản phẩm có ID không tồn tại trên hệ thống, ứng dụng React/Frontend bị crash dẫn đến lỗi trắng trang (White Screen of Death) thay vì hiển thị thông báo lỗi thân thiện hoặc điều hướng an toàn. Điều này xảy ra do frontend cố truy cập các thuộc tính của đối tượng sản phẩm null/undefined trả về từ API mà không có cơ chế bắt lỗi hoặc kiểm tra dữ liệu trước khi render.
+* **Steps to Reproduce**:
+  1. Mở trình duyệt và truy cập trang chi tiết sản phẩm với một ID không tồn tại (ví dụ: `http://localhost:3000/product/9999`).
+  2. Quan sát màn hình.
+* **Expected Result**: Giao diện hiển thị thông báo lỗi thân thiện (ví dụ: "Sản phẩm không tồn tại") hoặc tự động quay về trang chủ, không bị crash trắng trang.
+* **Actual Result**: Ứng dụng React bị crash hoàn toàn, hiển thị màn hình trắng xóa và log lỗi null reference ở Console.
+* **Screenshots**:
+  ![Lỗi trắng trang khi xem sản phẩm không tồn tại](images/fr06-DT03-fail.png)
+
+### BUG-010: Lỗi nút "Thêm vào giỏ hàng" phải click đúp (2 lần liên tiếp) mới hoạt động trên Desktop
+* **Feature**: FR-06 (Product Detail View)
+* **Description**: Trên giao diện chi tiết sản phẩm của Desktop, khi người dùng click vào nút "Thêm vào giỏ hàng" lần đầu tiên, hệ thống không thực hiện hành động thêm sản phẩm và không có phản hồi. Người dùng bắt buộc phải click tiếp lần thứ 2 liên tiếp thì hành động thêm sản phẩm mới được thực hiện thành công. Điều này gây khó khăn và hiểu nhầm cho khách hàng.
+* **Steps to Reproduce**:
+  1. Truy cập trang chi tiết một sản phẩm bất kỳ.
+  2. Chọn số lượng (ví dụ: 3) và click vào nút "Thêm vào giỏ hàng" 1 lần.
+  3. Kiểm tra badge giỏ hàng và thông báo toast (không có gì thay đổi).
+  4. Click nút "Thêm vào giỏ hàng" thêm 1 lần nữa.
+  5. Giỏ hàng cập nhật và xuất hiện thông báo thêm thành công.
+* **Expected Result**: Hệ thống phải thực hiện thêm sản phẩm vào giỏ hàng ngay lập tức sau 1 lần click chuột duy nhất.
+* **Actual Result**: Click lần 1 bị bỏ qua hoặc chỉ cập nhật state nội bộ, phải click lần 2 mới gọi API/dispatch giỏ hàng thành công.
+* **Screenshots**:
+  ![Lỗi phải nhấn 2 lần nút Thêm vào giỏ hàng](images/fr06-DT04-fail.png)
+
+### BUG-011: Lỗi cho phép thêm sản phẩm vào giỏ hàng với số lượng âm trên Desktop
+* **Feature**: FR-06 (Product Detail View)
+* **Description**: Cả phía Frontend và Backend API của Desktop đều thiếu cơ chế validate (kiểm tra tính hợp lệ) dữ liệu đầu vào cho trường số lượng sản phẩm. Hệ thống vẫn chấp nhận cho phép gửi yêu cầu thêm sản phẩm với số lượng âm (ví dụ: -5) vào giỏ hàng thành công.
+* **Steps to Reproduce**:
+  1. Truy cập trang chi tiết sản phẩm bất kỳ.
+  2. Nhập số lượng là số âm (ví dụ: `-5`) vào ô nhập liệu.
+  3. Bấm nút "Thêm vào giỏ hàng" (nhấn 2 lần do BUG-010).
+  4. Truy cập giao diện giỏ hàng để kiểm tra.
+* **Expected Result**: Hệ thống phải chặn không cho phép thêm số lượng âm (báo lỗi "Số lượng không hợp lệ" hoặc vô hiệu hóa nút/tự động đưa về 1).
+* **Actual Result**: Giỏ hàng chấp nhận và lưu số lượng sản phẩm là -5 mà không có bất kỳ cảnh báo nào.
+* **Screenshots**:
+  ![Lỗi thêm số lượng âm vào giỏ hàng](images/fr06-DT05-fail.png)
+
+### BUG-012: Lỗi tự động làm tròn số lượng thập phân không cảnh báo trong giỏ hàng trên Desktop
+* **Feature**: FR-06 (Product Detail View)
+* **Description**: Khi người dùng nhập số lượng là một số thập phân (ví dụ: `2.5`) trên giao diện chi tiết sản phẩm Desktop và bấm thêm vào giỏ hàng, hệ thống âm thầm làm tròn xuống thành số nguyên (`2`) khi lưu vào giỏ hàng mà không hề hiển thị bất kỳ thông tin cảnh báo nào cho người dùng biết về việc thay đổi số lượng này.
+* **Steps to Reproduce**:
+  1. Truy cập trang chi tiết sản phẩm bất kỳ.
+  2. Nhập số lượng là số thập phân `2.5` vào ô số lượng.
+  3. Bấm nút "Thêm vào giỏ hàng".
+  4. Truy cập giỏ hàng kiểm tra số lượng của sản phẩm đó.
+* **Expected Result**: Hệ thống phải chặn và báo lỗi khi người dùng nhập số thập phân, hoặc nếu tự động làm tròn thì phải có thông báo/cảnh báo rõ ràng cho người dùng.
+* **Actual Result**: Hệ thống tự động làm tròn xuống 2.5 thành 2 trong giỏ hàng mà không có cảnh báo nào.
+* **Screenshots**:
+  ![Lỗi thêm số lượng thập phân](images/fr06-DT07-fail.png)
+
+### BUG-013: Lỗi cho phép thêm sản phẩm vào giỏ hàng với số lượng bằng 0 trên Desktop
+* **Feature**: FR-06 (Product Detail View)
+* **Description**: Tương tự như lỗi số lượng âm, hàm xử lý thêm sản phẩm trong `CartContext` ở backend và frontend không kiểm tra giá trị cận biên không hợp lệ. Điều này cho phép sản phẩm có số lượng bằng `0` vẫn được thêm vào giỏ hàng thành công.
+* **Steps to Reproduce**:
+  1. Truy cập trang chi tiết sản phẩm bất kỳ.
+  2. Nhập số lượng là `0` vào ô nhập liệu.
+  3. Bấm nút "Thêm vào giỏ hàng".
+  4. Truy cập giỏ hàng để kiểm tra.
+* **Expected Result**: Hệ thống phải ngăn chặn hành động thêm sản phẩm với số lượng bằng 0 (báo lỗi hoặc vô hiệu hóa nút).
+* **Actual Result**: Giỏ hàng chấp nhận sản phẩm với số lượng bằng 0 một cách bất thường.
+* **Screenshots**:
+  ![Lỗi thêm số lượng bằng 0](images/fr06-BVA02-fail.png)
+
+### BUG-014: Hệ thống chấp nhận JWT token có vai trò chứa khoảng trắng không hợp lệ (ví dụ: 'admin ')
+* **Feature**: FR-12 (Access Control)
+* **Description**: Trong tính năng Access Control, hệ thống không làm sạch (sanitize) hoặc kiểm tra chặt chẽ giá trị của trường `role` giải mã từ JWT token payload. Khi gửi token có trường vai trò chứa khoảng trắng như `"admin "`, hệ thống không so sánh chính xác với chuỗi `'admin'` tĩnh của các điều kiện phân quyền nhưng do thiếu middleware phân quyền hoặc parser hoạt động không chuẩn xác, API Backend vẫn chấp nhận xử lý request và cho phép người dùng truy cập vào tài nguyên quản trị.
+* **Steps to Reproduce**:
+  1. Đăng nhập và lấy token JWT.
+  2. Chỉnh sửa payload của token JWT trên trang jwt.io bằng cách thay đổi giá trị `"role": "admin"` thành `"role": "admin "` (có dấu cách ở cuối), sau đó ký lại token bằng khóa bí mật.
+  3. Gửi request `GET /api/admin/users` kèm theo token đã sửa đổi trong Header Authorization.
+  4. Hệ thống trả về dữ liệu danh sách người dùng thành công với mã trạng thái `200 OK`.
+* **Expected Result**: Hệ thống phải từ chối truy cập và trả về mã trạng thái `403 Forbidden` do vai trò `"admin "` không khớp với giá trị `'admin'` chuẩn.
+* **Actual Result**: Hệ thống vẫn chấp nhận token và trả về danh sách người dùng thành công.
+* **Screenshots**:
+  ![Lỗi hệ thống vẫn chấp nhận token có role sai lệch ký tự](images/fr12-BVA01-fail.png)
+
+
 
