@@ -202,3 +202,29 @@
       - Phát hiện lỗi thiếu kịch bản kiểm thử biên vai trò token (FR12-BVA-01) chưa được đưa vào báo cáo lỗi.
       - Đã cập nhật và bổ sung mã lỗi mới BUG-014 (Hệ thống chấp nhận JWT token có vai trò chứa khoảng trắng không hợp lệ 'admin ') kèm theo các bước tái hiện, kết quả mong đợi/thực tế và hình ảnh minh chứng vào tệp bug_report.md.
       ```
+
+15. **Tương tác #15**:
+    * **AI Tool Name**: Gemini (Antigravity Coding Assistant)
+    * **Date & Time**: 2026-06-29 01:45 (GMT+7)
+    * **Yêu cầu (Your Prompt)**:
+      ```text
+      Có chắc chắn 14 bug trong @[docs/assignments/HW02/deliverables/reports/bug_report.md] là đầy đủ theo @[docs/assignments/HW02/deliverables/reports/main_report.md] không
+      ```
+    * **Kết quả (AI Output)**:
+      ```text
+      Hi sir - Đã đối chiếu chi tiết 100% các kịch bản kiểm thử có trạng thái Fail trong main_report.md bao gồm 5 kịch bản Fail ở FR-06, 2 kịch bản Fail ở FR-10, 4 kịch bản Fail ở FR-12, và 3 kịch bản Fail ở FR-23. Kết quả xác nhận toàn bộ 14 lỗi thực tế đều được ánh xạ tương ứng không thiếu sót tới 14 Bug ID từ BUG-001 đến BUG-014 trong báo cáo lỗi bug_report.md.
+      ```
+
+16. **Tương tác #16**:
+    * **AI Tool Name**: Gemini (Antigravity Coding Assistant)
+    * **Date & Time**: 2026-06-29 02:50 (GMT+7)
+    * **Yêu cầu (Your Prompt)**:
+      ```text
+      kiểm tra @[docs/assignments/HW02/deliverables/reports/bug_report.md] đã chính xác và đầy đủ rồi đúng không
+      ```
+    * **Kết quả (AI Output)**:
+      ```text
+      Hi sir - Xác nhận báo cáo bug_report.md đã hoàn toàn chính xác, đầy đủ 14 bug, có đầy đủ các bước tái hiện, kết quả mong đợi/thực tế và các hình ảnh minh chứng tương ứng được gán chuẩn xác theo từng lỗi trong main_report.md.
+      ```
+
+

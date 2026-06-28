@@ -9,20 +9,20 @@ This document records the details of all bugs discovered during Domain and Bound
 
 | Bug ID | Feature | Title | Severity | Status | GitHub Issue Link |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| BUG-001 | FR-10 | Người dùng thường (User) tự hủy được đơn hàng đang ở trạng thái đang giao (shipping) | High | Open | |
-| BUG-002 | FR-10 | Cho phép chuyển trạng thái đơn hàng đã hủy (canceled) sang trạng thái đã giao (delivered) | High | Open | |
-| BUG-003 | FR-12 | Người dùng thường (User) truy cập trái phép lấy danh sách tài khoản từ API Admin | Critical | Open | |
-| BUG-004 | FR-12 | Người dùng thường (User) cập nhật danh mục sản phẩm thành công qua API Admin | Critical | Open | |
-| BUG-005 | FR-12 | Khách vãng lai (Guest) tạo sản phẩm mới thành công không cần token xác thực | Critical | Open | |
-| BUG-006 | FR-23 | Lỗi bất đồng bộ dữ liệu UI và giỏ hàng khi nhập số lượng <= 0 trên Mobile | High | Open | |
-| BUG-007 | FR-23 | Lỗi tự động làm tròn số lượng thập phân không cảnh báo trên Mobile | High | Open | |
-| BUG-008 | FR-23 | Lỗi tự động thêm số lượng bằng 1 khi để trống ô nhập liệu trên Mobile | High | Open | |
-| BUG-009 | FR-06 | Lỗi trắng trang (crash) khi truy cập xem chi tiết sản phẩm không tồn tại trên Desktop | High | Open | |
-| BUG-010 | FR-06 | Lỗi nút "Thêm vào giỏ hàng" phải click đúp (2 lần liên tiếp) mới hoạt động trên Desktop | Medium | Open | |
-| BUG-011 | FR-06 | Lỗi cho phép thêm sản phẩm vào giỏ hàng với số lượng âm trên Desktop | High | Open | |
-| BUG-012 | FR-06 | Lỗi tự động làm tròn số lượng thập phân không cảnh báo trong giỏ hàng trên Desktop | Medium | Open | |
-| BUG-013 | FR-06 | Lỗi cho phép thêm sản phẩm vào giỏ hàng với số lượng bằng 0 trên Desktop | High | Open | |
-| BUG-014 | FR-12 | Hệ thống chấp nhận JWT token có vai trò chứa khoảng trắng không hợp lệ (ví dụ: 'admin ') | High | Open | |
+| BUG-001 | FR-10 | Người dùng thường (User) tự hủy được đơn hàng đang ở trạng thái đang giao (shipping) | High | Open | https://github.com/KidCute1412/eshop-sut/issues/52 |
+| BUG-002 | FR-10 | Cho phép chuyển trạng thái đơn hàng đã hủy (canceled) sang trạng thái đã giao (delivered) | High | Open | https://github.com/KidCute1412/eshop-sut/issues/53 |
+| BUG-003 | FR-12 | Người dùng thường (User) truy cập trái phép lấy danh sách tài khoản từ API Admin | Critical | Open | https://github.com/KidCute1412/eshop-sut/issues/54 |
+| BUG-004 | FR-12 | Người dùng thường (User) cập nhật danh mục sản phẩm thành công qua API Admin | Critical | Open | https://github.com/KidCute1412/eshop-sut/issues/55 |
+| BUG-005 | FR-12 | Người dùng thường (User) tạo sản phẩm mới thành công qua API Admin | Critical | Open | https://github.com/KidCute1412/eshop-sut/issues/56 |
+| BUG-006 | FR-23 | Lỗi bất đồng bộ dữ liệu UI và giỏ hàng khi nhập số lượng <= 0 trên Mobile | High | Open | https://github.com/KidCute1412/eshop-sut/issues/57 |
+| BUG-007 | FR-23 | Lỗi tự động làm tròn số lượng thập phân không cảnh báo trên Mobile | High | Open | https://github.com/KidCute1412/eshop-sut/issues/58 |
+| BUG-008 | FR-23 | Lỗi tự động thêm số lượng bằng 1 khi để trống ô nhập liệu trên Mobile | High | Open | https://github.com/KidCute1412/eshop-sut/issues/59 |
+| BUG-009 | FR-06 | Lỗi trắng trang (crash) khi truy cập xem chi tiết sản phẩm không tồn tại trên Desktop | High | Open | https://github.com/KidCute1412/eshop-sut/issues/60 |
+| BUG-010 | FR-06 | Lỗi nút "Thêm vào giỏ hàng" phải click đúp (2 lần liên tiếp) mới hoạt động trên Desktop | Medium | Open | https://github.com/KidCute1412/eshop-sut/issues/61 |
+| BUG-011 | FR-06 | Lỗi cho phép thêm sản phẩm vào giỏ hàng với số lượng âm trên Desktop | High | Open | https://github.com/KidCute1412/eshop-sut/issues/62 |
+| BUG-012 | FR-06 | Lỗi tự động làm tròn số lượng thập phân không cảnh báo trong giỏ hàng trên Desktop | Medium | Open | https://github.com/KidCute1412/eshop-sut/issues/63 |
+| BUG-013 | FR-06 | Lỗi cho phép thêm sản phẩm vào giỏ hàng với số lượng bằng 0 trên Desktop | High | Open | https://github.com/KidCute1412/eshop-sut/issues/64 |
+| BUG-014 | FR-12 | Hệ thống chấp nhận JWT token có vai trò chứa khoảng trắng không hợp lệ (ví dụ: 'admin ') | High | Open | https://github.com/KidCute1412/eshop-sut/issues/65 |
 
 ---
 
@@ -67,7 +67,11 @@ This document records the details of all bugs discovered during Domain and Bound
 * **Expected Result**: Hệ thống phải chặn request này và trả về mã trạng thái `403 Forbidden`.
 * **Actual Result**: Hệ thống vẫn cho phép truy cập thành công và trả về dữ liệu danh sách người dùng.
 * **Screenshots**:
+  ![Đăng nhập tài khoản User thường lấy token](images/fr12-user-login.png)
+  *Hình: Đăng nhập tài khoản User thường để lấy JWT token.*
+  
   ![Lỗi User thường sử dụng token truy cập thành công API Admin](images/fr12-DT03-fail.png)
+  *Hình: Gửi request gọi API danh sách tài khoản bằng token User thường thành công.*
 
 ### BUG-004: Người dùng thường (User) cập nhật danh mục sản phẩm thành công qua API Admin
 * **Feature**: FR-12 (Access Control)
@@ -79,19 +83,28 @@ This document records the details of all bugs discovered during Domain and Bound
 * **Expected Result**: Hệ thống từ chối và trả về mã trạng thái `403 Forbidden`.
 * **Actual Result**: Hệ thống cập nhật danh mục thành công mà không có cảnh báo hay ngăn chặn nào.
 * **Screenshots**:
-  ![Lỗi User thường cập nhật danh mục sản phẩm thành công](images/fr12-DT04-fail.png)
+  ![Đăng nhập tài khoản User thường lấy token](images/fr12-user-login.png)
+  *Hình: Đăng nhập tài khoản User thường để lấy JWT token.*
 
-### BUG-005: Khách vãng lai (Guest) tạo sản phẩm mới thành công không cần token xác thực
+  ![Lỗi User thường cập nhật danh mục sản phẩm thành công](images/fr12-DT04-fail.png)
+  *Hình: Gửi request cập nhật danh mục bằng token User thường thành công.*
+
+### BUG-005: Người dùng thường (User) tạo sản phẩm mới thành công qua API Admin
 * **Feature**: FR-12 (Access Control)
-* **Description**: API thêm mới sản phẩm (`POST /api/products`) hoàn toàn không khai báo middleware `authenticateToken` trong file `server.js`. Do đó, bất kỳ ai, kể cả khách vãng lai (không cần đăng nhập, không cần truyền token), vẫn có thể gửi request để thêm sản phẩm vào hệ thống.
+* **Description**: API thêm mới sản phẩm (`POST /api/products`) hoàn toàn không khai báo middleware `authenticateToken` hoặc kiểm tra quyền hạn của Admin. Do đó, người dùng thường có JWT token vai trò User vẫn có thể gửi request để thêm sản phẩm mới vào hệ thống thành công.
 * **Steps to Reproduce**:
-  1. Mở Postman, cấu hình request `POST /api/products` với body JSON chứa thông tin sản phẩm mới (name, price, description, v.v.). Không đính kèm Header Authorization.
-  2. Gửi request.
-  3. Hệ thống tạo mới sản phẩm thành công và trả về mã trạng thái `200 OK`.
-* **Expected Result**: Hệ thống phải từ chối truy cập và trả về mã lỗi `401 Unauthorized` vì đây là API quản trị của Admin.
-* **Actual Result**: Hệ thống vẫn cho phép tạo sản phẩm mới thành công mà không cần token xác thực.
+  1. Đăng nhập tài khoản User thường để lấy JWT token.
+  2. Mở Postman, cấu hình request `POST /api/products` với body JSON chứa thông tin sản phẩm mới và đính kèm token vừa nhận được ở bước 1 trong Header Authorization.
+  3. Gửi request.
+  4. Hệ thống tạo mới sản phẩm thành công và trả về mã trạng thái `200 OK`.
+* **Expected Result**: Hệ thống phải chặn request này và trả về mã lỗi `403 Forbidden` vì đây là API quản trị chỉ dành cho Admin.
+* **Actual Result**: Hệ thống vẫn cho phép tạo sản phẩm mới thành công.
 * **Screenshots**:
-  ![Lỗi Guest tạo sản phẩm mới thành công không cần token](images/fr12-BVA02-fail.png)
+  ![Đăng nhập tài khoản User thường lấy token](images/fr12-user-login.png)
+  *Hình: Đăng nhập tài khoản User thường để lấy JWT token.*
+
+  ![Lỗi User thường gọi được API tạo sản phẩm của Admin](images/fr12-BVA02-fail.png)
+  *Hình: Gửi request tạo sản phẩm bằng token User thường thành công.*
 
 ### BUG-006: Lỗi bất đồng bộ dữ liệu UI và giỏ hàng khi nhập số lượng <= 0 trên Mobile
 * **Feature**: FR-23 (Product detail view (mobile))
@@ -207,7 +220,11 @@ This document records the details of all bugs discovered during Domain and Bound
 * **Expected Result**: Hệ thống phải từ chối truy cập và trả về mã trạng thái `403 Forbidden` do vai trò `"admin "` không khớp với giá trị `'admin'` chuẩn.
 * **Actual Result**: Hệ thống vẫn chấp nhận token và trả về danh sách người dùng thành công.
 * **Screenshots**:
+  ![Chỉnh sửa payload và ký lại token trên jwt.io](images/fr12-BVA01-jwt.png)
+  *Hình: Chỉnh sửa giá trị role thành "admin " có khoảng trắng và ký lại token trên jwt.io.*
+
   ![Lỗi hệ thống vẫn chấp nhận token có role sai lệch ký tự](images/fr12-BVA01-fail.png)
+  *Hình: Gửi request gọi API admin thành công bằng token lỗi.*
 
 
 
