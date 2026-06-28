@@ -228,17 +228,17 @@ Chúng tôi xác định các biến đầu vào, biến trạng thái và đi�
 | :--- | :--- | :--- |
 | **JWT Token**<br>*(Trạng thái xác thực)* | **EP-VAL-01**: Token JWT hợp lệ, chưa hết hạn và được ký đúng cấu trúc. | **EP-INV-01**: Token JWT không hợp lệ (hết hạn, sai chữ ký, sai định dạng).<br>**EP-INV-02**: Không có Token JWT (thiếu header Authorization hoặc header rỗng). |
 | **User Role (Vai trò)**<br>*(Từ Token)* | **EP-VAL-02**: Vai trò Admin (`role = 'admin'`). | **EP-INV-03**: Vai trò User thường (`role = 'user'`).<br>**EP-INV-04**: Vai trò khác không xác định hoặc không có thuộc tính `role`. |
-| **Target API Path**<br>*(Loại tài nguyên)* | **EP-VAL-03**: API yêu cầu quyền Admin (ví dụ: `/api/admin/dashboard`, `POST /api/products`, `PUT /api/categories`, `DELETE /api/coupons`).<br>**EP-VAL-04**: API công khai hoặc API của người dùng thường (ví dụ: `GET /api/products`, `POST /api/cart`). | *Không có* |
+| **Target API Path**<br>*(Loại tài nguyên)* | **EP-VAL-03**: API yêu cầu quyền Admin (ví dụ: `GET /api/admin/users`, `POST /api/products`, `PUT /api/categories/:id`, `DELETE /api/coupons/:id`).<br>**EP-VAL-04**: API công khai hoặc API của người dùng thường (ví dụ: `GET /api/products`, `POST /api/cart`). | *Không có* |
 
 #### 3.1.3. Các kịch bản kiểm thử (Domain Testing)
 | Mã Kịch bản | Mô tả kiểm thử | Đầu vào | Kết quả mong đợi | Trạng thái | Ánh xạ truy vết |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| FR12-DT-01 | Truy cập API Admin (`/api/admin/*`) với JWT Token hợp lệ của tài khoản Admin. | Path = `/api/admin/dashboard`, Token = Hợp lệ, Role = `admin` | Truy cập thành công, trả về dữ liệu dashboard và mã trạng thái 200 OK. | Pass | EP-VAL-01, EP-VAL-02, EP-VAL-03 |
-| FR12-DT-02 | Tạo sản phẩm mới (API ảnh hưởng dữ liệu) với JWT Token hợp lệ của tài khoản Admin. | Path = `POST /api/products`, Token = Hợp lệ, Role = `admin` | Thao tác thành công, trả về 201 Created hoặc 200 OK. | Pass | EP-VAL-01, EP-VAL-02, EP-VAL-03 |
-| FR12-DT-03 | Truy cập API Admin (`/api/admin/*`) với JWT Token hợp lệ của tài khoản User thường. | Path = `/api/admin/dashboard`, Token = Hợp lệ, Role = `user` | Hệ thống từ chối truy cập, trả về mã trạng thái 403 Forbidden. | Fail | EP-VAL-01, EP-INV-03, EP-VAL-03 |
+| FR12-DT-01 | Truy cập API quản lý người dùng (`GET /api/admin/users`) với JWT Token hợp lệ của tài khoản Admin. | Path = `GET /api/admin/users`, Token = Hợp lệ, Role = `admin` | Truy cập thành công, trả về danh sách người dùng và mã trạng thái 200 OK. | Pass | EP-VAL-01, EP-VAL-02, EP-VAL-03 |
+| FR12-DT-02 | Tạo sản phẩm mới với JWT Token hợp lệ của tài khoản Admin. | Path = `POST /api/products`, Token = Hợp lệ, Role = `admin` | Thao tác thành công, trả về 200 OK / 201 Created. | Pass | EP-VAL-01, EP-VAL-02, EP-VAL-03 |
+| FR12-DT-03 | Truy cập API Admin (`GET /api/admin/users`) với JWT Token hợp lệ của tài khoản User thường. | Path = `GET /api/admin/users`, Token = Hợp lệ, Role = `user` | Hệ thống từ chối truy cập, trả về mã trạng thái 403 Forbidden. | Fail | EP-VAL-01, EP-INV-03, EP-VAL-03 |
 | FR12-DT-04 | Sửa đổi danh mục sản phẩm với JWT Token hợp lệ của tài khoản User thường. | Path = `PUT /api/categories/1`, Token = Hợp lệ, Role = `user` | Hệ thống từ chối truy cập, trả về mã trạng thái 403 Forbidden. | Fail | EP-VAL-01, EP-INV-03, EP-VAL-03 |
-| FR12-DT-05 | Truy cập API Admin (`/api/admin/*`) khi sử dụng Token JWT không hợp lệ/hết hạn. | Path = `/api/admin/dashboard`, Token = Không hợp lệ, Role = `admin` | Hệ thống từ chối truy cập, trả về mã trạng thái 401 Unauthorized. | Pass | EP-INV-01, EP-VAL-02, EP-VAL-03 |
-| FR12-DT-06 | Truy cập API Admin (`/api/admin/*`) mà không gửi kèm Token JWT. | Path = `/api/admin/dashboard`, Token = Không gửi | Hệ thống từ chối truy cập, trả về mã trạng thái 401 Unauthorized. | Pass | EP-INV-02, EP-VAL-03 |
+| FR12-DT-05 | Truy cập API Admin (`GET /api/admin/users`) khi sử dụng Token JWT không hợp lệ/hết hạn. | Path = `GET /api/admin/users`, Token = Không hợp lệ, Role = `admin` | Hệ thống từ chối truy cập, trả về mã trạng thái 401 Unauthorized hoặc 403 Forbidden. | Pass | EP-INV-01, EP-VAL-02, EP-VAL-03 |
+| FR12-DT-06 | Truy cập API Admin (`GET /api/admin/users`) mà không gửi kèm Token JWT. | Path = `GET /api/admin/users`, Token = Không gửi | Hệ thống từ chối truy cập, trả về mã trạng thái 401 Unauthorized. | Pass | EP-INV-02, EP-VAL-03 |
 | FR12-DT-07 | Người dùng thường truy cập API công khai (không yêu cầu quyền Admin). | Path = `GET /api/products`, Token = Hợp lệ, Role = `user` | Truy cập thành công, trả về danh sách sản phẩm và mã trạng thái 200 OK. | Pass | EP-VAL-01, EP-INV-03, EP-VAL-04 |
 
 #### 3.1.4. Giải thích áp dụng kỹ thuật
@@ -264,12 +264,12 @@ Chúng tôi xác định các biến đầu vào, biến trạng thái và đi�
 #### 3.2.2. Các kịch bản kiểm thử (BVA)
 | Mã Kịch bản | Mô tả kiểm thử | Đầu vào | Kết quả mong đợi | Trạng thái | Ánh xạ truy vết |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| FR12-BVA-01 | Gửi token có thuộc tính vai trò bị viết sai lệch một ký tự (ví dụ: `"role": "admin "`). | Path = `/api/admin/dashboard`, Token có `"role": "admin "` | Hệ thống từ chối truy cập, trả về mã trạng thái 403 Forbidden. | Fail | BVA-BND-01 (Off-Point) |
-| FR12-BVA-02 | Gửi token có thuộc tính vai trò là `"user"` để gọi API admin. | Path = `POST /api/products`, Token có `"role": "user"` | Hệ thống từ chối truy cập, trả về mã trạng thái 403 Forbidden. | Fail | BVA-BND-01 (Off-Point) |
-| FR12-BVA-03 | Sử dụng Token JWT vừa hết hạn chính xác 1 giây. | Path = `/api/admin/dashboard`, Token hết hạn 1 giây | Hệ thống từ chối truy cập, trả về mã trạng thái 401 Unauthorized. | Pass | BVA-BND-02 (Off-Point, không hợp lệ) |
-| FR12-BVA-04 | Sử dụng Token JWT còn hạn đúng 1 giây. | Path = `/api/admin/dashboard`, Token còn hạn 1 giây | Cho phép truy cập thành công và trả về mã trạng thái 200 OK. | Pass | BVA-BND-02 (Off-Point, hợp lệ) |
-| FR12-BVA-05 | Gửi header Authorization không có khoảng trắng sau Bearer (ví dụ: `"Bearer<token>"`). | Path = `/api/admin/dashboard`, Header = `"Bearer<token>"` | Hệ thống không thể parse token và từ chối, trả về 401 Unauthorized. | Pass | BVA-BND-03 (Off-Point) |
-| FR12-BVA-06 | Gửi header Authorization với prefix viết thường `"bearer <token>"`. | Path = `/api/admin/dashboard`, Header = `"bearer <token>"` | Hệ thống chấp nhận parse token và cho phép truy cập (nếu parser chuẩn hóa case-insensitive), hoặc từ chối an toàn. | Pass | BVA-BND-03 (Off-Point) |
+| FR12-BVA-01 | Gửi token có thuộc tính vai trò bị viết sai lệch một ký tự (ví dụ: `"role": "admin "`). | Path = `GET /api/admin/users`, Token có `"role": "admin "` | Hệ thống từ chối truy cập, trả về mã trạng thái 403 Forbidden. | Fail | BVA-BND-01 (Off-Point) |
+| FR12-BVA-02 | Gửi token có thuộc tính vai trò là `"user"` để gọi API admin (ví dụ: `POST /api/products`). | Path = `POST /api/products`, Token có `"role": "user"` | Hệ thống từ chối truy cập, trả về mã trạng thái 403 Forbidden. | Fail | BVA-BND-01 (Off-Point) |
+| FR12-BVA-03 | Sử dụng Token JWT vừa hết hạn chính xác 1 giây. | Path = `GET /api/admin/users`, Token hết hạn 1 giây | Hệ thống từ chối truy cập, trả về mã trạng thái 401 Unauthorized hoặc 403 Forbidden. | Pass | BVA-BND-02 (Off-Point, không hợp lệ) |
+| FR12-BVA-04 | Sử dụng Token JWT còn hạn đúng 1 giây. | Path = `GET /api/admin/users`, Token còn hạn 1 giây | Cho phép truy cập thành công và trả về mã trạng thái 200 OK. | Pass | BVA-BND-02 (Off-Point, hợp lệ) |
+| FR12-BVA-05 | Gửi header Authorization không có khoảng trắng sau Bearer (ví dụ: `"Bearer<token>"`). | Path = `GET /api/admin/users`, Header = `"Bearer<token>"` | Hệ thống không thể parse token và từ chối, trả về 401 Unauthorized. | Pass | BVA-BND-03 (Off-Point) |
+| FR12-BVA-06 | Gửi header Authorization với prefix viết thường `"bearer <token>"`. | Path = `GET /api/admin/users`, Header = `"bearer <token>"` | Hệ thống chấp nhận parse token và cho phép truy cập, hoặc từ chối an toàn. | Pass | BVA-BND-03 (Off-Point) |
 
 #### 3.2.3. Giải thích áp dụng kỹ thuật
 1. **Xác định các giá trị biên**: Biên quyền hạn được định nghĩa ở sự thay đổi tối thiểu của giá trị chuỗi định danh vai trò (`admin` so với `admin ` hoặc `user`). Biên thời gian được định nghĩa bằng ranh giới giây cuối cùng còn hiệu lực và giây đầu tiên hết hiệu lực của JWT Token (`exp`).
@@ -281,13 +281,32 @@ Chúng tôi xác định các biến đầu vào, biến trạng thái và đi�
 ---
 
 ### 3.3. AI Gap Analysis & Screenshot Proofs
-*Identify missed test cases or bugs by AI tools, and explain why they were missed.*
+- **AI Gap Analysis**:
+  * **FR12-DT-03 & FR12-DT-04 (Lỗi bỏ sót kiểm tra vai trò admin ở các API quản lý/cập nhật)**: Khi AI thiết kế các kịch bản kiểm thử phân quyền, nó giả định hệ thống đã triển khai đầy đủ cơ chế kiểm tra vai trò. Tuy nhiên, trong mã nguồn thực tế của `backend/server.js`, middleware `authenticateToken` chỉ kiểm tra chữ ký và hiệu lực của JWT token chứ không hề kiểm tra giá trị trường `role` giải mã từ token (không kiểm tra `req.user.role === 'admin'`). Do đó, các request gửi token hợp lệ của **User thường** (`role = 'user'`) đến các API admin như `GET /api/admin/users`, `POST /api/categories`, v.v. vẫn được chấp nhận và trả về dữ liệu/thực thi thành công (Status Code 200 thay vì 403 Forbidden).
+  * **FR12-DT-02 & FR12-BVA-02 (Lỗi API thay đổi sản phẩm hoàn toàn không được bảo vệ)**: Các API thêm/sửa/xóa sản phẩm (`POST /api/products`, `PUT /api/products/:id`, `DELETE /api/products/:id`) hoàn toàn không khai báo middleware `authenticateToken`. Do đó, bất kỳ ai (kể cả Guest/không cần token đăng nhập) vẫn có thể gửi request để thêm, sửa, hoặc xóa sản phẩm của hệ thống SUT một cách tự do.
 
 #### Minh chứng kết quả chạy test / lỗi phát hiện (Screenshots):
-*(Dán hình ảnh minh chứng từ thư mục `images/` vào đây)*
-```markdown
-![FR12 Verification](images/fr12_verification.png)
-```
+
+![Đăng nhập tài khoản Admin lấy token (FR12-DT-01)](images/fr12-admin-login.png)
+*Hình 3.1: Đăng nhập thành công tài khoản Admin và nhận JWT token với role admin.*
+
+![Đăng nhập tài khoản User thường lấy token (FR12-DT-03)](images/fr12-user-login.png)
+*Hình 3.2: Đăng nhập thành công tài khoản User thường và nhận JWT token với role user.*
+
+![Lỗi User thường sử dụng token truy cập thành công API Admin (FR12-DT-03)](images/fr12-DT03-fail.png)
+*Hình 3.3: Minh chứng lỗi khi User thường dùng token của mình nhưng vẫn truy cập thành công và lấy được toàn bộ danh sách tài khoản từ API Admin (FR12-DT-03).*
+
+![Lỗi User thường cập nhật danh mục sản phẩm thành công (FR12-DT-04)](images/fr12-DT04-fail.png)
+*Hình 3.4: Minh chứng lỗi khi User thường dùng token của mình gửi request cập nhật danh mục sản phẩm (PUT /api/categories/1) nhưng hệ thống vẫn cho phép thực thi thành công (FR12-DT-04).*
+
+![Chỉnh sửa payload và ký lại token trên jwt.io (FR12-BVA-01)](images/fr12-BVA01-jwt.png)
+*Hình 3.5: Chỉnh sửa payload token JWT có role mang giá trị sai lệch "admin " (có khoảng trắng) và ký lại thành công bằng Secret Key.*
+
+![Lỗi hệ thống vẫn chấp nhận token có role sai lệch ký tự (FR12-BVA-01)](images/fr12-BVA01-fail.png)
+*Hình 3.6: Minh chứng lỗi khi sử dụng token lỗi "admin " để gửi request nhưng hệ thống vẫn cho phép truy cập API Admin lấy toàn bộ danh sách người dùng thành công thay vì trả về 403 Forbidden (FR12-BVA-01).*
+
+![Lỗi User thường gọi được API tạo sản phẩm của Admin (FR12-BVA-02)](images/fr12-BVA02-fail.png)
+*Hình 3.7: Minh chứng lỗi khi User thường dùng token của mình nhưng vẫn gửi request tạo sản phẩm mới thành công qua API POST /api/products (FR12-BVA-02).*
 
 ---
 ---

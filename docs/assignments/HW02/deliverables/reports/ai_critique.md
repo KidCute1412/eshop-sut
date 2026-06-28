@@ -76,3 +76,32 @@
      - main_report.md: Mục 2.3 AI Gap Analysis & Screenshot Proofs (giải thích lỗi ở cả Frontend lẫn Backend).
      - bug_report.md: Cập nhật chi tiết lỗi BUG-001 bao gồm mô tả lỗi, các bước tái hiện, kết quả mong đợi và thực tế.
      ```
+
+5. **Tương tác #5**:
+   * **AI Tool Name**: Gemini (Antigravity Coding Assistant)
+   * **Date & Time**: 2026-06-27 12:31 (GMT+7)
+   * **Yêu cầu (Your Prompt)**:
+     ```text
+     với fr12 trong @[docs/assignments/HW02/deliverables/reports/main_report.md] thì tôi cần test sao
+     ...
+     tôi đã thêm fr12-admin-login và fr12-user-login và fr12-DT03-fail trong ảnh, bạn thêm vào trong report cho tôi
+     ```
+   * **Kết quả (AI Output)**:
+     ```text
+     - Giải thích và hướng dẫn phương pháp kiểm thử API bằng Postman/cURL đối với tính năng phân quyền (FR-12).
+     - Phân tích nguyên nhân lỗi logic phân quyền tại middleware backend (chỉ kiểm tra tính hợp lệ của token mà bỏ sót việc kiểm tra giá trị của trường role).
+     - Cập nhật các hình ảnh minh chứng fr12-admin-login.png, fr12-user-login.png, và fr12-DT03-fail.png cùng các mô tả chú thích chi tiết vào báo cáo main_report.md.
+     ```
+
+6. **Tương tác #6**:
+   * **AI Tool Name**: Gemini (Antigravity Coding Assistant)
+   * **Date & Time**: 2026-06-28 23:03 (GMT+7)
+   * **Yêu cầu (Your Prompt)**:
+     ```text
+     các kịch bản BVA ở FR12 chính xác rồi đúng không
+     ```
+   * **Kết quả (AI Output)**:
+     ```text
+     - Giải thích tính chính xác của các kịch bản BVA được thiết kế cho FR-12 (Access Control) bao gồm biên chuỗi quyền hạn (role string), biên thời gian sống token (expiry) và biên định dạng header Authorization.
+     - Xác nhận các kịch bản đã phản ánh đúng lỗi thực tế của SUT (đối với các trường hợp bị trạng thái thực tế Fail).
+     ```
