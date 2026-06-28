@@ -27,4 +27,4 @@
 
 ## 🎥 Demo Videos (YouTube Links)
 
-* **Agent Skill End-to-End Demo**: [Insert YouTube Link Here]
+* **Agent Skill End-to-End Demo**: https://youtu.be/LZZsrJYUPhw
