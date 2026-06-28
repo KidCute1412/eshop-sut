@@ -23,6 +23,7 @@ When this skill is used, it should automatically consult these workspace folders
 - Use domain testing, equivalence partitioning, and boundary value analysis to identify representative inputs.
 - Prefer clear, minimal, and non-redundant test cases. Each test should cover at least one unique equivalence class or boundary condition.
 - If information is missing or ambiguous, explicitly state the assumption instead of guessing.
+- When writing to files, always append new content at the end of the file, never overwrite the file to write new content. This rule applies to tables, logs, matrices and text files.
 
 ## Workflow
 1. Gather context
@@ -41,6 +42,7 @@ When this skill is used, it should automatically consult these workspace folders
    - For ordered domains, choose boundary values and nearby values.
    - Prefer 2-point or 3-point boundary values when appropriate.
    - Include the minimum and maximum valid boundary values as well as adjacent values just inside and just outside the boundary.
+   - Boundary analysis should ONLY be applied if a clear ordered relation can be found (like <= or >=), otherwise do not apply.
 
 4. Create test cases
    - Create test cases that cover each equivalence class at least once.
@@ -54,7 +56,7 @@ When this skill is used, it should automatically consult these workspace folders
      - functional requirements to tests
      - equivalence classes to tests
      - bugs to tests when bug data is available
-   - Keep the artifacts concise, structured, and evidence-based.
+   - Keep the artifacts concise, structured, and evidence-based, use the existing table format to derive artifacts.
 
 6. Write the reasoning note
    - Create a step-by-step note explaining how the equivalence classes and boundary values were derived.
@@ -75,12 +77,12 @@ When this skill is used, it should automatically consult these workspace folders
 - A list of equivalence classes with partitions and representative values.
 - A corresponding set of test cases with clear expected results.
 - Updated traceability matrices that connect requirements, equivalence classes, and tests.
-- A short reasoning note describing the methodology used.
+- A reasoning note describing the methodology used.
 - A new log entry in the project session log.
 
 ## Completion checklist
 - Every relevant requirement has at least one derived test case.
 - Each equivalence class is represented by at least one test case.
 - Boundary values are considered for ordered inputs.
-- The reasoning note is factual and does not claim implementation details.
+- The reasoning note is factual and does not claim implementation or false details.
 - The session log has been updated.
