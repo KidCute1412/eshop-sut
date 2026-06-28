@@ -7,7 +7,7 @@
 | 1 | Feature A (FR-06: Domain + Boundary) | 25 | | |
 | 2 | Feature B (FR-10: Domain + Boundary) | 25 | | |
 | 3 | Feature C (FR-12: Domain + Boundary) | 25 | | |
-| 4 | Feature D (FR-20 Mobile: Domain + Boundary) | 15 | | |
+| 4 | Feature D (FR-23 Product detail view (mobile): Domain + Boundary) | 15 | | |
 | 5 | Agent Skills | 10 | | |
 | | **Total** | **100** | | |
 

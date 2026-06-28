@@ -15,7 +15,7 @@ call npm install
 cd ..
 
 :check_db
-if not exist backend\database.db goto init_db
+if not exist backend\database.sqlite goto init_db
 goto start_backend
 
 :init_db
@@ -56,6 +56,20 @@ cd ..
 
 :start_admin
 start cmd /k "cd frontend-admin && npm run dev"
+
+:: Khoi chay Frontend Mobile
+echo Dang kiem tra va khoi chay Frontend Mobile...
+if not exist frontend-mobile\node_modules goto install_mobile
+goto start_mobile
+
+:install_mobile
+echo [Frontend Mobile] Khong tim thay node_modules. Dang chay npm install...
+cd frontend-mobile
+call npm install
+cd ..
+
+:start_mobile
+start cmd /k "cd frontend-mobile && npm run start"
 
 
 echo ===================================================

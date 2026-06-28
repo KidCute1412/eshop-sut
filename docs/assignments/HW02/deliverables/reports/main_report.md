@@ -41,7 +41,7 @@
    - 3.1. Domain Testing
    - 3.2. Boundary Value Analysis (BVA)
    - 3.3. AI Gap Analysis & Screenshot Proofs
-4. [FR-20: Mobile App](#4-fr-20-mobile-app)
+4. [FR-23: Product detail view (mobile)](#4-fr-23-product-detail-view-mobile)
    - 4.1. Domain Testing
    - 4.2. Boundary Value Analysis (BVA)
    - 4.3. AI Gap Analysis & Screenshot Proofs
@@ -311,48 +311,67 @@ Chúng tôi xác định các biến đầu vào, biến trạng thái và đi�
 ---
 ---
 
-## 4. FR-20: Mobile App
+## 4. FR-23: Product detail view (mobile)
 
 ### 4.1. Domain Testing
-#### 4.1.1. Input Variables & Condition Identification
-*List all input variables, state variables, or environmental conditions.*
+#### 4.1.1. Xác định các biến đầu vào & Điều kiện hệ thống
+Chúng tôi xác định các biến và điều kiện hệ thống sau cho tính năng Xem Chi tiết Sản phẩm trên Mobile (FR-23):
+1. **Quantity (Số lượng)**: Chuỗi nhập vào ô số lượng từ bàn phím di động (state `quantity`).
+2. **Product ID (Mã sản phẩm)**: Giá trị ID của sản phẩm để gọi API chi tiết sản phẩm.
+3. **Product State (Trạng thái dữ liệu sản phẩm)**: Đối tượng sản phẩm nhận được từ API (`product`).
 
-#### 4.1.2. Equivalence Partitioning Table
-| Input Variable / Condition | Valid Equivalence Classes (ID) | Invalid Equivalence Classes (ID) |
+#### 4.1.2. Bảng Phân hoạch tương đương (Equivalence Partitioning)
+| Biến đầu vào / Điều kiện | Lớp tương đương hợp lệ (ID) | Lớp tương đương không hợp lệ (ID) |
 | :--- | :--- | :--- |
-| | | |
+| **Quantity (Số lượng)**<br>*(Kiểu: Chuỗi số)* | **EP-VAL-01**: Chuỗi số nguyên dương $\ge 1$ (ví dụ: "1", "3", "99") | **EP-INV-01**: Chuỗi số nguyên $\le 0$ (ví dụ: "0", "-5")<br>**EP-INV-02**: Chuỗi số thập phân (ví dụ: "2.5")<br>**EP-INV-03**: Chuỗi rỗng hoặc chứa ký tự đặc biệt / chữ (ví dụ: "", "abc") |
+| **Product State**<br>*(Trạng thái)* | **EP-VAL-02**: Đối tượng chứa thông tin sản phẩm hợp lệ từ API | **EP-INV-04**: Dữ liệu sản phẩm rỗng do lỗi API hoặc ID không tồn tại |
 
-#### 4.1.3. Test Cases Designed (Domain Testing)
-| Test Case ID | Test Description | Inputs | Expected Outcome | Status | Traceability Mapping |
+#### 4.1.3. Các kịch bản kiểm thử (Domain Testing)
+| Mã Kịch bản | Mô tả kiểm thử | Đầu vào | Kết quả mong đợi | Trạng thái | Ánh xạ truy vết |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| FR20-DT-01 | | | | | |
+| FR23-DT-01 | Xem chi tiết sản phẩm thành công trên giao diện di động. | Product ID = 1 | Hiển thị đầy đủ ảnh sản phẩm (chế độ stretch), tên, giá bán và mô tả chi tiết. | Pass | EP-VAL-02 |
+| FR23-DT-02 | Thêm sản phẩm vào giỏ hàng với số lượng nguyên dương hợp lệ. | Product ID = 1, Quantity = "3" | Hệ thống thêm sản phẩm vào giỏ hàng thành công, hiển thị Alert thông báo và cập nhật số lượng trong giỏ hàng. | Pass | EP-VAL-01, EP-VAL-02 |
+| FR23-DT-03 | Thêm sản phẩm vào giỏ với số lượng bằng 0 hoặc số âm. | Product ID = 1, Quantity = "0" | Hệ thống từ chối hoặc reset ô nhập về 1; không cho phép thêm vào giỏ hàng hoặc tự ý làm tròn/thay đổi mà không khớp với UI. | Fail | EP-INV-01, EP-VAL-02 |
+| FR23-DT-04 | Thêm sản phẩm vào giỏ với số lượng là số thập phân. | Product ID = 1, Quantity = "2.5" | Hệ thống từ chối hoặc cảnh báo lỗi nhập liệu cho người dùng. | Fail | EP-INV-02, EP-VAL-02 |
+| FR23-DT-05 | Thêm sản phẩm vào giỏ với ô nhập số lượng để trống hoặc có chữ. | Product ID = 1, Quantity = "" | Hệ thống từ chối, cảnh báo người dùng nhập số lượng hợp lệ. | Fail | EP-INV-03, EP-VAL-02 |
+| FR23-DT-06 | Xem chi tiết sản phẩm có ID không tồn tại trên hệ thống di động. | Product ID = 9999 | Giao diện hiển thị thông báo "Sản phẩm không tồn tại" một cách thân thiện, không bị lỗi màn hình. | Pass | EP-INV-04 |
 
-#### 4.1.4. Application Explanation
-*Step-by-step explanation of how the domain testing technique was applied.*
+#### 4.1.4. Giải thích áp dụng kỹ thuật
+1. **Xác định các biến**: Phân tích hành vi nhập liệu trên thiết bị di động trong `App.js` để tìm ra biến trực tiếp (`quantity`) và biến môi trường (`product`).
+2. **Phân hoạch các khoảng giá trị**: Thiết lập các phân hoạch đầu vào hợp lệ và không hợp lệ dựa trên ràng buộc của đặc tả hệ thống.
+3. **Ánh xạ kịch bản**: Xây dựng các ca kiểm thử chi tiết bao phủ các kịch bản bình thường và kịch bản lỗi biên của giao diện di động.
 
 ---
 
-### 4.2. Boundary Value Analysis (BVA)
-#### 4.2.1. Boundary Analysis Table
-| Variable / Property | Boundary Condition (ID) | On-Point | Off-Point | In-Point |
+### 4.2. Phân tích giá trị biên (Boundary Value Analysis)
+#### 4.2.1. Bảng Phân tích giá trị biên
+| Biến / Thuộc tính | Điều kiện biên (ID) | Điểm biên (On-Point) | Điểm cận biên (Off-Point) | Điểm trong biên (In-Point) |
 | :--- | :--- | :--- | :--- | :--- |
-| | | | | |
+| **Quantity (Số lượng)** | Phải $\ge 1$ (BVA-BND-01) | "1" | "0" (không hợp lệ), "2" (hợp lệ) | "5" |
 
-#### 4.2.2. Test Cases Designed (BVA)
-| Test Case ID | Test Description | Inputs | Expected Outcome | Status | Traceability Mapping |
+#### 4.2.2. Các kịch bản kiểm thử (BVA)
+| Mã Kịch bản | Mô tả kiểm thử | Đầu vào | Kết quả mong đợi | Trạng thái | Ánh xạ truy vết |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| FR20-BVA-01 | | | | | |
+| FR23-BVA-01 | Thêm vào giỏ hàng với số lượng tại biên dưới. | Product ID = 1, Quantity = "1" | Thêm thành công sản phẩm với số lượng 1. | Pass | BVA-BND-01 (On-Point) |
+| FR23-BVA-02 | Thêm vào giỏ hàng với số lượng dưới biên dưới. | Product ID = 1, Quantity = "0" | Hệ thống từ chối, báo lỗi nhập liệu. | Fail | BVA-BND-01 (Off-Point, không hợp lệ) |
+| FR23-BVA-03 | Thêm vào giỏ hàng với số lượng ngay trên biên dưới. | Product ID = 1, Quantity = "2" | Thêm thành công sản phẩm với số lượng 2. | Pass | BVA-BND-01 (Off-Point, hợp lệ) |
 
-#### 4.2.3. Application Explanation
-*Step-by-step explanation of how BVA was applied.*
+#### 4.2.3. Giải thích áp dụng kỹ thuật
+1. **Xác định ranh giới**: Ranh giới nhỏ nhất của số lượng là số nguyên 1.
+2. **Chọn điểm kiểm thử**: Điểm biên là 1, điểm cận biên không hợp lệ là 0, và cận biên hợp lệ là 2.
+3. **Ánh xạ kết quả**: Kiểm thử các giá trị cận kề này trên di động để đảm bảo tính đồng bộ của logic ứng dụng.
 
 ---
 
 ### 4.3. AI Gap Analysis & Screenshot Proofs
-*Identify missed test cases or bugs by AI tools, and explain why they were missed.*
+- **AI Gap Analysis**:
+  * **FR23-DT-03 & FR23-BVA-02 (Lỗi bất đồng bộ dữ liệu UI và giỏ hàng khi nhập số lượng <= 0)**: Khi người dùng nhập số lượng bằng `"0"` hoặc số âm, giao diện di động vẫn giữ nguyên chuỗi nhập đó. Tuy nhiên, hàm `normalizeQuantity` trong `App.js` lại âm thầm chuyển đổi giá trị không hợp lệ này thành `1` và thực hiện thêm vào giỏ hàng thành công với số lượng là 1. Điều này gây ra lỗi bất đồng bộ nghiêm trọng giữa số lượng thực tế hiển thị trên ô nhập (`0` hoặc số âm) và số lượng thực tế được thêm vào giỏ hàng (`1`), tạo trải nghiệm sử dụng không chính xác.
+  * **FR23-DT-04 (Lỗi tự động làm tròn số lượng thập phân không cảnh báo)**: Khi nhập số lượng dạng chuỗi thập phân (ví dụ: `"2.5"`), hệ thống tự động gọi `parseInt` và lưu số lượng là `2` vào giỏ hàng nhưng không hề hiển thị bất kỳ cảnh báo hay thông báo làm tròn nào trên giao diện cho người dùng biết.
+  * **FR23-DT-05 (Lỗi tự động thêm số lượng bằng 1 khi để trống hoặc nhập chữ)**: Khi ô số lượng bị xóa trống (`""`) hoặc nhập chữ (`"abc"`), hệ thống tự động gán giá trị mặc định là `1` để thêm vào giỏ hàng thay vì ngăn chặn và yêu cầu người dùng nhập lại giá trị hợp lệ.
 
 #### Minh chứng kết quả chạy test / lỗi phát hiện (Screenshots):
-*(Dán hình ảnh minh chứng từ thư mục `images/` vào đây)*
-```markdown
-![FR20 Verification](images/fr20_verification.png)
-```
+![Lỗi thêm số lượng bằng 0 nhưng giỏ hàng tăng lên 1 (FR23-DT-03)](images/fr23-DT03-fail.png)
+
+![Lỗi nhập số lượng 2.5 bị làm tròn thành 2 trong giỏ hàng (FR23-DT-04)](images/fr23-DT04-fail.png)
+
+![Lỗi nhập số lượng trống hoặc rỗng nhưng giỏ hàng nhận là 1 (FR23-DT-05)](images/fr23-DT05-fail.png)
