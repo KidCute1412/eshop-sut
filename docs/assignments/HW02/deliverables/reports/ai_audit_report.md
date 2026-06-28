@@ -227,4 +227,17 @@
       Hi sir - Xác nhận báo cáo bug_report.md đã hoàn toàn chính xác, đầy đủ 14 bug, có đầy đủ các bước tái hiện, kết quả mong đợi/thực tế và các hình ảnh minh chứng tương ứng được gán chuẩn xác theo từng lỗi trong main_report.md.
       ```
 
+17. **Tương tác #17**:
+    * **AI Tool Name**: Gemini (Antigravity Coding Assistant)
+    * **Date & Time**: 2026-06-29 04:29 (GMT+7)
+    * **Yêu cầu (Your Prompt)**:
+      ```text
+      kiểm tra readme đã đầy đủ thông tin chưa. Check thông tin, số liệu rõ ràng. Rà soát ai_audit_report.md và ai_critique.md xem đã ghi đầy đủ chưa.
+      ```
+    * **Kết quả (AI Output)**:
+      ```text
+      Hi sir - Đã đối chiếu số liệu và phát hiện sự lệch số liệu lỗi trong README.md (ghi 8 bugs) so với bug_report.md (14 bugs) và đã chỉnh sửa đồng bộ README.md thành công. Rà soát ai_critique.md (đạt ~240 từ tiếng Việt, đúng cấu trúc phê bình) và ai_audit_report.md (ghi nhận chi tiết 16 lượt tương tác với đầy đủ tham số) đạt yêu cầu của bài tập.
+      ```
+
+
 

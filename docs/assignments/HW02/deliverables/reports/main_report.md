@@ -115,20 +115,35 @@ Chúng tôi xác định các biến và điều kiện hệ thống sau cho tí
   * **FR06-BVA-02 (Lỗi thêm số lượng bằng 0 vào giỏ hàng)**: Kỹ thuật phân tích giá trị biên đã xác định giá trị `0` là điểm cận biên không hợp lệ dưới biên dưới 1. Tuy nhiên, mã nguồn xử lý thêm sản phẩm trong `CartContext` không kiểm tra giá trị của số lượng truyền vào, dẫn đến việc sản phẩm có số lượng bằng `0` vẫn được thêm vào giỏ hàng một cách bất thường mà không gặp bất kỳ lỗi hay thông báo ngăn chặn nào.
 
 #### Minh chứng kết quả chạy test / lỗi phát hiện (Screenshots):
-![Lỗi trắng trang khi xem sản phẩm không tồn tại (FR06-DT-03)](images/fr06-DT03-fail.png)
-*Hình 1.1: Minh chứng lỗi trắng trang (crashed) khi truy cập sản phẩm không tồn tại (FR06-DT-03).*
+<p align="center">
+  <img src="images/fr06-DT03-fail.png" alt="Lỗi trắng trang khi xem sản phẩm không tồn tại (FR06-DT-03)" width="85%" />
+  <br/>
+  <em>Hình 1.1: Minh chứng lỗi trắng trang (crashed) khi truy cập sản phẩm không tồn tại (FR06-DT-03).</em>
+</p>
 
-![Lỗi phải nhấn 2 lần nút Thêm vào giỏ hàng (FR06-DT-04)](images/fr06-DT04-fail.png)
-*Hình 1.2: Trang chi tiết sản phẩm chuẩn bị thêm vào giỏ hàng với số lượng bằng 3 (cần click 2 lần nút "Thêm vào giỏ hàng" mới có tác dụng) (FR06-DT-04).*
+<p align="center">
+  <img src="images/fr06-DT04-fail.png" alt="Lỗi phải nhấn 2 lần nút Thêm vào giỏ hàng (FR06-DT-04)" width="85%" />
+  <br/>
+  <em>Hình 1.2: Trang chi tiết sản phẩm chuẩn bị thêm vào giỏ hàng với số lượng bằng 3 (cần click 2 lần nút "Thêm vào giỏ hàng" mới có tác dụng) (FR06-DT-04).</em>
+</p>
 
-![Lỗi thêm số lượng âm vào giỏ hàng (FR06-DT-05)](images/fr06-DT05-fail.png)
-*Hình 1.3: Giao diện giỏ hàng chấp nhận số lượng sản phẩm âm sau khi thêm thành công (FR06-DT-05).*
+<p align="center">
+  <img src="images/fr06-DT05-fail.png" alt="Lỗi thêm số lượng âm vào giỏ hàng (FR06-DT-05)" width="85%" />
+  <br/>
+  <em>Hình 1.3: Giao diện giỏ hàng chấp nhận số lượng sản phẩm âm sau khi thêm thành công (FR06-DT-05).</em>
+</p>
 
-![Lỗi thêm số lượng thập phân (FR06-DT-07)](images/fr06-DT07-fail.png)
-*Hình 1.4: Hệ thống cho phép nhập và thêm số lượng 2.5 nhưng âm thầm làm tròn xuống thành 2 trong giỏ hàng (FR06-DT-07).*
+<p align="center">
+  <img src="images/fr06-DT07-fail.png" alt="Lỗi thêm số lượng thập phân (FR06-DT-07)" width="85%" />
+  <br/>
+  <em>Hình 1.4: Hệ thống cho phép nhập và thêm số lượng 2.5 nhưng âm thầm làm tròn xuống thành 2 trong giỏ hàng (FR06-DT-07).</em>
+</p>
 
-![Lỗi thêm số lượng bằng 0 (FR06-BVA-02)](images/fr06-BVA02-fail.png)
-*Hình 1.5: Sản phẩm được thêm vào giỏ hàng thành công với số lượng bằng 0 (FR06-BVA-02).*
+<p align="center">
+  <img src="images/fr06-BVA02-fail.png" alt="Lỗi thêm số lượng bằng 0 (FR06-BVA-02)" width="85%" />
+  <br/>
+  <em>Hình 1.5: Sản phẩm được thêm vào giỏ hàng thành công với số lượng bằng 0 (FR06-BVA-02).</em>
+</p>
 
 ---
 ---
@@ -205,11 +220,17 @@ Vì trạng thái là biến quy trình (state variable), việc phân tích bi�
   * **FR10-BVA-04 (Lỗi chuyển từ canceled sang delivered)**: Đặc tả yêu cầu trạng thái `canceled` là trạng thái kết thúc (Final State) và không thể chuyển đi đâu khác. Tuy nhiên, hệ thống thực tế (Backend) thiếu kiểm tra điều kiện này, dẫn đến việc Admin vẫn có thể gửi request chuyển một đơn hàng đã hủy (`canceled`) sang trạng thái đã giao (`delivered`) mà không bị hệ thống từ chối.
 
 #### Minh chứng kết quả chạy test / lỗi phát hiện (Screenshots):
-![Lỗi User tự hủy đơn hàng khi đã ở trạng thái shipping (FR10-DT-05)](images/fr10-DT05-fail.png)
-*Hình 2.1: Minh chứng lỗi cho kịch bản **FR10-DT-05** - Admin đã chuyển đơn hàng sang trạng thái shipping (đang giao hàng) nhưng bên giao diện User vẫn có nút Hủy và thực hiện hủy thành công đơn hàng.*
+<p align="center">
+  <img src="images/fr10-DT05-fail.png" alt="Lỗi User tự hủy đơn hàng khi đã ở trạng thái shipping (FR10-DT-05)" width="85%" />
+  <br/>
+  <em>Hình 2.1: Minh chứng lỗi cho kịch bản FR10-DT-05 - Admin đã chuyển đơn hàng sang trạng thái shipping (đang giao hàng) nhưng bên giao diện User vẫn có nút Hủy và thực hiện hủy thành công đơn hàng.</em>
+</p>
 
-![Lỗi Admin cập nhật đơn hàng đã hủy thành công sang đã giao (FR10-BVA-04)](images/fr10-BVA04-fail.png)
-*Hình 2.2: Minh chứng lỗi cho kịch bản **FR10-BVA-04** - Giao diện quản lý đơn hàng của Admin hiển thị đơn hàng đã ở trạng thái kết thúc "Đã hủy" (canceled) nhưng vẫn cho phép bấm nút "Đánh dấu Đã giao" (delivered).*
+<p align="center">
+  <img src="images/fr10-BVA04-fail.png" alt="Lỗi Admin cập nhật đơn hàng đã hủy thành công sang đã giao (FR10-BVA-04)" width="85%" />
+  <br/>
+  <em>Hình 2.2: Minh chứng lỗi cho kịch bản FR10-BVA-04 - Giao diện quản lý đơn hàng của Admin hiển thị đơn hàng đã ở trạng thái kết thúc "Đã hủy" (canceled) nhưng vẫn cho phép bấm nút "Đánh dấu Đã giao" (delivered).</em>
+</p>
 
 ---
 ---
@@ -287,26 +308,47 @@ Chúng tôi xác định các biến đầu vào, biến trạng thái và đi�
 
 #### Minh chứng kết quả chạy test / lỗi phát hiện (Screenshots):
 
-![Đăng nhập tài khoản Admin lấy token (FR12-DT-01)](images/fr12-admin-login.png)
-*Hình 3.1: Đăng nhập thành công tài khoản Admin và nhận JWT token với role admin.*
+<p align="center">
+  <img src="images/fr12-admin-login.png" alt="Đăng nhập tài khoản Admin lấy token (FR12-DT-01)" width="85%" />
+  <br/>
+  <em>Hình 3.1: Đăng nhập thành công tài khoản Admin và nhận JWT token với role admin.</em>
+</p>
 
-![Đăng nhập tài khoản User thường lấy token (FR12-DT-03)](images/fr12-user-login.png)
-*Hình 3.2: Đăng nhập thành công tài khoản User thường và nhận JWT token với role user.*
+<p align="center">
+  <img src="images/fr12-user-login.png" alt="Đăng nhập tài khoản User thường lấy token (FR12-DT-03)" width="85%" />
+  <br/>
+  <em>Hình 3.2: Đăng nhập thành công tài khoản User thường và nhận JWT token với role user.</em>
+</p>
 
-![Lỗi User thường sử dụng token truy cập thành công API Admin (FR12-DT-03)](images/fr12-DT03-fail.png)
-*Hình 3.3: Minh chứng lỗi khi User thường dùng token của mình nhưng vẫn truy cập thành công và lấy được toàn bộ danh sách tài khoản từ API Admin (FR12-DT-03).*
+<p align="center">
+  <img src="images/fr12-DT03-fail.png" alt="Lỗi User thường sử dụng token truy cập thành công API Admin (FR12-DT-03)" width="85%" />
+  <br/>
+  <em>Hình 3.3: Minh chứng lỗi khi User thường dùng token của mình nhưng vẫn truy cập thành công và lấy được toàn bộ danh sách tài khoản từ API Admin (FR12-DT-03).</em>
+</p>
 
-![Lỗi User thường cập nhật danh mục sản phẩm thành công (FR12-DT-04)](images/fr12-DT04-fail.png)
-*Hình 3.4: Minh chứng lỗi khi User thường dùng token của mình gửi request cập nhật danh mục sản phẩm (PUT /api/categories/1) nhưng hệ thống vẫn cho phép thực thi thành công (FR12-DT-04).*
+<p align="center">
+  <img src="images/fr12-DT04-fail.png" alt="Lỗi User thường cập nhật danh mục sản phẩm thành công (FR12-DT-04)" width="85%" />
+  <br/>
+  <em>Hình 3.4: Minh chứng lỗi khi User thường dùng token của mình gửi request cập nhật danh mục sản phẩm (PUT /api/categories/1) nhưng hệ thống vẫn cho phép thực thi thành công (FR12-DT-04).</em>
+</p>
 
-![Chỉnh sửa payload và ký lại token trên jwt.io (FR12-BVA-01)](images/fr12-BVA01-jwt.png)
-*Hình 3.5: Chỉnh sửa payload token JWT có role mang giá trị sai lệch "admin " (có khoảng trắng) và ký lại thành công bằng Secret Key.*
+<p align="center">
+  <img src="images/fr12-BVA01-jwt.png" alt="Chỉnh sửa payload và ký lại token trên jwt.io (FR12-BVA-01)" width="85%" />
+  <br/>
+  <em>Hình 3.5: Chỉnh sửa payload token JWT có role mang giá trị sai lệch "admin " (có khoảng trắng) và ký lại thành công bằng Secret Key.</em>
+</p>
 
-![Lỗi hệ thống vẫn chấp nhận token có role sai lệch ký tự (FR12-BVA-01)](images/fr12-BVA01-fail.png)
-*Hình 3.6: Minh chứng lỗi khi sử dụng token lỗi "admin " để gửi request nhưng hệ thống vẫn cho phép truy cập API Admin lấy toàn bộ danh sách người dùng thành công thay vì trả về 403 Forbidden (FR12-BVA-01).*
+<p align="center">
+  <img src="images/fr12-BVA01-fail.png" alt="Lỗi hệ thống vẫn chấp nhận token có role sai lệch ký tự (FR12-BVA-01)" width="85%" />
+  <br/>
+  <em>Hình 3.6: Minh chứng lỗi khi sử dụng token lỗi "admin " để gửi request nhưng hệ thống vẫn cho phép truy cập API Admin lấy toàn bộ danh sách người dùng thành công thay vì trả về 403 Forbidden (FR12-BVA-01).</em>
+</p>
 
-![Lỗi User thường gọi được API tạo sản phẩm của Admin (FR12-BVA-02)](images/fr12-BVA02-fail.png)
-*Hình 3.7: Minh chứng lỗi khi User thường dùng token của mình nhưng vẫn gửi request tạo sản phẩm mới thành công qua API POST /api/products (FR12-BVA-02).*
+<p align="center">
+  <img src="images/fr12-BVA02-fail.png" alt="Lỗi User thường gọi được API tạo sản phẩm của Admin (FR12-BVA-02)" width="85%" />
+  <br/>
+  <em>Hình 3.7: Minh chứng lỗi khi User thường dùng token của mình nhưng vẫn gửi request tạo sản phẩm mới thành công qua API POST /api/products (FR12-BVA-02).</em>
+</p>
 
 ---
 ---
@@ -370,8 +412,21 @@ Chúng tôi xác định các biến và điều kiện hệ thống sau cho tí
   * **FR23-DT-05 (Lỗi tự động thêm số lượng bằng 1 khi để trống hoặc nhập chữ)**: Khi ô số lượng bị xóa trống (`""`) hoặc nhập chữ (`"abc"`), hệ thống tự động gán giá trị mặc định là `1` để thêm vào giỏ hàng thay vì ngăn chặn và yêu cầu người dùng nhập lại giá trị hợp lệ.
 
 #### Minh chứng kết quả chạy test / lỗi phát hiện (Screenshots):
-![Lỗi thêm số lượng bằng 0 nhưng giỏ hàng tăng lên 1 (FR23-DT-03)](images/fr23-DT03-fail.png)
+<p align="center">
+  <img src="images/fr23-DT03-fail.png" alt="Lỗi thêm số lượng bằng 0 nhưng giỏ hàng tăng lên 1 (FR23-DT-03)" width="85%" />
+  <br/>
+  <em>Hình 4.1: Giao diện giỏ hàng tăng số lượng lên 1 khi người dùng nhập số lượng bằng 0.</em>
+</p>
 
-![Lỗi nhập số lượng 2.5 bị làm tròn thành 2 trong giỏ hàng (FR23-DT-04)](images/fr23-DT04-fail.png)
+<p align="center">
+  <img src="images/fr23-DT04-fail.png" alt="Lỗi nhập số lượng 2.5 bị làm tròn thành 2 trong giỏ hàng (FR23-DT-04)" width="85%" />
+  <br/>
+  <em>Hình 4.2: Hệ thống tự làm tròn số lượng thập phân 2.5 thành 2 trong giỏ hàng.</em>
+</p>
 
-![Lỗi nhập số lượng trống hoặc rỗng nhưng giỏ hàng nhận là 1 (FR23-DT-05)](images/fr23-DT05-fail.png)
+<p align="center">
+  <img src="images/fr23-DT05-fail.png" alt="Lỗi nhập số lượng trống hoặc rỗng nhưng giỏ hàng nhận là 1 (FR23-DT-05)" width="85%" />
+  <br/>
+  <em>Hình 4.3: Ô nhập số lượng bỏ trống nhưng giỏ hàng vẫn nhận số lượng bằng 1.</em>
+</p>
+

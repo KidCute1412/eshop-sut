@@ -41,7 +41,9 @@ This document records the details of all bugs discovered during Domain and Bound
 * **Expected Result**: Nút "Hủy đơn hàng" không xuất hiện đối với đơn hàng đang ở trạng thái `shipping` trong giao diện lịch sử đơn hàng của User. Nếu có request gửi thủ công lên API Backend để hủy đơn hàng `shipping` từ tài khoản User thường, hệ thống phải từ chối và trả về mã lỗi `400 Bad Request`.
 * **Actual Result**: User vẫn có nút hủy đơn hàng, bấm hủy thành công và backend cập nhật trạng thái đơn hàng sang `canceled` mà không có cơ chế ngăn chặn nào.
 * **Screenshots**:
-  ![Lỗi User tự hủy đơn hàng khi đang giao](images/fr10-DT05-fail.png)
+  <p align="center">
+    <img src="images/fr10-DT05-fail.png" alt="Lỗi User tự hủy đơn hàng khi đang giao" width="85%" />
+  </p>
 
 ### BUG-002: Cho phép chuyển trạng thái đơn hàng đã hủy (canceled) sang đã giao (delivered)
 * **Feature**: FR-10 (Order State Machine)
@@ -55,7 +57,9 @@ This document records the details of all bugs discovered during Domain and Bound
 * **Expected Result**: Giao diện Quản lý Đơn hàng của Admin không hiển thị bất kỳ nút cập nhật trạng thái nào ở cột Hành động khi đơn hàng đã ở trạng thái kết thúc (`canceled` hoặc `delivered`). API Backend cũng cần validate để chặn việc thay đổi trạng thái từ trạng thái kết thúc và trả về `400 Bad Request`.
 * **Actual Result**: Hệ thống vẫn hiển thị nút "Đánh dấu Đã giao" và cho phép Admin cập nhật đổi trạng thái từ `canceled` sang `delivered` thành công.
 * **Screenshots**:
-  ![Lỗi Admin chuyển trạng thái từ canceled sang delivered](images/fr10-BVA04-fail.png)
+  <p align="center">
+    <img src="images/fr10-BVA04-fail.png" alt="Lỗi Admin chuyển trạng thái từ canceled sang delivered" width="85%" />
+  </p>
 
 ### BUG-003: Người dùng thường (User) truy cập trái phép lấy danh sách tài khoản từ API Admin
 * **Feature**: FR-12 (Access Control)
@@ -67,11 +71,17 @@ This document records the details of all bugs discovered during Domain and Bound
 * **Expected Result**: Hệ thống phải chặn request này và trả về mã trạng thái `403 Forbidden`.
 * **Actual Result**: Hệ thống vẫn cho phép truy cập thành công và trả về dữ liệu danh sách người dùng.
 * **Screenshots**:
-  ![Đăng nhập tài khoản User thường lấy token](images/fr12-user-login.png)
-  *Hình: Đăng nhập tài khoản User thường để lấy JWT token.*
+  <p align="center">
+    <img src="images/fr12-user-login.png" alt="Đăng nhập tài khoản User thường lấy token" width="85%" />
+    <br/>
+    <em>Hình: Đăng nhập tài khoản User thường để lấy JWT token.</em>
+  </p>
   
-  ![Lỗi User thường sử dụng token truy cập thành công API Admin](images/fr12-DT03-fail.png)
-  *Hình: Gửi request gọi API danh sách tài khoản bằng token User thường thành công.*
+  <p align="center">
+    <img src="images/fr12-DT03-fail.png" alt="Lỗi User thường sử dụng token truy cập thành công API Admin" width="85%" />
+    <br/>
+    <em>Hình: Gửi request gọi API danh sách tài khoản bằng token User thường thành công.</em>
+  </p>
 
 ### BUG-004: Người dùng thường (User) cập nhật danh mục sản phẩm thành công qua API Admin
 * **Feature**: FR-12 (Access Control)
@@ -83,11 +93,17 @@ This document records the details of all bugs discovered during Domain and Bound
 * **Expected Result**: Hệ thống từ chối và trả về mã trạng thái `403 Forbidden`.
 * **Actual Result**: Hệ thống cập nhật danh mục thành công mà không có cảnh báo hay ngăn chặn nào.
 * **Screenshots**:
-  ![Đăng nhập tài khoản User thường lấy token](images/fr12-user-login.png)
-  *Hình: Đăng nhập tài khoản User thường để lấy JWT token.*
+  <p align="center">
+    <img src="images/fr12-user-login.png" alt="Đăng nhập tài khoản User thường lấy token" width="85%" />
+    <br/>
+    <em>Hình: Đăng nhập tài khoản User thường để lấy JWT token.</em>
+  </p>
 
-  ![Lỗi User thường cập nhật danh mục sản phẩm thành công](images/fr12-DT04-fail.png)
-  *Hình: Gửi request cập nhật danh mục bằng token User thường thành công.*
+  <p align="center">
+    <img src="images/fr12-DT04-fail.png" alt="Lỗi User thường cập nhật danh mục sản phẩm thành công" width="85%" />
+    <br/>
+    <em>Hình: Gửi request cập nhật danh mục bằng token User thường thành công.</em>
+  </p>
 
 ### BUG-005: Người dùng thường (User) tạo sản phẩm mới thành công qua API Admin
 * **Feature**: FR-12 (Access Control)
@@ -100,11 +116,17 @@ This document records the details of all bugs discovered during Domain and Bound
 * **Expected Result**: Hệ thống phải chặn request này và trả về mã lỗi `403 Forbidden` vì đây là API quản trị chỉ dành cho Admin.
 * **Actual Result**: Hệ thống vẫn cho phép tạo sản phẩm mới thành công.
 * **Screenshots**:
-  ![Đăng nhập tài khoản User thường lấy token](images/fr12-user-login.png)
-  *Hình: Đăng nhập tài khoản User thường để lấy JWT token.*
+  <p align="center">
+    <img src="images/fr12-user-login.png" alt="Đăng nhập tài khoản User thường lấy token" width="85%" />
+    <br/>
+    <em>Hình: Đăng nhập tài khoản User thường để lấy JWT token.</em>
+  </p>
 
-  ![Lỗi User thường gọi được API tạo sản phẩm của Admin](images/fr12-BVA02-fail.png)
-  *Hình: Gửi request tạo sản phẩm bằng token User thường thành công.*
+  <p align="center">
+    <img src="images/fr12-BVA02-fail.png" alt="Lỗi User thường gọi được API tạo sản phẩm của Admin" width="85%" />
+    <br/>
+    <em>Hình: Gửi request tạo sản phẩm bằng token User thường thành công.</em>
+  </p>
 
 ### BUG-006: Lỗi bất đồng bộ dữ liệu UI và giỏ hàng khi nhập số lượng <= 0 trên Mobile
 * **Feature**: FR-23 (Product detail view (mobile))
@@ -117,7 +139,9 @@ This document records the details of all bugs discovered during Domain and Bound
 * **Expected Result**: Hệ thống phải từ chối hoặc reset ô nhập về 1 khi người dùng nhập số lượng nhỏ hơn 1, tránh trường hợp UI hiển thị số 0 nhưng giỏ hàng vẫn nhận số lượng là 1.
 * **Actual Result**: Ứng dụng vẫn báo thêm thành công và tăng số lượng trong giỏ lên 1 mặc dù trên ô nhập UI hiển thị 0.
 * **Screenshots**:
-  ![Lỗi thêm số lượng bằng 0 nhưng giỏ hàng tăng lên 1 (FR23-DT-03)](images/fr23-DT03-fail.png)
+  <p align="center">
+    <img src="images/fr23-DT03-fail.png" alt="Lỗi thêm số lượng bằng 0 nhưng giỏ hàng tăng lên 1 (FR23-DT-03)" width="85%" />
+  </p>
 
 ### BUG-007: Lỗi tự động làm tròn số lượng thập phân không cảnh báo trên Mobile
 * **Feature**: FR-23 (Product detail view (mobile))
@@ -130,7 +154,9 @@ This document records the details of all bugs discovered during Domain and Bound
 * **Expected Result**: Hệ thống từ chối nhận số thập phân (báo lỗi đầu vào không hợp lệ) hoặc hiển thị cảnh báo cho người dùng trước khi thực hiện làm tròn số lượng.
 * **Actual Result**: Hệ thống chấp nhận số thập phân nhập vào, tự động làm tròn xuống mà không hiển thị bất kỳ cảnh báo nào.
 * **Screenshots**:
-  ![Lỗi nhập số lượng 2.5 bị làm tròn thành 2 (FR23-DT-04)](images/fr23-DT04-fail.png)
+  <p align="center">
+    <img src="images/fr23-DT04-fail.png" alt="Lỗi nhập số lượng 2.5 bị làm tròn thành 2 (FR23-DT-04)" width="85%" />
+  </p>
 
 ### BUG-008: Lỗi tự động thêm số lượng bằng 1 khi để trống ô nhập liệu trên Mobile
 * **Feature**: FR-23 (Product detail view (mobile))
@@ -143,7 +169,9 @@ This document records the details of all bugs discovered during Domain and Bound
 * **Expected Result**: Hệ thống phải ngăn chặn hành động thêm vào giỏ hàng và báo lỗi yêu cầu người dùng nhập số lượng hợp lệ khi trường số lượng bị bỏ trống.
 * **Actual Result**: Hệ thống vẫn báo thêm thành công và tự gán số lượng bằng 1 vào giỏ hàng.
 * **Screenshots**:
-  ![Lỗi để trống số lượng nhưng vẫn thêm thành công là 1 (FR23-DT-05)](images/fr23-DT05-fail.png)
+  <p align="center">
+    <img src="images/fr23-DT05-fail.png" alt="Lỗi để trống số lượng nhưng vẫn thêm thành công là 1 (FR23-DT-05)" width="85%" />
+  </p>
 
 ### BUG-009: Lỗi trắng trang (crash) khi truy cập xem chi tiết sản phẩm không tồn tại trên Desktop
 * **Feature**: FR-06 (Product Detail View)
@@ -154,7 +182,9 @@ This document records the details of all bugs discovered during Domain and Bound
 * **Expected Result**: Giao diện hiển thị thông báo lỗi thân thiện (ví dụ: "Sản phẩm không tồn tại") hoặc tự động quay về trang chủ, không bị crash trắng trang.
 * **Actual Result**: Ứng dụng React bị crash hoàn toàn, hiển thị màn hình trắng xóa và log lỗi null reference ở Console.
 * **Screenshots**:
-  ![Lỗi trắng trang khi xem sản phẩm không tồn tại](images/fr06-DT03-fail.png)
+  <p align="center">
+    <img src="images/fr06-DT03-fail.png" alt="Lỗi trắng trang khi xem sản phẩm không tồn tại" width="85%" />
+  </p>
 
 ### BUG-010: Lỗi nút "Thêm vào giỏ hàng" phải click đúp (2 lần liên tiếp) mới hoạt động trên Desktop
 * **Feature**: FR-06 (Product Detail View)
@@ -168,7 +198,9 @@ This document records the details of all bugs discovered during Domain and Bound
 * **Expected Result**: Hệ thống phải thực hiện thêm sản phẩm vào giỏ hàng ngay lập tức sau 1 lần click chuột duy nhất.
 * **Actual Result**: Click lần 1 bị bỏ qua hoặc chỉ cập nhật state nội bộ, phải click lần 2 mới gọi API/dispatch giỏ hàng thành công.
 * **Screenshots**:
-  ![Lỗi phải nhấn 2 lần nút Thêm vào giỏ hàng](images/fr06-DT04-fail.png)
+  <p align="center">
+    <img src="images/fr06-DT04-fail.png" alt="Lỗi phải nhấn 2 lần nút Thêm vào giỏ hàng" width="85%" />
+  </p>
 
 ### BUG-011: Lỗi cho phép thêm sản phẩm vào giỏ hàng với số lượng âm trên Desktop
 * **Feature**: FR-06 (Product Detail View)
@@ -181,7 +213,9 @@ This document records the details of all bugs discovered during Domain and Bound
 * **Expected Result**: Hệ thống phải chặn không cho phép thêm số lượng âm (báo lỗi "Số lượng không hợp lệ" hoặc vô hiệu hóa nút/tự động đưa về 1).
 * **Actual Result**: Giỏ hàng chấp nhận và lưu số lượng sản phẩm là -5 mà không có bất kỳ cảnh báo nào.
 * **Screenshots**:
-  ![Lỗi thêm số lượng âm vào giỏ hàng](images/fr06-DT05-fail.png)
+  <p align="center">
+    <img src="images/fr06-DT05-fail.png" alt="Lỗi thêm số lượng âm vào giỏ hàng" width="85%" />
+  </p>
 
 ### BUG-012: Lỗi tự động làm tròn số lượng thập phân không cảnh báo trong giỏ hàng trên Desktop
 * **Feature**: FR-06 (Product Detail View)
@@ -194,7 +228,9 @@ This document records the details of all bugs discovered during Domain and Bound
 * **Expected Result**: Hệ thống phải chặn và báo lỗi khi người dùng nhập số thập phân, hoặc nếu tự động làm tròn thì phải có thông báo/cảnh báo rõ ràng cho người dùng.
 * **Actual Result**: Hệ thống tự động làm tròn xuống 2.5 thành 2 trong giỏ hàng mà không có cảnh báo nào.
 * **Screenshots**:
-  ![Lỗi thêm số lượng thập phân](images/fr06-DT07-fail.png)
+  <p align="center">
+    <img src="images/fr06-DT07-fail.png" alt="Lỗi thêm số lượng thập phân" width="85%" />
+  </p>
 
 ### BUG-013: Lỗi cho phép thêm sản phẩm vào giỏ hàng với số lượng bằng 0 trên Desktop
 * **Feature**: FR-06 (Product Detail View)
@@ -207,7 +243,9 @@ This document records the details of all bugs discovered during Domain and Bound
 * **Expected Result**: Hệ thống phải ngăn chặn hành động thêm sản phẩm với số lượng bằng 0 (báo lỗi hoặc vô hiệu hóa nút).
 * **Actual Result**: Giỏ hàng chấp nhận sản phẩm với số lượng bằng 0 một cách bất thường.
 * **Screenshots**:
-  ![Lỗi thêm số lượng bằng 0](images/fr06-BVA02-fail.png)
+  <p align="center">
+    <img src="images/fr06-BVA02-fail.png" alt="Lỗi thêm số lượng bằng 0" width="85%" />
+  </p>
 
 ### BUG-014: Hệ thống chấp nhận JWT token có vai trò chứa khoảng trắng không hợp lệ (ví dụ: 'admin ')
 * **Feature**: FR-12 (Access Control)
@@ -220,11 +258,17 @@ This document records the details of all bugs discovered during Domain and Bound
 * **Expected Result**: Hệ thống phải từ chối truy cập và trả về mã trạng thái `403 Forbidden` do vai trò `"admin "` không khớp với giá trị `'admin'` chuẩn.
 * **Actual Result**: Hệ thống vẫn chấp nhận token và trả về danh sách người dùng thành công.
 * **Screenshots**:
-  ![Chỉnh sửa payload và ký lại token trên jwt.io](images/fr12-BVA01-jwt.png)
-  *Hình: Chỉnh sửa giá trị role thành "admin " có khoảng trắng và ký lại token trên jwt.io.*
+  <p align="center">
+    <img src="images/fr12-BVA01-jwt.png" alt="Chỉnh sửa payload và ký lại token trên jwt.io" width="85%" />
+    <br/>
+    <em>Hình: Chỉnh sửa giá trị role thành "admin " có khoảng trắng và ký lại token trên jwt.io.</em>
+  </p>
 
-  ![Lỗi hệ thống vẫn chấp nhận token có role sai lệch ký tự](images/fr12-BVA01-fail.png)
-  *Hình: Gửi request gọi API admin thành công bằng token lỗi.*
+  <p align="center">
+    <img src="images/fr12-BVA01-fail.png" alt="Lỗi hệ thống vẫn chấp nhận token có role sai lệnh" width="85%" />
+    <br/>
+    <em>Hình: Gửi request gọi API admin thành công bằng token lỗi.</em>
+  </p>
 
 
 
