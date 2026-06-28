@@ -33,7 +33,7 @@ The cart displayed `Sản phẩm`, `Giá`, `Số lượng`, `Thành tiền`, and
 
 ### GitHub Issue
 
-- Pending - attach the screenshot above when creating the issue.
+- [GitHub Issue Link](https://github.com/KidCute1412/eshop-sut/issues/15#issue-4752770396)
 
 ## BUG-FR07-003: Add-to-Cart Feedback and Cart Badge Are Missing
 
@@ -70,7 +70,7 @@ No toast/notification was visible, and no numeric cart badge appeared beside `Gi
 
 ### GitHub Issue
 
-- Pending - attach the screenshot above when creating the issue.
+- [GitHub Issue Link](https://github.com/KidCute1412/eshop-sut/issues/16#issue-4752773100)
 
 ## BUG-FR07-004: Adding the Same Product Twice Creates Duplicate Rows Instead of Increasing Quantity
 
@@ -106,7 +106,7 @@ The cart displayed two separate rows for the same product, each with quantity `1
 
 ### GitHub Issue
 
-- Pending - attach the screenshot above when creating the issue.
+- [GitHub Issue Link](https://github.com/KidCute1412/eshop-sut/issues/17#issue-4752775406)
 
 ## BUG-FR07-005: Cart Quantity Cannot Be Adjusted with `+` and `-` Controls
 
@@ -144,7 +144,7 @@ The cart displayed item quantity as plain text and no `+` or `-` control was vis
 
 ### GitHub Issue
 
-- Pending - attach the screenshot above when creating the issue.
+- [GitHub Issue Link](https://github.com/KidCute1412/eshop-sut/issues/18#issue-4752778187)
 
 ## BUG-FR07-006: Delete Action Does Not Show Confirmation Dialog
 
@@ -181,7 +181,7 @@ No browser-native confirmation dialog or custom confirmation modal appeared befo
 
 ### GitHub Issue
 
-- Pending - attach the screenshot above when creating the issue.
+- [GitHub Issue Link](https://github.com/KidCute1412/eshop-sut/issues/19#issue-4752780205)
 
 ## BUG-FR07-007: Cart Total Label Uses Forbidden `Tổng tạm tính` Instead of Required `Tổng cộng`
 
@@ -216,7 +216,7 @@ The cart displayed `Tổng tạm tính: 30.000.000 đ`. The required label `Tổ
 
 ### GitHub Issue
 
-- Pending - attach the screenshot above when creating the issue.
+- [GitHub Issue Link](https://github.com/KidCute1412/eshop-sut/issues/20#issue-4752782835)
 
 ## BUG-FR07-008: Cart Page Is Missing Breadcrumb
 
@@ -250,7 +250,7 @@ No breadcrumb/path indicator beyond the navbar was visible.
 
 ### GitHub Issue
 
-- Pending - attach the screenshot above when creating the issue.
+- [GitHub Issue Link](https://github.com/KidCute1412/eshop-sut/issues/21#issue-4752788730)
 
 ## BUG-FR07-009: Cart Navigation Item Is Not Highlighted on Cart Page
 
@@ -284,7 +284,7 @@ The `Giỏ hàng` navigation link used normal navigation styling and no observab
 
 ### GitHub Issue
 
-- Pending - attach the screenshot above when creating the issue.
+- [GitHub Issue Link](https://github.com/KidCute1412/eshop-sut/issues/22#issue-4752804830)
 
 ## BUG-FR07-010: Cart API Accepts Missing `quantity` Property
 
@@ -328,7 +328,7 @@ The API returned `200 OK` with body `{"message":"Added to cart"}`.
 
 ### GitHub Issue
 
-- Pending - attach the screenshot above when creating the issue.
+- [GitHub Issue Link](https://github.com/KidCute1412/eshop-sut/issues/23#issue-4752807244)
 
 ## BUG-FR07-011: Add-to-Cart Accepts Quantity `0`
 
@@ -365,5 +365,4 @@ The product detail page accepted quantity `0` and showed `Đã thêm`. The cart 
 
 ### GitHub Issue
 
-- Pending - attach the screenshot above when creating the issue.
-
+- [GitHub Issue Link](https://github.com/KidCute1412/eshop-sut/issues/24#issue-4752809568)

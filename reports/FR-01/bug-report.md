@@ -33,7 +33,7 @@ No Confirm Password label or input control is displayed.
 
 ### GitHub Issue
 
-- Pending - attach the screenshot above when creating the issue.
+- [GitHub Issue Link](https://github.com/KidCute1412/eshop-sut/issues/1#issue-4752572989)
 
 ## BUG-FR01-002: Required Registration Labels Are Missing Asterisk Markers
 
@@ -67,9 +67,9 @@ The required labels are displayed without adjacent `*` markers.
 
 ### GitHub Issue
 
-- Pending - attach the screenshot above when creating the issue.
+- [GitHub Issue Link](https://github.com/KidCute1412/eshop-sut/issues/2#issue-4752575540)
 
-## BUG-FR01-003: Email Input Uses the Wrong HTML Type
+## BUG-FR01-003:
 
 - Status: Confirmed
 - Severity: Low
@@ -102,7 +102,7 @@ The Email input exposes `type="text"`.
 
 ### GitHub Issue
 
-- Pending - attach evidence that visibly shows the input attribute.
+- [GitHub Issue Link](https://github.com/KidCute1412/eshop-sut/issues/3#issue-4752578216)
 
 ## BUG-FR01-004: Registration API Accepts Missing Required Properties
 
@@ -151,7 +151,7 @@ Each request returned `200 OK` with the documented success message and an `id` v
 
 ### GitHub Issue
 
-- Pending - attach all three API screenshots to the issue.
+- [GitHub Issue Link](https://github.com/KidCute1412/eshop-sut/issues/4#issue-4752580769)
 
 ## BUG-FR01-005: Registration API Accepts Malformed Email Addresses
 
@@ -190,7 +190,7 @@ The API returned `200 OK` with the documented success message and an `id` value.
 
 ### GitHub Issue
 
-- Pending - attach the screenshot above when creating the issue.
+- [GitHub Issue Link](https://github.com/KidCute1412/eshop-sut/issues/7#issue-4752626810)
 
 ## BUG-FR01-006: Registration API Accepts Duplicate Email Addresses
 
@@ -233,7 +233,7 @@ The API returned `200 OK` with the documented success message and an `id` value.
 
 ### GitHub Issue
 
-- Pending - attach the screenshot above and evidence that the email existed before execution.
+- [GitHub Issue Link](https://github.com/KidCute1412/eshop-sut/issues/5#issue-4752585717)
 
 ## BUG-FR01-007: Registration API Accepts Weak Passwords
 
@@ -282,3 +282,7 @@ Every tested password was accepted with `200 OK`, the documented success message
 - [Missing digit](./evidence/FR01-DT-028.png)
 - [Missing special character](./evidence/FR01-DT-029.png)
 - [Seven-character boundary](./evidence/FR01-BVA-005.png)
+
+### GitHub Issue
+
+- [GitHub Issue Link](https://github.com/KidCute1412/eshop-sut/issues/6#issue-4752616763)

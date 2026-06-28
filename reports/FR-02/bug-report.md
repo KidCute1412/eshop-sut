@@ -19,7 +19,7 @@
 - Evidence:
   - [FR02-DT-005](./evidence/FR02-DT-005.png)
   - [FR02-DT-015](./evidence/FR02-DT-015.png)
-- GitHub Issue Link: Pending
+- GitHub Issue: [link](https://github.com/KidCute1412/eshop-sut/issues/8#issue-4752698976)
 
 ### BUG-FR02-002 - Required-field asterisk markers are missing on the login form
 
@@ -37,7 +37,7 @@
 - Actual Result: The login form text was inspected and no `*` required-field marker was present.
 - Evidence:
   - [FR02-DT-014](./evidence/FR02-DT-014.png)
-- GitHub Issue Link: Pending
+- GitHub Issue: [link](https://github.com/KidCute1412/eshop-sut/issues/9#issue-4752701207)
 
 ### BUG-FR02-003 - Login Password field is visible text instead of masked password input
 
@@ -56,7 +56,7 @@
 - Actual Result: The Password/second login input was observed as `type="text"` and the entered password value was visible as clear text.
 - Evidence:
   - [FR02-DT-016](./evidence/FR02-DT-016.png)
-- GitHub Issue Link: Pending
+- GitHub Issue: [link](https://github.com/KidCute1412/eshop-sut/issues/10#issue-4752703548)
 
 ### BUG-FR02-004 - Login error message appears below the submit button instead of above it
 
@@ -75,7 +75,7 @@
 - Actual Result: The login form displayed `Đăng nhập thất bại. Vui lòng kiểm tra lại.`, but the error message appeared below the `Sign In` submit button.
 - Evidence:
   - [FR02-DT-017](./evidence/FR02-DT-017.png)
-- GitHub Issue Link: Pending
+- GitHub Issue: [link](https://github.com/KidCute1412/eshop-sut/issues/11#issue-4752705494)
 
 ### BUG-FR02-005 - Account is locked or correct login is rejected after only 2 failed attempts
 
@@ -96,8 +96,7 @@
 - Evidence:
   - [FR02-BVA-001](./evidence/FR02-BVA-001.png)
   - [FR02-BVA-005](./evidence/FR02-BVA-005.png)
-- GitHub Issue Link: Pending
-- Notes: This bug is recorded once because the UI and API failures describe the same threshold contradiction on the same account-lockout rule.
+- GitHub Issue: [link](https://github.com/KidCute1412/eshop-sut/issues/12#issue-4752708415)
 
 ### BUG-FR02-006 - UI lockout does not expire at or after the documented 30-second duration
 
@@ -119,12 +118,4 @@
 - Evidence:
   - [FR02-BVA-010](./evidence/FR02-BVA-010.png)
   - [FR02-BVA-011](./evidence/FR02-BVA-011.png)
-- GitHub Issue Link: Pending
-- Notes: `FR02-DT-021` passed in the current merged test-case file for the general expired-lockout state. This bug is limited to the UI BVA observations at the documented 30-second and 31-second boundary points.
-
-## Human Review
-
-- Reviewer: Nguyen Thanh Tien
-- Review Date and Time: 2026-06-26 15:02
-- Human Review Status: Completed
-- Human Corrections: Reviewed failed cases, merged duplicated failures, confirmed 6 bug records.
+- GitHub Issue: [link](https://github.com/KidCute1412/eshop-sut/issues/13#issue-4752710893)

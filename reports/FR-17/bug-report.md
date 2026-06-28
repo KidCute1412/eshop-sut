@@ -49,7 +49,7 @@ The non-admin create request returned `200 OK` with `{"message":"Coupon created"
 
 ### GitHub Issue
 
-- Pending - attach both screenshots when creating the issue.
+- [GitHub Issue Link](https://github.com/KidCute1412/eshop-sut/issues/43#issue-4761290396)
 
 ## BUG-FR17-002: Coupon Create API Accepts Missing Required Fields
 
@@ -107,7 +107,7 @@ The request without `code` returned `200 OK` with `{"message":"Coupon created","
 
 ### GitHub Issue
 
-- Pending - attach both screenshots when creating the issue.
+- [GitHub Issue Link](https://github.com/KidCute1412/eshop-sut/issues/44#issue-4761295030)
 
 ## BUG-FR17-003: Coupon Create API Accepts Unsupported Coupon Type
 
@@ -153,7 +153,7 @@ The API returned `200 OK` with `{"message":"Coupon created","id":11}`.
 
 ### GitHub Issue
 
-- Pending - attach the screenshot above when creating the issue.
+- [GitHub Issue Link](https://github.com/KidCute1412/eshop-sut/issues/45#issue-4761303402)
 
 ## BUG-FR17-004: Coupon Create API Accepts Invalid Numeric Coupon Values
 
@@ -170,12 +170,12 @@ The coupon create API accepts numeric values that violate documented lower-bound
 
 ### Tested Variants
 
-| Test Case | Invalid Field | Invalid Value | Violated Rule | Actual Result |
-| --- | --- | ---: | --- | --- |
-| FR17-DT-013 | `discount_value` | `-1` | Discount value must be positive | `200 OK` with success response |
-| FR17-BVA-001 | `discount_value` | `0` | Discount value must be positive | `200 OK` with success response |
-| FR17-BVA-004 | `min_order_amount` | `-1` | Minimum order amount must be `>= 0` | `200 OK` with success response |
-| FR17-BVA-007 | `max_uses_per_user` | `0` | Max uses per user must be `>= 1` | `200 OK` with success response |
+| Test Case    | Invalid Field       | Invalid Value | Violated Rule                       | Actual Result                  |
+| ------------ | ------------------- | ------------: | ----------------------------------- | ------------------------------ |
+| FR17-DT-013  | `discount_value`    |          `-1` | Discount value must be positive     | `200 OK` with success response |
+| FR17-BVA-001 | `discount_value`    |           `0` | Discount value must be positive     | `200 OK` with success response |
+| FR17-BVA-004 | `min_order_amount`  |          `-1` | Minimum order amount must be `>= 0` | `200 OK` with success response |
+| FR17-BVA-007 | `max_uses_per_user` |           `0` | Max uses per user must be `>= 1`    | `200 OK` with success response |
 
 ### Steps to Reproduce
 
@@ -201,28 +201,7 @@ Every tested invalid numeric value was accepted with `200 OK`, the success messa
 
 ### GitHub Issue
 
-- Pending - attach all relevant screenshots when creating the issue.
-
-## Failed Test Cases to Bug Mapping
-
-| Failed Test Case | Status | Bug ID |
-| --- | --- | --- |
-| FR17-DT-003 | Fail | BUG-FR17-001 |
-| FR17-DT-004 | Fail | BUG-FR17-001 |
-| FR17-DT-010 | Fail | BUG-FR17-002 |
-| FR17-DT-011 | Fail | BUG-FR17-003 |
-| FR17-DT-012 | Fail | BUG-FR17-002 |
-| FR17-DT-013 | Fail | BUG-FR17-004 |
-| FR17-BVA-001 | Fail | BUG-FR17-004 |
-| FR17-BVA-004 | Fail | BUG-FR17-004 |
-| FR17-BVA-007 | Fail | BUG-FR17-004 |
-
-## Non-Bug Notes
-
-- Passing cases are not listed as bugs.
-- `FR17-DT-009` is not listed as a bug because the duplicate coupon code was rejected, which satisfies the current oracle. The response returned `500` and exposed a SQLite constraint message, but exact status/body was not specified by the approved test oracle.
-- No GitHub Issue links are invented; all issue links remain `Pending` until real issues are created.
-- Runtime failures are recorded as observed black-box findings, not source-code conclusions.
+- [GitHub Issue Link](https://github.com/KidCute1412/eshop-sut/issues/46#issue-4761305573)
 
 ## Human Review
 
