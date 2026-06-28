@@ -1,4 +1,4 @@
-| Identifiers | FR-05 | FR-11 | FR-14 |
+| Identifiers | FR-05 | FR-11 | FR-14 | FR-15|
 | --- | --- | --- | --- |
 | TC01 | X | |
 | TC02 | X | |
