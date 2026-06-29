@@ -191,3 +191,46 @@ Mỗi file gồm: mô tả, tiền điều kiện, steps, kết quả mong đợ
   - **Self-Assessment**: 5-criteria table (25+25+25+15+10 = 100 points) with placeholders for scores
 
 **4. Cập nhật prompt log** (Interaction 8 này)
+
+---
+
+## Interaction 9
+
+**Timestamp:** 2026-06-28 01:30:XX
+
+**User Input:**
+```
+hãy giúp tôi chỉnh sửa lại các bảng tổng hợp bug trong report.md để đúng với các test case loại bỏ các bug liên quan đến inspect code, hãy bỏ github issue links, các phần minh chứng thay lại bằng ảnh trong evidence
+```
+
+**AI Tools Used:**
+- Glob: evidence folder → 45 PNG files (FR-03: 8 DT + 9 BVA; FR-09: 10 DT + 8 BVA; FR-13: 9 DT + 2 BVA)
+- Read: report.md sections 6.5, 7.5, 8.5, 11.1, 11.2
+
+**Edits to report.md:**
+1. **Section 6.5** (FR-03 bugs):
+   - Removed BUG-FR03-004 (code inspection: wrong regex)
+   - Removed stale `|<Thêm link GitHub Issue>` artifact
+   - Changed evidence: `evidence/FR03-*-api-log.txt` → `evidence/FR-03/FR03-*.png`
+
+2. **Section 7.5** (FR-09 bugs):
+   - Removed "Link GitHub Issue" column entirely
+   - Changed evidence: `evidence/FR09-*-api-log.txt` → `evidence/FR-09/FR09-*.png`
+
+3. **Section 8.5** (FR-13 bugs):
+   - Removed "Link GitHub Issue" column entirely
+   - Changed evidence: text descriptions → `evidence/FR-13/FR13-*.png`
+
+4. **Section 11.1** (Tổng kết lỗi):
+   - Updated: High=7, Medium=2, Low=1, Total=10 (removed 2 Medium code inspection bugs)
+   - Updated ghi chú to explain only functional testing bugs included
+
+5. **Section 11.2** (Danh sách lỗi):
+   - Removed BUG-FR03-003 and BUG-FR03-004 (code inspection bugs)
+   - Replaced "Link GitHub Issue" column with "Minh chứng" column
+   - Updated evidence paths to image files
+   - BLOCKER-FR03M-001: removed stale issue link, kept plain note
+
+**Summary of changes:**
+- Bug count reduced: 14 → 10 (removed 2 code inspection + 2 not listed in section 9.5)
+- All evidence now points to actual PNG files in evidence/FR-{03,09,13}/

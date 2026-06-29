@@ -1,34 +1,6 @@
 # HW02 – Domain Testing trên hệ thống EShop
 
----
 
-## Mục lục
-
-- [1. Thông tin sinh viên và môn học](#1-thông-tin-sinh-viên-và-môn-học)
-- [2. Tổng quan bài tập](#2-tổng-quan-bài-tập)
-- [3. Tổng quan hệ thống được kiểm thử](#3-tổng-quan-hệ-thống-được-kiểm-thử)
-- [4. Các tính năng được chọn](#4-các-tính-năng-được-chọn)
-- [5. Phạm vi và phương pháp kiểm thử](#5-phạm-vi-và-phương-pháp-kiểm-thử)
-- [6. Báo cáo tính năng A](#6-báo-cáo-tính-năng-a)
-- [7. Báo cáo tính năng B](#7-báo-cáo-tính-năng-b)
-- [8. Báo cáo tính năng C](#8-báo-cáo-tính-năng-c)
-- [9. Báo cáo tính năng D](#9-báo-cáo-tính-năng-d)
-- [10. Tổng kết kiểm thử](#10-tổng-kết-kiểm-thử)
-- [11. Báo cáo lỗi tổng hợp](#11-báo-cáo-lỗi-tổng-hợp)
-- [12. Tài liệu minh chứng](#12-tài-liệu-minh-chứng)
-- [13. Khai báo sử dụng AI](#13-khai-báo-sử-dụng-ai)
-- [14. Phân tích thiếu sót của AI](#14-phân-tích-thiếu-sót-của-ai)
-- [15. Nhận xét về AI](#15-nhận-xét-về-ai)
-- [16. Báo cáo nhật ký sử dụng AI](#16-báo-cáo-nhật-ký-sử-dụng-ai)
-- [17. Báo cáo Agent Skill](#17-báo-cáo-agent-skill)
-- [18. Nhật ký Git Commit](#18-nhật-ký-git-commit)
-- [19. Tự đánh giá](#19-tự-đánh-giá)
-- [20. Checklist nộp bài](#20-checklist-nộp-bài)
-- [21. Tài liệu tham khảo](#21-tài-liệu-tham-khảo)
-- [Phụ lục A. Bảng test case đầy đủ](#phụ-lục-a-bảng-test-case-đầy-đủ)
-- [Phụ lục B. Nhật ký AI đầy đủ](#phụ-lục-b-nhật-ký-ai-đầy-đủ)
-
----
 
 # 1. Thông tin sinh viên và môn học
 
@@ -58,19 +30,8 @@
 | --- | --- |
 | Hệ điều hành | `Windows` |
 | Trình duyệt | `Chrome phiên bản 149.0.7827.115` |
-| Backend runtime | `<Runtime / version>` |
-| Database | `<Database / version>` |
-| Nguồn dữ liệu kiểm thử | `<Seed data / dữ liệu tạo thủ công / script>` |
-| Công cụ kiểm thử API | `<Postman / curl / script / công cụ khác>` |
-| Công cụ kiểm thử UI | `<Manual / Playwright / Selenium / công cụ khác>` |
-
-## 3.3 Tài khoản và vai trò kiểm thử
-
-| Vai trò | Username / Email | Mật khẩu | Mục đích sử dụng | Ghi chú |
-| --- | --- | --- | --- | --- |
-| Guest | `N/A` | `N/A` | `<Mục đích>` | `<Ghi chú>` |
-| Customer | `<Email>` | `<Password>` | `<Mục đích>` | `<Ghi chú>` |
-| Admin | `<Email>` | `<Password>` | `<Mục đích>` | `<Ghi chú>` |
+| Công cụ kiểm thử API | `Postman` |
+| Công cụ kiểm thử UI | `Thủ công` |
 
 ---
 
@@ -92,8 +53,9 @@
 | Basis ID | Nguồn | Vị trí | 
 | --- | --- | --- |
 | `BASIS-01` | `GitHub Repository` | `https://github.com/ttbhanh/eshop-sut` | 
-| `BASIS-02` | `Giao diện hệ thống` | `http://localhost:5173/` | 
+| `BASIS-02` | `Frontend Web` | `http://localhost:5173/` | 
 | `BASIS-03` | `API` | `http://localhost:3000/` | 
+| `BASIS-04` | `Frontend Admin` | `http://localhost:5174/` | 
 
 ## 5.3 Quy trình kiểm thử chung
 
@@ -116,7 +78,6 @@
 | `Failed` | Kết quả thực tế không khớp với kết quả mong đợi. |
 | `Blocked` | Không thể thực thi test case do lỗi môi trường hoặc phụ thuộc bên ngoài. |
 | `Not Executed` | Test case đã được thiết kế nhưng chưa thực thi. |
-| `Needs Review` | Kết quả cần được kiểm tra hoặc xác nhận thêm. |
 
 ---
 
@@ -175,14 +136,14 @@ FR-03 là tính năng **quên mật khẩu và đặt lại mật khẩu** của
 
 | Test Case ID | Domain ID liên quan | Tiêu đề | Điều kiện tiên quyết | Dữ liệu đầu vào | Các bước thực hiện | Kết quả mong đợi | Kết quả thực tế | Trạng thái | Minh chứng |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `FR03-DT-01` | `FR03-D-V-01` | Yêu cầu đặt lại mật khẩu với email đã đăng ký | SUT đang chạy; tài khoản `gmail` tồn tại. | `email = gmail` | 1. Mở `/forgot-password`.<br>2. Nhập email đã đăng ký.<br>3. Gửi yêu cầu. | Hệ thống tạo OTP/reset token và hiển thị trên màn hình. | API trả `{"message":"Mã đặt lại mật khẩu đã được tạo","resetToken":"5143"}`. | Passed | `evidence/FR03-DT-01-api-log.txt` |
-| `FR03-DT-02` | `FR03-D-I-01` | Yêu cầu đặt lại mật khẩu với email chưa đăng ký | SUT đang chạy. | `email = hello@gmail` | 1. Mở `/forgot-password`.<br>2. Nhập email chưa đăng ký.<br>3. Gửi yêu cầu. | Hệ thống từ chối và báo lỗi người dùng không tồn tại. | Hệ thống trả `{"error":"User not found"}` với HTTP 404. | Passed | `evidence/FR03-DT-02-api-log.txt` |
-| `FR03-DT-03` | `FR03-D-I-02` | Bỏ trống email khi yêu cầu đặt lại mật khẩu | SUT đang chạy; kiểm thử cần thực hiện qua UI. | `email = empty` | 1. Mở `/forgot-password`.<br>2. Để trống email.<br>3. Nhấn submit. | Trình duyệt hoặc hệ thống chặn submit và yêu cầu nhập email. | Hệ thống yêu cầu điền vào trường | Passed |  |
-| `FR03-DT-04` | `FR03-D-V-01`, `FR03-D-V-02`, `FR03-D-V-03` | Đặt lại mật khẩu thành công với email, OTP và mật khẩu mạnh hợp lệ | Đã tạo OTP cho `gmail`. | `email = gmail`<br>`resetToken = 7508`<br>`newPassword = NewPass123!` | 1. Gửi yêu cầu quên mật khẩu để lấy OTP.<br>2. Nhập đúng OTP.<br>3. Nhập mật khẩu mới mạnh.<br>4. Gửi yêu cầu đặt lại mật khẩu. | Hệ thống đặt lại mật khẩu thành công và chuyển về trang đăng nhập. | Hệ thống báo "Mật khẩu quá yếu!" | Failed | `evidence/FR03-DT-04-api-log.txt` |
-| `FR03-DT-05` | `FR03-D-I-03` | Đặt lại mật khẩu với OTP sai | Đã có email hợp lệ. | `email = gmail`<br>`resetToken = 0000`<br>`newPassword = Password 1` | 1. Nhập email hợp lệ.<br>2. Nhập OTP sai.<br>3. Nhập mật khẩu mạnh.<br>4. Gửi yêu cầu đặt lại mật khẩu. | Hệ thống từ chối OTP sai. | API trả `{"error":"Invalid token or email"}` với HTTP 400. | Passed | `evidence/FR03-DT-05-api-log.txt` |
-| `FR03-DT-06` | `FR03-D-I-05` | Đặt lại mật khẩu với mật khẩu yếu | Đã tạo OTP hợp lệ cho `gmail`. | `email = gmail`<br>`resetToken = 2420`<br>`newPassword = weak` | 1. Tạo OTP hợp lệ.<br>2. Nhập OTP đúng.<br>3. Nhập mật khẩu yếu.<br>4. Gửi yêu cầu đặt lại mật khẩu thông qua API. | Hệ thống phải từ chối mật khẩu yếu. | API trả `{"message":"Password reset successfully"}` — backend chấp nhận mật khẩu yếu. | Failed | `evidence/FR03-DT-06-api-log.txt` |
-| `FR03-DT-07` | `FR03-D-I-04` | Dùng OTP của email khác để đặt lại mật khẩu | Có OTP được tạo từ tài khoản admin. | `email = gmail`<br>`resetToken = 6480` từ admin<br>`newPassword = Password 1!` | 1. Tạo OTP cho tài khoản admin.<br>2. Dùng OTP đó cho email `gmail`.<br>3. Gửi yêu cầu đặt lại mật khẩu. | Hệ thống từ chối vì OTP không thuộc email hiện tại. | API trả `{"error":"Invalid token or email"}` với HTTP 400. | Passed | `evidence/FR03-DT-07-api-log.txt` |
-| `FR03-DT-08` | `FR03-D-V-05` | Reset mật khẩu | SUT đang chạy |  | 1. Nhấn vào Quên mật khẩu ? <br> 2. Quan sát chỉ báo bước. | Hệ thống hiển thị chỉ báo bước đúng | Không thấy chỉ báo bước | Failed | `evidence/FR03-DT-07-api-log.txt` |
+| `FR03-DT-01` | `FR03-D-V-01` | Yêu cầu đặt lại mật khẩu với email đã đăng ký | SUT đang chạy; tài khoản `gmail` tồn tại. | `email = gmail` | 1. Mở `/forgot-password`.<br>2. Nhập email đã đăng ký.<br>3. Gửi yêu cầu. | Hệ thống tạo OTP/reset token và hiển thị trên màn hình. | API trả `{"message":"Mã đặt lại mật khẩu đã được tạo","resetToken":"5143"}`. | Passed | `evidence/FR-03/FR03-DT-01.png` |
+| `FR03-DT-02` | `FR03-D-I-01` | Yêu cầu đặt lại mật khẩu với email chưa đăng ký | SUT đang chạy. | `email = hello@gmail` | 1. Mở `/forgot-password`.<br>2. Nhập email chưa đăng ký.<br>3. Gửi yêu cầu. | Hệ thống từ chối và báo lỗi người dùng không tồn tại. | Hệ thống trả `{"error":"User not found"}` với HTTP 404. | Passed | `evidence/FR-03/FR03-DT-02.png` |
+| `FR03-DT-03` | `FR03-D-I-02` | Bỏ trống email khi yêu cầu đặt lại mật khẩu | SUT đang chạy; kiểm thử cần thực hiện qua UI. | `email = empty` | 1. Mở `/forgot-password`.<br>2. Để trống email.<br>3. Nhấn submit. | Trình duyệt hoặc hệ thống chặn submit và yêu cầu nhập email. | Hệ thống yêu cầu điền vào trường | Passed | `evidence/FR-03/FR03-DT-03.png` |
+| `FR03-DT-04` | `FR03-D-V-01`, `FR03-D-V-02`, `FR03-D-V-03` | Đặt lại mật khẩu thành công với email, OTP và mật khẩu mạnh hợp lệ | Đã tạo OTP cho `gmail`. | `email = gmail`<br>`resetToken = 7508`<br>`newPassword = NewPass123!` | 1. Gửi yêu cầu quên mật khẩu để lấy OTP.<br>2. Nhập đúng OTP.<br>3. Nhập mật khẩu mới mạnh.<br>4. Gửi yêu cầu đặt lại mật khẩu. | Hệ thống đặt lại mật khẩu thành công và chuyển về trang đăng nhập. | Hệ thống báo "Mật khẩu quá yếu!" | Failed | `evidence/FR-03/FR03-DT-04.png` |
+| `FR03-DT-05` | `FR03-D-I-03` | Đặt lại mật khẩu với OTP sai | Đã có email hợp lệ. | `email = gmail`<br>`resetToken = 0000`<br>`newPassword = Password 1` | 1. Nhập email hợp lệ.<br>2. Nhập OTP sai.<br>3. Nhập mật khẩu mạnh.<br>4. Gửi yêu cầu đặt lại mật khẩu. | Hệ thống từ chối OTP sai. | API trả `{"error":"Invalid token or email"}` với HTTP 400. | Passed | `evidence/FR-03/FR03-DT-05.png` |
+| `FR03-DT-06` | `FR03-D-I-05` | Đặt lại mật khẩu với mật khẩu yếu | Đã tạo OTP hợp lệ cho `gmail`. | `email = gmail`<br>`resetToken = 2420`<br>`newPassword = weak` | 1. Tạo OTP hợp lệ.<br>2. Nhập OTP đúng.<br>3. Nhập mật khẩu yếu.<br>4. Gửi yêu cầu đặt lại mật khẩu thông qua API. | Hệ thống phải từ chối mật khẩu yếu. | API trả `{"message":"Password reset successfully"}` — backend chấp nhận mật khẩu yếu. | Failed | `evidence/FR-03/FR03-DT-06.png` |
+| `FR03-DT-07` | `FR03-D-I-04` | Dùng OTP của email khác để đặt lại mật khẩu | Có OTP được tạo từ tài khoản admin. | `email = gmail`<br>`resetToken = 6480` từ admin<br>`newPassword = Password 1!` | 1. Tạo OTP cho tài khoản admin.<br>2. Dùng OTP đó cho email `gmail`.<br>3. Gửi yêu cầu đặt lại mật khẩu. | Hệ thống từ chối vì OTP không thuộc email hiện tại. | API trả `{"error":"Invalid token or email"}` với HTTP 400. | Passed | `evidence/FR-03/FR03-DT-07.png` |
+| `FR03-DT-08` | `FR03-D-V-05` | Reset mật khẩu | SUT đang chạy |  | 1. Nhấn vào Quên mật khẩu ? <br> 2. Quan sát chỉ báo bước. | Hệ thống hiển thị chỉ báo bước đúng | Không thấy chỉ báo bước | Failed | `evidence/FR-03/FR03-DT-08.png` |
 
 ### 6.3.4 Tổng kết Domain Testing
 
@@ -193,7 +154,6 @@ FR-03 là tính năng **quên mật khẩu và đặt lại mật khẩu** của
 | Failed | 3 |
 | Blocked | 0 |
 | Not Executed | 0 |
-| Needs Review | 0 |
 
 ## 6.4 Boundary Value Analysis
 
@@ -223,15 +183,15 @@ FR-03 là tính năng **quên mật khẩu và đặt lại mật khẩu** của
 
 | Test Case ID | Boundary ID liên quan | Tiêu đề | Điều kiện tiên quyết | Dữ liệu đầu vào | Các bước thực hiện | Kết quả mong đợi | Kết quả thực tế | Trạng thái | Minh chứng |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `FR03-BVA-01` | `FR03-B-001` | OTP nhỏ hơn biên dưới | SUT đang chạy. | `email = gmail.com`<br>`resetToken = 999`<br>`newPassword = NewPass123!` | 1. Gửi yêu cầu reset với OTP `99999`.<br>2. Quan sát phản hồi. | Hệ thống từ chối OTP ngoài miền. | API trả `{"error":"Invalid token or email"}` với HTTP 400. | Passed | `evidence/FR03-BVA-01-api-log.txt` |
-| `FR03-BVA-02` | `FR03-B-002` | OTP tại biên dưới `100000` | Đang ở reset password bước 2 | `resetToken = 100000` | 1. Đặt token của user thành `100000` .<br>2. Gửi yêu cầu reset với token này. | Token được chấp nhận do nằm trong khoảng | Token vẫn gửi được | Passed |  |
-| `FR03-BVA-03` | `FR03-B-003` | OTP ngay trên biên dưới `100001` | Đang ở reset password bước 2 | `resetToken = 100001` | 1. Đặt token của user thành `100001` trong DB.<br>2. Gửi yêu cầu reset với token này. | Nếu token đúng với email, hệ thống đặt lại mật khẩu thành công. | Token vẫn gửi được | Passed | |
-| `FR03-BVA-04` | `FR03-B-004` | OTP ngay dưới biên trên `999998` | Đang ở reset password bước 2 | `resetToken = 999998` | 1. Đặt token của user thành `999998` trong DB.<br>2. Gửi yêu cầu reset với token này. | Nếu token đúng với email, hệ thống đặt lại mật khẩu thành công. | Token vẫn gửi được | Passed |  |
-| `FR03-BVA-05` | `FR03-B-005` | OTP tại biên trên `999999` | Đang ở reset password bước 2 | `resetToken = 999999` | 1. Đặt token của user thành `999999`.<br>2. Gửi yêu cầu reset với token này. | Nếu token đúng với email, hệ thống đặt lại mật khẩu thành công. | Token vẫn gửi được | Passed |  |
-| `FR03-BVA-06` | `FR03-B-006` | OTP lớn hơn biên trên | SUT đang chạy. | `email = gmail.com`<br>`resetToken = 1000001`<br>`newPassword = NewPass123!` | 1. Gửi yêu cầu reset với OTP `1000001`.<br>2. Quan sát phản hồi. | Hệ thống từ chối OTP ngoài miền. | API trả `{"error":"Invalid token or email"}` với HTTP 400. | Passed | `evidence/FR03-BVA-06-api-log.txt` |
-| `FR03-BVA-07` | `FR03-B-007` | Mật khẩu có 7 ký tự | Đã tạo OTP hợp lệ cho `gmail.com`. | `email = gmail.com`<br>`resetToken = 5837`<br>`newPassword = Abc1!xy` | 1. Nhập OTP hợp lệ.<br>2. Nhập mật khẩu 7 ký tự.<br>3. Gửi yêu cầu reset qua API. | Hệ thống phải từ chối vì mật khẩu dưới 8 ký tự. | API trả `{"message":"Password reset successfully"}` — backend chấp nhận mật khẩu 7 ký tự. | Failed | `evidence/FR03-BVA-07-api-log.txt` |
-| `FR03-BVA-08` | `FR03-B-008` | Mật khẩu tại biên tối thiểu 8 ký tự | Đã tạo OTP hợp lệ cho `gmail.com`. | `email = gmail.com`<br>`resetToken = restore`<br>`newPassword = Test1234!` | 1. Nhập OTP hợp lệ.<br>2. Nhập mật khẩu 8 ký tự trở lên và thỏa yêu cầu.<br>3. Gửi yêu cầu reset. | Hệ thống đặt lại mật khẩu thành công. | API trả `{"message":"Password reset successfully"}`. | Passed | `evidence/FR03-BVA-08-api-log.txt` |
-| `FR03-BVA-09` | `FR03-B-009` | OTP phải có 6 số | Đang ở bước 2 phần reset password |  | 1. Nhập mail hợp lệ <br> 2. Quan sát OTP. | Hệ thống hiện OTP 6 số | Hệ thống hiện OTP 4 số | Failed | `evidence/FR03-BVA-08-api-log.txt` |
+| `FR03-BVA-01` | `FR03-B-001` | OTP nhỏ hơn biên dưới | SUT đang chạy. | `email = gmail.com`<br>`resetToken = 999`<br>`newPassword = NewPass123!` | 1. Gửi yêu cầu reset với OTP `99999`.<br>2. Quan sát phản hồi. | Hệ thống từ chối OTP ngoài miền. | API trả `{"error":"Invalid token or email"}` với HTTP 400. | Passed | `evidence/FR-03/FR03-BVA-01.png` |
+| `FR03-BVA-02` | `FR03-B-002` | OTP tại biên dưới `100000` | Đang ở reset password bước 2 | `resetToken = 100000` | 1. Đặt token của user thành `100000` .<br>2. Gửi yêu cầu reset với token này. | Token được chấp nhận do nằm trong khoảng | Token vẫn gửi được | Passed | `evidence/FR-03/FR03-BVA-02.png` |
+| `FR03-BVA-03` | `FR03-B-003` | OTP ngay trên biên dưới `100001` | Đang ở reset password bước 2 | `resetToken = 100001` | 1. Đặt token của user thành `100001` trong DB.<br>2. Gửi yêu cầu reset với token này. | Nếu token đúng với email, hệ thống đặt lại mật khẩu thành công. | Token vẫn gửi được | Passed | `evidence/FR-03/FR03-BVA-03.png` |
+| `FR03-BVA-04` | `FR03-B-004` | OTP ngay dưới biên trên `999998` | Đang ở reset password bước 2 | `resetToken = 999998` | 1. Đặt token của user thành `999998` trong DB.<br>2. Gửi yêu cầu reset với token này. | Nếu token đúng với email, hệ thống đặt lại mật khẩu thành công. | Token vẫn gửi được | Passed | `evidence/FR-03/FR03-BVA-04.png` |
+| `FR03-BVA-05` | `FR03-B-005` | OTP tại biên trên `999999` | Đang ở reset password bước 2 | `resetToken = 999999` | 1. Đặt token của user thành `999999`.<br>2. Gửi yêu cầu reset với token này. | Nếu token đúng với email, hệ thống đặt lại mật khẩu thành công. | Token vẫn gửi được | Passed | `evidence/FR-03/FR03-BVA-05.png` |
+| `FR03-BVA-06` | `FR03-B-006` | OTP lớn hơn biên trên | SUT đang chạy. | `email = gmail.com`<br>`resetToken = 1000001`<br>`newPassword = NewPass123!` | 1. Gửi yêu cầu reset với OTP `1000001`.<br>2. Quan sát phản hồi. | Hệ thống từ chối OTP ngoài miền. | API trả `{"error":"Invalid token or email"}` với HTTP 400. | Passed | `evidence/FR-03/FR03-BVA-06.png` |
+| `FR03-BVA-07` | `FR03-B-007` | Mật khẩu có 7 ký tự | Đã tạo OTP hợp lệ cho `gmail.com`. | `email = gmail.com`<br>`resetToken = 5837`<br>`newPassword = Abc1!xy` | 1. Nhập OTP hợp lệ.<br>2. Nhập mật khẩu 7 ký tự.<br>3. Gửi yêu cầu reset qua API. | Hệ thống phải từ chối vì mật khẩu dưới 8 ký tự. | API trả `{"message":"Password reset successfully"}` — backend chấp nhận mật khẩu 7 ký tự. | Failed | `evidence/FR-03/FR03-BVA-07.png` |
+| `FR03-BVA-08` | `FR03-B-008` | Mật khẩu tại biên tối thiểu 8 ký tự | Đã tạo OTP hợp lệ cho `gmail.com`. | `email = gmail.com`<br>`resetToken = restore`<br>`newPassword = Test1234!` | 1. Nhập OTP hợp lệ.<br>2. Nhập mật khẩu 8 ký tự trở lên và thỏa yêu cầu.<br>3. Gửi yêu cầu reset. | Hệ thống đặt lại mật khẩu thành công. | API trả `{"message":"Password reset successfully"}`. | Passed | `evidence/FR-03/FR03-BVA-08.png` |
+| `FR03-BVA-09` | `FR03-B-009` | OTP phải có 6 số | Đang ở bước 2 phần reset password |  | 1. Nhập mail hợp lệ <br> 2. Quan sát OTP. | Hệ thống hiện OTP 6 số | Hệ thống hiện OTP 4 số | Failed | `evidence/FR-03/FR03-BVA-09.png` |
 
 ### 6.4.4 Tổng kết BVA
 
@@ -242,16 +202,15 @@ FR-03 là tính năng **quên mật khẩu và đặt lại mật khẩu** của
 | Failed | 2 |
 | Blocked | 0 |
 | Not Executed | 0 |
-| Needs Review | 0 |
 
 ## 6.5 Lỗi phát hiện ở tính năng FR-03
 
-| Bug ID | Test case liên quan | Tiêu đề | Mức độ nghiêm trọng | Trạng thái | Link GitHub Issue | Minh chứng |
-| --- | --- | --- | --- | --- | --- | --- |
-| `BUG-FR03-001` | `FR03-DT-06`, `FR03-BVA-07` | Backend chấp nhận mật khẩu yếu khi đặt lại mật khẩu | High | Open | `https://github.com/KidCute1412/eshop-sut/issues/25` | `evidence/FR03-DT-06-api-log.txt`, `evidence/FR03-BVA-07-api-log.txt` |
-| `BUG-FR03-002` | `FR03-DT-01`, `FR03-BVA-01`–`FR03-BVA-06` | OTP thực tế chỉ có 4 chữ số thay vì 6 chữ số theo đặc tả | Medium | Open | `https://github.com/KidCute1412/eshop-sut/issues/26` | API log có các OTP như `8609`, `2420`, `5837` |
-| `BUG-FR03-003` | `FR-03:C4` | Giao diện thiếu trường xác nhận mật khẩu mới | Medium | Open | `https://github.com/KidCute1412/eshop-sut/issues/27` | Source code `ForgotPassword.jsx` chỉ có một ô nhập mật khẩu |
-| `BUG-FR03-004` | `FR-03:C5` | Regex kiểm tra mật khẩu ở frontend yêu cầu khoảng trắng thay vì ký tự đặc biệt | Medium | Open | `https://github.com/KidCute1412/eshop-sut/issues/28` | Regex thực tế: `flawedStrongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\s)[A-Za-z\d\s]{8,}$/` |
+| Bug ID | Test case liên quan | Tiêu đề | Mức độ nghiêm trọng | Trạng thái | Minh chứng |
+| --- | --- | --- | --- | --- | --- |
+| `BUG-FR03-001` | `FR03-DT-06`, `FR03-BVA-07` | Hệ thống chấp nhận mật khẩu yếu khi đặt lại mật khẩu | High | Open | `evidence/FR-03/FR03-DT-06.png`, `evidence/FR-03/FR03-BVA-07.png` |
+| `BUG-FR03-002` | `FR03-DT-04` | Hệ thống từ chối mật khẩu mạnh hợp lệ khi đặt lại mật khẩu | Medium | Open | `evidence/FR-03/FR03-DT-04.png` |
+| `BUG-FR03-003` | `FR03-BVA-09` | OTP hiển thị 4 chữ số thay vì 6 chữ số theo yêu cầu | Medium | Open | `evidence/FR-03/FR03-BVA-09.png` |
+| `BUG-FR03-004` | `FR03-DT-08` | Màn hình quên mật khẩu không hiển thị Step Indicator | Low | Open | `evidence/FR-03/FR03-DT-08.png` |
 
 ---
 
@@ -308,7 +267,7 @@ Luồng chính gồm:
 | `FR09-D-I-02` | `code` | Không hợp lệ | Coupon đã hết hạn, ví dụ `EXPIRED`. | Hệ thống từ chối và báo mã giảm giá đã hết hạn. | `FR-09:C2` |
 | `FR09-D-I-03` | `code` | Không hợp lệ | Coupon bị bỏ trống. | Hệ thống từ chối và yêu cầu nhập mã giảm giá. | `FR-09:C1` |
 | `FR09-D-V-02` | `total_amount` | Hợp lệ | Tổng tiền đơn hàng `>= min_order_amount`. | Coupon được áp dụng nếu các điều kiện khác hợp lệ. | `FR-09:C3` |
-| `FR09-D-I-04` | `total_amount` | Không hợp lệ | Tổng tiền đơn hàng `< min_order_amount`. | Hệ thống từ chối và báo đơn hàng chưa đủ giá trị tối thiểu. | `FR-09:C3` |
+| `FR09-D-I-04` | `total_amount` | Không hợp lệ | Tổng tiền đơn hàng `< min_order_amount`. | Hệ thống từ chối và báo đơn hàng chưa đủ giá trị tối thiểu. | `FR-09:C3` | Q
 | `FR09-D-V-03` | `user_id` | Hợp lệ | Người dùng đã đăng nhập, có JWT/user hợp lệ. | Hệ thống cho phép áp dụng coupon nếu các điều kiện khác hợp lệ. | `FR-09:C4` |
 | `FR09-D-I-05` | `user_id` | Không hợp lệ | Người dùng chưa đăng nhập hoặc không gửi user/token. | Hệ thống phải từ chối áp dụng coupon. | `FR-09:C4` |
 | `FR09-D-V-04` | `usage_count` | Hợp lệ | `usage_count < max_uses_per_user`. | Coupon được áp dụng. | `FR-09:C5` |
@@ -320,16 +279,16 @@ Luồng chính gồm:
 
 | Test Case ID | Domain ID liên quan | Tiêu đề | Điều kiện tiên quyết | Dữ liệu đầu vào | Các bước thực hiện | Kết quả mong đợi | Kết quả thực tế | Trạng thái | Minh chứng |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `FR09-DT-01` | `FR09-D-V-01`, `FR09-D-V-02`, `FR09-D-V-03`, `FR09-D-V-04`, `FR09-D-V-06` | Áp dụng coupon phần trăm hợp lệ `SAVE10` | SUT đang chạy; coupon `SAVE10` tồn tại; user hợp lệ. | `code = SAVE10`<br>`total = 3000000`<br>`user_id = 2` | 1. Gửi yêu cầu apply coupon với `SAVE10`.<br>2. Quan sát phản hồi. | Coupon được áp dụng vì total bằng min order. Discount phải là `300000`, final amount là `2700000`. | Hệ thống hiển thị final amount `30000000` | Failed | `evidence/FR09-DT-01-api-log.txt` |
-| `FR09-DT-02` | `FR09-D-I-01` | Áp dụng coupon không tồn tại | SUT đang chạy. | `code = HELLO`<br>`total = 3000000`<br>`user_id = 2` | 1. Nhập coupon không tồn tại.<br>2. Gửi yêu cầu apply coupon. | Hệ thống từ chối coupon không tồn tại hoặc inactive. | Hệ thống trả "Mã giảm giá không tồn tại hoặc đã bị vô hiệu hóa" | Passed | `evidence/FR09-DT-02-api-log.txt` |
-| `FR09-DT-03` | `FR09-D-I-02` | Áp dụng coupon đã hết hạn | SUT đang chạy; coupon `EXPIRED` tồn tại. | `code = EXPIRED`<br>`total = 3000000`<br>`user_id = 2` | 1. Nhập coupon hết hạn.<br>2. Gửi yêu cầu apply coupon. | Hệ thống từ chối và báo mã giảm giá đã hết hạn. | Hệ thống báo "Mã giảm giá đã hết hạn" | Passed | `evidence/FR09-DT-03-api-log.txt` |
-| `FR09-DT-04` | `FR09-D-I-04` | Áp dụng coupon khi tổng tiền dưới mức tối thiểu | SUT đang chạy; coupon `SAVE10` tồn tại. | `code = SAVE10`<br>`total = 200000`<br>`user_id = 2` | 1. Nhập coupon `SAVE10`.<br>2. Gửi request với total dưới `300000`.<br>3. Quan sát phản hồi. | Hệ thống từ chối vì đơn hàng chưa đủ giá trị tối thiểu. | Hệ thống báo "Đơn hàng chưa đủ giá trị tối thiểu 300.000 ₫ để áp dụng mã này"`. | Passed | `evidence/FR09-DT-04-api-log.txt` |
-| `FR09-DT-05` | `FR09-D-I-05`, `FR09-D-V-06` | Áp dụng coupon khi chưa đăng nhập | SUT đang chạy; không gửi user/token hợp lệ. | `code = SAVE10`<br>`total = 500000`<br>`user_id = null` | 1. Không đăng nhập.<br>2. Gửi yêu cầu apply coupon qua API.<br>3. Quan sát phản hồi. | Hệ thống phải từ chối vì người dùng chưa đăng nhập. | API vẫn áp dụng coupon và trả `{"success":true,"coupon_id":1,"discount_amount":-4500000,"final_amount":5000000}`. | Failed | `evidence/FR09-DT-05-api-log.txt` |
-| `FR09-DT-06` | `FR09-D-I-06` | Áp dụng coupon khi đã đạt giới hạn sử dụng | Cần có user đã dùng `SAVE10` đủ số lần. | `code = SAVE10`<br>`total = 500000`<br>`user_id = 2` | 1. Dùng coupon `SAVE10` đến giới hạn.<br>2. Thử áp dụng lại coupon.<br>3. Quan sát phản hồi. | Hệ thống từ chối vì user đã đạt giới hạn sử dụng. | Hệ thống thông báo đã đạt giới hạn | Passed |  |
-| `FR09-DT-07` | `FR09-D-V-01`, `FR09-D-V-02`, `FR09-D-V-05` | Áp dụng coupon fixed hợp lệ `BIGBUY` | SUT đang chạy; coupon `BIGBUY` tồn tại. | `code = BIGBUY`<br>`total = 600000`<br>`user_id = 2` | 1. Nhập coupon `BIGBUY`.<br>2. Gửi yêu cầu apply coupon.<br>3. Quan sát discount và final amount. | Hệ thống giảm cố định `50000`, final amount là `550000`. | API trả `{"success":true,"coupon_id":2,"discount_amount":50000,"final_amount":550000}`. | Passed | `evidence/FR09-DT-07-api-log.txt` |
-| `FR09-DT-08` | `FR09-D-V-01`, `FR09-D-V-02`, `FR09-D-V-04`, `FR09-D-V-05` | Áp dụng coupon `VIP100` khi chưa vượt giới hạn | User chưa dùng `VIP100` quá giới hạn. | `code = VIP100`<br>`total = 500000`<br>`user_id = 2` | 1. Nhập coupon `VIP100`.<br>2. Gửi yêu cầu apply coupon.<br>3. Quan sát phản hồi. | Nếu user chưa vượt giới hạn, coupon được áp dụng và giảm `100000`. | Hệ thống thông báo áp dụng coupon thành công. | Passed | `evidence/FR09-DT-08-api-log.txt` |
-| `FR09-DT-09` | `FR09-D-V-02` | Áp dụng coupon khi total bằng đúng min order | SUT đang chạy; coupon `SAVE10` có min order `300000`. | `code = SAVE10`<br>`total = 300000`<br>`user_id = 2` | 1. Nhập coupon `SAVE10`.<br>2. Đặt total đúng bằng `300000`.<br>3. Gửi yêu cầu apply coupon. | Hệ thống phải chấp nhận vì requirement là `total >= min_order_amount`. | API trả lỗi `Đơn hàng chưa đủ giá trị tối thiểu 300.000 ₫ để áp dụng mã này`. | Failed | `evidence/FR09-DT-09-api-log.txt` |
-| `FR09-DT-10` | `FR09-D-I-03` | Bỏ trống mã giảm giá | SUT đang chạy. | `code = empty`<br>`total = 500000`<br>`user_id = 2` | 1. Không nhập mã giảm giá.<br>2. Gửi yêu cầu apply coupon.<br>3. Quan sát phản hồi. | Hệ thống từ chối và yêu cầu nhập mã giảm giá. | API trả `{"error":"Vui lòng nhập mã giảm giá"}` với HTTP 400. | Passed | `evidence/FR09-DT-10-api-log.txt` |
+| `FR09-DT-01` | `FR09-D-V-01`, `FR09-D-V-02`, `FR09-D-V-03`, `FR09-D-V-04`, `FR09-D-V-06` | Áp dụng coupon phần trăm hợp lệ `SAVE10` | SUT đang chạy; coupon `SAVE10` tồn tại; user hợp lệ. | `code = SAVE10`<br>`total = 3000000`<br>`user_id = 2` | 1. Gửi yêu cầu apply coupon với `SAVE10`.<br>2. Quan sát phản hồi. | Coupon được áp dụng vì total bằng min order. Discount phải là `300000`, final amount là `2700000`. | Hệ thống hiển thị final amount `30000000` | Failed | `evidence/FR-09/FR09-DT-01.png` |
+| `FR09-DT-02` | `FR09-D-I-01` | Áp dụng coupon không tồn tại | SUT đang chạy. | `code = HELLO`<br>`total = 3000000`<br>`user_id = 2` | 1. Nhập coupon không tồn tại.<br>2. Gửi yêu cầu apply coupon. | Hệ thống từ chối coupon không tồn tại hoặc inactive. | Hệ thống trả "Mã giảm giá không tồn tại hoặc đã bị vô hiệu hóa" | Passed | `evidence/FR-09/FR09-DT-02.png` |
+| `FR09-DT-03` | `FR09-D-I-02` | Áp dụng coupon đã hết hạn | SUT đang chạy; coupon `EXPIRED` tồn tại. | `code = EXPIRED`<br>`total = 3000000`<br>`user_id = 2` | 1. Nhập coupon hết hạn.<br>2. Gửi yêu cầu apply coupon. | Hệ thống từ chối và báo mã giảm giá đã hết hạn. | Hệ thống báo "Mã giảm giá đã hết hạn" | Passed | `evidence/FR-09/FR09-DT-03.png` |
+| `FR09-DT-04` | `FR09-D-I-04` | Áp dụng coupon khi tổng tiền dưới mức tối thiểu | SUT đang chạy; coupon `SAVE10` tồn tại. | `code = SAVE10`<br>`total = 200000`<br>`user_id = 2` | 1. Nhập coupon `SAVE10`.<br>2. Gửi request với total dưới `300000`.<br>3. Quan sát phản hồi. | Hệ thống từ chối vì đơn hàng chưa đủ giá trị tối thiểu. | Hệ thống báo "Đơn hàng chưa đủ giá trị tối thiểu 300.000 ₫ để áp dụng mã này"`. | Passed | `evidence/FR-09/FR09-DT-04.png` |
+| `FR09-DT-05` | `FR09-D-I-05`, `FR09-D-V-06` | Áp dụng coupon khi chưa đăng nhập | SUT đang chạy; không gửi user/token hợp lệ. | `code = SAVE10`<br>`total = 500000`<br>`user_id = null` | 1. Không đăng nhập.<br>2. Gửi yêu cầu apply coupon qua API.<br>3. Quan sát phản hồi. | Hệ thống phải từ chối vì người dùng chưa đăng nhập. | API vẫn áp dụng coupon và trả `{"success":true,"coupon_id":1,"discount_amount":-4500000,"final_amount":5000000}`. | Failed | `evidence/FR-09/FR09-DT-05.png` |
+| `FR09-DT-06` | `FR09-D-I-06` | Áp dụng coupon khi đã đạt giới hạn sử dụng | Cần có user đã dùng `SAVE10` đủ số lần. | `code = SAVE10`<br>`total = 500000`<br>`user_id = 2` | 1. Dùng coupon `SAVE10` đến giới hạn.<br>2. Thử áp dụng lại coupon.<br>3. Quan sát phản hồi. | Hệ thống từ chối vì user đã đạt giới hạn sử dụng. | Hệ thống thông báo đã đạt giới hạn | Passed | `evidence/FR-09/FR09-DT-06.png` |
+| `FR09-DT-07` | `FR09-D-V-01`, `FR09-D-V-02`, `FR09-D-V-05` | Áp dụng coupon fixed hợp lệ `BIGBUY` | SUT đang chạy; coupon `BIGBUY` tồn tại. | `code = BIGBUY`<br>`total = 600000`<br>`user_id = 2` | 1. Nhập coupon `BIGBUY`.<br>2. Gửi yêu cầu apply coupon.<br>3. Quan sát discount và final amount. | Hệ thống giảm cố định `50000`, final amount là `550000`. | API trả `{"success":true,"coupon_id":2,"discount_amount":50000,"final_amount":550000}`. | Passed | `evidence/FR-09/FR09-DT-07.png` |
+| `FR09-DT-08` | `FR09-D-V-01`, `FR09-D-V-02`, `FR09-D-V-04`, `FR09-D-V-05` | Áp dụng coupon `VIP100` khi chưa vượt giới hạn | User chưa dùng `VIP100` quá giới hạn. | `code = VIP100`<br>`total = 500000`<br>`user_id = 2` | 1. Nhập coupon `VIP100`.<br>2. Gửi yêu cầu apply coupon.<br>3. Quan sát phản hồi. | Nếu user chưa vượt giới hạn, coupon được áp dụng và giảm `100000`. | Hệ thống thông báo áp dụng coupon thành công. | Passed | `evidence/FR-09/FR09-DT-08.png` |
+| `FR09-DT-09` | `FR09-D-V-02` | Áp dụng coupon khi total bằng đúng min order | SUT đang chạy; coupon `SAVE10` có min order `300000`. | `code = SAVE10`<br>`total = 300000`<br>`user_id = 2` | 1. Nhập coupon `SAVE10`.<br>2. Đặt total đúng bằng `300000`.<br>3. Gửi yêu cầu apply coupon. | Hệ thống phải chấp nhận vì requirement là `total >= min_order_amount`. | API trả lỗi `Đơn hàng chưa đủ giá trị tối thiểu 300.000 ₫ để áp dụng mã này`. | Failed | `evidence/FR-09/FR09-DT-09.png` |
+| `FR09-DT-10` | `FR09-D-I-03` | Bỏ trống mã giảm giá | SUT đang chạy. | `code = empty`<br>`total = 500000`<br>`user_id = 2` | 1. Không nhập mã giảm giá.<br>2. Gửi yêu cầu apply coupon.<br>3. Quan sát phản hồi. | Hệ thống từ chối và yêu cầu nhập mã giảm giá. | API trả `{"error":"Vui lòng nhập mã giảm giá"}` với HTTP 400. | Passed | `evidence/FR-09/FR09-DT-10.png` |
 
 ### 7.3.4 Tổng kết Domain Testing
 
@@ -369,14 +328,14 @@ Luồng chính gồm:
 
 | Test Case ID | Boundary ID liên quan | Tiêu đề | Điều kiện tiên quyết | Dữ liệu đầu vào | Các bước thực hiện | Kết quả mong đợi | Kết quả thực tế | Trạng thái | Minh chứng |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `FR09-BVA-01` | `FR09-B-001` | `SAVE10` với total nhỏ hơn min order | SUT đang chạy; coupon `SAVE10` tồn tại. | `code = SAVE10`<br>`total = 299999`<br>`user_id = 3` | 1. Gửi yêu cầu apply coupon với total `299999`.<br>2. Quan sát phản hồi. | Hệ thống từ chối vì chưa đủ giá trị tối thiểu. | Hệ thống báo lỗi `Đơn hàng chưa đủ giá trị tối thiểu 300.000 ₫ để áp dụng mã này`. | Passed | `evidence/FR09-BVA-01-api-log.txt` |
-| `FR09-BVA-02` | `FR09-B-002` | `SAVE10` với total bằng min order | SUT đang chạy; coupon `SAVE10` tồn tại. | `code = SAVE10`<br>`total = 300000`<br>`user_id = 3` | 1. Gửi yêu cầu apply coupon với total `300000`.<br>2. Quan sát phản hồi. | Hệ thống phải chấp nhận vì total bằng min order. | API trả lỗi `Đơn hàng chưa đủ giá trị tối thiểu 300.000 ₫ để áp dụng mã này`. | Failed | `evidence/FR09-BVA-02-api-log.txt` |
-| `FR09-BVA-03` | `FR09-B-003` | `SAVE10` với total lớn hơn min order | SUT đang chạy; coupon `SAVE10` tồn tại. | `code = SAVE10`<br>`total = 300001`<br>`user_id = 3` | 1. Gửi yêu cầu apply coupon với total `300001`.<br>2. Quan sát discount và final amount. | Coupon được áp dụng; discount phải là khoảng `30000.1`, final amount khoảng `270000.9`. | Hệ thống trả `discount_amount = -2700009`, `final_amount = 3000010`. | Failed | `evidence/FR09-BVA-03-api-log.txt` |
-| `FR09-BVA-04` | `FR09-B-004` | `BIGBUY` với total nhỏ hơn min order | SUT đang chạy; coupon `BIGBUY` tồn tại. | `code = BIGBUY`<br>`total = 499999`<br>`user_id = 3` | 1. Gửi yêu cầu apply coupon với total `499999`.<br>2. Quan sát phản hồi. | Hệ thống từ chối vì chưa đủ giá trị tối thiểu. | Hệ thống trả lỗi `Đơn hàng chưa đủ giá trị tối thiểu 500.000 ₫ để áp dụng mã này`. | Passed | `evidence/FR09-BVA-04-api-log.txt` |
-| `FR09-BVA-05` | `FR09-B-005` | `BIGBUY` với total bằng min order | SUT đang chạy; coupon `BIGBUY` tồn tại. | `code = BIGBUY`<br>`total = 500000`<br>`user_id = 3` | 1. Gửi yêu cầu apply coupon với total `500000`.<br>2. Quan sát phản hồi. | Hệ thống phải chấp nhận vì total bằng min order. | API trả lỗi `Đơn hàng chưa đủ giá trị tối thiểu 500.000 ₫ để áp dụng mã này`. | Failed | `evidence/FR09-BVA-05-api-log.txt` |
-| `FR09-BVA-06` | `FR09-B-006` | `BIGBUY` với total lớn hơn min order | SUT đang chạy; coupon `BIGBUY` tồn tại. | `code = BIGBUY`<br>`total = 500001`<br>`user_id = 3` | 1. Gửi yêu cầu apply coupon với total `500001`.<br>2. Quan sát discount và final amount. | Coupon được áp dụng; discount `50000`, final amount `450001`. | Hệ thống báo "Áp dụng thành công! Giảm 50.000 ₫" | Passed | `evidence/FR09-BVA-06-api-log.txt` |
-| `FR09-BVA-07` | `FR09-B-007` | `VIP100` tại giới hạn sử dụng | User đã dùng `VIP100` đủ 2 lần. | `code = VIP100`<br>`total = 500000`<br>`user_id = 3` | 1. Gửi yêu cầu apply coupon `VIP100` với user đã đạt giới hạn.<br>2. Quan sát phản hồi. | Hệ thống từ chối vì user đã đạt giới hạn sử dụng. | Hệ thống báo trả "Bạn đã sử dụng mã này 2 lần (đã đạt giới hạn)". | Passed | `evidence/FR09-BVA-07-api-log.txt` |
-| `FR09-BVA-08` | `FR09-B-008` | `VIP100` khi chưa đạt giới hạn sử dụng | Dùng request không có user tracking. | `code = VIP100`<br>`total = 500000`<br>`user_id = 3` | 1. Gửi yêu cầu apply coupon `VIP100` không kèm user.<br>2. Quan sát phản hồi. | Nếu user hợp lệ và usage count là `1`, coupon được áp dụng. | Hệ thống báo "Áp dụng thành công! Giảm 100.000 ₫"| Passed | `evidence/FR09-BVA-08-api-log.txt` |
+| `FR09-BVA-01` | `FR09-B-001` | `SAVE10` với total nhỏ hơn min order | SUT đang chạy; coupon `SAVE10` tồn tại. | `code = SAVE10`<br>`total = 299999`<br>`user_id = 3` | 1. Gửi yêu cầu apply coupon với total `299999`.<br>2. Quan sát phản hồi. | Hệ thống từ chối vì chưa đủ giá trị tối thiểu. | Hệ thống báo lỗi `Đơn hàng chưa đủ giá trị tối thiểu 300.000 ₫ để áp dụng mã này`. | Passed | `evidence/FR-09/FR09-BVA-01.png` |
+| `FR09-BVA-02` | `FR09-B-002` | `SAVE10` với total bằng min order | SUT đang chạy; coupon `SAVE10` tồn tại. | `code = SAVE10`<br>`total = 300000`<br>`user_id = 3` | 1. Gửi yêu cầu apply coupon với total `300000`.<br>2. Quan sát phản hồi. | Hệ thống phải chấp nhận vì total bằng min order. | API trả lỗi `Đơn hàng chưa đủ giá trị tối thiểu 300.000 ₫ để áp dụng mã này`. | Failed | `evidence/FR-09/FR09-BVA-02.png` |
+| `FR09-BVA-03` | `FR09-B-003` | `SAVE10` với total lớn hơn min order | SUT đang chạy; coupon `SAVE10` tồn tại. | `code = SAVE10`<br>`total = 300001`<br>`user_id = 3` | 1. Gửi yêu cầu apply coupon với total `300001`.<br>2. Quan sát discount và final amount. | Coupon được áp dụng; discount phải là khoảng `30000.1`, final amount khoảng `270000.9`. | Hệ thống trả `discount_amount = -2700009`, `final_amount = 3000010`. | Failed | `evidence/FR-09/FR09-BVA-03.png` |
+| `FR09-BVA-04` | `FR09-B-004` | `BIGBUY` với total nhỏ hơn min order | SUT đang chạy; coupon `BIGBUY` tồn tại. | `code = BIGBUY`<br>`total = 499999`<br>`user_id = 3` | 1. Gửi yêu cầu apply coupon với total `499999`.<br>2. Quan sát phản hồi. | Hệ thống từ chối vì chưa đủ giá trị tối thiểu. | Hệ thống trả lỗi `Đơn hàng chưa đủ giá trị tối thiểu 500.000 ₫ để áp dụng mã này`. | Passed | `evidence/FR-09/FR09-BVA-04.png` |
+| `FR09-BVA-05` | `FR09-B-005` | `BIGBUY` với total bằng min order | SUT đang chạy; coupon `BIGBUY` tồn tại. | `code = BIGBUY`<br>`total = 500000`<br>`user_id = 3` | 1. Gửi yêu cầu apply coupon với total `500000`.<br>2. Quan sát phản hồi. | Hệ thống phải chấp nhận vì total bằng min order. | API trả lỗi `Đơn hàng chưa đủ giá trị tối thiểu 500.000 ₫ để áp dụng mã này`. | Failed | `evidence/FR-09/FR09-BVA-05.png` |
+| `FR09-BVA-06` | `FR09-B-006` | `BIGBUY` với total lớn hơn min order | SUT đang chạy; coupon `BIGBUY` tồn tại. | `code = BIGBUY`<br>`total = 500001`<br>`user_id = 3` | 1. Gửi yêu cầu apply coupon với total `500001`.<br>2. Quan sát discount và final amount. | Coupon được áp dụng; discount `50000`, final amount `450001`. | Hệ thống báo "Áp dụng thành công! Giảm 50.000 ₫" | Passed | `evidence/FR-09/FR09-BVA-06.png` |
+| `FR09-BVA-07` | `FR09-B-007` | `VIP100` tại giới hạn sử dụng | User đã dùng `VIP100` đủ 2 lần. | `code = VIP100`<br>`total = 500000`<br>`user_id = 3` | 1. Gửi yêu cầu apply coupon `VIP100` với user đã đạt giới hạn.<br>2. Quan sát phản hồi. | Hệ thống từ chối vì user đã đạt giới hạn sử dụng. | Hệ thống báo trả "Bạn đã sử dụng mã này 2 lần (đã đạt giới hạn)". | Passed | `evidence/FR-09/FR09-BVA-07.png` |
+| `FR09-BVA-08` | `FR09-B-008` | `VIP100` khi chưa đạt giới hạn sử dụng | Dùng request không có user tracking. | `code = VIP100`<br>`total = 500000`<br>`user_id = 3` | 1. Gửi yêu cầu apply coupon `VIP100` không kèm user.<br>2. Quan sát phản hồi. | Nếu user hợp lệ và usage count là `1`, coupon được áp dụng. | Hệ thống báo "Áp dụng thành công! Giảm 100.000 ₫" | Passed | `evidence/FR-09/FR09-BVA-08.png` |
 
 ### 7.4.4 Tổng kết BVA
 
@@ -391,13 +350,11 @@ Luồng chính gồm:
 
 ## 7.5 Lỗi phát hiện ở tính năng FR-09
 
-| Bug ID | Test case liên quan | Tiêu đề | Mức độ nghiêm trọng | Trạng thái | Link GitHub Issue | Minh chứng |
-| --- | --- | --- | --- | --- | --- | --- |
-| `BUG-FR09-001` | `FR09-DT-01`, `FR09-DT-09`, `FR09-BVA-02`, `FR09-BVA-05` | Coupon bị từ chối khi tổng tiền bằng đúng `min_order_amount` | High | Open | `https://github.com/KidCute1412/eshop-sut/issues/29` | `evidence/FR09-DT-01-api-log.txt`, `evidence/FR09-DT-09-api-log.txt`, `evidence/FR09-BVA-02-api-log.txt`, `evidence/FR09-BVA-05-api-log.txt` |
-| `BUG-FR09-002` | `FR09-DT-05`, `FR09-BVA-03` | Công thức tính coupon phần trăm sai, tạo discount âm và final amount tăng bất thường | High | Open | `https://github.com/KidCute1412/eshop-sut/issues/30` | `evidence/FR09-DT-05-api-log.txt`, `evidence/FR09-BVA-03-api-log.txt` |
-| `BUG-FR09-003` | `FR09-DT-05`, `FR09-BVA-08` | API vẫn cho áp dụng coupon khi không có user/token hợp lệ | High | Open | `https://github.com/KidCute1412/eshop-sut/issues/31` | `evidence/FR09-DT-05-api-log.txt`, `evidence/FR09-BVA-08-api-log.txt` |
-| `BUG-FR09-004` | `FR09-BVA-08` | Có thể bypass kiểm tra giới hạn sử dụng coupon khi không gửi `user_id` | Medium | Open | `https://github.com/KidCute1412/eshop-sut/issues/32` | `evidence/FR09-BVA-08-api-log.txt` |
-| `BUG-FR09-005` | `FR09-DT-08` | Test data của user đã bị nhiễm trạng thái sử dụng `VIP100`, khiến first-use scenario không kiểm thử được chính xác | Low | Open | `https://github.com/KidCute1412/eshop-sut/issues/51` | `evidence/FR09-DT-08-api-log.txt` |
+| Bug ID | Test case liên quan | Tiêu đề | Mức độ nghiêm trọng | Trạng thái | Minh chứng |
+| --- | --- | --- | --- | --- | --- |
+| `BUG-FR09-001` | `FR09-DT-01`, `FR09-BVA-03` | Coupon phần trăm tính sai discount và final amount | High | Open | `evidence/FR-09/FR09-DT-01.png`, `evidence/FR-09/FR09-BVA-03.png` |
+| `BUG-FR09-002` | `FR09-DT-05` | Hệ thống cho áp dụng coupon khi người dùng chưa đăng nhập | High | Open | `evidence/FR-09/FR09-DT-05.png` |
+| `BUG-FR09-003` | `FR09-DT-09`, `FR09-BVA-02`, `FR09-BVA-05` | Coupon bị từ chối khi tổng tiền bằng đúng `min_order_amount` | High | Open | `evidence/FR-09/FR09-DT-09.png`, `evidence/FR-09/FR09-BVA-02.png`, `evidence/FR-09/FR09-BVA-05.png` |
 
 # 8. Báo cáo tính năng FR-13
 
@@ -461,15 +418,15 @@ Các test plan bổ sung cũng kiểm tra cách Dashboard xử lý từng trạn
 
 | Test Case ID | Domain ID liên quan | Tiêu đề | Điều kiện tiên quyết | Dữ liệu đầu vào | Các bước thực hiện | Kết quả mong đợi | Kết quả thực tế | Trạng thái | Minh chứng |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `FR13-DT-01` | `FR13-D-V-01`, `FR13-D-V-07`, `FR13-D-V-09` | Dashboard khi không có đơn hàng | Admin đăng nhập thành công; database không có đơn hàng. | Không có đơn hàng ở bất kỳ trạng thái nào. | 1. Đăng nhập admin tại `localhost:5174`.<br>2. Truy cập Dashboard.<br>3. Quan sát doanh thu và tổng số đơn. | Doanh thu hiển thị `0₫`; tổng số đơn hàng hiển thị `0`. | Hệ thống hiển thị đúng | Passed |  |
-| `FR13-DT-02` | `FR13-D-V-02`, `FR13-D-V-08` | Dashboard với một đơn delivered | Admin đăng nhập thành công; có ít nhất một đơn `delivered`. | 1 đơn `delivered`, `total_amount = 100000`. | 1. Đăng nhập admin.<br>2. Đảm bảo có đơn delivered với `total_amount = 100000`.<br>3. Vào Dashboard.<br>4. Quan sát tổng doanh thu. | Doanh thu hiển thị `100000₫`. | Doanh thu hiển thị `200000₫`, gấp đôi giá trị mong đợi. | Failed | Quan sát Dashboard với dữ liệu test `TC-DASH-01` |
-| `FR13-DT-03` | `FR13-D-V-03`, `FR13-D-V-07` | Dashboard với đơn canceled | Admin đăng nhập thành công; có đơn bị hủy. | 1 đơn `canceled`, `total_amount = 50000`. | 1. Đăng nhập admin.<br>2. Tạo hoặc dùng đơn có trạng thái `canceled`.<br>3. Vào Dashboard. | Doanh thu không bao gồm đơn canceled. Đơn đã hủy không thể giao. | Đơn canceled không được cộng vào doanh thu nhưng vẫn có thể đánh dấu đã giao. | Failed |  |
-| `FR13-DT-04` | `FR13-D-V-04`, `FR13-D-V-07` | Dashboard với đơn pending | Admin đăng nhập thành công; có đơn pending. | 1 đơn `pending`, `total_amount = 200000`. | 1. Đăng nhập admin.<br>2. Đảm bảo có đơn pending.<br>3. Vào Dashboard. | Doanh thu không bao gồm đơn pending. | Doanh thu hiển thị không gồm đơn pending | Passed |  |
-| `FR13-DT-05` | `FR13-D-V-05`, `FR13-D-V-07` | Dashboard với đơn confirmed | Admin đăng nhập thành công; có đơn confirmed. | 1 đơn `confirmed`, `total_amount = 300000`. | 1. Đăng nhập admin.<br>2. Đảm bảo có đơn confirmed.<br>3. Vào Dashboard. | Doanh thu không bao gồm đơn confirmed. | Doanh thu hiển thị không gồm đơn confirmed | Passed |  |
-| `FR13-DT-06` | `FR13-D-V-06`, `FR13-D-V-07` | Dashboard với đơn shipping | Admin đăng nhập thành công; có đơn shipping. | 1 đơn `shipping`, `total_amount = 150000`. | 1. Đăng nhập admin.<br>2. Đảm bảo có đơn shipping.<br>3. Vào Dashboard. | Doanh thu không bao gồm đơn shipping. | Doanh thu không gồm đơn shipping | Passed |  |
-| `FR13-DT-07` | `FR13-D-V-02`, `FR13-D-V-08` | Dashboard với nhiều đơn delivered | Admin đăng nhập thành công; có nhiều đơn delivered. | 3 đơn delivered: `100000 + 200000 + 300000 = 600000`. | 1. Đăng nhập admin.<br>2. Đảm bảo có 3 đơn delivered như dữ liệu đầu vào.<br>3. Vào Dashboard. | Doanh thu hiển thị `600000₫`. | Doanh thu hiển thị `1200000₫`, gấp đôi giá trị mong đợi. | Failed | Quan sát Dashboard với dữ liệu test `TC-DASH-07` |
-| `FR13-DT-08` | `FR13-D-I-01` | User thường không được truy cập admin API/dashboard | Có token của user thường hoặc token không có quyền admin. | Token hợp lệ nhưng role không phải Admin. | 1. Gửi request đến API/admin resource bằng token user thường.<br>2. Quan sát phản hồi. | Hệ thống từ chối bằng `401` hoặc `403`. | Request của user không phải Admin vẫn được chấp nhận cho tài nguyên admin. | Failed | Quan sát phản hồi API bằng token user thường |
-| `FR13-DT-09` | `FR13-D-V-02`, `FR13-D-V-08` | Đơn hàng delivered có giá trị âm | Admin đăng nhập thành công; có đơn hàng đã giao giá trị âm | 1 đơn đã giao giá trị `-1` | 1. Đăng nhập admin.<br>2. Đảm bảo có 1 đơn delivered như dữ liệu đầu vào.<br>3. Vào Dashboard. | Doanh thu hiển thị lỗi doanh thu âm. | Doanh thu hiển thị `-2` | Failed | Quan sát Dashboard với dữ liệu test `TC-DASH-07` |
+| `FR13-DT-01` | `FR13-D-V-01`, `FR13-D-V-07`, `FR13-D-V-09` | Dashboard khi không có đơn hàng | Admin đăng nhập thành công; database không có đơn hàng. | Không có đơn hàng ở bất kỳ trạng thái nào. | 1. Đăng nhập admin tại `localhost:5174`.<br>2. Truy cập Dashboard.<br>3. Quan sát doanh thu và tổng số đơn. | Doanh thu hiển thị `0₫`; tổng số đơn hàng hiển thị `0`. | Hệ thống hiển thị đúng | Passed | `evidence/FR-13/FR13-DT-01.png` |
+| `FR13-DT-02` | `FR13-D-V-02`, `FR13-D-V-08` | Dashboard với một đơn delivered | Admin đăng nhập thành công; có ít nhất một đơn `delivered`. | 1 đơn `delivered`, `total_amount = 100000`. | 1. Đăng nhập admin.<br>2. Đảm bảo có đơn delivered với `total_amount = 100000`.<br>3. Vào Dashboard.<br>4. Quan sát tổng doanh thu. | Doanh thu hiển thị `100000₫`. | Doanh thu hiển thị `200000₫`, gấp đôi giá trị mong đợi. | Failed | `evidence/FR-13/FR13-DT-02.png` |
+| `FR13-DT-03` | `FR13-D-V-03`, `FR13-D-V-07` | Dashboard với đơn canceled | Admin đăng nhập thành công; có đơn bị hủy. | 1 đơn `canceled`, `total_amount = 50000`. | 1. Đăng nhập admin.<br>2. Tạo hoặc dùng đơn có trạng thái `canceled`.<br>3. Vào Dashboard. | Doanh thu không bao gồm đơn canceled. Đơn đã hủy không thể giao. | Đơn canceled không được cộng vào doanh thu nhưng vẫn có thể đánh dấu đã giao. | Failed | `evidence/FR-13/FR13-DT-03.png` |
+| `FR13-DT-04` | `FR13-D-V-04`, `FR13-D-V-07` | Dashboard với đơn pending | Admin đăng nhập thành công; có đơn pending. | 1 đơn `pending`, `total_amount = 200000`. | 1. Đăng nhập admin.<br>2. Đảm bảo có đơn pending.<br>3. Vào Dashboard. | Doanh thu không bao gồm đơn pending. | Doanh thu hiển thị không gồm đơn pending | Passed | `evidence/FR-13/FR13-DT-04.png` |
+| `FR13-DT-05` | `FR13-D-V-05`, `FR13-D-V-07` | Dashboard với đơn confirmed | Admin đăng nhập thành công; có đơn confirmed. | 1 đơn `confirmed`, `total_amount = 300000`. | 1. Đăng nhập admin.<br>2. Đảm bảo có đơn confirmed.<br>3. Vào Dashboard. | Doanh thu không bao gồm đơn confirmed. | Doanh thu hiển thị không gồm đơn confirmed | Passed | `evidence/FR-13/FR13-DT-05.png` |
+| `FR13-DT-06` | `FR13-D-V-06`, `FR13-D-V-07` | Dashboard với đơn shipping | Admin đăng nhập thành công; có đơn shipping. | 1 đơn `shipping`, `total_amount = 150000`. | 1. Đăng nhập admin.<br>2. Đảm bảo có đơn shipping.<br>3. Vào Dashboard. | Doanh thu không bao gồm đơn shipping. | Doanh thu không gồm đơn shipping | Passed | `evidence/FR-13/FR13-DT-06.png` |
+| `FR13-DT-07` | `FR13-D-V-02`, `FR13-D-V-08` | Dashboard với nhiều đơn delivered | Admin đăng nhập thành công; có nhiều đơn delivered. | 3 đơn delivered: `100000 + 200000 + 300000 = 600000`. | 1. Đăng nhập admin.<br>2. Đảm bảo có 3 đơn delivered như dữ liệu đầu vào.<br>3. Vào Dashboard. | Doanh thu hiển thị `600000₫`. | Doanh thu hiển thị `1200000₫`, gấp đôi giá trị mong đợi. | Failed | `evidence/FR-13/FR13-DT-07.png` |
+| `FR13-DT-08` | `FR13-D-I-01` | User thường không được truy cập admin API/dashboard | Có token của user thường hoặc token không có quyền admin. | Token hợp lệ nhưng role không phải Admin. | 1. Gửi request đến API/admin resource bằng token user thường.<br>2. Quan sát phản hồi. | Hệ thống từ chối bằng `401` hoặc `403`. | Request của user không phải Admin vẫn được chấp nhận cho tài nguyên admin. | Failed | `evidence/FR-13/FR13-DT-08.png` |
+| `FR13-DT-09` | `FR13-D-V-02`, `FR13-D-V-08` | Đơn hàng delivered có giá trị âm | Admin đăng nhập thành công; có đơn hàng đã giao giá trị âm | 1 đơn đã giao giá trị `-1` | 1. Đăng nhập admin.<br>2. Đảm bảo có 1 đơn delivered như dữ liệu đầu vào.<br>3. Vào Dashboard. | Doanh thu hiển thị lỗi doanh thu âm. | Doanh thu hiển thị `-2` | Failed | `evidence/FR-13/FR13-DT-09.png` |
 
 ### 8.3.4 Tổng kết Domain Testing
 
@@ -506,10 +463,10 @@ Các test plan bổ sung cũng kiểm tra cách Dashboard xử lý từng trạn
 
 | Test Case ID | Boundary ID liên quan | Tiêu đề | Điều kiện tiên quyết | Dữ liệu đầu vào | Các bước thực hiện | Kết quả mong đợi | Kết quả thực tế | Trạng thái | Minh chứng |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `FR13-BVA-01` | `FR13-B-001` | `total_order` nhỏ hơn biên dưới | Có thể tạo hoặc mô phỏng đơn hàng với order âm. | `total_order = -1` | 1. Tạo/mô phỏng đơn hàng có số order âm.<br>2. Kiểm tra Dashboard/API. | Hệ thống không chấp nhận hoặc không hiển thị dữ liệu âm. | Chưa thực thi vì cần dữ liệu âm không hợp lệ. | Not Executed |  |
-| `FR13-BVA-02` | `FR13-B-002` | `total_order` tại biên dưới | Admin đăng nhập; có đơn delivered với amount `0`. | `status = delivered`, `total_amount = 0` | 1. Đăng nhập admin.<br>2. Vào Dashboard.<br>3. Quan sát doanh thu. | Doanh thu hiển thị `0₫`. | Doanh thu hiển thị | Not Executed |  |
-| `FR13-BVA-03` | `FR13-B-003` | `total_revenue` ngay trên biên dưới | Admin đăng nhập; có đơn delivered với amount `1`. | `status = delivered`, `total_revenue = 1` | 1. Đăng nhập admin.<br>2. Vào Dashboard.<br>3. Quan sát doanh thu. | Doanh thu hiển thị `1₫`. | Doanh thu có hiển thị `2₫`, gấp đôi giá trị mong đợi. | Failed | Quan sát Dashboard với dữ liệu biên `total_amount = 1` |
-| `FR13-BVA-04` | `FR13-B-004` | `total_revenue` ngay dưới biên dưới | Admin đăng nhập; có đơn delivered với amount `-1`. | `status = delivered`, `total_revenue = 1` | 1. Đăng nhập admin.<br>2. Vào Dashboard.<br>3. Quan sát doanh thu. | Doanh thu hiển thị lỗi. | Doanh thu hiển thị `-2` | Failed | Quan sát Dashboard với dữ liệu biên `total_amount = 1` |
+| `FR13-BVA-01` | `FR13-B-001` | `total_order` nhỏ hơn biên dưới | Có thể tạo hoặc mô phỏng đơn hàng với order âm. | `total_order = -1` | 1. Tạo/mô phỏng đơn hàng có số order âm.<br>2. Kiểm tra Dashboard/API. | Cần chỉnh số đơn âm | Chưa thực thi vì cần dữ liệu âm không hợp lệ. | Not Executed | `evidence/FR-13/FR13-BVA-01.png` |
+| `FR13-BVA-02` | `FR13-B-002` | `total_order` tại biên dưới | Admin đăng nhập; có đơn delivered với amount `0`. | `status = delivered`, `total_amount = 0` | 1. Đăng nhập admin.<br>2. Vào Dashboard.<br>3. Quan sát doanh thu. | Doanh thu hiển thị `0₫`. | Doanh thu hiển thị | Passed | `evidence/FR-13/FR13-BVA-02.png` |
+| `FR13-BVA-03` | `FR13-B-003` | `total_revenue` ngay trên biên dưới | Admin đăng nhập; có đơn delivered với amount `1`. | `status = delivered`, `total_revenue = 1` | 1. Đăng nhập admin.<br>2. Vào Dashboard.<br>3. Quan sát doanh thu. | Doanh thu hiển thị `1₫`. | Doanh thu có hiển thị `2₫`, gấp đôi giá trị mong đợi. | Failed | `evidence/FR-13/FR13-BVA-03.png` |
+| `FR13-BVA-04` | `FR13-B-004` | `total_revenue` ngay dưới biên dưới | Admin đăng nhập; có đơn delivered với amount `-1`. | `status = delivered`, `total_revenue = 1` | 1. Đăng nhập admin.<br>2. Vào Dashboard.<br>3. Quan sát doanh thu. | Doanh thu hiển thị lỗi. | Doanh thu hiển thị `-2` | Failed | `evidence/FR-13/FR13-BVA-04.png` |
 
 ### 8.4.4 Tổng kết BVA
 
@@ -524,11 +481,12 @@ Các test plan bổ sung cũng kiểm tra cách Dashboard xử lý từng trạn
 
 ## 8.5 Lỗi phát hiện ở tính năng FR-13
 
-| Bug ID | Test case liên quan | Tiêu đề | Mức độ nghiêm trọng | Trạng thái | Link GitHub Issue | Minh chứng |
-| --- | --- | --- | --- | --- | --- | --- |
-| `BUG-FR13-001` | `FR13-DT-02`, `FR13-DT-07`, `FR13-BVA-03` | Dashboard hiển thị doanh thu gấp đôi giá trị mong đợi của đơn `delivered` | High | Open | `https://github.com/KidCute1412/eshop-sut/issues/34` | Quan sát Dashboard trong `TC-DASH-01`, `TC-DASH-07` |
-| `BUG-FR13-002` | `FR13-DT-08` | User không phải Admin vẫn truy cập được tài nguyên admin | High | Open | `https://github.com/KidCute1412/eshop-sut/issues/35` | Quan sát phản hồi API bằng token user thường |
-
+| Bug ID | Test case liên quan | Tiêu đề | Mức độ nghiêm trọng | Trạng thái | Minh chứng |
+| --- | --- | --- | --- | --- | --- |
+| `BUG-FR13-001` | `FR13-DT-02`, `FR13-DT-07`, `FR13-BVA-03` | Dashboard hiển thị doanh thu gấp đôi giá trị mong đợi của đơn `delivered` | High | Open | `evidence/FR-13/FR13-DT-02.png`, `evidence/FR-13/FR13-DT-07.png`, `evidence/FR-13/FR13-BVA-03.png` |
+| `BUG-FR13-002` | `FR13-DT-08` | User không phải Admin vẫn truy cập được tài nguyên admin | High | Open | `evidence/FR-13/FR13-DT-08.png` |
+| `BUG-FR13-003` | `FR13-DT-03` | Đơn hàng đã hủy vẫn có thể đánh dấu đã giao | Medium | Open | `evidence/FR-13/FR13-DT-03.png` |
+| `BUG-FR13-004` | `FR13-DT-09`, `FR13-BVA-04` | Dashboard hiển thị doanh thu âm khi đơn `delivered` có giá trị âm | Medium | Open | `evidence/FR-13/FR13-DT-09.png`, `evidence/FR-13/FR13-BVA-04.png` |
 ---
 
 # 9. Báo cáo tính năng FR-03M
@@ -605,23 +563,23 @@ Luồng chính gồm:
 
 | Test Case ID | Domain ID liên quan | Tiêu đề | Điều kiện tiên quyết | Dữ liệu đầu vào | Các bước thực hiện | Kết quả mong đợi | Kết quả thực tế | Trạng thái | Minh chứng |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `FR03M-DT-01` | `FR03M-D-V-01`, `FR03M-D-I-16` | Step 1 - Email đã đăng ký và API không lộ OTP | Người dùng chưa đăng nhập; có email đã đăng ký. | `email = gmail` hoặc `test@eshop.com` | 1. Mở mobile app hoặc gọi `POST /api/forgot-password`.<br>2. Nhập email đã đăng ký.<br>3. Submit.<br>4. Quan sát response API. | OTP được tạo theo yêu cầu; API không trả `resetToken` trực tiếp trong response. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-02` | `FR03M-D-I-01` | Step 1 - Email chưa đăng ký | Người dùng chưa đăng nhập, đang ở màn hình Forgot Password trên mobile. | `email = nonexistent@test.com` | 1. Nhập email chưa đăng ký.<br>2. Submit. | Nên hiển thị thông báo chung, không lộ email có tồn tại hay không. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-03` | `FR03M-D-I-02` | Step 1 - Email sai định dạng | Người dùng chưa đăng nhập, đang ở màn hình Forgot Password trên mobile. | `email = notanemail` | 1. Nhập email sai định dạng.<br>2. Submit. | Mobile báo lỗi format email trước khi gọi API. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-04` | `FR03M-D-I-03` | Step 1 - Bỏ trống email | Người dùng chưa đăng nhập, đang ở màn hình Forgot Password trên mobile. | `email = empty` | 1. Để trống email.<br>2. Submit. | Hệ thống báo email bắt buộc. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-05` | `FR03M-D-V-02`, `FR03M-D-V-03`, `FR03M-D-V-04` | Step 2 - OTP đúng và mật khẩu hợp lệ | Đã hoàn tất Step 1 thành công. | `otp = correct`<br>`new_password = Pass1234@`<br>`confirm_password = Pass1234@` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu mới hợp lệ.<br>3. Nhập confirm password trùng khớp.<br>4. Submit. | Đặt lại mật khẩu thành công. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-06` | `FR03M-D-I-04` | Step 2 - OTP sai | Đã hoàn tất Step 1 thành công. | `otp = 0000`<br>`new_password = ValidPass1!`<br>`confirm_password = ValidPass1!` | 1. Nhập OTP sai.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Hệ thống báo OTP không hợp lệ. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-07` | `FR03M-D-I-05` | Step 2 - Bỏ trống OTP | Đã hoàn tất Step 1 thành công. | `otp = empty`<br>`new_password = ValidPass1!`<br>`confirm_password = ValidPass1!` | 1. Để trống OTP.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Hệ thống báo OTP bắt buộc. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-08` | `FR03M-D-I-06` | Step 2 - OTP không phải số | Đã hoàn tất Step 1 thành công. | `otp = abcd`<br>`new_password = Pass1234@` | 1. Nhập OTP chứa chữ.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Mobile báo OTP phải là số hoặc đúng 4 chữ số trước khi gửi request. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-09` | `FR03M-D-I-07` | Step 2 - OTP sai độ dài | Đã hoàn tất Step 1 thành công. | `otp = 12345` hoặc OTP dài 6 số | 1. Nhập OTP sai độ dài.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Mobile báo OTP sai độ dài trước khi gửi request. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-10` | `FR03M-D-I-08` | Step 2 - Mật khẩu dưới 8 ký tự | Đã hoàn tất Step 1 thành công. | `otp = correct`<br>`new_password = Ab1!`<br>`confirm_password = Ab1!` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu ngắn.<br>3. Submit. | Hệ thống báo mật khẩu tối thiểu 8 ký tự. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-11` | `FR03M-D-I-09` | Step 2 - Mật khẩu thiếu chữ hoa | Đã hoàn tất Step 1 thành công. | `new_password = lowercase1!`<br>`confirm_password = lowercase1!` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu thiếu chữ hoa.<br>3. Submit. | Hệ thống báo cần chữ hoa. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-12` | `FR03M-D-I-10` | Step 2 - Mật khẩu thiếu chữ thường | Đã hoàn tất Step 1 thành công. | `new_password = UPPERCASE1!`<br>`confirm_password = UPPERCASE1!` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu thiếu chữ thường.<br>3. Submit. | Hệ thống báo cần chữ thường. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-13` | `FR03M-D-I-11` | Step 2 - Mật khẩu thiếu chữ số | Đã hoàn tất Step 1 thành công. | `new_password = NoDigitA!`<br>`confirm_password = NoDigitA!` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu thiếu chữ số.<br>3. Submit. | Hệ thống báo cần chữ số. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-14` | `FR03M-D-I-12` | Step 2 - Mật khẩu thiếu ký tự đặc biệt nhưng có khoảng trắng | Đã hoàn tất Step 1 thành công. | `new_password = Pass 1234`<br>`confirm_password = Pass 1234` | 1. Nhập OTP đúng.<br>2. Nhập password có khoảng trắng nhưng không có ký tự đặc biệt.<br>3. Submit. | Hệ thống phải từ chối vì thiếu ký tự đặc biệt. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-15` | `FR03M-D-I-12` | Step 2 - Mật khẩu có special char nhưng không có khoảng trắng | Đã hoàn tất Step 1 thành công. | `new_password = Pass1234@`<br>`confirm_password = Pass1234@` | 1. Nhập OTP đúng.<br>2. Nhập password có ký tự đặc biệt `@`.<br>3. Submit. | Hệ thống phải chấp nhận vì thỏa FR-01. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-16` | `FR03M-D-I-14` | Step 2 - Xác nhận mật khẩu không khớp | Đã hoàn tất Step 1 thành công. | `new_password = ValidPass1!`<br>`confirm_password = Different1!` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu hợp lệ.<br>3. Nhập confirm password khác mật khẩu mới.<br>4. Submit. | Hệ thống báo hai mật khẩu không khớp. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-17` | `FR03M-D-I-15` | Step 2 - Bỏ trống xác nhận mật khẩu | Đã hoàn tất Step 1 thành công. | `new_password = ValidPass1!`<br>`confirm_password = empty` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu hợp lệ.<br>3. Để trống confirm password.<br>4. Submit. | Hệ thống báo xác nhận mật khẩu bắt buộc. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
+| `FR03M-DT-01` | `FR03M-D-V-01`, `FR03M-D-I-16` | Step 1 - Email đã đăng ký và API không lộ OTP | Người dùng chưa đăng nhập; có email đã đăng ký. | `email = gmail` hoặc `test@eshop.com` | 1. Mở mobile app hoặc gọi `POST /api/forgot-password`.<br>2. Nhập email đã đăng ký.<br>3. Submit.<br>4. Quan sát response API. | OTP được tạo theo yêu cầu; API không trả `resetToken` trực tiếp trong response. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked |  |
+| `FR03M-DT-02` | `FR03M-D-I-01` | Step 1 - Email chưa đăng ký | Người dùng chưa đăng nhập, đang ở màn hình Forgot Password trên mobile. | `email = nonexistent@test.com` | 1. Nhập email chưa đăng ký.<br>2. Submit. | Nên hiển thị thông báo chung, không lộ email có tồn tại hay không. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked |  |
+| `FR03M-DT-03` | `FR03M-D-I-02` | Step 1 - Email sai định dạng | Người dùng chưa đăng nhập, đang ở màn hình Forgot Password trên mobile. | `email = notanemail` | 1. Nhập email sai định dạng.<br>2. Submit. | Mobile báo lỗi format email trước khi gọi API. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked |  |
+| `FR03M-DT-04` | `FR03M-D-I-03` | Step 1 - Bỏ trống email | Người dùng chưa đăng nhập, đang ở màn hình Forgot Password trên mobile. | `email = empty` | 1. Để trống email.<br>2. Submit. | Hệ thống báo email bắt buộc. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | |
+| `FR03M-DT-05` | `FR03M-D-V-02`, `FR03M-D-V-03`, `FR03M-D-V-04` | Step 2 - OTP đúng và mật khẩu hợp lệ | Đã hoàn tất Step 1 thành công. | `otp = correct`<br>`new_password = Pass1234@`<br>`confirm_password = Pass1234@` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu mới hợp lệ.<br>3. Nhập confirm password trùng khớp.<br>4. Submit. | Đặt lại mật khẩu thành công. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked |  |
+| `FR03M-DT-06` | `FR03M-D-I-04` | Step 2 - OTP sai | Đã hoàn tất Step 1 thành công. | `otp = 0000`<br>`new_password = ValidPass1!`<br>`confirm_password = ValidPass1!` | 1. Nhập OTP sai.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Hệ thống báo OTP không hợp lệ. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked |  |
+| `FR03M-DT-07` | `FR03M-D-I-05` | Step 2 - Bỏ trống OTP | Đã hoàn tất Step 1 thành công. | `otp = empty`<br>`new_password = ValidPass1!`<br>`confirm_password = ValidPass1!` | 1. Để trống OTP.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Hệ thống báo OTP bắt buộc. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | |
+| `FR03M-DT-08` | `FR03M-D-I-06` | Step 2 - OTP không phải số | Đã hoàn tất Step 1 thành công. | `otp = abcd`<br>`new_password = Pass1234@` | 1. Nhập OTP chứa chữ.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Mobile báo OTP phải là số hoặc đúng 4 chữ số trước khi gửi request. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked |  |
+| `FR03M-DT-09` | `FR03M-D-I-07` | Step 2 - OTP sai độ dài | Đã hoàn tất Step 1 thành công. | `otp = 12345` hoặc OTP dài 6 số | 1. Nhập OTP sai độ dài.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Mobile báo OTP sai độ dài trước khi gửi request. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked |  |
+| `FR03M-DT-10` | `FR03M-D-I-08` | Step 2 - Mật khẩu dưới 8 ký tự | Đã hoàn tất Step 1 thành công. | `otp = correct`<br>`new_password = Ab1!`<br>`confirm_password = Ab1!` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu ngắn.<br>3. Submit. | Hệ thống báo mật khẩu tối thiểu 8 ký tự. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | |
+| `FR03M-DT-11` | `FR03M-D-I-09` | Step 2 - Mật khẩu thiếu chữ hoa | Đã hoàn tất Step 1 thành công. | `new_password = lowercase1!`<br>`confirm_password = lowercase1!` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu thiếu chữ hoa.<br>3. Submit. | Hệ thống báo cần chữ hoa. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked |  |
+| `FR03M-DT-12` | `FR03M-D-I-10` | Step 2 - Mật khẩu thiếu chữ thường | Đã hoàn tất Step 1 thành công. | `new_password = UPPERCASE1!`<br>`confirm_password = UPPERCASE1!` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu thiếu chữ thường.<br>3. Submit. | Hệ thống báo cần chữ thường. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked |  |
+| `FR03M-DT-13` | `FR03M-D-I-11` | Step 2 - Mật khẩu thiếu chữ số | Đã hoàn tất Step 1 thành công. | `new_password = NoDigitA!`<br>`confirm_password = NoDigitA!` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu thiếu chữ số.<br>3. Submit. | Hệ thống báo cần chữ số. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked |  |
+| `FR03M-DT-14` | `FR03M-D-I-12` | Step 2 - Mật khẩu thiếu ký tự đặc biệt nhưng có khoảng trắng | Đã hoàn tất Step 1 thành công. | `new_password = Pass 1234`<br>`confirm_password = Pass 1234` | 1. Nhập OTP đúng.<br>2. Nhập password có khoảng trắng nhưng không có ký tự đặc biệt.<br>3. Submit. | Hệ thống phải từ chối vì thiếu ký tự đặc biệt. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked |  |
+| `FR03M-DT-15` | `FR03M-D-I-12` | Step 2 - Mật khẩu có special char nhưng không có khoảng trắng | Đã hoàn tất Step 1 thành công. | `new_password = Pass1234@`<br>`confirm_password = Pass1234@` | 1. Nhập OTP đúng.<br>2. Nhập password có ký tự đặc biệt `@`.<br>3. Submit. | Hệ thống phải chấp nhận vì thỏa FR-01. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked |  |
+| `FR03M-DT-16` | `FR03M-D-I-14` | Step 2 - Xác nhận mật khẩu không khớp | Đã hoàn tất Step 1 thành công. | `new_password = ValidPass1!`<br>`confirm_password = Different1!` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu hợp lệ.<br>3. Nhập confirm password khác mật khẩu mới.<br>4. Submit. | Hệ thống báo hai mật khẩu không khớp. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked |  |
+| `FR03M-DT-17` | `FR03M-D-I-15` | Step 2 - Bỏ trống xác nhận mật khẩu | Đã hoàn tất Step 1 thành công. | `new_password = ValidPass1!`<br>`confirm_password = empty` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu hợp lệ.<br>3. Để trống confirm password.<br>4. Submit. | Hệ thống báo xác nhận mật khẩu bắt buộc. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked |  |
 
 ### 9.3.4 Tổng kết Domain Testing
 
@@ -661,15 +619,15 @@ Luồng chính gồm:
 
 | Test Case ID | Boundary ID liên quan | Tiêu đề | Điều kiện tiên quyết | Dữ liệu đầu vào | Các bước thực hiện | Kết quả mong đợi | Kết quả thực tế | Trạng thái | Minh chứng |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `FR03M-BVA-01` | `FR03M-B-001` | Mật khẩu ngắn hơn 8 ký tự | Đã hoàn tất Step 1 thành công. | `otp = correct`<br>`new_password = Pass123` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu 7 ký tự.<br>3. Submit. | Hệ thống báo mật khẩu tối thiểu 8 ký tự. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-BVA-02` | `FR03M-B-002` | Mật khẩu đúng 8 ký tự | Đã hoàn tất Step 1 thành công. | `otp = correct`<br>`new_password = Pass123@` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu 8 ký tự có special char.<br>3. Submit. | Mật khẩu được chấp nhận. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-BVA-03` | `FR03M-B-003` | Mật khẩu 9 ký tự | Đã hoàn tất Step 1 thành công. | `otp = correct`<br>`new_password = Pass123@a` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu 9 ký tự có special char.<br>3. Submit. | Mật khẩu được chấp nhận. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-BVA-04` | `FR03M-B-004` | OTP nhỏ hơn biên dưới | Đã hoàn tất Step 1 thành công. | `otp = 99999`<br>`new_password = ValidPass1!` | 1. Nhập OTP `99999`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Mobile báo OTP sai độ dài trước khi gửi request. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-BVA-05` | `FR03M-B-005` | OTP tại biên dưới | Đã hoàn tất Step 1 thành công. | `otp = 100000`<br>`new_password = ValidPass1!` | 1. Nhập OTP `100000`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | OTP được xử lý là đúng định dạng; đúng/sai phụ thuộc OTP thực tế. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-BVA-06` | `FR03M-B-006` | OTP ngay trên biên dưới | Đã hoàn tất Step 1 thành công. | `otp = 100001`<br>`new_password = ValidPass1!` | 1. Nhập OTP `100001`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | OTP được xử lý là đúng định dạng; đúng/sai phụ thuộc OTP thực tế. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-BVA-07` | `FR03M-B-007` | OTP ngay dưới biên trên | Đã hoàn tất Step 1 thành công. | `otp = 999998`<br>`new_password = ValidPass1!` | 1. Nhập OTP `999998`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | OTP được xử lý là đúng định dạng; đúng/sai phụ thuộc OTP thực tế. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-BVA-08` | `FR03M-B-008` | OTP tại biên trên | Đã hoàn tất Step 1 thành công. | `otp = 999999`<br>`new_password = ValidPass1!` | 1. Nhập OTP `999999`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | OTP được xử lý là đúng định dạng; đúng/sai phụ thuộc OTP thực tế. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-BVA-09` | `FR03M-B-009` | OTP lớn hơn biên trên | Đã hoàn tất Step 1 thành công. | `otp = 1000000`<br>`new_password = ValidPass1!` | 1. Nhập OTP `1000000`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Mobile báo OTP sai độ dài trước khi gửi request. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
+| `FR03M-BVA-01` | `FR03M-B-001` | Mật khẩu ngắn hơn 8 ký tự | Đã hoàn tất Step 1 thành công. | `otp = correct`<br>`new_password = Pass123` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu 7 ký tự.<br>3. Submit. | Hệ thống báo mật khẩu tối thiểu 8 ký tự. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked |  |
+| `FR03M-BVA-02` | `FR03M-B-002` | Mật khẩu đúng 8 ký tự | Đã hoàn tất Step 1 thành công. | `otp = correct`<br>`new_password = Pass123@` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu 8 ký tự có special char.<br>3. Submit. | Mật khẩu được chấp nhận. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | |
+| `FR03M-BVA-03` | `FR03M-B-003` | Mật khẩu 9 ký tự | Đã hoàn tất Step 1 thành công. | `otp = correct`<br>`new_password = Pass123@a` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu 9 ký tự có special char.<br>3. Submit. | Mật khẩu được chấp nhận. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked |  |
+| `FR03M-BVA-04` | `FR03M-B-004` | OTP nhỏ hơn biên dưới | Đã hoàn tất Step 1 thành công. | `otp = 99999`<br>`new_password = ValidPass1!` | 1. Nhập OTP `99999`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Mobile báo OTP sai độ dài trước khi gửi request. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked |  |
+| `FR03M-BVA-05` | `FR03M-B-005` | OTP tại biên dưới | Đã hoàn tất Step 1 thành công. | `otp = 100000`<br>`new_password = ValidPass1!` | 1. Nhập OTP `100000`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | OTP được xử lý là đúng định dạng; đúng/sai phụ thuộc OTP thực tế. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked |  |
+| `FR03M-BVA-06` | `FR03M-B-006` | OTP ngay trên biên dưới | Đã hoàn tất Step 1 thành công. | `otp = 100001`<br>`new_password = ValidPass1!` | 1. Nhập OTP `100001`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | OTP được xử lý là đúng định dạng; đúng/sai phụ thuộc OTP thực tế. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | |
+| `FR03M-BVA-07` | `FR03M-B-007` | OTP ngay dưới biên trên | Đã hoàn tất Step 1 thành công. | `otp = 999998`<br>`new_password = ValidPass1!` | 1. Nhập OTP `999998`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | OTP được xử lý là đúng định dạng; đúng/sai phụ thuộc OTP thực tế. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | |
+| `FR03M-BVA-08` | `FR03M-B-008` | OTP tại biên trên | Đã hoàn tất Step 1 thành công. | `otp = 999999`<br>`new_password = ValidPass1!` | 1. Nhập OTP `999999`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | OTP được xử lý là đúng định dạng; đúng/sai phụ thuộc OTP thực tế. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | |
+| `FR03M-BVA-09` | `FR03M-B-009` | OTP lớn hơn biên trên | Đã hoàn tất Step 1 thành công. | `otp = 1000000`<br>`new_password = ValidPass1!` | 1. Nhập OTP `1000000`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Mobile báo OTP sai độ dài trước khi gửi request. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked |  |
 
 ### 9.4.4 Tổng kết BVA
 
@@ -686,167 +644,46 @@ Luồng chính gồm:
 
 FR-03M hiện không thể kiểm thử do mọi request từ mobile đều bị network timeout. Vì vậy, toàn bộ kết quả test của FR-03M được đánh dấu `Blocked` và chưa thể kết luận lỗi chức năng.
 
-| Blocking ID | Test case liên quan | Tiêu đề | Mức độ nghiêm trọng | Trạng thái | Link GitHub Issue |
-| --- | --- | --- | --- | --- | --- |
-| `BLOCKER-FR03M-001` | `FR03M-DT-*`, `FR03M-BVA-*` | Không thể kiểm thử FR-03M do mọi request mobile bị network timeout | High | Open | `https://github.com/KidCute1412/eshop-sut/issues/50` |
-
-**Ghi chú:** Các bug được phát hiện qua code inspection và API testing trước đó (chi tiết tại GitHub Issues [#36](https://github.com/KidCute1412/eshop-sut/issues/36) đến [#42](https://github.com/KidCute1412/eshop-sut/issues/42)) vẫn được ghi nhận nhưng cần retest sau khi khắc phục network timeout để xác nhận trên môi trường mobile thực tế.
-
----
-
-
-# 10. Tổng kết kiểm thử
-
-## 10.1 Tổng kết test case theo tính năng
-
-| Tính năng | TC Domain Testing | TC BVA | Tổng TC | Passed | Failed | Blocked | Not Executed | Needs Review |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| FR-03 (Forgot Password Web) | 8 | 9 | 17 | 5 | 5 | 2 | 5 | 0 |
-| FR-09 (Discount Coupons) | 10 | 8 | 18 | 10 | 7 | 0 | 1 | 0 |
-| FR-13 (Dashboard) | 9 | 3 | 12 | 1 | 6 | 1 | 4 | 0 |
-| FR-03M (Forgot Password Mobile) | 18 | 9 | 27 | 0 | 0 | 27 | 0 | 0 |
-| **Tổng cộng** | **45** | **29** | **74** | **16** | **18** | **30** | **10** | **0** |
-
-## 10.2 Tổng kết thực thi
-
-Tổng cộng 74 test case được thiết kế (45 Domain Testing + 29 BVA) cho 4 tính năng. Kết quả thực thi: 16 Passed, 18 Failed, 30 Blocked, 10 Not Executed. Tính năng FR-03M bị block hoàn toàn do network timeout trên mobile, khiến 27/27 test case không thể thực thi. Các tính năng còn lại (FR-03, FR-09, FR-13) đã được thực thi qua API/web và phát hiện nhiều lỗi chức năng.
-
-## 10.3 Tổng kết minh chứng
-
-| Evidence ID | Tính năng liên quan | Test case liên quan | Loại minh chứng | File / Link | Ghi chú |
-| --- | --- | --- | --- | --- | --- |
-| `<EVD-001>` | `<Tính năng>` | `<TC ID>` | `<Screenshot / Video / Log>` | `<Path / URL>` | `<Ghi chú>` |
-
----
-
-# 11. Báo cáo lỗi tổng hợp
-
-## 11.1 Tổng kết lỗi theo mức độ nghiêm trọng
-
-| Mức độ nghiêm trọng | Số lượng |
-| --- | ---: |
-| Critical | 0 |
-| High | 6 |
-| Medium | 6 |
-| Low | 2 |
-| **Tổng cộng** | **14** |
-
-**Ghi chú:** Danh sách lỗi của FR-03M không được liệt kê ở đây vì toàn bộ test case của tính năng này bị block do network timeout. Các lỗi từ code inspection trước đó cần được retest sau khi khắc phục sự cố kết nối.
-
-## 11.2 Danh sách lỗi
-
-| Bug ID | Tính năng | Test case liên quan | Tiêu đề | Mức độ nghiêm trọng | Kết quả thực tế | Kết quả mong đợi | Link GitHub Issue | Trạng thái |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `BUG-FR03-001` | FR-03 | `FR03-DT-06`, `FR03-BVA-07` | Backend chấp nhận mật khẩu yếu khi đặt lại mật khẩu | High | API trả `{"message":"Password reset successfully"}` cho password `weak` | Hệ thống phải từ chối mật khẩu yếu | `https://github.com/KidCute1412/eshop-sut/issues/25` | Open |
-| `BUG-FR03-002` | FR-03 | `FR03-DT-01`, `FR03-BVA-01`–`FR03-BVA-06` | OTP thực tế chỉ có 4 chữ số thay vì 6 chữ số theo đặc tả | Medium | OTP backend trả về 4 chữ số (1000-9999) | OTP phải là 6 chữ số (100000-999999) | `https://github.com/KidCute1412/eshop-sut/issues/26` | Open |
-| `BUG-FR03-003` | FR-03 | `FR-03:C4` | Giao diện thiếu trường xác nhận mật khẩu mới | Medium | Chỉ có 1 ô nhập mật khẩu trên form reset | Phải có 2 trường: mật khẩu mới + xác nhận | `https://github.com/KidCute1412/eshop-sut/issues/27` | Open |
-| `BUG-FR03-004` | FR-03 | `FR-03:C5` | Regex kiểm tra mật khẩu frontend sai: yêu cầu khoảng trắng thay vì ký tự đặc biệt | Medium | Regex dùng `(?=.*\s)` thay vì `(?=.*[^A-Za-z\d])` | Regex phải yêu cầu ký tự đặc biệt | `https://github.com/KidCute1412/eshop-sut/issues/28` | Open |
-| `BUG-FR09-001` | FR-09 | `FR09-DT-01`, `FR09-DT-09`, `FR09-BVA-02`, `FR09-BVA-05` | Coupon bị từ chối khi tổng tiền bằng đúng `min_order_amount` | High | API dùng `>` thay vì `>=` khi kiểm tra min order | Phải chấp nhận total bằng đúng min order | `https://github.com/KidCute1412/eshop-sut/issues/29` | Open |
-| `BUG-FR09-002` | FR-09 | `FR09-DT-05`, `FR09-BVA-03` | Công thức tính coupon phần trăm sai, tạo discount âm | High | `discount_amount` âm, `final_amount` tăng bất thường | Discount = total × `discount_value` / 100 | `https://github.com/KidCute1412/eshop-sut/issues/30` | Open |
-| `BUG-FR09-003` | FR-09 | `FR09-DT-05` | API vẫn cho áp dụng coupon khi không có user/token hợp lệ | High | API chấp nhận request không có token/user | Phải từ chối với 401/403 | `https://github.com/KidCute1412/eshop-sut/issues/31` | Open |
-| `BUG-FR09-004` | FR-09 | `FR09-BVA-08` | Có thể bypass kiểm tra giới hạn sử dụng coupon khi không gửi user_id | Medium | API không track usage khi user_id = null | Phải yêu cầu user_id để kiểm tra | `https://github.com/KidCute1412/eshop-sut/issues/32` | Open |
-| `BUG-FR09-005` | FR-09 | `FR09-DT-08` | Test data của user đã bị nhiễm trạng thái sử dụng VIP100 | Low | Không thể test first-use scenario | Dữ liệu test cần được reset | `https://github.com/KidCute1412/eshop-sut/issues/51` | Open |
-| `BUG-FR13-001` | FR-13 | `FR13-DT-02`, `FR13-DT-07`, `FR13-BVA-03` | Dashboard hiển thị doanh thu gấp đôi giá trị mong đợi | High | Doanh thu = 2 × tổng `total_amount` của đơn delivered | Doanh thu = tổng `total_amount` đơn delivered | `https://github.com/KidCute1412/eshop-sut/issues/34` | Open |
-| `BUG-FR13-002` | FR-13 | `FR13-DT-08` | User không phải Admin vẫn truy cập được tài nguyên admin | High | API chấp nhận request từ user thường | Phải từ chối với 401/403 | `https://github.com/KidCute1412/eshop-sut/issues/35` | Open |
-| `BLOCKER-FR03M-001` | FR-03M | `FR03M-DT-*`, `FR03M-BVA-*` | Không thể kiểm thử FR-03M do network timeout trên mobile | High | Mọi request mobile bị timeout | Mobile phải kết nối được với backend | `https://github.com/KidCute1412/eshop-sut/issues/50` | Open |
-
-## 11.3 Mẫu mô tả chi tiết lỗi
-
-### `<BUG-001>` – `<Tiêu đề lỗi>`
-
-| Mục | Thông tin |
-| --- | --- |
-| Tính năng | `<Feature ID / tên tính năng>` |
-| Test case liên quan | `<Test Case ID>` |
-| Mức độ nghiêm trọng | `<Low / Medium / High / Critical>` |
-| Độ ưu tiên | `<Low / Medium / High>` |
-| Môi trường | `<Browser / OS / URL / commit>` |
-| GitHub Issue | `<Link>` |
-| Minh chứng | `<Screenshot / video / log>` |
-
-#### Tiền điều kiện
-
-`<Tiền điều kiện>`
-
-#### Các bước tái hiện lỗi
-
-1. `<Bước 1>`
-2. `<Bước 2>`
-3. `<Bước 3>`
-
-#### Kết quả mong đợi
-
-`<Kết quả mong đợi>`
-
-#### Kết quả thực tế
-
-`<Kết quả thực tế>`
-
-#### Ghi chú
-
-`<Ghi chú bổ sung>`
-
----
-
-# 12. Tài liệu minh chứng
-
-## 12.1 Ảnh chụp màn hình
-
-| Screenshot ID | Tính năng | Test case / Bug liên quan | Đường dẫn file | Mô tả |
+| Blocking ID | Test case liên quan | Tiêu đề | Mức độ nghiêm trọng | Trạng thái | 
 | --- | --- | --- | --- | --- |
-| `<IMG-001>` | `<Tính năng>` | `<TC / Bug ID>` | `<Path>` | `<Mô tả>` |
-
-## 12.2 Video
-
-| Video ID | Tính năng | Test case / Bug liên quan | URL | Mô tả |
-| --- | --- | --- | --- | --- |
-| `<VID-001>` | `<Tính năng>` | `<TC / Bug ID>` | `<YouTube / Drive link>` | `<Mô tả>` |
-
-## 12.3 Script kiểm thử
-
-| Script ID | Tính năng | Mục đích | Đường dẫn file | Cách chạy |
-| --- | --- | --- | --- | --- |
-| `<SCRIPT-001>` | `<Tính năng>` | `<Mục đích>` | `<Path>` | `<Command>` |
-
-## 12.4 File hỗ trợ khác
-
-| File | Mục đích | Vị trí |
-| --- | --- | --- |
-| `<Tên file>` | `<Mục đích>` | `<Path>` |
+| `BLOCKER-FR03M-001` | `FR03M-DT-*`, `FR03M-BVA-*` | Không thể kiểm thử FR-03M do mọi request mobile bị network timeout | High | Open | 
 
 ---
+# 10. Agent Skill 
 
-# 13. Khai báo sử dụng AI
+## Thực hiện tạo Agent Skill
 
-## 13.1 Khai báo
+1. Tạo một file SKILL.md trong đó ghi thông tin những việc agent cần làm. 
+2. Tạo thư mục ref, gồm tài liệu được tóm tắt từ bài giảng môn học.
+3. Yêu cầu agent tham khảo tài liệu trong thư mục ref khi sử dụng.
 
-Chọn một trong hai lựa chọn sau và xóa lựa chọn không sử dụng.
+## Demo video link
 
-### Lựa chọn A — Có sử dụng AI
+# 11. AI gap analysis
 
-Tôi có sử dụng công cụ AI cho các công việc sau trong bài tập này:
+Trong quá trình thực hiện test trên các tính năng, AI có các hạn chế như sau:
 
-- `<Công việc 1>`
-- `<Công việc 2>`
-- `<Công việc 3>`
+1. Không thể thực thi test thông qua giao diện (với model mà em sử dụng).
+2. Thiết kế test case chưa đủ bao quát hết trường hợp.
+3. Nếu có yêu cầu thiết kế test case bao quát hơn, AI bị hallucinate và sẽ sinh test case sai.
 
-Tất cả output do AI tạo ra đã được tôi review, chỉnh sửa và xác nhận trước khi đưa vào bài nộp.
+Cụ thể đối với từng tính năng như sau:
 
-### Lựa chọn B — Không sử dụng AI
+1. FR03-Quên mật khẩu & Đặt lại mật khẩu (2 bước): Do không thể test giao diện, AI đã bỏ mất 2 lỗi giao diện quan trọng là lỗi ***thiếu Step Indicator*** và lỗi ***thiếu trường xác nhận mật khẩu***. AI bị confused giữa tài liệu README và response trang web về source of truth: khi nhận được OTP 4 số từ trang web, AI đã chấp nhận thiết kế test case theo 4 số (trong khi README yêu cầu 6 số).
+2. FR09-Mã Giảm Giá: khi execute, AI không thể reset các giá trị trong database, vì thế một số test không thể thực hiện. Ví dụ như khi người dùng đã xài coupon 2 lần thì đã đạt giới hạn, khi này cần chạy lại database để reset để có thể test tiếp, việc này AI không làm được.
+3. FR13-Dashboard: AI không xác định được mối quan hệ khi người dùng thao tác gửi đơn và dashboard hiển thị mà chỉ test độc lập trên dashboard.
 
-Tôi không sử dụng bất kỳ sự hỗ trợ nào từ AI trong bài tập này.
+- Một lý do về các hạn chế trên có thể là do mô hình của em sử dụng DeepSeek V4 Flash Free chưa được mạnh.
 
-## 13.2 Công cụ AI đã sử dụng
+# 12. AI audit 
 
-| Công cụ | Phiên bản / Model | Mục đích | Khoảng thời gian sử dụng | Ghi chú |
-| --- | --- | --- | --- | --- |
-| `<AI tool>` | `<Model / version>` | `<Mục đích>` | `<Khoảng thời gian>` | `<Ghi chú>` |
+Tôi có sử dụng AI, cụ thể là cho các việc sau:
 
----
+1. Thiết kế và tạo test case.
+2. Thực thi test case thông qua API.
+3. Review lại report.
 
-# 14. Phân tích thiếu sót của AI
-
-## 14.1 Tổng hợp thiếu sót
+## 12.1 Tổng hợp thiếu sót
 
 | Gap ID | Tính năng | Loại thiếu sót | Vấn đề trong output của AI | Phần sinh viên chỉnh sửa | Ảnh hưởng | Test case / Bug liên quan |
 | --- | --- | --- | --- | --- | --- | --- |
