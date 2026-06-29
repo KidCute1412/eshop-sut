@@ -4,7 +4,7 @@
 
 Bug report này được tổng hợp từ các test case có trạng thái `Failed` và blocking issue trong test report.
 
-Các tính năng có lỗi hoặc blocker:
+Các tính năng có lỗi hoặc bị block:
 
 | Feature | Nội dung | Số issue |
 | --- | --- | ---: |
