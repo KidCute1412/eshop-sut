@@ -188,3 +188,7 @@ The skill also includes reusable assets and scripts:
 ## Github link
 
 - [HW02 Github Repository](https://github.com/KidCute1412/eshop-sut/tree/23127539-NguyenThanhTien)
+
+## Git commit history
+
+- [Commit history](./git-commit-log.txt)

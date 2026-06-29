@@ -1,0 +1,725 @@
+﻿* commit c51765054c14ee2f1d3ab5f6f2de91b7eb82ee67
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Mon Jun 29 07:27:45 2026 +0700
+| 
+|     update
+| 
+|  reports/FR-01/ai-gap-analysis.md |  4 ++--
+|  reports/FR-07/ai-gap-analysis.md | 11 +++++------
+|  reports/FR-20/ai-gap-analysis.md |  6 +++---
+|  reports/FR-20/test-cases.md      |  2 --
+|  reports/README.md                |  5 +++--
+|  reports/ai-critique.md           |  3 +++
+|  reports/main-report.md           |  8 ++++----
+|  7 files changed, 20 insertions(+), 19 deletions(-)
+| 
+* commit cd84bdaf43014415f4b898f660e151f9709ad366
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Mon Jun 29 07:13:18 2026 +0700
+| 
+|     update
+| 
+|  reports/README.md      | 56 ++++++++++++++++++++++++++++++++++++++++++++++++
+|  reports/main-report.md | 30 +++++++++++++-------------
+|  2 files changed, 71 insertions(+), 15 deletions(-)
+| 
+* commit d3f50389b50c35faf77ab67b03daf477717d2833
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Mon Jun 29 07:00:26 2026 +0700
+| 
+|     update agent skill template
+| 
+|  .../assets/ai-gap-analysis-template.md            | 39 ++++++++++---
+|  .../assets/bug-report-template.md                 | 41 +++++++++++++-
+|  .../assets/bva-table-template.md                  | 29 +++++++++-
+|  .../assets/domain-table-template.md               | 44 ++++++++++++--
+|  .../assets/evidence-index-template.md             |  6 --
+|  .../assets/execution-summary-template.md          | 18 ------
+|  .../assets/requirement-analysis-template.md       | 63 ++++++++++++++++++---
+|  .../assets/test-case-template.md                  | 43 +++++++++++++-
+|  .../assets/traceability-template.md               |  8 ---
+|  .../scripts/create_feature_workspace.py           | 10 +++-
+|  .../tests/test_skill_scripts.py                   | 11 +++-
+|  11 files changed, 251 insertions(+), 61 deletions(-)
+| 
+* commit c57f7db51619fa83b67ded1a9de08dcea89aed57
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Sun Jun 28 13:37:38 2026 +0700
+| 
+|     add main report
+| 
+|  reports/main-report.md | 190 +++++++++++++++++++++++++++++++++++++++++++++++
+|  1 file changed, 190 insertions(+)
+| 
+* commit c19c60085da365724ce220ea9383d1f00dcdfdaa
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Sun Jun 28 13:37:15 2026 +0700
+| 
+|     update github issue link
+| 
+|  reports/FR-01/bug-report.md      |  18 +++--
+|  reports/FR-02/bug-report.md      |  21 ++----
+|  reports/FR-07/bug-report.md      |  21 +++---
+|  reports/FR-17/bug-report.md      |  41 +++-------
+|  reports/FR-20/ai-gap-analysis.md |  61 ++++++++-------
+|  reports/FR-20/bug-report.md      | 149 ++++++++++++++++++++++++++++++-------
+|  6 files changed, 192 insertions(+), 119 deletions(-)
+| 
+* commit b62f84337685cb5b6191a59498a767017ddad1a6
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Sun Jun 28 11:29:22 2026 +0700
+| 
+|     update AI audit
+| 
+|  ai-audit/FR17/ai-audit.md                         |   18 +
+|  ai-audit/FR20/ai-audit.md                         |   17 +
+|  ai-audit/ai-audit.md                              |  339 ----
+|  .../FR-01/phase-01-02-blackbox-ai-output.md       |  106 --
+|  .../FR-01/phase-01-02-blackbox-prompt.md          |  182 --
+|  .../FR-01/phase-03-domain-modeling-ai-output.md   |  186 --
+|  .../FR-01/phase-03-domain-modeling-prompt.md      |  435 -----
+|  .../agent-skill/FR-01/phase-04-bva-ai-output.md   |   88 -
+|  evidence/agent-skill/FR-01/phase-04-prompt.md     |  216 ---
+|  evidence/agent-skill/FR-01/phase-05-prompt.md     |  350 ----
+|  .../FR-01/phase-05-test-case-design-ai-output.md  |  762 --------
+|  .../FR-01/phase-08-ai-gap-analysis-ai-output.md   |   85 -
+|  .../FR-01/phase-08-ai-gap-analysis-prompt.md      |   58 -
+|  .../FR-02/phase-01-05-design-ai-output.md         | 1771 -------------------
+|  .../FR-02/phase-01-05-design-prompt.md            |  238 ---
+|  .../FR-02/phase-06-07-execution-ai-output.md      |   35 -
+|  .../FR-02/phase-06-07-execution-prompt.md         |   10 -
+|  .../phase-01-07-design-execution-ai-output.md     | 1066 -----------
+|  .../FR-07/phase-01-07-design-execution-prompt.md  |   14 -
+|  .../phase-01-07-design-execution-ai-output.md     |   42 +
+|  .../FR-17/phase-01-07-design-execution-prompt.md  |   40 +
+|  .../phase-01-08-design-execution-ai-output.md     |   50 +
+|  .../FR-20/phase-01-08-design-execution-prompt.md  |   38 +
+|  23 files changed, 205 insertions(+), 5941 deletions(-)
+| 
+* commit 0073734ec364b81f98f33270340908b49a2b95de
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Sat Jun 27 19:47:37 2026 +0700
+| 
+|     done FR20
+| 
+|  reports/FR-20/ai-gap-analysis.md         |  39 +++
+|  reports/FR-20/boundary-value-analysis.md |  69 ++++++
+|  reports/FR-20/bug-report.md              |  33 +++
+|  reports/FR-20/domain-testing.md          | 125 ++++++++++
+|  reports/FR-20/evidence/FR20-DT-001.png   | Bin 0 -> 84351 bytes
+|  reports/FR-20/evidence/FR20-DT-002.png   | Bin 0 -> 59728 bytes
+|  reports/FR-20/evidence/FR20-DT-003.png   | Bin 0 -> 59465 bytes
+|  reports/FR-20/evidence/FR20-DT-004.png   | Bin 0 -> 62048 bytes
+|  reports/FR-20/evidence/FR20-DT-005.png   | Bin 0 -> 61375 bytes
+|  reports/FR-20/evidence/FR20-DT-006.png   | Bin 0 -> 62703 bytes
+|  reports/FR-20/evidence/FR20-DT-007.png   | Bin 0 -> 93793 bytes
+|  reports/FR-20/evidence/FR20-DT-009.png   | Bin 0 -> 16151 bytes
+|  reports/FR-20/evidence/FR20-DT-010.png   | Bin 0 -> 106771 bytes
+|  reports/FR-20/evidence/FR20-DT-011.png   | Bin 0 -> 24687 bytes
+|  reports/FR-20/evidence/FR20-DT-012.png   | Bin 0 -> 22734 bytes
+|  reports/FR-20/requirement-analysis.md    | 102 ++++++++
+|  reports/FR-20/test-cases.md              | 380 +++++++++++++++++++++++++++++
+|  17 files changed, 748 insertions(+)
+| 
+* commit d2c1d94986cd13a5057871a2c23ac2a5fceddddc
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Sat Jun 27 15:27:10 2026 +0700
+| 
+|     done FR-17
+| 
+|  reports/FR-17/ai-gap-analysis.md         |  90 +++++++
+|  reports/FR-17/boundary-value-analysis.md |  49 ++++
+|  reports/FR-17/bug-report.md              | 232 ++++++++++++++++
+|  reports/FR-17/domain-testing.md          | 105 ++++++++
+|  reports/FR-17/evidence/FR17-BVA-001.png  | Bin 0 -> 69661 bytes
+|  reports/FR-17/evidence/FR17-BVA-002.png  | Bin 0 -> 68477 bytes
+|  reports/FR-17/evidence/FR17-BVA-003.png  | Bin 0 -> 69504 bytes
+|  reports/FR-17/evidence/FR17-BVA-004.png  | Bin 0 -> 68655 bytes
+|  reports/FR-17/evidence/FR17-BVA-005.png  | Bin 0 -> 69433 bytes
+|  reports/FR-17/evidence/FR17-BVA-006.png  | Bin 0 -> 68333 bytes
+|  reports/FR-17/evidence/FR17-BVA-007.png  | Bin 0 -> 69932 bytes
+|  reports/FR-17/evidence/FR17-BVA-008.png  | Bin 0 -> 71675 bytes
+|  reports/FR-17/evidence/FR17-BVA-009.png  | Bin 0 -> 69899 bytes
+|  reports/FR-17/evidence/FR17-DT-001.png   | Bin 0 -> 64072 bytes
+|  reports/FR-17/evidence/FR17-DT-002.png   | Bin 0 -> 64857 bytes
+|  reports/FR-17/evidence/FR17-DT-003.png   | Bin 0 -> 62981 bytes
+|  reports/FR-17/evidence/FR17-DT-004.png   | Bin 0 -> 50171 bytes
+|  reports/FR-17/evidence/FR17-DT-005.png   | Bin 0 -> 84338 bytes
+|  reports/FR-17/evidence/FR17-DT-006.png   | Bin 0 -> 62687 bytes
+|  reports/FR-17/evidence/FR17-DT-007.png   | Bin 0 -> 68524 bytes
+|  reports/FR-17/evidence/FR17-DT-008.png   | Bin 0 -> 86492 bytes
+|  reports/FR-17/evidence/FR17-DT-009.png   | Bin 0 -> 70984 bytes
+|  reports/FR-17/evidence/FR17-DT-010.png   | Bin 0 -> 66196 bytes
+|  reports/FR-17/evidence/FR17-DT-011.png   | Bin 0 -> 68655 bytes
+|  reports/FR-17/evidence/FR17-DT-012.png   | Bin 0 -> 66176 bytes
+|  reports/FR-17/evidence/FR17-DT-013.png   | Bin 0 -> 69281 bytes
+|  reports/FR-17/requirement-analysis.md    |  94 +++++++
+|  reports/FR-17/test-cases.md              | 417 +++++++++++++++++++++++++++++
+|  28 files changed, 987 insertions(+)
+| 
+* commit e7e54a5c16101b677ad5aee4d498b91e6238ad1f
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Sat Jun 27 11:01:54 2026 +0700
+| 
+|     update AI agent skill
+| 
+|  .agents/skills/domain-testing-bva/SKILL.md                 |  6 ++++++
+|  .../domain-testing-bva/references/domain-testing-method.md |  6 ++++++
+|  .../references/human-review-checklist.md                   | 12 ++++++++++++
+|  .../domain-testing-bva/references/test-case-schema.md      |  6 ++++--
+|  4 files changed, 28 insertions(+), 2 deletions(-)
+| 
+* commit c7a0c3c21a2099beb1e2be1f4555381bc5060146
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Sat Jun 27 10:50:41 2026 +0700
+| 
+|      verify all docs and test case of FR07
+| 
+|  ai-audit/FR07/ai-audit.md                         |  24 +
+|  .../phase-01-07-design-execution-ai-output.md     | 992 ++++++++++++++++++++
+|  .../FR-07/phase-01-07-design-execution-prompt.md  | 238 +++++
+|  reports/FR-07/bug-report.md                       |  88 --
+|  reports/FR-07/domain-testing.md                   |   5 -
+|  reports/FR-07/execution-summary.md                |  64 --
+|  reports/FR-07/requirement-analysis.md             |   2 +-
+|  7 files changed, 1255 insertions(+), 158 deletions(-)
+| 
+* commit 8cda326ebce4edcc768a103a35835a7f448982e6
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Sat Jun 27 10:14:38 2026 +0700
+| 
+|      verify all docs and test case of FR02
+| 
+|  ai-audit/FR02/ai-audit.md                         |  125 +-
+|  .../FR-02/phase-01-05-design-ai-output.md         | 1771 +++++++++++++++++++
+|  .../FR-02/phase-01-05-design-prompt.md            |  238 +++
+|  .../FR-02/phase-08-ai-gap-analysis-ai-output.md   |   70 +
+|  .../FR-02/phase-08-ai-gap-analysis-prompt.md      |   60 +
+|  reports/FR-02/boundary-value-analysis.md          |    2 +-
+|  reports/FR-02/bug-report.md                       |   21 -
+|  reports/FR-02/domain-testing.md                   |    2 +-
+|  reports/FR-02/requirement-analysis.md             |    6 +-
+|  reports/FR-02/test-cases.md                       |    2 +-
+|  10 files changed, 2186 insertions(+), 111 deletions(-)
+| 
+* commit 8de025ad0833e77b1ad4ac3dc9d63294e0838a2c
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Sat Jun 27 09:37:09 2026 +0700
+| 
+|      verify all docs and test case of FR01
+| 
+|  ai-audit/FR01/ai-audit.md                         | 286 ++------
+|  .../FR-01/phase-01-02-blackbox-ai-output.md       | 106 +++
+|  .../FR-01/phase-01-02-blackbox-prompt.md          | 182 +++++
+|  .../FR-01/phase-03-domain-modeling-ai-output.md   | 186 +++++
+|  .../FR-01/phase-03-domain-modeling-prompt.md      | 435 +++++++++++
+|  .../FR-01/phase-04-bva-ai-output.md               |  88 +++
+|  .../ai-audit-artifacts/FR-01/phase-04-prompt.md   | 216 ++++++
+|  .../ai-audit-artifacts/FR-01/phase-05-prompt.md   | 350 +++++++++
+|  .../FR-01/phase-05-test-case-design-ai-output.md  | 762 ++++++++++++++++++++
+|  .../FR-01/phase-08-ai-gap-analysis-ai-output.md   |  85 +++
+|  .../FR-01/phase-08-ai-gap-analysis-prompt.md      |  58 ++
+|  reports/FR-01/ai-gap-analysis.md                  |  24 -
+|  reports/FR-01/boundary-value-analysis.md          |  20 +-
+|  reports/FR-01/bug-report.md                       |   4 -
+|  reports/FR-01/domain-testing.md                   |   5 +-
+|  reports/FR-01/requirement-analysis.md             |  37 +-
+|  reports/FR-01/test-cases.md                       |  28 -
+|  17 files changed, 2566 insertions(+), 306 deletions(-)
+| 
+* commit abf6695047e662a4e2f6a2b90f24436e3163e8eb
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Fri Jun 26 20:45:47 2026 +0700
+| 
+|     just reviewed partially FR-07
+| 
+|  ai-audit/ai-audit.md                              |   32 +
+|  backend/database.sqlite                           |  Bin 36864 -> 36864 bytes
+|  .../phase-01-07-design-execution-ai-output.md     | 1066 +++++++++++++++++++
+|  .../FR-07/phase-01-07-design-execution-prompt.md  |   14 +
+|  reports/FR-07/ai-gap-analysis.md                  |  106 ++
+|  reports/FR-07/boundary-value-analysis.md          |   45 +
+|  reports/FR-07/bug-report.md                       |  457 ++++++++
+|  reports/FR-07/domain-testing.md                   |  136 +++
+|  reports/FR-07/evidence/FR07-BVA-001.png           |  Bin 0 -> 7800 bytes
+|  reports/FR-07/evidence/FR07-BVA-003.png           |  Bin 0 -> 26706 bytes
+|  reports/FR-07/evidence/FR07-DT-001.png            |  Bin 0 -> 24103 bytes
+|  reports/FR-07/evidence/FR07-DT-002.png            |  Bin 0 -> 49595 bytes
+|  reports/FR-07/evidence/FR07-DT-004.png            |  Bin 0 -> 46751 bytes
+|  reports/FR-07/evidence/FR07-DT-009.png            |  Bin 0 -> 110027 bytes
+|  reports/FR-07/evidence/FR07-DT-013.png            |  Bin 0 -> 38227 bytes
+|  reports/FR-07/evidence/FR07-DT-014.png            |  Bin 0 -> 59649 bytes
+|  reports/FR-07/evidence/FR07-DT-015.png            |  Bin 0 -> 63387 bytes
+|  reports/FR-07/evidence/FR07-DT-016.png            |  Bin 0 -> 63070 bytes
+|  reports/FR-07/evidence/FR07-DT-017.png            |  Bin 0 -> 55771 bytes
+|  reports/FR-07/execution-summary.md                |   64 ++
+|  reports/FR-07/requirement-analysis.md             |  108 ++
+|  reports/FR-07/test-cases.md                       |  425 ++++++++
+|  22 files changed, 2453 insertions(+)
+| 
+* commit 86c72b02db69ec85f7df4176a53026442c07fb7e
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Fri Jun 26 15:14:11 2026 +0700
+| 
+|     done FR-02
+| 
+|  ai-audit/FR01/ai-audit.md                         |  298 ++++
+|  ai-audit/FR02/ai-audit.md                         |   87 +
+|  ai-audit/ai-audit.md                              |  561 +++---
+|  backend/database.sqlite                           |  Bin 36864 -> 36864 bytes
+|  .../FR-02/phase-01-05-design-ai-output.md         | 1771 +++++++++++++++++++
+|  .../FR-02/phase-01-05-design-prompt.md            |  238 +++
+|  .../FR-02/phase-06-07-execution-ai-output.md      |   35 +
+|  .../FR-02/phase-06-07-execution-prompt.md         |   10 +
+|  reports/FR-02/ai-gap-analysis.md                  |   77 +
+|  reports/FR-02/boundary-value-analysis.md          |   82 +
+|  reports/FR-02/bug-report.md                       |  151 ++
+|  reports/FR-02/domain-testing.md                   |  148 ++
+|  reports/FR-02/evidence/FR02-BVA-001.png           |  Bin 0 -> 39252 bytes
+|  reports/FR-02/evidence/FR02-BVA-002.png           |  Bin 0 -> 39117 bytes
+|  reports/FR-02/evidence/FR02-BVA-003.png           |  Bin 0 -> 38800 bytes
+|  reports/FR-02/evidence/FR02-BVA-004.png           |  Bin 0 -> 61429 bytes
+|  reports/FR-02/evidence/FR02-BVA-005.png           |  Bin 0 -> 70704 bytes
+|  reports/FR-02/evidence/FR02-BVA-006.png           |  Bin 0 -> 64428 bytes
+|  reports/FR-02/evidence/FR02-BVA-007.png           |  Bin 0 -> 51088 bytes
+|  reports/FR-02/evidence/FR02-BVA-008.png           |  Bin 0 -> 87708 bytes
+|  reports/FR-02/evidence/FR02-BVA-009.png           |  Bin 0 -> 75182 bytes
+|  reports/FR-02/evidence/FR02-BVA-010.png           |  Bin 0 -> 24428 bytes
+|  reports/FR-02/evidence/FR02-BVA-011.png           |  Bin 0 -> 24429 bytes
+|  reports/FR-02/evidence/FR02-BVA-012.png           |  Bin 0 -> 24466 bytes
+|  reports/FR-02/evidence/FR02-BVA-013.png           |  Bin 0 -> 50979 bytes
+|  reports/FR-02/evidence/FR02-BVA-014.png           |  Bin 0 -> 50918 bytes
+|  reports/FR-02/evidence/FR02-BVA-015.png           |  Bin 0 -> 50842 bytes
+|  reports/FR-02/evidence/FR02-BVA-016.png           |  Bin 0 -> 51091 bytes
+|  reports/FR-02/evidence/FR02-DT-001.png            |  Bin 0 -> 76191 bytes
+|  reports/FR-02/evidence/FR02-DT-002.png            |  Bin 0 -> 86517 bytes
+|  reports/FR-02/evidence/FR02-DT-003.png            |  Bin 0 -> 34659 bytes
+|  reports/FR-02/evidence/FR02-DT-004.png            |  Bin 0 -> 35911 bytes
+|  reports/FR-02/evidence/FR02-DT-005.png            |  Bin 0 -> 22921 bytes
+|  reports/FR-02/evidence/FR02-DT-006.png            |  Bin 0 -> 24787 bytes
+|  reports/FR-02/evidence/FR02-DT-007.png            |  Bin 0 -> 23578 bytes
+|  reports/FR-02/evidence/FR02-DT-008.png            |  Bin 0 -> 61016 bytes
+|  reports/FR-02/evidence/FR02-DT-009.png            |  Bin 0 -> 62177 bytes
+|  reports/FR-02/evidence/FR02-DT-010.png            |  Bin 0 -> 38618 bytes
+|  reports/FR-02/evidence/FR02-DT-011.png            |  Bin 0 -> 62917 bytes
+|  reports/FR-02/evidence/FR02-DT-012.png            |  Bin 0 -> 24335 bytes
+|  reports/FR-02/evidence/FR02-DT-013.png            |  Bin 0 -> 64484 bytes
+|  reports/FR-02/evidence/FR02-DT-014.png            |  Bin 0 -> 19255 bytes
+|  reports/FR-02/evidence/FR02-DT-015.png            |  Bin 0 -> 12089 bytes
+|  reports/FR-02/evidence/FR02-DT-016.png            |  Bin 0 -> 12024 bytes
+|  reports/FR-02/evidence/FR02-DT-017.png            |  Bin 0 -> 38668 bytes
+|  reports/FR-02/evidence/FR02-DT-018.png            |  Bin 0 -> 77375 bytes
+|  reports/FR-02/evidence/FR02-DT-019.png            |  Bin 0 -> 38984 bytes
+|  reports/FR-02/evidence/FR02-DT-020.png            |  Bin 0 -> 63869 bytes
+|  reports/FR-02/evidence/FR02-DT-021.png            |  Bin 0 -> 76300 bytes
+|  reports/FR-02/evidence/FR02-DT-022.png            |  Bin 0 -> 88980 bytes
+|  reports/FR-02/requirement-analysis.md             |  129 ++
+|  reports/FR-02/test-cases.md                       |  642 +++++++
+|  52 files changed, 3953 insertions(+), 276 deletions(-)
+| 
+* commit 75a415475779f8f7f5809f0f227cb842c377a26f
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Fri Jun 26 07:43:50 2026 +0700
+| 
+|     enhance AI skill
+| 
+|  .agents/skills/domain-testing-bva/SKILL.md        | 67 +++++++++++----------
+|  .../references/domain-testing-method.md           | 13 +++-
+|  .../references/human-review-checklist.md          |  4 ++
+|  .../references/test-case-schema.md                |  6 ++
+|  4 files changed, 55 insertions(+), 35 deletions(-)
+| 
+* commit 050e47290e7c41c2f54905f941ea42c54495e7bd
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Fri Jun 26 07:15:42 2026 +0700
+| 
+|     test(fr01): record manual execution evidence and bug reports
+| 
+|  reports/FR-01/bug-report.md | 12 ------------
+|  1 file changed, 12 deletions(-)
+| 
+* commit 207f9421fcae43f7f9b466a802e4e03c1e8c6e88
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Fri Jun 26 07:15:38 2026 +0700
+| 
+|     docs(fr01): audit manual execution and phase 8 AI gap analysis
+| 
+|  ai-audit/ai-audit.md                              | 46 +++++++++++
+|  .../FR-01/phase-08-ai-gap-analysis-ai-output.md   | 85 +++++++++++++++++++++
+|  .../FR-01/phase-08-ai-gap-analysis-prompt.md      | 58 ++++++++++++++
+|  reports/FR-01/ai-gap-analysis.md                  | 84 ++++++++++++++++++++
+|  4 files changed, 273 insertions(+)
+| 
+* commit 2c7a6e1f881094f711163a8a7778ac1a773fa60a
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Wed Jun 24 20:07:23 2026 +0700
+| 
+|     update Ai agent skill
+| 
+|  .agents/skills/domain-testing-bva/SKILL.md | 173 +++++++++++++++++++++++----
+|  1 file changed, 153 insertions(+), 20 deletions(-)
+| 
+* commit 9e897ee48c1b3fd38ac2d3c8dc4e0b7573d9220e
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Wed Jun 24 19:08:51 2026 +0700
+| 
+|     done test case for FR01
+| 
+|  .agents/skills/domain-testing-bva/SKILL.md |  12 +-
+|  .gitignore                                 |   1 +
+|  backend/database.sqlite                    | Bin 36864 -> 36864 bytes
+|  reports/FR-01/bug-report.md                | 300 +++++++++++++++++++++++++
+|  reports/FR-01/evidence/FR01-BVA-001.png    | Bin 0 -> 41499 bytes
+|  reports/FR-01/evidence/FR01-BVA-002.png    | Bin 0 -> 48506 bytes
+|  reports/FR-01/evidence/FR01-BVA-003.png    | Bin 0 -> 62632 bytes
+|  reports/FR-01/evidence/FR01-BVA-004.png    | Bin 0 -> 49001 bytes
+|  reports/FR-01/evidence/FR01-BVA-005.png    | Bin 0 -> 69263 bytes
+|  reports/FR-01/evidence/FR01-BVA-006.png    | Bin 0 -> 61739 bytes
+|  reports/FR-01/evidence/FR01-BVA-007.png    | Bin 0 -> 61779 bytes
+|  reports/FR-01/evidence/FR01-BVA-008.png    | Bin 0 -> 63377 bytes
+|  reports/FR-01/evidence/FR01-DT-001.png     | Bin 0 -> 48643 bytes
+|  reports/FR-01/evidence/FR01-DT-002.png     | Bin 0 -> 45857 bytes
+|  reports/FR-01/evidence/FR01-DT-003.png     | Bin 0 -> 48242 bytes
+|  reports/FR-01/evidence/FR01-DT-004.png     | Bin 0 -> 45424 bytes
+|  reports/FR-01/evidence/FR01-DT-005.png     | Bin 0 -> 50642 bytes
+|  reports/FR-01/evidence/FR01-DT-006.png     | Bin 0 -> 49510 bytes
+|  reports/FR-01/evidence/FR01-DT-007.png     | Bin 0 -> 48735 bytes
+|  reports/FR-01/evidence/FR01-DT-008.png     | Bin 0 -> 49672 bytes
+|  reports/FR-01/evidence/FR01-DT-009.png     | Bin 0 -> 49073 bytes
+|  reports/FR-01/evidence/FR01-DT-010.png     | Bin 0 -> 49959 bytes
+|  reports/FR-01/evidence/FR01-DT-011.png     | Bin 0 -> 49989 bytes
+|  reports/FR-01/evidence/FR01-DT-012.png     | Bin 0 -> 41545 bytes
+|  reports/FR-01/evidence/FR01-DT-013.png     | Bin 0 -> 22201 bytes
+|  reports/FR-01/evidence/FR01-DT-014.png     | Bin 0 -> 50029 bytes
+|  reports/FR-01/evidence/FR01-DT-015.png     | Bin 0 -> 22201 bytes
+|  reports/FR-01/evidence/FR01-DT-016.png     | Bin 0 -> 11730 bytes
+|  reports/FR-01/evidence/FR01-DT-017.png     | Bin 0 -> 18413 bytes
+|  reports/FR-01/evidence/FR01-DT-018.png     | Bin 0 -> 22201 bytes
+|  reports/FR-01/evidence/FR01-DT-019.png     | Bin 0 -> 61853 bytes
+|  reports/FR-01/evidence/FR01-DT-020.png     | Bin 0 -> 61387 bytes
+|  reports/FR-01/evidence/FR01-DT-021.png     | Bin 0 -> 61380 bytes
+|  reports/FR-01/evidence/FR01-DT-022.png     | Bin 0 -> 44958 bytes
+|  reports/FR-01/evidence/FR01-DT-023.png     | Bin 0 -> 62568 bytes
+|  reports/FR-01/evidence/FR01-DT-024.png     | Bin 0 -> 64225 bytes
+|  reports/FR-01/evidence/FR01-DT-025.png     | Bin 0 -> 63601 bytes
+|  reports/FR-01/evidence/FR01-DT-026.png     | Bin 0 -> 63203 bytes
+|  reports/FR-01/evidence/FR01-DT-027.png     | Bin 0 -> 63595 bytes
+|  reports/FR-01/evidence/FR01-DT-028.png     | Bin 0 -> 63265 bytes
+|  reports/FR-01/evidence/FR01-DT-029.png     | Bin 0 -> 63166 bytes
+|  reports/FR-01/test-cases.md                | 322 +++++++++++----------------
+|  42 files changed, 438 insertions(+), 197 deletions(-)
+| 
+* commit 1b794051e25928c8fb562981e6830ef985b986b1
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Wed Jun 24 13:12:17 2026 +0700
+| 
+|     test(fr01): complete reviewed DT and BVA test cases
+| 
+|  ai-audit/ai-audit.md                              |  62 ++
+|  evidence/agent-skill/FR-01/phase-05-prompt.md     | 350 ++++++++
+|  .../FR-01/phase-05-test-case-design-ai-output.md  | 762 ++++++++++++++++
+|  reports/FR-01/test-cases.md                       | 928 ++++++++++++++++++++
+|  4 files changed, 2102 insertions(+)
+| 
+* commit f8b424cf02e8be8c5c6aad1ca6a235abb2e4bc7c
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Wed Jun 24 13:09:02 2026 +0700
+| 
+|     fix(skill): validate nominal BVA points and distinct coverage
+| 
+|  .../scripts/validate_test_cases.py                | 54 ++++++++++++---------
+|  1 file changed, 32 insertions(+), 22 deletions(-)
+| 
+* commit 7506fee516df0707a6f8b8d74791a0390791cf96
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Wed Jun 24 11:37:15 2026 +0700
+| 
+|     docs(fr01): complete boundary value analysis and human review
+| 
+|  ai-audit/ai-audit.md                              |  75 ++++++-
+|  .../agent-skill/FR-01/phase-04-bva-ai-output.md   |  88 ++++++++
+|  evidence/agent-skill/FR-01/phase-04-prompt.md     | 216 ++++++++++++++++++++
+|  reports/FR-01/boundary-value-analysis.md          | 106 ++++++++++
+|  reports/FR-01/domain-testing.md                   |   2 +-
+|  5 files changed, 485 insertions(+), 2 deletions(-)
+| 
+* commit bb834ebec703ba9e6175f5200aaf01d1becc94c3
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Tue Jun 23 19:03:54 2026 +0700
+| 
+|     done phase 3 for FR01
+| 
+|  ai-audit/ai-audit.md                              |  84 ++++++-
+|  .../FR-01/phase-03-domain-modeling-ai-output.md   | 197 +++++++++++++--
+|  reports/FR-01/domain-testing.md                   | 262 +++++++++++---------
+|  3 files changed, 392 insertions(+), 151 deletions(-)
+| 
+* commit ddd0cb240fd2017962621a16984437fc3014f706
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Tue Jun 23 18:11:45 2026 +0700
+| 
+|     docs(fr-01): model registration equivalence domains
+| 
+|  ai-audit/ai-audit.md                              |  13 +
+|  .../FR-01/phase-03-domain-modeling-ai-output.md   |  19 +
+|  .../FR-01/phase-03-domain-modeling-prompt.md      | 435 ++++++++++++++++++++
+|  reports/FR-01/domain-testing.md                   | 186 +++++++++
+|  4 files changed, 653 insertions(+)
+| 
+* commit 9b33d25cac69d4b821662e6d0170c5784fdccef5
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Mon Jun 22 21:38:40 2026 +0700
+| 
+|     add audit for phase 01 and 02
+| 
+|  ai-audit/ai-audit.md                              | 207 +++-----------------
+|  .../FR-01/phase-01-02-blackbox-ai-output.md       | 106 ++++++++++
+|  .../FR-01/phase-01-02-blackbox-prompt.md          | 182 +++++++++++++++++
+|  3 files changed, 314 insertions(+), 181 deletions(-)
+| 
+* commit e0aeb723427d985eecc8832e58aec237a1f6b755
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Mon Jun 22 21:19:30 2026 +0700
+| 
+|     be reviewed
+| 
+|  reports/FR-01/requirement-analysis.md | 117 +++++++++++++++++---------------
+|  1 file changed, 63 insertions(+), 54 deletions(-)
+| 
+* commit 81cf2296455c5c190dff0f133f34823ade77288b
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Mon Jun 22 20:24:38 2026 +0700
+| 
+|     docs(fr-01): collect black-box registration test basis
+| 
+|  ai-audit/ai-audit.md                  | 199 ++++++++++++++++++++++++++++++++
+|  reports/FR-01/requirement-analysis.md | 106 +++++++++++++++++
+|  2 files changed, 305 insertions(+)
+| 
+* commit 0b33d95de005b08308cec969fe0dbe9115eaae14
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Mon Jun 22 20:00:35 2026 +0700
+| 
+|     fix(skill): update test case validation
+| 
+|  .../scripts/validate_test_cases.py                | 488 ++++++++++++++++++--
+|  1 file changed, 437 insertions(+), 51 deletions(-)
+| 
+* commit ffba1a17ce3345a6996e28900c430fa0eba13b40
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Mon Jun 22 19:12:38 2026 +0700
+| 
+|     test(skill): strengthen scripts and validation coverage
+| 
+|  .../assets/ai-audit-entry-template.md             |  10 -
+|  .../domain-testing-bva/scripts/append_ai_audit.py | 117 +++++++-----
+|  .../scripts/validate_test_cases.py                | 195 ++++++++++----------
+|  .../tests/test_skill_scripts.py                   | 147 +++++++++++++++
+|  4 files changed, 318 insertions(+), 151 deletions(-)
+| 
+* commit 4eaad27b94720de1407de0dd885bd9cbafc2df56
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Mon Jun 22 19:08:12 2026 +0700
+| 
+|     fix(skill): support mobile feature identifiers
+| 
+|  .../scripts/create_feature_workspace.py           | 103 +++++++++++---------
+|  1 file changed, 57 insertions(+), 46 deletions(-)
+| 
+* commit 2a4508cf378f57dec370f159afddb440c5852192
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Mon Jun 22 19:07:26 2026 +0700
+| 
+|     feat(skill): add execution evidence and bug reporting workflow
+| 
+|  .../assets/ai-gap-analysis-template.md            | 18 ++++-----
+|  .../assets/bug-report-template.md                 |  7 ++++
+|  .../assets/bva-table-template.md                  |  9 +++--
+|  .../assets/domain-table-template.md               | 11 ++---
+|  .../assets/evidence-index-template.md             |  6 +++
+|  .../assets/execution-summary-template.md          | 18 +++++++++
+|  .../assets/feature-report-template.md             | 24 -----------
+|  .../assets/requirement-analysis-template.md       | 31 +++++---------
+|  .../assets/test-case-template.md                  | 45 ++++++++++++---------
+|  .../assets/traceability-template.md               |  7 ++--
+|  .../domain-testing-bva/references/bva-method.md   | 29 +++++--------
+|  .../references/human-review-checklist.md          | 32 +++++++--------
+|  .../references/test-case-schema.md                | 42 +++----------------
+|  13 files changed, 121 insertions(+), 158 deletions(-)
+| 
+* commit b1f06557f8726f7c488259249de15fb36fda1dd9
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Mon Jun 22 19:05:56 2026 +0700
+| 
+|     fix(skill): align domain testing workflow with black-box testing
+| 
+|  .agents/skills/domain-testing-bva/SKILL.md        | 207 ++++++++------------
+|  .../references/assignment-requirements.md         |  81 +-------
+|  .../references/domain-testing-method.md           |  64 +++---
+|  .../references/eshop-analysis-guide.md            |  53 ++---
+|  .../references/instructor-clarifications.md       |  12 ++
+|  5 files changed, 149 insertions(+), 268 deletions(-)
+| 
+* commit 48f796635a4358ebaef316b20d8bf921f9207001
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Sun Jun 21 17:55:38 2026 +0700
+| 
+|     feat(skill): add domain testing and bva agent skill
+| 
+|  2026.HW02.Domain Testing_En.pdf                   | Bin 0 -> 403870 bytes
+|  agent-skill-demo/FR-01/ai-gap-analysis.md         |  27 -
+|  agent-skill-demo/FR-01/boundary-value-analysis.md |  20 -
+|  agent-skill-demo/FR-01/domain-testing.md          |  16 -
+|  agent-skill-demo/FR-01/requirement-analysis.md    |  51 --
+|  agent-skill-demo/FR-01/test-cases.md              | 154 -----
+|  agent-skill-demo/FR-01/traceability-matrix.md     |  15 -
+|  agent-skill-docs/README.md                        |  54 --
+|  agent-skill-docs/demo-video-script.md             |  19 -
+|  agent-skill-docs/design-and-usage.md              |  29 -
+|  agent-skill-docs/evaluation.md                    |  19 -
+|  ai-audit/agent-skill-creation.md                  | 694 --------------------
+|  12 files changed, 1098 deletions(-)
+| 
+* commit 57222e2449e97818cfbcd93093cc71e64cbaac6e
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Sun Jun 21 17:41:04 2026 +0700
+| 
+|     docs(skill): add usage demo and audit documentation
+| 
+|  agent-skill-docs/README.md            |  54 +++
+|  agent-skill-docs/demo-video-script.md |  19 +
+|  agent-skill-docs/design-and-usage.md  |  29 ++
+|  agent-skill-docs/evaluation.md        |  19 +
+|  ai-audit/agent-skill-creation.md      | 694 ++++++++++++++++++++++++++++++++
+|  5 files changed, 815 insertions(+)
+| 
+* commit 8643fd7f8772e3e724b4f1dac3469cc88a188306
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Sun Jun 21 17:40:57 2026 +0700
+| 
+|     test(skill): evaluate skill with FR-01 dry run
+| 
+|  agent-skill-demo/FR-01/ai-gap-analysis.md         |  27 ++++
+|  agent-skill-demo/FR-01/boundary-value-analysis.md |  20 +++
+|  agent-skill-demo/FR-01/domain-testing.md          |  16 ++
+|  agent-skill-demo/FR-01/requirement-analysis.md    |  51 +++++++
+|  agent-skill-demo/FR-01/test-cases.md              | 154 ++++++++++++++++++++
+|  agent-skill-demo/FR-01/traceability-matrix.md     |  15 ++
+|  6 files changed, 283 insertions(+)
+| 
+* commit 002c8ac9c1607e685fee1b29f566132e3252b612
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Sun Jun 21 17:40:51 2026 +0700
+| 
+|     feat(skill): add workspace audit and validation scripts
+| 
+|  .../domain-testing-bva/scripts/append_ai_audit.py |  66 ++++++++
+|  .../scripts/create_feature_workspace.py           |  85 ++++++++++
+|  .../scripts/validate_test_cases.py                | 165 ++++++++++++++++++++
+|  3 files changed, 316 insertions(+)
+| 
+* commit 322d1ab6dec7de8c3fe44de738dc47c47d68087c
+| Author: NguyenThanhTien539 <161334882+NguyenThanhTien539@users.noreply.github.com>
+| Date:   Sun Jun 21 17:40:44 2026 +0700
+| 
+|     feat(skill): scaffold domain testing and bva skill
+| 
+|  .agents/skills/domain-testing-bva/SKILL.md        | 174 ++++++++++++++++++++
+|  .../assets/ai-audit-entry-template.md             |  10 ++
+|  .../assets/ai-gap-analysis-template.md            |  15 ++
+|  .../assets/bva-table-template.md                  |  12 ++
+|  .../assets/domain-table-template.md               |  11 ++
+|  .../assets/feature-report-template.md             |  24 +++
+|  .../assets/requirement-analysis-template.md       |  35 ++++
+|  .../assets/test-case-template.md                  |  36 ++++
+|  .../assets/traceability-template.md               |   9 +
+|  .../references/assignment-requirements.md         |  80 +++++++++
+|  .../domain-testing-bva/references/bva-method.md   |  47 ++++++
+|  .../references/domain-testing-method.md           |  48 ++++++
+|  .../references/eshop-analysis-guide.md            |  43 +++++
+|  .../references/human-review-checklist.md          |  20 +++
+|  .../references/test-case-schema.md                |  43 +++++
+|  15 files changed, 607 insertions(+)
+| 
+* commit 85af3ba875c88283615e22cb108f13e2fccaf0e9
+| Author: ttbhanh-hcmus <ttbhanh@hcmus.edu.vn>
+| Date:   Fri May 15 08:30:35 2026 +0700
+| 
+|     first upload
+| 
+|  README.md                                 |  290 +-
+|  api_specification.md                      |  214 +
+|  backend/database.js                       |  119 +
+|  backend/database.sqlite                   |  Bin 0 -> 36864 bytes
+|  backend/package-lock.json                 | 1663 +++++
+|  backend/package.json                      |   20 +
+|  backend/server.js                         |  572 ++
+|  backend/test_profile.js                   |    8 +
+|  frontend-admin/.gitignore                 |   24 +
+|  frontend-admin/README.md                  |   16 +
+|  frontend-admin/eslint.config.js           |   21 +
+|  frontend-admin/index.html                 |   13 +
+|  frontend-admin/package-lock.json          | 3681 +++++++++++
+|  frontend-admin/package.json               |   32 +
+|  frontend-admin/postcss.config.js          |    6 +
+|  frontend-admin/public/favicon.svg         |    1 +
+|  frontend-admin/public/icons.svg           |   24 +
+|  frontend-admin/src/App.css                |  184 +
+|  frontend-admin/src/App.jsx                |  922 +++
+|  frontend-admin/src/assets/hero.png        |  Bin 0 -> 13057 bytes
+|  frontend-admin/src/assets/react.svg       |    1 +
+|  frontend-admin/src/assets/vite.svg        |    1 +
+|  frontend-admin/src/index.css              |    8 +
+|  frontend-admin/src/main.jsx               |   10 +
+|  frontend-admin/tailwind.config.js         |   11 +
+|  frontend-admin/vite.config.js             |   11 +
+|  frontend-mobile/.gitignore                |   41 +
+|  frontend-mobile/App.js                    | 1300 ++++
+|  frontend-mobile/app.json                  |   29 +
+|  frontend-mobile/assets/adaptive-icon.png  |  Bin 0 -> 17547 bytes
+|  frontend-mobile/assets/favicon.png        |  Bin 0 -> 1466 bytes
+|  frontend-mobile/assets/icon.png           |  Bin 0 -> 22380 bytes
+|  frontend-mobile/assets/splash-icon.png    |  Bin 0 -> 17547 bytes
+|  frontend-mobile/index.js                  |    8 +
+|  frontend-mobile/package-lock.json         | 8773 +++++++++++++++++++++++++++
+|  frontend-mobile/package.json              |   18 +
+|  frontend-web/.gitignore                   |   24 +
+|  frontend-web/README.md                    |   16 +
+|  frontend-web/eslint.config.js             |   21 +
+|  frontend-web/index.html                   |   13 +
+|  frontend-web/package-lock.json            | 3681 +++++++++++
+|  frontend-web/package.json                 |   32 +
+|  frontend-web/postcss.config.js            |    6 +
+|  frontend-web/public/favicon.svg           |    1 +
+|  frontend-web/public/icons.svg             |   24 +
+|  frontend-web/src/App.css                  |  184 +
+|  frontend-web/src/App.jsx                  |   71 +
+|  frontend-web/src/assets/hero.png          |  Bin 0 -> 13057 bytes
+|  frontend-web/src/assets/react.svg         |    1 +
+|  frontend-web/src/assets/vite.svg          |    1 +
+|  frontend-web/src/context/AuthContext.jsx  |   50 +
+|  frontend-web/src/context/CartContext.jsx  |   36 +
+|  frontend-web/src/index.css                |   14 +
+|  frontend-web/src/main.jsx                 |   10 +
+|  frontend-web/src/pages/Cart.jsx           |   79 +
+|  frontend-web/src/pages/Checkout.jsx       |  151 +
+|  frontend-web/src/pages/ForgotPassword.jsx |  100 +
+|  frontend-web/src/pages/Home.jsx           |  116 +
+|  frontend-web/src/pages/Login.jsx          |   69 +
+|  frontend-web/src/pages/ProductDetail.jsx  |   73 +
+|  frontend-web/src/pages/Profile.jsx        |  217 +
+|  frontend-web/src/pages/Register.jsx       |   83 +
+|  frontend-web/tailwind.config.js           |   11 +
+|  frontend-web/vite.config.js               |    7 +
+|  run_servers.sh                            |    5 +
+|  setup_guide.md                            |  117 +
+|  66 files changed, 23232 insertions(+), 2 deletions(-)
+| 
+* commit 2f9bf2bab45855abf211377a5d5eba10031649e3
+  Author: Hanh Tran <ttbhanh@fit.hcmus.edu.vn>
+  Date:   Fri May 15 08:27:44 2026 +0700
+  
+      Initial commit
+  
+   README.md | 2 ++
+   1 file changed, 2 insertions(+)
