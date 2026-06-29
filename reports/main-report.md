@@ -33,8 +33,8 @@ Detailed derivation is kept in the per-feature files linked in the submission sc
 | FR-02   |         34 |     22 |      9 |       0 |            0 |             6 |             38 |
 | FR-07   |         20 |      6 |     14 |       0 |            0 |            10 |             11 |
 | FR-17   |         22 |     13 |      9 |       0 |            0 |             4 |             22 |
-| FR-20   |         19 |      9 |      3 |       7 |            0 |             3 |             11 |
-| Total   |        132 |     55 |     49 |      25 |            0 |            30 |            119 |
+| FR-20   |         19 |      9 |      3 |       7 |            0 |             3 |             18 |
+| Total   |        132 |     55 |     49 |      25 |            0 |            30 |            126 |
 
 ## Self-Assessment
 
@@ -139,7 +139,7 @@ The detailed bug descriptions, reproduction steps, expected results, actual resu
 - FR-17 bug report: [FR-17/bug-report.md](FR-17/bug-report.md)
 - FR-20 bug report: [FR-20/bug-report.md](FR-20/bug-report.md)
 
-GitHub Issue links should be completed in the bug reports after the real issues are created on the group GitHub Issues page. No fake issue links are included.
+GitHub Issue links are recorded in the feature bug reports. No fake issue links are included.
 
 ## AI Use Declaration
 
@@ -155,7 +155,7 @@ AI audit files:
 
 ## AI Critique
 
-The AI was useful for creating a disciplined first version of the Domain Testing and Boundary Value Analysis artifacts, especially when the feature involved many input conditions, invalid partitions, and cross-surface checks. However, the AI was not fully reliable as a final authority. It sometimes mixed setup conditions with feature requirements, treated ambiguous behavior as if it were normative, or produced links to files that later had to be verified manually. In several features, the runtime failures were not AI-missed test ideas: the AI had generated the negative cases, but the real defects only became visible after executing them against the public UI or API. This showed an important distinction between design quality and execution evidence. The AI also needed human correction for scope control, such as keeping only one Pool A feature in the final submission set and separating mobile-runtime blockers from product defects. The main lesson is that AI can accelerate systematic testing, but it must be constrained by explicit test bases, traceability, and evidence rules. Good collaboration with AI means asking it to expose assumptions, then checking every requirement, expected result, execution status, evidence path, and bug claim before submission.
+The AI critique is provided as a separate report file: [ai-critique.md](ai-critique.md).
 
 ## Agent Skill
 

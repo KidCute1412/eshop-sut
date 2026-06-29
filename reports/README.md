@@ -3,6 +3,7 @@
 ## Submission Contents
 
 - Main report: [main-report.md](main-report.md)
+- AI critique: [ai-critique.md](ai-critique.md)
 - Feature reports: [FR-01](FR-01/), [FR-02](FR-02/), [FR-07](FR-07/), [FR-17](FR-17/), [FR-20](FR-20/)
 - AI audit logs: [../ai-audit/](../ai-audit/)
 - Preserved AI prompt/output artifacts: [../evidence/ai-audit-artifacts/](../evidence/ai-audit-artifacts/)
@@ -38,8 +39,8 @@
 | FR-02   |                  34 |       34 |     22 |      9 |       0 |                0 |    6 |             38 |
 | FR-07   |                  20 |       20 |      6 |     14 |       0 |                0 |   10 |             11 |
 | FR-17   |                  22 |       22 |     13 |      9 |       0 |                0 |    4 |             22 |
-| FR-20   |                  19 |       19 |      9 |      3 |       7 |                0 |    3 |             11 |
-| Total   |                 132 |      132 |     55 |     49 |      25 |                0 |   30 |            119 |
+| FR-20   |                  19 |       19 |      9 |      3 |       7 |                0 |    3 |             18 |
+| Total   |                 132 |      132 |     55 |     49 |      25 |                0 |   30 |            126 |
 
 ## Bug Reports
 

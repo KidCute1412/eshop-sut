@@ -138,9 +138,7 @@
 - Actual Result: The mobile login screen displayed labels for `Username` and `Mật khẩu`, but no visible `*` marker or equivalent required-field indicator was shown beside either required field.
 - Status: Fail
 - Evidence: [FR20-DT-008](./evidence/FR20-DT-007.png)
-- Partition or Boundary Covered: FORM-REQUIRED-MARKER-I01
 - Test Basis Reference: `requirement-analysis.md` - FR20-FORM01; `domain-testing.md` - FORM-REQUIRED-MARKER-I01
-- Notes and Assumptions: Applies because visible labels are present in the mobile UI.
 
 ## FR20-DT-009
 
