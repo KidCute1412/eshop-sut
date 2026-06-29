@@ -2,21 +2,68 @@
 
 ## Feature Intake
 
-| Feature ID | Feature Name | Pool | Actor | Application Surface | Requirement Source | API Endpoint / UI Location | Output Directory | Execution Environment |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| {{FEATURE_ID}} | {{FEATURE_NAME}} | {{POOL}} |  |  |  |  |  |  |
+| Field | Value |
+| --- | --- |
+| Feature ID | {{FEATURE_ID}} |
+| Feature Name | {{FEATURE_NAME}} |
+| Pool | {{POOL}} |
+| Actor | TODO |
+| Application Surface | TODO |
+| Requirement Source | TODO |
+| Public API Endpoint | TODO or Not applicable |
+| API Base URL | TODO or Not applicable |
+| UI Location | TODO or Not applicable |
+| Output Directory | `reports/{{FEATURE_ID}}/` |
+| Execution Environment | TODO |
+| Pool Rule Review | Record whether the supplied pool matches the official assignment. Do not reallocate the feature automatically. |
 
-## Pool Rule Review
+## Approved Black-box Test Bases
 
-Record whether the user-supplied selection follows the official pool rule. Do not select or reallocate a feature.
+| Test Basis | Type | Use in This Analysis |
+| --- | --- | --- |
+| `2026.HW02.Domain Testing_En.pdf` | Official requirement | TODO |
+| `README.md` | Official requirement | TODO |
+| `api_specification.md` | API specification | TODO or Not applicable |
+| Public UI observations | Observable UI behaviour | TODO or Not used |
+| Public API observations | Observable API behaviour | TODO or Not used |
 
-## Black-box Rules
+Allowed evidence classes: Official requirement, API specification, Observable UI behaviour, Observable API behaviour, Execution evidence, Assumption, Requirement ambiguity, and Observed contradiction.
+
+## Requirement Rules
+
+| Rule ID | Rule | Test Basis Type | Test Basis Reference | Observable Expected Behaviour | Ambiguity | Assumption |
+| --- | --- | --- | --- | --- | --- | --- |
+| {{FEATURE_COMPACT}}-R01 | TODO | TODO | TODO | TODO | TODO | TODO |
+
+## API Specification Rules
+
+Use this section only when the feature has a public API contract. Otherwise write `Not applicable`.
 
 | Rule ID | Rule | Test Basis Type | Test Basis Reference | Observable Expected Behaviour | Ambiguity | Assumption |
 | --- | --- | --- | --- | --- | --- | --- |
 
-Allowed test basis types: Official requirement, API specification, Observable UI behaviour, Observable API behaviour, Execution evidence, Assumption, Requirement ambiguity, Observed contradiction.
+## Shared Form or Cross-feature Rules
+
+Use this section for public UI rules, shared form requirements, authorization rules, setup-only rules, or cross-feature dependencies. Keep setup rules separate from feature-under-test rules.
+
+| Rule ID | Rule | Test Basis Type | Test Basis Reference | Observable Expected Behaviour | Ambiguity | Assumption |
+| --- | --- | --- | --- | --- | --- | --- |
+
+## Requirement Ambiguities
+
+- TODO
 
 ## Coverage Gaps
 
-- None recorded yet.
+- TODO
+
+## Human Review
+
+- Reviewer: TODO
+- Review Date and Time: TODO
+- Review Scope: Feature Intake and Black-box Test Basis Collection
+- Corrections Made: TODO
+- Missing Rules or Test Bases: TODO
+- Status: Pending
+- Approved for Domain Modeling: No
+- Approved for Test Execution: No

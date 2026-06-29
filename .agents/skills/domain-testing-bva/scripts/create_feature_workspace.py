@@ -15,12 +15,10 @@ FILES = {
     "domain-testing.md": "domain-table-template.md",
     "boundary-value-analysis.md": "bva-table-template.md",
     "test-cases.md": "test-case-template.md",
-    "traceability-matrix.md": "traceability-template.md",
-    "execution-summary.md": "execution-summary-template.md",
     "bug-report.md": "bug-report-template.md",
     "ai-gap-analysis.md": "ai-gap-analysis-template.md",
-    "evidence/evidence-index.md": "evidence-index-template.md",
 }
+EXTRA_DIRS = ("evidence",)
 
 
 def non_empty(value: str) -> str:
@@ -83,6 +81,12 @@ def main() -> int:
             created.append(str(target))
         except OSError as exc:
             failed.append(f"{target}: {exc}")
+    for relative in EXTRA_DIRS:
+        target_dir = out_dir / relative
+        try:
+            target_dir.mkdir(parents=True, exist_ok=True)
+        except OSError as exc:
+            failed.append(f"{target_dir}: {exc}")
 
     print(f"Workspace: {out_dir}")
     for label, items in (("Created/updated", created), ("Skipped existing", skipped), ("Failed", failed)):

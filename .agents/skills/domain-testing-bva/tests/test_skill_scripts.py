@@ -51,9 +51,16 @@ class SkillScriptsTests(unittest.TestCase):
                 result = run(CREATE, "--feature-id", feature, "--feature-name", "Feature", "--pool", pool, "--output", temp)
                 self.assertEqual(result.returncode, 0, result.stderr)
                 workspace = Path(temp) / feature
-                self.assertTrue((workspace / "execution-summary.md").is_file())
+                self.assertTrue((workspace / "requirement-analysis.md").is_file())
+                self.assertTrue((workspace / "domain-testing.md").is_file())
+                self.assertTrue((workspace / "boundary-value-analysis.md").is_file())
+                self.assertTrue((workspace / "test-cases.md").is_file())
                 self.assertTrue((workspace / "bug-report.md").is_file())
-                self.assertTrue((workspace / "evidence" / "evidence-index.md").is_file())
+                self.assertTrue((workspace / "ai-gap-analysis.md").is_file())
+                self.assertTrue((workspace / "evidence").is_dir())
+                self.assertFalse((workspace / "execution-summary.md").exists())
+                self.assertFalse((workspace / "traceability-matrix.md").exists())
+                self.assertFalse((workspace / "evidence" / "evidence-index.md").exists())
             marker = Path(temp) / "FR-01" / "test-cases.md"
             marker.write_text("preserve me", encoding="utf-8")
             result = run(CREATE, "--feature-id", "FR-01", "--feature-name", "Feature", "--pool", "A", "--output", temp)
