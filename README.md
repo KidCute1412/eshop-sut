@@ -286,3 +286,69 @@ Tại bước Checkout, người dùng có thể nhập mã giảm giá. Hệ th
 ---
 
 _Tài liệu này phục vụ cho mục đích học tập và thực hành Kiểm thử Phần mềm. Phiên bản: 2.0 — Cập nhật: 2026-05-14._
+
+---
+
+# Test Summary Report
+
+## Features Tested
+
+| Tính năng | Mô tả | Số TC Domain Testing | Số TC BVA | Tổng TC |
+| --- | --- | ---: | ---: | ---: |
+| FR-03 | Forgot Password & Reset (Web) | 8 | 9 | 17 |
+| FR-09 | Discount Coupons | 10 | 8 | 18 |
+| FR-13 | Admin Dashboard | 9 | 3 | 12 |
+| FR-03M | Forgot Password & Reset (Mobile) | 18 | 9 | 27 |
+| **Tổng cộng** | | **45** | **29** | **74** |
+
+## Test Execution Results
+
+| Tính năng | Passed | Failed | Blocked | Not Executed | Needs Review |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| FR-03 | 5 | 5 | 2 | 5 | 0 |
+| FR-09 | 10 | 7 | 0 | 1 | 0 |
+| FR-13 | 1 | 6 | 1 | 4 | 0 |
+| FR-03M | 0 | 0 | 27 | 0 | 0 |
+| **Tổng cộng** | **16** | **18** | **30** | **10** | **0** |
+
+Tổng cộng **74 test case** được thiết kế (45 Domain Testing + 29 BVA) cho 4 tính năng. Kết quả thực thi: **16 Passed**, **18 Failed**, **30 Blocked**, **10 Not Executed**.
+
+FR-03M bị block hoàn toàn (27/27 TC) do network timeout trên mobile — mobile app hardcode IP `192.168.10.13` không match máy thật. FR-03, FR-09, FR-13 đã thực thi qua API/web, phát hiện nhiều lỗi chức năng.
+
+## Defects Found
+
+| Bug ID | Tính năng | Tiêu đề | Severity | GitHub Issue |
+| --- | --- | --- | --- | --- |
+| BUG-FR03-001 | FR-03 | Backend chấp nhận mật khẩu yếu khi đặt lại mật khẩu | High | [#25](https://github.com/KidCute1412/eshop-sut/issues/25) |
+| BUG-FR03-002 | FR-03 | OTP thực tế 4 chữ số thay vì 6 chữ số | Medium | [#26](https://github.com/KidCute1412/eshop-sut/issues/26) |
+| BUG-FR03-003 | FR-03 | Giao diện thiếu trường xác nhận mật khẩu mới | Medium | [#27](https://github.com/KidCute1412/eshop-sut/issues/27) |
+| BUG-FR03-004 | FR-03 | Regex mật khẩu sai: yêu cầu khoảng trắng thay vì ký tự đặc biệt | Medium | [#28](https://github.com/KidCute1412/eshop-sut/issues/28) |
+| BUG-FR09-001 | FR-09 | Coupon bị từ chối khi total bằng đúng min_order_amount | High | [#29](https://github.com/KidCute1412/eshop-sut/issues/29) |
+| BUG-FR09-002 | FR-09 | Công thức coupon phần trăm sai, discount âm | High | [#30](https://github.com/KidCute1412/eshop-sut/issues/30) |
+| BUG-FR09-003 | FR-09 | API cho áp dụng coupon khi không có user/token | High | [#31](https://github.com/KidCute1412/eshop-sut/issues/31) |
+| BUG-FR09-004 | FR-09 | Bypass kiểm tra giới hạn coupon khi không gửi user_id | Medium | [#32](https://github.com/KidCute1412/eshop-sut/issues/32) |
+| BUG-FR09-005 | FR-09 | Test data user bị nhiễm trạng thái VIP100 | Low | [#51](https://github.com/KidCute1412/eshop-sut/issues/51) |
+| BUG-FR13-001 | FR-13 | Dashboard hiển thị doanh thu gấp đôi | High | [#34](https://github.com/KidCute1412/eshop-sut/issues/34) |
+| BUG-FR13-002 | FR-13 | User thường truy cập được tài nguyên admin | High | [#35](https://github.com/KidCute1412/eshop-sut/issues/35) |
+| BLOCKER-FR03M-001 | FR-03M | Mọi request mobile bị network timeout | High | [#50](https://github.com/KidCute1412/eshop-sut/issues/50) |
+
+**Tổng số lỗi: 14** (6 High, 6 Medium, 2 Low)
+
+## Demo Videos
+
+| Demo ID | Tính năng | Test case / Bug liên quan | Link video | Mô tả |
+| --- | --- | --- | --- | --- |
+| `<DEMO-001>` | `<Tính năng>` | `<TC / Bug ID>` | `<YouTube / Drive link>` | `<Mô tả>` |
+
+---
+
+# Self-Assessment
+
+| STT | Tiêu chí | Điểm tối đa | Điểm tự đánh giá | Giải thích |
+| --- | --- | ---: | ---: | --- |
+| 1 | Tính năng A: Domain Testing + Boundary Value Analysis | 25 | `<Điểm>` | `<Giải thích>` |
+| 2 | Tính năng B: Domain Testing + Boundary Value Analysis | 25 | `<Điểm>` | `<Giải thích>` |
+| 3 | Tính năng C: Domain Testing + Boundary Value Analysis | 25 | `<Điểm>` | `<Giải thích>` |
+| 4 | Tính năng D: Mobile, Domain Testing + Boundary Value Analysis | 15 | `<Điểm>` | `<Giải thích>` |
+| 5 | Agent Skills | 10 | `<Điểm>` | `<Giải thích>` |
+| **Tổng cộng** | | **100** | `<Tổng điểm>` | |

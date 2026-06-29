@@ -466,3 +466,17 @@ System.ArgumentException: The value cannot be an empty string. (Parameter 'oldVa
 2026-06-28 02:29:25.490 - Image copied to clipboard.
 2026-06-28 02:29:25.515 - Image saved to file: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\Screenshots\2026-06\chrome_UQwg8qU614.png
 2026-06-28 02:29:25.529 - Task completed. File name: chrome_UQwg8qU614.png, Duration: 68 ms
+2026-06-28 18:24:04.795 - UploadersConfig save started: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\UploadersConfig.json
+2026-06-28 18:24:04.795 - ApplicationConfig save started: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\ApplicationConfig.json
+2026-06-28 18:24:04.799 - HotkeysConfig save started: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\HotkeysConfig.json
+2026-06-28 18:24:04.876 - HotkeysConfig save successful: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\HotkeysConfig.json
+2026-06-28 18:24:04.911 - UploadersConfig save successful: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\UploadersConfig.json
+2026-06-28 18:24:04.998 - ApplicationConfig save successful: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\ApplicationConfig.json
+2026-06-28 18:24:13.048 - ShareX closing.
+2026-06-28 18:24:13.077 - ApplicationConfig save started: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\ApplicationConfig.json
+2026-06-28 18:24:13.211 - ApplicationConfig save successful: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\ApplicationConfig.json
+2026-06-28 18:24:13.212 - UploadersConfig save started: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\UploadersConfig.json
+2026-06-28 18:24:13.298 - UploadersConfig save successful: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\UploadersConfig.json
+2026-06-28 18:24:13.298 - HotkeysConfig save started: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\HotkeysConfig.json
+2026-06-28 18:24:13.319 - HotkeysConfig save successful: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\evidence\HotkeysConfig.json
+2026-06-28 18:24:13.319 - ShareX closed.

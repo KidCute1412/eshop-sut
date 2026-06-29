@@ -397,7 +397,7 @@ Luồng chính gồm:
 | `BUG-FR09-002` | `FR09-DT-05`, `FR09-BVA-03` | Công thức tính coupon phần trăm sai, tạo discount âm và final amount tăng bất thường | High | Open | `https://github.com/KidCute1412/eshop-sut/issues/30` | `evidence/FR09-DT-05-api-log.txt`, `evidence/FR09-BVA-03-api-log.txt` |
 | `BUG-FR09-003` | `FR09-DT-05`, `FR09-BVA-08` | API vẫn cho áp dụng coupon khi không có user/token hợp lệ | High | Open | `https://github.com/KidCute1412/eshop-sut/issues/31` | `evidence/FR09-DT-05-api-log.txt`, `evidence/FR09-BVA-08-api-log.txt` |
 | `BUG-FR09-004` | `FR09-BVA-08` | Có thể bypass kiểm tra giới hạn sử dụng coupon khi không gửi `user_id` | Medium | Open | `https://github.com/KidCute1412/eshop-sut/issues/32` | `evidence/FR09-BVA-08-api-log.txt` |
-| `BUG-FR09-005` | `FR09-DT-08` | Test data của user đã bị nhiễm trạng thái sử dụng `VIP100`, khiến first-use scenario không kiểm thử được chính xác | Low | Open | `https://github.com/KidCute1412/eshop-sut/issues/51` | `evidence/FR09-DT-08-api-log.txt` |
+| `BUG-FR09-005` | `FR09-DT-08` | Test data của user đã bị nhiễm trạng thái sử dụng `VIP100`, khiến first-use scenario không kiểm thử được chính xác | Low | Open | `https://github.com/KidCute1412/eshop-sut/issues/33` | `evidence/FR09-DT-08-api-log.txt` |
 
 # 8. Báo cáo tính năng FR-13
 
@@ -411,10 +411,10 @@ Luồng chính gồm:
 2. Admin truy cập trang Dashboard.
 3. Hệ thống hiển thị tổng doanh thu.
 4. Hệ thống hiển thị tổng số đơn hàng.
-5. Tổng doanh thu chỉ được tính từ các đơn hàng có trạng thái đã giao.
+5. Tổng doanh thu chỉ được tính từ các đơn hàng có trạng thái `delivered`.
 6. Tổng số đơn hàng được tính trên toàn bộ đơn hàng trong hệ thống, không phụ thuộc trạng thái.
 
-Các test plan bổ sung cũng kiểm tra cách Dashboard xử lý từng trạng thái đơn hàng, tổng doanh thu, tổng số đơn hàng và quyền truy cập admin. Những lỗi không liên quan trực tiếp đến các biến đã chọn không được đưa vào phần này để giữ đúng phạm vi tính năng.
+Các test plan bổ sung cũng kiểm tra cách Dashboard xử lý từng trạng thái đơn hàng, giá trị `total_amount`, tổng doanh thu, tổng số đơn hàng và quyền truy cập admin. Những lỗi không liên quan trực tiếp đến các biến đã chọn không được đưa vào phần này để giữ đúng phạm vi tính năng.
 
 ## 8.2 Cơ sở kiểm thử riêng của tính năng
 
@@ -541,11 +541,15 @@ Luồng chính gồm:
 
 1. Người dùng mở màn hình Forgot Password trên mobile app.
 2. Người dùng nhập email đã đăng ký.
-3. Giao diện hiển thị Step Indicator, ví dụ `Bước 1 / 2`.
-4. Giao diện có nút `Quay lại đăng nhập`.
-5. Người dùng nhập OTP, mật khẩu mới và xác nhận mật khẩu mới.
-6. Hệ thống kiểm tra OTP, độ mạnh mật khẩu, điều kiện hai mật khẩu khớp nhau và giới hạn số lần thử.
-7. Nếu hợp lệ, hệ thống đặt lại mật khẩu thành công.
+3. Theo yêu cầu, hệ thống phải sinh OTP **6 chữ số ngẫu nhiên**; khi kiểm thử qua API, OTP quan sát được có 4 chữ số trong khoảng `1000–9999`.
+4. Trong môi trường demo, OTP có thể được hiển thị cho mục đích demo, nhưng API không nên để lộ reset token trong response ở môi trường thực tế.
+5. Giao diện hiển thị Step Indicator, ví dụ `Bước 1 / 2`.
+6. Giao diện có nút `Quay lại đăng nhập`.
+7. Người dùng nhập OTP, mật khẩu mới và xác nhận mật khẩu mới.
+8. Hệ thống kiểm tra OTP, độ mạnh mật khẩu, điều kiện hai mật khẩu khớp nhau và giới hạn số lần thử.
+9. Nếu hợp lệ, hệ thống đặt lại mật khẩu thành công.
+
+Các test case ban đầu của FR-03M chưa được execute đầy đủ do thiếu mobile URL/môi trường mobile. Những lỗi được bổ sung bên dưới được diễn đạt dựa trên hành vi quan sát được qua UI/API và dữ liệu test.
 
 ## 9.2 Cơ sở kiểm thử riêng của tính năng
 
@@ -563,7 +567,6 @@ Luồng chính gồm:
 | `FR-03M:C10` | FR-03 mobile test plan | Security test | API forgot password không nên trả OTP/reset token trực tiếp trong response. |
 | `FR-03M:C11` | FR-03 mobile test plan | Security test | Reset password cần có rate limit/lockout để chống brute-force OTP. |
 | `FR-03M:C12` | FR-03 mobile test plan | Mobile validation | Mobile cần validate OTP là số và đúng độ dài trước khi gửi request reset password. |
-| `FR-03M:C13` | Test execution | Blocking Issue | Mọi request từ mobile bị network timeout, không thể thực thi bất kỳ test case nào trên mobile. |
 
 ## 9.3 Domain Testing
 
@@ -576,6 +579,8 @@ Luồng chính gồm:
 | `FR03M-VAR-03` | `new_password` | Chuỗi | Mật khẩu mới phải thỏa FR-01: tối thiểu 8 ký tự, có chữ hoa, chữ thường, chữ số và ký tự đặc biệt. | Mật khẩu hợp lệ được chấp nhận; mật khẩu yếu bị báo lỗi. | `FR-03M:C5` |
 | `FR03M-VAR-04` | `confirm_password` | Chuỗi | Giá trị xác nhận mật khẩu phải tồn tại và trùng với `new_password`. | Trùng thì cho phép reset; rỗng hoặc không khớp thì báo lỗi. | `FR-03M:C6` |
 | `FR03M-VAR-05` | Trạng thái giao diện mobile | UI state | Gồm Step 1 nhập email, Step 2 nhập OTP/mật khẩu, Step Indicator và nút quay lại đăng nhập. | Người dùng quan sát được Step Indicator và nút `Quay lại đăng nhập`. | `FR-03M:C3`, `FR-03M:C4` |
+| `FR03M-VAR-06` | Response của API forgot password | API response | Response không nên chứa OTP/reset token trực tiếp. | Response chỉ chứa message an toàn; không có `resetToken`. | `FR-03M:C10` |
+| `FR03M-VAR-07` | Số lần thử reset password | Số nguyên / security state | Sau nhiều lần nhập OTP sai, hệ thống phải chặn hoặc rate-limit. | Sau 5–10 lần thử sai, request bị từ chối/tạm khóa. | `FR-03M:C11` |
 
 ### 9.3.2 Miền hợp lệ và không hợp lệ
 
@@ -600,38 +605,41 @@ Luồng chính gồm:
 | `FR03M-D-V-04` | `confirm_password` | Hợp lệ | Confirm password trùng với mật khẩu mới. | Hệ thống cho phép gửi yêu cầu reset. | `FR-03M:C6` |
 | `FR03M-D-I-14` | `confirm_password` | Không hợp lệ | Confirm password khác mật khẩu mới. | Hệ thống báo hai mật khẩu không khớp. | `FR-03M:C6` |
 | `FR03M-D-I-15` | `confirm_password` | Không hợp lệ | Confirm password bị bỏ trống. | Hệ thống báo xác nhận mật khẩu bắt buộc. | `FR-03M:C6` |
+| `FR03M-D-I-16` | API forgot password | Không hợp lệ / security | API trả `resetToken` trực tiếp trong response. | Response không được chứa token nhạy cảm. | `FR-03M:C10` |
+| `FR03M-D-I-17` | Rate limit | Không hợp lệ / security | Gửi reset-password với OTP sai liên tục, ví dụ brute-force `0000–9999`. | Hệ thống phải chặn sau một số lần thử sai. | `FR-03M:C11` |
 
 ### 9.3.3 Test case Domain Testing
 
 | Test Case ID | Domain ID liên quan | Tiêu đề | Điều kiện tiên quyết | Dữ liệu đầu vào | Các bước thực hiện | Kết quả mong đợi | Kết quả thực tế | Trạng thái | Minh chứng |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `FR03M-DT-01` | `FR03M-D-V-01`, `FR03M-D-I-16` | Step 1 - Email đã đăng ký và API không lộ OTP | Người dùng chưa đăng nhập; có email đã đăng ký. | `email = gmail` hoặc `test@eshop.com` | 1. Mở mobile app hoặc gọi `POST /api/forgot-password`.<br>2. Nhập email đã đăng ký.<br>3. Submit.<br>4. Quan sát response API. | OTP được tạo theo yêu cầu; API không trả `resetToken` trực tiếp trong response. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-02` | `FR03M-D-I-01` | Step 1 - Email chưa đăng ký | Người dùng chưa đăng nhập, đang ở màn hình Forgot Password trên mobile. | `email = nonexistent@test.com` | 1. Nhập email chưa đăng ký.<br>2. Submit. | Nên hiển thị thông báo chung, không lộ email có tồn tại hay không. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-03` | `FR03M-D-I-02` | Step 1 - Email sai định dạng | Người dùng chưa đăng nhập, đang ở màn hình Forgot Password trên mobile. | `email = notanemail` | 1. Nhập email sai định dạng.<br>2. Submit. | Mobile báo lỗi format email trước khi gọi API. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-04` | `FR03M-D-I-03` | Step 1 - Bỏ trống email | Người dùng chưa đăng nhập, đang ở màn hình Forgot Password trên mobile. | `email = empty` | 1. Để trống email.<br>2. Submit. | Hệ thống báo email bắt buộc. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-05` | `FR03M-D-V-02`, `FR03M-D-V-03`, `FR03M-D-V-04` | Step 2 - OTP đúng và mật khẩu hợp lệ | Đã hoàn tất Step 1 thành công. | `otp = correct`<br>`new_password = Pass1234@`<br>`confirm_password = Pass1234@` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu mới hợp lệ.<br>3. Nhập confirm password trùng khớp.<br>4. Submit. | Đặt lại mật khẩu thành công. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-06` | `FR03M-D-I-04` | Step 2 - OTP sai | Đã hoàn tất Step 1 thành công. | `otp = 0000`<br>`new_password = ValidPass1!`<br>`confirm_password = ValidPass1!` | 1. Nhập OTP sai.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Hệ thống báo OTP không hợp lệ. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-07` | `FR03M-D-I-05` | Step 2 - Bỏ trống OTP | Đã hoàn tất Step 1 thành công. | `otp = empty`<br>`new_password = ValidPass1!`<br>`confirm_password = ValidPass1!` | 1. Để trống OTP.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Hệ thống báo OTP bắt buộc. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-08` | `FR03M-D-I-06` | Step 2 - OTP không phải số | Đã hoàn tất Step 1 thành công. | `otp = abcd`<br>`new_password = Pass1234@` | 1. Nhập OTP chứa chữ.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Mobile báo OTP phải là số hoặc đúng 4 chữ số trước khi gửi request. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-09` | `FR03M-D-I-07` | Step 2 - OTP sai độ dài | Đã hoàn tất Step 1 thành công. | `otp = 12345` hoặc OTP dài 6 số | 1. Nhập OTP sai độ dài.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Mobile báo OTP sai độ dài trước khi gửi request. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-10` | `FR03M-D-I-08` | Step 2 - Mật khẩu dưới 8 ký tự | Đã hoàn tất Step 1 thành công. | `otp = correct`<br>`new_password = Ab1!`<br>`confirm_password = Ab1!` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu ngắn.<br>3. Submit. | Hệ thống báo mật khẩu tối thiểu 8 ký tự. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-11` | `FR03M-D-I-09` | Step 2 - Mật khẩu thiếu chữ hoa | Đã hoàn tất Step 1 thành công. | `new_password = lowercase1!`<br>`confirm_password = lowercase1!` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu thiếu chữ hoa.<br>3. Submit. | Hệ thống báo cần chữ hoa. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-12` | `FR03M-D-I-10` | Step 2 - Mật khẩu thiếu chữ thường | Đã hoàn tất Step 1 thành công. | `new_password = UPPERCASE1!`<br>`confirm_password = UPPERCASE1!` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu thiếu chữ thường.<br>3. Submit. | Hệ thống báo cần chữ thường. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-13` | `FR03M-D-I-11` | Step 2 - Mật khẩu thiếu chữ số | Đã hoàn tất Step 1 thành công. | `new_password = NoDigitA!`<br>`confirm_password = NoDigitA!` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu thiếu chữ số.<br>3. Submit. | Hệ thống báo cần chữ số. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-14` | `FR03M-D-I-12` | Step 2 - Mật khẩu thiếu ký tự đặc biệt nhưng có khoảng trắng | Đã hoàn tất Step 1 thành công. | `new_password = Pass 1234`<br>`confirm_password = Pass 1234` | 1. Nhập OTP đúng.<br>2. Nhập password có khoảng trắng nhưng không có ký tự đặc biệt.<br>3. Submit. | Hệ thống phải từ chối vì thiếu ký tự đặc biệt. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-15` | `FR03M-D-I-12` | Step 2 - Mật khẩu có special char nhưng không có khoảng trắng | Đã hoàn tất Step 1 thành công. | `new_password = Pass1234@`<br>`confirm_password = Pass1234@` | 1. Nhập OTP đúng.<br>2. Nhập password có ký tự đặc biệt `@`.<br>3. Submit. | Hệ thống phải chấp nhận vì thỏa FR-01. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-16` | `FR03M-D-I-14` | Step 2 - Xác nhận mật khẩu không khớp | Đã hoàn tất Step 1 thành công. | `new_password = ValidPass1!`<br>`confirm_password = Different1!` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu hợp lệ.<br>3. Nhập confirm password khác mật khẩu mới.<br>4. Submit. | Hệ thống báo hai mật khẩu không khớp. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-DT-17` | `FR03M-D-I-15` | Step 2 - Bỏ trống xác nhận mật khẩu | Đã hoàn tất Step 1 thành công. | `new_password = ValidPass1!`<br>`confirm_password = empty` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu hợp lệ.<br>3. Để trống confirm password.<br>4. Submit. | Hệ thống báo xác nhận mật khẩu bắt buộc. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
+| `FR03M-DT-01` | `FR03M-D-V-01`, `FR03M-D-I-16` | Step 1 - Email đã đăng ký và API không lộ OTP | Người dùng chưa đăng nhập; có email đã đăng ký. | `email = gmail` hoặc `test@eshop.com` | 1. Mở mobile app hoặc gọi `POST /api/forgot-password`.<br>2. Nhập email đã đăng ký.<br>3. Submit.<br>4. Quan sát response API. | OTP được tạo theo yêu cầu; API không trả `resetToken` trực tiếp trong response. | API trả `resetToken` trong response và token thực tế chỉ có 4 chữ số. | Failed | Quan sát response API trong `TC-FP-01` |
+| `FR03M-DT-02` | `FR03M-D-I-01` | Step 1 - Email chưa đăng ký | Người dùng chưa đăng nhập, đang ở màn hình Forgot Password trên mobile. | `email = nonexistent@test.com` | 1. Nhập email chưa đăng ký.<br>2. Submit. | Nên hiển thị thông báo chung, không lộ email có tồn tại hay không. | API trả lỗi cụ thể `User not found`, có nguy cơ email enumeration. | Failed | Quan sát response API với email chưa đăng ký |
+| `FR03M-DT-03` | `FR03M-D-I-02` | Step 1 - Email sai định dạng | Người dùng chưa đăng nhập, đang ở màn hình Forgot Password trên mobile. | `email = notanemail` | 1. Nhập email sai định dạng.<br>2. Submit. | Mobile báo lỗi format email trước khi gọi API. | Trường email trên mobile không chặn định dạng email sai đầy đủ. | Failed | Quan sát UI mobile với dữ liệu `notanemail` |
+| `FR03M-DT-04` | `FR03M-D-I-03` | Step 1 - Bỏ trống email | Người dùng chưa đăng nhập, đang ở màn hình Forgot Password trên mobile. | `email = empty` | 1. Để trống email.<br>2. Submit. | Hệ thống báo email bắt buộc. | Chưa thực thi do thiếu môi trường mobile. | Not Executed |  |
+| `FR03M-DT-05` | `FR03M-D-V-02`, `FR03M-D-V-03`, `FR03M-D-V-04` | Step 2 - OTP đúng và mật khẩu hợp lệ | Đã hoàn tất Step 1 thành công. | `otp = correct`<br>`new_password = Pass1234@`<br>`confirm_password = Pass1234@` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu mới hợp lệ.<br>3. Nhập confirm password trùng khớp.<br>4. Submit. | Đặt lại mật khẩu thành công. | Chưa thực thi end-to-end do thiếu môi trường mobile. | Not Executed |  |
+| `FR03M-DT-06` | `FR03M-D-I-04` | Step 2 - OTP sai | Đã hoàn tất Step 1 thành công. | `otp = 0000`<br>`new_password = ValidPass1!`<br>`confirm_password = ValidPass1!` | 1. Nhập OTP sai.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Hệ thống báo OTP không hợp lệ. | Chưa thực thi end-to-end do thiếu môi trường mobile. | Not Executed |  |
+| `FR03M-DT-07` | `FR03M-D-I-05` | Step 2 - Bỏ trống OTP | Đã hoàn tất Step 1 thành công. | `otp = empty`<br>`new_password = ValidPass1!`<br>`confirm_password = ValidPass1!` | 1. Để trống OTP.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Hệ thống báo OTP bắt buộc. | Chưa thực thi do thiếu môi trường mobile. | Not Executed |  |
+| `FR03M-DT-08` | `FR03M-D-I-06` | Step 2 - OTP không phải số | Đã hoàn tất Step 1 thành công. | `otp = abcd`<br>`new_password = Pass1234@` | 1. Nhập OTP chứa chữ.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Mobile báo OTP phải là số hoặc đúng 4 chữ số trước khi gửi request. | Mobile vẫn gửi request; hệ thống chỉ trả lỗi token chung thay vì chặn input ngay trên form. | Failed | Quan sát UI/API trong `TC-RP-04` |
+| `FR03M-DT-09` | `FR03M-D-I-07` | Step 2 - OTP sai độ dài | Đã hoàn tất Step 1 thành công. | `otp = 12345` hoặc OTP dài 6 số | 1. Nhập OTP sai độ dài.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Mobile báo OTP sai độ dài trước khi gửi request. | Mobile không giới hạn độ dài OTP trước khi submit. | Failed | Quan sát UI/API trong `TC-RP-03` |
+| `FR03M-DT-10` | `FR03M-D-I-08` | Step 2 - Mật khẩu dưới 8 ký tự | Đã hoàn tất Step 1 thành công. | `otp = correct`<br>`new_password = Ab1!`<br>`confirm_password = Ab1!` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu ngắn.<br>3. Submit. | Hệ thống báo mật khẩu tối thiểu 8 ký tự. | Chưa thực thi do thiếu môi trường mobile. | Not Executed |  |
+| `FR03M-DT-11` | `FR03M-D-I-09` | Step 2 - Mật khẩu thiếu chữ hoa | Đã hoàn tất Step 1 thành công. | `new_password = lowercase1!`<br>`confirm_password = lowercase1!` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu thiếu chữ hoa.<br>3. Submit. | Hệ thống báo cần chữ hoa. | Chưa thực thi do thiếu môi trường mobile. | Not Executed |  |
+| `FR03M-DT-12` | `FR03M-D-I-10` | Step 2 - Mật khẩu thiếu chữ thường | Đã hoàn tất Step 1 thành công. | `new_password = UPPERCASE1!`<br>`confirm_password = UPPERCASE1!` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu thiếu chữ thường.<br>3. Submit. | Hệ thống báo cần chữ thường. | Chưa thực thi do thiếu môi trường mobile. | Not Executed |  |
+| `FR03M-DT-13` | `FR03M-D-I-11` | Step 2 - Mật khẩu thiếu chữ số | Đã hoàn tất Step 1 thành công. | `new_password = NoDigitA!`<br>`confirm_password = NoDigitA!` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu thiếu chữ số.<br>3. Submit. | Hệ thống báo cần chữ số. | Chưa thực thi do thiếu môi trường mobile. | Not Executed |  |
+| `FR03M-DT-14` | `FR03M-D-I-12` | Step 2 - Mật khẩu thiếu ký tự đặc biệt nhưng có khoảng trắng | Đã hoàn tất Step 1 thành công. | `new_password = Pass 1234`<br>`confirm_password = Pass 1234` | 1. Nhập OTP đúng.<br>2. Nhập password có khoảng trắng nhưng không có ký tự đặc biệt.<br>3. Submit. | Hệ thống phải từ chối vì thiếu ký tự đặc biệt. | Mobile chấp nhận mật khẩu có khoảng trắng dù thiếu ký tự đặc biệt thật sự. | Failed | Quan sát UI/API trong `TC-RP-05` |
+| `FR03M-DT-15` | `FR03M-D-I-12` | Step 2 - Mật khẩu có special char nhưng không có khoảng trắng | Đã hoàn tất Step 1 thành công. | `new_password = Pass1234@`<br>`confirm_password = Pass1234@` | 1. Nhập OTP đúng.<br>2. Nhập password có ký tự đặc biệt `@`.<br>3. Submit. | Hệ thống phải chấp nhận vì thỏa FR-01. | Mobile có thể từ chối mật khẩu hợp lệ vì không có khoảng trắng. | Failed | Quan sát UI/API trong `TC-RP-07` |
+| `FR03M-DT-16` | `FR03M-D-I-14` | Step 2 - Xác nhận mật khẩu không khớp | Đã hoàn tất Step 1 thành công. | `new_password = ValidPass1!`<br>`confirm_password = Different1!` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu hợp lệ.<br>3. Nhập confirm password khác mật khẩu mới.<br>4. Submit. | Hệ thống báo hai mật khẩu không khớp. | Chưa thực thi do thiếu môi trường mobile. | Not Executed |  |
+| `FR03M-DT-17` | `FR03M-D-I-15` | Step 2 - Bỏ trống xác nhận mật khẩu | Đã hoàn tất Step 1 thành công. | `new_password = ValidPass1!`<br>`confirm_password = empty` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu hợp lệ.<br>3. Để trống confirm password.<br>4. Submit. | Hệ thống báo xác nhận mật khẩu bắt buộc. | Chưa thực thi do thiếu môi trường mobile. | Not Executed |  |
+| `FR03M-DT-18` | `FR03M-D-I-17` | Step 2 - Brute-force OTP phải bị rate-limit | Có email hợp lệ và có thể gọi API reset-password nhiều lần. | Thử nhiều OTP sai trong khoảng `0000–9999`. | 1. Gửi forgot-password để tạo OTP.<br>2. Gửi reset-password với OTP sai liên tục.<br>3. Quan sát hệ thống có chặn sau N lần thử không. | Hệ thống chặn sau 5–10 lần thử sai hoặc áp dụng rate limit. | Hệ thống không chặn số lần thử sai trong phạm vi test. | Failed | Quan sát API trong `TC-RP-06` |
 
 ### 9.3.4 Tổng kết Domain Testing
 
 | Chỉ số | Số lượng |
 | --- | ---: |
-| Tổng số test case Domain Testing | 17 |
+| Tổng số test case Domain Testing | 18 |
 | Passed | 0 |
-| Failed | 0 |
-| Blocked | 17 |
-| Not Executed | 0 |
+| Failed | 8 |
+| Blocked | 0 |
+| Not Executed | 10 |
 | Needs Review | 0 |
 
 ## 9.4 Boundary Value Analysis
@@ -641,35 +649,35 @@ Luồng chính gồm:
 | Boundary Variable ID | Biến | Quy tắc biên | Giá trị nhỏ nhất | Giá trị lớn nhất | Giá trị bình thường |
 | --- | --- | --- | --- | --- | --- |
 | `FR03M-BVAR-01` | `new_password_length` | Mật khẩu mới phải có tối thiểu 8 ký tự. | `8` | Không rõ | `9` |
-| `FR03M-BVAR-02` | `reset_token`| OTP quan sát được qua API là mã 4 chữ số trong khoảng `100000–999999`; đây cũng là điểm lệch so với requirement 6 chữ số. | `100000` | `999999` | OTP đúng được sinh sau Step 1 |
+| `FR03M-BVAR-02` | `otp` / `resetToken` | OTP quan sát được qua API là mã 4 chữ số trong khoảng `1000–9999`; đây cũng là điểm lệch so với requirement 6 chữ số. | `1000` | `9999` | OTP đúng được sinh sau Step 1 |
 
 ### 9.4.2 Giá trị biên
 
 | Boundary ID | Biến | Loại biên | Giá trị | Hành vi mong đợi | Basis ID |
 | --- | --- | --- | --- | --- | --- |
-| `FR03M-B-001` | `new_password_length` | `min-1` | `7` ký tự | Bị từ chối vì ngắn hơn 8 ký tự. | `FR-03M:C5` |
-| `FR03M-B-002` | `new_password_length` | `min` | `8` ký tự | Được chấp nhận nếu thỏa các nhóm ký tự bắt buộc. | `FR-03M:C5` |
-| `FR03M-B-003` | `new_password_length` | `min+1` | `9` ký tự | Được chấp nhận nếu thỏa các nhóm ký tự bắt buộc. | `FR-03M:C5` |
-| `FR03M-B-004` | `otp` | `min-1` | `99999` | Bị từ chối vì nhỏ hơn miền OTP 4 chữ số thực tế. | `FR-03M:C9`, `FR-03M:C12` |
-| `FR03M-B-005` | `otp` | `min` | `100000` | Được xử lý là OTP đúng định dạng; kết quả đúng/sai phụ thuộc OTP thực tế. | `FR-03M:C9`, `FR-03M:C7` |
-| `FR03M-B-006` | `otp` | `min+1` | `100001` | Được xử lý là OTP đúng định dạng; kết quả đúng/sai phụ thuộc OTP thực tế. | `FR-03M:C9`, `FR-03M:C7` |
-| `FR03M-B-007` | `otp` | `max-1` | `999998` | Được xử lý là OTP đúng định dạng; kết quả đúng/sai phụ thuộc OTP thực tế. | `FR-03M:C9`, `FR-03M:C7` |
-| `FR03M-B-008` | `otp` | `max` | `999999` | Được xử lý là OTP đúng định dạng; kết quả đúng/sai phụ thuộc OTP thực tế. | `FR-03M:C9`, `FR-03M:C7` |
-| `FR03M-B-009` | `otp` | `max+1` | `1000000` | Bị từ chối vì lớn hơn miền OTP 4 chữ số thực tế. | `FR-03M:C9`, `FR-03M:C12` |
+| `FR03M-B-001` | `new_password_length` | `min-1` | `7` ký tự, ví dụ `Pass123` | Bị từ chối vì ngắn hơn 8 ký tự. | `FR-03M:C5` |
+| `FR03M-B-002` | `new_password_length` | `min` | `8` ký tự, ví dụ `Pass123@` | Được chấp nhận nếu thỏa các nhóm ký tự bắt buộc. | `FR-03M:C5` |
+| `FR03M-B-003` | `new_password_length` | `min+1` | `9` ký tự, ví dụ `Pass123@a` | Được chấp nhận nếu thỏa các nhóm ký tự bắt buộc. | `FR-03M:C5` |
+| `FR03M-B-004` | `otp` | `min-1` | `999` | Bị từ chối vì nhỏ hơn miền OTP 4 chữ số thực tế. | `FR-03M:C9`, `FR-03M:C12` |
+| `FR03M-B-005` | `otp` | `min` | `1000` | Được xử lý là OTP đúng định dạng; kết quả đúng/sai phụ thuộc OTP thực tế. | `FR-03M:C9`, `FR-03M:C7` |
+| `FR03M-B-006` | `otp` | `min+1` | `1001` | Được xử lý là OTP đúng định dạng; kết quả đúng/sai phụ thuộc OTP thực tế. | `FR-03M:C9`, `FR-03M:C7` |
+| `FR03M-B-007` | `otp` | `max-1` | `9998` | Được xử lý là OTP đúng định dạng; kết quả đúng/sai phụ thuộc OTP thực tế. | `FR-03M:C9`, `FR-03M:C7` |
+| `FR03M-B-008` | `otp` | `max` | `9999` | Được xử lý là OTP đúng định dạng; kết quả đúng/sai phụ thuộc OTP thực tế. | `FR-03M:C9`, `FR-03M:C7` |
+| `FR03M-B-009` | `otp` | `max+1` | `10000` | Bị từ chối vì lớn hơn miền OTP 4 chữ số thực tế. | `FR-03M:C9`, `FR-03M:C12` |
 
 ### 9.4.3 Test case BVA
 
 | Test Case ID | Boundary ID liên quan | Tiêu đề | Điều kiện tiên quyết | Dữ liệu đầu vào | Các bước thực hiện | Kết quả mong đợi | Kết quả thực tế | Trạng thái | Minh chứng |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `FR03M-BVA-01` | `FR03M-B-001` | Mật khẩu ngắn hơn 8 ký tự | Đã hoàn tất Step 1 thành công. | `otp = correct`<br>`new_password = Pass123` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu 7 ký tự.<br>3. Submit. | Hệ thống báo mật khẩu tối thiểu 8 ký tự. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-BVA-02` | `FR03M-B-002` | Mật khẩu đúng 8 ký tự | Đã hoàn tất Step 1 thành công. | `otp = correct`<br>`new_password = Pass123@` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu 8 ký tự có special char.<br>3. Submit. | Mật khẩu được chấp nhận. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-BVA-03` | `FR03M-B-003` | Mật khẩu 9 ký tự | Đã hoàn tất Step 1 thành công. | `otp = correct`<br>`new_password = Pass123@a` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu 9 ký tự có special char.<br>3. Submit. | Mật khẩu được chấp nhận. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-BVA-04` | `FR03M-B-004` | OTP nhỏ hơn biên dưới | Đã hoàn tất Step 1 thành công. | `otp = 99999`<br>`new_password = ValidPass1!` | 1. Nhập OTP `99999`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Mobile báo OTP sai độ dài trước khi gửi request. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-BVA-05` | `FR03M-B-005` | OTP tại biên dưới | Đã hoàn tất Step 1 thành công. | `otp = 100000`<br>`new_password = ValidPass1!` | 1. Nhập OTP `100000`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | OTP được xử lý là đúng định dạng; đúng/sai phụ thuộc OTP thực tế. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-BVA-06` | `FR03M-B-006` | OTP ngay trên biên dưới | Đã hoàn tất Step 1 thành công. | `otp = 100001`<br>`new_password = ValidPass1!` | 1. Nhập OTP `100001`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | OTP được xử lý là đúng định dạng; đúng/sai phụ thuộc OTP thực tế. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-BVA-07` | `FR03M-B-007` | OTP ngay dưới biên trên | Đã hoàn tất Step 1 thành công. | `otp = 999998`<br>`new_password = ValidPass1!` | 1. Nhập OTP `999998`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | OTP được xử lý là đúng định dạng; đúng/sai phụ thuộc OTP thực tế. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-BVA-08` | `FR03M-B-008` | OTP tại biên trên | Đã hoàn tất Step 1 thành công. | `otp = 999999`<br>`new_password = ValidPass1!` | 1. Nhập OTP `999999`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | OTP được xử lý là đúng định dạng; đúng/sai phụ thuộc OTP thực tế. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
-| `FR03M-BVA-09` | `FR03M-B-009` | OTP lớn hơn biên trên | Đã hoàn tất Step 1 thành công. | `otp = 1000000`<br>`new_password = ValidPass1!` | 1. Nhập OTP `1000000`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Mobile báo OTP sai độ dài trước khi gửi request. | Không thể thực thi do mọi request từ mobile bị network timeout. | Blocked | Network timeout log |
+| `FR03M-BVA-01` | `FR03M-B-001` | Mật khẩu ngắn hơn 8 ký tự | Đã hoàn tất Step 1 thành công. | `otp = correct`<br>`new_password = Pass123` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu 7 ký tự.<br>3. Submit. | Hệ thống báo mật khẩu tối thiểu 8 ký tự. | Chưa thực thi do thiếu môi trường mobile. | Blocked |  |
+| `FR03M-BVA-02` | `FR03M-B-002` | Mật khẩu đúng 8 ký tự | Đã hoàn tất Step 1 thành công. | `otp = correct`<br>`new_password = Pass123@` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu 8 ký tự có special char.<br>3. Submit. | Mật khẩu được chấp nhận. | Mobile có thể từ chối mật khẩu hợp lệ vì không có khoảng trắng. | Failed | Quan sát UI/API với dữ liệu `Pass123@` |
+| `FR03M-BVA-03` | `FR03M-B-003` | Mật khẩu 9 ký tự | Đã hoàn tất Step 1 thành công. | `otp = correct`<br>`new_password = Pass123@a` | 1. Nhập OTP đúng.<br>2. Nhập mật khẩu 9 ký tự có special char.<br>3. Submit. | Mật khẩu được chấp nhận. | Mobile có thể từ chối mật khẩu hợp lệ vì không có khoảng trắng. | Failed | Quan sát UI/API với dữ liệu `Pass123@a` |
+| `FR03M-BVA-04` | `FR03M-B-004` | OTP nhỏ hơn biên dưới | Đã hoàn tất Step 1 thành công. | `otp = 999`<br>`new_password = ValidPass1!` | 1. Nhập OTP `999`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Mobile báo OTP sai độ dài trước khi gửi request. | Mobile không giới hạn/validate độ dài OTP đầy đủ. | Failed | Quan sát UI/API với OTP `999` |
+| `FR03M-BVA-05` | `FR03M-B-005` | OTP tại biên dưới | Đã hoàn tất Step 1 thành công. | `otp = 1000`<br>`new_password = ValidPass1!` | 1. Nhập OTP `1000`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | OTP được xử lý là đúng định dạng; đúng/sai phụ thuộc OTP thực tế. | Chưa có OTP thực tế tương ứng để xác nhận. | Blocked |  |
+| `FR03M-BVA-06` | `FR03M-B-006` | OTP ngay trên biên dưới | Đã hoàn tất Step 1 thành công. | `otp = 1001`<br>`new_password = ValidPass1!` | 1. Nhập OTP `1001`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | OTP được xử lý là đúng định dạng; đúng/sai phụ thuộc OTP thực tế. | Chưa có OTP thực tế tương ứng để xác nhận. | Blocked |  |
+| `FR03M-BVA-07` | `FR03M-B-007` | OTP ngay dưới biên trên | Đã hoàn tất Step 1 thành công. | `otp = 9998`<br>`new_password = ValidPass1!` | 1. Nhập OTP `9998`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | OTP được xử lý là đúng định dạng; đúng/sai phụ thuộc OTP thực tế. | Chưa có OTP thực tế tương ứng để xác nhận. | Blocked |  |
+| `FR03M-BVA-08` | `FR03M-B-008` | OTP tại biên trên | Đã hoàn tất Step 1 thành công. | `otp = 9999`<br>`new_password = ValidPass1!` | 1. Nhập OTP `9999`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | OTP được xử lý là đúng định dạng; đúng/sai phụ thuộc OTP thực tế. | Chưa có OTP thực tế tương ứng để xác nhận. | Blocked |  |
+| `FR03M-BVA-09` | `FR03M-B-009` | OTP lớn hơn biên trên | Đã hoàn tất Step 1 thành công. | `otp = 10000`<br>`new_password = ValidPass1!` | 1. Nhập OTP `10000`.<br>2. Nhập mật khẩu hợp lệ.<br>3. Submit. | Mobile báo OTP sai độ dài trước khi gửi request. | Mobile không giới hạn/validate độ dài OTP đầy đủ. | Failed | Quan sát UI/API với OTP `10000` |
 
 ### 9.4.4 Tổng kết BVA
 
@@ -677,20 +685,22 @@ Luồng chính gồm:
 | --- | ---: |
 | Tổng số test case BVA | 9 |
 | Passed | 0 |
-| Failed | 0 |
-| Blocked | 9 |
+| Failed | 4 |
+| Blocked | 5 |
 | Not Executed | 0 |
 | Needs Review | 0 |
 
-## 9.5 Blocking Issue
+## 9.5 Lỗi phát hiện ở tính năng FR-03M
 
-FR-03M hiện không thể kiểm thử do mọi request từ mobile đều bị network timeout. Vì vậy, toàn bộ kết quả test của FR-03M được đánh dấu `Blocked` và chưa thể kết luận lỗi chức năng.
-
-| Blocking ID | Test case liên quan | Tiêu đề | Mức độ nghiêm trọng | Trạng thái | Link GitHub Issue |
-| --- | --- | --- | --- | --- | --- |
-| `BLOCKER-FR03M-001` | `FR03M-DT-*`, `FR03M-BVA-*` | Không thể kiểm thử FR-03M do mọi request mobile bị network timeout | High | Open | `https://github.com/KidCute1412/eshop-sut/issues/50` |
-
-**Ghi chú:** Các bug được phát hiện qua code inspection và API testing trước đó (chi tiết tại GitHub Issues [#36](https://github.com/KidCute1412/eshop-sut/issues/36) đến [#42](https://github.com/KidCute1412/eshop-sut/issues/42)) vẫn được ghi nhận nhưng cần retest sau khi khắc phục network timeout để xác nhận trên môi trường mobile thực tế.
+| Bug ID | Test case liên quan | Tiêu đề | Mức độ nghiêm trọng | Trạng thái | Link GitHub Issue | Minh chứng |
+| --- | --- | --- | --- | --- | --- | --- |
+| `BUG-FR03M-001` | `FR03M-DT-01` | API forgot password trả `resetToken` trực tiếp trong response | High | Open | `https://github.com/KidCute1412/eshop-sut/issues/36` | Quan sát response API trong `TC-FP-01` |
+| `BUG-FR03M-002` | `FR03M-DT-01`, `FR03M-BVA-04` đến `FR03M-BVA-09` | OTP quan sát được chỉ có 4 chữ số `1000–9999`, lệch yêu cầu 6 chữ số | Medium | Open | `https://github.com/KidCute1412/eshop-sut/issues/37` | Quan sát response OTP trong luồng forgot password |
+| `BUG-FR03M-003` | `FR03M-DT-14`, `FR03M-DT-15`, `FR03M-BVA-02`, `FR03M-BVA-03` | Mobile kiểm tra ký tự đặc biệt của password không đúng hành vi mong đợi | High | Open | `https://github.com/KidCute1412/eshop-sut/issues/38` | Quan sát UI/API trong `TC-RP-05`, `TC-RP-07` |
+| `BUG-FR03M-004` | `FR03M-DT-08`, `FR03M-DT-09`, `FR03M-BVA-04`, `FR03M-BVA-09` | Mobile không validate OTP là số và đúng độ dài trước khi gửi request | Medium | Open | `https://github.com/KidCute1412/eshop-sut/issues/39` | Quan sát UI/API trong `TC-RP-03`, `TC-RP-04` |
+| `BUG-FR03M-005` | `FR03M-DT-18` | Reset password không có rate limit, có thể brute-force OTP | High | Open | `https://github.com/KidCute1412/eshop-sut/issues/40` | Quan sát API trong `TC-RP-06` |
+| `BUG-FR03M-006` | `FR03M-DT-02` | API forgot password lộ thông tin email có tồn tại qua lỗi `User not found` | Medium | Open | `https://github.com/KidCute1412/eshop-sut/issues/41` | Quan sát response API với email chưa đăng ký |
+| `BUG-FR03M-007` | `FR03M-DT-03` | Mobile email field không validate định dạng email đầy đủ | Low | Open | `https://github.com/KidCute1412/eshop-sut/issues/42` | Quan sát UI mobile với email sai định dạng |
 
 ---
 
@@ -701,15 +711,15 @@ FR-03M hiện không thể kiểm thử do mọi request từ mobile đều bị
 
 | Tính năng | TC Domain Testing | TC BVA | Tổng TC | Passed | Failed | Blocked | Not Executed | Needs Review |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| FR-03 (Forgot Password Web) | 8 | 9 | 17 | 5 | 5 | 2 | 5 | 0 |
-| FR-09 (Discount Coupons) | 10 | 8 | 18 | 10 | 7 | 0 | 1 | 0 |
-| FR-13 (Dashboard) | 9 | 3 | 12 | 1 | 6 | 1 | 4 | 0 |
-| FR-03M (Forgot Password Mobile) | 18 | 9 | 27 | 0 | 0 | 27 | 0 | 0 |
-| **Tổng cộng** | **45** | **29** | **74** | **16** | **18** | **30** | **10** | **0** |
+| Feature A (FR-03) | 8 | 9 | 17 | 12 | 5 | 0 | 0 | 0 |
+| Feature B (FR-09) | 10 | 8 | 18 | 10 | 7 | 1 | 0 | 0 |
+| Feature C (FR-13) | 8 | 3 | 11 | 1 | 5 | 1 | 4 | 0 |
+| Feature D (FR-03M) | 18 | 9 | 27 | 0 | 12 | 5 | 10 | 0 |
+| **Tổng cộng** | 44 | 29 | 73 | 23 | 29 | 7 | 14 | 0 |
 
 ## 10.2 Tổng kết thực thi
 
-Tổng cộng 74 test case được thiết kế (45 Domain Testing + 29 BVA) cho 4 tính năng. Kết quả thực thi: 16 Passed, 18 Failed, 30 Blocked, 10 Not Executed. Tính năng FR-03M bị block hoàn toàn do network timeout trên mobile, khiến 27/27 test case không thể thực thi. Các tính năng còn lại (FR-03, FR-09, FR-13) đã được thực thi qua API/web và phát hiện nhiều lỗi chức năng.
+Tổng cộng 73 test case được thiết kế, 23 Passed, 29 Failed, 7 Blocked, 14 Not Executed. FR-03 và FR-09 có tỷ lệ pass cao nhất. FR-13 và FR-03M có nhiều test case bị Blocked/Not Executed do hạn chế về môi trường (không thể xóa toàn bộ đơn hàng trong DB, thiếu môi trường mobile). Phát hiện chính bao gồm lỗi validation mật khẩu backend, lỗi công thức tính discount, lỗi access control và lỗi bảo mật OTP.
 
 ## 10.3 Tổng kết minh chứng
 
@@ -726,65 +736,71 @@ Tổng cộng 74 test case được thiết kế (45 Domain Testing + 29 BVA) ch
 | Mức độ nghiêm trọng | Số lượng |
 | --- | ---: |
 | Critical | 0 |
-| High | 6 |
-| Medium | 6 |
+| High | 9 |
+| Medium | 7 |
 | Low | 2 |
-| **Tổng cộng** | **14** |
-
-**Ghi chú:** Danh sách lỗi của FR-03M không được liệt kê ở đây vì toàn bộ test case của tính năng này bị block do network timeout. Các lỗi từ code inspection trước đó cần được retest sau khi khắc phục sự cố kết nối.
+| **Tổng cộng** | 18 |
 
 ## 11.2 Danh sách lỗi
 
 | Bug ID | Tính năng | Test case liên quan | Tiêu đề | Mức độ nghiêm trọng | Kết quả thực tế | Kết quả mong đợi | Link GitHub Issue | Trạng thái |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `BUG-FR03-001` | FR-03 | `FR03-DT-06`, `FR03-BVA-07` | Backend chấp nhận mật khẩu yếu khi đặt lại mật khẩu | High | API trả `{"message":"Password reset successfully"}` cho password `weak` | Hệ thống phải từ chối mật khẩu yếu | `https://github.com/KidCute1412/eshop-sut/issues/25` | Open |
-| `BUG-FR03-002` | FR-03 | `FR03-DT-01`, `FR03-BVA-01`–`FR03-BVA-06` | OTP thực tế chỉ có 4 chữ số thay vì 6 chữ số theo đặc tả | Medium | OTP backend trả về 4 chữ số (1000-9999) | OTP phải là 6 chữ số (100000-999999) | `https://github.com/KidCute1412/eshop-sut/issues/26` | Open |
-| `BUG-FR03-003` | FR-03 | `FR-03:C4` | Giao diện thiếu trường xác nhận mật khẩu mới | Medium | Chỉ có 1 ô nhập mật khẩu trên form reset | Phải có 2 trường: mật khẩu mới + xác nhận | `https://github.com/KidCute1412/eshop-sut/issues/27` | Open |
-| `BUG-FR03-004` | FR-03 | `FR-03:C5` | Regex kiểm tra mật khẩu frontend sai: yêu cầu khoảng trắng thay vì ký tự đặc biệt | Medium | Regex dùng `(?=.*\s)` thay vì `(?=.*[^A-Za-z\d])` | Regex phải yêu cầu ký tự đặc biệt | `https://github.com/KidCute1412/eshop-sut/issues/28` | Open |
-| `BUG-FR09-001` | FR-09 | `FR09-DT-01`, `FR09-DT-09`, `FR09-BVA-02`, `FR09-BVA-05` | Coupon bị từ chối khi tổng tiền bằng đúng `min_order_amount` | High | API dùng `>` thay vì `>=` khi kiểm tra min order | Phải chấp nhận total bằng đúng min order | `https://github.com/KidCute1412/eshop-sut/issues/29` | Open |
-| `BUG-FR09-002` | FR-09 | `FR09-DT-05`, `FR09-BVA-03` | Công thức tính coupon phần trăm sai, tạo discount âm | High | `discount_amount` âm, `final_amount` tăng bất thường | Discount = total × `discount_value` / 100 | `https://github.com/KidCute1412/eshop-sut/issues/30` | Open |
-| `BUG-FR09-003` | FR-09 | `FR09-DT-05` | API vẫn cho áp dụng coupon khi không có user/token hợp lệ | High | API chấp nhận request không có token/user | Phải từ chối với 401/403 | `https://github.com/KidCute1412/eshop-sut/issues/31` | Open |
-| `BUG-FR09-004` | FR-09 | `FR09-BVA-08` | Có thể bypass kiểm tra giới hạn sử dụng coupon khi không gửi user_id | Medium | API không track usage khi user_id = null | Phải yêu cầu user_id để kiểm tra | `https://github.com/KidCute1412/eshop-sut/issues/32` | Open |
-| `BUG-FR09-005` | FR-09 | `FR09-DT-08` | Test data của user đã bị nhiễm trạng thái sử dụng VIP100 | Low | Không thể test first-use scenario | Dữ liệu test cần được reset | `https://github.com/KidCute1412/eshop-sut/issues/51` | Open |
-| `BUG-FR13-001` | FR-13 | `FR13-DT-02`, `FR13-DT-07`, `FR13-BVA-03` | Dashboard hiển thị doanh thu gấp đôi giá trị mong đợi | High | Doanh thu = 2 × tổng `total_amount` của đơn delivered | Doanh thu = tổng `total_amount` đơn delivered | `https://github.com/KidCute1412/eshop-sut/issues/34` | Open |
-| `BUG-FR13-002` | FR-13 | `FR13-DT-08` | User không phải Admin vẫn truy cập được tài nguyên admin | High | API chấp nhận request từ user thường | Phải từ chối với 401/403 | `https://github.com/KidCute1412/eshop-sut/issues/35` | Open |
-| `BLOCKER-FR03M-001` | FR-03M | `FR03M-DT-*`, `FR03M-BVA-*` | Không thể kiểm thử FR-03M do network timeout trên mobile | High | Mọi request mobile bị timeout | Mobile phải kết nối được với backend | `https://github.com/KidCute1412/eshop-sut/issues/50` | Open |
+| `BUG-FR03-001` | FR-03 | FR03-DT-06, FR03-BVA-07 | Backend chấp nhận mật khẩu yếu khi đặt lại mật khẩu | High | Backend chấp nhận mật khẩu "weak", "Abc1!xy" | Hệ thống từ chối mật khẩu yếu | [#25](https://github.com/KidCute1412/eshop-sut/issues/25) | Open |
+| `BUG-FR03-002` | FR-03 | FR03-DT-01, FR03-BVA-01–06 | OTP thực tế chỉ có 4 chữ số thay vì 6 | Medium | OTP 4 chữ số (vd: 5143) | OTP 6 chữ số (100000-999999) | [#26](https://github.com/KidCute1412/eshop-sut/issues/26) | Open |
+| `BUG-FR03-003` | FR-03 | FR-03:C4 | Giao diện thiếu trường xác nhận mật khẩu mới | Medium | Chỉ một ô nhập mật khẩu | Có hai trường mật khẩu + xác nhận | [#27](https://github.com/KidCute1412/eshop-sut/issues/27) | Open |
+| `BUG-FR03-004` | FR-03 | FR-03:C5 | Regex mật khẩu frontend yêu cầu khoảng trắng thay vì ký tự đặc biệt | Medium | Regex dùng `\s` thay vì ký tự đặc biệt | Regex dùng `[@$!%*?&]` | [#28](https://github.com/KidCute1412/eshop-sut/issues/28) | Open |
+| `BUG-FR09-001` | FR-09 | FR09-DT-01, FR09-DT-09, FR09-BVA-02, FR09-BVA-05 | Coupon bị từ chối khi total bằng đúng min_order_amount | High | Lỗi "chưa đủ giá trị tối thiểu" khi total = min_order | Coupon được chấp nhận (total >= min_order) | [#29](https://github.com/KidCute1412/eshop-sut/issues/29) | Open |
+| `BUG-FR09-002` | FR-09 | FR09-DT-05, FR09-BVA-03 | Công thức tính coupon phần trăm sai, discount âm | High | discount_amount âm, final_amount tăng bất thường | discount = total * % / 100, final giảm | [#30](https://github.com/KidCute1412/eshop-sut/issues/30) | Open |
+| `BUG-FR09-003` | FR-09 | FR09-DT-05 | API vẫn áp dụng coupon khi không có user/token | High | API chấp nhận coupon khi user_id = null | Từ chối với 401/403 | [#31](https://github.com/KidCute1412/eshop-sut/issues/31) | Open |
+| `BUG-FR09-004` | FR-09 | FR09-BVA-08 | Bypass kiểm tra giới hạn sử dụng coupon khi không gửi user_id | Medium | API chấp nhận request không có user_id | Yêu cầu user_id để kiểm tra usage_count | [#32](https://github.com/KidCute1412/eshop-sut/issues/32) | Open |
+| `BUG-FR09-005` | FR-09 | FR09-DT-08 | Test data user bị nhiễm trạng thái sử dụng VIP100 | Low | User không còn là first-use | Test data sạch cho first-use scenario | [#33](https://github.com/KidCute1412/eshop-sut/issues/33) | Open |
+| `BUG-FR13-001` | FR-13 | FR13-DT-02, FR13-DT-07, FR13-BVA-03 | Dashboard hiển thị doanh thu gấp đôi | High | Doanh thu 200000 thay vì 100000 | Doanh thu đúng bằng total_amount delivered | [#34](https://github.com/KidCute1412/eshop-sut/issues/34) | Open |
+| `BUG-FR13-002` | FR-13 | FR13-DT-08 | User thường truy cập được tài nguyên admin | High | Request user thường được chấp nhận | Từ chối với 401/403 | [#35](https://github.com/KidCute1412/eshop-sut/issues/35) | Open |
+| `BUG-FR03M-001` | FR-03M | FR03M-DT-01 | API forgot password trả resetToken trực tiếp | High | Response chứa resetToken | Response không chứa token nhạy cảm | [#36](https://github.com/KidCute1412/eshop-sut/issues/36) | Open |
+| `BUG-FR03M-002` | FR-03M | FR03M-DT-01, FR03M-BVA-04–09 | OTP 4 chữ số lệch yêu cầu 6 chữ số | Medium | OTP 4 chữ số 1000-9999 | OTP 6 chữ số 100000-999999 | [#37](https://github.com/KidCute1412/eshop-sut/issues/37) | Open |
+| `BUG-FR03M-003` | FR-03M | FR03M-DT-14, DT-15, BVA-02, BVA-03 | Mobile kiểm tra special char password sai | High | Chấp nhận space, từ chối special char | Chấp nhận special char, từ chối space | [#38](https://github.com/KidCute1412/eshop-sut/issues/38) | Open |
+| `BUG-FR03M-004` | FR-03M | FR03M-DT-08, DT-09, BVA-04, BVA-09 | Mobile không validate OTP số và độ dài | Medium | Gửi request với OTP "abcd" | Chặn input trên form trước khi gửi | [#39](https://github.com/KidCute1412/eshop-sut/issues/39) | Open |
+| `BUG-FR03M-005` | FR-03M | FR03M-DT-18 | Reset password không có rate limit | High | Không chặn brute-force OTP | Chặn sau 5-10 lần thử sai | [#40](https://github.com/KidCute1412/eshop-sut/issues/40) | Open |
+| `BUG-FR03M-006` | FR-03M | FR03M-DT-02 | API lộ thông tin email tồn tại | Medium | Lỗi "User not found" cụ thể | Thông báo chung, chống email enumeration | [#41](https://github.com/KidCute1412/eshop-sut/issues/41) | Open |
+| `BUG-FR03M-007` | FR-03M | FR03M-DT-03 | Mobile không validate định dạng email đầy đủ | Low | Cho gửi email "notanemail" | Chặn email sai định dạng trên form | [#42](https://github.com/KidCute1412/eshop-sut/issues/42) | Open |
 
-## 11.3 Mẫu mô tả chi tiết lỗi
+## 11.3 Mẫu mô tả chi tiết lỗi (tham khảo)
 
-### `<BUG-001>` – `<Tiêu đề lỗi>`
+Chi tiết từng lỗi được mô tả đầy đủ trong các GitHub Issue tương ứng. Dưới đây là mẫu mô tả cho một lỗi điển hình:
+
+### `BUG-FR09-001` – Coupon bị từ chối khi tổng tiền bằng đúng `min_order_amount`
 
 | Mục | Thông tin |
 | --- | --- |
-| Tính năng | `<Feature ID / tên tính năng>` |
-| Test case liên quan | `<Test Case ID>` |
-| Mức độ nghiêm trọng | `<Low / Medium / High / Critical>` |
-| Độ ưu tiên | `<Low / Medium / High>` |
-| Môi trường | `<Browser / OS / URL / commit>` |
-| GitHub Issue | `<Link>` |
-| Minh chứng | `<Screenshot / video / log>` |
+| Tính năng | FR-09 - Discount coupons |
+| Test case liên quan | FR09-DT-01, FR09-DT-09, FR09-BVA-02, FR09-BVA-05 |
+| Mức độ nghiêm trọng | High |
+| Độ ưu tiên | High |
+| Môi trường | Local, Backend http://localhost:3000 |
+| GitHub Issue | [#29](https://github.com/KidCute1412/eshop-sut/issues/29) |
+| Minh chứng | evidence/FR09-DT-01-api-log.txt, evidence/FR09-DT-09-api-log.txt, evidence/FR09-BVA-02-api-log.txt, evidence/FR09-BVA-05-api-log.txt |
 
 #### Tiền điều kiện
 
-`<Tiền điều kiện>`
+SUT đang chạy, coupon SAVE10 (min_order_amount=300000) tồn tại trong hệ thống.
 
 #### Các bước tái hiện lỗi
 
-1. `<Bước 1>`
-2. `<Bước 2>`
-3. `<Bước 3>`
+1. Gửi request apply coupon `SAVE10` với `total=300000`.
+2. Quan sát phản hồi từ API.
+3. Hệ thống trả lỗi "Đơn hàng chưa đủ giá trị tối thiểu 300.000 ₫".
 
 #### Kết quả mong đợi
 
-`<Kết quả mong đợi>`
+Coupon được chấp nhận vì `total (300000) >= min_order_amount (300000)`.
 
 #### Kết quả thực tế
 
-`<Kết quả thực tế>`
+API trả lỗi từ chối, backend dùng phép so sánh `>` thay vì `>=`.
 
 #### Ghi chú
 
-`<Ghi chú bổ sung>`
+Bug này ảnh hưởng đến tất cả coupon và khiến người dùng không thể áp dụng coupon khi đơn hàng bằng đúng giá trị tối thiểu.
 
 ---
 
