@@ -1,3 +1,8 @@
+﻿1f70c7f Docs: add agents folder from the original directory
+b54fbaf docs: add video link
+fb03b78 docs: bug report
+097b9be docs: write ai critique
+4aa6cbd docs: check syntax, atomicity between bug report and main report
 3d5abd9 test(hw02):execute test cases for FR-23
 906b628 test(hw02):execute test cases for FR-12
 b4a7b34 test(hw02):execute test cases for FR-10

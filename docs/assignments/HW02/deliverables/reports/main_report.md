@@ -412,21 +412,23 @@ Chúng tôi xác định các biến và điều kiện hệ thống sau cho tí
   * **FR23-DT-05 (Lỗi tự động thêm số lượng bằng 1 khi để trống hoặc nhập chữ)**: Khi ô số lượng bị xóa trống (`""`) hoặc nhập chữ (`"abc"`), hệ thống tự động gán giá trị mặc định là `1` để thêm vào giỏ hàng thay vì ngăn chặn và yêu cầu người dùng nhập lại giá trị hợp lệ.
 
 #### Minh chứng kết quả chạy test / lỗi phát hiện (Screenshots):
-<p align="center">
-  <img src="images/fr23-DT03-fail.png" alt="Lỗi thêm số lượng bằng 0 nhưng giỏ hàng tăng lên 1 (FR23-DT-03)" width="85%" />
-  <br/>
-  <em>Hình 4.1: Giao diện giỏ hàng tăng số lượng lên 1 khi người dùng nhập số lượng bằng 0.</em>
-</p>
-
-<p align="center">
-  <img src="images/fr23-DT04-fail.png" alt="Lỗi nhập số lượng 2.5 bị làm tròn thành 2 trong giỏ hàng (FR23-DT-04)" width="85%" />
-  <br/>
-  <em>Hình 4.2: Hệ thống tự làm tròn số lượng thập phân 2.5 thành 2 trong giỏ hàng.</em>
-</p>
-
-<p align="center">
-  <img src="images/fr23-DT05-fail.png" alt="Lỗi nhập số lượng trống hoặc rỗng nhưng giỏ hàng nhận là 1 (FR23-DT-05)" width="85%" />
-  <br/>
-  <em>Hình 4.3: Ô nhập số lượng bỏ trống nhưng giỏ hàng vẫn nhận số lượng bằng 1.</em>
-</p>
+<table align="center" width="100%">
+  <tr>
+    <td align="center" valign="top" width="33%">
+      <img src="images/fr23-DT03-fail.png" alt="Lỗi thêm số lượng bằng 0 nhưng giỏ hàng tăng lên 1 (FR23-DT-03)" width="210px" />
+      <br/>
+      <small><strong>Hình 4.1:</strong> Giao diện giỏ hàng tăng số lượng lên 1 khi nhập số lượng bằng 0 (FR23-DT-03).</small>
+    </td>
+    <td align="center" valign="top" width="33%">
+      <img src="images/fr23-DT04-fail.png" alt="Lỗi nhập số lượng 2.5 bị làm tròn thành 2 trong giỏ hàng (FR23-DT-04)" width="210px" />
+      <br/>
+      <small><strong>Hình 4.2:</strong> Hệ thống tự làm tròn số lượng thập phân 2.5 thành 2 trong giỏ hàng (FR23-DT-04).</small>
+    </td>
+    <td align="center" valign="top" width="33%">
+      <img src="images/fr23-DT05-fail.png" alt="Lỗi nhập số lượng trống hoặc rỗng nhưng giỏ hàng nhận là 1 (FR23-DT-05)" width="210px" />
+      <br/>
+      <small><strong>Hình 4.3:</strong> Ô nhập số lượng bỏ trống nhưng giỏ hàng vẫn nhận số lượng bằng 1 (FR23-DT-05).</small>
+    </td>
+  </tr>
+</table>
 
