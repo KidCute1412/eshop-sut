@@ -4,8 +4,8 @@
 
 This report summarizes the Domain Testing and Boundary Value Analysis work for HW02 on the EShop SUT. The report includes the selected four-pool feature set and the additional completed FR-01 Pool A artifact.
 
-| Pool | Selected Feature | Feature Name                     | Main Artifacts                                                                                                                                                                                                                                                                                                                                     |
-| ---- | ---------------- | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Pool | Selected Feature | Feature Name                     | Main Artifacts                                                                                                                                                                                                                                                                                     |
+| ---- | ---------------- | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | A    | FR-01            | Account registration             | [requirement-analysis.md](FR-01/requirement-analysis.md), [domain-testing.md](FR-01/domain-testing.md), [boundary-value-analysis.md](FR-01/boundary-value-analysis.md), [test-cases.md](FR-01/test-cases.md), [bug-report.md](FR-01/bug-report.md), [ai-gap-analysis.md](FR-01/ai-gap-analysis.md) |
 | A    | FR-02            | Login and account lockout        | [requirement-analysis.md](FR-02/requirement-analysis.md), [domain-testing.md](FR-02/domain-testing.md), [boundary-value-analysis.md](FR-02/boundary-value-analysis.md), [test-cases.md](FR-02/test-cases.md), [bug-report.md](FR-02/bug-report.md), [ai-gap-analysis.md](FR-02/ai-gap-analysis.md) |
 | B    | FR-07            | Shopping cart                    | [requirement-analysis.md](FR-07/requirement-analysis.md), [domain-testing.md](FR-07/domain-testing.md), [boundary-value-analysis.md](FR-07/boundary-value-analysis.md), [test-cases.md](FR-07/test-cases.md), [bug-report.md](FR-07/bug-report.md), [ai-gap-analysis.md](FR-07/ai-gap-analysis.md) |
@@ -33,8 +33,8 @@ Detailed derivation is kept in the per-feature files linked in the submission sc
 | FR-02   |         34 |     22 |      9 |       0 |            0 |             6 |             38 |
 | FR-07   |         20 |      6 |     14 |       0 |            0 |            10 |             11 |
 | FR-17   |         22 |     13 |      9 |       0 |            0 |             4 |             22 |
-| FR-20   |         19 |      9 |      3 |       7 |            0 |             1 |             11 |
-| Total   |        132 |     55 |     49 |      25 |            0 |            28 |            119 |
+| FR-20   |         19 |      9 |      3 |       7 |            0 |             3 |             11 |
+| Total   |        132 |     55 |     49 |      25 |            0 |            30 |            119 |
 
 ## Self-Assessment
 
@@ -43,17 +43,9 @@ Detailed derivation is kept in the per-feature files linked in the submission sc
 | 1     | Feature A (Domain + Boundary)         |    25 |                  25 |
 | 2     | Feature B (Domain + Boundary)         |    25 |                  25 |
 | 3     | Feature C (Domain + Boundary)         |    25 |                  25 |
-| 4     | Feature D (Mobile, Domain + Boundary) |    15 |                  12 |
-| 5     | Agent Skills                          |    10 |                   8 |
-| Total |                                       |   100 |                  95 |
-
-Evidence folders:
-
-- FR-02 evidence: [FR-02/evidence/](FR-02/evidence/)
-- FR-01 evidence: [FR-01/evidence/](FR-01/evidence/)
-- FR-07 evidence: [FR-07/evidence/](FR-07/evidence/)
-- FR-17 evidence: [FR-17/evidence/](FR-17/evidence/)
-- FR-20 evidence: [FR-20/evidence/](FR-20/evidence/)
+| 4     | Feature D (Mobile, Domain + Boundary) |    15 |                  15 |
+| 5     | Agent Skills                          |    10 |                  10 |
+| Total |                                       |   100 |                 100 |
 
 ## Feature Details
 
@@ -188,3 +180,11 @@ The skill also includes reusable assets and scripts:
 - Method references: [.agents/skills/domain-testing-bva/references/](../.agents/skills/domain-testing-bva/references/)
 - Helper scripts: [.agents/skills/domain-testing-bva/scripts/](../.agents/skills/domain-testing-bva/scripts/)
 - Script tests: [.agents/skills/domain-testing-bva/tests/](../.agents/skills/domain-testing-bva/tests/)
+
+## Link Video Demonstration
+
+- [HW02 Domain Testing Video Demonstration](https://www.youtube.com/watch?v=q7ZQzRcub8Q)
+
+## Github link
+
+- [HW02 Github Repository](https://github.com/KidCute1412/eshop-sut/tree/23127539-NguyenThanhTien)
