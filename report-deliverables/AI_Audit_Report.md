@@ -40,7 +40,7 @@ Adapted from Med Kharbach, PhD (2026) — AI Use Policy Templates for Higher Edu
 Aggregate the verdicts from Section 3 and complete the table below.
 
 | Metric | Count | Percentage |
-| :--- | :--- | :--- |
+| --- | --- | --- |
 | **Total AI-generated artifacts audited** | 5 | 100% |
 | **VALID (correct, accepted as-is)** | 2 | 40% |
 | **INVALID (wrong; rejected)** | 0 | 0% |
@@ -57,14 +57,14 @@ In general, there exist potential for a well-crafted agent to automate and handl
 ### Signature
 
 | Field | Value |
-| :--- | :--- |
+| --- | --- |
 | **Student name (printed):** |Trương Lý Khải |
 | **Student ID:** |23127061 |
 | **Class / Cohort:** |23KTPM3 |
 | **Course:** | CS423 / CSC13003 – Software Testing |
 | **Instructor:** |Mrs. Trần Thị Bích Hạnh |
 | **Date:** |29/06/2026 |
-| **Signature:** | |
+| **Signature:** |![](signature.png) |
 
 ### References
 * Kharbach, M. (2026). AI Use Policy Templates for Higher Education. CC BY-NC-SA 4.0.

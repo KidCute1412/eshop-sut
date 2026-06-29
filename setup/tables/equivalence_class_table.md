@@ -38,7 +38,7 @@
 |EC36|Not a number Price|A NaN price point, e.g. "--"|Product cannot be added to the pool.|No|
 |EC37|Negative Price|An invalid non-positive price point, e.g. "-1"|Product cannot be added to the pool.|Yes|
 |EC38|Valid Description|A description with any regular text input, e.g. "description"|Product when added has matching description.|No|
-|EC39|Script Injection Image|A description with a script, e.g. "&lt;script>alert(1)&lt;/script>"|Product when added has description with no script (empty).|No|
+|EC39|Script Injection for Description|A description with a script, e.g. "&lt;script>alert(1)&lt;/script>"|Product when added has description with no script (empty).|No|
 |EC40|No Category|Category is not selected|Product cannot be added to the pool.|No|
 |EC41|Category Selected|A category from the spinner is selected, e.g. "Laptop"|Product when added has matching category.|No|
 |EC42|Product Added|Valid name, image link, price, description and category.|Product when added has matching details.|No|
