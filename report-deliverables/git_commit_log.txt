@@ -1,0 +1,77 @@
+commit 9e8a638f3f6e1e73b3fab5342f50a8b10def9488 (HEAD -> 23127061-TruongLyKhai, origin/23127061-TruongLyKhai)
+Author: lykhai2512 <161923199+lykhai2512@users.noreply.github.com>
+Date:   Mon Jun 29 06:18:25 2026 +0700
+
+    Documentation
+
+commit 8a6d5267a7261779987831c5c0bee1898ac55221
+Author: lykhai2512 <161923199+lykhai2512@users.noreply.github.com>
+Date:   Mon Jun 29 05:25:34 2026 +0700
+
+    Testing done for FR-21
+
+commit b07ec99a8e621c78d1e0387db0aa6a7c0990a6e2
+Author: lykhai2512 <161923199+lykhai2512@users.noreply.github.com>
+Date:   Mon Jun 29 05:18:56 2026 +0700
+
+    Testing done for FR-15
+
+commit dd3518cee2c20ae0a17191ef83407a3beeeb38eb
+Author: lykhai2512 <161923199+lykhai2512@users.noreply.github.com>
+Date:   Sun Jun 28 23:00:25 2026 +0700
+
+    Testing done for FR-14
+
+commit 9188a37c8f207d433f7f3ea30544b6393749868c
+Author: lykhai2512 <161923199+lykhai2512@users.noreply.github.com>
+Date:   Sun Jun 28 17:16:34 2026 +0700
+
+    Testing done for FR-11
+
+commit 6b269886ec67ed3fc495f9b42102010da76df98b
+Author: lykhai2512 <161923199+lykhai2512@users.noreply.github.com>
+Date:   Sun Jun 28 11:55:45 2026 +0700
+
+    FR-05 documentation
+
+commit a4ac7bc73c6569465840eb6d95c70d46d497ac0c
+Author: lykhai2512 <161923199+lykhai2512@users.noreply.github.com>
+Date:   Sun Jun 28 11:17:06 2026 +0700
+
+    Testing done for FR-05
+
+commit 0b5a56b8a2442b92106a722e4d052ab68f10c6b0
+Author: lykhai2512 <161923199+lykhai2512@users.noreply.github.com>
+Date:   Sat Jun 27 12:01:14 2026 +0700
+
+    Agent Creation and Setup
+
+commit a82cc49eef4180f3b845ee1a091f9617758a54e7
+Author: lykhai2512 <161923199+lykhai2512@users.noreply.github.com>
+Date:   Fri Jun 26 16:55:03 2026 +0700
+
+    Equivalence Partitioning
+
+commit 85d7aaf466de5701e0434ab06e56fc1a4372a1f8
+Author: lykhai2512 <161923199+lykhai2512@users.noreply.github.com>
+Date:   Fri Jun 26 16:22:09 2026 +0700
+
+    Added knowledge
+
+commit b23ae08353da69f120491da2a0ead79284dcd260
+Author: lykhai2512 <161923199+lykhai2512@users.noreply.github.com>
+Date:   Fri Jun 26 00:37:31 2026 +0700
+
+    Initial Setup for Testing
+
+commit 85af3ba875c88283615e22cb108f13e2fccaf0e9 (origin/main, origin/HEAD, main)
+Author: ttbhanh-hcmus <ttbhanh@hcmus.edu.vn>
+Date:   Fri May 15 08:30:35 2026 +0700
+
+    first upload
+
+commit 2f9bf2bab45855abf211377a5d5eba10031649e3
+Author: Hanh Tran <ttbhanh@fit.hcmus.edu.vn>
+Date:   Fri May 15 08:27:44 2026 +0700
+
+    Initial commit
