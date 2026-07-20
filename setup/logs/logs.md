@@ -14,9 +14,6 @@
 - Text Output: Created a new skill file at .github/skills/domain-testing/SKILL.md with workflow instructions for black-box domain testing, equivalence partitioning, boundary value analysis, artifact maintenance, reasoning notes, and session logging.
 - File Outputs: .github/skills/domain-testing/SKILL.md
 ------
-- Name of the AI tool: GitHub Copilot
-- Date and time: 27/06/2026 11:24
-- Full text of given prompt: can i modify it to automatically access the info folder, the skills folder and the templates folder for instructions, while also automatically access the logs folder and the tables folder to write down the outputs?
 - Attached file names: .github/skills/domain-testing/SKILL.md; setup/tables
 - Text Output: Updated the skill so it explicitly reads from setup/info, setup/skills, and setup/templates, and writes outputs to setup/logs and setup/tables.
 - File Outputs: .github/skills/domain-testing/SKILL.md; setup/tables
@@ -26,12 +23,35 @@
 - Full text of given prompt: i've added the tables file while also added this file, the agent should have access to this file to write the explanation of explaining how the equivalence classes and boundary values are used
 - Attached file names: .github/skills/domain-testing/SKILL.md; report-deliverables/domain_bva_raw.txt
 - Text Output: Updated the skill so it explicitly reads the explanation/output file at report-deliverables/domain_bva_raw.txt as part of the workflow for documenting how equivalence classes and boundary values are used.
-- File Outputs: .github/skills/domain-testing/SKILL.md
-------
-- Name of the AI tool: GitHub Copilot
-- Date and time: 27/06/2026 13:40
+ - Name of the AI tool: GitHub Copilot
+ - Date and time: 06/07/2026 12:00
+ - Full text of given prompt: plan failed, did not follow anything written in skill.md, reread phase 1: ### Phase 1: Test Case Design Analysis & Plan 1. **Scope Assessment**: Determine if the requirement (e.g., FR-XX) involves state-dependent behavior. If not, state why the skill is inapplicable. 2. **Model Identification**:    - Define all possible **States** (e.g., Idle, Processing, Error).    - Identify **Events/Inputs** that trigger transitions.    - Define **Actions/Outputs** resulting from transitions. 3. **Plan Formulation**:    - Draft a State Transition Matrix (States vs. Inputs).    - Estimate the number of test cases required for path coverage (e.g., All-States, All-Transitions). 4. **Output**: Save as `[RequirementID]-STT.md` in `[setup/plans]`.
+ - Attached file names: .github/skills/state-transition-testing/SKILL.md; setup/plans/checkout_state_transitions.md; setup/plans/FR-08-STT.md
+ - Text Output: Created Phase 1 artifact following SKILL.md: saved `setup/plans/FR-08-STT.md` with Scope Assessment, Model Identification, State Transition Matrix, and test-case estimates.
+ - File Outputs: setup/plans/FR-08-STT.md
+ ------
 - Full text of given prompt: rerun the domain-testing skill for FR-05
 - Attached file names: setup/info/functional_requirements.md; setup/info/README.md; setup/tables/equivalence_class_table.md; setup/tables/test_table.md; setup/tables/test_requirement_matrix.md; setup/tables/test_class_matrix.md; report-deliverables/domain_bva_raw.txt
 - Text Output: Recreated the FR-05 domain-testing artifacts with updated equivalence classes, test cases, matrices, and explanation content.
 - File Outputs: setup/tables/equivalence_class_table.md; setup/tables/test_table.md; setup/tables/test_requirement_matrix.md; setup/tables/test_class_matrix.md; report-deliverables/domain_bva_raw.txt
-------
+------- Name of the AI tool: GitHub Copilot
+- Date and time: 06/07/2026 12:15
+- Full text of given prompt: use the use-case testing skill and first create the .md plan needed for the following requirement: ### FR-08: Thanh toán (Checkout)
+
+- Chỉ người dùng **đã đăng nhập** mới tiến hành thanh toán được.
+- **Tổng tiền thanh toán** được tính tự động từ giỏ hàng và không cho phép người dùng chỉnh sửa trực tiếp.
+- Giao diện hiển thị đầy đủ danh sách sản phẩm đặt mua.
+- Backend phải tự tính lại tổng tiền; không chấp nhận giá trị `total_amount` do client gửi lên.
+- Sau thanh toán thành công, giỏ hàng được xóa.
+
+make sure to read the info folder for more information
+- Attached file names: setup/info/README.md; setup/info/api_specification.md
+- Text Output: Created use-case testing plan for FR-08 and saved it as setup/plans/FR-08-UCT.md.
+ - File Outputs: setup/plans/FR-08-UCT.md
+------ - Name of the AI tool: GitHub Copilot
+ - Date and time: 06/07/2026 12:10
+ - Full text of given prompt: proceed with phase 2 of the state-transition-testing skill, remember to read the agent skill carefully and follow the workflow, then create the necessary test cases
+ - Attached file names: setup/plans/FR-08-STT.md; setup/tests/FR-08-TC01-STT.md; setup/tests/FR-08-TC02-STT.md; setup/tests/FR-08-TC03-STT.md; setup/tests/FR-08-TC04-STT.md; setup/tests/FR-08-TC05-STT.md; setup/tests/FR-08-TC06-STT.md; setup/tests/FR-08-TC07-STT.md; setup/tests/FR-08-TC08-STT.md; setup/tests/FR-08-TC09-STT.md; setup/tests/FR-08-TC10-STT.md; setup/tests/FR-08-TC11-STT.md; setup/tests/FR-08-TC12-STT.md
+ - Text Output: Created 12 Phase 2 state-transition test case files for `FR-08` under `setup/tests/` covering positive, negative, concurrent, and malicious-input scenarios. Updated TODO list to mark enumeration complete.
+ - File Outputs: setup/tests/FR-08-TC01-STT.md; setup/tests/FR-08-TC02-STT.md; setup/tests/FR-08-TC03-STT.md; setup/tests/FR-08-TC04-STT.md; setup/tests/FR-08-TC05-STT.md; setup/tests/FR-08-TC06-STT.md; setup/tests/FR-08-TC07-STT.md; setup/tests/FR-08-TC08-STT.md; setup/tests/FR-08-TC09-STT.md; setup/tests/FR-08-TC10-STT.md; setup/tests/FR-08-TC11-STT.md; setup/tests/FR-08-TC12-STT.md
+ ------

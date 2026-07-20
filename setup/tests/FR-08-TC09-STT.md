@@ -1,0 +1,3 @@
+|ID|Objective|Input|Steps|Expected|Actual|Verdict|
+|-|-|-|-|-|-|-|
+|FR-08-TC09|Concurrent cart change between open and submit (server uses latest cart)|Authenticated user; cart modified after opening checkout|1. Login; ensure cart has items A and B; open checkout.<br>2. In another session or via API remove item B or change qty.<br>3. Submit payment from original checkout page.|Backend recalculates authoritative total from updated cart; if items unavailable, backend rejects or adjusts total. Order created only if validation passes; otherwise return appropriate error. Cart reflects post-order state (cleared on success, preserved on failure).| |Blocked|

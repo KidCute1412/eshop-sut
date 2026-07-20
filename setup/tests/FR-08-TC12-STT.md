@@ -1,0 +1,3 @@
+|ID|Objective|Input|Steps|Expected|Actual|Verdict|
+|-|-|-|-|-|-|-|
+|FR-08-TC12|Retry after payment failure leads to success (if fixed)|Authenticated user with cart items; initial gateway failure then success|1. Login; ensure cart has items.<br>2. Submit payment; simulate gateway failure (TC08 path).<br>3. Retry payment with corrected details or after transient failure; simulate gateway success.|Initial failure returns error and preserves cart. Retry succeeds: backend recalculates total, charges gateway, creates order, and clears cart. Response includes order id and server total.|Repayment is accounted for and the order was successful. |Passed|

@@ -1,0 +1,3 @@
+|ID|Objective|Input|Steps|Expected|Actual|Verdict|
+|-|-|-|-|-|-|-|
+|FR-08-TC05|Happy path: successful payment; backend recalculates total and clears cart|Authenticated user with cart items; valid payment details|1. Login.<br>2. Ensure cart has known items and note client-side total.<br>3. Submit payment request to backend (include `total_amount` manipulated or original).<br>4. Simulate gateway success.|Backend recalculates authoritative total from cart/prices; `total_amount` from client ignored. Payment succeeds; response includes server-calculated total and order id (HTTP 200/201). Cart is cleared (API shows empty cart / DB updated).|The cart was update accordingly|Passed|

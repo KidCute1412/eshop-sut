@@ -1,0 +1,3 @@
+|ID|Objective|Input|Steps|Expected|Actual|Verdict|
+|-|-|-|-|-|-|-|
+|FR-08-TC10|Verify checkout blocks invalid or outdated order total from client|Authenticated user with cart items and stale client-side total|1. Log in as a valid user.<br>2. Add items to cart and note the client-side total.<br>3. Modify cart prices or quantities in another session if possible.<br>4. Submit checkout with the stale `total_amount` from the old client view.|1. Backend ignores the stale `total_amount` and recalculates the correct total from the current cart/prices.<br>2. Order is created only if the recalculated total and cart validation pass.<br>3. User sees the correct total in the response or is asked to refresh their cart if discrepancies exist.| |Blocked|

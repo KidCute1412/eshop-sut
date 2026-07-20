@@ -1,0 +1,3 @@
+|ID|Objective|Input|Steps|Expected|Actual|Verdict|
+|-|-|-|-|-|-|-|
+|FR-08-TC06|Reject checkout when cart empties between view and submit|Authenticated user with cart items, then cart emptied before submit|1. Log in as a valid user.<br>2. Add items to cart and open Checkout.<br>3. Remove all items from the cart in another tab or via API.<br>4. Submit the checkout request from the original checkout view.|1. Backend detects the empty cart and rejects submission with HTTP 400/409.<br>2. No order is created.<br>3. User sees a message about the empty cart and is prompted to refresh or return to cart.|The order was created anyway |Failed|
