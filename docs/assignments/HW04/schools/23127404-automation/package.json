@@ -1,0 +1,15 @@
+{
+  "name": "23127404-hw04-automation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "pretest": "node scripts/check-sut.mjs",
+    "test": "playwright test",
+    "report": "playwright show-report playwright-report",
+    "install:browsers": "playwright install chromium firefox webkit"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.55.0"
+  }
+}

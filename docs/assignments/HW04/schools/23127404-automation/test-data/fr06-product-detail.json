@@ -1,0 +1,13 @@
+{
+  "testCaseId": "FR06-DT-01",
+  "description": "Guest views an existing product and all required product details",
+  "traceability": ["EP-VAL-02", "EP-VAL-04"],
+  "productPath": "/product/1",
+  "expected": {
+    "name": "iPhone 15 Pro Max",
+    "price": "30,000,000 ₫",
+    "description": "Điện thoại cao cấp của Apple",
+    "category": "Điện thoại"
+  }
+}
+
