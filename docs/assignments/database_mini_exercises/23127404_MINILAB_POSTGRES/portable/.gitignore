@@ -1,0 +1,4 @@
+node_modules/
+evidence/*
+!evidence/.gitkeep
+*.zip

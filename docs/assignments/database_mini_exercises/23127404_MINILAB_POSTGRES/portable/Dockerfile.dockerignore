@@ -1,0 +1,5 @@
+portable/node_modules
+portable/evidence/*
+!portable/evidence/.gitkeep
+*.zip
+portable/.codex

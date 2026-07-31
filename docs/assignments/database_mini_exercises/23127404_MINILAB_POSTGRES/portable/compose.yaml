@@ -1,0 +1,70 @@
+name: minilab-23127404
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: eshop_minilab
+      POSTGRES_USER: lab_admin
+      POSTGRES_PASSWORD: lab_admin_only
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lab_admin -d eshop_minilab"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db:/docker-entrypoint-initdb.d:ro
+      - ../performance.sql:/submission/performance.sql:ro
+    networks:
+      - lab_internal
+
+  test:
+    build:
+      context: ..
+      dockerfile: portable/Dockerfile
+    environment:
+      DATABASE_URL: postgresql://lab_admin:lab_admin_only@postgres:5432/eshop_minilab
+      APP_USER_DATABASE_URL: postgresql://app_user:app_user_lab_only@postgres:5432/eshop_minilab
+      NODE_ENV: test
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./evidence:/lab/evidence
+    networks:
+      - lab_internal
+
+  api:
+    build:
+      context: ..
+      dockerfile: portable/Dockerfile
+    command: ["node", "portable/src/server.js"]
+    environment:
+      DATABASE_URL: postgresql://lab_admin:lab_admin_only@postgres:5432/eshop_minilab
+      PORT: "3010"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    profiles: ["manual-api"]
+    networks:
+      - lab_internal
+
+  mcp:
+    build:
+      context: ./mcp
+    command:
+      - postgresql://mcp_reader:mcp_reader_lab_only@postgres:5432/eshop_minilab
+    depends_on:
+      postgres:
+        condition: service_healthy
+    stdin_open: true
+    networks:
+      - lab_internal
+
+volumes:
+  postgres_data:
+
+networks:
+  lab_internal:
+    internal: true

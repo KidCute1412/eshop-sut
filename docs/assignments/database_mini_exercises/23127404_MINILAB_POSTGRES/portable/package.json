@@ -1,0 +1,31 @@
+{
+  "name": "23127404-minilab-postgres",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portable PostgreSQL database testing mini lab",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "jest db-tests.test.js --runInBand",
+    "test:json": "jest db-tests.test.js --runInBand --json --outputFile=evidence/test-results.json",
+    "test:classify": "node scripts/run-tests.mjs"
+  },
+  "dependencies": {
+    "express": "5.1.0",
+    "pg": "8.16.3"
+  },
+  "devDependencies": {
+    "jest": "30.0.5",
+    "supertest": "7.1.4"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "<rootDir>/db-tests.test.js"
+    ],
+    "testTimeout": 20000,
+    "verbose": true
+  }
+}

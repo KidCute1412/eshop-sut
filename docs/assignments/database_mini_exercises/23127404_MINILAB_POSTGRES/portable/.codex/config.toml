@@ -1,0 +1,8 @@
+[mcp_servers.minilab_postgres]
+enabled = true
+required = false
+command = "docker"
+args = ["compose", "run", "--rm", "-T", "--no-deps", "mcp"]
+cwd = ".."
+startup_timeout_sec = 30.0
+tool_timeout_sec = 60.0
