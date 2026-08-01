@@ -1,0 +1,6 @@
+=== Test B: Register the SAME email twice - README FR-01 requires email must be unique ===
+{"message":"User registered successfully","id":4}
+HTTP_STATUS:200
+--- second registration with the SAME email ---
+{"message":"User registered successfully","id":5}
+HTTP_STATUS:200

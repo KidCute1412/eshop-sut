@@ -1,0 +1,5 @@
+How to verify (UI only): open the Register form and count the password-type fields. Only
+one 'Mat khau' field exists; there is no second 'Xac nhan mat khau' (Confirm Password)
+field to compare against. README.md FR-01 requires one.
+
+[Verified via source review as a stand-in this session; re-confirm visually before submission.]
