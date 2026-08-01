@@ -1,0 +1,6 @@
+HW03 Git Commit Log
+Status: To be exported from the genuine repository history after the assignment work is committed.
+
+Required export scope: docs/assignments/HW03
+No illustrative, empty, or backdated commits are included in this placeholder.
+

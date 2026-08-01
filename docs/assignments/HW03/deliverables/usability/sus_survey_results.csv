@@ -1,0 +1,9 @@
+participant_id,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,adjusted_sum,sus_score,clarity,error_recovery,speed,trust,status
+P1,,,,,,,,,,,,,,,,,Not collected
+P2,,,,,,,,,,,,,,,,,Not collected
+P3,,,,,,,,,,,,,,,,,Not collected
+P4,,,,,,,,,,,,,,,,,Not collected
+P5,,,,,,,,,,,,,,,,,Not collected
+P6,,,,,,,,,,,,,,,,,Not collected
+P7,,,,,,,,,,,,,,,,,Not collected
+AVERAGE,,,,,,,,,,,,,,,,,Not calculated
