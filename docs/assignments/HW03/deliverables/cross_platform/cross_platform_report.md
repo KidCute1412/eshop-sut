@@ -8,7 +8,7 @@
 | CP-02 | Playwright Firefox 144.0.2, Windows NT 10.0.26200 | 2 August 2026 | `http://127.0.0.1:5173` | Executed |
 | CP-03 | Physical phone / approved cloud device | — | — | Not executed |
 
-The planned customer flow was executed successfully on Google Chrome and Firefox. Both desktop runs produced five authentic screenshots. A qualifying physical or cloud mobile environment remains pending.
+The planned Customer Web flow was executed successfully on Google Chrome and Firefox. Both desktop runs produced five authentic screenshots, which are preserved unchanged. A qualifying physical or cloud mobile environment remains pending.
 
 ## Chrome execution matrix
 
@@ -39,6 +39,8 @@ The Firefox flow matched the Chrome flow at the tested desktop viewport; no Fire
 | Difference ID | Platforms affected | Observation | Impact | Classification |
 |---|---|---|---|---|
 | CP-DIFF-01 | Mobile | No physical or approved cloud device was available during this execution | Mobile layout and behavior remain unverified | Evidence gap |
+
+CP-03 will use FR-23 Mobile Product Detail as its Mobile checkpoint. Future evidence must include at least three authentic captures: the basic detail screen, quantity/add feedback, and missing-product recovery. If a Task 1 check fails during real execution, an additional Failed screenshot must be captured and linked; source inspection alone does not establish a defect.
 
 ## Conclusion
 

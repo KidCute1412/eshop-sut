@@ -4,15 +4,15 @@
 |---|---|
 | Student | Lê Tuấn Lộc (23127404) |
 | System under test | EShop |
-| Runtime environment | Google Chrome 151.0.7922.72 on Windows |
+| Evidence environments | Google Chrome 151.0.7922.72 on Windows; static review of `frontend-mobile/App.js` |
 | Final execution | 2 August 2026 |
-| Verified defects | 15 |
-| Unverified Mobile hypotheses | 4; excluded from the defect total |
+| Verified defects | 20: 15 runtime-verified and 5 source-confirmed Mobile defects |
+| Pending Mobile evidence | Real-device screenshots for BUG-020 through BUG-024 |
 | GitHub Issue status | URLs and Issue-page screenshots pending creation by the student |
 
 ## Evidence policy
 
-Every defect counted below was reproduced in two independent Chromium runs against a freshly seeded database. Static source inspection was used only after reproduction to explain a likely cause. The screenshots are genuine captures of the running SUT. A GitHub Issue is not claimed until the student creates it and supplies the URL.
+BUG-001 through BUG-019 were reproduced in two independent Chromium runs and have genuine screenshots. At the student's direction, BUG-020 through BUG-024 are counted from explicit Mobile source behavior before device execution; they remain labeled source-confirmed with real-device screenshots pending. Runtime evidence takes precedence if it later contradicts source inference.
 
 ## Verified defect summary
 
@@ -33,6 +33,11 @@ Every defect counted below was reproduced in two independent Chromium runs again
 | BUG-017 | CHK-GUI-036 | Major | Editing one product changes every visible product name | `evidence_images/bug_017_admin_product_edit_corrupts_list.png` |
 | BUG-018 | CHK-GUI-037 | Minor | Admin data loading has no progress feedback | `evidence_images/bug_018_admin_missing_loading_indicator.png` |
 | BUG-019 | CHK-GUI-035 | Minor | Admin order transition has no explicit success feedback | `evidence_images/bug_019_admin_status_no_success_feedback.png` |
+| BUG-020 | CHK-GUI-038 | Minor | Mobile Product Detail stretches the product image | `mobile_source_review.md`; screenshot pending |
+| BUG-021 | CHK-GUI-039 | Minor | Mobile Product Detail omits the category | `mobile_source_review.md`; screenshot pending |
+| BUG-022 | CHK-GUI-012, CHK-GUI-041 | Major | Invalid Mobile quantity is silently normalized to one | `mobile_source_review.md`; screenshot pending |
+| BUG-023 | CHK-GUI-042 | Minor | Mobile Product Detail has no dedicated back control | `mobile_source_review.md`; screenshot pending |
+| BUG-024 | CHK-GUI-044 | Major | Missing-product state has no recovery CTA | `mobile_source_review.md`; screenshot pending |
 
 ## Detailed defect records
 
@@ -205,16 +210,50 @@ Every defect counted below was reproduced in two independent Chromium runs again
 **Evidence:** `evidence_images/bug_019_admin_status_no_success_feedback.png`
 **GitHub Issue:** Pending student-created URL.
 
-## Unverified Mobile hypotheses
+### BUG-020 — Mobile Product Detail stretches the product image
 
-These source-derived candidates were not executed on Expo Go, a physical phone, or an approved cloud device. They are excluded from the verified defect count.
+**Severity:** Minor  
+**Related check:** CHK-GUI-038  
+**Expected:** Product media preserves its aspect ratio.  
+**Actual:** The detail image explicitly uses `resizeMode="stretch"`.  
+**Evidence:** `mobile_source_review.md`; real-device screenshot pending.  
+**GitHub Issue:** Pending student-created URL.
 
-| Candidate | Hypothesis | Required verification |
-|---|---|---|
-| BUG-004 | Mobile Product Detail may omit category information | Execute CHK-GUI-039 on a qualifying device |
-| BUG-005 | Missing-product handling may expose technical text without recovery navigation | Execute CHK-GUI-044 on a qualifying device |
-| BUG-008 | Mobile checkout may omit the final cart item | Execute CHK-GUI-012 and inspect the request payload |
-| BUG-009 | Mobile quantity entry may add one to the typed value | Execute CHK-GUI-011 on a qualifying device |
+### BUG-021 — Mobile Product Detail omits the product category
+
+**Severity:** Minor  
+**Related check:** CHK-GUI-039  
+**Expected:** The category is visible with the product identity.  
+**Actual:** The detail JSX renders name, price, and description but no category.  
+**Evidence:** `mobile_source_review.md`; real-device screenshot pending.  
+**GitHub Issue:** Pending student-created URL.
+
+### BUG-022 — Invalid Mobile quantity is silently normalized to one
+
+**Severity:** Major  
+**Related checks:** CHK-GUI-012, CHK-GUI-041  
+**Expected:** Zero, negative, empty, and non-numeric values are rejected with feedback.  
+**Actual:** `normalizeQuantity` returns 1 and the add operation reports success.  
+**Evidence:** `mobile_source_review.md`; real-device captures pending.  
+**GitHub Issue:** Pending student-created URL.
+
+### BUG-023 — Mobile Product Detail has no dedicated back control
+
+**Severity:** Minor  
+**Related check:** CHK-GUI-042  
+**Expected:** A visible back control returns to the product grid.  
+**Actual:** Only the shared brand navigates home; the detail screen has no back control.  
+**Evidence:** `mobile_source_review.md`; real-device screenshot pending.  
+**GitHub Issue:** Pending student-created URL.
+
+### BUG-024 — Missing-product state has no recovery CTA
+
+**Severity:** Major  
+**Related check:** CHK-GUI-044  
+**Expected:** A friendly error state provides a return-home action.  
+**Actual:** The empty-object branch renders technical text without a recovery CTA.  
+**Evidence:** `mobile_source_review.md`; real-device screenshot pending.  
+**GitHub Issue:** Pending student-created URL.
 
 ## GitHub Issue handoff
 

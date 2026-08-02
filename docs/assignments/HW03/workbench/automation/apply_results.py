@@ -9,7 +9,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[4]
-CHECKLIST = REPO / "docs/assignments/HW03/deliverables/checklist/gui_checklist.csv"
+CHECKLIST = REPO / "docs/assignments/HW03/workbench/data/gui_checklist.csv"
 RESULTS = HERE / "results/execution_results.json"
 
 
@@ -32,8 +32,6 @@ def main() -> None:
     for row in rows:
         item_id = row["Item ID"]
         result = runtime_results[item_id]
-        if row["FR ID"] == "FR-23":
-            row["FR ID"] = "Pool D"
         row["Actual Result"] = result["actual"]
         row["Status"] = result["status"]
         row["Bug ID"] = result["bugId"] or "N/A"
