@@ -28,7 +28,3 @@ Administer immediately after the session ends (after the participant reaches suc
 
 Add any follow-up probes driven by what you personally observed during that specific session (e.g., if they hesitated on the coupon field, ask about it directly).
 
-## Recording & consent
-
-- Ask verbal or written consent to record screen (+ audio if available) before starting. If declined, rely on structured live notes only (see `03_usability_evaluation/phase2_sessions/SESSION_TEMPLATE.md`).
-- Store recordings under `03_usability_evaluation/phase2_sessions/recordings/P0X.mp4` (not committed to git if large — reference by filename/local path instead, per participant privacy).
