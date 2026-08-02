@@ -1,0 +1,14 @@
+9bf5bfe  2026-07-31 00:19:28 +0700  Add SUBMISSION_CHECKLIST.md tracking done vs. pending items per task and for the whole package
+279d574  2026-07-30 23:43:42 +0700  Refresh git commit log export
+7161dcf  2026-07-30 23:43:41 +0700  Narrow Task1 scope to frontend-web only, trim to 10 easy-to-screenshot bugs (42 items, 32 Passed/10 Failed)
+307dced  2026-07-30 23:04:58 +0700  Refresh git commit log export after Task1 revision
+30a4c58  2026-07-30 23:04:51 +0700  Revise Task1: reframe checklist/bug report as manual test-execution evidence, drop unobservable item, fix CSV quoting + recount (51 items/37 bugs)
+8bb4ce8  2026-07-29 20:40:13 +0700  Add git commit log export for submission (§12)
+a81f635  2026-07-29 20:40:05 +0700  Add main README with directory guide, test summary, and self-assessment table
+daa9159  2026-07-29 20:39:27 +0700  Add mandatory AI Audit Report and AI Critique appendix
+8191a1e  2026-07-29 20:38:27 +0700  Task4(bonus §7): add reusable Agent Skills for GUI checklist and usability evaluation
+2ce08dc  2026-07-29 20:37:17 +0700  Task3: cross-browser/cross-platform test log template + report
+1ae9d25  2026-07-29 20:36:28 +0700  Task2: usability evaluation plan - objectives, scenario, SUS instrument, participant/session/analysis templates
+0543e52  2026-07-29 20:34:25 +0700  Task1 step3: write main Task 1 report synthesizing checklist design+execution+bugs
+bd82d3d  2026-07-29 20:33:45 +0700  Task1 step2: execute checklist, log bug report (38 bugs) with GitHub-issue-ready details
+3dc3af0  2026-07-29 20:32:10 +0700  Task1 step1: design GUI checklist (52 items, IA-01..04) grounded in eshop-clone source
