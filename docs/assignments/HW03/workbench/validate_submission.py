@@ -31,6 +31,9 @@ counts = Counter(row["Status"] for row in rows)
 require(counts == {"Passed": 16, "Failed": 15, "Not Executed": 14}, f"Unexpected status counts: {counts}")
 require(all(row["Actual Result"].strip() for row in rows), "Every checklist row needs an actual result")
 require(all(row["Notes"].strip() for row in rows), "Every checklist row needs execution or non-execution notes")
+require(all(row["Screen"].strip() for row in rows), "Every checklist row needs a screen")
+require(all(row["Environment"].strip() for row in rows), "Every checklist row needs an environment")
+require(all(row["Origin"] in {"AI", "Human", "Hybrid"} for row in rows), "Every checklist row needs a valid origin")
 require(not any(row["FR ID"] == "FR-23" for row in rows), "Unsupported FR-23 remains in checklist")
 require(sum(row["FR ID"] == "Pool D" for row in rows) == 8, "Expected eight Pool D rows")
 
@@ -108,7 +111,7 @@ for path in DELIVERABLES.rglob("*"):
             errors.append(f"UTF-8 error in {path.relative_to(DELIVERABLES)}: {exc}")
 
 for rel, rows_expected, cols_expected in (
-    ("checklist/gui_checklist.xlsx", 46, 12),
+    ("checklist/gui_checklist.xlsx", 46, 15),
     ("usability/sus_survey_results.xlsx", 9, 18),
 ):
     workbook = load_workbook(DELIVERABLES / rel, read_only=False)
