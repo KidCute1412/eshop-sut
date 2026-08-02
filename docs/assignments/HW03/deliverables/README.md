@@ -6,54 +6,71 @@
 | Student ID | 23127404 |
 | Email | 23127404@hcmus.edu.vn |
 | System under test | EShop |
-| Assignment | HW03 — GUI and Usability Testing |
+| Final automated execution | 2 August 2026 |
 
-## Submission overview
+## Submission status
 
-This package documents GUI checklist design and execution, defect reporting, a moderated usability evaluation, cross-platform verification, AI-assisted work, and a reusable Agent Skill. Empirical fields that depend on real sessions or device execution remain explicitly marked as not executed until authentic evidence is collected.
+This package contains an executed GUI checklist, verified desktop defect evidence, a completed Chrome cross-browser run, usability-study instruments, AI documentation, and a reusable Agent Skill. Results requiring real participants, a qualifying mobile device, working Firefox execution, GitHub Issue pages, or a demonstration video remain explicitly incomplete rather than being simulated.
 
 ## Selected scope
 
-- Shopping cart (FR-07)
+- Shopping cart and checkout-related behavior (FR-07 and FR-08 interactions)
 - Order state machine (FR-10)
 - User order history (FR-11)
-- Admin order management (FR-18)
-- Mobile product detail flow (FR-23, corresponding to the mobile implementation of product detail)
+- Admin order and product management (FR-18 context)
+- Pool D Mobile Product Detail and cart behavior; the assignment specification assigns no FR number to this pool
 
 ## Self-assessment
 
-| Criterion | Maximum | Self-assessed score | Evidence |
+| Criterion | Maximum | Self-assessed score | Basis |
 |---|---:|---:|---|
-| Task 1 — GUI checklist, execution, and defects | 30 | To be finalized | `checklist/`, `bugs/`, and §1 of the main report |
-| Task 2 — Usability evaluation | 40 | To be finalized | `usability/` and §2 of the main report |
-| Task 3 — Cross-platform verification | 20 | To be finalized | `cross_platform/` and §3 of the main report |
-| Task 4 — Agent Skill | 10 | To be finalized | `agent_skills/` and §4 of the main report |
-| **Total** | **100** | **To be finalized** | Finalized after all authentic evidence is reviewed |
+| Task 1 — GUI checklist, execution, and defects | 30 | 24 | 45 designed; 31 executed twice; 15 verified bugs with runtime screenshots; Mobile and GitHub Issue evidence pending |
+| Task 2 — Usability evaluation | 40 | 8 | Scenario, instruments, moderator protocol, and analysis templates complete; no participant session is claimed |
+| Task 3 — Cross-browser / cross-platform | 20 | 7 | Google Chrome flow executed with five captures; Firefox blocked and mobile not executed |
+| Task 4 — Agent Skill | 10 | 6 | Reusable skill supplied; demonstration video pending |
+| **Total** | **100** | **45** | Evidence-based assessment; not a claim of 90% rubric completion |
+
+If packaged before the missing evidence is added, the corresponding filename grade component would be `045`, not `090`.
 
 ## Test summary
 
 | Measure | Result |
 |---|---|
-| Screens and flows evaluated | Cart, checkout/order creation, order history, admin order management, and mobile product detail |
-| GUI checklist items designed | 45 |
-| GUI checklist items executed, passed, and failed | See `checklist/gui_checklist.xlsx` |
-| Defects documented | 13 candidate defects, subject to final evidence verification |
-| Usability participants | Seven required; results to be entered after the official sessions |
-| Cross-platform environments | Chrome Desktop, Firefox Desktop, and a real/approved cloud mobile environment |
-| Agent Skill demonstration | To be added after the video is recorded, uploaded, and access-tested |
+| Screens evaluated at runtime | Product Detail, Cart, Checkout, Profile/Order History, Admin Dashboard, Admin Orders, Admin Products |
+| Additional behavior evaluated | Coupon API and order-state transitions |
+| Checklist items designed | 45 |
+| Checklist items executed | 31 |
+| Passed | 16 |
+| Failed | 15 |
+| Not executed | 14 Mobile-dependent items |
+| Verified defects | 15: 3 Critical, 9 Major, 3 Minor |
+| Unverified Mobile hypotheses | 4; excluded from the bug total |
+| Completed qualifying environments | 1: Google Chrome Desktop |
+| Blocked environment | Firefox Desktop |
+| Pending environment | Physical or approved cloud mobile device |
+| Official usability participants | 0 of 7; sessions pending |
+| Demo videos | 0; link pending |
 
-## Deliverable index
+## Evidence index
 
-- `main_report.md` and `main_report.pdf`: integrated assignment report.
-- `checklist/`: executable GUI checklist in CSV and Excel formats.
-- `bugs/`: detailed defect report and supporting evidence.
-- `usability/`: scenario, participant register, SUS responses, observations, findings, and recordings index.
-- `cross_platform/`: execution matrix and screenshots for the three environments.
-- `ai_reports/`: mandatory AI Critique and AI Audit Report in Markdown and PDF.
-- `agent_skills/`: reusable GUI and usability testing skill with its demonstration link.
-- `git_commit_log.txt`: text export of the genuine assignment history.
+- `main_report.md` and `main_report.pdf`: integrated report and limitations.
+- `checklist/`: canonical CSV and generated Excel checklist.
+- `bugs/bug_report.md`: 15 runtime-verified defects and evidence mapping.
+- `bugs/evidence_images/`: authentic failed-item screenshots.
+- `usability/`: scenario, participant register, SUS instruments, notes, findings structure, and recording index.
+- `cross_platform/`: Chrome evidence and documented Firefox/mobile gaps.
+- `ai_reports/`: mandatory AI Critique and AI Audit Report.
+- `agent_skills/`: reusable GUI/usability testing skill and pending demo link.
+- `git_commit_log.txt`: genuine repository history export.
+
+## Outstanding evidence
+
+1. Conduct one pilot and seven moderated sessions with eligible participants; add consented recordings, notes, SUS responses, and synthesis.
+2. Execute Firefox in a working environment and add genuine screenshots.
+3. Execute a physical or approved cloud mobile environment and add the required identity overlay.
+4. Create GitHub Issues for the verified defects, attach the runtime images, and add genuine Issue-page screenshots.
+5. Record, upload, and access-test the Agent Skill demonstration video.
 
 ## Evidence integrity statement
 
-Participant identities, observations, quotations, recordings, cross-platform screenshots, GitHub issue references, and Git commits must originate from actual work. A field marked `Not executed`, `Not collected`, or `To be added` is not presented as completed evidence.
-
+No participant identity, usability response, Firefox result, mobile screenshot, GitHub Issue page, or video URL has been generated or represented as completed. Every `Passed` or `Failed` checklist status comes from live Google Chrome execution; every submitted bug PNG is a capture of the running SUT.

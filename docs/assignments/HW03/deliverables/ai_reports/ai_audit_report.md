@@ -4,77 +4,88 @@
 
 I use AI tools for the following tasks.
 
-AI assisted with checklist drafting, source-oriented test analysis, report organization, template preparation, and editorial review. AI-generated material is not treated as proof of participant sessions, browser/device execution, recordings, Git commits, GitHub issues, or uploaded videos.
-
-## Audit method
-
-Each interaction record identifies the tool, date and time, prompt, relevant output, human review, and affected artifact. Exact timestamps and verbatim prompts must be copied from the original AI conversation history; fields not yet verified remain explicitly unfilled.
+OpenAI Codex assisted with requirement analysis, deliverable restructuring, checklist review, Playwright automation, runtime-result reconciliation, evidence indexing, defect documentation, cross-platform reporting, document generation, and final validation. AI output was reviewed against the assignment specification, the SUT source, live browser behavior, and generated artifacts. AI was not used to invent participant data, usability results, device evidence, GitHub Issues, or video links.
 
 ## Interaction log
 
-### AI-01 — GUI checklist design
+The conversation interface exposed the interaction date but not message-level clock times. The unavailable time component is stated explicitly rather than reconstructed.
+
+### AI-01 — Submission-structure review
 
 | Field | Record |
 |---|---|
 | Tool | OpenAI Codex |
-| Date and time | To be copied from the original interaction history |
-| Prompt | To be copied verbatim from the original interaction history |
-| AI output | Proposed GUI checks for the selected EShop scope across IA-01 to IA-04. |
-| Human review | Review every item for relevance, duplication, expected behavior, and execution evidence. |
-| Affected artifacts | `checklist/gui_checklist.csv`, `checklist/gui_checklist.xlsx` |
+| Date and time | 2 August 2026; message-level time unavailable |
+| Prompt | `cấu trúc thư mục của docs\assignments\HW03\deliverables đã phù hợp để nộp bài chưa... theo yêu cầu chính là ở "docs\assignments\HW03\specs\2026.HW03.GUI Usability_En.pdf"` |
+| AI output | Compared the proposed package with the PDF requirements and identified submission-only versus internal authoring artifacts. |
+| Human review | Confirmed English submission documents, externalized utilities, and separate pilot/P1–P7 records. |
+| Affected artifacts | `deliverables/`, `workbench/` |
 
-### AI-02 — Defect analysis and reporting
-
-| Field | Record |
-|---|---|
-| Tool | OpenAI Codex |
-| Date and time | To be copied from the original interaction history |
-| Prompt | To be copied verbatim from the original interaction history |
-| AI output | Candidate defect descriptions and traceability between failed checks and defect records. |
-| Human review | Verify each issue through actual execution; attach authentic screenshots and GitHub issue evidence. |
-| Affected artifacts | `bugs/bug_report.md`, `bugs/evidence_images/`, `bugs/github_issues_screenshots/` |
-
-### AI-03 — Usability evaluation preparation
+### AI-02 — Professional restructuring
 
 | Field | Record |
 |---|---|
 | Tool | OpenAI Codex |
-| Date and time | To be copied from the original interaction history |
-| Prompt | To be copied verbatim from the original interaction history |
-| AI output | Drafted the goal-oriented task scenario, response forms, observation structure, and SUS analysis framework. |
-| Human review | Conduct one pilot and seven real sessions; enter only consented, observed, and verifiable data. |
-| Affected artifacts | `usability/` |
+| Date and time | 2 August 2026; message-level time unavailable |
+| Prompt | `vậy hãy fix sao cho cấu trúc format là thật chuẩn. nội dung hiện tại của mỗi file trong phần đó cũng phải chuẩn hóa câu từ cho 1 report chuyên nghiệp, không phải viết giỡn giỡn.` |
+| AI output | Reorganized the package, rewrote professional templates, separated workbench tools, and generated initial PDF/XLSX files. |
+| Human review | Removed generated mock evidence and retained explicit evidence-integrity gates. |
+| Affected artifacts | All HW03 submission templates and derived files |
 
-### AI-04 — Cross-platform protocol
-
-| Field | Record |
-|---|---|
-| Tool | OpenAI Codex |
-| Date and time | To be copied from the original interaction history |
-| Prompt | To be copied verbatim from the original interaction history |
-| AI output | Structured a three-environment execution matrix and evidence requirements. |
-| Human review | Execute all environments and verify browser, operating-system, device, URL, watermark, and observed results. |
-| Affected artifacts | `cross_platform/` |
-
-### AI-05 — Report and Agent Skill preparation
+### AI-03 — Runtime-completion request
 
 | Field | Record |
 |---|---|
 | Tool | OpenAI Codex |
-| Date and time | To be copied from the original interaction history |
-| Prompt | To be copied verbatim from the original interaction history |
-| AI output | Revised the main report, AI Critique, audit structure, submission index, and reusable skill documentation. |
-| Human review | Confirm factual accuracy, replace outstanding empirical fields, review generated documents, and verify the demonstration video. |
-| Affected artifacts | `README.md`, `main_report.*`, `ai_reports/`, `agent_skills/` |
+| Date and time | 2 August 2026; message-level time unavailable |
+| Prompt | `hãy tiến hành thực hiện test, và điền mọi nội dung có thể điền (trừ link video và screenshot của màn hình điện thoại)... hoàn thiện docs\assignments\HW03\deliverables tới 90%... quy trình thực hiện cần liên tục test lại và review lại` |
+| AI output | Inspected the specification, source, database, existing checklist, browser availability, and evidence constraints; proposed a test–review–retest workflow. |
+| Human review | Chose to keep Mobile items as `Not Executed`, defer real participant sessions, and let the student create GitHub Issues. |
+| Affected artifacts | Execution plan and evidence policy |
 
-## Human-review controls
+### AI-04 — Screenshot-metadata clarification
 
-- No participant identity, quotation, rating, duration, or task result may be generated by AI.
-- No cross-platform result may be reported without an authentic run and screenshot.
-- Static source inspection may create a test hypothesis but does not establish a user-visible defect.
-- Every final status, defect, score, link, and summary count must be reconciled with its source evidence.
+| Field | Record |
+|---|---|
+| Tool | OpenAI Codex |
+| Date and time | 2 August 2026; message-level time unavailable |
+| Prompt | `Ảnh có overlay gồm 23127404@hcmus.edu.vn, browser, OS, URL, timestamp và test/checklist ID. này là gì, có cần thiết không hay chỉ đơn giản là chụp screen thôi` |
+| AI output | Distinguished ordinary defect screenshots from the assignment's cross-platform identity/environment requirement. Removed unnecessary timestamp and checklist-ID overlays. |
+| Human review | Approved simple bug captures and a compact identity/browser/OS/URL caption only for cross-platform images. |
+| Affected artifacts | Evidence-capture rules and Chrome screenshots |
+
+### AI-05 — Playwright execution and retest
+
+| Field | Record |
+|---|---|
+| Tool | OpenAI Codex with Playwright 1.57.0 |
+| Date and time | Final Google Chrome run: 2 August 2026, 08:31–08:32 ICT |
+| Prompt | `Implement the plan.` |
+| AI output | Built the internal runtime harness; executed Customer Web, Admin, and API checks; captured failed-item evidence; reset and repeated the run; produced 16 Passed, 15 Failed, and 14 Not Executed results. |
+| Human review | Automation-only failures involving dialog handling, navigation timing, revenue parsing, and browser selection were corrected and rerun. The final run used installed Google Chrome rather than Playwright Chromium. |
+| Affected artifacts | `checklist/`, `bugs/evidence_images/`, `cross_platform/chrome_desktop/`, `workbench/automation/` |
+
+### AI-06 — Defect and report reconciliation
+
+| Field | Record |
+|---|---|
+| Tool | OpenAI Codex |
+| Date and time | 2 August 2026, after the final runtime execution |
+| Prompt | Continuation of `Implement the plan.` |
+| AI output | Reconciled the 45 checklist rows; documented 15 verified defects; isolated four unverified Mobile hypotheses; updated the main report, README, cross-platform status, and self-assessment. |
+| Human review | Checked screenshot content, corrected the percentage-coupon interpretation, removed the unsupported FR-23 label, and reported Firefox as blocked rather than completed. |
+| Affected artifacts | All submission-facing Markdown, CSV, XLSX, and PDF artifacts |
+
+## Human-review controls applied
+
+- A static source pattern could create a hypothesis but not a `Passed`, `Failed`, or verified defect result.
+- Every counted defect was reproduced in two clean browser runs and mapped to a genuine screenshot.
+- Playwright mobile emulation was not accepted as a physical/cloud-device platform.
+- Firefox launch or source compatibility was not reported as successful cross-browser execution.
+- No participant name, contact, quotation, rating, duration, consent, or recording was generated.
+- No GitHub Issue or video was claimed before an authentic externally accessible artifact existed.
+- Summary counts were derived from the canonical checklist rather than entered independently.
 
 ## Student attestation
 
-To be signed after all interaction records and evidence have been reviewed for accuracy.
-
+Pending the student's final review and signature after participant, mobile, GitHub Issue, and video evidence are added.

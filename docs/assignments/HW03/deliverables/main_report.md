@@ -5,85 +5,136 @@
 | Student | Lê Tuấn Lộc (23127404) |
 | Email | 23127404@hcmus.edu.vn |
 | System under test | EShop |
-| Selected scope | FR-07, FR-10, FR-11, FR-18, and mobile product detail (FR-23) |
+| Final automated execution | 2 August 2026 |
+| Primary runtime environment | Google Chrome 151.0.7922.72 on Windows NT 10.0.26200 |
 
 ## Executive summary
 
-This report presents the design and execution framework for GUI checklist testing, moderated usability evaluation, and cross-platform verification of the EShop application. It also documents defects, AI-assisted activities, human review, and a reusable testing skill. Results that require real participants, live browser/device execution, or externally accessible evidence are reported only after verification; outstanding empirical work is identified transparently.
+The EShop GUI checklist contains 45 non-duplicate checks across IA-01 to IA-04. Thirty-one Web, Admin, and API-supported checks were executed twice in Google Chrome against freshly seeded data; 16 passed and 15 failed. Fourteen checks requiring the Mobile app remain `Not Executed`. The 15 failures map one-to-one to verified defect records and authentic screenshots. The most serious findings concern a client-editable checkout total, stored HTML execution in Admin, and incorrect percentage-coupon arithmetic.
+
+The selected Chrome flow was also captured across five screens for cross-platform evidence. Firefox was attempted with a compatible downloaded browser but failed during page creation and direct CLI capture; it is reported as blocked. A qualifying mobile environment and all real-participant usability sessions remain pending.
 
 ## 1. GUI checklist and defect reporting
 
-### 1.1 Objective and coverage
+### 1.1 Scope and coverage
 
-The checklist evaluates selected customer, mobile, and administrative flows across all four interface aspects: general UI standards (IA-01), forms (IA-02), navigation (IA-03), and feedback/state (IA-04). The canonical checklist contains 45 non-identical items in `checklist/gui_checklist.xlsx` and `checklist/gui_checklist.csv`.
+The checklist covers Product Detail, Cart, Checkout, Profile/Order History, Admin Dashboard, Admin Orders, Admin Products, order-state APIs, and selected Mobile behaviors. The Mobile pool has no FR number in the assignment specification; it is identified as Pool D rather than the previously assumed `FR-23`.
 
-### 1.2 Design and review method
+| Interface aspect | Items |
+|---|---:|
+| IA-01 — General UI standards | 12 |
+| IA-02 — Forms | 12 |
+| IA-03 — Navigation | 7 |
+| IA-04 — Feedback / state | 14 |
+| **Total** | **45** |
 
-AI was used to propose an initial checklist and assist with static inspection. Each item was reviewed against the selected interface and application behavior. Human-added or materially revised items document the context that the initial AI analysis overlooked. The checklist records preconditions, expected and actual results, execution status, notes, defect mapping, and evidence references where applicable.
+### 1.2 Method
 
-### 1.3 Execution summary
+AI assisted with initial checklist drafting, source-oriented hypotheses, automation structure, and editorial reconciliation. Each executable result was established through live interaction rather than source inspection. The execution process was:
+
+1. Back up the tracked SQLite database from the Git index.
+2. Initialize the documented seed data and start Backend, Customer Web, and Admin Web.
+3. Execute the checklist in Google Chrome with Playwright.
+4. Capture screenshots only for failed items.
+5. Reset the database and repeat the complete run.
+6. Correct automation-only selector, dialog, and timing faults without changing the SUT.
+7. Reconcile checklist, bug records, evidence references, and summary counts.
+8. Restore the original database after execution.
+
+### 1.3 Results
 
 | Measure | Result |
-|---|---|
+|---|---:|
 | Items designed | 45 |
-| Interface aspects covered | IA-01, IA-02, IA-03, IA-04 |
-| Items executed | Refer to the final checklist status column |
-| Passed / failed | Refer to the final checklist and README summary |
-| Defects | 13 candidate records pending final evidence verification |
+| Executed | 31 |
+| Passed | 16 |
+| Failed | 15 |
+| Not executed | 14 |
+| Verified defects | 15 |
 
-Detailed defect records are maintained in `bugs/bug_report.md`. Failed checklist items must reference a defect ID and authentic screenshot; each submitted defect must also reference the corresponding GitHub issue screenshot.
+The Mobile-only checks remain `Not Executed` because Playwright viewport emulation is not equivalent to Expo Go, a real phone, or an approved cloud device. Four source-derived Mobile candidates are retained as unverified hypotheses and excluded from the defect count.
+
+### 1.4 Defect analysis
+
+| Severity | Count | Representative risk |
+|---|---:|---|
+| Critical | 3 | Editable authoritative total; stored HTML execution; incorrect percentage coupon |
+| Major | 9 | Broken first-click action, invalid order transitions, wrong revenue, missing order details |
+| Minor | 3 | Silent decimal truncation and missing progress/success feedback |
+
+Detailed reproduction steps and evidence are in `bugs/bug_report.md`. GitHub Issue URLs and Issue-page screenshots are intentionally pending until the student creates the real issues.
 
 ## 2. Moderated usability evaluation
 
-### 2.1 Objective
+### 2.1 Objective and scenario
 
-The evaluation investigates whether target users can independently complete a purchase-oriented flow, understand system feedback, recover from errors, and trust the resulting order status. The participant-facing goal is defined in `usability/task_scenario.md`.
+The study is designed to determine whether typical online shoppers can independently select a product, review the cart, complete checkout, and confirm the resulting order status. Measures include completion, time on task, errors, hesitations, moderator intervention, SUS, and qualitative responses concerning clarity, recovery, speed, and trust.
 
-### 2.2 Method
+The participant-facing scenario in `usability/task_scenario.md` states a realistic goal and does not prescribe interface steps. One pilot must precede seven official sessions.
 
-One pilot session is conducted before seven official moderated sessions. Participants are asked to think aloud while the moderator observes without leading them. After completing or abandoning the task, each participant completes the System Usability Scale (SUS) and answers probes concerning clarity, error recovery, speed, and trust.
+### 2.2 Prepared instruments
+
+- Moderator guide and neutral-intervention rules.
+- Pilot and P1–P7 structured observation files.
+- Standard ten-item SUS response forms and scoring spreadsheet.
+- Four required probe areas: clarity, error recovery, speed, and trust.
+- Participant register with masked-contact guidance.
+- Severity-ranked synthesis structure and recordings index.
 
 ### 2.3 Evidence status
 
-| Evidence | Status | Location |
+| Evidence | Status |
+|---|---|
+| Pilot participant/session | Not collected |
+| Seven eligible participants | 0 of 7 verified |
+| Consent and recordings | Not collected |
+| SUS responses and scores | Not collected |
+| Observation notes | Templates prepared; no observations claimed |
+| Severity-ranked findings | Awaiting genuine session data |
+
+No Playwright agent is treated as a participant. No name, quotation, rating, task duration, or contact detail has been invented.
+
+### 2.4 SUS scoring method
+
+For odd-numbered items, subtract one from the response. For even-numbered items, subtract the response from five. Sum the ten contributions and multiply by 2.5. The result is a 0–100 usability benchmark, not a percentage grade. Scores remain uncalculated until authentic responses exist.
+
+## 3. Cross-browser and cross-platform verification
+
+### 3.1 Google Chrome
+
+Google Chrome 151.0.7922.72 completed the Product List → Product Detail → Cart → Checkout → Order History flow. Five genuine screenshots are stored under `cross_platform/chrome_desktop/`. Each contains a compact caption with `23127404@hcmus.edu.vn`, browser, Windows, and URL.
+
+### 3.2 Firefox
+
+Firefox 144.0.2 launched, but Playwright failed while creating the first page with `browserContext.newPage`. A direct headless CLI screenshot attempt also stalled and was terminated. Firefox is therefore `Blocked`, not passed, failed, or completed.
+
+### 3.3 Mobile
+
+No physical phone or approved cloud environment was available. Mobile remains `Not Executed`; no emulated screenshot is submitted as a substitute.
+
+| Environment | Status | Evidence |
 |---|---|---|
-| Pilot session | Not yet conducted | `usability/observation_notes/pilot_notes.md` |
-| Seven eligible participants | Not yet verified | `usability/participant_list.md` |
-| Session recordings | Not yet collected | `usability/recordings/README.md` |
-| SUS responses | Not yet collected | `usability/raw_responses/` |
-| Observation notes | Not yet collected | `usability/observation_notes/` |
-| Severity-ranked synthesis | Awaiting session evidence | `usability/severity_ranked_findings.md` |
+| Google Chrome Desktop | Executed | Five screenshots |
+| Firefox Desktop | Blocked by environment | Diagnostic status only |
+| Physical/approved cloud mobile | Not executed | None |
 
-### 2.4 SUS scoring
-
-For odd-numbered items, the contribution is the response minus one. For even-numbered items, the contribution is five minus the response. The ten contributions are summed and multiplied by 2.5, producing a score from 0 to 100. The score is a usability benchmark, not a percentage grade.
-
-| Participant | SUS score | Status |
-|---|---:|---|
-| P1–P7 | — | Awaiting authentic responses |
-| Mean | — | Calculated after all seven sessions |
-
-## 3. Cross-platform verification
-
-The selected flow will be verified on Chrome Desktop, Firefox Desktop, and a real physical or approved cloud mobile environment. Each screenshot must show enough environment context to establish the browser, operating system or device, the SUT localhost URL, and the required `23127404@hcmus.edu.vn` identity overlay.
-
-| Environment | Execution status | Evidence |
-|---|---|---|
-| Chrome Desktop | Not executed | `cross_platform/chrome_desktop/` |
-| Firefox Desktop | Not executed | `cross_platform/firefox_desktop/` |
-| Real/approved cloud mobile environment | Not executed | `cross_platform/mobile_real_device/` |
-
-The detailed execution matrix and observed differences are recorded in `cross_platform/cross_platform_report.md` after the real runs.
+The requirement of three qualifying platforms is not yet satisfied.
 
 ## 4. Agent Skill and AI documentation
 
-The reusable testing skill is provided in `agent_skills/gui-usability-tester/SKILL.md`. Its demonstration URL will be recorded in the adjacent `demo_video_link.txt` after the end-to-end video is uploaded and access-tested. The mandatory AI Critique and AI Audit Report are supplied in Markdown and PDF under `ai_reports/`.
+The reusable skill is supplied under `agent_skills/gui-usability-tester/`. It separates checklist design, runtime evidence, usability safeguards, and final reconciliation. The demonstration URL is pending a real recording and upload.
 
-## 5. Limitations and completion criteria
+The AI Audit Report documents AI-assisted activities and human review. The AI Critique remains within the required 200–300 words and emphasizes that plausible static analysis is not execution evidence.
 
-At the current stage, no usability-session or cross-platform result is claimed. Final conclusions must be based on authentic evidence, the checklist summary must be recalculated from its final statuses, and every external link must be verified before packaging.
+## 5. Limitations and remaining work
+
+- Fourteen Mobile checklist items were not executed.
+- Firefox and the third qualifying platform remain incomplete.
+- The pilot and seven official usability sessions remain incomplete.
+- GitHub Issues and their screenshots remain incomplete.
+- The Agent Skill demonstration video remains incomplete.
+- Historical AI prompts without verifiable source timestamps are not reconstructed.
 
 ## Conclusion
 
-The submission framework provides traceability from assignment requirements to test design, execution evidence, findings, and AI-assisted work. The final report will be considered complete only after the remaining real-world evidence has been collected, reviewed, and incorporated consistently across all source and derived files.
-
+The completed portion provides a traceable and repeatable desktop execution: 45 designed checks, 31 executed checks, 15 reproducible failures, 15 verified defect records, and five Chrome cross-platform captures. The remaining evidence is clearly isolated and can be added without rewriting the completed results. The current evidence supports a conservative self-assessment of 45/100, not a 090 submission claim.

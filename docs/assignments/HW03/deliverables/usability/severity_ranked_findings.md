@@ -13,9 +13,9 @@
 
 ## Consolidated findings
 
-| Finding ID | Finding | Evidence (participant/session) | Frequency | Impact | Severity | Recommendation | Related bug |
-|---|---|---|---:|---|---|---|---|
-| To be assigned | To be completed from observed evidence | To be cited | — | To be assessed | To be assigned | To be supported by evidence | If applicable |
+No usability finding is reported before the seven official sessions. Runtime GUI defects in `../bugs/bug_report.md` are not substituted for participant observations.
+
+Use the following columns when genuine observations are available: Finding ID, finding, participant/session evidence, frequency, impact, severity, recommendation, and related bug.
 
 ## Analysis rules
 
@@ -23,4 +23,3 @@
 - Distinguish systemic design issues from isolated software defects.
 - Support frequency and severity with references to the relevant observation files.
 - Do not generalize a single participant's preference into a systemic finding without justification.
-
