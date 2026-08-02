@@ -1,6 +1,6 @@
 # Bug Report — EShop (eshop-clone), frontend-web
 
-> **Scope note:** narrowed to 10 bugs, all reproducible on **frontend-web alone** (no admin login, no mobile device/Expo Go needed), so a single person can reproduce and screenshot every one of them solo. Each bug below is written in ready-to-paste GitHub Issue format (Title / Labels / Steps to Reproduce / Expected / Actual / Evidence), based on manually reproducing the issue on the running app. Before submission, create each of these as a real Issue on your fork's GitHub Issues page (this workspace's copy of the repo has no GitHub remote configured — see `HOWTO_create_github_issues.md`), and attach a screenshot to each one as required by the assignment. Update the `GitHub Issue URL` column once created.
+10 bugs found during Task 1 checklist execution, all reproducible on frontend-web alone. Each bug is written in GitHub-issue format (Title / Labels / Steps to Reproduce / Expected / Actual / Evidence) based on manually reproducing the issue on the running app, and filed as a real GitHub Issue (with screenshot) on `KidCute1412/eshop-sut` — see the URL column below.
 
 ## Index
 
