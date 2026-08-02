@@ -6,6 +6,9 @@ Branch: 23127404-LeTuanLoc
 Exported: 2026-08-02 (Asia/Saigon)
 Command: git log --date=iso-local --pretty=format:'%h | %ad | %s' -- docs/assignments/HW03
 
+0c0d7b0 | 2026-08-02 22:15:23 +0700 | test(hw03): enforce complete checklist schema
+036e52e | 2026-08-02 22:15:14 +0700 | feat(hw03): install robust GUI usability testing skill
+cf5abb9 | 2026-08-02 19:26:26 +0700 | docs(hw03): refresh assignment commit log
 8304758 | 2026-08-02 19:26:00 +0700 | docs(hw03): prepare evidence-gated usability sessions
 28cc37d | 2026-08-02 19:25:44 +0700 | test(hw03): complete Firefox cross-browser evidence
 cd6e757 | 2026-08-02 08:37:45 +0700 | docs(hw03): export genuine assignment commit log
