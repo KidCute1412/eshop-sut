@@ -8,6 +8,8 @@ import sys
 from collections import Counter
 from pathlib import Path
 
+from openpyxl import load_workbook
+
 
 ALLOWED_STATUS = {"Pass", "Fail", "Passed", "Failed", "Blocked", "Not Executed"}
 ALIASES = {
@@ -29,6 +31,13 @@ ALIASES = {
 
 
 def read_rows(path: Path) -> tuple[set[str], list[dict[str, str]]]:
+    if path.suffix.lower() == ".xlsx":
+        workbook = load_workbook(path, read_only=True, data_only=False)
+        sheet = workbook["GUI Checklist"] if "GUI Checklist" in workbook.sheetnames else workbook.active
+        values = sheet.iter_rows(values_only=True)
+        headers = [str(item).strip() if item is not None else "" for item in next(values, ())]
+        rows = [dict(zip(headers, ("" if item is None else item for item in row))) for row in values]
+        return set(headers), rows
     with path.open(encoding="utf-8-sig", newline="") as handle:
         reader = csv.DictReader(handle)
         return set(reader.fieldnames or []), list(reader)
@@ -40,7 +49,10 @@ def value(row: dict[str, str], canonical: str) -> str:
 
 def main(root_arg: str) -> int:
     root = Path(root_arg).resolve()
-    checklist = root / "checklist" / "gui_checklist.csv"
+    checklist_dir = root / "checklist"
+    checklist = checklist_dir / "gui_checklist.xlsx"
+    if not checklist.is_file():
+        checklist = checklist_dir / "gui_checklist.csv"
     defects = root / "bugs" / "bug_report.md"
     errors: list[str] = []
     warnings: list[str] = []
@@ -99,7 +111,7 @@ def main(root_arg: str) -> int:
                         errors.append(f"Checklist {check_id}: missing evidence file {ref}")
 
     participant_list = root / "usability" / "participant_list.md"
-    session_results = root / "usability" / "session_results.csv"
+    session_results = root / "usability" / "usability_results.xlsx"
     if participant_list.exists() != session_results.exists():
         warnings.append("Usability participant register and session results are not both present")
 

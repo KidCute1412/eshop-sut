@@ -32,6 +32,7 @@ from reportlab.platypus import (
 
 HW03_ROOT = Path(__file__).resolve().parents[1]
 DELIVERABLES = HW03_ROOT / "deliverables"
+DATA = HW03_ROOT / "workbench/data"
 AUTHOR = "Lê Tuấn Lộc (23127404)"
 
 
@@ -133,7 +134,7 @@ def csv_to_xlsx(source: Path, target: Path, sheet_name: str, landscape_mode: boo
     for row in rows:
         sheet.append(row)
     header_fill = PatternFill("solid", fgColor="1F4E78")
-    status_fills = {"Pass": "E2F0D9", "Fail": "FCE4D6", "Not Executed": "FFF2CC"}
+    status_fills = {"Pass": "E2F0D9", "Passed": "E2F0D9", "Fail": "FCE4D6", "Failed": "FCE4D6", "Not Executed": "FFF2CC"}
     for cell in sheet[1]:
         cell.font = Font(color="FFFFFF", bold=True)
         cell.fill = header_fill
@@ -157,6 +158,33 @@ def csv_to_xlsx(source: Path, target: Path, sheet_name: str, landscape_mode: boo
     sheet.page_setup.orientation = "landscape" if landscape_mode else "portrait"
     sheet.page_setup.fitToWidth = 1
     sheet.sheet_properties.pageSetUpPr.fitToPage = True
+    workbook.save(target)
+
+
+def checklist_to_xlsx(source: Path, target: Path) -> None:
+    csv_to_xlsx(source, target, "GUI Checklist", True)
+    workbook = load_workbook(target)
+    checklist = workbook["GUI Checklist"]
+    summary = workbook.create_sheet("Test Summary", 0)
+    summary.append(["Measure", "Result"])
+    statuses = [checklist.cell(row=row, column=9).value for row in range(2, checklist.max_row + 1)]
+    summary_rows = [
+        ("Designed", len(statuses)),
+        ("Executed", sum(status in {"Passed", "Failed"} for status in statuses)),
+        ("Passed", statuses.count("Passed")),
+        ("Failed", statuses.count("Failed")),
+        ("Not Executed", statuses.count("Not Executed")),
+        ("FR-23 Not Executed", sum(checklist.cell(row=row, column=2).value == "FR-23" and checklist.cell(row=row, column=9).value == "Not Executed" for row in range(2, checklist.max_row + 1))),
+    ]
+    for row in summary_rows:
+        summary.append(row)
+    for cell in summary[1]:
+        cell.font = Font(color="FFFFFF", bold=True)
+        cell.fill = PatternFill("solid", fgColor="1F4E78")
+    summary.freeze_panes = "A2"
+    summary.auto_filter.ref = summary.dimensions
+    summary.column_dimensions["A"].width = 24
+    summary.column_dimensions["B"].width = 16
     workbook.save(target)
 
 
@@ -191,9 +219,84 @@ def sus_csv_to_xlsx(source: Path, target: Path) -> None:
     workbook.save(target)
 
 
+def usability_results_to_xlsx(target: Path) -> None:
+    """Build one submission workbook containing every usability data table."""
+    shared_recording_url = "https://drive.google.com/drive/u/0/folders/1_3wIHUVqJGG-mPwcZotoAStgRjd6X9x_"
+    session_source = DATA / "session_results.csv"
+    sus_source = DATA / "sus_survey_results.csv"
+    workbook = Workbook()
+
+    def add_csv_sheet(source: Path, name: str):
+        sheet = workbook.active if len(workbook.sheetnames) == 1 and workbook.active.max_row == 1 and workbook.active["A1"].value is None else workbook.create_sheet()
+        sheet.title = name
+        if sheet.max_row == 1 and sheet["A1"].value is None:
+            sheet.delete_rows(1)
+        with source.open(encoding="utf-8-sig", newline="") as handle:
+            for row in csv.reader(handle):
+                sheet.append(row)
+        return sheet
+
+    sessions = add_csv_sheet(session_source, "Sessions")
+    observations = workbook.create_sheet("Observations")
+    observations.append(["session_id", "checkpoint", "timestamp", "outcome", "observed_action_or_quote", "error", "hesitation", "intervention", "evidence_status"])
+    checkpoints = ["Product List", "Product Detail", "Add to Cart", "Cart", "Checkout", "Order submission", "Post-checkout cart", "Order History"]
+    for session_id in ["Pilot", "P1", "P2", "P3", "P4", "P5", "P6", "P7"]:
+        for checkpoint in checkpoints:
+            observations.append([session_id, checkpoint, "", "To be coded from video", "", "", "", "", "Awaiting video"])
+
+    sus = add_csv_sheet(sus_source, "SUS")
+    recordings = workbook.create_sheet("Recordings")
+    recordings.append(["session_id", "filename_or_url", "duration", "file_size_or_sha256", "access_verified", "status"])
+    for session_id in ["Pilot", "P1", "P2", "P3", "P4", "P5", "P6", "P7"]:
+        recordings.append([session_id, shared_recording_url, "", "Not collected", "Not independently verified", "Link supplied; file mapping pending"])
+
+    for session_row, sus_row in zip(range(3, 10), range(2, 9)):
+        sessions[f"J{session_row}"] = f"=SUS!M{sus_row}"
+
+    header_fill = PatternFill("solid", fgColor="1F4E78")
+    for sheet in workbook.worksheets:
+        for cell in sheet[1]:
+            cell.font = Font(color="FFFFFF", bold=True)
+            cell.fill = header_fill
+            cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        for row in sheet.iter_rows(min_row=2):
+            for cell in row:
+                cell.alignment = Alignment(vertical="top", wrap_text=True)
+        for number, column in enumerate(sheet.columns, 1):
+            maximum = max(len(str(cell.value or "")) for cell in column)
+            sheet.column_dimensions[get_column_letter(number)].width = min(max(maximum + 2, 11), 42)
+        sheet.freeze_panes = "A2"
+        sheet.auto_filter.ref = sheet.dimensions
+        sheet.print_title_rows = "1:1"
+        sheet.print_area = sheet.dimensions
+        sheet.page_setup.orientation = "landscape"
+        sheet.page_setup.fitToWidth = 1
+        sheet.sheet_properties.pageSetUpPr.fitToPage = True
+
+    validation = DataValidation(type="whole", operator="between", formula1="1", formula2="5", allow_blank=True)
+    validation.error = "Enter a whole-number SUS response from 1 to 5."
+    validation.errorTitle = "Invalid SUS response"
+    validation.showErrorMessage = True
+    sus.add_data_validation(validation)
+    validation.add("B2:K8")
+    for row in range(2, 9):
+        contributions = []
+        for question, column in enumerate(range(2, 12), start=1):
+            reference = f"{get_column_letter(column)}{row}"
+            contributions.append(f"{reference}-1" if question % 2 else f"5-{reference}")
+        sus[f"L{row}"] = f'=IF(COUNTA(B{row}:K{row})=0,"",IF(COUNTA(B{row}:K{row})<10,"INCOMPLETE",SUM({",".join(contributions)})))'
+        sus[f"M{row}"] = f'=IF(ISNUMBER(L{row}),L{row}*2.5,"")'
+        sus[f"R{row}"] = f'=IF(COUNTA(B{row}:K{row})=0,"Not collected",IF(COUNTA(B{row}:K{row})<10,"Incomplete","Calculated"))'
+    sus["M9"] = '=IF(COUNT(M2:M8)=7,AVERAGE(M2:M8),"")'
+    sus["R9"] = '=IF(COUNT(M2:M8)=7,"Calculated","Not calculated")'
+    workbook.calculation.fullCalcOnLoad = True
+    workbook.calculation.forceFullCalc = True
+    workbook.save(target)
+
+
 def main() -> None:
-    csv_to_xlsx(DELIVERABLES / "checklist/gui_checklist.csv", DELIVERABLES / "checklist/gui_checklist.xlsx", "GUI Checklist", True)
-    sus_csv_to_xlsx(DELIVERABLES / "usability/sus_survey_results.csv", DELIVERABLES / "usability/sus_survey_results.xlsx")
+    checklist_to_xlsx(DATA / "gui_checklist.csv", DELIVERABLES / "checklist/gui_checklist.xlsx")
+    usability_results_to_xlsx(DELIVERABLES / "usability/usability_results.xlsx")
     markdown_to_pdf(DELIVERABLES / "main_report.md", DELIVERABLES / "main_report.pdf", "HW03 — GUI and Usability Testing")
     markdown_to_pdf(DELIVERABLES / "ai_reports/ai_audit_report.md", DELIVERABLES / "ai_reports/ai_audit_report.pdf", "HW03 — AI Audit Report")
     markdown_to_pdf(DELIVERABLES / "ai_reports/ai_critique.md", DELIVERABLES / "ai_reports/ai_critique.pdf", "HW03 — AI Critique")

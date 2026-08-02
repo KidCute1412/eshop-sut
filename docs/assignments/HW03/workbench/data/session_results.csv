@@ -1,0 +1,9 @@
+session_id,participant_id,session_type,consent,completion,duration_seconds,errors,hesitations,interventions,sus_score,notes_ref,recording_ref,evidence_status
+Pilot,Pilot,Pilot,Not collected,,,,,,,Observations sheet,usability/recordings/video_links.md,Recording link supplied; review pending
+P1,P1,Official,Not collected,,,,,,,Observations sheet,usability/recordings/video_links.md,Recording link supplied; review pending
+P2,P2,Official,Not collected,,,,,,,Observations sheet,usability/recordings/video_links.md,Recording link supplied; review pending
+P3,P3,Official,Not collected,,,,,,,Observations sheet,usability/recordings/video_links.md,Recording link supplied; review pending
+P4,P4,Official,Not collected,,,,,,,Observations sheet,usability/recordings/video_links.md,Recording link supplied; review pending
+P5,P5,Official,Not collected,,,,,,,Observations sheet,usability/recordings/video_links.md,Recording link supplied; review pending
+P6,P6,Official,Not collected,,,,,,,Observations sheet,usability/recordings/video_links.md,Recording link supplied; review pending
+P7,P7,Official,Not collected,,,,,,,Observations sheet,usability/recordings/video_links.md,Recording link supplied; review pending

@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_SOURCE = ROOT / "deliverables/usability/sus_survey_results.csv"
+DEFAULT_SOURCE = ROOT / "workbench/data/sus_survey_results.csv"
 QUESTION_FIELDS = [f"q{number}" for number in range(1, 11)]
 
 
