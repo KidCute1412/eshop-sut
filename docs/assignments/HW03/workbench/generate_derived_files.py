@@ -7,8 +7,9 @@ import re
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-from openpyxl import Workbook
+from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Alignment, Font, PatternFill
+from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.utils import get_column_letter
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_CENTER
@@ -159,9 +160,40 @@ def csv_to_xlsx(source: Path, target: Path, sheet_name: str, landscape_mode: boo
     workbook.save(target)
 
 
+def sus_csv_to_xlsx(source: Path, target: Path) -> None:
+    csv_to_xlsx(source, target, "SUS Results", True)
+    workbook = load_workbook(target)
+    sheet = workbook.active
+    validation = DataValidation(type="whole", operator="between", formula1="1", formula2="5", allow_blank=True)
+    validation.error = "Enter a whole-number SUS response from 1 to 5."
+    validation.errorTitle = "Invalid SUS response"
+    validation.prompt = "Enter 1 (strongly disagree) through 5 (strongly agree)."
+    validation.promptTitle = "SUS response"
+    validation.showErrorMessage = True
+    validation.showInputMessage = True
+    sheet.add_data_validation(validation)
+    validation.add("B2:K8")
+
+    for row in range(2, 9):
+        contributions = []
+        for question, column in enumerate(range(2, 12), start=1):
+            reference = f"{get_column_letter(column)}{row}"
+            contributions.append(f"{reference}-1" if question % 2 else f"5-{reference}")
+        sheet[f"L{row}"] = f'=IF(COUNTA(B{row}:K{row})=0,"",IF(COUNTA(B{row}:K{row})<10,"INCOMPLETE",SUM({",".join(contributions)})))'
+        sheet[f"M{row}"] = f'=IF(ISNUMBER(L{row}),L{row}*2.5,"")'
+        sheet[f"R{row}"] = f'=IF(COUNTA(B{row}:K{row})=0,"Not collected",IF(COUNTA(B{row}:K{row})<10,"Incomplete","Calculated"))'
+
+    sheet["M9"] = '=IF(COUNT(M2:M8)=7,AVERAGE(M2:M8),"")'
+    sheet["R9"] = '=IF(COUNT(M2:M8)=7,"Calculated","Not calculated")'
+    sheet.freeze_panes = "A2"
+    workbook.calculation.fullCalcOnLoad = True
+    workbook.calculation.forceFullCalc = True
+    workbook.save(target)
+
+
 def main() -> None:
     csv_to_xlsx(DELIVERABLES / "checklist/gui_checklist.csv", DELIVERABLES / "checklist/gui_checklist.xlsx", "GUI Checklist", True)
-    csv_to_xlsx(DELIVERABLES / "usability/sus_survey_results.csv", DELIVERABLES / "usability/sus_survey_results.xlsx", "SUS Results", True)
+    sus_csv_to_xlsx(DELIVERABLES / "usability/sus_survey_results.csv", DELIVERABLES / "usability/sus_survey_results.xlsx")
     markdown_to_pdf(DELIVERABLES / "main_report.md", DELIVERABLES / "main_report.pdf", "HW03 — GUI and Usability Testing")
     markdown_to_pdf(DELIVERABLES / "ai_reports/ai_audit_report.md", DELIVERABLES / "ai_reports/ai_audit_report.pdf", "HW03 — AI Audit Report")
     markdown_to_pdf(DELIVERABLES / "ai_reports/ai_critique.md", DELIVERABLES / "ai_reports/ai_critique.pdf", "HW03 — AI Critique")
@@ -170,4 +202,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

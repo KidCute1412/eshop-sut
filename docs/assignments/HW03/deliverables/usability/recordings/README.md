@@ -15,3 +15,15 @@ Use authentic local recordings or accessible cloud links. Confirm participant co
 
 Recommended local filenames are `pilot_session.mp4` and `p1_session.mp4` through `p7_session.mp4`.
 
+## Required recording content
+
+Each recording must include:
+
+1. Participant code and genuine environment identification.
+2. Verbal recording consent.
+3. Complete task presentation and uninterrupted task attempt.
+4. Visible interaction with Product List, Product Detail, Cart, Checkout, and Profile/Order History.
+5. Think-aloud audio, moderator prompts, and task end condition.
+6. All ten SUS responses and the five closing questions.
+
+Do not expose passwords, unmasked participant contact information, notifications, or unrelated personal data. After recording, confirm playback and update duration, file size or SHA-256, access status, observation notes, and the participant response form. Video references remain placeholders until genuine files or accessible links exist.

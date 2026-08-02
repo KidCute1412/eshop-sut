@@ -17,9 +17,11 @@ Participants should have prior experience purchasing products online. People out
 
 ## Participant-facing scenario
 
-> You need to purchase a suitable product from EShop. Choose a product, add it to your cart, review the order carefully, complete the checkout, and then confirm from your account that the order was created with the status you expect. Please work as you normally would and think aloud while completing the task.
+> You want to purchase one iPhone 15 Pro Max from EShop. Find the product, review its details, add one unit to your cart, check the order carefully, complete checkout without a discount code, and then use your account to confirm that the new order was created and identify its status. Please work as you normally would and think aloud.
 
 The moderator must not provide step-by-step instructions or identify the controls required to complete the scenario.
+
+The exact moderator procedure, verified reference path, timing rules, and intervention ladder are defined in `session_runbook.md`. Technical outcomes are documented separately in `reference_results.md` so they cannot be confused with participant evidence.
 
 ## Success criteria
 
@@ -32,6 +34,8 @@ The moderator must not provide step-by-step instructions or identify the control
 | Moderator intervention | Any assistance required after the participant can no longer make progress. |
 | Post-task perception | SUS score and responses to the four qualitative probes. |
 
+The default time limit is ten minutes. A successful task ends when the participant identifies the newly created order and correctly states the visible status. Completion with any procedural assistance is recorded separately as `Assisted`, not independent success.
+
 ## Post-task probes
 
 1. Which parts of the flow were clear or unclear?
@@ -42,4 +46,3 @@ The moderator must not provide step-by-step instructions or identify the control
 ## Pilot and official sessions
 
 The pilot is used to validate the scenario wording, test setup, timing method, and recording procedure. Any refinement must be documented before the seven official sessions. The participant-facing goal and moderator intervention rule must then remain consistent across P1–P7.
-

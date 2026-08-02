@@ -15,11 +15,30 @@
 
 No usability finding is reported before the seven official sessions. Runtime GUI defects in `../bugs/bug_report.md` are not substituted for participant observations.
 
-Use the following columns when genuine observations are available: Finding ID, finding, participant/session evidence, frequency, impact, severity, recommendation, and related bug.
+| Finding ID | Finding | Participant/timestamp evidence | Frequency | Completion/error impact | Severity | Recommendation | Related bug |
+|---|---|---|---:|---|---|---|---|
+| — | Awaiting genuine P1–P7 video evidence | — | — | — | — | — | — |
+
+## Session summary
+
+The canonical quantitative summary is `session_results.csv`. Pilot data validates the protocol but is excluded from official frequency and SUS aggregates.
+
+| Measure | Result |
+|---|---|
+| Official sessions analyzed | 0 of 7 |
+| Independent completions | Not calculated |
+| Median time on task | Not calculated |
+| Total errors | Not calculated |
+| Total hesitations | Not calculated |
+| Total interventions | Not calculated |
+| Mean SUS | Not calculated |
 
 ## Analysis rules
 
 - Group observations only when they describe the same underlying usability problem.
 - Distinguish systemic design issues from isolated software defects.
 - Support frequency and severity with references to the relevant observation files.
+- Cite evidence as `P# mm:ss`; multiple participants require separate references.
+- Compute frequency from distinct official participants, not repeated incidents in one session.
+- Exclude Pilot observations from official frequency and aggregate SUS.
 - Do not generalize a single participant's preference into a systemic finding without justification.

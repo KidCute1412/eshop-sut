@@ -1,10 +1,13 @@
 # Moderated Usability Session Guide
 
+The canonical, submission-facing operational script is `deliverables/usability/session_runbook.md`. This workbench copy summarizes the controls the moderator must preserve.
+
 ## Session preparation
 
 1. Confirm participant eligibility and obtain informed consent for screen and audio recording.
 2. Prepare a clean test account and a stable test environment.
 3. Start the recording and record the participant code, date, device, browser, and start time.
+4. Verify the clean-account, empty-cart, seeded-catalog, timer, and recording checks in the canonical runbook.
 
 ## Introduction
 
@@ -16,6 +19,7 @@ Explain that the product—not the participant—is being evaluated. Ask the par
 - Remain neutral and avoid leading questions, interface explanations, or procedural hints.
 - Record task completion, time on task, errors, hesitations, recovery attempts, comments, and moderator interventions.
 - Apply the same intervention rule in every session.
+- Consult the procedural reference path privately; never read its control names or known defects to the participant.
 
 ## Closing protocol
 
@@ -26,4 +30,3 @@ Explain that the product—not the participant—is being evaluated. Ask the par
 ## Pilot-specific review
 
 After the pilot, document ambiguous wording, setup failures, timing problems, and any approved scenario refinement before conducting P1–P7.
-

@@ -60,8 +60,37 @@ firefox_pngs = sorted((DELIVERABLES / "cross_platform/firefox_desktop").glob("*.
 mobile_pngs = sorted((DELIVERABLES / "cross_platform/mobile_real_device").glob("*.png"))
 require(len(bug_pngs) == 15, f"Expected 15 bug PNGs; found {len(bug_pngs)}")
 require(len(chrome_pngs) == 5, f"Expected 5 Chrome PNGs; found {len(chrome_pngs)}")
-require(not firefox_pngs, "Firefox screenshots must not be claimed")
+require(len(firefox_pngs) == 5, f"Expected 5 Firefox PNGs; found {len(firefox_pngs)}")
 require(not mobile_pngs, "Mobile screenshots must not be generated")
+
+runbook = (DELIVERABLES / "usability/session_runbook.md").read_text(encoding="utf-8")
+reference_results = (DELIVERABLES / "usability/reference_results.md").read_text(encoding="utf-8")
+for expected in ("Opening script", "Moderator reference path", "Intervention ladder", "Closing script"):
+    require(expected in runbook, f"Usability runbook missing: {expected}")
+require("not participant observations" in reference_results, "Reference results need an evidence-integrity warning")
+for participant in range(1, 8):
+    notes = (DELIVERABLES / f"usability/observation_notes/p{participant}_notes.md").read_text(encoding="utf-8")
+    require("## Checkpoint outcomes" in notes, f"P{participant} notes lack checkpoint outcomes")
+    require("To be coded from video" in notes, f"P{participant} notes must preserve video-derived placeholders")
+
+with (DELIVERABLES / "usability/session_results.csv").open(encoding="utf-8-sig", newline="") as source:
+    session_rows = list(csv.DictReader(source))
+require([row["session_id"] for row in session_rows] == ["Pilot", "P1", "P2", "P3", "P4", "P5", "P6", "P7"], "Unexpected usability session IDs")
+for row in session_rows:
+    if row["evidence_status"] == "Complete":
+        require(bool(row["recording_reference"].strip()), f"{row['session_id']} is complete without recording evidence")
+        require(bool(row["completion_status"].strip()), f"{row['session_id']} is complete without a completion result")
+        require(bool(row["time_seconds"].strip()), f"{row['session_id']} is complete without task duration")
+
+with (DELIVERABLES / "usability/sus_survey_results.csv").open(encoding="utf-8-sig", newline="") as source:
+    sus_rows = list(csv.DictReader(source))
+require([row["participant_id"] for row in sus_rows] == ["P1", "P2", "P3", "P4", "P5", "P6", "P7", "AVERAGE"], "Unexpected SUS participant IDs")
+for row in sus_rows[:-1]:
+    responses = [row[f"q{number}"].strip() for number in range(1, 11)]
+    require(not any(responses) or all(responses), f"{row['participant_id']} has a partial SUS response")
+    if all(responses):
+        require(all(value in {"1", "2", "3", "4", "5"} for value in responses), f"{row['participant_id']} has an invalid SUS value")
+        require(bool(row["sus_score"].strip()), f"{row['participant_id']} has responses but no SUS score")
 
 readme = (DELIVERABLES / "README.md").read_text(encoding="utf-8")
 for expected in ("| Checklist items executed | 31 |", "| Passed | 16 |", "| Failed | 15 |", "| Not executed | 14 Mobile-dependent items |", "| Verified defects | 15"):
@@ -89,6 +118,13 @@ for rel, rows_expected, cols_expected in (
     require(sheet.freeze_panes == "A2", f"{rel} should freeze A2")
     require(bool(sheet.auto_filter.ref), f"{rel} lacks an auto-filter")
     require(bool(sheet.print_area), f"{rel} lacks a print area")
+
+sus_workbook = load_workbook(DELIVERABLES / "usability/sus_survey_results.xlsx", data_only=False)
+sus_sheet = sus_workbook.active
+require(len(sus_sheet.data_validations.dataValidation) == 1, "SUS workbook lacks 1–5 response validation")
+require(str(sus_sheet["L2"].value).startswith("=IF(COUNTA"), "SUS workbook lacks adjusted-score formula")
+require(str(sus_sheet["M2"].value).startswith("=IF(ISNUMBER"), "SUS workbook lacks participant-score formula")
+require("AVERAGE" in str(sus_sheet["M9"].value), "SUS workbook lacks aggregate formula")
 
 for rel in ("main_report.pdf", "ai_reports/ai_audit_report.pdf", "ai_reports/ai_critique.pdf"):
     reader = PdfReader(DELIVERABLES / rel)

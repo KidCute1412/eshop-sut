@@ -12,7 +12,7 @@
 
 The EShop GUI checklist contains 45 non-duplicate checks across IA-01 to IA-04. Thirty-one Web, Admin, and API-supported checks were executed twice in Google Chrome against freshly seeded data; 16 passed and 15 failed. Fourteen checks requiring the Mobile app remain `Not Executed`. The 15 failures map one-to-one to verified defect records and authentic screenshots. The most serious findings concern a client-editable checkout total, stored HTML execution in Admin, and incorrect percentage-coupon arithmetic.
 
-The selected Chrome flow was also captured across five screens for cross-platform evidence. Firefox was attempted with a compatible downloaded browser but failed during page creation and direct CLI capture; it is reported as blocked. A qualifying mobile environment and all real-participant usability sessions remain pending.
+The selected flow was captured across five screens in both Google Chrome and Firefox. The two desktop browsers completed the same navigation path without an observed browser-specific difference. A qualifying mobile environment and all real-participant usability sessions remain pending.
 
 ## 1. GUI checklist and defect reporting
 
@@ -75,8 +75,11 @@ The participant-facing scenario in `usability/task_scenario.md` states a realist
 ### 2.2 Prepared instruments
 
 - Moderator guide and neutral-intervention rules.
+- Step-by-step moderator runbook with a source-verified reference path, timing rules, and intervention ladder.
+- Technical reference-result matrix separating verified SUT behavior from participant evidence.
 - Pilot and P1–P7 structured observation files.
 - Standard ten-item SUS response forms and scoring spreadsheet.
+- Canonical session-metrics CSV plus validated SUS calculation tooling for participant and aggregate scores.
 - Four required probe areas: clarity, error recovery, speed, and trust.
 - Participant register with masked-contact guidance.
 - Severity-ranked synthesis structure and recordings index.
@@ -94,6 +97,8 @@ The participant-facing scenario in `usability/task_scenario.md` states a realist
 
 No Playwright agent is treated as a participant. No name, quotation, rating, task duration, or contact detail has been invented.
 
+Once genuine recordings are supplied, each result must be traceable to a participant code and video timestamp. A session cannot be marked complete without a recording reference, completion outcome, and task duration; partial SUS response sets are rejected.
+
 ### 2.4 SUS scoring method
 
 For odd-numbered items, subtract one from the response. For even-numbered items, subtract the response from five. Sum the ten contributions and multiply by 2.5. The result is a 0–100 usability benchmark, not a percentage grade. Scores remain uncalculated until authentic responses exist.
@@ -106,7 +111,7 @@ Google Chrome 151.0.7922.72 completed the Product List → Product Detail → Ca
 
 ### 3.2 Firefox
 
-Firefox 144.0.2 launched, but Playwright failed while creating the first page with `browserContext.newPage`. A direct headless CLI screenshot attempt also stalled and was terminated. Firefox is therefore `Blocked`, not passed, failed, or completed.
+Playwright Firefox 144.0.2 completed the Product List → Product Detail → Cart → Checkout → Order History flow at 1440 × 1000. Five genuine screenshots are stored under `cross_platform/firefox_desktop/` with the same identity/environment caption format used for Chrome. No Firefox-specific layout or navigation difference was observed in the selected flow.
 
 ### 3.3 Mobile
 
@@ -115,7 +120,7 @@ No physical phone or approved cloud environment was available. Mobile remains `N
 | Environment | Status | Evidence |
 |---|---|---|
 | Google Chrome Desktop | Executed | Five screenshots |
-| Firefox Desktop | Blocked by environment | Diagnostic status only |
+| Firefox Desktop | Executed | Five screenshots |
 | Physical/approved cloud mobile | Not executed | None |
 
 The requirement of three qualifying platforms is not yet satisfied.
@@ -129,7 +134,7 @@ The AI Audit Report documents AI-assisted activities and human review. The AI Cr
 ## 5. Limitations and remaining work
 
 - Fourteen Mobile checklist items were not executed.
-- Firefox and the third qualifying platform remain incomplete.
+- The third qualifying platform remains incomplete.
 - The pilot and seven official usability sessions remain incomplete.
 - GitHub Issues and their screenshots remain incomplete.
 - The Agent Skill demonstration video remains incomplete.
@@ -137,4 +142,4 @@ The AI Audit Report documents AI-assisted activities and human review. The AI Cr
 
 ## Conclusion
 
-The completed portion provides a traceable and repeatable desktop execution: 45 designed checks, 31 executed checks, 15 reproducible failures, 15 verified defect records, and five Chrome cross-platform captures. The remaining evidence is clearly isolated and can be added without rewriting the completed results. The current evidence supports a conservative self-assessment of 45/100, not a 090 submission claim.
+The completed portion provides a traceable and repeatable desktop execution: 45 designed checks, 31 executed checks, 15 reproducible failures, 15 verified defect records, and ten cross-browser captures across Chrome and Firefox. The remaining evidence is clearly isolated and can be added without rewriting the completed results. The current evidence supports a conservative self-assessment of 51/100, not a 090 submission claim.

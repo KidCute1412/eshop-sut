@@ -2,6 +2,10 @@
   "name": "hw03-runtime-evidence",
   "private": true,
   "type": "module",
+  "scripts": {
+    "capture:firefox": "node capture_firefox.mjs",
+    "verify:usability": "node verify_usability_reference.mjs"
+  },
   "dependencies": {
     "playwright": "1.57.0"
   }
