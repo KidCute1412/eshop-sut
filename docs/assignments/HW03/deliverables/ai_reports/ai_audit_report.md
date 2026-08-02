@@ -73,7 +73,7 @@ The conversation interface exposed the interaction date but not message-level cl
 | Date and time | 2 August 2026, after the final runtime execution |
 | Prompt | Continuation of `Implement the plan.` |
 | AI output | Reconciled the 45 checklist rows; documented 15 verified defects; isolated four unverified Mobile hypotheses; updated the main report, README, cross-platform status, and self-assessment. |
-| Human review | Checked screenshot content, corrected the percentage-coupon interpretation, removed the unsupported FR-23 label, and reported Firefox as blocked rather than completed. |
+| Human review | Checked screenshot content and corrected the percentage-coupon interpretation. The contemporaneous removal of FR-23 in favor of an unnumbered Mobile pool was later found to conflict with the confirmed personal scope; that history is retained and corrected by AI-10 below. |
 | Affected artifacts | All submission-facing Markdown, CSV, XLSX, and PDF artifacts |
 
 ### AI-07 — Firefox blocker diagnosis and rerun
@@ -109,9 +109,31 @@ The conversation interface exposed the interaction date but not message-level cl
 | Human review | Confirmed that video will be supplied later and that participant actions, reactions, and SUS answers will be independently provided during the sessions. |
 | Affected artifacts | Usability metrics, SUS workflow, findings synthesis, main report, audit, and submission validator |
 
+### AI-10 — FR-23 scope-source correction
+
+| Field | Record |
+|---|---|
+| Tool | OpenAI Codex |
+| Date and time | 3 August 2026; message-level time unavailable |
+| Prompt | Implement the approved plan to standardize FR-23 and the HW03 source of truth. |
+| AI output | Restored FR-23 as Mobile Product Detail, replaced six out-of-scope Mobile checks, assigned all 14 pending Mobile rows to FR-23, separated report email from screenshot identity overlay, and strengthened generation and validation. |
+| Human review | Confirmed personal scope supersedes the earlier unnumbered-pool interpretation. Existing desktop images remain unchanged, Web usability remains FR-07 → FR-10 → FR-11 with Product Detail as an FR-06 support step, and no Mobile status was promoted without runtime evidence. |
+| Affected artifacts | Scope notes, checklist CSV/XLSX, submission reports, bug candidates, usability and cross-platform plans, generators, and validators |
+
+### AI-11 — Source-derived Mobile checklist completion
+
+| Field | Record |
+|---|---|
+| Tool | OpenAI Codex |
+| Date and time | 3 August 2026; message-level time unavailable |
+| Prompt | Complete the missing Mobile checklist information from source; screenshots will be supplied later. |
+| AI output | Classified all 14 FR-23 checks from `frontend-mobile/App.js` as 8 Passed and 6 Failed, deduplicated the failures into five Mobile defects, and recorded source locations plus pending real-device evidence. |
+| Human review | Explicitly selected Pass/Fail from source and requested the five Mobile defects be treated as official before screenshots are supplied. Each artifact retains the source-derived qualification so runtime evidence can supersede it later. |
+| Affected artifacts | GUI checklist source/workbook, Mobile source-review evidence, defect report, README, main report, summaries, and validation rules |
+
 ## Human-review controls applied
 
-- A static source pattern could create a hypothesis but not a `Passed`, `Failed`, or verified defect result.
+- The original policy treated static source patterns only as hypotheses. AI-11 records the student's explicit exception for FR-23: source-derived Pass/Fail and official defects are allowed, but they must remain labeled and await real-device confirmation.
 - Every counted defect was reproduced in two clean browser runs and mapped to a genuine screenshot.
 - Playwright mobile emulation was not accepted as a physical/cloud-device platform.
 - Firefox was counted only after the complete flow produced five visually reviewed, browser-identified screenshots.
