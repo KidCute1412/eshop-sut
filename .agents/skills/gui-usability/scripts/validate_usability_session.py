@@ -51,7 +51,7 @@ def contact_is_properly_masked(contact: str) -> bool:
     return False
 
 
-def validate_participants(path: Path) -> list[str]:
+def validate_participants(path: Path, require_pilot: bool = True) -> list[str]:
     errors: list[str] = []
     if not path.is_file():
         return [f"{path}: participants file not found"]
@@ -65,7 +65,7 @@ def validate_participants(path: Path) -> list[str]:
 
     if len(real_sessions) != 7:
         errors.append(f"{path}: expected exactly 7 'Real Session' rows, found {len(real_sessions)}")
-    if not pilot_sessions:
+    if require_pilot and not pilot_sessions:
         errors.append(f"{path}: expected at least 1 'Pilot' row, found 0")
 
     for row in rows:
@@ -138,6 +138,9 @@ def main() -> int:
     ensure_utf8_stdio()
     parser = argparse.ArgumentParser(description="Validate Task 2 usability-evaluation Markdown artifacts.")
     parser.add_argument("root", help="usability-evaluation workspace directory (contains participants.md and session-notes/).")
+    parser.add_argument("--no-pilot-required", action="store_true",
+                         help="Skip the 'at least 1 Pilot row' check, for cases where the instructor "
+                              "has explicitly waived the pilot-session requirement.")
     args = parser.parse_args()
 
     root = Path(args.root)
@@ -145,7 +148,7 @@ def main() -> int:
         print(f"ERROR: not a directory: {root}", file=sys.stderr)
         return 2
 
-    errors = validate_participants(root / "participants.md")
+    errors = validate_participants(root / "participants.md", require_pilot=not args.no_pilot_required)
 
     session_dir = root / "session-notes"
     if not session_dir.is_dir():

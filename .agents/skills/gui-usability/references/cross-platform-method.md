@@ -37,7 +37,7 @@ Every Task 3 screenshot must, in a single frame, show:
 4. An overlay of the student's identity: the assignment states two overlapping requirements — the
    general screenshot rule (§6) asks for the username in the form of the **student email**, and the
    anti-cheat rule (§11) asks for the **student ID and full name**. Satisfy both at once with a
-   single overlay text such as: `23127539 - Nguyen Thanh Tien - ntluan2502@gmail.com` (student ID -
+   single overlay text such as: `23127539 - Nguyen Thanh Tien - nttien232@clc.fitus.edu.vn` (student ID -
    full name - student email), positioned so it does not obscure the UI element under test.
 
 Do not crop or stage a screenshot that could not have come from an actual cloud/real-device session

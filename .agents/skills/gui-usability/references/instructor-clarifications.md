@@ -28,6 +28,11 @@
     group." Treat this as an unresolved instruction ambiguity: record it explicitly in the report
     rather than silently assuming either interpretation, and follow whatever the course's actual
     cohort/grouping practice turns out to be.
+12. The lecturer clarified in class (student-reported, not in the written PDF) that Task 2 only
+    requires the 7 real participant session `create_usability_workspace.py` and `validate_usability_session.py` still default to
+    requiring a pilot (the PDF's Phase 1 step, and the safer general practice for future
+    assignments where no such waiver exists) — pass `--no-pilot-required` to
+    `validate_usability_session.py` when this specific clarification applies.
 
 When sources conflict, retain the official expectation, label the ambiguity or contradiction
 explicitly, and verify only through observable, real execution or real participant sessions.
