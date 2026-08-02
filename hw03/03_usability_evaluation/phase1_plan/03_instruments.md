@@ -24,7 +24,7 @@ Administer immediately after the session ends (after the participant reaches suc
 1. **Clarity** — "At any point, was it unclear what you were supposed to do or where to click next? Where?"
 2. **Error recovery** — "Did anything go wrong or not work as you expected? How did you try to fix it, and did that work?"
 3. **Speed** — "Did the process feel fast or slow? Was there any point where you felt like you were waiting or repeating steps?"
-4. **Trust** — "How confident are you that the final amount you were charged was correct? Why?" (directly probes the editable-total finding, BUG-14, without leading the participant toward it)
+4. **Trust** — adapted for the Forgot Password flow (scope narrowed, see `02_task_scenario.md` deviation note): "How confident are you, right now, that your account's password actually changed / that your account is secure?" (probes whether the repeated failed attempts undermine trust in the account-recovery mechanism itself)
 
 Add any follow-up probes driven by what you personally observed during that specific session (e.g., if they hesitated on the coupon field, ask about it directly).
 

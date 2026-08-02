@@ -6,16 +6,16 @@
 
 | Bug ID | Title | Screen | Severity | Checklist Item | Screenshots needed | GitHub Issue URL |
 |---|---|---|---|---|---|---|
-| BUG-01 | Login page shows "Đăng Ký" heading instead of "Đăng Nhập" | Login | Minor | #3 | 1 | _pending_ |
-| BUG-11 | Login password field shows plaintext instead of masked dots | Login | **Critical** | #11 | 1 | _pending_ |
-| BUG-13 | OTP field label says "4 digits" but the code shown is 6 digits | ForgotPassword | Major | #12 | 2 | _pending_ |
-| BUG-14 | Checkout total amount can be freely edited by the user | Checkout | Major | #13 | 1-2 | _pending_ |
-| BUG-15 | Quantity input on Product Detail accepts 0 / negative values | ProductDetail | Major | #14 | 1-2 | _pending_ |
-| BUG-19 | Reflected XSS via the search box | Home | **Critical** | #15 | 1 | _pending_ |
-| BUG-24 | Login-required redirect from Checkout doesn't return to Checkout | Cart → Login | Major | #28 | 2 | _pending_ |
-| BUG-25 | "Add to cart" does nothing on the first click | ProductDetail | Major | #30 | 2 | _pending_ |
-| BUG-34 | No "no results found" message after an empty search | Home | Minor | #31 | 1 | _pending_ |
-| BUG-37 | Debug string shown as the product-not-found message | ProductDetail | Minor | #32 | 1 | _pending_ |
+| BUG-01 | Login page shows "Đăng Ký" heading instead of "Đăng Nhập" | Login | Minor | #3 | 1 | [#106](https://github.com/KidCute1412/eshop-sut/issues/106) |
+| BUG-11 | Login password field shows plaintext instead of masked dots | Login | **Critical** | #11 | 1 | [#107](https://github.com/KidCute1412/eshop-sut/issues/107) |
+| BUG-13 | OTP field label says "4 digits" but the code shown is 6 digits | ForgotPassword | Major | #12 | 2 | [#108](https://github.com/KidCute1412/eshop-sut/issues/108) |
+| BUG-14 | Checkout total amount can be freely edited by the user | Checkout | Major | #13 | 1-2 | [#109](https://github.com/KidCute1412/eshop-sut/issues/109) |
+| BUG-15 | Quantity input on Product Detail accepts 0 / negative values | ProductDetail | Major | #14 | 1-2 | [#110](https://github.com/KidCute1412/eshop-sut/issues/110) |
+| BUG-19 | Reflected XSS via the search box | Home | **Critical** | #15 | 1 | [#111](https://github.com/KidCute1412/eshop-sut/issues/111) |
+| BUG-24 | Login-required redirect from Checkout doesn't return to Checkout | Cart → Login | Major | #28 | 2 | [#112](https://github.com/KidCute1412/eshop-sut/issues/112) |
+| BUG-25 | "Add to cart" does nothing on the first click | ProductDetail | Major | #30 | 2 | [#113](https://github.com/KidCute1412/eshop-sut/issues/113) |
+| BUG-34 | No "no results found" message after an empty search | Home | Minor | #31 | 1 | [#114](https://github.com/KidCute1412/eshop-sut/issues/114) |
+| BUG-37 | Debug string shown as the product-not-found message | ProductDetail | Minor | #32 | 1 | [#115](https://github.com/KidCute1412/eshop-sut/issues/115) |
 
 ---
 

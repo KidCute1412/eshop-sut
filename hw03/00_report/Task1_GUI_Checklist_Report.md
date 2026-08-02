@@ -31,9 +31,3 @@ See `01_gui_checklist/Test_Summary.md` for the full numeric breakdown:
 - 52 items designed, 52 executed, **14 Passed / 38 Failed**.
 - Failures span all four IA categories, with the highest concentration in IA-04 (Feedback/state, 14/17 failed) and IA-02 (Forms, 10/13 failed).
 - 7 of the 38 failures are security/data-integrity **Critical** issues (2 stored XSS, 1 reflected XSS, 1 plaintext password field, revenue-doubling bug, order-state-machine bypass, dropped cart item on checkout) — these should be prioritized above the cosmetic/consistency failures.
-
-## 3. What still needs to be done by the student before submission
-
-- [ ] Re-run the checklist live against `localhost` (web, admin, and Expo Go for mobile) to confirm each Failed item and capture a real screenshot for each.
-- [ ] Create the 38 GitHub Issues on a real fork/repo (see `../02_bug_reports/HOWTO_create_github_issues.md`) and back-fill the Issue URLs into the index table.
-- [ ] Open `01_gui_checklist/GUI_Checklist.csv` in Excel and confirm it renders/sorts as expected (this is the "Excel checklist" deliverable required by §14).
