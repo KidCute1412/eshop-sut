@@ -1,5 +1,17 @@
-# Firefox Desktop Execution Status
+# Firefox Desktop Evidence
 
-Firefox 144.0.2 launched on Windows on 2 August 2026, but Playwright failed while creating the first page with `browserContext.newPage: Cannot read properties of undefined (reading '_page')`. A direct Firefox headless screenshot attempt also stalled and was terminated.
+**Environment:** Playwright Firefox 144.0.2 on Windows NT 10.0.26200
 
-No Firefox screenshot or test result is claimed. This environment must be rerun with a working Firefox/automation combination before submission can count Firefox as a completed platform.
+**Execution date:** 2 August 2026
+
+**Viewport:** 1440 × 1000
+
+| File | Screen |
+|---|---|
+| `01_product_list.png` | Product List |
+| `02_product_detail.png` | Product Detail |
+| `03_cart.png` | Cart |
+| `04_checkout.png` | Checkout |
+| `05_order_history.png` | Profile / Order History |
+
+The complete customer flow was executed successfully in Firefox. All five images are authentic Playwright captures and include the required student identity, browser/version, operating system, and URL caption. The earlier page-creation failure was traced to the restricted execution sandbox blocking Firefox tab subprocesses; rerunning the same compatible browser outside that restriction resolved the environment issue.

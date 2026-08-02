@@ -530,11 +530,7 @@ for (const id of mobileIds) {
 
 runtime.crossPlatform = {
   chrome: await crossPlatformRun(chromium, "Google Chrome Desktop", chromeDir, "chromeCrossPlatform", { channel: "chrome" }),
-};
-runtime.browsers.firefox = "144.0.2";
-runtime.crossPlatform.firefox = {
-  status: "Blocked",
-  reason: "Playwright Firefox launched, but browserContext.newPage failed in this Windows environment.",
+  firefox: await crossPlatformRun(firefox, "Firefox Desktop", firefoxDir, "firefoxCrossPlatform"),
 };
 await executeChromium();
 

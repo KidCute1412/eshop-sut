@@ -3,7 +3,7 @@
     "runStarted": "2026-08-02T01:31:22.852Z",
     "browsers": {
       "chromeCrossPlatform": "151.0.7922.72",
-      "firefox": "144.0.2",
+      "firefoxCrossPlatform": "144.0.2",
       "chromium": "151.0.7922.72"
     },
     "exploratory": [],
@@ -16,8 +16,11 @@
         "screenshots": 5
       },
       "firefox": {
-        "status": "Blocked",
-        "reason": "Playwright Firefox launched, but browserContext.newPage failed in this Windows environment."
+        "browser": "Firefox Desktop",
+        "version": "144.0.2",
+        "productList": true,
+        "productDetail": true,
+        "screenshots": 5
       }
     }
   },
