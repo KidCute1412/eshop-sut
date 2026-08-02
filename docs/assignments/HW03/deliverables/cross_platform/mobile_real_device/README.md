@@ -1,4 +1,5 @@
 # Mobile Environment Evidence
 
-Store authentic screenshots from a real physical device, Expo Go, or an approved cloud-device platform in this directory. Each image must show enough context to identify the device, operating system, browser or Expo environment, SUT location, and required student identity overlay. Reference every submitted image from `../cross_platform_report.md`.
+**Execution status:** Not executed.
 
+No physical phone or approved cloud-device platform was available during the automated desktop run. Do not use Playwright mobile-emulation captures as substitutes. Future evidence must identify the device, operating system, browser or Expo environment, SUT location, and `23127404@hcmus.edu.vn` overlay, then be referenced from `../cross_platform_report.md`.
