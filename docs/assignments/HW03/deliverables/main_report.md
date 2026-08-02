@@ -127,7 +127,7 @@ The requirement of three qualifying platforms is not yet satisfied.
 
 ## 4. Agent Skill and AI documentation
 
-The reusable skill is supplied under `agent_skills/gui-usability-tester/`. It separates checklist design, runtime evidence, usability safeguards, and final reconciliation. The demonstration URL is pending a real recording and upload.
+The reusable skill is supplied under `agent_skills/gui-usability-tester/` and installed for actual agent discovery under `.agents/skills/gui-usability-tester/`. It provides explicit operating modes, evidence-state controls, traceable output schemas, severity rules, quality gates, and an executable artifact validator. The demonstration URL is pending a real recording and upload.
 
 The AI Audit Report documents AI-assisted activities and human review. The AI Critique remains within the required 200–300 words and emphasizes that plausible static analysis is not execution evidence.
 

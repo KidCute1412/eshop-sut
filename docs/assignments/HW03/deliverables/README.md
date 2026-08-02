@@ -59,7 +59,7 @@ If packaged before the missing evidence is added, the corresponding filename gra
 - `usability/`: scenario, complete session runbook, verified technical reference results, participant register, session metrics, SUS instruments, checkpoint notes, findings structure, and recording index.
 - `cross_platform/`: Chrome and Firefox evidence plus the documented mobile gap.
 - `ai_reports/`: mandatory AI Critique and AI Audit Report.
-- `agent_skills/`: reusable GUI/usability testing skill and pending demo link.
+- `agent_skills/`: reusable GUI/usability testing skill, output contract, artifact validator, and pending demo link. The same executable package is installed at repository root under `.agents/skills/gui-usability-tester/`.
 - `git_commit_log.txt`: genuine repository history export.
 
 ## Outstanding evidence

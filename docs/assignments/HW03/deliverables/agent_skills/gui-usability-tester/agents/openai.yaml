@@ -1,0 +1,6 @@
+interface:
+  display_name: "GUI and Usability Tester"
+  short_description: "Evidence-based GUI and usability test auditing"
+  default_prompt: "Use $gui-usability-tester to design, execute, and audit a traceable GUI or usability test workflow."
+policy:
+  allow_implicit_invocation: true
