@@ -1,4 +1,3 @@
 # GitHub Issue Evidence
 
-Store authentic screenshots of the submitted GitHub issues in this directory. Each screenshot must show the issue identifier, title, description, attached defect evidence, and enough browser context to establish that the issue is accessible. Use filenames such as `bug_001_github.png` and reference them from `../bug_report.md`.
-
+No GitHub Issue screenshot is claimed yet. The student will create one Issue per verified defect, attach the corresponding runtime image, and provide the URLs. Genuine Issue-page screenshots will then be stored here and referenced from `../bug_report.md`.

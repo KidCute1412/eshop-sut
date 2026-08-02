@@ -1,530 +1,221 @@
-# HW03 — Defect Report
-
-**Author / Evaluator:** Lê Tuấn Lộc (Student ID: 23127404; 23127404@hcmus.edu.vn)  
-**Target Application:** EShop SUT (Web Frontend, Mobile Expo App, Admin Portal, Backend API)  
-**Scope:** Functional Requirements FR-07 (Shopping Cart), FR-10 (Order State Machine), FR-11 (Order History), FR-18 (Admin Management), FR-23 (Mobile Product Detail)  
-**Candidate Defect Count:** 13 records (BUG-001 through BUG-013), subject to final execution and evidence verification  
-
-> **Evidence integrity gate:** The files currently referenced under `evidence_images/` and `github_issues_screenshots/` are not independently authenticated by this document. Before submission, the student must confirm that each image is a genuine capture of the running SUT or an actual accessible GitHub Issue. Replace any mock, generated, or illustrative image with authentic evidence and update the reference if its filename changes.
-
----
-
-## Defect Summary
-
-| Bug ID | Title | Severity | Target Feature | Primary Module |
-| :--- | :--- | :---: | :---: | :--- |
-| **BUG-001** | Web ProductDetail "Thêm vào giỏ hàng" button requires double click to add product | Medium | FR-07 / FR-23 | `frontend-web/src/pages/ProductDetail.jsx` |
-| **BUG-002** | Cart accepts 0 and negative quantities without input validation | Medium | FR-07 | `frontend-web/src/pages/Cart.jsx` |
-| **BUG-003** | Decimal cart quantity silently truncated to integer without user warning | Low | FR-07 | `frontend-web/src/context/CartContext.jsx` |
-| **BUG-004** | Mobile Product Detail screen omits product category name display | Low | FR-23 | `frontend-mobile/App.js` |
-| **BUG-005** | Querying non-existent Product ID returns technical error text without CTA navigation | Medium | FR-23 | `frontend-mobile/App.js` & `backend/server.js` |
-| **BUG-006** | Web Checkout renders Total Amount inside editable numeric input field | High | FR-07 / FR-10 | `frontend-web/src/pages/Checkout.jsx` |
-| **BUG-007** | Web Checkout does not call clearCart() after successful payment, leaving cart populated | Medium | FR-07 | `frontend-web/src/pages/Checkout.jsx` |
-| **BUG-008** | Mobile Checkout drops last item from order payload due to cart.slice(0, -1) | Critical | FR-07 / FR-10 | `frontend-mobile/App.js` |
-| **BUG-009** | Mobile Cart quantity input change handler adds 1 to entered quantity (parsed + 1) | Medium | FR-07 | `frontend-mobile/App.js` |
-| **BUG-010** | Order cancellation logic allows users to cancel orders in shipping state | High | FR-10 / FR-11 | `backend/server.js` & `frontend-web` |
-| **BUG-011** | Backend API and Admin UI permit illegal state transition from canceled to delivered | High | FR-10 / FR-18 | `backend/server.js` & `frontend-admin` |
-| **BUG-012** | Phone number validation regex /^[1-9][0-9]{8,9}$/ rejects valid Vietnamese phone numbers | High | FR-11 | `frontend-web` & `frontend-mobile` |
-| **BUG-013** | Stored XSS vulnerability in Admin shipping address table and double revenue metric bug | Critical | FR-18 | `frontend-admin/src/App.jsx` |
-
----
-
-## Detailed Defect Records
-
-### BUG-001: Web ProductDetail "Thêm vào giỏ hàng" button requires double click to add product
-
-* **Severity:** Medium
-* **FR ID:** FR-07 (Shopping Cart) / FR-23 (Product Detail)
-* **Target Module:** `frontend-web/src/pages/ProductDetail.jsx`
-* **Environment:** Web Desktop (Chrome / Firefox)
-
-#### Description
-On the Web Product Detail page, clicking the green "Thêm vào giỏ hàng" button for the first time fails to add the product to the user's shopping cart state. The first click only increments an internal `clickCount` component state. The user must click the button a second time to dispatch the `addToCart()` context action.
-
-#### Steps to Reproduce
-1. Launch Web application and navigate to any Product Detail page (e.g. `http://localhost:5173/product/1`).
-2. Observe the initial cart item counter badge in the header navigation bar (e.g. `0`).
-3. Click the "Thêm vào giỏ hàng" button **once**.
-4. Inspect the header navigation bar cart badge.
-5. Click the "Thêm vào giỏ hàng" button a **second time**.
-
-#### Expected Behavior
-The first button click dispatches `addToCart(product)` immediately, updating the cart state and header badge from `0` to `1` with feedback notification.
-
-#### Actual Behavior
-The first click increments internal `clickCount` state from `0` to `1` without dispatching `addToCart()`. The item is added to the cart only upon the second click.
-
-#### Screenshot References
-* **Annotated Evidence:** `evidence_images/bug_001_evidence.png`
-* **GitHub Issue Screenshot:** `github_issues_screenshots/bug_001_github.png`
-
-#### Remediation
-In `frontend-web/src/pages/ProductDetail.jsx`, eliminate the `clickCount` condition check in `handleAddToCart` and directly invoke `addToCart(product)` on the button onClick handler:
-```javascript
-// Fix: Directly dispatch addToCart without requiring clickCount state check
-const handleAddToCart = () => {
-  addToCart({ ...product, quantity });
-  toast.success("Đã thêm sản phẩm vào giỏ hàng!");
-};
-```
-
----
-
-### BUG-002: Cart accepts 0 and negative quantities without input validation
-
-* **Severity:** Medium
-* **FR ID:** FR-07 (Shopping Cart)
-* **Target Module:** `frontend-web/src/pages/Cart.jsx` & `frontend-web/src/context/CartContext.jsx`
-* **Environment:** Web Desktop & Mobile App
-
-#### Description
-The shopping cart quantity handler allows users to input `0` or negative numeric values (e.g., `-5`) into the quantity input field. The application processes these non-positive values without input validation or rejection, resulting in zero or negative subtotal calculations and invalid cart states.
-
-#### Steps to Reproduce
-1. Add any product to the shopping cart and navigate to `/cart`.
-2. Locate the quantity input field for the cart item.
-3. Manually enter `0` or `-5` into the input field.
-4. Trigger input blur or form submission.
-
-#### Expected Behavior
-The application validates quantity inputs, rejecting values `< 1` with a validation message "Số lượng phải lớn hơn 0" or automatically enforcing a minimum quantity of `1`.
-
-#### Actual Behavior
-The system accepts non-positive quantities, updating cart state to `0` or negative counts and calculating negative subtotals.
-
-#### Screenshot References
-* **Annotated Evidence:** `evidence_images/bug_002_evidence.png`
-* **GitHub Issue Screenshot:** `github_issues_screenshots/bug_002_github.png`
-
-#### Remediation
-Update `updateQuantity` in `CartContext.jsx` to enforce a strict minimum threshold of `1`:
-```javascript
-const updateQuantity = (index, qty) => {
-  const sanitizedQty = Math.max(1, parseInt(qty, 10) || 1);
-  setCart(prev => prev.map((item, idx) => idx === index ? { ...item, quantity: sanitizedQty } : item));
-};
-```
-
----
-
-### BUG-003: Decimal cart quantity silently truncated to integer without user warning
-
-* **Severity:** Low
-* **FR ID:** FR-07 (Shopping Cart)
-* **Target Module:** `frontend-web/src/context/CartContext.jsx` & `frontend-mobile/App.js`
-* **Environment:** Web & Mobile
-
-#### Description
-When a user enters a floating-point decimal quantity (e.g. `2.5`) into the quantity field, `parseInt('2.5', 10)` silently truncates the input value to integer `2` without displaying any user warning or input error message.
-
-#### Steps to Reproduce
-1. Open the shopping cart page.
-2. Enter `2.5` into the quantity field of any cart item.
-3. Click outside the input box to trigger change handling.
-
-#### Expected Behavior
-The interface displays a clear input validation warning "Số lượng sản phẩm phải là số nguyên dương" and prevents silent modification.
-
-#### Actual Behavior
-`parseInt('2.5', 10)` strips the decimal `.5` and updates quantity to `2` silently without notifying the user.
-
-#### Screenshot References
-* **Annotated Evidence:** `evidence_images/bug_003_evidence.png`
-* **GitHub Issue Screenshot:** `github_issues_screenshots/bug_003_github.png`
-
-#### Remediation
-Enforce explicit decimal validation using `Number.isInteger()` before applying updates:
-```javascript
-if (!Number.isInteger(Number(val))) {
-  toast.error("Số lượng sản phẩm phải là số nguyên dương!");
-  return;
-}
-```
-
----
-
-### BUG-004: Mobile Product Detail screen omits product category name display
-
-* **Severity:** Low
-* **FR ID:** FR-23 (Product Detail Mobile)
-* **Target Module:** `frontend-mobile/App.js`
-* **Environment:** Mobile App (React Native / Expo Go)
-
-#### Description
-The Mobile Product Detail screen displays the product image, title, price, and description, but fails to render the product category name (e.g. "Điện thoại", "Laptop"), even though `category_id` and `category_name` are present in the REST API payload.
-
-#### Steps to Reproduce
-1. Open the EShop Mobile App on Expo Go.
-2. Tap "Xem chi tiết" on any product card from the main catalog.
-3. Inspect the product metadata section under the title.
-
-#### Expected Behavior
-The category badge or text (e.g., "Danh mục: Thiết bị điện tử") is displayed below the product title.
-
-#### Actual Behavior
-The category name element is completely omitted from the React Native UI view.
-
-#### Screenshot References
-* **Annotated Evidence:** `evidence_images/bug_004_evidence.png`
-* **GitHub Issue Screenshot:** `github_issues_screenshots/bug_004_github.png`
-
-#### Remediation
-In `frontend-mobile/App.js`, add a category subtitle tag below the product title:
-```javascript
-<Text style={styles.categoryBadge}>
-  Danh mục: {product.category_name || "Mặc định"}
-</Text>
-```
-
----
-
-### BUG-005: Querying non-existent Product ID returns technical error text without CTA navigation
-
-* **Severity:** Medium
-* **FR ID:** FR-23 (Product Detail Mobile)
-* **Target Module:** `frontend-mobile/App.js` & `backend/server.js`
-* **Environment:** Mobile App (React Native / Expo Go)
-
-#### Description
-When querying a non-existent Product ID (e.g. `/api/products/999999`), the backend API returns HTTP status 200 with an empty JSON object `{}`. The mobile application catches the empty payload and renders technical error text `"Sản phẩm không tồn tại (Lỗi trắng trang do data rỗng)"` on a blank screen without any "Quay lại trang chủ" CTA navigation button.
-
-#### Steps to Reproduce
-1. Trigger mobile product detail view with invalid ID `999999`.
-2. Observe screen rendering and user control elements.
-
-#### Expected Behavior
-Backend returns HTTP 404 Not Found `{ "error": "Product not found" }`. Mobile app displays a friendly empty state component with a prominent "Quay lại Trang chủ" button.
-
-#### Actual Behavior
-Displays raw text `"Sản phẩm không tồn tại (Lỗi trắng trang do data rỗng)"` without back navigation or home CTA buttons, stranding the user.
-
-#### Screenshot References
-* **Annotated Evidence:** `evidence_images/bug_005_evidence.png`
-* **GitHub Issue Screenshot:** `github_issues_screenshots/bug_005_github.png`
-
-#### Remediation
-Fix backend to return HTTP 404 and update mobile app to render a full fallback view with navigation buttons:
-```javascript
-// Backend server.js
-if (!product) return res.status(404).json({ error: "Product not found" });
-
-// Mobile App.js UI Fallback
-if (error || !product?.id) {
-  return (
-    <View style={styles.errorContainer}>
-      <Text style={styles.errorText}>Sản phẩm không tồn tại!</Text>
-      <TouchableOpacity style={styles.btnHome} onPress={() => navigation.navigate("Home")}>
-        <Text style={styles.btnText}>Quay lại Trang chủ</Text>
-      </TouchableOpacity>
-    </View>
-  );
-}
-```
-
----
-
-### BUG-006: Web Checkout renders Total Amount inside editable numeric input field
-
-* **Severity:** High
-* **FR ID:** FR-07 (Shopping Cart) / FR-10 (Order State Machine)
-* **Target Module:** `frontend-web/src/pages/Checkout.jsx`
-* **Environment:** Web Desktop (Chrome / Firefox)
-
-#### Description
-On the Web Checkout page (`/checkout`), the order total amount is rendered inside an editable `<input type="number">` field bound to local state (`editableTotal`). A malicious customer can manually edit this field, changing the total price from `500,000 ₫` to `0 ₫` or `1 ₫` before clicking "Xác Nhận Thanh Toán". The backend accepts the user-submitted total without server-side recalculation.
-
-#### Steps to Reproduce
-1. Add items to cart totaling `500,000 ₫`.
-2. Navigate to Checkout page (`/checkout`).
-3. Click inside the "Tổng tiền thanh toán" numeric input field.
-4. Change the value to `0` or `1`.
-5. Click "Xác Nhận Thanh Toán".
-
-#### Expected Behavior
-Total order amount is displayed as static formatted text (`<span>500.000 ₫</span>`). Backend recalculates order total server-side based on item prices and quantities.
-
-#### Actual Behavior
-Input field allows arbitrary user modification, and order is created with the altered total amount of `0 ₫` or `1 ₫`.
-
-#### Screenshot References
-* **Annotated Evidence:** `evidence_images/bug_006_evidence.png`
-* **GitHub Issue Screenshot:** `github_issues_screenshots/bug_006_github.png`
-
-#### Remediation
-Remove `<input type="number">` element in `Checkout.jsx` and replace with read-only formatted text. Calculate total server-side in `server.js`:
-```javascript
-// Frontend Checkout.jsx
-<div className="text-xl font-bold text-indigo-600">
-  {cartTotal.toLocaleString()} ₫
-</div>
-```
-
----
-
-### BUG-007: Web Checkout does not call clearCart() after successful payment, leaving cart populated
-
-* **Severity:** Medium
-* **FR ID:** FR-07 (Shopping Cart)
-* **Target Module:** `frontend-web/src/pages/Checkout.jsx`
-* **Environment:** Web Desktop (Chrome / Firefox)
-
-#### Description
-When a user completes payment on the Web Checkout page, `handleCheckout` executes order submission and redirects to `/profile`. However, it fails to invoke `clearCart()` from `CartContext`. Consequently, the purchased items remain in the user's cart state and header navigation badge.
-
-#### Steps to Reproduce
-1. Add items to cart and proceed through `/checkout`.
-2. Click "Xác Nhận Thanh Toán".
-3. After automatic navigation to Profile page, observe cart icon badge in the top right header.
-
-#### Expected Behavior
-Cart state is reset (`clearCart()`); cart badge updates to `0` items.
-
-#### Actual Behavior
-Cart badge retains previous items and count (e.g. `2` items) after successful payment.
-
-#### Screenshot References
-* **Annotated Evidence:** `evidence_images/bug_007_evidence.png`
-* **GitHub Issue Screenshot:** `github_issues_screenshots/bug_007_github.png`
-
-#### Remediation
-Call `clearCart()` in `Checkout.jsx` prior to triggering router redirection:
-```javascript
-// Fix: Invoke clearCart before navigation
-const handleCheckout = async () => {
-  await api.post("/checkout", payload);
-  clearCart();
-  toast.success("Thanh toán thành công!");
-  navigate("/profile");
-};
-```
-
----
-
-### BUG-008: Mobile Checkout drops last item from order payload due to cart.slice(0, -1)
-
-* **Severity:** Critical
-* **FR ID:** FR-07 (Shopping Cart) / FR-10 (Order State Machine)
-* **Target Module:** `frontend-mobile/App.js`
-* **Environment:** Mobile App (React Native / Expo Go)
-
-#### Description
-In the Mobile App checkout handler (`App.js` line 391), the HTTP request body payload constructs the items array as `items: cart.length > 1 ? cart.slice(0, -1) : cart`. When a user checks out with 2 or more items in their cart, `cart.slice(0, -1)` strips the final item from the array sent to the backend. The customer pays full price, but the last item is omitted from the saved order.
-
-#### Steps to Reproduce
-1. Add 3 distinct items to cart in Mobile App (Item A, Item B, Item C).
-2. Tap "Thanh toán".
-3. Check created order details in Database or Admin portal.
-
-#### Expected Behavior
-The order payload contains all 3 items (Item A, Item B, Item C).
-
-#### Actual Behavior
-Order payload sent to API contains only Item A and Item B. Item C is dropped.
-
-#### Screenshot References
-* **Annotated Evidence:** `evidence_images/bug_008_evidence.png`
-* **GitHub Issue Screenshot:** `github_issues_screenshots/bug_008_github.png`
-
-#### Remediation
-In `frontend-mobile/App.js`, remove `cart.slice(0, -1)` and transmit the entire `cart` array:
-```javascript
-// Fix: Send full cart array in request payload
-body: JSON.stringify({
-  items: cart,
-  total_amount: finalAmount,
-  coupon_id: couponResult?.coupon_id || null,
-})
-```
-
----
-
-### BUG-009: Mobile Cart quantity input change handler adds 1 to entered quantity (parsed + 1)
-
-* **Severity:** Medium
-* **FR ID:** FR-07 (Shopping Cart)
-* **Target Module:** `frontend-mobile/App.js`
-* **Environment:** Mobile App (React Native / Expo Go)
-
-#### Description
-In `frontend-mobile/App.js` (line 619), the text change handler for cart item quantity sets `newCart[index].quantity = Number.isFinite(parsed) && parsed > 0 ? parsed + 1 : 1`. When a user types a new quantity into the text box (e.g. typing `2`), the code adds `1` to `parsed`, resulting in quantity `3`.
-
-#### Steps to Reproduce
-1. Open Mobile Cart with an item of quantity `1`.
-2. Tap quantity `TextInput` field and replace `1` with `2`.
-3. Tap outside input to register change.
-
-#### Expected Behavior
-Item quantity updates to `2`.
-
-#### Actual Behavior
-Item quantity updates to `3` (`2 + 1`).
-
-#### Screenshot References
-* **Annotated Evidence:** `evidence_images/bug_009_evidence.png`
-* **GitHub Issue Screenshot:** `github_issues_screenshots/bug_009_github.png`
-
-#### Remediation
-In `frontend-mobile/App.js`, remove `+ 1` arithmetic addition from text change listener:
-```javascript
-// Fix: Assign parsed value directly without adding 1
-newCart[index].quantity = Number.isFinite(parsed) && parsed > 0 ? parsed : 1;
-```
-
----
-
-### BUG-010: Order cancellation logic allows users to cancel orders in shipping state
-
-* **Severity:** High
-* **FR ID:** FR-10 (Order State Machine) / FR-11 (Order History)
-* **Target Module:** `backend/server.js` & `frontend-web/src/pages/Profile.jsx`
-* **Environment:** Web & Backend API
-
-#### Description
-In `backend/server.js` (`PUT /api/orders/:id/cancel`), the status check logic is written as `if (order.status === "delivered" || order.status === "canceled") return res.status(400)`. This check fails to block cancellation when order status is `shipping` (Đang giao). Consequently, users can cancel orders already in transit.
-
-#### Steps to Reproduce
-1. Admin transitions user order status to `shipping`.
-2. Log in as Customer and navigate to Web Profile Order History (`/profile`).
-3. Click "Hủy đơn" button on the order in `shipping` status.
-
-#### Expected Behavior
-Cancellation is blocked with error message "Không thể hủy đơn hàng đang giao".
-
-#### Actual Behavior
-Backend accepts request and updates order status to `canceled`.
-
-#### Screenshot References
-* **Annotated Evidence:** `evidence_images/bug_010_evidence.png`
-* **GitHub Issue Screenshot:** `github_issues_screenshots/bug_010_github.png`
-
-#### Remediation
-Update backend status guard in `server.js` to enforce positive status whitelist:
-```javascript
-// Fix: Allow cancellation ONLY when order is pending or confirmed
-if (order.status !== "pending" && order.status !== "confirmed") {
-  return res.status(400).json({ error: "Không thể hủy đơn hàng ở trạng thái hiện tại." });
-}
-```
-
----
-
-### BUG-011: Backend API and Admin UI permit illegal state transition from canceled to delivered
-
-* **Severity:** High
-* **FR ID:** FR-10 (Order State Machine) / FR-18 (Admin Order Management)
-* **Target Module:** `backend/server.js` & `frontend-admin/src/App.jsx`
-* **Environment:** Backend API & Admin Web Dashboard
-
-#### Description
-In `backend/server.js` (line 550), status transition logic explicitly contains `if (currentStatus === "canceled" && status === "delivered") isValidTransition = true;`. Additionally, `frontend-admin/src/App.jsx` renders an active "Đánh dấu Đã giao" action button for orders in `canceled` status. This violates state machine rules by allowing canceled orders to jump directly to terminal state `delivered`.
-
-#### Steps to Reproduce
-1. Open Admin Dashboard (`http://localhost:5174/`) and navigate to Orders tab.
-2. Locate any order with status `canceled`.
-3. Observe active green button "Đánh dấu Đã giao".
-4. Click the button.
-
-#### Expected Behavior
-Canceled state is terminal; transition to `delivered` is prohibited, and no action buttons are rendered.
-
-#### Actual Behavior
-Status changes from `canceled` to `delivered` in database and UI.
-
-#### Screenshot References
-* **Annotated Evidence:** `evidence_images/bug_011_evidence.png`
-* **GitHub Issue Screenshot:** `github_issues_screenshots/bug_011_github.png`
-
-#### Remediation
-Remove `canceled` -> `delivered` rule from `server.js` and hide action buttons on canceled orders in `frontend-admin`:
-```javascript
-// Backend server.js: Remove illegal rule
-// Admin App.jsx: Hide action buttons when status is canceled
-{o.status !== "delivered" && o.status !== "canceled" && (
-  // Action buttons
-)}
-```
-
----
-
-### BUG-012: Phone number validation regex /^[1-9][0-9]{8,9}$/ rejects valid Vietnamese phone numbers
-
-* **Severity:** High
-* **FR ID:** FR-11 (Order History / Profile)
-* **Target Module:** `frontend-web/src/pages/Profile.jsx` & `frontend-mobile/App.js`
-* **Environment:** Web Desktop & Mobile App
-
-#### Description
-In `Profile.jsx` (line 43) and `App.js` (line 287), profile phone number validation uses regex `!/^[1-9][0-9]{8,9}$/.test(phone)`. Standard Vietnamese mobile phone numbers always start with digit `0` (e.g. `0912345678`). Because the regex requires the first digit to be `[1-9]`, every valid Vietnamese mobile number is rejected with error "Số điện thoại không hợp lệ".
-
-#### Steps to Reproduce
-1. Navigate to Profile page.
-2. Type `0912345678` into phone number input field.
-3. Click "Cập nhật thông tin".
-
-#### Expected Behavior
-Profile updates successfully with phone number `0912345678`.
-
-#### Actual Behavior
-Triggers alert "Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số."
-
-#### Screenshot References
-* **Annotated Evidence:** `evidence_images/bug_012_evidence.png`
-* **GitHub Issue Screenshot:** `github_issues_screenshots/bug_012_github.png`
-
-#### Remediation
-Update regex pattern to support standard Vietnamese prefix `0`:
-```javascript
-// Fix: Validate Vietnamese phone prefix 03/05/07/08/09
-const phoneRegex = /^(0[3|5|7|8|9])[0-9]{8}$/;
-if (!phoneRegex.test(phone)) {
-  alert("Số điện thoại không hợp lệ. Vui lòng nhập đúng 10 chữ số bắt đầu bằng số 0.");
-  return;
-}
-```
-
----
-
-### BUG-013: Stored XSS vulnerability in Admin shipping address table and double revenue metric bug
-
-* **Severity:** Critical
-* **FR ID:** FR-18 (Admin Order Management)
-* **Target Module:** `frontend-admin/src/App.jsx`
-* **Environment:** Admin Web Dashboard
-
-#### Description
-This issue contains two severe admin portal defects:
-1. **Stored XSS Vulnerability:** In `frontend-admin/src/App.jsx` (lines 801-803), the shipping address column renders via `dangerouslySetInnerHTML={{ __html: o.shipping_address }}` without HTML escaping. If an attacker inputs `<img src=x onerror=alert(document.cookie)>` in their shipping address on the store site, arbitrary JavaScript automatically executes in the admin dashboard upon viewing orders.
-2. **Dashboard Revenue Calculation Bug:** `frontend-admin/src/App.jsx` (lines 217-220) calculates total revenue as `sum + o.total_amount * 2` for delivered orders, falsely doubling the reported system revenue metric.
-
-#### Steps to Reproduce
-1. As a customer, set shipping address to `<img src=x onerror=alert('XSS_ADMIN_COOKIE:'+document.cookie)>` and place order.
-2. Log into Admin Dashboard (`http://localhost:5174/`).
-3. Click Orders tab and observe script execution alert.
-4. Check Dashboard summary card for Total Revenue metric on delivered orders ($100k displayed as $200k).
-
-#### Expected Behavior
-1. Shipping address HTML tags are sanitized/escaped, rendering as plain text.
-2. Dashboard total revenue equals exact sum of delivered order totals (`sum + o.total_amount`).
-
-#### Actual Behavior
-1. Browser executes injected JavaScript payload inside Admin DOM.
-2. Revenue display reports double the actual total revenue (`total_amount * 2`).
-
-#### Screenshot References
-* **Annotated Evidence:** `evidence_images/bug_013_evidence.png`
-* **GitHub Issue Screenshot:** `github_issues_screenshots/bug_013_github.png`
-
-#### Remediation
-Replace `dangerouslySetInnerHTML` with standard JSX text node rendering, and fix revenue accumulator formula:
-```javascript
-// Fix 1: Escape shipping address using standard JSX text rendering
-<td className="p-3 font-mono text-sm">
-  {o.shipping_address || "Chưa cập nhật"}
-</td>
-
-// Fix 2: Correct revenue sum calculation formula
-const totalRevenue = orders.reduce((sum, o) => {
-  if (o.status === "delivered") return sum + o.total_amount;
-  return sum;
-}, 0);
-```
+# HW03 Verified Defect Report
+
+| Field | Value |
+|---|---|
+| Student | Lê Tuấn Lộc (23127404) |
+| System under test | EShop |
+| Runtime environment | Google Chrome 151.0.7922.72 on Windows |
+| Final execution | 2 August 2026 |
+| Verified defects | 15 |
+| Unverified Mobile hypotheses | 4; excluded from the defect total |
+| GitHub Issue status | URLs and Issue-page screenshots pending creation by the student |
+
+## Evidence policy
+
+Every defect counted below was reproduced in two independent Chromium runs against a freshly seeded database. Static source inspection was used only after reproduction to explain a likely cause. The screenshots are genuine captures of the running SUT. A GitHub Issue is not claimed until the student creates it and supplies the URL.
+
+## Verified defect summary
+
+| Bug ID | Related check | Severity | Title | Evidence |
+|---|---|---|---|---|
+| BUG-001 | CHK-GUI-002 | Major | Product Detail requires a second click to add an item | `evidence_images/bug_001_first_click_cart_empty.png` |
+| BUG-002 | CHK-GUI-003 | Major | Negative product quantity produces a negative cart subtotal | `evidence_images/bug_002_negative_quantity.png` |
+| BUG-003 | CHK-GUI-004 | Minor | Decimal quantity is silently truncated | `evidence_images/bug_003_decimal_quantity_truncated.png` |
+| BUG-006 | CHK-GUI-005 | Critical | Checkout total is client-editable and trusted | `evidence_images/bug_006_editable_checkout_total.png` |
+| BUG-007 | CHK-GUI-009 | Major | Cart remains populated after checkout | `evidence_images/bug_007_cart_retained_after_checkout.png` |
+| BUG-010 | CHK-GUI-016 | Major | Customer can cancel an order in shipping state | `evidence_images/bug_010_shipping_order_canceled.png` |
+| BUG-011 | CHK-GUI-017 | Major | Canceled order can transition to delivered | `evidence_images/bug_011_canceled_order_delivered.png` |
+| BUG-012 | CHK-GUI-024 | Major | Valid Vietnamese phone number is rejected | `evidence_images/bug_012_valid_phone_rejected.png` |
+| BUG-013 | CHK-GUI-032 | Critical | Stored shipping-address HTML is executed in Admin | `evidence_images/bug_013_stored_html_injection.png` |
+| BUG-014 | CHK-GUI-031 | Major | Admin dashboard doubles delivered revenue | `evidence_images/bug_014_admin_revenue_doubled.png` |
+| BUG-015 | CHK-GUI-018 | Critical | Percentage coupon calculation produces invalid negative savings | `evidence_images/bug_015_percent_coupon_calculation.png` |
+| BUG-016 | CHK-GUI-026 | Major | Order History provides no order-details view | `evidence_images/bug_016_order_history_has_no_details.png` |
+| BUG-017 | CHK-GUI-036 | Major | Editing one product changes every visible product name | `evidence_images/bug_017_admin_product_edit_corrupts_list.png` |
+| BUG-018 | CHK-GUI-037 | Minor | Admin data loading has no progress feedback | `evidence_images/bug_018_admin_missing_loading_indicator.png` |
+| BUG-019 | CHK-GUI-035 | Minor | Admin order transition has no explicit success feedback | `evidence_images/bug_019_admin_status_no_success_feedback.png` |
+
+## Detailed defect records
+
+### BUG-001 — Product Detail requires a second click to add an item
+
+**Severity:** Major
+**Related check:** CHK-GUI-002
+**Precondition:** Product 1 is available and the cart is empty.
+
+**Steps to reproduce:**
+
+1. Open `/product/1`.
+2. Select **Thêm vào giỏ hàng** once.
+3. Open **Giỏ hàng**.
+
+**Expected:** The cart contains one unit after the first click.
+**Actual:** The cart remains empty; a second click is required.
+**Likely cause:** `handleAddToCart` consumes the first click by updating `clickCount` and returns before `addToCart`.
+**Evidence:** `evidence_images/bug_001_first_click_cart_empty.png`
+**GitHub Issue:** Pending student-created URL.
+
+### BUG-002 — Negative quantity produces a negative cart subtotal
+
+**Severity:** Major
+**Related check:** CHK-GUI-003
+**Steps:** Enter `-5` on Product Detail, add the item, and open the cart.
+**Expected:** Quantity is constrained to a positive integer with validation feedback.
+**Actual:** Quantity `-5` is accepted and the cart shows a negative subtotal.
+**Likely cause:** No `min` constraint or range validation is applied.
+**Evidence:** `evidence_images/bug_002_negative_quantity.png`
+**GitHub Issue:** Pending student-created URL.
+
+### BUG-003 — Decimal quantity is silently truncated
+
+**Severity:** Minor
+**Related check:** CHK-GUI-004
+**Steps:** Enter `2.5` on Product Detail, add the item, and open the cart.
+**Expected:** The decimal is rejected or the user is asked for an integer.
+**Actual:** The cart silently stores quantity `2`.
+**Likely cause:** `parseInt(quantity)` truncates without validation.
+**Evidence:** `evidence_images/bug_003_decimal_quantity_truncated.png`
+**GitHub Issue:** Pending student-created URL.
+
+### BUG-006 — Checkout total is client-editable and trusted
+
+**Severity:** Critical
+**Related check:** CHK-GUI-005
+**Steps:** Add a product, authenticate, open Checkout, and edit **Tổng tiền thanh toán**.
+**Expected:** The authoritative total is read-only and calculated server-side.
+**Actual:** The input is editable and its value is submitted as `total_amount`.
+**Likely cause:** Checkout binds an editable input to `editableTotal`; the API stores the supplied total.
+**Evidence:** `evidence_images/bug_006_editable_checkout_total.png`
+**GitHub Issue:** Pending student-created URL.
+
+### BUG-007 — Cart remains populated after checkout
+
+**Severity:** Major
+**Related check:** CHK-GUI-009
+**Steps:** Complete checkout, return home, and open the cart.
+**Expected:** The purchased cart is cleared.
+**Actual:** The purchased item remains present.
+**Likely cause:** The success path never calls `clearCart()`.
+**Evidence:** `evidence_images/bug_007_cart_retained_after_checkout.png`
+**GitHub Issue:** Pending student-created URL.
+
+### BUG-010 — Customer can cancel an order in shipping state
+
+**Severity:** Major
+**Related check:** CHK-GUI-016
+**Steps:** Move an owned order to `shipping`, then call the customer cancellation action.
+**Expected:** The API rejects cancellation.
+**Actual:** The API succeeds and changes the order to `canceled`.
+**Likely cause:** The endpoint rejects only `delivered` and `canceled`, rather than allowing only `pending` and `confirmed`.
+**Evidence:** `evidence_images/bug_010_shipping_order_canceled.png`
+**GitHub Issue:** Pending student-created URL.
+
+### BUG-011 — Canceled order can transition to delivered
+
+**Severity:** Major
+**Related check:** CHK-GUI-017
+**Steps:** Cancel an order, then select **Đánh dấu Đã giao** in Admin.
+**Expected:** `canceled` is terminal.
+**Actual:** The UI offers the action and the API accepts `canceled → delivered`.
+**Likely cause:** The Admin UI and state validation explicitly permit the transition.
+**Evidence:** `evidence_images/bug_011_canceled_order_delivered.png`
+**GitHub Issue:** Pending student-created URL.
+
+### BUG-012 — Valid Vietnamese phone number is rejected
+
+**Severity:** Major
+**Related check:** CHK-GUI-024
+**Steps:** Enter `0912345678` in Profile and submit.
+**Expected:** The valid ten-digit number is accepted.
+**Actual:** An alert reports that it is invalid.
+**Likely cause:** The regex starts with `[1-9]` and excludes the required leading zero.
+**Evidence:** `evidence_images/bug_012_valid_phone_rejected.png`
+**GitHub Issue:** Pending student-created URL.
+
+### BUG-013 — Stored shipping-address HTML is executed in Admin
+
+**Severity:** Critical
+**Related check:** CHK-GUI-032
+**Steps:** Store HTML in an order's shipping address and open Admin Orders.
+**Expected:** The address is rendered as escaped text.
+**Actual:** The markup is interpreted and styled content appears; script-capable payloads can execute in the Admin origin.
+**Likely cause:** `dangerouslySetInnerHTML` renders untrusted address content.
+**Evidence:** `evidence_images/bug_013_stored_html_injection.png`
+**GitHub Issue:** Pending student-created URL.
+
+### BUG-014 — Admin dashboard doubles delivered revenue
+
+**Severity:** Major
+**Related check:** CHK-GUI-031
+**Steps:** Create delivered orders with known totals and open Dashboard.
+**Expected:** Revenue equals `8,234,567 ₫`.
+**Actual:** Dashboard displays `16,469,134 ₫`.
+**Likely cause:** The reducer adds `o.total_amount * 2`.
+**Evidence:** `evidence_images/bug_014_admin_revenue_doubled.png`
+**GitHub Issue:** Pending student-created URL.
+
+### BUG-015 — Percentage coupon calculation produces invalid negative savings
+
+**Severity:** Critical
+**Related check:** CHK-GUI-018
+**Steps:** Add a `30,000,000 ₫` product and apply `SAVE10` at Checkout.
+**Expected:** Savings `3,000,000 ₫`; final total `27,000,000 ₫`.
+**Actual:** Savings `-270,000,000 ₫`; final total `300,000,000 ₫`.
+**Likely cause:** The formula uses `total_amount * (1 - discount_value)` instead of `total_amount * discount_value / 100`.
+**Evidence:** `evidence_images/bug_015_percent_coupon_calculation.png`
+**GitHub Issue:** Pending student-created URL.
+
+### BUG-016 — Order History provides no order-details view
+
+**Severity:** Major
+**Related check:** CHK-GUI-026
+**Steps:** Open Profile for a customer with orders.
+**Expected:** Each order can be expanded or opened to inspect its items.
+**Actual:** Only summary columns are available; there is no details control.
+**Evidence:** `evidence_images/bug_016_order_history_has_no_details.png`
+**GitHub Issue:** Pending student-created URL.
+
+### BUG-017 — Editing one product changes every visible product name
+
+**Severity:** Major
+**Related check:** CHK-GUI-036
+**Steps:** In Admin Products, edit one name and save.
+**Expected:** Only the selected row changes.
+**Actual:** Every visible product row shows the edited name until refresh.
+**Likely cause:** The success handler maps the new name onto every product in client state.
+**Evidence:** `evidence_images/bug_017_admin_product_edit_corrupts_list.png`
+**GitHub Issue:** Pending student-created URL.
+
+### BUG-018 — Admin data loading has no progress feedback
+
+**Severity:** Minor
+**Related check:** CHK-GUI-037
+**Steps:** Delay Admin API responses and authenticate.
+**Expected:** A spinner, skeleton, loading message, or disabled state is shown.
+**Actual:** No loading feedback appears while requests are pending.
+**Evidence:** `evidence_images/bug_018_admin_missing_loading_indicator.png`
+**GitHub Issue:** Pending student-created URL.
+
+### BUG-019 — Admin order transition has no explicit success feedback
+
+**Severity:** Minor
+**Related check:** CHK-GUI-035
+**Steps:** Confirm a pending order in Admin.
+**Expected:** A success toast or confirmation message appears.
+**Actual:** Only the badge changes; no explicit success message is presented.
+**Evidence:** `evidence_images/bug_019_admin_status_no_success_feedback.png`
+**GitHub Issue:** Pending student-created URL.
+
+## Unverified Mobile hypotheses
+
+These source-derived candidates were not executed on Expo Go, a physical phone, or an approved cloud device. They are excluded from the verified defect count.
+
+| Candidate | Hypothesis | Required verification |
+|---|---|---|
+| BUG-004 | Mobile Product Detail may omit category information | Execute CHK-GUI-039 on a qualifying device |
+| BUG-005 | Missing-product handling may expose technical text without recovery navigation | Execute CHK-GUI-044 on a qualifying device |
+| BUG-008 | Mobile checkout may omit the final cart item | Execute CHK-GUI-012 and inspect the request payload |
+| BUG-009 | Mobile quantity entry may add one to the typed value | Execute CHK-GUI-011 on a qualifying device |
+
+## GitHub Issue handoff
+
+Create one GitHub Issue per verified defect using its detailed record and attach the corresponding PNG. After the URLs are supplied, update each `GitHub Issue` field and store a genuine Issue-page screenshot under `github_issues_screenshots/`.

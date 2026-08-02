@@ -1,0 +1,8 @@
+{
+  "name": "hw03-runtime-evidence",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "playwright": "1.57.0"
+  }
+}

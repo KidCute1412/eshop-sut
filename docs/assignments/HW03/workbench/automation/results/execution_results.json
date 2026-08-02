@@ -1,0 +1,386 @@
+{
+  "runtime": {
+    "runStarted": "2026-08-02T01:31:22.852Z",
+    "browsers": {
+      "chromeCrossPlatform": "151.0.7922.72",
+      "firefox": "144.0.2",
+      "chromium": "151.0.7922.72"
+    },
+    "exploratory": [],
+    "crossPlatform": {
+      "chrome": {
+        "browser": "Google Chrome Desktop",
+        "version": "151.0.7922.72",
+        "productList": true,
+        "productDetail": true,
+        "screenshots": 5
+      },
+      "firefox": {
+        "status": "Blocked",
+        "reason": "Playwright Firefox launched, but browserContext.newPage failed in this Windows environment."
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "CHK-GUI-001",
+      "status": "Passed",
+      "actual": "Cart rendered 5 columns (Sản phẩm, Giá, Số lượng, Thành tiền, Thao tác) and displayed the formatted total.",
+      "notes": "",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-002",
+      "status": "Failed",
+      "actual": "After one click on Product Detail, the cart remained empty; a second click is required.",
+      "notes": "First click does not add the product.",
+      "bugId": "BUG-001",
+      "evidence": "bugs/evidence_images/bug_001_first_click_cart_empty.png"
+    },
+    {
+      "id": "CHK-GUI-003",
+      "status": "Failed",
+      "actual": "The product was added with quantity -5 and a negative subtotal (iPhone 15 Pro Max 30.000.000 ₫ -5 -150.000.000 ₫ Xóa).",
+      "notes": "No minimum or validation feedback is provided.",
+      "bugId": "BUG-002",
+      "evidence": "bugs/evidence_images/bug_002_negative_quantity.png"
+    },
+    {
+      "id": "CHK-GUI-004",
+      "status": "Failed",
+      "actual": "Entering 2.5 produced cart quantity 2 without any validation message.",
+      "notes": "The decimal was silently truncated by parseInt().",
+      "bugId": "BUG-003",
+      "evidence": "bugs/evidence_images/bug_003_decimal_quantity_truncated.png"
+    },
+    {
+      "id": "CHK-GUI-005",
+      "status": "Failed",
+      "actual": "Checkout total is rendered in an editable number input and accepted manual changes.",
+      "notes": "The displayed/payment total is client-editable.",
+      "bugId": "BUG-006",
+      "evidence": "bugs/evidence_images/bug_006_editable_checkout_total.png"
+    },
+    {
+      "id": "CHK-GUI-006",
+      "status": "Passed",
+      "actual": "Continue shopping links to the product list and the checkout control is available.",
+      "notes": "",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-007",
+      "status": "Passed",
+      "actual": "Unauthenticated checkout displayed “Bạn cần đăng nhập để thanh toán!” and redirected to /login.",
+      "notes": "",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-008",
+      "status": "Passed",
+      "actual": "The empty-cart message and continue-shopping link were displayed after removing the item.",
+      "notes": "",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-009",
+      "status": "Failed",
+      "actual": "The purchased item remained in the cart after checkout completed.",
+      "notes": "Checkout does not invoke clearCart().",
+      "bugId": "BUG-007",
+      "evidence": "bugs/evidence_images/bug_007_cart_retained_after_checkout.png"
+    },
+    {
+      "id": "CHK-GUI-010",
+      "status": "Not Executed",
+      "actual": "Not executed on a qualifying mobile environment.",
+      "notes": "Requires Expo Go on a physical device or an approved cloud-device platform.",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-011",
+      "status": "Not Executed",
+      "actual": "Not executed on a qualifying mobile environment.",
+      "notes": "Requires Expo Go on a physical device or an approved cloud-device platform.",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-012",
+      "status": "Not Executed",
+      "actual": "Not executed on a qualifying mobile environment.",
+      "notes": "Requires Expo Go on a physical device or an approved cloud-device platform.",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-013",
+      "status": "Not Executed",
+      "actual": "Not executed on a qualifying mobile environment.",
+      "notes": "Requires Expo Go on a physical device or an approved cloud-device platform.",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-014",
+      "status": "Passed",
+      "actual": "A newly created order displayed “Chờ xác nhận” with the pending badge style.",
+      "notes": "",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-015",
+      "status": "Passed",
+      "actual": "The API accepted the valid sequence confirmed → shipping → delivered.",
+      "notes": "",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-016",
+      "status": "Failed",
+      "actual": "The cancellation request returned HTTP 200; the shipping order became canceled.",
+      "notes": "Shipping is incorrectly treated as cancelable.",
+      "bugId": "BUG-010",
+      "evidence": "bugs/evidence_images/bug_010_shipping_order_canceled.png"
+    },
+    {
+      "id": "CHK-GUI-017",
+      "status": "Failed",
+      "actual": "Canceled → delivered returned HTTP 200; the admin UI displayed the resulting delivered state.",
+      "notes": "A terminal canceled order can escape to delivered.",
+      "bugId": "BUG-011",
+      "evidence": "bugs/evidence_images/bug_011_canceled_order_delivered.png"
+    },
+    {
+      "id": "CHK-GUI-018",
+      "status": "Failed",
+      "actual": "SAVE10 (10%) reported savings of -270,000,000 ₫ and a final total of 300,000,000 ₫; the correct values are 3,000,000 ₫ and 27,000,000 ₫.",
+      "notes": "Percentage discount calculation is incorrect.",
+      "bugId": "BUG-015",
+      "evidence": "bugs/evidence_images/bug_015_percent_coupon_calculation.png"
+    },
+    {
+      "id": "CHK-GUI-019",
+      "status": "Passed",
+      "actual": "The invalid coupon displayed the inline message “Mã giảm giá không tồn tại hoặc đã bị vô hiệu hóa”.",
+      "notes": "",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-020",
+      "status": "Passed",
+      "actual": "Checkout displayed a dedicated success state and provided navigation back to the home page.",
+      "notes": "",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-021",
+      "status": "Passed",
+      "actual": "A delivered order rejected a transition back to confirmed with HTTP 400.",
+      "notes": "",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-022",
+      "status": "Passed",
+      "actual": "Order history rendered as a structured five-column table at 1440×1000.",
+      "notes": "",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-023",
+      "status": "Passed",
+      "actual": "Status badges rendered localized labels: Đã hủy, Đã giao, Chờ xác nhận, Chờ xác nhận.",
+      "notes": "",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-024",
+      "status": "Failed",
+      "actual": "The valid Vietnamese number 0912345678 was rejected with “Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.”.",
+      "notes": "The regex disallows the required leading zero.",
+      "bugId": "BUG-012",
+      "evidence": "bugs/evidence_images/bug_012_valid_phone_rejected.png"
+    },
+    {
+      "id": "CHK-GUI-025",
+      "status": "Passed",
+      "actual": "The address was saved through the profile form; confirmation message: “Cập nhật thành công!”.",
+      "notes": "",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-026",
+      "status": "Failed",
+      "actual": "Order-history rows provide no expansion control, details link, or item-level view.",
+      "notes": "The interface exposes only summary columns.",
+      "bugId": "BUG-016",
+      "evidence": "bugs/evidence_images/bug_016_order_history_has_no_details.png"
+    },
+    {
+      "id": "CHK-GUI-027",
+      "status": "Passed",
+      "actual": "The order-history empty state was displayed for a user with no orders at the start of execution.",
+      "notes": "",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-028",
+      "status": "Not Executed",
+      "actual": "Not executed on a qualifying mobile environment.",
+      "notes": "Requires Expo Go on a physical device or an approved cloud-device platform.",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-029",
+      "status": "Not Executed",
+      "actual": "Not executed on a qualifying mobile environment.",
+      "notes": "The Web behavior was inspected, but the comparison requires execution of the Mobile app.",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-030",
+      "status": "Passed",
+      "actual": "Dashboard displayed revenue and order-count summary cards.",
+      "notes": "",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-031",
+      "status": "Failed",
+      "actual": "Delivered-order revenue should total 8,234,567 ₫; the dashboard rendered Tổng doanh thu (Delivered) 16.469.134 ₫.",
+      "notes": "The reducer multiplies each delivered total by two.",
+      "bugId": "BUG-014",
+      "evidence": "bugs/evidence_images/bug_014_admin_revenue_doubled.png"
+    },
+    {
+      "id": "CHK-GUI-032",
+      "status": "Failed",
+      "actual": "Stored shipping-address HTML was interpreted as markup in the Admin Orders table.",
+      "notes": "dangerouslySetInnerHTML permits stored script-capable content.",
+      "bugId": "BUG-013",
+      "evidence": "bugs/evidence_images/bug_013_stored_html_injection.png"
+    },
+    {
+      "id": "CHK-GUI-033",
+      "status": "Passed",
+      "actual": "The pending order exposed the expected actions: Xác nhận, Hủy.",
+      "notes": "",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-034",
+      "status": "Passed",
+      "actual": "All six primary admin navigation destinations were visible and selectable.",
+      "notes": "",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-035",
+      "status": "Failed",
+      "actual": "The status changed to Đã xác nhận, but no success toast or confirmation message appeared.",
+      "notes": "State change feedback is limited to the table badge update.",
+      "bugId": "BUG-019",
+      "evidence": "bugs/evidence_images/bug_019_admin_status_no_success_feedback.png"
+    },
+    {
+      "id": "CHK-GUI-036",
+      "status": "Failed",
+      "actual": "Editing one product changed every visible product name in client state.",
+      "notes": "The success handler maps the edited name onto every product.",
+      "bugId": "BUG-017",
+      "evidence": "bugs/evidence_images/bug_017_admin_product_edit_corrupts_list.png"
+    },
+    {
+      "id": "CHK-GUI-037",
+      "status": "Failed",
+      "actual": "No loading spinner, progress indicator, or loading message appeared while Admin APIs were deliberately delayed.",
+      "notes": "The interface renders empty/default content during data retrieval.",
+      "bugId": "BUG-018",
+      "evidence": "bugs/evidence_images/bug_018_admin_missing_loading_indicator.png"
+    },
+    {
+      "id": "CHK-GUI-038",
+      "status": "Not Executed",
+      "actual": "Not executed on a qualifying mobile environment.",
+      "notes": "Requires Expo Go on a physical device or an approved cloud-device platform.",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-039",
+      "status": "Not Executed",
+      "actual": "Not executed on a qualifying mobile environment.",
+      "notes": "Requires Expo Go on a physical device or an approved cloud-device platform.",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-040",
+      "status": "Not Executed",
+      "actual": "Not executed on a qualifying mobile environment.",
+      "notes": "Requires Expo Go on a physical device or an approved cloud-device platform.",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-041",
+      "status": "Not Executed",
+      "actual": "Not executed on a qualifying mobile environment.",
+      "notes": "Requires Expo Go on a physical device or an approved cloud-device platform.",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-042",
+      "status": "Not Executed",
+      "actual": "Not executed on a qualifying mobile environment.",
+      "notes": "Requires Expo Go on a physical device or an approved cloud-device platform.",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-043",
+      "status": "Not Executed",
+      "actual": "Not executed on a qualifying mobile environment.",
+      "notes": "Requires Expo Go on a physical device or an approved cloud-device platform.",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-044",
+      "status": "Not Executed",
+      "actual": "Not executed on a qualifying mobile environment.",
+      "notes": "Requires Expo Go on a physical device or an approved cloud-device platform.",
+      "bugId": "",
+      "evidence": ""
+    },
+    {
+      "id": "CHK-GUI-045",
+      "status": "Not Executed",
+      "actual": "Not executed on a qualifying mobile environment.",
+      "notes": "Requires Expo Go on a physical device or an approved cloud-device platform.",
+      "bugId": "",
+      "evidence": ""
+    }
+  ]
+}
