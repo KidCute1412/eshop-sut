@@ -6,6 +6,9 @@ Branch: 23127404-LeTuanLoc
 Exported: 2026-08-02 (Asia/Saigon)
 Command: git log --date=iso-local --pretty=format:'%h | %ad | %s' -- docs/assignments/HW03
 
+8304758 | 2026-08-02 19:26:00 +0700 | docs(hw03): prepare evidence-gated usability sessions
+28cc37d | 2026-08-02 19:25:44 +0700 | test(hw03): complete Firefox cross-browser evidence
+cd6e757 | 2026-08-02 08:37:45 +0700 | docs(hw03): export genuine assignment commit log
 c64c9d6 | 2026-08-02 08:37:11 +0700 | docs(hw03): reconcile reports and derived deliverables
 c5ae417 | 2026-08-02 08:36:53 +0700 | test(hw03): document Chrome flow and platform constraints
 f101043 | 2026-08-02 08:36:44 +0700 | test(hw03): execute GUI checklist and capture defect evidence
