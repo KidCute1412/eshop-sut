@@ -7,11 +7,11 @@
 
 ## Submission Scope
 
-| Task | Selected Scope | Main Artifacts |
-| --- | --- | --- |
-| 1 | GUI Checklist — Register + Login | [checklist.md](gui-checklist/checklist.md), [ai-gap-analysis.md](gui-checklist/ai-gap-analysis.md), [bug-report.md](gui-checklist/bug-report.md), [ai-audit.md](gui-checklist/ai-audit.md), [github-issues.md](gui-checklist/github-issues.md) |
-| 2 | Usability Evaluation — Register -> Login -> Update Profile | [usability-plan.md](usability-evaluation/usability-plan.md), [participants.md](usability-evaluation/participants.md), [session-notes/](usability-evaluation/session-notes/), [sus-scoring.md](usability-evaluation/sus-scoring.md), [findings.md](usability-evaluation/findings.md), [bug-report.md](usability-evaluation/bug-report.md), [ai-audit.md](usability-evaluation/ai-audit.md) |
-| 3 | Cross-Browser / Cross-Platform | [matrix.md](cross-platform/matrix.md), [coc-coc/](cross-platform/coc-coc/), [firefox/](cross-platform/firefox/), [safari-browserstack/](cross-platform/safari-browserstack/) |
+| Task | Selected Scope                                             | Main Artifacts                                                                                                                                                                                                                                                                                                                                                                            |
+| ---- | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1    | GUI Checklist — Register + Login                           | [checklist.md](gui-checklist/checklist.md), [ai-gap-analysis.md](gui-checklist/ai-gap-analysis.md), [bug-report.md](gui-checklist/bug-report.md), [ai-audit.md](gui-checklist/ai-audit.md), [github-issues.md](gui-checklist/github-issues.md)                                                                                                                                            |
+| 2    | Usability Evaluation — Register -> Login -> Update Profile | [usability-plan.md](usability-evaluation/usability-plan.md), [participants.md](usability-evaluation/participants.md), [session-notes/](usability-evaluation/session-notes/), [sus-scoring.md](usability-evaluation/sus-scoring.md), [findings.md](usability-evaluation/findings.md), [bug-report.md](usability-evaluation/bug-report.md), [ai-audit.md](usability-evaluation/ai-audit.md) |
+| 3    | Cross-Browser / Cross-Platform                             | [matrix.md](cross-platform/matrix.md), [coc-coc/](cross-platform/coc-coc/), [firefox/](cross-platform/firefox/), [safari-browserstack/](cross-platform/safari-browserstack/)                                                                                                                                                                                                              |
 
 ## Method Summary
 
@@ -95,7 +95,7 @@
   fabrication guards: `validate_checklist.py` and `validate_usability_session.py` fail the build if
   evidence is missing, if the combined item count is not above 40, if fewer than 7 real sessions
   exist, or if participant contact/consent fields are left as placeholders.
-- Demonstration video: TODO (YouTube link).
+- Demonstration video: [link](https://youtu.be/9FRgbmL1g7Q)
 
 ## AI Audit Report
 
@@ -115,15 +115,13 @@ TODO — export via `git log --stat > git-commit-log.txt` before final submissio
 
 ## Self-Assessment
 
-| No. | Criteria | Grade | Self-Assessed Grade |
-| --- | --- | ---: | ---: |
-| 1 | Task 1 — GUI Checklist (design + execution + bug report) | 30 | 30 |
-| 2 | Task 2 — Usability Evaluation (task scenario + 7 sessions + analysis) | 40 | 40 |
-| 3 | Task 3 — Cross-Browser / Cross-Platform (≥ 3 platforms) | 20 | 10 |
-| 4 | Agent Skills | 10 | 10 |
-| **Total** | | **100** | **90** |
-
-
+| No.       | Criteria                                                              |   Grade | Self-Assessed Grade |
+| --------- | --------------------------------------------------------------------- | ------: | ------------------: |
+| 1         | Task 1 — GUI Checklist (design + execution + bug report)              |      30 |                  30 |
+| 2         | Task 2 — Usability Evaluation (task scenario + 7 sessions + analysis) |      40 |                  40 |
+| 3         | Task 3 — Cross-Browser / Cross-Platform (≥ 3 platforms)               |      20 |                  10 |
+| 4         | Agent Skills                                                          |      10 |                  10 |
+| **Total** |                                                                       | **100** |              **90** |
 
 ## Github link
 

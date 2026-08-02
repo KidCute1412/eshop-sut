@@ -43,7 +43,7 @@
 - **SUS result:** Mean SUS = **26.1** / 100 (well below the ~68 average benchmark) — see
   [usability-evaluation/sus-scoring.md](usability-evaluation/sus-scoring.md).
 - **Demo videos:**
-  - Agent Skill demonstration: TODO (YouTube link)
+  - Agent Skill demonstration: [link](https://youtu.be/9FRgbmL1g7Q)
   - Session recordings (Task 2): see
     [usability-evaluation/evidence/record-evidece.txt](usability-evaluation/evidence/record-evidece.txt)
     for the recordings folder link
