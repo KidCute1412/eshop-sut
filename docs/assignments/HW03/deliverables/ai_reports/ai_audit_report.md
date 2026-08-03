@@ -131,16 +131,93 @@ The conversation interface exposed the interaction date but not message-level cl
 | Human review | Explicitly selected Pass/Fail from source and requested the five Mobile defects be treated as official before screenshots are supplied. Each artifact retains the source-derived qualification so runtime evidence can supersede it later. |
 | Affected artifacts | GUI checklist source/workbook, Mobile source-review evidence, defect report, README, main report, summaries, and validation rules |
 
+### AI-12 — Replace unexecuted missing-product check with a happy path
+
+| Field | Record |
+|---|---|
+| Tool | OpenAI Codex |
+| Date and time | 3 August 2026; message-level time unavailable |
+| Prompt | Remove the unconfirmed missing-product bug and replace CHK-GUI-044 with an easier valid Mobile case, synchronizing conflicting artifacts. |
+| AI output | Replaced CHK-GUI-044 with verification that Product Detail initializes quantity to `1`, retired BUG-024, initially held the row as Not Executed, then promoted it to Passed after the authentic Mobile capture appeared and was visually reviewed. Reports, summaries, evidence mappings, and validators were reconciled. |
+| Human review | Rejected source inspection as runtime confirmation and required evidence-based reporting. The four Mobile screenshots appeared in the workspace during implementation, were visually reviewed, and were mapped only to claims visible in them; their missing identity overlays remain disclosed. |
+| Affected artifacts | Checklist CSV/XLSX, defect report, Mobile evidence plan, README, main report, submission checklist, AI audit, generator, and validator |
+
+### AI-13 — Usability-recording reconciliation and workbook recovery
+
+| Field | Record |
+|---|---|
+| Tool | OpenAI Codex |
+| Date and time | 3 August 2026; message-level time unavailable |
+| Prompt | Review the local Pilot and P1–P7 videos in `D:\OBS Videos\Testing HW3`, repair `usability_results.xlsx`, remove unacceptable `Not coded` values, clarify the Recordings sheet, and add the supplied shared Google Drive folder where required. |
+| AI output | Inspected the eight local recording files, restored the original coded session results, standardized the Recordings sheet, and indexed each session by filename, duration, size, SHA-256, resolution, local-verification state, Drive folder, and access-verification state. Updated the Pilot row to reflect the verified local recording without inventing missing consent evidence. |
+| Human review | Closed Excel before workbook replacement, rejected `Not coded` as an inappropriate final result label, confirmed the shared-folder URL, and requested that the Pilot wording reflect the actual recording state. Signed-out Drive access remains explicitly unverified. |
+| Affected artifacts | `usability/usability_results.xlsx`, `usability/recordings/video_links.md`, usability source data, README, main report, generator, and validator |
+
+### AI-14 — Authentic Mobile evidence review and checklist mapping
+
+| Field | Record |
+|---|---|
+| Tool | OpenAI Codex |
+| Date and time | 3 August 2026; message-level time unavailable |
+| Prompt | Review the four screenshots added under `cross_platform/mobile_real_device`, map them to the appropriate Mobile checklist items, and synchronize every conflicting report. |
+| AI output | Visually reviewed the four 1284×2778 Mobile captures and mapped only visible claims to FR-23 checks. Confirmed the Product Detail layout, default quantity, valid add result, invalid-zero acceptance and success feedback; retired BUG-024; reconciled the checklist to 25 Passed and 20 Failed; and documented BUG-020 through BUG-023 as runtime-observed Mobile defects. |
+| Human review | Supplied the authentic captures and required the unsupported missing-product case to be replaced by a valid case. Accepted the evidence mapping while retaining disclosure that the images lack the assignment-required identity overlay and exact device/OS/Expo metadata. Still images were not treated as proof of loading, repeated-add, or price-calculation sequences. |
+| Affected artifacts | Checklist CSV/XLSX, Mobile evidence directory and README, defect report, cross-platform report, README, main report, AI reports, generators, and validators |
+
+### AI-15 — Defect-evidence presentation and GitHub Issue preparation
+
+| Field | Record |
+|---|---|
+| Tool | OpenAI Codex |
+| Date and time | 3 August 2026; message-level time unavailable |
+| Prompt | Embed evidence in the bug report, explain what to copy into GitHub Issues, and determine whether Mobile images should be duplicated into the defect-evidence directory. |
+| AI output | Embedded each defect image below its detail record, retained relative evidence references for traceability, and added Issue-copy instructions covering environment, reproducibility, direct GitHub image upload, and Mobile metadata. Recommended one canonical local Mobile image copy referenced by both cross-platform and defect artifacts to avoid ZIP duplication. |
+| Human review | Chose to retain the canonical Mobile files under `cross_platform/mobile_real_device` and to upload the relevant image directly to each GitHub Issue. Genuine Issue URLs and Issue-page screenshots remain external evidence requirements and are not inferred from local report text. |
+| Affected artifacts | `bugs/bug_report.md` and GitHub Issue preparation guidance |
+
+### AI-16 — Submission-readiness audit of Agent Skill and AI reports
+
+| Field | Record |
+|---|---|
+| Tool | OpenAI Codex |
+| Date and time | 3 August 2026; message-level time unavailable |
+| Prompt | Audit `deliverables/agent_skills` and then `deliverables/ai_reports` for missing, excessive, inconsistent, or poorly written submission content; update the AI reports to completion. |
+| AI output | Verified the Agent Skill mirror, YAML, Python syntax, four unit tests, and artifact validator; identified the missing demonstration URL. Audited the AI Critique word count and both PDFs, then identified stale audit claims and the missing post-AI-12 interaction history. Updated this report to the current evidence state and regenerated the submission PDFs. |
+| Human review | Authorized completion of the AI reports. The report continues to disclose rather than conceal remaining external evidence gaps: Agent Skill demonstration URL, signed-out Drive access, Mobile overlay/environment metadata, and incomplete GitHub Issue evidence. |
+| Affected artifacts | `agent_skills/`, `ai_reports/ai_audit_report.md`, `ai_reports/ai_audit_report.pdf`, `ai_reports/ai_critique.md`, and `ai_reports/ai_critique.pdf` |
+
+### AI-17 — Defect-report normalization and public Issue verification
+
+| Field | Record |
+|---|---|
+| Tool | OpenAI Codex with the public GitHub REST API |
+| Date and time | 3 August 2026; message-level time unavailable |
+| Prompt | Audit and normalize `deliverables/bugs` so the defect section meets the highest submission standard without losing points. |
+| AI output | Reconciled 20 failed checks to 19 defects and 20 embedded images; verified 19/19 public Issue URLs and GitHub-hosted image attachments; standardized severity to Critical/High/Medium/Low; added environment, preconditions, test data, reproducibility, severity rationale, steps, and runtime-focused actual results; and updated stale evidence notes. |
+| Human review | Authorized the local normalization. Exact Mobile environment metadata was not inferred. Public verification found that Issue #118 has a missing digit in its student-ID title prefix; this external correction remains assigned to the student. |
+| Affected artifacts | Bug report, evidence README files, Mobile source review, README, main report, AI audit, and regenerated PDFs |
+
+### AI-18 — Checklist rubric and evidence-integrity normalization
+
+| Field | Record |
+|---|---|
+| Tool | OpenAI Codex with Microsoft Excel recalculation |
+| Date and time | 3 August 2026; message-level time unavailable |
+| Prompt | Audit and complete `deliverables/checklist` as a professional, submission-ready workbook with full fields and no misleading AI-data disclaimers. |
+| AI output | Audited all 45 rows, replaced three source-only Mobile classifications with narrowly scoped screenshot-backed checks, removed unsupported quantity/timing/device claims, separated 4 AI, 17 Human-added, and 24 Hybrid items, rewrote human-added omission rationales, added formula-driven FR/IA/provenance summaries, data validation, evidence hyperlinks, professional formatting, and stronger validator gates. |
+| Human review | Required a polished final artifact without language implying fabricated or invalid data. The resulting checklist contains only evidence-backed Passed/Failed claims; remaining Mobile overlay and exact-environment limitations are recorded as evidence-compliance facts, not as simulated results. |
+| Affected artifacts | Checklist CSV/XLSX, checklist generator and validator, README, main report/PDF, bug report, final submission checklist, and AI audit/PDF |
+
 ## Human-review controls applied
 
-- The original policy treated static source patterns only as hypotheses. AI-11 records the student's explicit exception for FR-23: source-derived Pass/Fail and official defects are allowed, but they must remain labeled and await real-device confirmation.
-- Every counted defect was reproduced in two clean browser runs and mapped to a genuine screenshot.
+- The original policy treated static source patterns only as hypotheses. AI-11 preserves the earlier decision history; AI-12 records the later correction that source inspection does not establish runtime confirmation.
+- The 15 desktop defects were reproduced in two clean Google Chrome runs. BUG-020 through BUG-023 were confirmed from authentic Mobile captures; their missing identity overlay and environment metadata are disclosed separately.
 - Playwright mobile emulation was not accepted as a physical/cloud-device platform.
 - Firefox was counted only after the complete flow produced five visually reviewed, browser-identified screenshots.
-- No participant name, contact, quotation, rating, duration, consent, or recording was generated.
+- AI did not fabricate participant identities, consent, behavior, timing, SUS responses, or recordings. Participant and recording data currently reported were supplied by the student and reconciled against the available local files; unresolved evidence fields remain explicit.
 - No GitHub Issue or video was claimed before an authentic externally accessible artifact existed.
 - Summary counts were derived from the canonical checklist rather than entered independently.
 
-## Student attestation
+## Final reconciliation
 
-Pending the student's final review and signature after participant, mobile, GitHub Issue, and video evidence are added.
+At this revision, the canonical checklist contains 45 classified rows: 25 Passed and 20 Failed. All 14 FR-23 rows reference authentic Mobile captures and are limited to visible claims; no Passed or Failed row relies on source inspection as execution evidence. The defect report contains 15 repeatedly executed desktop defects and four Mobile runtime-observed defects. Pilot and P1–P7 local recordings are indexed individually, and their shared Drive folder is recorded; signed-out access is not independently verified. The required Mobile identity overlay and exact environment metadata remain pending. All 19 public GitHub Issues and their hosted images were verified; Issue #118 retains one disclosed student-ID title typo for the student to correct. The Agent Skill demonstration URL remains pending a real upload. These limitations concern external evidence completion and are not represented as completed AI work.
