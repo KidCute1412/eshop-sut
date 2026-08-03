@@ -19,6 +19,39 @@
 - File Outputs: .github/skills/domain-testing/SKILL.md; setup/tables
 ------
 - Name of the AI tool: GitHub Copilot
+- Date and time: 03/08/2026 00:00
+- Full text of given prompt: use the gui-checklist-making skill to create a checklist draft of roughly 30-40 elements of the following functional requirements:
+
+### FR-05: Xem danh sách & Tìm kiếm sản phẩm
+
+- Trang chủ hiển thị danh sách tất cả sản phẩm dạng lưới (grid).
+- Mỗi sản phẩm hiển thị: **Ảnh** (tỷ lệ chuẩn, có alt text mô tả), **Tên sản phẩm**, **Giá** (đơn vị: ₫, định dạng phân cách hàng nghìn).
+- Thanh tìm kiếm tìm theo tên sản phẩm. Từ khóa tìm kiếm phải được **hiển thị an toàn** (không render HTML).
+- Khi đang tải dữ liệu phải hiển thị trạng thái **loading**.
+- Khi không có kết quả tìm kiếm phải hiển thị thông báo **empty state** phù hợp.
+- Trang chủ chỉ có **đúng một thẻ `<h1>`**.
+- Mỗi trang chỉ có 1 `<h1>` duy nhất.
+
+### FR-14: Quản lý Danh mục (Category CRUD)
+
+- Admin có thể Thêm / Xem / Xóa danh mục.
+- Tên danh mục là bắt buộc, không được để trống.
+
+### FR-15: Quản lý Sản phẩm (Product CRUD)
+
+- Admin có thể Thêm / Xem / Sửa / Xóa sản phẩm.
+- **Ràng buộc đầu vào:**
+  - Tên sản phẩm: bắt buộc, tối đa 255 ký tự.
+  - Giá: bắt buộc, phải là số **dương** (> 0).
+  - Danh mục: bắt buộc, phải chọn từ danh sách có sẵn.
+- Khi Sửa một sản phẩm, chỉ sản phẩm đó bị thay đổi — các sản phẩm khác giữ nguyên.
+
+with the attached UI screenshots
+- Attached file names: setup/checklist/checklist-draft-FR05-FR14-FR15.md
+- Text Output: Created GUI checklist draft file with 40 checklist rows addressing FR-05, FR-14, and FR-15, based on visible UI screens and requirement scope.
+- File Outputs: setup/checklist/checklist-draft-FR05-FR14-FR15.md
+------
+- Name of the AI tool: GitHub Copilot
 - Date and time: 27/06/2026 11:25
 - Full text of given prompt: i've added the tables file while also added this file, the agent should have access to this file to write the explanation of explaining how the equivalence classes and boundary values are used
 - Attached file names: .github/skills/domain-testing/SKILL.md; report-deliverables/domain_bva_raw.txt
