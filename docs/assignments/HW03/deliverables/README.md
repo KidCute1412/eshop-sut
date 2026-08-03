@@ -1,5 +1,7 @@
 # HW03 — GUI and Usability Testing
 
+## Submission identity
+
 | Field | Value |
 |---|---|
 | Student | Lê Tuấn Lộc |
@@ -7,71 +9,106 @@
 | Contact email | 23127404@student.hcmus.edu.vn |
 | Required screenshot identity overlay | 23127404@hcmus.edu.vn |
 | System under test | EShop |
-| Final automated execution | 2 August 2026 |
+| Desktop execution date | 2 August 2026 |
+| Evidence consolidation date | 3 August 2026 |
 
-## Submission status
+The contact email and screenshot identity are intentionally different. `23127404@student.hcmus.edu.vn` is the student's contact address; `23127404@hcmus.edu.vn` is the identity string prescribed by the assignment PDF for screenshot overlays.
 
-This package contains an executed GUI checklist, verified desktop defect evidence, completed Chrome and Firefox cross-browser runs, usability-study instruments, AI documentation, and a reusable Agent Skill. Results requiring real participants, a qualifying mobile device, GitHub Issue pages, or a demonstration video remain explicitly incomplete rather than being simulated.
+## Submission overview
 
-## Selected scope
+This package contains the executed GUI checklist, normalized defect report, public GitHub Issue references, Chrome and Firefox cross-browser evidence, four Mobile Product Detail captures, a moderated usability-study dataset for seven official participants, AI documentation, and a reusable Agent Skill. Evidence limitations that still require external action are listed explicitly under **Final external checks**.
 
-- Shopping cart and checkout-related behavior (FR-07 and FR-08 interactions)
-- Order state machine (FR-10)
-- User order history (FR-11)
-- Admin order and product management (FR-18 context)
-- Mobile Product Detail (FR-23, the Mobile equivalent of FR-06); only this assigned FR uses Expo/Mobile in Task 1
+## Assigned scope
 
-## Self-assessment
+| Requirement | Evaluation surface |
+|---|---|
+| FR-07 | Customer Web cart behavior |
+| FR-10 | Order creation and state behavior |
+| FR-11 | Customer order history |
+| FR-18 | Admin order and product management |
+| FR-23 | Mobile Product Detail, equivalent to FR-06 on Mobile |
 
-| Criterion | Maximum | Self-assessed score | Basis |
-|---|---:|---:|---|
-| Task 1 — GUI checklist, execution, and defects | 30 | 24 | 45 classified: 31 runtime-executed and 14 source-reviewed Mobile checks; 20 defects; Mobile screenshots and GitHub Issue evidence pending |
-| Task 2 — Usability evaluation | 40 | 8 | Scenario, instruments, moderator protocol, and analysis templates complete; no participant session is claimed |
-| Task 3 — Cross-browser / cross-platform | 20 | 13 | Google Chrome and Firefox flows executed with five captures each; mobile not executed |
-| Task 4 — Agent Skill | 10 | 6 | Reusable skill supplied; demonstration video pending |
-| **Total** | **100** | **51** | Evidence-based assessment; not a claim of 90% rubric completion |
+Only FR-23 is evaluated through the Expo/Mobile frontend for Task 1. Web Product Detail appears in the usability journey only as a supporting FR-06 step and is not presented as FR-23 evidence.
 
-If packaged before the missing evidence is added, the corresponding filename grade component would be `051`, not `090`.
+## Current results
 
-## Test summary
+### Task 1 — GUI checklist and defects
 
 | Measure | Result |
 |---|---|
-| Screens evaluated at runtime | Product Detail, Cart, Checkout, Profile/Order History, Admin Dashboard, Admin Orders, Admin Products |
-| Additional behavior evaluated | Coupon API and order-state transitions |
 | Checklist items designed | 45 |
-| Checklist items executed | 45 (31 runtime-executed; 14 source-reviewed) |
-| Passed | 24 |
-| Failed | 21 |
-| Not executed | 0 checklist items; CP-03 device run remains pending |
-| Verified defects | 20: 3 Critical, 11 Major, 6 Minor |
-| FR-23 evidence status | 8 source-derived Passed; 6 source-derived Failed; screenshots pending |
-| Completed qualifying environments | 2: Google Chrome Desktop and Firefox Desktop |
-| Pending environment | Physical or approved cloud mobile device |
-| Official usability participants | 0 of 7; sessions pending |
-| Demo videos | 0; link pending |
+| Checklist items executed | 45 (31 desktop/API; 14 FR-23, including screenshot-backed Mobile checks) |
+| Passed | 25 |
+| Failed | 20 |
+| Not executed | 0 checklist items; CP-03 metadata/overlay completion remains pending |
+| Verified defects | 19 runtime-observed; four Mobile screenshots still need the required identity overlay |
+| FR-23 evidence status | 14 classified: 9 Passed and 5 Failed |
+
+All 20 failed checklist rows reference a Bug ID and evidence. The 19 normalized defects comprise 15 desktop defects and four Mobile defects; two failed Mobile checks map to different effects of the same quantity-validation defect.
+
+### Task 2 — Moderated usability evaluation
+
+| Measure | Result |
+|---|---:|
+| Pilot | Completed and excluded from official aggregates |
+| Official participants | 7 of 7 |
+| Independent completions | 7 of 7 (100%) |
+| Median recorded task duration | 75 seconds |
+| Recorded errors | 14 |
+| Recorded hesitations | 14 |
+| Moderator interventions | 0 |
+| Mean SUS | 73.6 / 100 |
+
+The study evaluates the Customer Web journey FR-07 → FR-10 → FR-11. Structured session, observation, SUS, and recording data are consolidated in `usability/usability_results.xlsx`. The final formatting pass retained the supplied session timestamps without independently recoding every timestamp from video.
+
+### Task 3 — Cross-browser and cross-platform
+
+| Environment | Status | Evidence |
+|---|---|---|
+| Google Chrome Desktop | Executed | Five screenshots |
+| Firefox Desktop | Executed | Five screenshots |
+| iPhone / Expo Mobile | Runtime evidence supplied; qualification pending | Four FR-23 screenshots |
+
+Chrome and Firefox completed the same five-screen purchase journey without an observed browser-specific difference. The Mobile captures support visible FR-23 assertions but still require the exact device/iOS/Expo/SUT metadata and the PDF-required identity overlay to qualify CP-03 fully.
+
+### Task 4 — Agent Skill and AI documentation
+
+The reusable `gui-usability-tester` skill includes its operating instructions, evidence rules, output contract, analysis references, automated validator, and unit tests. The AI Audit Report preserves the AI-assistance history and human review decisions. The separate Agent Skill demonstration video remains pending.
 
 ## Evidence index
 
-- `main_report.md` and `main_report.pdf`: integrated report and limitations.
-- `checklist/gui_checklist.xlsx`: submission-ready checklist with 45 detailed items and a reconciled `Test Summary` sheet. The editable CSV source is retained outside the submission package under `workbench/data/`.
-- `bugs/bug_report.md`: 15 runtime-verified defects plus 5 source-confirmed Mobile defects and evidence mapping.
-- `bugs/evidence_images/`: authentic failed-item screenshots.
-- `usability/`: one complete test script, participant register, consolidated results workbook, combined reference/findings report, and recording-link index.
-- `cross_platform/`: Chrome and Firefox evidence plus the documented mobile gap.
-- `ai_reports/`: mandatory AI Critique and AI Audit Report.
-- `agent_skills/`: reusable GUI/usability testing skill, output contract, artifact validator, and pending demo link. The same executable package is installed at repository root under `.agents/skills/gui-usability-tester/`.
-- `git_commit_log.txt`: genuine repository history export.
+| Path | Contents |
+|---|---|
+| `main_report.md`, `main_report.pdf` | Integrated methods, results, limitations, and conclusion |
+| `checklist/gui_checklist.xlsx` | Two-sheet checklist workbook with summary and 45 classified checks |
+| `bugs/bug_report.md` | Nineteen normalized defects with reproduction details, evidence, and GitHub URLs |
+| `bugs/evidence_images/` | Desktop failed-check evidence |
+| `usability/` | Participant register, protocol, results workbook, findings, and recording index |
+| `cross_platform/` | Chrome, Firefox, and Mobile evidence with comparison report |
+| `ai_reports/` | AI Audit Report and 200–300-word AI Critique in Markdown and PDF |
+| `agent_skills/` | Submission mirror of the reusable skill and its validator |
+| `git_commit_log.txt` | Exported repository history |
 
-## Outstanding evidence
+Editable CSV sources, internal scripts, specifications, archives, caches, and previous ZIP files are intentionally kept outside this deliverables directory.
 
-1. Access-test the supplied shared Drive folder in a signed-out browser, map each Pilot/P1–P7 file, and reconcile the recordings with notes, SUS responses, timestamps, and synthesis.
-2. Execute a physical or approved cloud mobile environment and add the required identity overlay.
-3. Create GitHub Issues for the verified defects, attach the runtime images, and add genuine Issue-page screenshots.
-4. Record, upload, and access-test the Agent Skill demonstration video.
+## Evidence integrity and limitations
 
-## Evidence integrity statement
+- The 31 Web/Admin/API results were established through live Google Chrome execution; source inspection was used for diagnosis, not as execution evidence.
+- The ten Chrome/Firefox screenshots are preserved unchanged and contain the PDF-prescribed identity caption.
+- The four Mobile screenshots are authentic runtime captures mapped only to assertions visible in those captures. They still lack the required overlay and complete environment metadata.
+- Pilot and P1–P7 recording files are mapped in `usability/recordings/video_links.md`. Anonymous/signed-out access to the shared Drive folder has not been independently confirmed.
+- Usability aggregates are calculated from the structured workbook entries. The final documentation pass did not independently recode each video timestamp.
+- All 19 GitHub Issue URLs and hosted attachments were verified through the public GitHub API on 3 August 2026. Issue #118 still requires correction of one missing digit in its student-ID title prefix.
 
-The [shared Google Drive folder](https://drive.google.com/drive/u/0/folders/1_3wIHUVqJGG-mPwcZotoAStgRjd6X9x_) for the Pilot and P1–P7 recordings has been supplied and indexed under `usability/recordings/video_links.md`; signed-out access and individual-file mapping remain to be verified. No mobile screenshot or GitHub Issue page has been generated or represented as completed. The 31 Web/Admin/API results come from live Google Chrome execution. The 14 FR-23 results are explicitly labeled static source review and remain subject to real-device confirmation. All cross-browser images are captures of the running SUT in the browser identified by their captions.
+## Final external checks
 
-The report contact address is `23127404@student.hcmus.edu.vn`. The shorter `23127404@hcmus.edu.vn` string visible in cross-platform captures is the identity overlay required by the assignment PDF, not the contact email. Only the contents of this `deliverables` directory are intended for the final submission ZIP.
+1. Add the required `23127404@hcmus.edu.vn` overlay and exact device/iOS/Expo/SUT metadata to qualifying Mobile evidence.
+2. Confirm that the usability Drive folder opens in a signed-out browser and exposes Pilot plus P1–P7.
+3. Correct the student-ID prefix in GitHub Issue #118.
+4. Record, upload, and access-test the Agent Skill demonstration video; replace the placeholder in `agent_skills/gui-usability-tester/demo_video_link.txt`.
+5. Regenerate `git_commit_log.txt` after the final commit.
+6. Create the final ZIP exclusively from the contents of this `deliverables` directory.
+
+## Packaging rule
+
+Only the contents inside `docs/assignments/HW03/deliverables` are intended for the final submission ZIP. Do not include `specs`, `workbench`, archives, source CSV files, caches, internal scripts, previous ZIP files, or the root `.agents` installation.
