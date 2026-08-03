@@ -1,0 +1,12 @@
+[
+  { "id": "FR09-TC01", "type": "positive", "code": "SAVE10", "total_amount": 500000, "useLoggedInUser": true, "expectStatus": 200, "expectFinalAmount": 450000 },
+  { "id": "FR09-TC02", "type": "boundary", "code": "SAVE10", "total_amount": 300000, "useLoggedInUser": true, "expectStatus": 200, "expectFinalAmount": 270000 },
+  { "id": "FR09-TC03", "type": "boundary", "code": "SAVE10", "total_amount": 299999, "useLoggedInUser": true, "expectStatus": 400 },
+  { "id": "FR09-TC04", "type": "positive", "code": "BIGBUY", "total_amount": 500000, "useLoggedInUser": true, "expectStatus": 200, "expectFinalAmount": 450000 },
+  { "id": "FR09-TC05", "type": "boundary", "code": "BIGBUY", "total_amount": 500001, "useLoggedInUser": true, "expectStatus": 200, "expectFinalAmount": 450001 },
+  { "id": "FR09-TC06", "type": "negative", "code": "EXPIRED", "total_amount": 200000, "useLoggedInUser": true, "expectStatus": 400 },
+  { "id": "FR09-TC07", "type": "negative", "code": "NOTEXIST", "total_amount": 500000, "useLoggedInUser": true, "expectStatus": 404 },
+  { "id": "FR09-TC11", "type": "edge", "code": "SAVE10", "total_amount": 0, "useLoggedInUser": true, "expectStatus": 400 },
+  { "id": "FR09-TC12", "type": "edge", "code": "SAVE10", "total_amount": -1000, "useLoggedInUser": true, "expectStatus": 400 },
+  { "id": "FR09-TC14", "type": "negative", "code": "", "total_amount": 500000, "useLoggedInUser": true, "expectStatus": 400 }
+]
