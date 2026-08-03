@@ -14,3 +14,27 @@ backend/database.sqlite
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Python bytecode, test caches, and local coverage output
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Office lock files and temporary documents
+~$*
+*.tmp
+
+# Locally packaged HW03 submission archives
+docs/assignments/HW03/*_HW03_*.zip
+
+# One-off local HW03 workbook population helpers
+docs/assignments/HW03/workbench/populate_excel.py
+docs/assignments/HW03/workbench/populate_obs_rec.py
+docs/assignments/HW03/workbench/update_p5_p6_p7.py
+docs/assignments/HW03/workbench/update_timestamps_60_90s.py
