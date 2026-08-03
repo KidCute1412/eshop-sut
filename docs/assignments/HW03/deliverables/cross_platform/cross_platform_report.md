@@ -6,9 +6,9 @@
 |---|---|---|---|---|
 | CP-01 | Google Chrome 151.0.7922.72, Windows NT 10.0.26200 | 2 August 2026 | `http://127.0.0.1:5173` | Executed |
 | CP-02 | Playwright Firefox 144.0.2, Windows NT 10.0.26200 | 2 August 2026 | `http://127.0.0.1:5173` | Executed |
-| CP-03 | Physical phone / approved cloud device | — | — | Not executed |
+| CP-03 | iPhone / Expo Go capture; exact model, iOS version, SUT location pending | 3 August 2026 | Pending student metadata | Evidence supplied; qualification pending |
 
-The planned Customer Web flow was executed successfully on Google Chrome and Firefox. Both desktop runs produced five authentic screenshots, which are preserved unchanged. A qualifying physical or cloud mobile environment remains pending.
+The planned Customer Web flow was executed successfully on Google Chrome and Firefox. Both desktop runs produced five authentic screenshots, which are preserved unchanged. Four Mobile captures were also supplied and reviewed, but CP-03 remains incomplete until exact environment metadata and the required identity overlay are present.
 
 ## Chrome execution matrix
 
@@ -38,10 +38,10 @@ The Firefox flow matched the Chrome flow at the tested desktop viewport; no Fire
 
 | Difference ID | Platforms affected | Observation | Impact | Classification |
 |---|---|---|---|---|
-| CP-DIFF-01 | Mobile | No physical or approved cloud device was available during this execution | Mobile layout and behavior remain unverified | Evidence gap |
+| CP-DIFF-01 | Mobile | Four iPhone/Expo captures show the FR-23 detail and quantity flow, but exact device/OS/SUT metadata and the required overlay are absent | Visible checkpoints are reviewable, but platform qualification is incomplete | Evidence-compliance gap |
 
-CP-03 will use FR-23 Mobile Product Detail as its Mobile checkpoint. Future evidence must include at least three authentic captures: the basic detail screen, quantity/add feedback, and missing-product recovery. If a Task 1 check fails during real execution, an additional Failed screenshot must be captured and linked; source inspection alone does not establish a defect.
+CP-03 uses FR-23 Mobile Product Detail as its Mobile checkpoint. The supplied captures cover the basic detail screen, default quantity, successful add result, and invalid quantity feedback. Before final submission, recapture or otherwise supply authentic images containing the required `23127404@hcmus.edu.vn` overlay and record the exact device model, iOS version, Expo environment, SUT location, and execution date.
 
 ## Conclusion
 
-Chrome Desktop and Firefox Desktop each provide five authentic captures for the selected flow. The assignment's requirement of three qualifying platforms is not yet satisfied because CP-03 still requires a physical device or approved cloud platform. The missing mobile platform is not represented by emulation or generated evidence.
+Chrome Desktop and Firefox Desktop each provide five authentic captures for the selected flow. Four authentic Mobile captures provide useful FR-23 runtime evidence, but the assignment's third-platform requirement is not yet fully satisfied because CP-03 lacks exact environment metadata and the mandatory identity overlay.

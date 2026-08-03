@@ -1,5 +1,5 @@
 # Mobile Environment Evidence
 
-**Execution status:** Not executed.
+**Execution status:** Evidence supplied; platform qualification pending.
 
-No physical phone or approved cloud-device platform was available during the automated desktop run, so CP-03 device verification remains `Not Executed`. The Task 1 FR-23 checklist rows are separately classified from source review and await confirmation. Do not use Playwright mobile-emulation captures as substitutes. Future evidence must include: (1) the basic detail screen, (2) quantity/add feedback, and (3) missing-product recovery. It must identify the device, operating system, browser or Expo environment, SUT location, and the PDF-required `23127404@hcmus.edu.vn` identity overlay. Capture each source-confirmed failure and let runtime evidence override the source classification if necessary.
+Four authentic iPhone/Expo captures are present: basic Product Detail with quantity `1`, the valid-add cart result, invalid quantity `0` before submission, and the resulting success feedback. They support the checklist rows that cite them. However, none displays the PDF-required `23127404@hcmus.edu.vn` identity overlay, and the exact device model, iOS version, Expo version/environment, SUT location, and execution metadata have not been recorded. CP-03 therefore remains incomplete for final platform qualification until compliant evidence replaces or supplements these captures.
