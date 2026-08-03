@@ -3,9 +3,21 @@ HW03 Git Commit Log
 
 Repository: https://github.com/KidCute1412/eshop-sut.git
 Branch: 23127404-LeTuanLoc
-Exported: 2026-08-02 (Asia/Saigon)
+Exported: 2026-08-03 (Asia/Saigon)
 Command: git log --date=iso-local --pretty=format:'%h | %ad | %s' -- docs/assignments/HW03
 
+c4cdd27 | 2026-08-03 10:44:22 +0700 | docs(hw03): refresh final submission runbook
+b92b7e4 | 2026-08-03 10:43:38 +0700 | docs(hw03): publish synchronized submission report
+958a963 | 2026-08-03 10:43:28 +0700 | test(hw03): harden generators and submission validation
+162d46f | 2026-08-03 10:43:17 +0700 | docs(hw03): finalize moderated usability results
+b7f86fa | 2026-08-03 10:43:06 +0700 | test(hw03): add mobile runtime evidence and platform audit
+55bae39 | 2026-08-03 10:42:56 +0700 | test(hw03): finalize submission-ready GUI checklist
+b4dedc7 | 2026-08-03 10:42:42 +0700 | docs(hw03): normalize defect report and evidence index
+0f56940 | 2026-08-03 10:42:31 +0700 | docs(hw03): finalize AI audit deliverables
+26d1039 | 2026-08-03 03:47:05 +0700 | docs(hw03): reconcile final reports and evidence links
+cbb0592 | 2026-08-03 03:46:42 +0700 | refactor(hw03): consolidate usability evidence artifacts
+5f60ed1 | 2026-08-03 03:46:16 +0700 | fix(hw03): align mobile checklist with FR-23
+f04a948 | 2026-08-02 22:15:52 +0700 | docs(hw03): record skill hardening commits
 0c0d7b0 | 2026-08-02 22:15:23 +0700 | test(hw03): enforce complete checklist schema
 036e52e | 2026-08-02 22:15:14 +0700 | feat(hw03): install robust GUI usability testing skill
 cf5abb9 | 2026-08-02 19:26:26 +0700 | docs(hw03): refresh assignment commit log
@@ -17,5 +29,3 @@ c5ae417 | 2026-08-02 08:36:53 +0700 | test(hw03): document Chrome flow and platf
 f101043 | 2026-08-02 08:36:44 +0700 | test(hw03): execute GUI checklist and capture defect evidence
 5097072 | 2026-08-02 02:37:47 +0700 | feat: homework 3 with 50% and place holder
 1869615 | 2026-07-20 15:25:33 +0700 | docs: gui testing 20-07 23127404
-
-The entries above are exported from the genuine repository history. No empty, backdated, or illustrative commit is included.
