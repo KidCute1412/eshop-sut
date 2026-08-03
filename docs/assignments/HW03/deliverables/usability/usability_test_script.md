@@ -1,31 +1,32 @@
-# EShop Usability Test — Execution Script and Result Record
+# EShop Customer-Web Usability Test Protocol
 
-**Scope note:** This study runs on Customer Web and evaluates FR-07 → FR-10 → FR-11. Web Product Detail is a supporting FR-06 step only; it is not FR-23, and participants are not claimed to test Mobile FR-23.
-
-## 1. Test definition
+## 1. Study definition
 
 | Field | Value |
 |---|---|
-| Test case | UT-01 — Purchase an iPhone and verify the new order status |
+| Study ID | UT-01 |
+| Task | Purchase one iPhone and identify the new order status |
+| Scope | Customer Web, FR-07 → FR-10 → FR-11 |
+| Supporting step | Web Product Detail under FR-06; not Mobile FR-23 |
 | Moderator/observer | Lê Tuấn Lộc — 23127404 |
-| Participant role | Customer with previous online-shopping experience |
-| Official sessions | P1–P7; one independent session per participant |
+| Target participant | Customer with previous online-shopping experience |
+| Official sessions | P1–P7; one session per participant |
 | SUT | EShop Customer Web and Backend |
-| Default environment | Google Chrome Desktop, Windows 11, 1440 × 1000 |
+| Default environment | Google Chrome Desktop; Windows 11; 1440 × 1000 |
 | Start condition | Signed in; Product List open; cart empty; prior orders documented |
 | Test data | iPhone 15 Pro Max; quantity 1; no coupon; 30,000,000 VND |
 | Timer start | Immediately after the task statement is read |
 | Timer stop | Participant identifies the newest order and states its visible status |
 | Time limit | 10 minutes |
-| Success | Order created and newest status identified without procedural assistance |
+| Success criterion | Order created and newest status identified without procedural assistance |
 
-The moderator manages the setup, reads the scripts, observes, times, and records. Each participant independently operates the SUT. The step table is a moderator reference and must not be shown or read as navigation instructions to the participant.
+The moderator prepares the environment, reads the approved scripts, observes, times, and records. The participant operates the SUT independently. The moderator-reference steps below are not shown or read as navigation instructions.
 
-## 2. Session assignment
+## 2. Participants and assignment
 
-All seven participants perform the same UT-01 flow so results remain comparable.
+All seven official participants perform the same task to support comparable measurements. Masked contact and consent records are provided in `participant_list.md`.
 
-| Session | Participant | Profile | Assigned work | Evidence/result status |
+| Session | Participant | Profile | Assignment | Recorded result |
 |---|---|---|---|---|
 | P1 | Đặng Đăng Khoa | IT student | Execute UT-01 independently | Completed |
 | P2 | Nguyễn Thanh Gia Bảo | IT developer | Execute UT-01 independently | Completed |
@@ -35,72 +36,78 @@ All seven participants perform the same UT-01 flow so results remain comparable.
 | P6 | Nguyễn Hải Đăng | IT student | Execute UT-01 independently | Completed |
 | P7 | Võ Lê Bảo Ngọc | Non-IT student | Execute UT-01 independently | Completed |
 
-Masked contacts and consent status are maintained in `participant_list.md`.
+## 3. Pre-session checklist
 
-## 3. Before each recording
-
-The moderator completes the following preparation:
-
-1. Start Backend and Customer Web; verify `http://127.0.0.1:3000/api/products` and `http://127.0.0.1:5173`.
-2. Confirm the five-product catalog and iPhone 15 Pro Max price of 30,000,000 VND.
-3. Sign in using a clean customer test account, empty its cart, and document existing orders.
-4. Close notifications and hide passwords, contact details, and unrelated personal information.
-5. Start screen/audio recording and prepare a visible timer.
-6. State the session code, date, browser, operating system, and viewport on the recording.
+1. Start the Backend and Customer Web; verify the product API and Web application are reachable.
+2. Confirm the product catalog and the displayed iPhone 15 Pro Max price.
+3. Sign in with a clean customer test account, empty the cart, and document existing orders.
+4. Hide passwords, personal contact details, notifications, and unrelated windows.
+5. Start screen-and-audio recording and prepare the timer.
+6. State the session code, date, browser, operating system, and viewport.
+7. Obtain affirmative consent before continuing.
 
 ## 4. Opening and task statement
 
-The moderator reads:
+Read the following consent statement:
 
 > Thank you for participating. We are evaluating the EShop interface, not you. Please work as you normally would and say aloud what you are looking for, expecting, and deciding. I will usually remain silent. You may stop at any time. Do you consent to participate and to this screen-and-audio recording?
 
-Continue only after affirmative consent. Then read the task and start the timer:
+After affirmative consent, read the task and start the timer:
 
 > You want to purchase one iPhone 15 Pro Max from EShop. Find the product, review its details, add one unit to your cart, check the order carefully, complete checkout without a discount code, and then use your account to confirm that the new order was created and identify its status. Please work as you normally would and think aloud.
 
-## 5. Step-by-step execution and reference results
+## 5. Step-by-step execution and moderator reference
 
-The “verified SUT result” column documents the behavior already established through source review and desktop execution. It is the comparison oracle, not a claim that every participant has produced that result.
+| Step | Participant checkpoint | Expected product result | Evidence to record |
+|---:|---|---|---|
+| 1 | Locate iPhone 15 Pro Max in Product List | Product is discoverable with correct name and price. | Search path, scan behavior, hesitation |
+| 2 | Review Product Detail | Details provide sufficient information for a purchase decision. | Comprehension, comments, uncertainty |
+| 3 | Add one unit to Cart | One valid action adds one unit and provides feedback. | Actions, feedback noticed, repetition, recovery |
+| 4 | Review Cart | Product, quantity 1, and subtotal are correct. | Verification behavior, errors, confidence |
+| 5 | Continue to Checkout | Selected item and authoritative total are clear. | Navigation, delay, interaction with total |
+| 6 | Submit without a coupon | Exactly one pending order is created with confirmation. | Repeated action, hesitation, confidence |
+| 7 | Review post-checkout state | Purchased cart content is cleared. | Retained content noticed and interpreted |
+| 8 | Find newest order | New order and visible status are identifiable. | Time to find, stated status, desire for details |
 
-| Step | Actor | Exact action/checkpoint | Expected product result | Verified SUT result | Participant evidence to record |
-|---:|---|---|---|---|---|
-| 1 | Participant | Inspect Product List and locate iPhone 15 Pro Max | Product is discoverable with correct name and price | Five products appear; iPhone price is 30,000,000 VND | Time to locate, scanning, search use, hesitation |
-| 2 | Participant | Open the iPhone product details | Detail page presents enough information to make a purchase decision | Image, name, price, description, quantity 1, and Add to Cart appear | Route chosen, comprehension, comments |
-| 3 | Participant | Attempt to add one unit to the cart | One click adds one item and gives visible confirmation | First click produces no addition or confirmation — BUG-001 | Expectation, repeated action, confusion, intervention |
-| 4 | Participant | Continue attempting the add-to-cart goal | The interface supports recovery without assistance | Second click adds one unit and displays temporary success feedback | Whether recovery is independent and its timestamp |
-| 5 | Participant | Open and review the cart | Cart shows the selected product, quantity 1, and correct subtotal | One iPhone, quantity 1, subtotal 30,000,000 ₫, Remove, Continue Shopping, and Checkout appear | Verification behavior, errors, confidence |
-| 6 | Participant | Continue from Cart to Checkout | Checkout clearly presents the selected item and authoritative total | One item and total 30,000,000 ₫ appear; total remains editable — BUG-006 | Navigation clarity, delay, whether editable total is noticed |
-| 7 | Participant | Submit the order without a coupon | Exactly one pending order is created and confirmation is clear | API creates a pending order and success state appears | Hesitation, repeated clicks, confidence statement |
-| 8 | Participant | Leave confirmation and access the account/profile | Purchased cart contents should be cleared | Purchased item remains in the in-memory cart — BUG-007 | Whether retained cart is noticed and interpreted |
-| 9 | Participant | Find the newest order in Order History and state its status | New order is identifiable with status and useful details | New row shows 30,000,000 ₫ and “Chờ xác nhận”; no item-detail view — BUG-016 | Time to find, stated status, desire for details |
-
-Do not tell the participant which control to use or that Add to Cart requires a second click. If no progress occurs for approximately 30 seconds, use the next neutral prompt only:
+Do not identify controls or disclose known defects. If no progress occurs for approximately 30 seconds, use only these neutral prompts, in order:
 
 1. “What are you trying to do now?”
 2. “What options do you see?”
 3. “Please continue in the way that seems most appropriate.”
 
-Any stronger guidance is recorded verbatim as an intervention, and the affected result becomes `Assisted`.
+Any stronger guidance is recorded verbatim as an intervention and changes completion from `Independent` to `Assisted`.
 
-## 6. Per-session final result
+## 6. Coding rules
 
-After reviewing each genuine recording, complete the corresponding row in `usability_results.xlsx`.
+| Field | Coding rule |
+|---|---|
+| Independent | Success criterion met without procedural guidance |
+| Assisted | Success criterion met after guidance beyond approved neutral prompts |
+| Incomplete | Session ends without meeting the success criterion |
+| Abandoned | Participant chooses to stop |
+| Error | Action moves away from the goal or requires corrective action |
+| Hesitation | Visible pause, repeated scan, or stated uncertainty before the next action |
+| Intervention | Moderator supplies procedural guidance beyond the approved prompts |
 
-| Session | Completion | Duration | Errors | Hesitations | Interventions | Final visible order status | Overall result | Video reference |
+## 7. Recorded official results
+
+These values reproduce the structured session entries in `usability_results.xlsx`. Durations are task-duration entries, not full video lengths.
+
+| Session | Completion | Task duration | Errors | Hesitations | Interventions | Final visible status | Result | Recording |
 |---|---|---:|---:|---:|---:|---|---|---|
-| P1 | Independent | 135s | 2 | 1 | 0 | Chờ xác nhận | Pass | `recordings/video_links.md` |
-| P2 | Independent | 120s | 2 | 1 | 0 | Chờ xác nhận | Pass | `recordings/video_links.md` |
-| P3 | Independent | 150s | 2 | 2 | 0 | Chờ xác nhận | Pass | `recordings/video_links.md` |
-| P4 | Independent | 180s | 3 | 2 | 0 | Chờ xác nhận | Pass | `recordings/video_links.md` |
-| P5 | Independent | 140s | 1 | 1 | 0 | Chờ xác nhận | Pass | `recordings/video_links.md` |
-| P6 | Independent | 130s | 2 | 1 | 0 | Chờ xác nhận | Pass | `recordings/video_links.md` |
-| P7 | Independent | 175s | 2 | 1 | 0 | Chờ xác nhận | Pass | `recordings/video_links.md` |
+| P1 | Independent | 75s | 2 | 2 | 0 | Chờ xác nhận | Pass | `P1.mp4` |
+| P2 | Independent | 75s | 2 | 1 | 0 | Chờ xác nhận | Pass | `P2.mp4` |
+| P3 | Independent | 65s | 2 | 2 | 0 | Chờ xác nhận | Pass | `P3.mp4` |
+| P4 | Independent | 80s | 2 | 2 | 0 | Chờ xác nhận | Pass | `P4.mp4` |
+| P5 | Independent | 90s | 2 | 2 | 0 | Chờ xác nhận | Pass | `P5.mp4` |
+| P6 | Independent | 78s | 2 | 1 | 0 | Chờ xác nhận | Pass | `P6.mp4` |
+| P7 | Independent | 62s | 2 | 4 | 0 | Chờ xác nhận | Pass | `P7.mp4` |
 
-Allowed completion values are `Independent`, `Assisted`, `Incomplete`, and `Abandoned`. A final result is not assigned until the recording proves the actions, timing, and outcome.
+The pilot is excluded from this table and all official aggregates. Recording metadata and the shared Drive location are indexed in `recordings/video_links.md`.
 
-## 7. Post-task questionnaire
+## 8. Post-task questionnaire
 
-After stopping the task timer, the moderator keeps recording and obtains a 1–5 response for each standard SUS statement:
+After stopping the task timer, obtain a 1–5 response to each standard SUS statement:
 
 1. I think that I would like to use this system frequently.
 2. I found the system unnecessarily complex.
@@ -113,17 +120,21 @@ After stopping the task timer, the moderator keeps recording and obtains a 1–5
 9. I felt confident using this system.
 10. I needed to learn many things before I could use this system.
 
-Then ask the four required probes:
+Ask these four follow-up probes:
 
 1. Which parts were clear or unclear?
 2. If you encountered a problem, how easy was it to understand and recover?
 3. Did the flow feel appropriately fast? What caused any delay?
 4. How confident are you that the order was submitted correctly, and why?
 
-SUS is calculated only from the participant’s ten genuine answers:
+SUS scoring uses the standard formula:
 
 `SUS = (sum of each odd response − 1 + sum of 5 − each even response) × 2.5`
 
-## 8. Recording and analysis completion
+## 9. Evidence index
 
-Use `p1_session.mp4` through `p7_session.mp4`, or enter access-tested cloud URLs in `recordings/video_links.md`. Each recording must show consent, the uninterrupted task, participant interaction, moderator prompts, final status, SUS answers, and four probes. After verifying the video, enter timestamps and observations in `usability_results.xlsx`, then synthesize evidence-backed results in `usability_findings.md`.
+- Participant identity and consent: `participant_list.md`
+- Structured session, observation, SUS, and recording data: `usability_results.xlsx`
+- Findings and aggregates: `usability_findings.md`
+- Recording manifest and Drive folder: `recordings/video_links.md`
+- Actual recording names: `Pilot.mp4`, `P1.mp4` through `P7.mp4`

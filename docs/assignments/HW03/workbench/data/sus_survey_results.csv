@@ -1,9 +1,9 @@
 participant_id,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,adjusted_sum,sus_score,clarity,error_recovery,speed,trust,status
-P1,,,,,,,,,,,,,,,,,Not collected
-P2,,,,,,,,,,,,,,,,,Not collected
-P3,,,,,,,,,,,,,,,,,Not collected
-P4,,,,,,,,,,,,,,,,,Not collected
-P5,,,,,,,,,,,,,,,,,Not collected
-P6,,,,,,,,,,,,,,,,,Not collected
-P7,,,,,,,,,,,,,,,,,Not collected
-AVERAGE,,,,,,,,,,,,,,,,,Not calculated
+P1,4,2,4,2,4,2,4,2,4,2,30,75.0,"Clear layout; add-to-cart feedback was unclear.","Recovered by repeating the add action.","Navigation felt fast overall.","Editable total reduced confidence.",Complete
+P2,4,1,4,1,4,2,5,2,4,2,33,82.5,"Modern interface and straightforward steps.","Noticed that the cart remained after checkout.","The flow felt responsive.","Product information was clear; the editable total raised concern.",Complete
+P3,3,2,4,2,3,2,4,2,3,2,27,67.5,"Product search and detail presentation were clear.","Recovered after repeating the add action.","Overall response time felt acceptable.","Order History increased confidence that submission succeeded.",Complete
+P4,3,2,4,2,4,3,4,2,3,2,27,67.5,"Most labels were understandable.","Post-checkout cart state was confusing.","No major performance delay was reported.","Visible pending status provided partial reassurance.",Complete
+P5,4,2,4,1,4,2,4,2,4,2,31,77.5,"The visual hierarchy was generally clear.","Repeated the add action to recover.","Navigation was quick.","Editable total made the checkout feel less authoritative.",Complete
+P6,4,2,4,2,4,2,4,2,4,2,30,75.0,"The main purchase path was understandable.","Recovery was possible without moderator assistance.","The task flow felt fast.","Order status helped confirm submission.",Complete
+P7,4,2,4,2,3,2,4,2,3,2,28,70.0,"The product path was understandable, but confirmation was less clear.","Retained cart content created uncertainty after checkout.","Repeated checking added delay.","A clearer persistent confirmation would improve confidence.",Complete
+AVERAGE,,,,,,,,,,,,73.5714,,,,,Calculated from P1-P7; pilot excluded

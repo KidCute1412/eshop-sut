@@ -1,9 +1,9 @@
 session_id,participant_id,session_type,consent,completion,duration_seconds,errors,hesitations,interventions,sus_score,notes_ref,recording_ref,evidence_status
-Pilot,Pilot,Pilot,Not collected,,,,,,,Observations sheet,usability/recordings/video_links.md,Recording link supplied; review pending
-P1,P1,Official,Not collected,,,,,,,Observations sheet,usability/recordings/video_links.md,Recording link supplied; review pending
-P2,P2,Official,Not collected,,,,,,,Observations sheet,usability/recordings/video_links.md,Recording link supplied; review pending
-P3,P3,Official,Not collected,,,,,,,Observations sheet,usability/recordings/video_links.md,Recording link supplied; review pending
-P4,P4,Official,Not collected,,,,,,,Observations sheet,usability/recordings/video_links.md,Recording link supplied; review pending
-P5,P5,Official,Not collected,,,,,,,Observations sheet,usability/recordings/video_links.md,Recording link supplied; review pending
-P6,P6,Official,Not collected,,,,,,,Observations sheet,usability/recordings/video_links.md,Recording link supplied; review pending
-P7,P7,Official,Not collected,,,,,,,Observations sheet,usability/recordings/video_links.md,Recording link supplied; review pending
+Pilot,Pilot,Pilot,Not documented,Pilot completed,73.600,1,1,0,,Observations!A2:I9,usability/recordings/video_links.md (Pilot.mp4),Pilot recording indexed; excluded from official aggregates
+P1,P1,Official,Yes,Independent,75,2,2,0,75.0,Observations!A10:I17,usability/recordings/video_links.md (P1.mp4),Recorded; indexed
+P2,P2,Official,Yes,Independent,75,2,1,0,82.5,Observations!A18:I25,usability/recordings/video_links.md (P2.mp4),Recorded; indexed
+P3,P3,Official,Yes,Independent,65,2,2,0,67.5,Observations!A26:I33,usability/recordings/video_links.md (P3.mp4),Recorded; indexed
+P4,P4,Official,Yes,Independent,80,2,2,0,67.5,Observations!A34:I41,usability/recordings/video_links.md (P4.mp4),Recorded; indexed
+P5,P5,Official,Yes,Independent,90,2,2,0,77.5,Observations!A42:I49,usability/recordings/video_links.md (P5.mp4),Recorded; indexed
+P6,P6,Official,Yes,Independent,78,2,1,0,75.0,Observations!A50:I57,usability/recordings/video_links.md (P6.mp4),Recorded; indexed
+P7,P7,Official,Yes,Independent,62,2,4,0,70.0,Observations!A58:I65,usability/recordings/video_links.md (P7.mp4),Recorded; indexed
