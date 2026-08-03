@@ -1,0 +1,230 @@
+commit 44a6d287b783130654174c6e9dd0afb622547b50
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-08-03 23:05:01 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-08-03 23:05:01 +0700
+
+    hw04: add data-driven Playwright automation for FR-03/FR-09/FR-13
+    
+    Adds AI-assisted, data-driven Playwright specs (API + UI) covering Forgot
+    Password/Reset, Discount Coupons, and Admin Dashboard, run across
+    Chromium/Firefox/WebKit against a fresh backend each time. Includes test
+    case design docs, JSON fixtures, a report-stamping script (Run by +
+    timestamp per HW04's anti-cheat requirement), and the three stamped HTML
+    reports plus bug-evidence screenshots.
+
+commit 4c2779425e2fe7422aba1c9bcde77bf617f9db93
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-08-03 03:04:30 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-08-03 03:04:30 +0700
+
+    hw03: export full branch commit history to git_commit_log.txt
+
+commit b064daa39811a6f5f7f35cecdac08eb5bc253037
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-08-03 03:04:15 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-08-03 03:04:15 +0700
+
+    hw03: add README with self-assessment, generated PDFs and Excel checklist
+
+commit 5112aab8b1ba4667dc26ad5f9e89bdde110e5d5d
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-08-03 03:01:25 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-08-03 03:01:25 +0700
+
+    AI audit: log full interaction history through final submission cleanup
+
+commit e12f6bcd2351389c614b0f854fe0e1cf7a7bc1da
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-08-03 03:00:10 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-08-03 03:00:10 +0700
+
+    Task 3: finalize cross-platform test log and report from real Chrome/Firefox/Safari screenshots
+
+commit c7ad30969c73b81cd0770932bfac2773dce617f6
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-08-03 02:58:03 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-08-03 02:58:03 +0700
+
+    Task 1: finalize report to match executed 42-item checklist and filed GitHub issues
+
+commit daed585d31f567330119e13dd294a64f989b696f
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-08-03 02:57:25 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-08-03 02:57:25 +0700
+
+    hw03: remove process/instructional files not part of final submission
+
+commit 2f9ff9a4a1cb88b6ab2cd818083e41ceda66fa20
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-08-03 02:21:50 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-08-03 02:21:50 +0700
+
+    update task 2 and 3
+
+commit 60599f19d54e69d518e44e3079e62a0abf9f6c59
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-08-03 00:00:31 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-08-03 00:00:31 +0700
+
+    add ai audit and cross platform template
+
+commit 0d3e802aa6602dc12da759511c796a904ab6950c
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-08-02 23:58:36 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-08-02 23:58:36 +0700
+
+    add agent skill
+
+commit 09b7ecdbfe975cef93375165778fc530b46b0f31
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-07-31 00:05:07 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-07-31 00:05:07 +0700
+
+    add bug report and screenshot task 1
+
+commit 468ca164ec99a7e7e4a6a9bf3a85fff8e9187af0
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-07-30 22:32:59 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-07-30 22:32:59 +0700
+
+    add task 3 templatet
+
+commit 7128debea93c11d1310ac8049ab8525d72b067d3
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-07-30 21:12:43 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-07-30 21:12:43 +0700
+
+    add template for task 2
+
+commit c042a43a2e2faebf81650fb6651e3f42e9dc7d7a
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-07-30 20:42:44 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-07-30 20:42:44 +0700
+
+    add gui checklist
+
+commit 15b2aebfc861e5465d08c067c356504669aaf039
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-07-30 20:41:27 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-07-30 20:41:27 +0700
+
+    delete hw2
+
+commit c4d4530cf7ce951c4f8800e132f7d28774b27bfe
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-06-29 09:34:00 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-06-29 09:34:00 +0700
+
+    add bug report
+
+commit 04267e1212706e8789610b964749949bc326a6da
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-06-29 09:33:05 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-06-29 09:33:05 +0700
+
+    add github issue evidence
+
+commit fb885cf6b9d6007ec6cd56cdf94c5bf0596e05bc
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-06-29 07:57:07 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-06-29 07:57:07 +0700
+
+    add prompt log 28/06
+
+commit 6b224a61d4a60863f98cb1f5de54d7087cac3afa
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-06-28 02:46:08 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-06-28 02:46:08 +0700
+
+    update feature fr-13
+
+commit cfcdb732b2cb686713803eb18823ef36f4bbb879
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-06-27 17:48:21 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-06-27 17:48:21 +0700
+
+    add test cases and evidence for fr-13
+
+commit ed71078ee4c237371733453a239ba725bdfb66e8
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-06-26 22:20:43 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-06-26 22:20:43 +0700
+
+    add evidence images for discount coupons feature
+
+commit e5785984b2c41a11d881474afef519439f9d72d2
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-06-26 21:50:49 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-06-26 21:50:49 +0700
+
+    add evidence images for feature 1
+
+commit bc939724e0abeb2d5b909397f9c536284aa57328
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-06-26 20:56:16 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-06-26 20:56:16 +0700
+
+    added test for feature coupons
+
+commit 295c9125e598013054cf68ab9c33e40bddb6b87f
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-06-26 16:36:53 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-06-26 16:36:53 +0700
+
+    update feature forget password
+
+commit b0818a58525c56903892af98498b8530ba09dd6d
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-06-26 03:41:03 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-06-26 03:41:03 +0700
+
+    add report feature forget password
+
+commit 6f51497775b391f183f04f0ada7076b5673e6a56
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-06-25 18:32:20 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-06-25 18:32:20 +0700
+
+    add agent skill
+
+commit 85af3ba875c88283615e22cb108f13e2fccaf0e9
+Author:     ttbhanh-hcmus <ttbhanh@hcmus.edu.vn>
+AuthorDate: 2026-05-15 08:30:35 +0700
+Commit:     ttbhanh-hcmus <ttbhanh@hcmus.edu.vn>
+CommitDate: 2026-05-15 08:30:35 +0700
+
+    first upload
+
+commit 2f9bf2bab45855abf211377a5d5eba10031649e3
+Author:     Hanh Tran <ttbhanh@fit.hcmus.edu.vn>
+AuthorDate: 2026-05-15 08:27:44 +0700
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2026-05-15 08:27:44 +0700
+
+    Initial commit
