@@ -20,7 +20,7 @@ The submission evaluates EShop across the assigned FR-07, FR-10, FR-11, FR-18, a
 
 Chrome and Firefox each provide five screenshots of the same Customer Web purchase journey. Four additional Mobile captures support narrowly scoped, visible FR-23 assertions. The moderated Customer Web usability study includes one pilot and seven official participants; all seven official participants completed the task independently. The structured results report a median task duration of 75 seconds, 14 errors, 14 hesitations, no moderator interventions, and a mean SUS score of 73.6/100.
 
-The principal remaining external gaps are Mobile overlay/environment qualification, anonymous Drive-access confirmation, correction of the Issue #118 title prefix, and the Agent Skill demonstration video. These limitations do not alter the reported executed results, but they affect final evidence compliance where stated.
+The principal remaining external gaps are Mobile overlay/environment qualification, anonymous Drive-access confirmation, and correction of the Issue #118 title prefix. These limitations do not alter the reported executed results, but they affect final evidence compliance where stated.
 
 ## 1. GUI checklist and defect reporting
 
@@ -171,7 +171,7 @@ CP-03 is not yet a fully qualifying third platform because the exact device mode
 
 ## 4. Agent Skill and AI documentation
 
-The reusable skill under `agent_skills/gui-usability-tester/` contains operating modes, evidence-state controls, traceable output schemas, severity guidance, quality gates, a validator, and unit tests. Its normalized submission mirror is distinct from the installed development copy under the repository-root `.agents` directory. The demonstration video remains an external pending artifact.
+The reusable skill under `agent_skills/gui-usability-tester/` contains operating modes, evidence-state controls, traceable output schemas, severity guidance, quality gates, a validator, and unit tests. Its normalized submission mirror is distinct from the installed development copy under the repository-root `.agents` directory. The [Agent Skill demonstration video](https://youtu.be/Um16nCulTtQ) is supplied; its YouTube endpoint returned HTTP 200 without authentication on 3 August 2026.
 
 The AI Audit Report preserves the history of AI-assisted work, including the correction of the earlier FR-23 scope interpretation. The AI Critique remains within the required 200–300 words and explains why plausible source analysis cannot replace runtime evidence.
 
@@ -180,8 +180,7 @@ The AI Audit Report preserves the history of AI-assisted work, including the cor
 1. Mobile captures still require the PDF-prescribed identity overlay and exact device/iOS/Expo/SUT metadata for complete CP-03 qualification.
 2. The shared usability Drive folder must be tested in a signed-out browser.
 3. GitHub Issue #118 requires correction of its student-ID title prefix.
-4. The Agent Skill demonstration video must be recorded, uploaded, and access-tested.
-5. `git_commit_log.txt` and the submission ZIP must be regenerated after the final commit.
+4. `git_commit_log.txt` and the submission ZIP must be regenerated after the final commit.
 
 The final ZIP must contain only the contents of `docs/assignments/HW03/deliverables`. Specifications, workbench files, source CSV data, archives, caches, previous ZIP files, and the root `.agents` installation are excluded.
 
@@ -189,4 +188,4 @@ The final ZIP must contain only the contents of `docs/assignments/HW03/deliverab
 
 The submission provides 45 classified GUI checks, 20 evidenced failures, 19 normalized runtime defects, ten desktop cross-browser captures, four Mobile FR-23 captures, and a structured seven-participant usability dataset with a mean SUS score of 73.6. The results and scope are internally aligned across the checklist, defect report, usability workbook, and this report.
 
-The remaining work is limited to external evidence-compliance steps: Mobile overlay/environment completion, signed-out Drive access confirmation, one GitHub Issue title correction, and the Agent Skill demonstration video. The report contact address remains `23127404@student.hcmus.edu.vn`; the screenshot identity overlay remains `23127404@hcmus.edu.vn` as prescribed by the assignment PDF.
+The remaining work is limited to external evidence-compliance steps: Mobile overlay/environment completion, signed-out Drive access confirmation, and one GitHub Issue title correction. The report contact address remains `23127404@student.hcmus.edu.vn`; the screenshot identity overlay remains `23127404@hcmus.edu.vn` as prescribed by the assignment PDF.

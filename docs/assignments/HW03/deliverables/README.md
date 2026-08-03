@@ -73,7 +73,7 @@ Chrome and Firefox completed the same five-screen purchase journey without an ob
 
 ### Task 4 — Agent Skill and AI documentation
 
-The reusable `gui-usability-tester` skill includes its operating instructions, evidence rules, output contract, analysis references, automated validator, and unit tests. The AI Audit Report preserves the AI-assistance history and human review decisions. The separate Agent Skill demonstration video remains pending.
+The reusable `gui-usability-tester` skill includes its operating instructions, evidence rules, output contract, analysis references, automated validator, and unit tests. The AI Audit Report preserves the AI-assistance history and human review decisions. The [Agent Skill demonstration video](https://youtu.be/Um16nCulTtQ) is supplied and its YouTube endpoint was access-tested without authentication on 3 August 2026.
 
 ## Evidence index
 
@@ -105,9 +105,8 @@ Editable CSV sources, internal scripts, specifications, archives, caches, and pr
 1. Add the required `23127404@hcmus.edu.vn` overlay and exact device/iOS/Expo/SUT metadata to qualifying Mobile evidence.
 2. Confirm that the usability Drive folder opens in a signed-out browser and exposes Pilot plus P1–P7.
 3. Correct the student-ID prefix in GitHub Issue #118.
-4. Record, upload, and access-test the Agent Skill demonstration video; replace the placeholder in `agent_skills/gui-usability-tester/demo_video_link.txt`.
-5. Regenerate `git_commit_log.txt` after the final commit.
-6. Create the final ZIP exclusively from the contents of this `deliverables` directory.
+4. Regenerate `git_commit_log.txt` after the final commit.
+5. Create the final ZIP exclusively from the contents of this `deliverables` directory.
 
 ## Packaging rule
 

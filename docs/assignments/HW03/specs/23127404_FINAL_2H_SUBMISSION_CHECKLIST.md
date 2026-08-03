@@ -32,7 +32,7 @@ Cập nhật trạng thái: 03/08/2026.
 - [ ] Ghi chính xác device model, iOS version, Expo version, SUT location và execution date cho CP-03.
 - [ ] Mở link Drive usability trong cửa sổ đăng xuất để xác nhận quyền truy cập Pilot và P1–P7.
 - [ ] Sửa chữ số MSSV bị thiếu trong tiêu đề GitHub Issue #118.
-- [ ] Quay, tải lên và kiểm tra video demo Agent Skill; thay placeholder trong `demo_video_link.txt`.
+- [x] Video demo Agent Skill đã được tải lên YouTube, ghi trong `demo_video_link.txt` và access-test qua YouTube oEmbed ngày 03/08/2026.
 - [ ] Xuất lại `deliverables/git_commit_log.txt` sau commit nội dung cuối.
 - [ ] Tạo lại ZIP nộp bài sau khi hoàn tất các hành động trên.
 
@@ -55,7 +55,7 @@ Cập nhật trạng thái: 03/08/2026.
 
 ## Chốt nộp
 
-- [ ] Hoàn thành bốn hành động bằng chứng bên ngoài.
+- [ ] Hoàn thành ba hành động bằng chứng bên ngoài còn lại.
 - [ ] Chạy lại unit tests, artifact validator và submission validator.
 - [ ] Xuất lại git commit log sau commit cuối.
 - [ ] Tạo ZIP chỉ từ nội dung bên trong `deliverables`.

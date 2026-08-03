@@ -1,1 +1,4 @@
-Agent Skill demonstration video: To be added after the recording is uploaded and access-tested.
+Agent Skill demonstration video
+Title: [HCMUS] 23127404 - Lê Tuấn Lộc - Demo sử dụng agents skills trong HW3 môn Software Testing
+URL: https://youtu.be/Um16nCulTtQ
+Access verification: YouTube oEmbed returned HTTP 200 without authentication on 3 August 2026.
