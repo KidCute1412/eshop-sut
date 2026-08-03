@@ -52,7 +52,7 @@ Severity uses one project-wide scale: `Critical`, `High`, `Medium`, and `Low`. C
 
 ### GitHub Issue copy instructions
 
-All 19 public Issues and their GitHub-hosted evidence attachments were verified through the GitHub API on 3 August 2026. Keep the Issue body synchronized with the normalized fields below. Issue #118 currently has a missing digit in its student-ID title prefix; correct the prefix to `23127404` before submission. For BUG-020–BUG-023, add the actual iPhone model, iOS version, Expo version, SUT location, execution date, and rerun count when available. Preserve the local evidence filename in this report for submission traceability.
+All 19 public Issues and their GitHub-hosted evidence attachments were verified through the GitHub API on 3 August 2026. Keep the Issue body synchronized with the normalized fields below. Issue #118 was rechecked after its student-ID title prefix was corrected to `23127404`. For BUG-020–BUG-023, add the actual iPhone model, iOS version, Expo version, SUT location, execution date, and rerun count when available. Preserve the local evidence filename in this report for submission traceability.
 
 ### BUG-001 — Product Detail requires a second click to add an item
 

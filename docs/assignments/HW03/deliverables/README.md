@@ -16,7 +16,7 @@ The contact email and screenshot identity are intentionally different. `23127404
 
 ## Submission overview
 
-This package contains the executed GUI checklist, normalized defect report, public GitHub Issue references, Chrome and Firefox cross-browser evidence, four Mobile Product Detail captures, a moderated usability-study dataset for seven official participants, AI documentation, and a reusable Agent Skill. Evidence limitations that still require external action are listed explicitly under **Final external checks**.
+This package contains the executed GUI checklist, normalized defect report, public GitHub Issue references, Chrome and Firefox cross-browser evidence, four Mobile Product Detail captures, a moderated usability-study dataset for seven official participants, AI documentation, and a reusable Agent Skill.
 
 ## Assigned scope
 
@@ -96,17 +96,15 @@ Editable CSV sources, internal scripts, specifications, archives, caches, and pr
 - The 31 Web/Admin/API results were established through live Google Chrome execution; source inspection was used for diagnosis, not as execution evidence.
 - The ten Chrome/Firefox screenshots are preserved unchanged and contain the PDF-prescribed identity caption.
 - The four Mobile screenshots are authentic runtime captures mapped only to assertions visible in those captures. They still lack the required overlay and complete environment metadata.
-- Pilot and P1–P7 recording files are mapped in `usability/recordings/video_links.md`. Anonymous/signed-out access to the shared Drive folder has not been independently confirmed.
+- Pilot and P1–P7 recording files are mapped in `usability/recordings/video_links.md`. Public access was verified on 3 August 2026, and the folder page listed all eight expected recordings.
 - Usability aggregates are calculated from the structured workbook entries. The final documentation pass did not independently recode each video timestamp.
-- All 19 GitHub Issue URLs and hosted attachments were verified through the public GitHub API on 3 August 2026. Issue #118 still requires correction of one missing digit in its student-ID title prefix.
+- All 19 GitHub Issue URLs and hosted attachments were verified through the public GitHub API on 3 August 2026. Issue #118 was rechecked after its student-ID title prefix was corrected to `23127404`.
 
 ## Final external checks
 
 1. Add the required `23127404@hcmus.edu.vn` overlay and exact device/iOS/Expo/SUT metadata to qualifying Mobile evidence.
-2. Confirm that the usability Drive folder opens in a signed-out browser and exposes Pilot plus P1–P7.
-3. Correct the student-ID prefix in GitHub Issue #118.
-4. Regenerate `git_commit_log.txt` after the final commit.
-5. Create the final ZIP exclusively from the contents of this `deliverables` directory.
+2. Regenerate `git_commit_log.txt` after the final commit.
+3. Create the final ZIP exclusively from the contents of this `deliverables` directory.
 
 ## Packaging rule
 

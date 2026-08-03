@@ -330,7 +330,7 @@ def usability_results_to_xlsx(target: Path) -> None:
         ("P7", "P7.mp4", 82.200, 1014487, "E4712473D8A3E2A4DF4CAE61F4835A653FE5B8D621210C0E92654AB23FF8CA95"),
     ]
     for session_id, filename, duration, size, sha256 in recording_manifest:
-        recordings.append([session_id, filename, shared_recording_url, duration, size, sha256, "1920x1080", "Yes", "Not independently verified", "Local file verified; shared Drive folder supplied"])
+        recordings.append([session_id, filename, shared_recording_url, duration, size, sha256, "1920x1080", "Yes", "Yes - publicly listed", "Local file and public Drive listing verified on 3 August 2026"])
 
     for session_row, sus_row in zip(range(3, 10), range(2, 9)):
         sessions[f"J{session_row}"] = f"=SUS!M{sus_row}"

@@ -6,6 +6,9 @@ Branch: 23127404-LeTuanLoc
 Exported: 2026-08-03 (Asia/Saigon)
 Command: git log --date=iso-local --pretty=format:'%h | %ad | %s' -- docs/assignments/HW03
 
+e184e62 | 2026-08-03 11:16:32 +0700 | docs(hw03): publish Agent Skill demonstration link
+b2d9546 | 2026-08-03 10:55:10 +0700 | docs(hw03): refine agent skill demo script
+903c3da | 2026-08-03 10:45:30 +0700 | docs(hw03): export final assignment commit log
 c4cdd27 | 2026-08-03 10:44:22 +0700 | docs(hw03): refresh final submission runbook
 b92b7e4 | 2026-08-03 10:43:38 +0700 | docs(hw03): publish synchronized submission report
 958a963 | 2026-08-03 10:43:28 +0700 | test(hw03): harden generators and submission validation

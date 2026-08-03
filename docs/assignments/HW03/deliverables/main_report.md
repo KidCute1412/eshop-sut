@@ -20,7 +20,7 @@ The submission evaluates EShop across the assigned FR-07, FR-10, FR-11, FR-18, a
 
 Chrome and Firefox each provide five screenshots of the same Customer Web purchase journey. Four additional Mobile captures support narrowly scoped, visible FR-23 assertions. The moderated Customer Web usability study includes one pilot and seven official participants; all seven official participants completed the task independently. The structured results report a median task duration of 75 seconds, 14 errors, 14 hesitations, no moderator interventions, and a mean SUS score of 73.6/100.
 
-The principal remaining external gaps are Mobile overlay/environment qualification, anonymous Drive-access confirmation, and correction of the Issue #118 title prefix. These limitations do not alter the reported executed results, but they affect final evidence compliance where stated.
+The remaining evidence-compliance consideration is the Mobile overlay/environment qualification described in the cross-platform report. Public access to the usability recordings and the corrected Issue #118 title were verified on 3 August 2026.
 
 ## 1. GUI checklist and defect reporting
 
@@ -89,7 +89,7 @@ All 20 Failed rows reference a Bug ID and evidence. Five failed Mobile rows map 
 | Medium | 3 | Silent decimal truncation, valid-phone rejection, and unavailable order details |
 | Low | 5 | Visual, content, navigation, loading, and success-feedback defects |
 
-Detailed reproduction procedures, expected and actual results, evidence images, and GitHub Issue URLs are provided in `bugs/bug_report.md`. All 19 public Issue URLs and their hosted attachments were verified through the GitHub API on 3 August 2026. Issue #118 still requires correction of a missing digit in its student-ID title prefix.
+Detailed reproduction procedures, expected and actual results, evidence images, and GitHub Issue URLs are provided in `bugs/bug_report.md`. All 19 public Issue URLs and their hosted attachments were verified through the GitHub API on 3 August 2026. Issue #118 was rechecked after its student-ID title prefix was corrected to `23127404`.
 
 ## 2. Moderated usability evaluation
 
@@ -144,7 +144,7 @@ The detailed coding basis, recommendations, operational definitions, and technic
 | Participant register | P1–P7 listed with masked contacts and recorded consent status |
 | Structured workbook | Sessions, Observations, SUS, and Recordings sheets complete |
 | Recording manifest | Pilot and P1–P7 mapped to `Pilot.mp4` and `P1.mp4`–`P7.mp4` |
-| Shared Drive folder | Supplied; anonymous/signed-out access not independently confirmed |
+| Shared Drive folder | Publicly accessible; Pilot and P1–P7 listed and verified on 3 August 2026 |
 | Final documentation pass | Aggregates recalculated; supplied session timestamps retained without independent video recoding |
 
 This evidence status distinguishes a recorded dataset from independently reperforming the video coding. It avoids claiming a verification step that was not completed during final document formatting.
@@ -178,9 +178,7 @@ The AI Audit Report preserves the history of AI-assisted work, including the cor
 ## 5. Limitations and final external actions
 
 1. Mobile captures still require the PDF-prescribed identity overlay and exact device/iOS/Expo/SUT metadata for complete CP-03 qualification.
-2. The shared usability Drive folder must be tested in a signed-out browser.
-3. GitHub Issue #118 requires correction of its student-ID title prefix.
-4. `git_commit_log.txt` and the submission ZIP must be regenerated after the final commit.
+2. `git_commit_log.txt` and the submission ZIP must be regenerated after the final commit.
 
 The final ZIP must contain only the contents of `docs/assignments/HW03/deliverables`. Specifications, workbench files, source CSV data, archives, caches, previous ZIP files, and the root `.agents` installation are excluded.
 
@@ -188,4 +186,4 @@ The final ZIP must contain only the contents of `docs/assignments/HW03/deliverab
 
 The submission provides 45 classified GUI checks, 20 evidenced failures, 19 normalized runtime defects, ten desktop cross-browser captures, four Mobile FR-23 captures, and a structured seven-participant usability dataset with a mean SUS score of 73.6. The results and scope are internally aligned across the checklist, defect report, usability workbook, and this report.
 
-The remaining work is limited to external evidence-compliance steps: Mobile overlay/environment completion, signed-out Drive access confirmation, and one GitHub Issue title correction. The report contact address remains `23127404@student.hcmus.edu.vn`; the screenshot identity overlay remains `23127404@hcmus.edu.vn` as prescribed by the assignment PDF.
+Public access to the shared Drive folder was verified with all eight expected recording filenames visible, and GitHub Issue #118 now carries the correct `23127404` title prefix. The remaining evidence-compliance note concerns Mobile overlay/environment qualification. The report contact address remains `23127404@student.hcmus.edu.vn`; the screenshot identity overlay remains `23127404@hcmus.edu.vn` as prescribed by the assignment PDF.
