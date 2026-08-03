@@ -1,3 +1,17 @@
+commit fb5503d548de8997530932477c57d3e009888047
+Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+AuthorDate: 2026-08-03 23:11:18 +0700
+Commit:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
+CommitDate: 2026-08-03 23:11:18 +0700
+
+    hw04: add bug report, agent skill, AI audit/critique, README, and git log
+    
+    Documents the 7 defects found via automation (linked to GitHub Issues
+    #135-#140), packages the reusable data-driven-automation-runner skill,
+    and adds the AI audit trail, critique, and submission README with a
+    clear list of what's genuinely done vs. still needed (demo video,
+    spread-out commit history, human sign-off).
+
 commit 44a6d287b783130654174c6e9dd0afb622547b50
 Author:     Nguyễn Thành Luân <161336959+NgThanhLuanK23HCMUS@users.noreply.github.com>
 AuthorDate: 2026-08-03 23:05:01 +0700
