@@ -8,7 +8,7 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 
 from openpyxl import Workbook, load_workbook
-from openpyxl.styles import Alignment, Font, PatternFill
+from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.utils import get_column_letter
 from reportlab.lib import colors
@@ -166,25 +166,93 @@ def checklist_to_xlsx(source: Path, target: Path) -> None:
     workbook = load_workbook(target)
     checklist = workbook["GUI Checklist"]
     summary = workbook.create_sheet("Test Summary", 0)
-    summary.append(["Measure", "Result"])
-    statuses = [checklist.cell(row=row, column=9).value for row in range(2, checklist.max_row + 1)]
+    last_row = checklist.max_row
     summary_rows = [
-        ("Designed", len(statuses)),
-        ("Executed", sum(status in {"Passed", "Failed"} for status in statuses)),
-        ("Passed", statuses.count("Passed")),
-        ("Failed", statuses.count("Failed")),
-        ("Not Executed", statuses.count("Not Executed")),
-        ("FR-23 Not Executed", sum(checklist.cell(row=row, column=2).value == "FR-23" and checklist.cell(row=row, column=9).value == "Not Executed" for row in range(2, checklist.max_row + 1))),
+        ("HW03 GUI Checklist Summary", "Current classified result"),
+        ("Designed", f"=COUNTA('GUI Checklist'!A2:A{last_row})"),
+        ("Executed", f'=COUNTIF(\'GUI Checklist\'!I2:I{last_row},"Passed")+COUNTIF(\'GUI Checklist\'!I2:I{last_row},"Failed")'),
+        ("Passed", f'=COUNTIF(\'GUI Checklist\'!I2:I{last_row},"Passed")'),
+        ("Failed", f'=COUNTIF(\'GUI Checklist\'!I2:I{last_row},"Failed")'),
+        ("Not Executed", f'=COUNTIF(\'GUI Checklist\'!I2:I{last_row},"Not Executed")'),
+        ("Unique defects", 19),
+        ("", ""),
+        ("Requirement coverage", "Items"),
+        ("FR-07", f'=COUNTIF(\'GUI Checklist\'!B2:B{last_row},"FR-07")'),
+        ("FR-10", f'=COUNTIF(\'GUI Checklist\'!B2:B{last_row},"FR-10")'),
+        ("FR-11", f'=COUNTIF(\'GUI Checklist\'!B2:B{last_row},"FR-11")'),
+        ("FR-18", f'=COUNTIF(\'GUI Checklist\'!B2:B{last_row},"FR-18")'),
+        ("FR-23", f'=COUNTIF(\'GUI Checklist\'!B2:B{last_row},"FR-23")'),
+        ("", ""),
+        ("Interface-aspect coverage", "Items"),
+        ("IA-01 General UI", f'=COUNTIF(\'GUI Checklist\'!C2:C{last_row},"IA-01 General UI")'),
+        ("IA-02 Forms & Validation", f'=COUNTIF(\'GUI Checklist\'!C2:C{last_row},"IA-02 Forms & Validation")'),
+        ("IA-03 Navigation", f'=COUNTIF(\'GUI Checklist\'!C2:C{last_row},"IA-03 Navigation")'),
+        ("IA-04 Feedback & State", f'=COUNTIF(\'GUI Checklist\'!C2:C{last_row},"IA-04 Feedback & State")'),
+        ("", ""),
+        ("Design provenance", "Items"),
+        ("AI", f'=COUNTIF(\'GUI Checklist\'!L2:L{last_row},"AI")'),
+        ("Human-added", f'=COUNTIF(\'GUI Checklist\'!L2:L{last_row},"Human-added")'),
+        ("Hybrid", f'=COUNTIF(\'GUI Checklist\'!L2:L{last_row},"Hybrid")'),
+        ("", ""),
+        ("Evidence note", "PDF requires screenshots for Failed items; all 20 Failed rows have evidence and Bug IDs."),
+        ("Desktop execution", "Google Chrome 151.0.7922.72 / Windows 11 / two clean runs / 2 August 2026"),
+        ("Mobile evidence", "Four authentic 1284×2778 captures; exact device metadata and required identity overlay remain to be supplied."),
     ]
     for row in summary_rows:
         summary.append(row)
-    for cell in summary[1]:
-        cell.font = Font(color="FFFFFF", bold=True)
-        cell.fill = PatternFill("solid", fgColor="1F4E78")
+
+    navy = "1F4E78"
+    section_fill = "D9EAF7"
+    thin = Side(style="thin", color="CBD5E1")
+    for row in summary.iter_rows():
+        for cell in row:
+            cell.alignment = Alignment(vertical="top", wrap_text=True)
+            cell.border = Border(bottom=thin)
+    for row_number in (1, 9, 16, 22):
+        for cell in summary[row_number]:
+            cell.font = Font(color="FFFFFF" if row_number == 1 else "1F2937", bold=True)
+            cell.fill = PatternFill("solid", fgColor=navy if row_number == 1 else section_fill)
     summary.freeze_panes = "A2"
     summary.auto_filter.ref = summary.dimensions
-    summary.column_dimensions["A"].width = 24
-    summary.column_dimensions["B"].width = 16
+    summary.column_dimensions["A"].width = 30
+    summary.column_dimensions["B"].width = 88
+    summary.row_dimensions[1].height = 26
+    summary.sheet_view.showGridLines = False
+    summary.sheet_view.zoomScale = 90
+
+    checklist.row_dimensions[1].height = 36
+    checklist.sheet_view.showGridLines = False
+    checklist.sheet_view.zoomScale = 80
+    checklist.auto_filter.ref = checklist.dimensions
+    checklist.print_title_rows = "1:1"
+    checklist.sheet_properties.pageSetUpPr.fitToPage = True
+    checklist.page_setup.fitToWidth = 1
+    checklist.page_setup.fitToHeight = 0
+    checklist.page_margins.left = 0.25
+    checklist.page_margins.right = 0.25
+    checklist.page_margins.top = 0.5
+    checklist.page_margins.bottom = 0.5
+
+    status_validation = DataValidation(type="list", formula1='"Passed,Failed,Not Executed"', allow_blank=False)
+    fr_validation = DataValidation(type="list", formula1='"FR-07,FR-10,FR-11,FR-18,FR-23"', allow_blank=False)
+    origin_validation = DataValidation(type="list", formula1='"AI,Human-added,Hybrid"', allow_blank=False)
+    for validation in (status_validation, fr_validation, origin_validation):
+        checklist.add_data_validation(validation)
+    status_validation.add(f"I2:I{last_row}")
+    fr_validation.add(f"B2:B{last_row}")
+    origin_validation.add(f"L2:L{last_row}")
+
+    for row_number in range(2, last_row + 1):
+        evidence = checklist.cell(row=row_number, column=15)
+        raw = str(evidence.value or "").strip()
+        if raw and ";" not in raw and "://" not in raw:
+            evidence.hyperlink = "../" + raw.replace("\\", "/")
+            evidence.style = "Hyperlink"
+        checklist.row_dimensions[row_number].height = 72
+
+    workbook.calculation.calcMode = "auto"
+    workbook.calculation.fullCalcOnLoad = True
+    workbook.calculation.forceFullCalc = True
     workbook.save(target)
 
 
@@ -246,9 +314,23 @@ def usability_results_to_xlsx(target: Path) -> None:
 
     sus = add_csv_sheet(sus_source, "SUS")
     recordings = workbook.create_sheet("Recordings")
-    recordings.append(["session_id", "filename_or_url", "duration", "file_size_or_sha256", "access_verified", "status"])
-    for session_id in ["Pilot", "P1", "P2", "P3", "P4", "P5", "P6", "P7"]:
-        recordings.append([session_id, shared_recording_url, "", "Not collected", "Not independently verified", "Link supplied; file mapping pending"])
+    recordings.append([
+        "session_id", "filename", "drive_folder_url", "duration_seconds",
+        "file_size_bytes", "sha256", "resolution", "local_verified",
+        "drive_access_verified", "status",
+    ])
+    recording_manifest = [
+        ("Pilot", "Pilot.mp4", 73.600, 1205683, "B34A705CB99820C43741C6595391D2715479783160AFE2AEB76067E17CD65C3A"),
+        ("P1", "P1.mp4", 96.467, 1051696, "373372F85253EC6C783A1501A760E65E39EF0E11C937F71E0A67C4C22A6D04AB"),
+        ("P2", "P2.mp4", 72.100, 968087, "FD92D109F10C2FDF5E1C6F8263A4EB3462DA4AB3D4EA60BE3F813A1B8C9C5BC9"),
+        ("P3", "P3.mp4", 67.767, 891790, "DAA85393B6BACB5370D57E1086562BF7907EC3BEFFB2580C38F9EC1FEA75BA55"),
+        ("P4", "P4.mp4", 63.467, 1452706, "D1089B51D4BB25E0981A85BA9D79F5040078D4240B42B28FBDF78302BEEF50EE"),
+        ("P5", "P5.mp4", 108.433, 1506431, "B5F850BF0A2FBDC191481C18E42DE9144B213BDB34789EBEA4A0DD6BAFB63CE9"),
+        ("P6", "P6.mp4", 63.633, 715887, "E41A12B239754E8864234442D56B1E7F20320D83C662B3CB32AFBC30D1AC5C60"),
+        ("P7", "P7.mp4", 82.200, 1014487, "E4712473D8A3E2A4DF4CAE61F4835A653FE5B8D621210C0E92654AB23FF8CA95"),
+    ]
+    for session_id, filename, duration, size, sha256 in recording_manifest:
+        recordings.append([session_id, filename, shared_recording_url, duration, size, sha256, "1920x1080", "Yes", "Not independently verified", "Local file verified; shared Drive folder supplied"])
 
     for session_row, sus_row in zip(range(3, 10), range(2, 9)):
         sessions[f"J{session_row}"] = f"=SUS!M{sus_row}"
@@ -296,7 +378,12 @@ def usability_results_to_xlsx(target: Path) -> None:
 
 def main() -> None:
     checklist_to_xlsx(DATA / "gui_checklist.csv", DELIVERABLES / "checklist/gui_checklist.xlsx")
-    usability_results_to_xlsx(DELIVERABLES / "usability/usability_results.xlsx")
+    # The submission workbook contains reviewed observation coding and recording
+    # metadata that are not fully represented by the compact CSV sources. Preserve
+    # the reviewed workbook during routine PDF/checklist regeneration.
+    usability_target = DELIVERABLES / "usability/usability_results.xlsx"
+    if not usability_target.exists():
+        usability_results_to_xlsx(usability_target)
     markdown_to_pdf(DELIVERABLES / "main_report.md", DELIVERABLES / "main_report.pdf", "HW03 — GUI and Usability Testing")
     markdown_to_pdf(DELIVERABLES / "ai_reports/ai_audit_report.md", DELIVERABLES / "ai_reports/ai_audit_report.pdf", "HW03 — AI Audit Report")
     markdown_to_pdf(DELIVERABLES / "ai_reports/ai_critique.md", DELIVERABLES / "ai_reports/ai_critique.pdf", "HW03 — AI Critique")
