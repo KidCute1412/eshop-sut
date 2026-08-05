@@ -60,6 +60,7 @@ The actual test code (`tests/`, `playwright.config.js`, `scripts/`) lives at the
 3. **Git commit log requirement (§12)** — the assignment requires ≥8 commits that touch `.spec.js`/`.spec.ts` files, spread across ≥4 days. As of this session there is only **one** commit touching the spec files (today). This cannot be fabricated or backdated — you'll need to make real incremental commits to `tests/*.spec.js` (refinements, additional cases, fixes you make while reviewing) across at least 4 separate days before the deadline. Re-export `07_git_log/git_commit_log.txt` (via `git log --date=iso --pretty=fuller <branch>`) once that's done.
 4. **Human review sign-off** — read `00_report/Review_And_GapAnalysis.md` end-to-end and add your own confirmation (or corrections) before this goes in the zip; per the assignment, submitting AI output without your own review is not acceptable.
 5. **Self-assessed grade** — fill in the table above and the submission filename (`23127296_HW04_AI_Automation_<Grade>.zip`).
+6. Fix phần gap analysis.
 
 ## Public repository
 

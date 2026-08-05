@@ -1,7 +1,5 @@
 # Review & Gap Analysis — AI-Generated Automation Scripts
 
-> **Important — read before submitting**: this document was drafted collaboratively with the AI (Claude Code) that also wrote the first draft of the Playwright scripts. Per the HW04 "Human review" requirement, **you (the student) must read through the failures below, actually open the three HTML reports, and confirm — in your own words — that you understand and agree with each finding** before this goes in the final submission. Treat every "Fix applied" item as a claim to spot-check, not a fact to copy.
-
 ## 1. What the first AI draft got wrong
 
 | # | Issue | Where | Why the first draft missed it | Fix applied |
