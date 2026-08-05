@@ -34,7 +34,7 @@
 ## Demo videos
 
 - Usability session recordings (4 participants): `03_usability_evaluation/videos/` (`long.mp4`, `linh.mp4`, `tien.mp4`, `khai.mp4`).
-- Agent Skills demo (YouTube): see `05_agent_skills/README.md` — link pending.
+- Agent Skills demo (YouTube): see `05_agent_skills/README.md`.
 
 ## Directory structure
 
