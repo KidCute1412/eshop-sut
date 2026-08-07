@@ -1,0 +1,11 @@
+[
+  {
+    "id": "TC-01",
+    "description": "TODO - short description matching the test-cases.md row",
+    "input": {
+      "TODO_field_1": "TODO_value",
+      "TODO_field_2": "TODO_value"
+    },
+    "expected": "TODO - short description of the expected outcome, e.g. 'success' or 'error: Email already registered'"
+  }
+]
