@@ -1,0 +1,129 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: FR-01\tests\fr-01-register.spec.js >> FR-01 Account registration >> FR01-DT-011 Negative registration
+- Location: FR-01\tests\fr-01-register.spec.js:11:5
+
+# Error details
+
+```
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 500
+Received: 200
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - link "EShop" [ref=e5] [cursor=pointer]:
+      - /url: /
+    - navigation [ref=e6]:
+      - link "Giỏ hàng" [ref=e7] [cursor=pointer]:
+        - /url: /cart
+      - link "Đăng nhập" [ref=e8] [cursor=pointer]:
+        - /url: /login
+      - link "Đăng ký" [ref=e9] [cursor=pointer]:
+        - /url: /register
+  - main [ref=e10]:
+    - generic [ref=e11]:
+      - heading "Đăng Ký" [level=2] [ref=e12]
+      - generic [ref=e13]:
+        - generic [ref=e14]:
+          - generic [ref=e15]: Username
+          - textbox [ref=e16]
+        - generic [ref=e17]:
+          - generic [ref=e18]: Mật khẩu
+          - textbox [ref=e19]
+        - link "Quên mật khẩu?" [ref=e21] [cursor=pointer]:
+          - /url: /forgot-password
+        - button "Sign In" [ref=e22] [cursor=pointer]
+        - generic [ref=e23]:
+          - text: Chưa có tài khoản?
+          - link "Đăng ký ngay" [ref=e24] [cursor=pointer]:
+            - /url: /register
+  - contentinfo [ref=e25]: © 2026 EShop SUT. Dành cho mục đích kiểm thử.
+```
+
+# Test source
+
+```ts
+  1  | const {
+  2  |   test,
+  3  |   expect,
+  4  |   uniqueEmail,
+  5  |   fillCustomerRegisterForm
+  6  | } = require("../../fixtures/hw4-test");
+  7  | const cases = require("../data/register-cases.json");
+  8  | 
+  9  | test.describe("FR-01 Account registration", () => {
+  10 |   for (const tc of cases) {
+  11 |     test(`${tc.id} ${tc.type} registration`, async ({ page, request }) => {
+  12 |       const data = { ...tc };
+  13 |       if (data.email === "") {
+  14 |         data.email = uniqueEmail(data.emailPrefix);
+  15 |       }
+  16 | 
+  17 |       if (data.expected === "duplicate_error") {
+  18 |         await request.post("http://localhost:3000/api/register", {
+  19 |           data: {
+  20 |             name: "Existing Automation User",
+  21 |             email: data.email,
+  22 |             password: data.password
+  23 |           }
+  24 |         });
+  25 |       }
+  26 | 
+  27 |       await page.goto("/register");
+  28 |       await fillCustomerRegisterForm(page, data);
+  29 | 
+  30 |       const submitResponse =
+  31 |         data.expected === "success" || data.expected === "duplicate_error"
+  32 |           ? page
+  33 |               .waitForResponse(
+  34 |                 (r) =>
+  35 |                   r.url().includes("/api/register") &&
+  36 |                   r.request().method() === "POST",
+  37 |                 { timeout: 5000 }
+  38 |               )
+  39 |               .catch(() => null)
+  40 |           : Promise.resolve(null);
+  41 | 
+  42 |       await page.locator("form button[type='submit']").click();
+  43 |       const response = await submitResponse;
+  44 | 
+  45 |       if (data.expected === "success") {
+  46 |         expect(response && response.ok()).toBeTruthy();
+  47 |         await expect(page).toHaveURL(/\/login$/);
+  48 |       }
+  49 | 
+  50 |       if (data.expected === "password_error") {
+  51 |         await expect(page.locator("[class*='bg-red']").first()).toBeVisible();
+  52 |         await expect(page).toHaveURL(/\/register$/);
+  53 |       }
+  54 | 
+  55 |       if (data.expected === "duplicate_error") {
+> 56 |         expect(response && response.status()).toBe(500);
+     |                                               ^ Error: expect(received).toBe(expected) // Object.is equality
+  57 |         await expect(page.locator("[class*='bg-red']").first()).toBeVisible();
+  58 |       }
+  59 | 
+  60 |       if (data.expected && data.expected.startsWith("native_required")) {
+  61 |         await expect(page).toHaveURL(/\/register$/);
+  62 |         const invalidInputs = await page.locator("form input").evaluateAll((inputs) =>
+  63 |           inputs.filter((input) => !input.checkValidity()).length
+  64 |         );
+  65 |         expect(invalidInputs).toBeGreaterThan(0);
+  66 |       }
+  67 |     });
+  68 |   }
+  69 | });
+  70 | 
+```

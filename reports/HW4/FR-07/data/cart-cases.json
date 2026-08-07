@@ -1,0 +1,14 @@
+[
+  { "id": "FR07-DT-001", "type": "Positive", "scenario": "empty_cart", "expectedRows": 0 },
+  { "id": "FR07-DT-002", "type": "Positive", "scenario": "add_single", "expectedRows": 1 },
+  { "id": "FR07-DT-003", "type": "Positive", "scenario": "add_two_distinct", "expectedRows": 2 },
+  { "id": "FR07-DT-004", "type": "Edge", "scenario": "add_duplicate", "expectedRows": 2 },
+  { "id": "FR07-DT-005", "type": "Positive", "scenario": "remove_only", "expectedRows": 0 },
+  { "id": "FR07-DT-006", "type": "Positive", "scenario": "remove_first_of_two", "expectedRows": 1 },
+  { "id": "FR07-DT-007", "type": "Negative", "scenario": "guest_checkout_redirect", "expectedPath": "/login" },
+  { "id": "FR07-DT-008", "type": "Positive", "scenario": "continue_from_empty", "expectedPath": "/" },
+  { "id": "FR07-DT-009", "type": "Positive", "scenario": "continue_from_nonempty", "expectedPath": "/" },
+  { "id": "FR07-DT-010", "type": "Positive", "scenario": "headers_visible", "expectedRows": 1 },
+  { "id": "FR07-DT-011", "type": "Positive", "scenario": "total_visible", "expectedRows": 1 },
+  { "id": "FR07-BVA-001", "type": "Edge", "scenario": "quantity_display_one", "expectedQuantity": "1" }
+]

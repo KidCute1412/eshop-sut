@@ -1,0 +1,137 @@
+[
+  {
+    "id": "FR01-DT-001",
+    "type": "Positive",
+    "name": "Automation User Alpha",
+    "emailPrefix": "fr01.alpha",
+    "email": "",
+    "password": "Aa1 aaaa",
+    "expected": "success"
+  },
+  {
+    "id": "FR01-DT-002",
+    "type": "Positive",
+    "name": "Automation User Beta",
+    "emailPrefix": "fr01.beta",
+    "email": "",
+    "password": "Bb2 bbbb",
+    "expected": "success"
+  },
+  {
+    "id": "FR01-DT-003",
+    "type": "Negative",
+    "name": "Weak Password User",
+    "emailPrefix": "fr01.weak",
+    "email": "",
+    "password": "weak",
+    "expected": "password_error"
+  },
+  {
+    "id": "FR01-DT-004",
+    "type": "Negative",
+    "name": "No Uppercase User",
+    "emailPrefix": "fr01.noupper",
+    "email": "",
+    "password": "aa1 aaaa",
+    "expected": "password_error"
+  },
+  {
+    "id": "FR01-DT-005",
+    "type": "Negative",
+    "name": "No Number User",
+    "emailPrefix": "fr01.nonumber",
+    "email": "",
+    "password": "Aa bbbbb",
+    "expected": "password_error"
+  },
+  {
+    "id": "FR01-DT-006",
+    "type": "Positive",
+    "name": "Documented Special Character User",
+    "emailPrefix": "fr01.special",
+    "email": "",
+    "password": "Aa1!aaaa",
+    "expected": "success"
+  },
+  {
+    "id": "FR01-DT-007",
+    "type": "Edge",
+    "name": "Minimum Eight User",
+    "emailPrefix": "fr01.min8",
+    "email": "",
+    "password": "Aa1 aaaa",
+    "expected": "success"
+  },
+  {
+    "id": "FR01-DT-008",
+    "type": "Negative",
+    "name": null,
+    "emailPrefix": "fr01.noname",
+    "email": "",
+    "password": "Aa1 aaaa",
+    "expected": "native_required_name"
+  },
+  {
+    "id": "FR01-DT-009",
+    "type": "Negative",
+    "name": "Missing Email User",
+    "emailPrefix": "fr01.noemail",
+    "email": null,
+    "password": "Aa1 aaaa",
+    "expected": "native_required_email"
+  },
+  {
+    "id": "FR01-DT-010",
+    "type": "Negative",
+    "name": "Missing Password User",
+    "emailPrefix": "fr01.nopassword",
+    "email": "",
+    "password": null,
+    "expected": "native_required_password"
+  },
+  {
+    "id": "FR01-DT-011",
+    "type": "Negative",
+    "name": "Duplicate Email User",
+    "emailPrefix": "fr01.duplicate",
+    "email": "",
+    "password": "Aa1 aaaa",
+    "expected": "duplicate_error"
+  },
+  {
+    "id": "FR01-DT-012",
+    "type": "Edge",
+    "name": "Long Name Automation User With Multiple Words",
+    "emailPrefix": "fr01.longname",
+    "email": "",
+    "password": "Zz9 zzzz",
+    "expected": "success"
+  },
+  {
+    "id": "FR01-BVA-009",
+    "type": "Edge",
+    "name": "At Special Character User",
+    "emailPrefix": "fr01.at",
+    "email": "",
+    "password": "Aa1@aaaa",
+    "expected": "success"
+  },
+  {
+    "id": "FR01-BVA-010",
+    "type": "Edge",
+    "name": "Twenty Character Password User",
+    "emailPrefix": "fr01.longpassword",
+    "email": "",
+    "password": "Aa1!aaaaaaaaaaaaaaaa",
+    "expected": "success"
+  },
+  {
+    "id": "FR01-BVA-011",
+    "type": "Edge",
+    "name": "Twenty Character Space Password User",
+    "emailPrefix": "fr01.longspacepassword",
+    "email": "",
+    "password": "Aa1 aaaaaaaaaaaaaaaa",
+    "expected": "success"
+  }
+]

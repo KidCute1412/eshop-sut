@@ -1,0 +1,16 @@
+{
+  "name": "hw04-automation-testing",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node scripts/run-with-report-stamp.js",
+    "test:raw": "playwright test",
+    "test:fr01": "playwright test FR-01/tests/fr-01-register.spec.js",
+    "test:fr07": "playwright test FR-07/tests/fr-07-cart.spec.js",
+    "test:fr17": "playwright test FR-17/tests/fr-17-coupons.spec.js",
+    "report": "playwright show-report reports/html-23127539"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.45.0"
+  }
+}
