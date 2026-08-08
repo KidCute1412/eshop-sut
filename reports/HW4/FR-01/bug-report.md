@@ -25,9 +25,6 @@ The system returns HTTP 200 and redirects to Login, meaning the duplicate accoun
 
 ### Evidence
 
-- Chromium screenshot: `test-results/FR-01-tests-fr-01-register-9f816-T-011-Negative-registration-chromium/test-failed-1.png`
-- Firefox screenshot: `test-results/FR-01-tests-fr-01-register-9f816-T-011-Negative-registration-firefox/test-failed-1.png`
-- WebKit screenshot: `test-results/FR-01-tests-fr-01-register-9f816-T-011-Negative-registration-webkit/test-failed-1.png`
 - HTML report: `reports/html-23127539/index.html`
 
 ## BUG-HW04-FR01-002 - Registration rejects documented special characters in strong passwords
