@@ -1,0 +1,18 @@
+[
+  { "id": "FR06-01", "title": "show the complete seeded product detail", "priority": "high", "partition": ["EP-VAL-06-01"], "productId": 1, "assertion": "full-content", "expected": { "name": "iPhone 15 Pro Max", "price": "30000000", "description": "Điện thoại cao cấp của Apple" } },
+  { "id": "FR06-02", "title": "render exactly one product page heading", "priority": "medium", "partition": ["EP-VAL-06-01"], "productId": 1, "assertion": "single-heading", "expected": { "name": "iPhone 15 Pro Max" } },
+  { "id": "FR06-03", "title": "show a large product image with descriptive alt text", "priority": "high", "partition": ["EP-VAL-06-02"], "productId": 1, "assertion": "image", "expected": { "name": "iPhone 15 Pro Max" } },
+  { "id": "FR06-04", "title": "format a numeric price with thousands separators and dong", "priority": "high", "partition": ["EP-VAL-06-03"], "productId": 1, "assertion": "price", "expected": { "price": "30000000" } },
+  { "id": "FR06-05", "title": "format a backend string price without NaN", "priority": "high", "partition": ["EP-VAL-06-04"], "productId": 2, "assertion": "price", "expected": { "price": "28000000" } },
+  { "id": "FR06-06", "title": "show the complete product description", "priority": "medium", "partition": ["EP-VAL-06-05"], "productId": 3, "assertion": "description", "expected": { "description": "Laptop chuyên nghiệp mạnh mẽ" } },
+  { "id": "FR06-07", "title": "show the product category", "priority": "high", "partition": ["EP-VAL-06-06"], "productId": 1, "assertion": "category", "expected": { "category": "Điện thoại" } },
+  { "id": "FR06-08", "title": "use a numeric quantity input", "priority": "medium", "partition": ["EP-VAL-06-07"], "productId": 1, "assertion": "quantity-type" },
+  { "id": "FR06-09", "title": "declare the minimum quantity as one", "priority": "high", "partition": ["EP-VAL-06-07"], "boundary": ["BVA-BND-06-01"], "productId": 1, "assertion": "quantity-min" },
+  { "id": "FR06-10", "title": "default quantity to the minimum valid value", "priority": "high", "partition": ["EP-VAL-06-07"], "boundary": ["BVA-BND-06-01"], "productId": 1, "assertion": "quantity-default" },
+  { "id": "FR06-11", "title": "give visual feedback after the first add click", "priority": "high", "partition": ["EP-VAL-06-08"], "productId": 1, "assertion": "add-feedback-first-click", "quantity": "1" },
+  { "id": "FR06-12", "title": "accept an in-range integer quantity and give feedback", "priority": "high", "partition": ["EP-VAL-06-07", "EP-VAL-06-08"], "boundary": ["BVA-BND-06-01"], "productId": 4, "assertion": "add-feedback-valid-quantity", "quantity": "2" },
+  { "id": "FR06-13", "title": "reject quantity zero", "priority": "high", "partition": ["EP-INV-06-01"], "boundary": ["BVA-BND-06-01"], "productId": 1, "assertion": "reject-zero", "quantity": "0" },
+  { "id": "FR06-14", "title": "reject a negative quantity", "priority": "high", "partition": ["EP-INV-06-01"], "boundary": ["BVA-BND-06-01"], "productId": 1, "assertion": "reject-negative", "quantity": "-1" },
+  { "id": "FR06-15", "title": "reject a fractional quantity", "priority": "high", "partition": ["EP-INV-06-02"], "boundary": ["BVA-BND-06-02"], "productId": 1, "assertion": "reject-fraction", "quantity": "1.5" },
+  { "id": "FR06-16", "title": "show a clear not-found state for an unknown product", "priority": "medium", "partition": ["EP-INV-06-03"], "productId": 999999, "assertion": "not-found" }
+]

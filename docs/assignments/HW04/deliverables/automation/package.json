@@ -1,0 +1,26 @@
+{
+  "name": "23127404-hw04-automation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fresh Playwright TypeScript automation for EShop FR-06, FR-10, and FR-12",
+  "type": "module",
+  "scripts": {
+    "check": "tsc --noEmit && playwright test --list",
+    "check:sut": "node scripts/check-sut.mjs",
+    "test": "playwright test",
+    "test:fr06": "playwright test tests/fr06-product-detail.spec.ts",
+    "test:fr10": "playwright test tests/fr10-order-state-machine.spec.ts",
+    "test:fr12": "playwright test tests/fr12-access-control.spec.ts",
+    "run:matrix": "node scripts/run-matrix.mjs",
+    "reports:validate": "node scripts/validate-reports.mjs",
+    "git:export": "node scripts/export-git-log.mjs",
+    "package:source": "node scripts/package-source.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.55.0",
+    "@types/archiver": "^6.0.3",
+    "@types/node": "^24.3.0",
+    "archiver": "^7.0.1",
+    "typescript": "^5.9.2"
+  }
+}
