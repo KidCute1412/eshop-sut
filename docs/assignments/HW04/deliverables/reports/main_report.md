@@ -142,7 +142,7 @@ The mandatory critique is in `ai_critique.md`. The interaction record is in `ai_
 
 ## 6. Defects and issue tracking
 
-The final runs produced 57 assertion failures across 19 unique logical cases: six FR-06, four FR-10, and nine FR-12 cases. These are documented as runtime-observed candidates in `../bugs/bug_report.md`. No candidate is represented as a filed GitHub defect because no verified public HW04 Issue URL or attached public screenshot has been supplied.
+The final runs produced 57 assertion failures across 19 unique logical cases: six FR-06, four FR-10, and nine FR-12 cases. Agent triage confirmed 17 product defects and rejected two FR-06 feedback candidates because their assertion oracle was too strict. The confirmed defects and authentic screenshots are documented in `../bugs/bug_report.md`; public Issue URLs remain pending.
 
 For every final failure:
 
@@ -174,7 +174,7 @@ The Agent Skills assessment category is currently claimed as 0/10. Complete sour
 ## 10. Limitations and remaining work
 
 - The 51 cases have qualifying selected reports. Each report metadata file records its exact execution revision and command; environment and browser versions are also recorded.
-- The 19 assertion-failing cases require final root-cause deduplication, public GitHub Issues, and authentic Issue screenshots before they can be claimed as submitted defects.
+- Agent triage has completed: 17 confirmed defects have copy-ready packets and 2 candidates were rejected as an oracle gap. Public GitHub Issue URLs still need to be supplied after filing.
 - The prior Firefox `newPage()` failures were eliminated by removing incompatible device options; all final Firefox cases reached assertions.
 - Historical and current AI logs still require complete prompt/output coverage for every generation/review interaction.
 - Environment, browser versions, exact execution revisions, and commands are recorded in each selected report metadata file.

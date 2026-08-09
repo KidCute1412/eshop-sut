@@ -64,8 +64,11 @@ The exported full HW04 history contains nine qualifying `.spec.ts` commits: lega
 | `reports/ai_critique.pdf` | Rendered mandatory critique | Generated and text-validated (1 page) |
 | `reports/ai_audit_report.md` | AI interaction log | Partial; missing historical exact prompts are disclosed |
 | `reports/ai_audit_report.pdf` | Rendered AI audit | Generated and text-validated (5 pages) |
-| `bugs/bug_report.md` | Runtime failure analysis | 19 assertion-failing logical cases documented as Issue-pending candidates |
-| `bugs/issue-register.md` | Test-to-Issue reconciliation | 19 candidates; no public HW04 Issue URL verified |
+| `bugs/bug_report.md` | Runtime failure analysis | 17 agent-confirmed defects, 2 rejected oracle candidates; URLs pending |
+| `bugs/issue-register.md` | Test-to-Issue reconciliation | 17 packets mapped to BUG-001…BUG-017; no public HW04 Issue URL verified |
+| `bugs/triage-decisions.md` | Agent triage audit | All 19 candidates classified with rationale and screenshot path |
+| `bugs/issue-packets/` | Copy-ready GitHub Issue bodies | 17 packets; each includes reproduction, severity and evidence references |
+| `bugs/evidence/` | Authentic runtime evidence | 19 PNG screenshots, 19 traces and per-candidate metadata |
 | `video/demo_video.md` | Main demo plan and link record | Not recorded |
 | `video/vietnamese_narration_script.md` | Vietnamese recording script | Ready for student recording |
 | `video/agent_skill_demo.md` | Optional Agent Skill source/demo record | Source present; end-to-end validation and demo pending |

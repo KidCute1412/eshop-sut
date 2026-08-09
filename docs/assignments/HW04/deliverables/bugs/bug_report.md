@@ -1,8 +1,8 @@
 # HW04 Runtime Failure and Defect-Candidate Report
 
-> **Canonical defect-entry file.** After a candidate is verified and filed, update this file only. Record the
-> deduplicated defect ID, Issue URL, screenshot path, and disposition here; `issue-register.md` is the compact
-> reconciliation index and should be refreshed from this file by the automation agent.
+> **Canonical defect-entry file.** Agent triage has completed: **17 confirmed defects** and **2 rejected candidates**.
+> Update this file only with the public Issue URL after filing; `issue-register.md` is the compact reconciliation
+> index and is refreshed from this file by the automation agent.
 
 ## Evidence status
 
@@ -10,7 +10,9 @@ The nine selected final runs scheduled 153 browser cases: all 153 reached assert
 
 - **57 assertion failures** across **19 unique logical cases**: FR-06 has 18 assertion failures, FR-10 has 12, and FR-12 has 27.
 
-The assertion-failing cases below are runtime-observed defect candidates. No candidate is represented as a filed GitHub defect because no verified public HW04 Issue URL or public Issue screenshot has been supplied. Prior HW02/HW03 issues may be consulted as regression context only; they are not new HW04 Issues.
+The assertion-failing cases below were triaged against the FR requirements, fresh Firefox reruns, and the test-design audit. Seventeen are confirmed defect packets; two are rejected because the feedback oracle is too strict. No public HW04 Issue URL has been supplied yet. Prior HW02/HW03 issues may be consulted as regression context only; they are not new HW04 Issues.
+
+The complete decision table is in [`triage-decisions.md`](triage-decisions.md). Each confirmed defect has a copy-ready packet under `issue-packets/BUG-###/issue-body.md` and authentic evidence under `evidence/HW04-CAND-###/`.
 
 ## Selected evidence
 
@@ -28,25 +30,25 @@ The recurrence column counts assertion failures across all three browsers.
 
 | Candidate | Case | Runtime-observed mismatch | Assertion recurrence | Severity | Public Issue |
 |---|---|---|---:|---|---|
-| `HW04-CAND-001` | `FR06-07` | Required category text `Điện thoại` was not found | 3/3 browsers | Medium | **PENDING** |
-| `HW04-CAND-002` | `FR06-09` | Quantity input lacked required `min="1"` attribute | 3/3 browsers | Medium | **PENDING** |
-| `HW04-CAND-003` | `FR06-11` | First add click left button text as `Thêm vào giỏ hàng`; expected visible feedback | 3/3 browsers | Medium | **PENDING** |
-| `HW04-CAND-004` | `FR06-12` | Valid quantity add left button text unchanged; expected visible feedback | 3/3 browsers | Medium | **PENDING** |
-| `HW04-CAND-005` | `FR06-13` | Quantity `0` remained HTML-valid | 3/3 browsers | High | **PENDING** |
-| `HW04-CAND-006` | `FR06-14` | Quantity `-1` remained HTML-valid | 3/3 browsers | High | **PENDING** |
-| `HW04-CAND-007` | `FR10-06` | After `confirmed → shipping`, Customer UI still exposed one cancel button | 3/3 browsers | Medium | **PENDING** |
-| `HW04-CAND-008` | `FR10-11` | Shipping-order UI still exposed one cancel button after rejected Admin cancellation | 3/3 browsers | Medium | **PENDING** |
-| `HW04-CAND-009` | `FR10-12` | User cancellation of `shipping` returned 200 success instead of rejection | 3/3 browsers | High | **PENDING** |
-| `HW04-CAND-010` | `FR10-16` | `canceled → delivered` returned 200 instead of preserving the final state | 3/3 browsers | High | **PENDING** |
-| `HW04-CAND-011` | `FR12-03` | User JWT read `/api/admin/users` with 200 and received user data | 3/3 browsers | Critical | **PENDING** |
-| `HW04-CAND-012` | `FR12-06` | User JWT read `/api/admin/orders` with 200 | 3/3 browsers | Critical | **PENDING** |
-| `HW04-CAND-013` | `FR12-08` | Anonymous `POST /api/products` returned 200 and created a product | 3/3 browsers | Critical | **PENDING** |
-| `HW04-CAND-014` | `FR12-09` | User JWT `POST /api/products` returned 200 and created a product | 3/3 browsers | Critical | **PENDING** |
-| `HW04-CAND-015` | `FR12-11` | Anonymous `PUT /api/products/999999` returned 200 | 3/3 browsers | Critical | **PENDING** |
-| `HW04-CAND-016` | `FR12-12` | User JWT `DELETE /api/products/999999` returned 200 | 3/3 browsers | Critical | **PENDING** |
-| `HW04-CAND-017` | `FR12-14` | User JWT `POST /api/categories` returned 200 and created a category | 3/3 browsers | Critical | **PENDING** |
-| `HW04-CAND-018` | `FR12-17` | User JWT `POST /api/admin/coupons` returned 200 and created a coupon | 3/3 browsers | Critical | **PENDING** |
-| `HW04-CAND-019` | `FR12-19` | User JWT reached import validation and returned 400, not authorization rejection 403 | 3/3 browsers | Critical | **PENDING** |
+| `HW04-CAND-001` | `FR06-07` | Required category text `Điện thoại` was not found | 3/3 browsers | Medium | `BUG-001 — URL pending` |
+| `HW04-CAND-002` | `FR06-09` | Quantity input lacked required `min="1"` attribute | 3/3 browsers | Medium | `BUG-002 — URL pending` |
+| `HW04-CAND-003` | `FR06-11` | First add click left button text as `Thêm vào giỏ hàng`; expected visible feedback | 3/3 browsers | Medium | Rejected — feedback oracle gap |
+| `HW04-CAND-004` | `FR06-12` | Valid quantity add left button text unchanged; expected visible feedback | 3/3 browsers | Medium | Rejected — feedback oracle gap |
+| `HW04-CAND-005` | `FR06-13` | Quantity `0` remained HTML-valid | 3/3 browsers | High | `BUG-003 — URL pending` |
+| `HW04-CAND-006` | `FR06-14` | Quantity `-1` remained HTML-valid | 3/3 browsers | High | `BUG-004 — URL pending` |
+| `HW04-CAND-007` | `FR10-06` | After `confirmed → shipping`, Customer UI still exposed one cancel button | 3/3 browsers | Medium | `BUG-005 — URL pending` |
+| `HW04-CAND-008` | `FR10-11` | Shipping-order UI still exposed one cancel button after rejected Admin cancellation | 3/3 browsers | Medium | `BUG-006 — URL pending` |
+| `HW04-CAND-009` | `FR10-12` | User cancellation of `shipping` returned 200 success instead of rejection | 3/3 browsers | High | `BUG-007 — URL pending` |
+| `HW04-CAND-010` | `FR10-16` | `canceled → delivered` returned 200 instead of preserving the final state | 3/3 browsers | High | `BUG-008 — URL pending` |
+| `HW04-CAND-011` | `FR12-03` | User JWT read `/api/admin/users` with 200 and received user data | 3/3 browsers | Critical | `BUG-009 — URL pending` |
+| `HW04-CAND-012` | `FR12-06` | User JWT read `/api/admin/orders` with 200 | 3/3 browsers | Critical | `BUG-010 — URL pending` |
+| `HW04-CAND-013` | `FR12-08` | Anonymous `POST /api/products` returned 200 and created a product | 3/3 browsers | Critical | `BUG-011 — URL pending` |
+| `HW04-CAND-014` | `FR12-09` | User JWT `POST /api/products` returned 200 and created a product | 3/3 browsers | Critical | `BUG-012 — URL pending` |
+| `HW04-CAND-015` | `FR12-11` | Anonymous `PUT /api/products/999999` returned 200 | 3/3 browsers | Critical | `BUG-013 — URL pending` |
+| `HW04-CAND-016` | `FR12-12` | User JWT `DELETE /api/products/999999` returned 200 | 3/3 browsers | Critical | `BUG-014 — URL pending` |
+| `HW04-CAND-017` | `FR12-14` | User JWT `POST /api/categories` returned 200 and created a category | 3/3 browsers | Critical | `BUG-015 — URL pending` |
+| `HW04-CAND-018` | `FR12-17` | User JWT `POST /api/admin/coupons` returned 200 and created a coupon | 3/3 browsers | Critical | `BUG-016 — URL pending` |
+| `HW04-CAND-019` | `FR12-19` | User JWT reached import validation and returned 400, not authorization rejection 403 | 3/3 browsers | Critical | `BUG-017 — URL pending` |
 
 Severity is an initial risk-based classification grounded in FR-06/FR-10/FR-12 impact. The student must confirm it during GitHub Issue triage.
 

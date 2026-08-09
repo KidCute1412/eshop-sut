@@ -1,0 +1,8 @@
+{
+  "defectId": "BUG-008",
+  "candidateIds": [
+    "HW04-CAND-010"
+  ],
+  "issueUrl": null,
+  "screenshot": "bugs/evidence/HW04-CAND-010/screenshot.png"
+}

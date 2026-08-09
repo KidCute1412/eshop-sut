@@ -1,0 +1,13 @@
+{
+  "candidateId": "HW04-CAND-013",
+  "feature": "FR-12",
+  "caseId": "FR12-08",
+  "browser": "Firefox 141.0 headless",
+  "sourceRevision": "6b884900be153b5af78a4865c9cca98cedcd9fc9",
+  "command": "npx playwright test tests/fr12-access-control.spec.ts --project=firefox --grep FR12-08",
+  "exitCode": 1,
+  "observedFailure": true,
+  "screenshot": "bugs/evidence/HW04-CAND-013/screenshot.png",
+  "trace": "bugs/evidence/HW04-CAND-013/trace.zip",
+  "capturedAt": "2026-08-09T22:28:04.438Z"
+}

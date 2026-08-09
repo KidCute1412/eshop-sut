@@ -15,6 +15,7 @@
     "reports:validate": "node scripts/validate-reports.mjs",
     "reports:pdf": "node scripts/render-pdfs.mjs",
     "traceability:generate": "node scripts/generate-traceability.mjs",
+    "bugs:prepare": "node scripts/prepare-bug-evidence.mjs",
     "git:export": "node scripts/export-git-log.mjs",
     "package:source": "node scripts/package-source.mjs",
     "package:submission": "node scripts/package-submission.mjs"

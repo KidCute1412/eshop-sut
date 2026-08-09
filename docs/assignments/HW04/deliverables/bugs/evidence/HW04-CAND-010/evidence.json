@@ -1,0 +1,13 @@
+{
+  "candidateId": "HW04-CAND-010",
+  "feature": "FR-10",
+  "caseId": "FR10-16",
+  "browser": "Firefox 141.0 headless",
+  "sourceRevision": "6b884900be153b5af78a4865c9cca98cedcd9fc9",
+  "command": "npx playwright test tests/fr10-order-state-machine.spec.ts --project=firefox --grep FR10-16",
+  "exitCode": 1,
+  "observedFailure": true,
+  "screenshot": "bugs/evidence/HW04-CAND-010/screenshot.png",
+  "trace": "bugs/evidence/HW04-CAND-010/trace.zip",
+  "capturedAt": "2026-08-09T22:27:40.535Z"
+}
