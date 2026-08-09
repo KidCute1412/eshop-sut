@@ -1,5 +1,6 @@
 import { expect, test, type APIRequestContext, type APIResponse } from "@playwright/test";
 import { ApiDriver } from "../src/api-driver.js";
+import { attachCaseContract } from "../src/case-evidence.js";
 import { loadCases } from "../src/data-loader.js";
 import type { AccessControlCase, AuthMode, CleanupKind } from "../src/types.js";
 
@@ -45,6 +46,7 @@ test.describe("FR-12 Access Control", () => {
 
   for (const row of cases) {
     test(`${row.id} [${row.priority}] ${row.auth} ${row.method} ${row.path}: ${row.title}`, async ({ page, request }, testInfo) => {
+      await attachCaseContract(testInfo, row);
       const traceability = row.partition.join(", ");
       testInfo.annotations.push(
         { type: "requirement", description: "FR-12" },

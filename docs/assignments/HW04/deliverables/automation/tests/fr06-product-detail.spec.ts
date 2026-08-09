@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { attachCaseContract } from "../src/case-evidence.js";
 import { loadCases } from "../src/data-loader.js";
 import type { ProductDetailCase } from "../src/types.js";
 
@@ -11,6 +12,7 @@ function digits(value: string): string {
 test.describe("FR-06 Product Detail", () => {
   for (const row of cases) {
     test(`${row.id} [${row.priority}] ${row.title}`, async ({ page }, testInfo) => {
+      await attachCaseContract(testInfo, row);
       const traceability = [...row.partition, ...(row.boundary ?? [])].join(", ");
       testInfo.annotations.push(
         { type: "requirement", description: "FR-06" },
