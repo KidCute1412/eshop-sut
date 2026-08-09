@@ -10,7 +10,7 @@ The final reports contain 19 unique logical candidates. Agent triage confirmed 1
 
 Current verified public HW04 Issue count: **0**.
 
-| Candidate | Requirement | Case | Assertion evidence | Issue state | Public Issue URL | Screenshot verified |
+| Candidate | Requirement | Case | Assertion evidence | Issue state | Public Issue URL | Local screenshot captured |
 |---|---|---|---|---|---|---|
 | `HW04-CAND-001` | FR-06 | `FR06-07` | Chromium, Firefox, WebKit | Confirmed → BUG-001 | URL pending | Yes |
 | `HW04-CAND-002` | FR-06 | `FR06-09` | Chromium, Firefox, WebKit | Confirmed → BUG-002 | URL pending | Yes |
