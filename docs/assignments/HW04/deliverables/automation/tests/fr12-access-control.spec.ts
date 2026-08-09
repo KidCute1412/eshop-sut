@@ -45,7 +45,13 @@ test.describe("FR-12 Access Control", () => {
 
   for (const row of cases) {
     test(`${row.id} [${row.priority}] ${row.auth} ${row.method} ${row.path}: ${row.title}`, async ({ page, request }, testInfo) => {
-      await test.step(`Traceability: ${row.partition.join(", ")}`, async () => {});
+      const traceability = row.partition.join(", ");
+      testInfo.annotations.push(
+        { type: "requirement", description: "FR-12" },
+        { type: "priority", description: row.priority },
+        { type: "traceability", description: traceability },
+      );
+      await test.step(`Traceability: ${traceability}`, async () => {});
       const token = tokenFor(row.auth, adminToken, userToken);
       let response: APIResponse | undefined;
       let createdId: number | undefined;

@@ -10,8 +10,14 @@ function digits(value: string): string {
 
 test.describe("FR-06 Product Detail", () => {
   for (const row of cases) {
-    test(`${row.id} [${row.priority}] ${row.title}`, async ({ page }) => {
-      await test.step(`Traceability: ${[...row.partition, ...(row.boundary ?? [])].join(", ")}`, async () => {});
+    test(`${row.id} [${row.priority}] ${row.title}`, async ({ page }, testInfo) => {
+      const traceability = [...row.partition, ...(row.boundary ?? [])].join(", ");
+      testInfo.annotations.push(
+        { type: "requirement", description: "FR-06" },
+        { type: "priority", description: row.priority },
+        { type: "traceability", description: traceability },
+      );
+      await test.step(`Traceability: ${traceability}`, async () => {});
       await page.goto(`/product/${row.productId}`);
       await expect(page).toHaveURL(new RegExp(`/product/${row.productId}/?$`));
 

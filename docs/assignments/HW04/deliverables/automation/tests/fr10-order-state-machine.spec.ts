@@ -25,8 +25,14 @@ test.describe("FR-10 Order State Machine", () => {
   });
 
   for (const row of cases) {
-    test(`${row.id} [${row.priority}] ${row.from} -> ${row.to}: ${row.title}`, async ({ page, request }) => {
-      await test.step(`Traceability: ${row.partition.join(", ")}`, async () => {});
+    test(`${row.id} [${row.priority}] ${row.from} -> ${row.to}: ${row.title}`, async ({ page, request }, testInfo) => {
+      const traceability = row.partition.join(", ");
+      testInfo.annotations.push(
+        { type: "requirement", description: "FR-10" },
+        { type: "priority", description: row.priority },
+        { type: "traceability", description: traceability },
+      );
+      await test.step(`Traceability: ${traceability}`, async () => {});
       const api = new ApiDriver(request);
       const orderId = await api.arrangeOrder(row.setup, userToken, adminToken);
       expect((await api.getOrder(orderId)).status, "arranged source state").toBe(row.from);
