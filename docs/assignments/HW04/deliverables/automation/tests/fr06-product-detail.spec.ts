@@ -13,10 +13,13 @@ test.describe("FR-06 Product Detail", () => {
     test(`${row.id} [${row.priority}] ${row.title}`, async ({ page }) => {
       await test.step(`Traceability: ${[...row.partition, ...(row.boundary ?? [])].join(", ")}`, async () => {});
       await page.goto(`/product/${row.productId}`);
+      await expect(page).toHaveURL(new RegExp(`/product/${row.productId}/?$`));
 
       const main = page.locator("main");
       const quantity = main.getByRole("spinbutton");
-      const addButton = main.getByRole("button");
+      const addButton = main.getByRole("button", {
+        name: /Thêm vào giỏ hàng|Đã thêm/i,
+      });
 
       switch (row.assertion) {
         case "full-content": {
@@ -53,6 +56,7 @@ test.describe("FR-06 Product Detail", () => {
           await expect(main.getByText(row.expected!.category!, { exact: true })).toBeVisible();
           break;
         case "quantity-type":
+          await expect(quantity).toBeVisible();
           await expect(quantity).toHaveAttribute("type", "number");
           break;
         case "quantity-min":
