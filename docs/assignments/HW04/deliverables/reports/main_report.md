@@ -21,7 +21,7 @@ The deliverables suite defines 51 external-data cases: 16 for FR-06, 16 for FR-1
 
 FR-06 produced 30 passes and 18 assertion failures across 48 executions. FR-10 produced 36 passes and 12 assertion failures across 48 executions. FR-12 produced 30 passes and 27 assertion failures across 57 executions.
 
-Firefox was rerun headless with an option-free Playwright context after isolating the incompatible `Desktop Firefox` device options that caused the prior `newPage()` failures. All 51 Firefox cases reached assertions. The Markdown/PDF report set is complete. No public HW04 Issue URL or demo video is currently verified, and the four-day Git-history span remains noncompliant.
+Firefox was rerun headless with an option-free Playwright context after isolating the incompatible `Desktop Firefox` device options that caused the prior `newPage()` failures. All 51 Firefox cases reached assertions. The Markdown/PDF report set is complete. Seventeen confirmed HW04 defects now have public Issue URLs; the mandatory demo video is still pending, and the four-day Git-history span remains noncompliant.
 
 The full HW04 Git history contains nine qualifying test-script commits across 27 July and 9 August 2026, so the commit-count minimum is met. The separate four-calendar-day requirement remains noncompliant. This report does not infer, manufacture, or backdate missing history.
 
@@ -142,7 +142,7 @@ The mandatory critique is in `ai_critique.md`. The interaction record is in `ai_
 
 ## 6. Defects and issue tracking
 
-The final runs produced 57 assertion failures across 19 unique logical cases: six FR-06, four FR-10, and nine FR-12 cases. Agent triage confirmed 17 product defects and rejected two FR-06 feedback candidates because their assertion oracle was too strict. The confirmed defects and authentic screenshots are documented in `../bugs/bug_report.md`; public Issue URLs remain pending.
+The final runs produced 57 assertion failures across 19 unique logical cases: six FR-06, four FR-10, and nine FR-12 cases. Agent triage confirmed 17 product defects and rejected two FR-06 feedback candidates because their assertion oracle was too strict. The confirmed defects, authentic screenshots, and 17 public Issue URLs are documented in `../bugs/bug_report.md`.
 
 For every final failure:
 
@@ -174,11 +174,11 @@ The Agent Skills assessment category is currently claimed as 0/10. Complete sour
 ## 10. Limitations and remaining work
 
 - The 51 cases have qualifying selected reports. Each report metadata file records its exact execution revision and command; environment and browser versions are also recorded.
-- Agent triage has completed: 17 confirmed defects have copy-ready packets and 2 candidates were rejected as an oracle gap. Public GitHub Issue URLs still need to be supplied after filing.
+- Agent triage has completed: 17 confirmed defects have copy-ready packets and public Issue URLs; 2 candidates were rejected as an oracle gap.
 - The prior Firefox `newPage()` failures were eliminated by removing incompatible device options; all final Firefox cases reached assertions.
 - Historical and current AI logs still require complete prompt/output coverage for every generation/review interaction.
 - Environment, browser versions, exact execution revisions, and commands are recorded in each selected report metadata file.
-- No HW04 public Issue URL or final defect screenshot is verified.
+- Seventeen HW04 public Issue URLs and local defect screenshots are recorded; logged-out attachment verification remains a final manual check.
 - Both video links are absent; the main demo is mandatory, and Agent Skill points cannot be claimed from source alone.
 - Historical AI logging lacks at least one exact prompt and timestamp.
 - Nine qualifying commits are present across two days; the four-calendar-day history requirement remains unsatisfied.
@@ -199,6 +199,6 @@ This table is reconciled from the nine selected final JSON reports and their env
 | Environment failures within recorded failures | 0 | 0 | 0 | **0** |
 | Assertion failures | 18 | 12 | 27 | **57** |
 | Unique assertion-failing logical cases | 6 | 4 | 9 | **19** |
-| Verified public HW04 Issues | 0 | 0 | 0 | **0** |
+| Verified public HW04 Issues | 4 | 4 | 9 | **17** |
 
-The arithmetic reconciles: `96 + 57 = 153`. Issue counts must be updated only from verified public URLs.
+The arithmetic reconciles: `96 + 57 = 153`. Issue counts reconcile to 17 URLs: FR-06 = 4, FR-10 = 4, and FR-12 = 9.

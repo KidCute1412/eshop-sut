@@ -6,31 +6,31 @@
 
 ## Current status
 
-The final reports contain 19 unique logical candidates. Agent triage confirmed 17 defects and rejected two feedback-oracle candidates. No verified public HW04 Issue URL has been supplied.
+The final reports contain 19 unique logical candidates. Agent triage confirmed 17 defects and rejected two feedback-oracle candidates. All 17 confirmed defects now have public GitHub Issue URLs recorded below.
 
-Current verified public HW04 Issue count: **0**.
+Current verified public HW04 Issue count: **17**.
 
 | Candidate | Requirement | Case | Assertion evidence | Issue state | Public Issue URL | Local screenshot captured |
 |---|---|---|---|---|---|---|
-| `HW04-CAND-001` | FR-06 | `FR06-07` | Chromium, Firefox, WebKit | Confirmed → BUG-001 | URL pending | Yes |
-| `HW04-CAND-002` | FR-06 | `FR06-09` | Chromium, Firefox, WebKit | Confirmed → BUG-002 | URL pending | Yes |
+| `HW04-CAND-001` | FR-06 | `FR06-07` | Chromium, Firefox, WebKit | Confirmed → BUG-001 | https://github.com/KidCute1412/eshop-sut/issues/141 | Yes |
+| `HW04-CAND-002` | FR-06 | `FR06-09` | Chromium, Firefox, WebKit | Confirmed → BUG-002 | https://github.com/KidCute1412/eshop-sut/issues/142 | Yes |
 | `HW04-CAND-003` | FR-06 | `FR06-11` | Chromium, Firefox, WebKit | Rejected — oracle gap | N/A | Yes |
 | `HW04-CAND-004` | FR-06 | `FR06-12` | Chromium, Firefox, WebKit | Rejected — oracle gap | N/A | Yes |
-| `HW04-CAND-005` | FR-06 | `FR06-13` | Chromium, Firefox, WebKit | Confirmed → BUG-003 | URL pending | Yes |
-| `HW04-CAND-006` | FR-06 | `FR06-14` | Chromium, Firefox, WebKit | Confirmed → BUG-004 | URL pending | Yes |
-| `HW04-CAND-007` | FR-10 | `FR10-06` | Chromium, Firefox, WebKit | Confirmed → BUG-005 | URL pending | Yes |
-| `HW04-CAND-008` | FR-10 | `FR10-11` | Chromium, Firefox, WebKit | Confirmed → BUG-006 | URL pending | Yes |
-| `HW04-CAND-009` | FR-10 | `FR10-12` | Chromium, Firefox, WebKit | Confirmed → BUG-007 | URL pending | Yes |
-| `HW04-CAND-010` | FR-10 | `FR10-16` | Chromium, Firefox, WebKit | Confirmed → BUG-008 | URL pending | Yes |
-| `HW04-CAND-011` | FR-12 | `FR12-03` | Chromium, Firefox, WebKit | Confirmed → BUG-009 | URL pending | Yes |
-| `HW04-CAND-012` | FR-12 | `FR12-06` | Chromium, Firefox, WebKit | Confirmed → BUG-010 | URL pending | Yes |
-| `HW04-CAND-013` | FR-12 | `FR12-08` | Chromium, Firefox, WebKit | Confirmed → BUG-011 | URL pending | Yes |
-| `HW04-CAND-014` | FR-12 | `FR12-09` | Chromium, Firefox, WebKit | Confirmed → BUG-012 | URL pending | Yes |
-| `HW04-CAND-015` | FR-12 | `FR12-11` | Chromium, Firefox, WebKit | Confirmed → BUG-013 | URL pending | Yes |
-| `HW04-CAND-016` | FR-12 | `FR12-12` | Chromium, Firefox, WebKit | Confirmed → BUG-014 | URL pending | Yes |
-| `HW04-CAND-017` | FR-12 | `FR12-14` | Chromium, Firefox, WebKit | Confirmed → BUG-015 | URL pending | Yes |
-| `HW04-CAND-018` | FR-12 | `FR12-17` | Chromium, Firefox, WebKit | Confirmed → BUG-016 | URL pending | Yes |
-| `HW04-CAND-019` | FR-12 | `FR12-19` | Chromium, Firefox, WebKit | Confirmed → BUG-017 | URL pending | Yes |
+| `HW04-CAND-005` | FR-06 | `FR06-13` | Chromium, Firefox, WebKit | Confirmed → BUG-003 | https://github.com/KidCute1412/eshop-sut/issues/143 | Yes |
+| `HW04-CAND-006` | FR-06 | `FR06-14` | Chromium, Firefox, WebKit | Confirmed → BUG-004 | https://github.com/KidCute1412/eshop-sut/issues/144 | Yes |
+| `HW04-CAND-007` | FR-10 | `FR10-06` | Chromium, Firefox, WebKit | Confirmed → BUG-005 | https://github.com/KidCute1412/eshop-sut/issues/145 | Yes |
+| `HW04-CAND-008` | FR-10 | `FR10-11` | Chromium, Firefox, WebKit | Confirmed → BUG-006 | https://github.com/KidCute1412/eshop-sut/issues/146 | Yes |
+| `HW04-CAND-009` | FR-10 | `FR10-12` | Chromium, Firefox, WebKit | Confirmed → BUG-007 | https://github.com/KidCute1412/eshop-sut/issues/147 | Yes |
+| `HW04-CAND-010` | FR-10 | `FR10-16` | Chromium, Firefox, WebKit | Confirmed → BUG-008 | https://github.com/KidCute1412/eshop-sut/issues/148 | Yes |
+| `HW04-CAND-011` | FR-12 | `FR12-03` | Chromium, Firefox, WebKit | Confirmed → BUG-009 | https://github.com/KidCute1412/eshop-sut/issues/149 | Yes |
+| `HW04-CAND-012` | FR-12 | `FR12-06` | Chromium, Firefox, WebKit | Confirmed → BUG-010 | https://github.com/KidCute1412/eshop-sut/issues/150 | Yes |
+| `HW04-CAND-013` | FR-12 | `FR12-08` | Chromium, Firefox, WebKit | Confirmed → BUG-011 | https://github.com/KidCute1412/eshop-sut/issues/151 | Yes |
+| `HW04-CAND-014` | FR-12 | `FR12-09` | Chromium, Firefox, WebKit | Confirmed → BUG-012 | https://github.com/KidCute1412/eshop-sut/issues/152 | Yes |
+| `HW04-CAND-015` | FR-12 | `FR12-11` | Chromium, Firefox, WebKit | Confirmed → BUG-013 | https://github.com/KidCute1412/eshop-sut/issues/153 | Yes |
+| `HW04-CAND-016` | FR-12 | `FR12-12` | Chromium, Firefox, WebKit | Confirmed → BUG-014 | https://github.com/KidCute1412/eshop-sut/issues/154 | Yes |
+| `HW04-CAND-017` | FR-12 | `FR12-14` | Chromium, Firefox, WebKit | Confirmed → BUG-015 | https://github.com/KidCute1412/eshop-sut/issues/155 | Yes |
+| `HW04-CAND-018` | FR-12 | `FR12-17` | Chromium, Firefox, WebKit | Confirmed → BUG-016 | https://github.com/KidCute1412/eshop-sut/issues/156 | Yes |
+| `HW04-CAND-019` | FR-12 | `FR12-19` | Chromium, Firefox, WebKit | Confirmed → BUG-017 | https://github.com/KidCute1412/eshop-sut/issues/157 | Yes |
 
 `ENV-FIREFOX-NEWPAGE` is retained only as historical diagnosis; the selected final Firefox rerun reached all 51 assertions after the project-context fix. It is not an HW04 SUT defect.
 
@@ -46,7 +46,6 @@ Current verified public HW04 Issue count: **0**.
 
 ## Final Issue mapping
 
-The 17 confirmed defects already have complete copy-ready packets under `issue-packets/BUG-001/` through
-`issue-packets/BUG-017/`. Their only intentionally incomplete field is the public GitHub URL, which is supplied
-after the student files each Issue. The canonical URL entry belongs in `bug_report.md`; this index is refreshed from
-that file after URLs are returned.
+The 17 confirmed defects have complete copy-ready packets under `issue-packets/BUG-001/` through
+`issue-packets/BUG-017/`. Their public GitHub URLs are now recorded in this index and the canonical
+`bug_report.md` table.

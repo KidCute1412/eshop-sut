@@ -1,6 +1,6 @@
 # HW04 Agent Triage Decisions
 
-Generated from fresh candidate reruns at revision `6b884900be153b5af78a4865c9cca98cedcd9fc9`. The agent classified each candidate using the requirement oracle, runtime result, and test-design audit. These are not public GitHub Issues until a packet is filed by the student.
+Generated from fresh candidate reruns at revision `6b884900be153b5af78a4865c9cca98cedcd9fc9`. The agent classified each candidate using the requirement oracle, runtime result, and test-design audit. The 17 confirmed rows now map to the public Issue URLs in `bug_report.md` and `issue-register.md`.
 
 | Candidate | Case | Decision | Defect | Rationale | Screenshot |
 |---|---|---|---|---|---|

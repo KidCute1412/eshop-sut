@@ -44,7 +44,7 @@ This submission excludes Pool D/mobile. The requirement oracle is the repository
 | Assertion failures | 57 across 19 unique logical cases | FR-06: 18; FR-10: 12; FR-12: 27 |
 | Environment failures | 0 | Firefox context creation fixed by removing incompatible device options |
 | Separate final HTML/JSON/metadata report directories | 9 validated | Complete selected set under `automation/reports/` |
-| HW04 defects with verified public Issue URLs | 0 | Actual verified total only |
+| HW04 defects with verified public Issue URLs | 17 | BUG-001…BUG-017; rejected candidates excluded |
 | Qualifying test-script commits | 9 | Count met; two calendar days, so four-day span not met |
 | Main demo videos | 0 | 1 unlisted video, at least 5 minutes |
 
@@ -64,8 +64,8 @@ The exported full HW04 history contains nine qualifying `.spec.ts` commits: lega
 | `reports/ai_critique.pdf` | Rendered mandatory critique | Generated and text-validated (1 page) |
 | `reports/ai_audit_report.md` | AI interaction log | Partial; missing historical exact prompts are disclosed |
 | `reports/ai_audit_report.pdf` | Rendered AI audit | Generated and text-validated (5 pages) |
-| `bugs/bug_report.md` | Runtime failure analysis | 17 agent-confirmed defects, 2 rejected oracle candidates; URLs pending |
-| `bugs/issue-register.md` | Test-to-Issue reconciliation | 17 packets mapped to BUG-001…BUG-017; no public HW04 Issue URL verified |
+| `bugs/bug_report.md` | Runtime failure analysis | 17 agent-confirmed defects, 2 rejected oracle candidates; 17 Issue URLs recorded |
+| `bugs/issue-register.md` | Test-to-Issue reconciliation | 17 packets mapped to BUG-001…BUG-017; 17 public Issue URLs recorded |
 | `bugs/triage-decisions.md` | Agent triage audit | All 19 candidates classified with rationale and screenshot path |
 | `bugs/issue-packets/` | Copy-ready GitHub Issue bodies | 17 packets; each includes reproduction, severity and evidence references |
 | `bugs/evidence/` | Authentic runtime evidence | 19 PNG screenshots, 19 traces and per-candidate metadata |
@@ -85,9 +85,9 @@ The following **provisional** score reflects only evidence currently present in 
 
 | No. | Criterion | Maximum | Self-assessed grade | Evidence |
 |---:|---|---:|---:|---|
-| 1 | Task 1 — Feature A (FR-06) | 25 | **21** | 16 cases × 3 browsers and diagnostics; Issue evidence and one cart-state oracle gap remain |
-| 2 | Task 1 — Feature B (FR-10) | 25 | **22** | 16 cases × 3 browsers; exact-cell locator correction and rerun documented; Issues pending |
-| 3 | Task 1 — Feature C (FR-12) | 25 | **20** | 19 cases × 3 browsers; access-control candidates retained; cleanup verification and Issues pending |
+| 1 | Task 1 — Feature A (FR-06) | 25 | **21** | 16 cases × 3 browsers; four confirmed Issue URLs and two oracle-gap candidates documented |
+| 2 | Task 1 — Feature B (FR-10) | 25 | **22** | 16 cases × 3 browsers; four confirmed Issue URLs documented |
+| 3 | Task 1 — Feature C (FR-12) | 25 | **20** | 19 cases × 3 browsers; nine confirmed Issue URLs documented |
 | 4 | Task 2 — Demo video | 15 | **0** | Mandatory student-narrated URL not supplied |
 | 5 | Agent Skills | 10 | **0 at this stage** | Skill source exists, but no qualifying execution/demo URL is verified |
 |  | **Total** | **100** | **63 / 100 (provisional)** | Current package suffix: `063`; recalculate after manual evidence |
