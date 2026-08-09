@@ -26,8 +26,8 @@ The recurrence column counts assertion failures across all three browsers.
 |---|---|---|---:|---|---|
 | `HW04-CAND-001` | `FR06-07` | Required category text `Điện thoại` was not found | 3/3 browsers | Medium | **PENDING** |
 | `HW04-CAND-002` | `FR06-09` | Quantity input lacked required `min="1"` attribute | 3/3 browsers | Medium | **PENDING** |
-| `HW04-CAND-003` | `FR06-11` | First add click left button text as `Thêm vào giỏ hàng`; expected visible feedback | 2/3 browsers; Firefox environment failure | Medium | **PENDING** |
-| `HW04-CAND-004` | `FR06-12` | Valid quantity add left button text unchanged; expected visible feedback | 2/3 browsers; Firefox environment failure | Medium | **PENDING** |
+| `HW04-CAND-003` | `FR06-11` | First add click left button text as `Thêm vào giỏ hàng`; expected visible feedback | 3/3 browsers | Medium | **PENDING** |
+| `HW04-CAND-004` | `FR06-12` | Valid quantity add left button text unchanged; expected visible feedback | 3/3 browsers | Medium | **PENDING** |
 | `HW04-CAND-005` | `FR06-13` | Quantity `0` remained HTML-valid | 3/3 browsers | High | **PENDING** |
 | `HW04-CAND-006` | `FR06-14` | Quantity `-1` remained HTML-valid | 3/3 browsers | High | **PENDING** |
 | `HW04-CAND-007` | `FR10-06` | After `confirmed → shipping`, Customer UI still exposed one cancel button | 3/3 browsers | Medium | **PENDING** |
@@ -36,11 +36,11 @@ The recurrence column counts assertion failures across all three browsers.
 | `HW04-CAND-010` | `FR10-16` | `canceled → delivered` returned 200 instead of preserving the final state | 3/3 browsers | High | **PENDING** |
 | `HW04-CAND-011` | `FR12-03` | User JWT read `/api/admin/users` with 200 and received user data | 3/3 browsers | Critical | **PENDING** |
 | `HW04-CAND-012` | `FR12-06` | User JWT read `/api/admin/orders` with 200 | 3/3 browsers | Critical | **PENDING** |
-| `HW04-CAND-013` | `FR12-08` | Anonymous `POST /api/products` returned 200 and created a product | 2/3 browsers; Firefox environment failure | Critical | **PENDING** |
+| `HW04-CAND-013` | `FR12-08` | Anonymous `POST /api/products` returned 200 and created a product | 3/3 browsers | Critical | **PENDING** |
 | `HW04-CAND-014` | `FR12-09` | User JWT `POST /api/products` returned 200 and created a product | 3/3 browsers | Critical | **PENDING** |
-| `HW04-CAND-015` | `FR12-11` | Anonymous `PUT /api/products/999999` returned 200 | 2/3 browsers; Firefox environment failure | Critical | **PENDING** |
+| `HW04-CAND-015` | `FR12-11` | Anonymous `PUT /api/products/999999` returned 200 | 3/3 browsers | Critical | **PENDING** |
 | `HW04-CAND-016` | `FR12-12` | User JWT `DELETE /api/products/999999` returned 200 | 3/3 browsers | Critical | **PENDING** |
-| `HW04-CAND-017` | `FR12-14` | User JWT `POST /api/categories` returned 200 and created a category | 2/3 browsers; Firefox environment failure | Critical | **PENDING** |
+| `HW04-CAND-017` | `FR12-14` | User JWT `POST /api/categories` returned 200 and created a category | 3/3 browsers | Critical | **PENDING** |
 | `HW04-CAND-018` | `FR12-17` | User JWT `POST /api/admin/coupons` returned 200 and created a coupon | 3/3 browsers | Critical | **PENDING** |
 | `HW04-CAND-019` | `FR12-19` | User JWT reached import validation and returned 400, not authorization rejection 403 | 3/3 browsers | Critical | **PENDING** |
 
@@ -48,17 +48,17 @@ Severity is an initial risk-based classification grounded in FR-06/FR-10/FR-12 i
 
 ## Environment finding — not an SUT defect
 
-### `ENV-FIREFOX-NEWPAGE` — intermittent Firefox page setup timeout
+### `ENV-FIREFOX-NEWPAGE` — superseded setup diagnosis
 
 | Field | Value |
 |---|---|
-| Environment | Playwright 1.55.0; Firefox 141.0 headful; Windows 10 Home Single Language / NT `10.0.26200.0` |
+| Environment | Playwright 1.55.0; Firefox 141.0 headless; Windows 10 Home Single Language / NT `10.0.26200.0` |
 | Symptom | `Test timeout of 30000ms exceeded while setting up "page"` and `browserContext.newPage: Test timeout of 30000ms exceeded` |
-| Affected executions | 51 total: FR-06 16, FR-10 16, FR-12 19 |
+| Affected executions | Historical diagnostic runs only; excluded from the nine selected final runs |
 | Classification | Environment/runtime failure; excluded from SUT defect candidates |
 | Rationale | Failure occurred before the test could observe the target application behavior |
 
-Headful Firefox was used because headless Firefox failed before `newPage()` in this environment. The remaining intermittent failures are preserved in the reports and are not converted into passes, assertion failures, or bugs.
+The earlier failures were traced to the `Desktop Firefox` device options. The final option-free headless rerun reached all 51 Firefox assertions, so this diagnostic record is not part of the final failure totals and is not an SUT defect.
 
 ## Human-correction evidence
 

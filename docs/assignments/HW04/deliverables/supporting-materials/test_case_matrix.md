@@ -12,7 +12,7 @@
 | FR-12 | 19 | 57 | 57 | 27 | 0 |
 | **Total** | **51** | **153** | **153** | **57** | **0** |
 
-Each logical case is automated on all three configured browser projects. The complete external row is the test contract; the final Firefox reports were generated from automation/SUT revision `a390bc125713a1759443a4e84929641d432a45dc`, and each selected report includes its exact revision in metadata.
+Each logical case is automated on all three configured browser projects. The complete external row is the test contract; each selected report records its own automation/SUT revision in run metadata (a single revision is shown here only when SUT_REVISION is explicitly supplied).
 
 ## FR-06
 

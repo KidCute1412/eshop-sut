@@ -47,6 +47,6 @@
 - HTML reports prove the recorded execution only when their full assets and metadata are preserved.
 - Traces/logs support diagnosis but do not replace a user-visible oracle where the requirement is visual.
 - Source code supports design and root-cause hypotheses; it does not justify `Pass` or `Fail`.
-- The selected reports were produced from exact revision `656991a598bafe43cbed13b54bf1ac3f429c30f2`; each report metadata file records that revision.
+- Each selected report metadata file records its own exact automation/SUT revision. The final Firefox rerun is pinned to `a390bc125713a1759443a4e84929641d432a45dc`; Chromium/WebKit retain their recorded revision `656991a598bafe43cbed13b54bf1ac3f429c30f2`.
 - External links must be tested for access and must not be replaced by invented placeholders in final claims.
 - Evidence must not expose passwords, reusable JWTs, secrets, or unnecessary personal data.

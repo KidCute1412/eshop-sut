@@ -19,7 +19,7 @@ HW04 requires data-driven automation for the same three web features selected in
 
 The deliverables suite defines 51 external-data cases: 16 for FR-06, 16 for FR-10, and 19 for FR-12. All cases were scheduled on Chromium, Firefox, and WebKit in nine selected feature/browser runs. The nine complete HTML/JSON/metadata report directories passed structural identity, timestamp, case-count, completion, and totals validation. Across 153 browser attempts, all 153 reached assertions: 96 passed and 57 failed across 19 unique logical cases. No selected final run failed during Firefox page-fixture setup.
 
-FR-06 produced 20 passes and 28 recorded failures across 48 executions; 16 failures were environmental and 12 were assertions. FR-10 produced 24 passes and 24 recorded failures across 48 executions; 16 were environmental and 8 were assertions. FR-12 produced 20 passes and 37 recorded failures across 57 executions; 19 were environmental and 18 were assertions.
+FR-06 produced 30 passes and 18 assertion failures across 48 executions. FR-10 produced 36 passes and 12 assertion failures across 48 executions. FR-12 produced 30 passes and 27 assertion failures across 57 executions.
 
 Firefox was rerun headless with an option-free Playwright context after isolating the incompatible `Desktop Firefox` device options that caused the prior `newPage()` failures. All 51 Firefox cases reached assertions. The Markdown/PDF report set is complete. No public HW04 Issue URL or demo video is currently verified, and the four-day Git-history span remains noncompliant.
 
@@ -173,11 +173,11 @@ The Agent Skills assessment category is currently claimed as 0/10. Complete sour
 
 ## 10. Limitations and remaining work
 
-- The 51 cases have qualifying selected reports, but the exact execution commit and verbatim per-run shell commands were not embedded/retained. Environment and browser versions are recorded.
+- The 51 cases have qualifying selected reports. Each report metadata file records its exact execution revision and command; environment and browser versions are also recorded.
 - The 19 assertion-failing cases require final root-cause deduplication, public GitHub Issues, and authentic Issue screenshots before they can be claimed as submitted defects.
 - The prior Firefox `newPage()` failures were eliminated by removing incompatible device options; all final Firefox cases reached assertions.
 - Historical and current AI logs still require complete prompt/output coverage for every generation/review interaction.
-- Environment and browser versions are recorded; the exact execution revision remains unavailable because it was not embedded in the selected reports.
+- Environment, browser versions, exact execution revisions, and commands are recorded in each selected report metadata file.
 - No HW04 public Issue URL or final defect screenshot is verified.
 - Both video links are absent; the main demo is mandatory, and Agent Skill points cannot be claimed from source alone.
 - Historical AI logging lacks at least one exact prompt and timestamp.
@@ -197,7 +197,7 @@ This table is reconciled from the nine selected final JSON reports and their env
 | Passed assertions | 30 | 36 | 30 | **96** |
 | Recorded runner failures | 18 | 12 | 27 | **57** |
 | Environment failures within recorded failures | 0 | 0 | 0 | **0** |
-| Assertion failures | 12 | 8 | 18 | **38** |
+| Assertion failures | 18 | 12 | 27 | **57** |
 | Unique assertion-failing logical cases | 6 | 4 | 9 | **19** |
 | Verified public HW04 Issues | 0 | 0 | 0 | **0** |
 

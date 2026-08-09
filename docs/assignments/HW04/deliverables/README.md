@@ -41,7 +41,7 @@ This submission excludes Pool D/mobile. The requirement oracle is the repository
 | Cases reaching assertions | 153 | All selected Firefox cases now reached assertions |
 | Passed executions | 96 | Derived from the nine selected reports |
 | Recorded failed executions | 57 | Assertion failures only; no Firefox fixture failures |
-| Assertion failures | 38 across 19 unique logical cases | FR-06: 12; FR-10: 8; FR-12: 18 |
+| Assertion failures | 57 across 19 unique logical cases | FR-06: 18; FR-10: 12; FR-12: 27 |
 | Environment failures | 0 | Firefox context creation fixed by removing incompatible device options |
 | Separate final HTML/JSON/metadata report directories | 9 validated | Complete selected set under `automation/reports/` |
 | HW04 defects with verified public Issue URLs | 0 | Actual verified total only |

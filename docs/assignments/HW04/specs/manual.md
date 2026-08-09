@@ -21,15 +21,15 @@ FR-06, FR-10, and FR-12 are the same three web features recorded in the HW02 imp
 
 The repository preserves one historical automated logical case, `FR06-DT-01`, and a combined Playwright report representing that case on Chromium, Firefox, and WebKit. This is pre-existing evidence, not part of the selected final run set.
 
-A new suite under `deliverables/automation/` defines 51 data-driven cases: FR-06 has 16 external JSON rows, FR-10 has 16, and FR-12 has 19. The final selected matrix contains nine complete HTML/JSON/metadata report directories and has passed structural identity, timestamp, case-count, and totals validation. Across 153 scheduled browser attempts, 102 reached assertions: 64 passed and 38 failed across 19 unique logical cases. The other 51 attempts failed in the Firefox `page` fixture before SUT observation (16 FR-06, 16 FR-10, and 19 FR-12).
+A new suite under `deliverables/automation/` defines 51 data-driven cases: FR-06 has 16 external JSON rows, FR-10 has 16, and FR-12 has 19. The final selected matrix contains nine complete HTML/JSON/metadata report directories and has passed structural identity, timestamp, case-count, and totals validation. Across 153 scheduled browser attempts, all 153 reached assertions: 96 passed and 57 failed across 19 unique logical cases. No selected run has a Firefox fixture failure.
 
-Firefox was intentionally executed headful on this Windows environment after headless Firefox launched but failed before `newPage()`; Chromium and WebKit remained headless. Headful Firefox still produced intermittent `newPage()` failures, so those 22 outcomes are environment failures, not SUT defects. The final run ledger and evidence paths are in `deliverables/supporting-materials/`.
+Firefox was rerun headless with an option-free Playwright context after isolating incompatible `Desktop Firefox` device options that caused the earlier `newPage()` failures. All 51 Firefox cases reached assertions; the final run ledger and evidence paths are in `deliverables/supporting-materials/`.
 
-No public HW04 Issue URL, main demo URL, or Agent Skill demo URL has been verified. Those items must remain `Not Collected` or `PENDING`. The Markdown/PDF report set has been generated and text-validated from exact revision `656991a598bafe43cbed13b54bf1ac3f429c30f2`. The existing archive is provisional and must be regenerated after student-only evidence or the self-score changes. The 19 assertion-failing logical cases are runtime-observed defect candidates; they must not be described as filed GitHub defects until the student completes issue triage and supplies genuine public URLs/screenshots.
+No public HW04 Issue URL, main demo URL, or Agent Skill demo URL has been verified. Those items must remain `Not Collected` or `PENDING`. The Markdown/PDF report set has been generated and text-validated; the Firefox rerun is pinned to `a390bc125713a1759443a4e84929641d432a45dc`, while each selected report records its own revision. The existing archive is provisional and must be regenerated after student-only evidence or the self-score changes. The 19 assertion-failing logical cases are runtime-observed defect candidates; they must not be described as filed GitHub defects until the student completes issue triage and supplies genuine public URLs/screenshots.
 
 The full HW04 Git history contains nine qualifying commits that change `.spec.ts` files: the legacy `f905546` commit dated 27 July 2026 plus eight deliverables-suite commits dated 9 August 2026 through `aa316e0bdb75ef27e2af1cf05e37570ee403bcf7`. The eight-commit count is exceeded, but the work spans only two calendar days. Therefore, the separate four-day requirement remains **noncompliant**. Documentation-only commits do not count. Do not backdate, amend dates, or otherwise fabricate the missing span.
 
-The selected execution reports predate `aa316e0`. Their exact execution revision is not embedded in the report metadata; the most defensible description is **pre-`aa316e0` current local state, likely around `238cf27` or `532ebc2` depending on the run**. The `aa316e0` source attaches the complete external case row to each future result, but that enhancement is not present in the already selected reports.
+Chromium and WebKit reports retain their own exact revisions in metadata; the final Firefox reports use `a390bc125713a1759443a4e84929641d432a45dc`. Do not attribute all nine runs to one revision unless they are rerun together.
 
 ## Student-only actions before submission
 
@@ -40,7 +40,7 @@ The selected execution reports predate `aa316e0`. Their exact execution revision
 5. Preserve the exported nine-commit log. The commit count is met; retain the explicit two-day/noncompliant disclosure.
 6. Preserve the nine structurally validated final report directories identified in `deliverables/supporting-materials/execution_manifest.md`; do not substitute superseded diagnostic/rerun directories in the totals.
 7. Manually open every selected HTML report and visually confirm `Run by: 23127404`, ISO timestamp, browser, cases, outcomes, and linked assets. Automated validation has passed, but the assignment also expects human inspection.
-8. Reproduce and deduplicate the 19 assertion-failing logical cases. First rule out script, data, and environment faults; only then create GitHub Issues for genuine SUT defects. Attach authentic screenshots and record the public Issue URLs. Do not file the 22 Firefox `newPage()` environment failures as SUT bugs.
+8. Reproduce and deduplicate the 19 assertion-failing logical cases. First rule out script, data, and environment faults; only then create GitHub Issues for genuine SUT defects. Attach authentic screenshots and record the public Issue URLs. The superseded Firefox `newPage()` diagnosis is not a final SUT bug.
 9. Record the 5+ minute unlisted YouTube demo in Vietnamese. Show one script end to end, the multi-browser run, an HTML report, one human correction to AI output, and either face-cam or terminal output from both `whoami` and `hostname`.
 10. If claiming Agent Skills points, review the current reusable source under `deliverables/agent-skill/playwright-data-driven-multibrowser/`, validate it end to end, and record a separate unlisted demonstration. Source presence without a qualifying demo is not enough to claim the category.
 11. Replace every `PENDING` marker only with verified data. Reconcile all totals against the run manifests and reports.
@@ -60,8 +60,8 @@ Never convert a HW02/HW03 observation, static source inspection, or a legacy rep
 
 - [x] All 51 logical cases are traceable to external data objects and scripts; final run evidence covers each case on three browsers.
 - [x] Nine selected browser runs have complete, attributable HTML/JSON/metadata assets and passed automated validation.
-- [x] Counts in README, main report, run manifest, reports, and bug register agree: 153 = 64 + 89 and 89 = 38 + 51.
-- [x] The 89 recorded failures are reconciled as 38 assertion failures plus 51 Firefox environment failures.
+- [x] Counts in README, main report, run manifest, reports, and bug register agree: 153 = 96 + 57.
+- [x] The 57 recorded failures are assertion failures; no selected Firefox environment failures remain.
 - [ ] Every assertion failure maps to a fully triaged defect or an explicit non-SUT classification.
 - [ ] Every defect has authentic evidence and a public Issue URL, or the report explicitly says no genuine defect was found.
 - [ ] AI prompts and outputs are reproduced exactly where available; missing history remains disclosed.

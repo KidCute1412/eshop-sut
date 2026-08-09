@@ -108,7 +108,7 @@ const lines = [
   `| FR-12 | ${summaries.fr12.logical} | ${summaries.fr12.attempts} | ${summaries.fr12.reached} | ${summaries.fr12.assertionFailures} | ${summaries.fr12.environmentFailures} |`,
   `| **Total** | **${totalSummary.logical}** | **${totalSummary.attempts}** | **${totalSummary.reached}** | **${totalSummary.assertionFailures}** | **${totalSummary.environmentFailures}** |`,
   "",
-  `Each logical case is automated on all three configured browser projects. The complete external row is the test contract; the selected reports were generated from automation/SUT revision \`${process.env.SUT_REVISION ?? "656991a598bafe43cbed13b54bf1ac3f429c30f2"}\` and include the revision in each run metadata file.`,
+  `Each logical case is automated on all three configured browser projects. The complete external row is the test contract; each selected report records its own automation/SUT revision in run metadata (a single revision is shown here only when SUT_REVISION is explicitly supplied).`,
   "",
 ];
 

@@ -10,8 +10,8 @@ Current verified public HW04 Issue count: **0**.
 |---|---|---|---|---|---|---|
 | `HW04-CAND-001` | FR-06 | `FR06-07` | Chromium, Firefox, WebKit | Awaiting deduplication/filing | **PENDING** | No |
 | `HW04-CAND-002` | FR-06 | `FR06-09` | Chromium, Firefox, WebKit | Awaiting deduplication/filing | **PENDING** | No |
-| `HW04-CAND-003` | FR-06 | `FR06-11` | Chromium, WebKit; Firefox environment failure | Awaiting deduplication/filing | **PENDING** | No |
-| `HW04-CAND-004` | FR-06 | `FR06-12` | Chromium, WebKit; Firefox environment failure | Awaiting deduplication/filing | **PENDING** | No |
+| `HW04-CAND-003` | FR-06 | `FR06-11` | Chromium, Firefox, WebKit | Awaiting deduplication/filing | **PENDING** | No |
+| `HW04-CAND-004` | FR-06 | `FR06-12` | Chromium, Firefox, WebKit | Awaiting deduplication/filing | **PENDING** | No |
 | `HW04-CAND-005` | FR-06 | `FR06-13` | Chromium, Firefox, WebKit | Awaiting deduplication/filing | **PENDING** | No |
 | `HW04-CAND-006` | FR-06 | `FR06-14` | Chromium, Firefox, WebKit | Awaiting deduplication/filing | **PENDING** | No |
 | `HW04-CAND-007` | FR-10 | `FR10-06` | Chromium, Firefox, WebKit | Awaiting deduplication/filing | **PENDING** | No |
@@ -20,11 +20,11 @@ Current verified public HW04 Issue count: **0**.
 | `HW04-CAND-010` | FR-10 | `FR10-16` | Chromium, Firefox, WebKit | Awaiting deduplication/filing | **PENDING** | No |
 | `HW04-CAND-011` | FR-12 | `FR12-03` | Chromium, Firefox, WebKit | Awaiting deduplication/filing | **PENDING** | No |
 | `HW04-CAND-012` | FR-12 | `FR12-06` | Chromium, Firefox, WebKit | Awaiting deduplication/filing | **PENDING** | No |
-| `HW04-CAND-013` | FR-12 | `FR12-08` | Chromium, WebKit; Firefox environment failure | Awaiting deduplication/filing | **PENDING** | No |
+| `HW04-CAND-013` | FR-12 | `FR12-08` | Chromium, Firefox, WebKit | Awaiting deduplication/filing | **PENDING** | No |
 | `HW04-CAND-014` | FR-12 | `FR12-09` | Chromium, Firefox, WebKit | Awaiting deduplication/filing | **PENDING** | No |
-| `HW04-CAND-015` | FR-12 | `FR12-11` | Chromium, WebKit; Firefox environment failure | Awaiting deduplication/filing | **PENDING** | No |
+| `HW04-CAND-015` | FR-12 | `FR12-11` | Chromium, Firefox, WebKit | Awaiting deduplication/filing | **PENDING** | No |
 | `HW04-CAND-016` | FR-12 | `FR12-12` | Chromium, Firefox, WebKit | Awaiting deduplication/filing | **PENDING** | No |
-| `HW04-CAND-017` | FR-12 | `FR12-14` | Chromium, WebKit; Firefox environment failure | Awaiting deduplication/filing | **PENDING** | No |
+| `HW04-CAND-017` | FR-12 | `FR12-14` | Chromium, Firefox, WebKit | Awaiting deduplication/filing | **PENDING** | No |
 | `HW04-CAND-018` | FR-12 | `FR12-17` | Chromium, Firefox, WebKit | Awaiting deduplication/filing | **PENDING** | No |
 | `HW04-CAND-019` | FR-12 | `FR12-19` | Chromium, Firefox, WebKit | Awaiting deduplication/filing | **PENDING** | No |
 

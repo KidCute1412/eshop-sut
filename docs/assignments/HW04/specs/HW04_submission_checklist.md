@@ -4,7 +4,7 @@
 > Submission workspace: `docs/assignments/HW04/deliverables/`.
 > Replace every placeholder in angle brackets before submitting.
 
-> Status updated 2026-08-09. `[x]` means verified in the workspace; `[ ]` means student-controlled, incomplete, or noncompliant. Current automation: 51 logical cases, 153 browser attempts, 131 reaching assertions, nine selected report directories, three report PDFs, and nine qualifying test-script commits across two days.
+> Status updated 2026-08-10. `[x]` means verified in the workspace; `[ ]` means student-controlled, incomplete, or noncompliant. Current automation: 51 logical cases, 153 browser attempts, all 153 reaching assertions, 96 passed, 57 failed, nine selected report directories, three report PDFs, and nine qualifying test-script commits across two days.
 
 ## 0. Non-negotiable requirements
 
@@ -75,7 +75,7 @@ For **each** selected feature:
 - [x] Isolate setup as far as supported; document FR-10 no-delete and FR-12 cleanup-verification limitations.
 - [x] Include feature/case IDs in all test names and reports.
 - [x] Preserve screenshots/traces/error context in the selected reports.
-- [x] Run all nine feature/browser cells; 22 Firefox fixture failures remain pending a successful rerun.
+- [x] Run all nine feature/browser cells; the final Firefox rerun reached all 51 assertions with no fixture failures.
 
 Suggested implementation inventory:
 
@@ -115,19 +115,19 @@ Suggested review table:
 - [ ] Open each report and visually verify the identifier, timestamp, browser, executed cases, and pass/fail status.
 - [x] Preserve the complete selected report directories, including their retained `data/` diagnostics.
 - [x] Distinguish expected negative-test passes, assertion failures, and 22 pre-test Firefox fixture failures.
-- [ ] Record exact run commands, date/time, SUT URL/version, browser/version, totals, and report location.
+- [x] Record exact run commands, date/time, SUT URL/version, browser/version, totals, and report location.
 
 | Feature | Browser | Command | ISO timestamp | HTML report path | Executed | Passed | Failed | Verified |
 | --- | --- | --- | --- | --- | ---: | ---: | ---: | --- |
-| FR-06 | Chromium | `<command>` | `<ISO>` | `<path>` | `<n>` | `<n>` | `<n>` | `[ ]` |
-| FR-06 | Firefox | `<command>` | `<ISO>` | `<path>` | `<n>` | `<n>` | `<n>` | `[ ]` |
-| FR-06 | WebKit | `<command>` | `<ISO>` | `<path>` | `<n>` | `<n>` | `<n>` | `[ ]` |
-| FR-10 | Chromium | `<command>` | `<ISO>` | `<path>` | `<n>` | `<n>` | `<n>` | `[ ]` |
-| FR-10 | Firefox | `<command>` | `<ISO>` | `<path>` | `<n>` | `<n>` | `<n>` | `[ ]` |
-| FR-10 | WebKit | `<command>` | `<ISO>` | `<path>` | `<n>` | `<n>` | `<n>` | `[ ]` |
-| FR-12 | Chromium | `<command>` | `<ISO>` | `<path>` | `<n>` | `<n>` | `<n>` | `[ ]` |
-| FR-12 | Firefox | `<command>` | `<ISO>` | `<path>` | `<n>` | `<n>` | `<n>` | `[ ]` |
-| FR-12 | WebKit | `<command>` | `<ISO>` | `<path>` | `<n>` | `<n>` | `<n>` | `[ ]` |
+| FR-06 | Chromium | `node scripts/run-matrix.mjs --browser chromium` | `2026-08-09T17:11:54.712Z` | `automation/reports/fr06-chromium-2026-08-09T17-11-54-712Z/` | 16 | 10 | 6 | `[ ]` |
+| FR-06 | Firefox | `node scripts/run-matrix.mjs --browser firefox` | `2026-08-09T18:19:41.178Z` | `automation/reports/fr06-firefox-2026-08-09T18-19-41-178Z/` | 16 | 10 | 6 | `[ ]` |
+| FR-06 | WebKit | `node scripts/run-matrix.mjs --browser webkit` | `2026-08-09T17:16:10.035Z` | `automation/reports/fr06-webkit-2026-08-09T17-16-10-035Z/` | 16 | 10 | 6 | `[ ]` |
+| FR-10 | Chromium | `node scripts/run-matrix.mjs --browser chromium` | `2026-08-09T17:17:32.516Z` | `automation/reports/fr10-chromium-2026-08-09T17-17-32-516Z/` | 16 | 12 | 4 | `[ ]` |
+| FR-10 | Firefox | `node scripts/run-matrix.mjs --browser firefox` | `2026-08-09T18:21:10.553Z` | `automation/reports/fr10-firefox-2026-08-09T18-21-10-553Z/` | 16 | 12 | 4 | `[ ]` |
+| FR-10 | WebKit | `node scripts/run-matrix.mjs --browser webkit` | `2026-08-09T17:21:22.978Z` | `automation/reports/fr10-webkit-2026-08-09T17-21-22-978Z/` | 16 | 12 | 4 | `[ ]` |
+| FR-12 | Chromium | `node scripts/run-matrix.mjs --browser chromium` | `2026-08-09T17:22:38.418Z` | `automation/reports/fr12-chromium-2026-08-09T17-22-38-418Z/` | 19 | 10 | 9 | `[ ]` |
+| FR-12 | Firefox | `node scripts/run-matrix.mjs --browser firefox` | `2026-08-09T18:22:31.674Z` | `automation/reports/fr12-firefox-2026-08-09T18-22-31-674Z/` | 19 | 10 | 9 | `[ ]` |
+| FR-12 | WebKit | `node scripts/run-matrix.mjs --browser webkit` | `2026-08-09T17:27:20.694Z` | `automation/reports/fr12-webkit-2026-08-09T17-27-20-694Z/` | 19 | 10 | 9 | `[ ]` |
 
 ## 7. Report genuine defects
 
