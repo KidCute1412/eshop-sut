@@ -6,8 +6,8 @@
 |---|---|
 | Student | Lê Tuấn Lộc |
 | Student ID | 23127404 |
-| Class | **PENDING — enter official class code** |
-| Repository | https://github.com/KidCute1412/eshop-sut |
+| Class | `CSC15003` (student-confirmed) |
+| Repository | https://github.com/KidCute1412/eshop-sut (student-confirmed public repository) |
 | Branch inspected | `23127404-LeTuanLoc` |
 | Report status | Nine-run execution evidence reconciled; manual submission artifacts pending |
 | Final submission timestamp | **PENDING — ISO 8601** |

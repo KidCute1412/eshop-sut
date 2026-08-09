@@ -63,11 +63,12 @@ export default defineConfig({
     { name: "chromium", use: { ...devices["Desktop Chrome"] } },
     {
       name: "firefox",
-      // On the assignment Windows image, Playwright Firefox launches in
-      // headless mode but fails before newPage(). A minimal headful smoke
-      // check succeeds, although full runs remain intermittently affected by
-      // page-fixture timeouts; preserve and classify those outcomes honestly.
-      use: { ...devices["Desktop Firefox"], headless: false },
+      // Use the Playwright-managed headless binary for reproducible CI/local
+      // execution. Headful Firefox was unstable on the Windows assignment
+      // image and failed intermittently during page-fixture creation.
+      // Keep the context option-free: this Windows/Firefox build fails inside
+      // browserContext.newPage when Desktop Firefox device options are passed.
+      use: { headless: true },
     },
     { name: "webkit", use: { ...devices["Desktop Safari"] } },
   ],

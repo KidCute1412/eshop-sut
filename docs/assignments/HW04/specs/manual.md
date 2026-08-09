@@ -8,8 +8,8 @@ This guide separates work that requires the student's direct action from documen
 |---|---|
 | Student | Lê Tuấn Lộc |
 | Student ID | 23127404 |
-| Class | **PENDING — student must enter the official class code** |
-| Public repository | https://github.com/KidCute1412/eshop-sut |
+| Class | `CSC15003` (student-confirmed) |
+| Public repository | https://github.com/KidCute1412/eshop-sut (student-confirmed public repository) |
 | Pool A | FR-06 — Product detail view |
 | Pool B | FR-10 — Order state machine |
 | Pool C | FR-12 — Access control |
@@ -19,13 +19,13 @@ FR-06, FR-10, and FR-12 are the same three web features recorded in the HW02 imp
 
 ## Current readiness snapshot (9 August 2026)
 
-The repository preserves one historical automated logical case, `FR06-DT-01`, and a combined Playwright report representing that case on Chromium, Firefox, and WebKit. The repository report says all three executions reached the category assertion and failed because the category was not rendered. This is pre-existing evidence, not a fresh run performed while preparing these templates.
+The repository preserves one historical automated logical case, `FR06-DT-01`, and a combined Playwright report representing that case on Chromium, Firefox, and WebKit. This is pre-existing evidence, not part of the selected final run set.
 
-A new suite under `deliverables/automation/` defines 51 data-driven cases: FR-06 has 16 external JSON rows, FR-10 has 16, and FR-12 has 19. The final selected matrix contains nine complete HTML/JSON/metadata report directories and has passed structural identity, timestamp, case-count, and totals validation. Across 153 scheduled browser attempts, 131 reached assertions: 79 passed and 52 failed across 19 unique logical cases. The other 22 attempts failed in the Firefox `page` fixture before SUT observation (7 FR-06, 7 FR-10, and 8 FR-12).
+A new suite under `deliverables/automation/` defines 51 data-driven cases: FR-06 has 16 external JSON rows, FR-10 has 16, and FR-12 has 19. The final selected matrix contains nine complete HTML/JSON/metadata report directories and has passed structural identity, timestamp, case-count, and totals validation. Across 153 scheduled browser attempts, 102 reached assertions: 64 passed and 38 failed across 19 unique logical cases. The other 51 attempts failed in the Firefox `page` fixture before SUT observation (16 FR-06, 16 FR-10, and 19 FR-12).
 
 Firefox was intentionally executed headful on this Windows environment after headless Firefox launched but failed before `newPage()`; Chromium and WebKit remained headless. Headful Firefox still produced intermittent `newPage()` failures, so those 22 outcomes are environment failures, not SUT defects. The final run ledger and evidence paths are in `deliverables/supporting-materials/`.
 
-No public HW04 Issue URL, main demo URL, or Agent Skill demo URL has been verified. Those items must remain `Not Collected` or `PENDING`. The Markdown/PDF report set has been generated and text-validated. The provisional current-evidence archive is `deliverables/23127404_HW04_AI_Automation_063.zip`; its required entries and all nine report triplets were checked, but it must be regenerated after student-only evidence or the self-score changes. The 19 assertion-failing logical cases are runtime-observed defect candidates; they must not be described as filed GitHub defects until the student completes issue triage and supplies genuine public URLs/screenshots.
+No public HW04 Issue URL, main demo URL, or Agent Skill demo URL has been verified. Those items must remain `Not Collected` or `PENDING`. The Markdown/PDF report set has been generated and text-validated from exact revision `656991a598bafe43cbed13b54bf1ac3f429c30f2`. The existing archive is provisional and must be regenerated after student-only evidence or the self-score changes. The 19 assertion-failing logical cases are runtime-observed defect candidates; they must not be described as filed GitHub defects until the student completes issue triage and supplies genuine public URLs/screenshots.
 
 The full HW04 Git history contains nine qualifying commits that change `.spec.ts` files: the legacy `f905546` commit dated 27 July 2026 plus eight deliverables-suite commits dated 9 August 2026 through `aa316e0bdb75ef27e2af1cf05e37570ee403bcf7`. The eight-commit count is exceeded, but the work spans only two calendar days. Therefore, the separate four-day requirement remains **noncompliant**. Documentation-only commits do not count. Do not backdate, amend dates, or otherwise fabricate the missing span.
 
@@ -44,7 +44,7 @@ The selected execution reports predate `aa316e0`. Their exact execution revision
 9. Record the 5+ minute unlisted YouTube demo in Vietnamese. Show one script end to end, the multi-browser run, an HTML report, one human correction to AI output, and either face-cam or terminal output from both `whoami` and `hostname`.
 10. If claiming Agent Skills points, review the current reusable source under `deliverables/agent-skill/playwright-data-driven-multibrowser/`, validate it end to end, and record a separate unlisted demonstration. Source presence without a qualifying demo is not enough to claim the category.
 11. Replace every `PENDING` marker only with verified data. Reconcile all totals against the run manifests and reports.
-12. Visually open the generated PDFs, test external links while logged out where practical, choose the final self-assessed grade, and regenerate `<StudentID>_HW04_AI_Automation_<000-100>.zip` after replacing student-controlled placeholders.
+12. Visually open the generated PDFs, test external links while logged out where practical, choose the final self-assessed grade, and create `<StudentID>_HW04_AI_Automation_<000-100>.zip` only after replacing student-controlled placeholders.
 
 ## Evidence-state rules
 
@@ -60,8 +60,8 @@ Never convert a HW02/HW03 observation, static source inspection, or a legacy rep
 
 - [x] All 51 logical cases are traceable to external data objects and scripts; final run evidence covers each case on three browsers.
 - [x] Nine selected browser runs have complete, attributable HTML/JSON/metadata assets and passed automated validation.
-- [x] Counts in README, main report, run manifest, reports, and bug register agree: 153 = 79 + 74 and 74 = 52 + 22.
-- [x] The 74 recorded failures are reconciled as 52 assertion failures plus 22 Firefox environment failures.
+- [x] Counts in README, main report, run manifest, reports, and bug register agree: 153 = 64 + 89 and 89 = 38 + 51.
+- [x] The 89 recorded failures are reconciled as 38 assertion failures plus 51 Firefox environment failures.
 - [ ] Every assertion failure maps to a fully triaged defect or an explicit non-SUT classification.
 - [ ] Every defect has authentic evidence and a public Issue URL, or the report explicitly says no genuine defect was found.
 - [ ] AI prompts and outputs are reproduced exactly where available; missing history remains disclosed.
@@ -70,5 +70,5 @@ Never convert a HW02/HW03 observation, static source inspection, or a legacy rep
 - [x] Nine qualifying test-script commits are documented across two calendar days.
 - [ ] Four qualifying calendar days are not present; the submission must retain the noncompliance disclosure.
 - [x] Three report PDFs were generated and text-validated (main 8, critique 1, audit 5 pages).
-- [x] Provisional `23127404_HW04_AI_Automation_063.zip` was created; required entries, nine HTML/JSON/metadata triplets, and dependency exclusions were validated.
+- [ ] Final `<StudentID>_HW04_AI_Automation_<000-100>.zip` is created only after manual evidence and grade updates.
 - [ ] Final ZIP name/grade, external links, visual PDF inspection, and Moodle upload have been manually verified.

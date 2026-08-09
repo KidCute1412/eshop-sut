@@ -8,8 +8,8 @@
 |---|---|
 | Student | Lê Tuấn Lộc |
 | Student ID | 23127404 |
-| Class | **PENDING — enter official class code** |
-| Repository | https://github.com/KidCute1412/eshop-sut |
+| Class | `CSC15003` (student-confirmed) |
+| Repository | https://github.com/KidCute1412/eshop-sut (student-confirmed public repository) |
 | Working branch observed | `23127404-LeTuanLoc` |
 | Submission date/time | **PENDING — record final ISO 8601 submission time** |
 | Execution source/SUT revision | `656991a598bafe43cbed13b54bf1ac3f429c30f2` for all nine rerun reports; recorded in every `run-metadata.json` |
