@@ -33,6 +33,18 @@ async function createCoupon(page, tc, code) {
   return responsePromise;
 }
 
+async function attemptCreateCoupon(page, tc, code) {
+  await fillCouponForm(page, tc, code);
+  const responsePromise = page
+    .waitForResponse((r) => r.url().includes("/api/admin/coupons") && r.request().method() === "POST", {
+      timeout: 1500
+    })
+    .catch(() => null);
+
+  await page.locator("form").last().locator("button").click();
+  return responsePromise;
+}
+
 test.describe("FR-17 Coupon management", () => {
   for (const tc of cases) {
     test(`${tc.id} ${tc.type} ${tc.scenario}`, async ({ page }) => {
@@ -61,6 +73,20 @@ test.describe("FR-17 Coupon management", () => {
         return;
       }
 
+      if (tc.expected === "rejected") {
+        const response = await attemptCreateCoupon(page, tc, code);
+        if (response === null) {
+          const invalidInputs = await page.locator("form").last().locator("input").evaluateAll((inputs) =>
+            inputs.filter((input) => !input.checkValidity()).length
+          );
+          expect(invalidInputs).toBeGreaterThan(0);
+        } else {
+          expect(response.status()).toBeGreaterThanOrEqual(400);
+        }
+        await expect(page.locator("td").filter({ hasText: code })).toHaveCount(0);
+        return;
+      }
+
       const response = await createCoupon(page, tc, code);
       expect(response.ok()).toBeTruthy();
       await expect(page.locator("td").filter({ hasText: code })).toBeVisible();
@@ -75,13 +101,6 @@ test.describe("FR-17 Coupon management", () => {
         await expect(row).toHaveCount(0);
       }
 
-      if (tc.expected === "expired_visible") {
-        await expect(page.locator("tr").filter({ hasText: code }).locator("span")).toBeVisible();
-      }
-
-      if (tc.expected === "uppercase_visible") {
-        await expect(page.locator("td").filter({ hasText: code })).toBeVisible();
-      }
     });
   }
 });
