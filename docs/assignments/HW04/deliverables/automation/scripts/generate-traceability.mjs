@@ -61,6 +61,27 @@ function escapeCell(value) {
   return String(value).replaceAll("|", "\\|").replaceAll("\n", " ");
 }
 
+function summarizeFeature(feature, config) {
+  const rows = JSON.parse(readFileSync(path.resolve("test-data", config.data), "utf8"));
+  const reports = Object.fromEntries(browsers.map((browser) => [browser, findReport(feature, browser)]));
+  const states = browsers.flatMap((browser) => [...resultMap(reports[browser]).values()]);
+  return {
+    logical: rows.length,
+    attempts: states.length,
+    reached: states.filter((state) => state !== "Environment failure").length,
+    assertionFailures: states.filter((state) => state === "Assertion failure").length,
+    environmentFailures: states.filter((state) => state === "Environment failure").length,
+  };
+}
+
+const summaries = Object.fromEntries(
+  Object.entries(featureConfig).map(([feature, config]) => [feature, summarizeFeature(feature, config)]),
+);
+const totalSummary = Object.values(summaries).reduce(
+  (total, current) => Object.fromEntries(Object.keys(total).map((key) => [key, total[key] + current[key]])),
+  { logical: 0, attempts: 0, reached: 0, assertionFailures: 0, environmentFailures: 0 },
+);
+
 function oracle(feature, row) {
   if (feature === "fr06") {
     const expected = Object.entries(row.expected ?? {}).map(([key, value]) => `${key}=${JSON.stringify(value)}`).join("; ");
@@ -82,12 +103,12 @@ const lines = [
   "",
   "| Requirement | Logical cases | Browser attempts | Reached assertions | Assertion failures | Environment failures |",
   "|---|---:|---:|---:|---:|---:|",
-  "| FR-06 | 16 | 48 | 41 | 16 | 7 |",
-  "| FR-10 | 16 | 48 | 41 | 12 | 7 |",
-  "| FR-12 | 19 | 57 | 49 | 24 | 8 |",
-  "| **Total** | **51** | **153** | **131** | **52** | **22** |",
+  `| FR-06 | ${summaries.fr06.logical} | ${summaries.fr06.attempts} | ${summaries.fr06.reached} | ${summaries.fr06.assertionFailures} | ${summaries.fr06.environmentFailures} |`,
+  `| FR-10 | ${summaries.fr10.logical} | ${summaries.fr10.attempts} | ${summaries.fr10.reached} | ${summaries.fr10.assertionFailures} | ${summaries.fr10.environmentFailures} |`,
+  `| FR-12 | ${summaries.fr12.logical} | ${summaries.fr12.attempts} | ${summaries.fr12.reached} | ${summaries.fr12.assertionFailures} | ${summaries.fr12.environmentFailures} |`,
+  `| **Total** | **${totalSummary.logical}** | **${totalSummary.attempts}** | **${totalSummary.reached}** | **${totalSummary.assertionFailures}** | **${totalSummary.environmentFailures}** |`,
   "",
-  "Each logical case is automated on all three configured browser projects. The complete external row is the test contract; current source at `aa316e0` also attaches that contract to future results. The selected reports predate that final attachment enhancement, so this matrix derives row identity from the stable case ID in each report title.",
+  `Each logical case is automated on all three configured browser projects. The complete external row is the test contract; the selected reports were generated from automation/SUT revision \`${process.env.SUT_REVISION ?? "656991a598bafe43cbed13b54bf1ac3f429c30f2"}\` and include the revision in each run metadata file.`,
   "",
 ];
 
@@ -114,7 +135,7 @@ lines.push(
   "## Review and limitations",
   "",
   "- All 51 rows are external JSON objects loaded at runtime; no inline case array is used.",
-  "- The selected evidence represents 153 scheduled/attempted browser cases. Exactly 131 reached assertions; 22 Firefox attempts failed in page-fixture setup and remain pending successful rerun.",
+  `- The selected evidence represents ${totalSummary.attempts} scheduled/attempted browser cases. Exactly ${totalSummary.reached} reached assertions; ${totalSummary.environmentFailures} Firefox attempts failed in page-fixture setup before SUT observation.`,
   "- Assertion failures are defect candidates, not automatically confirmed product defects. Public Issue creation and screenshots remain student-controlled manual work.",
   "- The FR-06 invalid-quantity oracle checks browser constraint validity but does not also prove that cart state remained unchanged after an Add attempt. The FR-12 cleanup helper sends cleanup requests but does not assert deletion success/absence. These are documented current-source limitations and must not be hidden by the historical reports.",
 );

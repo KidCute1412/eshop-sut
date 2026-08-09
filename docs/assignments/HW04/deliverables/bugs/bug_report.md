@@ -2,10 +2,10 @@
 
 ## Evidence status
 
-The nine selected final runs scheduled 153 browser cases: 131 reached assertions (79 passed and 52 assertion-failed) and 22 failed during Firefox page-fixture setup before SUT observation. Triage separates the 74 runner failures into:
+The nine selected final runs scheduled 153 browser cases: 102 reached assertions (64 passed and 38 assertion-failed) and 51 failed during Firefox page-fixture setup before SUT observation. Triage separates the 89 runner failures into:
 
-- **52 assertion failures** across **19 unique logical cases**: FR-06 has 16 assertion failures across six cases, FR-10 has 12 across four, and FR-12 has 24 across nine.
-- **22 Firefox environment failures**: 7 FR-06, 7 FR-10, and 8 FR-12 cases timed out while Playwright set up `page` through `browserContext.newPage()`.
+- **38 assertion failures** across **19 unique logical cases**: FR-06 has 12 assertion failures, FR-10 has 8, and FR-12 has 18.
+- **51 Firefox environment failures**: 16 FR-06, 16 FR-10, and 19 FR-12 cases timed out while Playwright set up `page` through `browserContext.newPage()`.
 
 The assertion-failing cases below are runtime-observed defect candidates. No candidate is represented as a filed GitHub defect because no verified public HW04 Issue URL or public Issue screenshot has been supplied. Prior HW02/HW03 issues may be consulted as regression context only; they are not new HW04 Issues.
 
@@ -13,9 +13,9 @@ The assertion-failing cases below are runtime-observed defect candidates. No can
 
 | Feature | Chromium report | Firefox report | WebKit report |
 |---|---|---|---|
-| FR-06 | `automation/reports/fr06-chromium-2026-08-09T09-50-04-895Z/` | `automation/reports/fr06-firefox-2026-08-09T10-07-59-582Z/` | `automation/reports/fr06-webkit-2026-08-09T09-52-14-569Z/` |
-| FR-10 | `automation/reports/fr10-chromium-2026-08-09T10-26-40-345Z/` | `automation/reports/fr10-firefox-2026-08-09T10-27-32-954Z/` | `automation/reports/fr10-webkit-2026-08-09T10-32-34-318Z/` |
-| FR-12 | `automation/reports/fr12-chromium-2026-08-09T09-56-03-803Z/` | `automation/reports/fr12-firefox-2026-08-09T10-18-54-806Z/` | `automation/reports/fr12-webkit-2026-08-09T09-57-54-553Z/` |
+| FR-06 | `automation/reports/fr06-chromium-2026-08-09T17-11-54-712Z/` | `automation/reports/fr06-firefox-2026-08-09T17-13-19-066Z/` | `automation/reports/fr06-webkit-2026-08-09T17-16-10-035Z/` |
+| FR-10 | `automation/reports/fr10-chromium-2026-08-09T17-17-32-516Z/` | `automation/reports/fr10-firefox-2026-08-09T17-18-43-660Z/` | `automation/reports/fr10-webkit-2026-08-09T17-21-22-978Z/` |
+| FR-12 | `automation/reports/fr12-chromium-2026-08-09T17-22-38-418Z/` | `automation/reports/fr12-firefox-2026-08-09T17-28-39-697Z/` | `automation/reports/fr12-webkit-2026-08-09T17-27-20-694Z/` |
 
 All nine HTML/JSON/metadata directories passed structural identity, timestamp, case-count, completion, and totals validation. Interactive rendering and links still require the documented manual opening step.
 
@@ -55,7 +55,7 @@ Severity is an initial risk-based classification grounded in FR-06/FR-10/FR-12 i
 |---|---|
 | Environment | Playwright 1.55.0; Firefox 141.0 headful; Windows 10 Home Single Language / NT `10.0.26200.0` |
 | Symptom | `Test timeout of 30000ms exceeded while setting up "page"` and `browserContext.newPage: Test timeout of 30000ms exceeded` |
-| Affected executions | 22 total: FR-06 7, FR-10 7, FR-12 8 |
+| Affected executions | 51 total: FR-06 16, FR-10 16, FR-12 19 |
 | Classification | Environment/runtime failure; excluded from SUT defect candidates |
 | Rationale | Failure occurred before the test could observe the target application behavior |
 

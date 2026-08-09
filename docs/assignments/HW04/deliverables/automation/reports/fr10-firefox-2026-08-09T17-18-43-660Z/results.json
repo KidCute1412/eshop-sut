@@ -1,0 +1,936 @@
+{
+  "config": {
+    "configFile": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\playwright.config.ts",
+    "rootDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "Run by": "23127404",
+      "Run timestamp": "2026-08-09T17:18:43.660Z",
+      "Feature": "fr10",
+      "Browser": "firefox",
+      "Automation revision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+      "SUT revision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+      "Execution command": "node scripts/run-matrix.mjs",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\reports\\fr10-firefox-2026-08-09T17-18-43-660Z",
+          "open": "never",
+          "title": "HW04 fr10 firefox | Run by: 23127404 | 2026-08-09T17:18:43.660Z"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\reports\\fr10-firefox-2026-08-09T17-18-43-660Z\\results.json"
+        }
+      ],
+      [
+        "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\src\\reporters\\run-metadata-reporter.ts",
+        {
+          "reportDir": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\reports\\fr10-firefox-2026-08-09T17-18-43-660Z",
+          "studentId": "23127404",
+          "runTimestamp": "2026-08-09T17:18:43.660Z",
+          "feature": "fr10",
+          "browser": "firefox",
+          "automationRevision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+          "sutRevision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+          "executionCommand": "node scripts/run-matrix.mjs"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127404",
+          "Run timestamp": "2026-08-09T17:18:43.660Z",
+          "Feature": "fr10",
+          "Browser": "firefox",
+          "Automation revision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+          "SUT revision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+          "Execution command": "node scripts/run-matrix.mjs",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127404",
+          "Run timestamp": "2026-08-09T17:18:43.660Z",
+          "Feature": "fr10",
+          "Browser": "firefox",
+          "Automation revision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+          "SUT revision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+          "Execution command": "node scripts/run-matrix.mjs",
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127404",
+          "Run timestamp": "2026-08-09T17:18:43.660Z",
+          "Feature": "fr10",
+          "Browser": "firefox",
+          "Automation revision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+          "SUT revision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+          "Execution command": "node scripts/run-matrix.mjs",
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.55.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "fr10-order-state-machine.spec.ts",
+      "file": "fr10-order-state-machine.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-10 Order State Machine",
+          "file": "fr10-order-state-machine.spec.ts",
+          "line": 16,
+          "column": 6,
+          "specs": [
+            {
+              "title": "FR10-01 [high] pending -> confirmed: admin confirms a pending order",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6104,
+                      "error": {
+                        "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')",
+                        "stack": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                      },
+                      "errors": [
+                        {
+                          "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T17:18:46.304Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-4060d-in-confirms-a-pending-order-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-5cb7af2a32fcc5f7d35b",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 29,
+              "column": 5
+            },
+            {
+              "title": "FR10-02 [high] pending -> canceled: admin cancels a pending order",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5971,
+                      "error": {
+                        "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')",
+                        "stack": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                      },
+                      "errors": [
+                        {
+                          "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T17:18:56.770Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-3403b-min-cancels-a-pending-order-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-f0424f2632967f94a495",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 29,
+              "column": 5
+            },
+            {
+              "title": "FR10-03 [high] pending -> canceled: user cancels their pending order",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6139,
+                      "error": {
+                        "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')",
+                        "stack": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                      },
+                      "errors": [
+                        {
+                          "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T17:19:06.441Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-237f9-cancels-their-pending-order-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-ffd60641977867ff0b43",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 29,
+              "column": 5
+            },
+            {
+              "title": "FR10-04 [high] pending -> shipping: reject pending directly to shipping",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5973,
+                      "error": {
+                        "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')",
+                        "stack": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                      },
+                      "errors": [
+                        {
+                          "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T17:19:16.218Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-5cd22-ending-directly-to-shipping-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-607626b9d46ba0da0e7f",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 29,
+              "column": 5
+            },
+            {
+              "title": "FR10-05 [high] pending -> delivered: reject pending directly to delivered",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5970,
+                      "error": {
+                        "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')",
+                        "stack": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                      },
+                      "errors": [
+                        {
+                          "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T17:19:25.860Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-26ca9-nding-directly-to-delivered-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-e253e39d0141a9477860",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 29,
+              "column": 5
+            },
+            {
+              "title": "FR10-06 [high] confirmed -> shipping: admin starts shipping a confirmed order",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5986,
+                      "error": {
+                        "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')",
+                        "stack": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                      },
+                      "errors": [
+                        {
+                          "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T17:19:35.659Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-17596--shipping-a-confirmed-order-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-a1f59ef527c0e5e452d3",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 29,
+              "column": 5
+            },
+            {
+              "title": "FR10-07 [high] confirmed -> canceled: admin cancels a confirmed order",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5989,
+                      "error": {
+                        "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')",
+                        "stack": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                      },
+                      "errors": [
+                        {
+                          "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T17:19:45.483Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-332e3-n-cancels-a-confirmed-order-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-8e3b818e5f8992e044e0",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 29,
+              "column": 5
+            },
+            {
+              "title": "FR10-08 [high] confirmed -> canceled: user cancels their confirmed order",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5954,
+                      "error": {
+                        "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')",
+                        "stack": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                      },
+                      "errors": [
+                        {
+                          "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T17:19:55.135Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-f7455-ncels-their-confirmed-order-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-a60a52268ad41e9cc046",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 29,
+              "column": 5
+            },
+            {
+              "title": "FR10-09 [high] confirmed -> delivered: reject confirmed directly to delivered",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5944,
+                      "error": {
+                        "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')",
+                        "stack": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                      },
+                      "errors": [
+                        {
+                          "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T17:20:04.879Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-b66e8-irmed-directly-to-delivered-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-bfdc36b509bdc8e9893b",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 29,
+              "column": 5
+            },
+            {
+              "title": "FR10-10 [high] shipping -> delivered: admin delivers a shipping order",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5978,
+                      "error": {
+                        "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')",
+                        "stack": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                      },
+                      "errors": [
+                        {
+                          "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T17:20:14.584Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-92f79-n-delivers-a-shipping-order-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-93d2e7e25ea685a6ce2e",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 29,
+              "column": 5
+            },
+            {
+              "title": "FR10-11 [high] shipping -> canceled: reject admin cancel of a shipping order",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5962,
+                      "error": {
+                        "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')",
+                        "stack": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                      },
+                      "errors": [
+                        {
+                          "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T17:20:24.252Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-35e84--cancel-of-a-shipping-order-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-484a88b16d54e9927367",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 29,
+              "column": 5
+            },
+            {
+              "title": "FR10-12 [high] shipping -> canceled: reject user cancel of a shipping order",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6130,
+                      "error": {
+                        "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')",
+                        "stack": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                      },
+                      "errors": [
+                        {
+                          "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T17:20:33.900Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-eb562--cancel-of-a-shipping-order-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-7ef2de9cc760108f8435",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 29,
+              "column": 5
+            },
+            {
+              "title": "FR10-13 [high] delivered -> confirmed: keep delivered terminal when confirmation is requested",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5949,
+                      "error": {
+                        "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')",
+                        "stack": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                      },
+                      "errors": [
+                        {
+                          "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T17:20:43.801Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-84e69-n-confirmation-is-requested-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-a07c2fbcab37471ed9db",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 29,
+              "column": 5
+            },
+            {
+              "title": "FR10-14 [high] delivered -> canceled: keep delivered terminal when cancellation is requested",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5984,
+                      "error": {
+                        "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')",
+                        "stack": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                      },
+                      "errors": [
+                        {
+                          "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T17:20:53.463Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-47d66-n-cancellation-is-requested-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-9fb7e2f9880b8397c435",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 29,
+              "column": 5
+            },
+            {
+              "title": "FR10-15 [high] canceled -> confirmed: keep canceled terminal when confirmation is requested",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5920,
+                      "error": {
+                        "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')",
+                        "stack": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                      },
+                      "errors": [
+                        {
+                          "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T17:21:03.074Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-ee0d8-n-confirmation-is-requested-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-787b7fcd62d49686e84e",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 29,
+              "column": 5
+            },
+            {
+              "title": "FR10-16 [high] canceled -> delivered: keep canceled terminal when delivery is requested",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6060,
+                      "error": {
+                        "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')",
+                        "stack": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                      },
+                      "errors": [
+                        {
+                          "message": "TypeError: browserContext.newPage: Cannot read properties of undefined (reading '_page')"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T17:21:12.756Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-67f4b--when-delivery-is-requested-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-9d76daa3a8468944d6eb",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 29,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-08-09T17:18:45.101Z",
+    "duration": 156497.101,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 16,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "runBy": "23127404",
+  "runTimestamp": "2026-08-09T17:27:20.694Z",
+  "feature": "fr12",
+  "browser": "webkit",
+  "automationRevision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+  "sutRevision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+  "executionCommand": "node scripts/run-matrix.mjs --feature fr12 --browser webkit",
+  "status": "failed",
+  "total": 19,
+  "durationMs": 67399.649
+}

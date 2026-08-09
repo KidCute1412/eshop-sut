@@ -12,7 +12,7 @@
 | Repository | https://github.com/KidCute1412/eshop-sut |
 | Working branch observed | `23127404-LeTuanLoc` |
 | Submission date/time | **PENDING — record final ISO 8601 submission time** |
-| Execution source/SUT revision | Pre-`aa316e0` current local state; exact report revision not embedded, likely `238cf27` or `532ebc2` depending on run |
+| Execution source/SUT revision | `656991a598bafe43cbed13b54bf1ac3f429c30f2` for all nine rerun reports; recorded in every `run-metadata.json` |
 | Environment | Windows 10 Home Single Language, NT `10.0.26200.0`; Node.js 22.17.0; npm 10.9.2; Playwright 1.55.0 |
 | Browsers | Chromium 140.0.7339.16; Firefox 141.0 headful; WebKit 26.0 |
 | Main demo video | **PENDING — unlisted YouTube URL not supplied** |
@@ -38,17 +38,17 @@ This submission excludes Pool D/mobile. The requirement oracle is the repository
 | Source-defined logical cases | 51 (FR-06: 16; FR-10: 16; FR-12: 19) | At least 36 total; at least 12 per feature |
 | Selected final browser runs | 9 (3 features × 3 browsers) | At least 9 |
 | Scheduled/attempted browser cases | 153 | Derived from the nine selected reports |
-| Cases reaching assertions | 131 | 79 passed + 52 assertion-failed |
-| Passed executions | 79 | Derived from the nine selected reports |
-| Recorded failed executions | 74 | 52 assertion failures + 22 Firefox environment failures |
-| Assertion failures | 52 across 19 unique logical cases | FR-06: 16/6 cases; FR-10: 12/4; FR-12: 24/9 |
-| Environment failures | 22 | Firefox `newPage()` timeouts: FR-06 7, FR-10 7, FR-12 8 |
+| Cases reaching assertions | 102 | 64 passed + 38 assertion-failed |
+| Passed executions | 64 | Derived from the nine selected reports |
+| Recorded failed executions | 89 | 38 assertion failures + 51 Firefox environment failures |
+| Assertion failures | 38 across 19 unique logical cases | FR-06: 12; FR-10: 8; FR-12: 18 |
+| Environment failures | 51 | Firefox `newPage()` timeouts: FR-06 16, FR-10 16, FR-12 19 |
 | Separate final HTML/JSON/metadata report directories | 9 validated | Complete selected set under `automation/reports/` |
 | HW04 defects with verified public Issue URLs | 0 | Actual verified total only |
 | Qualifying test-script commits | 9 | Count met; two calendar days, so four-day span not met |
 | Main demo videos | 0 | 1 unlisted video, at least 5 minutes |
 
-The selected final report set is listed in `supporting-materials/execution_manifest.md`; `automation/reports/` now contains only those nine directories. All nine contain HTML, JSON, and metadata and passed the report validator. Firefox ran headful because headless Firefox failed before `newPage()` on this Windows environment; 22 later `newPage()` timeouts are recorded separately as environment failures. A legacy July report outside `deliverables/` remains historical input only and is not included in the totals above.
+The selected final report set is listed in `supporting-materials/execution_manifest.md`; `automation/reports/` now contains only those nine directories. All nine contain HTML, JSON, and metadata and passed the report validator. Firefox ran headful because headless Firefox failed before `newPage()` on this Windows environment; all 51 Firefox attempts in this rerun failed during `newPage()` setup and are recorded separately as environment failures. A legacy July report outside `deliverables/` remains historical input only and is not included in the totals above.
 
 ## Critical compliance disclosure
 
@@ -70,7 +70,7 @@ The exported full HW04 history contains nine qualifying `.spec.ts` commits: lega
 | `video/vietnamese_narration_script.md` | Vietnamese recording script | Ready for student recording |
 | `video/agent_skill_demo.md` | Optional Agent Skill source/demo record | Source present; end-to-end validation and demo pending |
 | `supporting-materials/test_case_matrix.md` | Final case/data/spec/browser-result traceability | 51 actual source rows with 153 per-browser outcomes |
-| `supporting-materials/execution_manifest.md` | Nine-run evidence ledger | Complete and reconciled: 153/79/74; 22 environment failures |
+| `supporting-materials/execution_manifest.md` | Nine-run evidence ledger | Complete and reconciled: 153/64/89; 51 environment failures |
 | `supporting-materials/evidence_register.md` | Evidence provenance and integrity ledger | Nine selected report directories verified |
 | `23127404_HW04_AI_Automation_063.zip` | Provisional current-evidence submission archive | Generated and content-validated; regenerate after manual evidence changes |
 

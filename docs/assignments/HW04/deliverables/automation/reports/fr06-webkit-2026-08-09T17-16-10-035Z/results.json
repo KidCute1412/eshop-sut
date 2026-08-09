@@ -1,0 +1,1584 @@
+{
+  "config": {
+    "configFile": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\playwright.config.ts",
+    "rootDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "Run by": "23127404",
+      "Run timestamp": "2026-08-09T17:16:10.035Z",
+      "Feature": "fr06",
+      "Browser": "webkit",
+      "Automation revision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+      "SUT revision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+      "Execution command": "node scripts/run-matrix.mjs",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\reports\\fr06-webkit-2026-08-09T17-16-10-035Z",
+          "open": "never",
+          "title": "HW04 fr06 webkit | Run by: 23127404 | 2026-08-09T17:16:10.035Z"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\reports\\fr06-webkit-2026-08-09T17-16-10-035Z\\results.json"
+        }
+      ],
+      [
+        "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\src\\reporters\\run-metadata-reporter.ts",
+        {
+          "reportDir": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\reports\\fr06-webkit-2026-08-09T17-16-10-035Z",
+          "studentId": "23127404",
+          "runTimestamp": "2026-08-09T17:16:10.035Z",
+          "feature": "fr06",
+          "browser": "webkit",
+          "automationRevision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+          "sutRevision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+          "executionCommand": "node scripts/run-matrix.mjs"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127404",
+          "Run timestamp": "2026-08-09T17:16:10.035Z",
+          "Feature": "fr06",
+          "Browser": "webkit",
+          "Automation revision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+          "SUT revision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+          "Execution command": "node scripts/run-matrix.mjs",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127404",
+          "Run timestamp": "2026-08-09T17:16:10.035Z",
+          "Feature": "fr06",
+          "Browser": "webkit",
+          "Automation revision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+          "SUT revision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+          "Execution command": "node scripts/run-matrix.mjs",
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127404",
+          "Run timestamp": "2026-08-09T17:16:10.035Z",
+          "Feature": "fr06",
+          "Browser": "webkit",
+          "Automation revision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+          "SUT revision": "656991a598bafe43cbed13b54bf1ac3f429c30f2",
+          "Execution command": "node scripts/run-matrix.mjs",
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.55.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "fr06-product-detail.spec.ts",
+      "file": "fr06-product-detail.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-06 Product Detail",
+          "file": "fr06-product-detail.spec.ts",
+          "line": 12,
+          "column": 6,
+          "specs": [
+            {
+              "title": "FR06-01 [high] show the complete seeded product detail",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-06"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-VAL-06-01"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3401,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-01",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T17:16:13.557Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-06"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-VAL-06-01"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR06-01-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjA2LTAxIiwKICAidGl0bGUiOiAic2hvdyB0aGUgY29tcGxldGUgc2VlZGVkIHByb2R1Y3QgZGV0YWlsIiwKICAicHJpb3JpdHkiOiAiaGlnaCIsCiAgInBhcnRpdGlvbiI6IFsKICAgICJFUC1WQUwtMDYtMDEiCiAgXSwKICAicHJvZHVjdElkIjogMSwKICAiYXNzZXJ0aW9uIjogImZ1bGwtY29udGVudCIsCiAgImV4cGVjdGVkIjogewogICAgIm5hbWUiOiAiaVBob25lIDE1IFBybyBNYXgiLAogICAgInByaWNlIjogIjMwMDAwMDAwIiwKICAgICJkZXNjcmlwdGlvbiI6ICLEkGnhu4duIHRob+G6oWkgY2FvIGPhuqVwIGPhu6dhIEFwcGxlIgogIH0KfQo="
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-6e4770794d3f40e52b14",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 14,
+              "column": 5
+            },
+            {
+              "title": "FR06-02 [medium] render exactly one product page heading",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-06"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "medium"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-VAL-06-01"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3019,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-01",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T17:16:17.111Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-06"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "medium"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-VAL-06-01"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR06-02-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjA2LTAyIiwKICAidGl0bGUiOiAicmVuZGVyIGV4YWN0bHkgb25lIHByb2R1Y3QgcGFnZSBoZWFkaW5nIiwKICAicHJpb3JpdHkiOiAibWVkaXVtIiwKICAicGFydGl0aW9uIjogWwogICAgIkVQLVZBTC0wNi0wMSIKICBdLAogICJwcm9kdWN0SWQiOiAxLAogICJhc3NlcnRpb24iOiAic2luZ2xlLWhlYWRpbmciLAogICJleHBlY3RlZCI6IHsKICAgICJuYW1lIjogImlQaG9uZSAxNSBQcm8gTWF4IgogIH0KfQo="
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-dbeeb94726682eae0dec",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 14,
+              "column": 5
+            },
+            {
+              "title": "FR06-03 [high] show a large product image with descriptive alt text",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-06"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-VAL-06-02"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2361,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-02",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T17:16:20.160Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-06"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-VAL-06-02"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR06-03-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjA2LTAzIiwKICAidGl0bGUiOiAic2hvdyBhIGxhcmdlIHByb2R1Y3QgaW1hZ2Ugd2l0aCBkZXNjcmlwdGl2ZSBhbHQgdGV4dCIsCiAgInByaW9yaXR5IjogImhpZ2giLAogICJwYXJ0aXRpb24iOiBbCiAgICAiRVAtVkFMLTA2LTAyIgogIF0sCiAgInByb2R1Y3RJZCI6IDEsCiAgImFzc2VydGlvbiI6ICJpbWFnZSIsCiAgImV4cGVjdGVkIjogewogICAgIm5hbWUiOiAiaVBob25lIDE1IFBybyBNYXgiCiAgfQp9Cg=="
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-df0fd3a1aa581757b5ac",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 14,
+              "column": 5
+            },
+            {
+              "title": "FR06-04 [high] format a numeric price with thousands separators and dong",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-06"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-VAL-06-03"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2119,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-03",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T17:16:22.546Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-06"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-VAL-06-03"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR06-04-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjA2LTA0IiwKICAidGl0bGUiOiAiZm9ybWF0IGEgbnVtZXJpYyBwcmljZSB3aXRoIHRob3VzYW5kcyBzZXBhcmF0b3JzIGFuZCBkb25nIiwKICAicHJpb3JpdHkiOiAiaGlnaCIsCiAgInBhcnRpdGlvbiI6IFsKICAgICJFUC1WQUwtMDYtMDMiCiAgXSwKICAicHJvZHVjdElkIjogMSwKICAiYXNzZXJ0aW9uIjogInByaWNlIiwKICAiZXhwZWN0ZWQiOiB7CiAgICAicHJpY2UiOiAiMzAwMDAwMDAiCiAgfQp9Cg=="
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-8d654f496613bba16476",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 14,
+              "column": 5
+            },
+            {
+              "title": "FR06-05 [high] format a backend string price without NaN",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-06"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-VAL-06-04"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2030,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-04",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T17:16:24.687Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-06"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-VAL-06-04"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR06-05-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjA2LTA1IiwKICAidGl0bGUiOiAiZm9ybWF0IGEgYmFja2VuZCBzdHJpbmcgcHJpY2Ugd2l0aG91dCBOYU4iLAogICJwcmlvcml0eSI6ICJoaWdoIiwKICAicGFydGl0aW9uIjogWwogICAgIkVQLVZBTC0wNi0wNCIKICBdLAogICJwcm9kdWN0SWQiOiAyLAogICJhc3NlcnRpb24iOiAicHJpY2UiLAogICJleHBlY3RlZCI6IHsKICAgICJwcmljZSI6ICIyODAwMDAwMCIKICB9Cn0K"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-c1cbeb27dcf116c25fd0",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 14,
+              "column": 5
+            },
+            {
+              "title": "FR06-06 [medium] show the complete product description",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-06"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "medium"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-VAL-06-05"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1623,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-05",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T17:16:26.738Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-06"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "medium"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-VAL-06-05"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR06-06-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjA2LTA2IiwKICAidGl0bGUiOiAic2hvdyB0aGUgY29tcGxldGUgcHJvZHVjdCBkZXNjcmlwdGlvbiIsCiAgInByaW9yaXR5IjogIm1lZGl1bSIsCiAgInBhcnRpdGlvbiI6IFsKICAgICJFUC1WQUwtMDYtMDUiCiAgXSwKICAicHJvZHVjdElkIjogMywKICAiYXNzZXJ0aW9uIjogImRlc2NyaXB0aW9uIiwKICAiZXhwZWN0ZWQiOiB7CiAgICAiZGVzY3JpcHRpb24iOiAiTGFwdG9wIGNodXnDqm4gbmdoaeG7h3AgbeG6oW5oIG3hur0iCiAgfQp9Cg=="
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-c7441bf546e989004155",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 14,
+              "column": 5
+            },
+            {
+              "title": "FR06-07 [high] show the product category",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-06"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-VAL-06-06"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 10110,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('main').getByText('Điện thoại', { exact: true })\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByText('Điện thoại', { exact: true })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('main').getByText('Điện thoại', { exact: true })\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByText('Điện thoại', { exact: true })\u001b[22m\n\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:64:82",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                          "column": 82,
+                          "line": 64
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 62 |\u001b[39m           \u001b[36mbreak\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 63 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"category\"\u001b[39m\u001b[33m:\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 64 |\u001b[39m           \u001b[36mawait\u001b[39m expect(main\u001b[33m.\u001b[39mgetByText(row\u001b[33m.\u001b[39mexpected\u001b[33m!\u001b[39m\u001b[33m.\u001b[39mcategory\u001b[33m!\u001b[39m\u001b[33m,\u001b[39m { exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 65 |\u001b[39m           \u001b[36mbreak\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 66 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"quantity-type\"\u001b[39m\u001b[33m:\u001b[39m\n \u001b[90m 67 |\u001b[39m           \u001b[36mawait\u001b[39m expect(quantity)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                            "column": 82,
+                            "line": 64
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('main').getByText('Điện thoại', { exact: true })\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByText('Điện thoại', { exact: true })\u001b[22m\n\n\n  62 |           break;\n  63 |         case \"category\":\n> 64 |           await expect(main.getByText(row.expected!.category!, { exact: true })).toBeVisible();\n     |                                                                                  ^\n  65 |           break;\n  66 |         case \"quantity-type\":\n  67 |           await expect(quantity).toBeVisible();\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:64:82"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-06",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T17:16:28.383Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-06"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-VAL-06-06"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR06-07-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjA2LTA3IiwKICAidGl0bGUiOiAic2hvdyB0aGUgcHJvZHVjdCBjYXRlZ29yeSIsCiAgInByaW9yaXR5IjogImhpZ2giLAogICJwYXJ0aXRpb24iOiBbCiAgICAiRVAtVkFMLTA2LTA2IgogIF0sCiAgInByb2R1Y3RJZCI6IDEsCiAgImFzc2VydGlvbiI6ICJjYXRlZ29yeSIsCiAgImV4cGVjdGVkIjogewogICAgImNhdGVnb3J5IjogIsSQaeG7h24gdGhv4bqhaSIKICB9Cn0K"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--4319d-h-show-the-product-category-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--4319d-h-show-the-product-category-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--4319d-h-show-the-product-category-webkit\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--4319d-h-show-the-product-category-webkit\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                        "column": 82,
+                        "line": 64
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-f4c6138deffdc51f3d18",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 14,
+              "column": 5
+            },
+            {
+              "title": "FR06-08 [medium] use a numeric quantity input",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-06"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "medium"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-VAL-06-07"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2148,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-07",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T17:16:40.220Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-06"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "medium"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-VAL-06-07"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR06-08-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjA2LTA4IiwKICAidGl0bGUiOiAidXNlIGEgbnVtZXJpYyBxdWFudGl0eSBpbnB1dCIsCiAgInByaW9yaXR5IjogIm1lZGl1bSIsCiAgInBhcnRpdGlvbiI6IFsKICAgICJFUC1WQUwtMDYtMDciCiAgXSwKICAicHJvZHVjdElkIjogMSwKICAiYXNzZXJ0aW9uIjogInF1YW50aXR5LXR5cGUiCn0K"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-1c28d5b14333e3a721ff",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 14,
+              "column": 5
+            },
+            {
+              "title": "FR06-09 [high] declare the minimum quantity as one",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-06"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-VAL-06-07, BVA-BND-06-01"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 10067,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main').getByRole('spinbutton')\nExpected string: \u001b[32m\"1\"\u001b[39m\nReceived string: \u001b[31m\"\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByRole('spinbutton')\u001b[22m\n\u001b[2m    11 × locator resolved to <input value=\"1\" type=\"number\" class=\"border p-2 w-20 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"null\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main').getByRole('spinbutton')\nExpected string: \u001b[32m\"1\"\u001b[39m\nReceived string: \u001b[31m\"\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByRole('spinbutton')\u001b[22m\n\u001b[2m    11 × locator resolved to <input value=\"1\" type=\"number\" class=\"border p-2 w-20 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"null\"\u001b[22m\n\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:71:34",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                          "column": 34,
+                          "line": 71
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 69 |\u001b[39m           \u001b[36mbreak\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 70 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"quantity-min\"\u001b[39m\u001b[33m:\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 71 |\u001b[39m           \u001b[36mawait\u001b[39m expect(quantity)\u001b[33m.\u001b[39mtoHaveAttribute(\u001b[32m\"min\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"1\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 72 |\u001b[39m           \u001b[36mbreak\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 73 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"quantity-default\"\u001b[39m\u001b[33m:\u001b[39m\n \u001b[90m 74 |\u001b[39m           \u001b[36mawait\u001b[39m expect(quantity)\u001b[33m.\u001b[39mtoHaveValue(\u001b[32m\"1\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                            "column": 34,
+                            "line": 71
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main').getByRole('spinbutton')\nExpected string: \u001b[32m\"1\"\u001b[39m\nReceived string: \u001b[31m\"\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByRole('spinbutton')\u001b[22m\n\u001b[2m    11 × locator resolved to <input value=\"1\" type=\"number\" class=\"border p-2 w-20 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"null\"\u001b[22m\n\n\n  69 |           break;\n  70 |         case \"quantity-min\":\n> 71 |           await expect(quantity).toHaveAttribute(\"min\", \"1\");\n     |                                  ^\n  72 |           break;\n  73 |         case \"quantity-default\":\n  74 |           await expect(quantity).toHaveValue(\"1\");\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:71:34"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-07, BVA-BND-06-01",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T17:16:42.499Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-06"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-VAL-06-07, BVA-BND-06-01"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR06-09-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjA2LTA5IiwKICAidGl0bGUiOiAiZGVjbGFyZSB0aGUgbWluaW11bSBxdWFudGl0eSBhcyBvbmUiLAogICJwcmlvcml0eSI6ICJoaWdoIiwKICAicGFydGl0aW9uIjogWwogICAgIkVQLVZBTC0wNi0wNyIKICBdLAogICJib3VuZGFyeSI6IFsKICAgICJCVkEtQk5ELTA2LTAxIgogIF0sCiAgInByb2R1Y3RJZCI6IDEsCiAgImFzc2VydGlvbiI6ICJxdWFudGl0eS1taW4iCn0K"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--8f505-the-minimum-quantity-as-one-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--8f505-the-minimum-quantity-as-one-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--8f505-the-minimum-quantity-as-one-webkit\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--8f505-the-minimum-quantity-as-one-webkit\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                        "column": 34,
+                        "line": 71
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-05155a73986c35716928",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 14,
+              "column": 5
+            },
+            {
+              "title": "FR06-10 [high] default quantity to the minimum valid value",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-06"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-VAL-06-07, BVA-BND-06-01"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2078,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-07, BVA-BND-06-01",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T17:16:53.935Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-06"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-VAL-06-07, BVA-BND-06-01"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR06-10-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjA2LTEwIiwKICAidGl0bGUiOiAiZGVmYXVsdCBxdWFudGl0eSB0byB0aGUgbWluaW11bSB2YWxpZCB2YWx1ZSIsCiAgInByaW9yaXR5IjogImhpZ2giLAogICJwYXJ0aXRpb24iOiBbCiAgICAiRVAtVkFMLTA2LTA3IgogIF0sCiAgImJvdW5kYXJ5IjogWwogICAgIkJWQS1CTkQtMDYtMDEiCiAgXSwKICAicHJvZHVjdElkIjogMSwKICAiYXNzZXJ0aW9uIjogInF1YW50aXR5LWRlZmF1bHQiCn0K"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-d8cd4d2ed699e2d4eaff",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 14,
+              "column": 5
+            },
+            {
+              "title": "FR06-11 [high] give visual feedback after the first add click",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-06"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-VAL-06-08"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 10373,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main').getByRole('button', { name: /Thêm vào giỏ hàng|Đã thêm/i })\nExpected pattern: \u001b[32m/Đã thêm/i\u001b[39m\nReceived string:  \u001b[31m\"Thêm vào giỏ hàng\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByRole('button', { name: /Thêm vào giỏ hàng|Đã thêm/i })\u001b[22m\n\u001b[2m    11 × locator resolved to <button class=\"bg-green-600 text-white py-3 px-6 rounded hover:bg-green-700 self-start bug-mobile-hidden\">Thêm vào giỏ hàng</button>\u001b[22m\n\u001b[2m       - unexpected value \"Thêm vào giỏ hàng\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main').getByRole('button', { name: /Thêm vào giỏ hàng|Đã thêm/i })\nExpected pattern: \u001b[32m/Đã thêm/i\u001b[39m\nReceived string:  \u001b[31m\"Thêm vào giỏ hàng\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByRole('button', { name: /Thêm vào giỏ hàng|Đã thêm/i })\u001b[22m\n\u001b[2m    11 × locator resolved to <button class=\"bg-green-600 text-white py-3 px-6 rounded hover:bg-green-700 self-start bug-mobile-hidden\">Thêm vào giỏ hàng</button>\u001b[22m\n\u001b[2m       - unexpected value \"Thêm vào giỏ hàng\"\u001b[22m\n\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:81:35",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                          "column": 35,
+                          "line": 81
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 79 |\u001b[39m           \u001b[36mawait\u001b[39m expect(quantity)\u001b[33m.\u001b[39mtoHaveValue(row\u001b[33m.\u001b[39mquantity\u001b[33m!\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 80 |\u001b[39m           \u001b[36mawait\u001b[39m addButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 81 |\u001b[39m           \u001b[36mawait\u001b[39m expect(addButton)\u001b[33m.\u001b[39mtoContainText(\u001b[35m/Đã thêm/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 82 |\u001b[39m           \u001b[36mbreak\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 83 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"reject-zero\"\u001b[39m\u001b[33m:\u001b[39m\n \u001b[90m 84 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"reject-negative\"\u001b[39m\u001b[33m:\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                            "column": 35,
+                            "line": 81
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main').getByRole('button', { name: /Thêm vào giỏ hàng|Đã thêm/i })\nExpected pattern: \u001b[32m/Đã thêm/i\u001b[39m\nReceived string:  \u001b[31m\"Thêm vào giỏ hàng\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByRole('button', { name: /Thêm vào giỏ hàng|Đã thêm/i })\u001b[22m\n\u001b[2m    11 × locator resolved to <button class=\"bg-green-600 text-white py-3 px-6 rounded hover:bg-green-700 self-start bug-mobile-hidden\">Thêm vào giỏ hàng</button>\u001b[22m\n\u001b[2m       - unexpected value \"Thêm vào giỏ hàng\"\u001b[22m\n\n\n  79 |           await expect(quantity).toHaveValue(row.quantity!);\n  80 |           await addButton.click();\n> 81 |           await expect(addButton).toContainText(/Đã thêm/i);\n     |                                   ^\n  82 |           break;\n  83 |         case \"reject-zero\":\n  84 |         case \"reject-negative\":\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:81:35"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-08",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T17:16:56.125Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-06"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-VAL-06-08"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR06-11-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjA2LTExIiwKICAidGl0bGUiOiAiZ2l2ZSB2aXN1YWwgZmVlZGJhY2sgYWZ0ZXIgdGhlIGZpcnN0IGFkZCBjbGljayIsCiAgInByaW9yaXR5IjogImhpZ2giLAogICJwYXJ0aXRpb24iOiBbCiAgICAiRVAtVkFMLTA2LTA4IgogIF0sCiAgInByb2R1Y3RJZCI6IDEsCiAgImFzc2VydGlvbiI6ICJhZGQtZmVlZGJhY2stZmlyc3QtY2xpY2siLAogICJxdWFudGl0eSI6ICIxIgp9Cg=="
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--b65c6-k-after-the-first-add-click-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--b65c6-k-after-the-first-add-click-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--b65c6-k-after-the-first-add-click-webkit\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--b65c6-k-after-the-first-add-click-webkit\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                        "column": 35,
+                        "line": 81
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-236fa7ce9a820bfad99c",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 14,
+              "column": 5
+            },
+            {
+              "title": "FR06-12 [high] accept an in-range integer quantity and give feedback",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-06"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-VAL-06-07, EP-VAL-06-08, BVA-BND-06-01"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 10522,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main').getByRole('button', { name: /Thêm vào giỏ hàng|Đã thêm/i })\nExpected pattern: \u001b[32m/Đã thêm/i\u001b[39m\nReceived string:  \u001b[31m\"Thêm vào giỏ hàng\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByRole('button', { name: /Thêm vào giỏ hàng|Đã thêm/i })\u001b[22m\n\u001b[2m    11 × locator resolved to <button class=\"bg-green-600 text-white py-3 px-6 rounded hover:bg-green-700 self-start bug-mobile-hidden\">Thêm vào giỏ hàng</button>\u001b[22m\n\u001b[2m       - unexpected value \"Thêm vào giỏ hàng\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main').getByRole('button', { name: /Thêm vào giỏ hàng|Đã thêm/i })\nExpected pattern: \u001b[32m/Đã thêm/i\u001b[39m\nReceived string:  \u001b[31m\"Thêm vào giỏ hàng\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByRole('button', { name: /Thêm vào giỏ hàng|Đã thêm/i })\u001b[22m\n\u001b[2m    11 × locator resolved to <button class=\"bg-green-600 text-white py-3 px-6 rounded hover:bg-green-700 self-start bug-mobile-hidden\">Thêm vào giỏ hàng</button>\u001b[22m\n\u001b[2m       - unexpected value \"Thêm vào giỏ hàng\"\u001b[22m\n\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:81:35",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                          "column": 35,
+                          "line": 81
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 79 |\u001b[39m           \u001b[36mawait\u001b[39m expect(quantity)\u001b[33m.\u001b[39mtoHaveValue(row\u001b[33m.\u001b[39mquantity\u001b[33m!\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 80 |\u001b[39m           \u001b[36mawait\u001b[39m addButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 81 |\u001b[39m           \u001b[36mawait\u001b[39m expect(addButton)\u001b[33m.\u001b[39mtoContainText(\u001b[35m/Đã thêm/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 82 |\u001b[39m           \u001b[36mbreak\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 83 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"reject-zero\"\u001b[39m\u001b[33m:\u001b[39m\n \u001b[90m 84 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"reject-negative\"\u001b[39m\u001b[33m:\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                            "column": 35,
+                            "line": 81
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main').getByRole('button', { name: /Thêm vào giỏ hàng|Đã thêm/i })\nExpected pattern: \u001b[32m/Đã thêm/i\u001b[39m\nReceived string:  \u001b[31m\"Thêm vào giỏ hàng\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByRole('button', { name: /Thêm vào giỏ hàng|Đã thêm/i })\u001b[22m\n\u001b[2m    11 × locator resolved to <button class=\"bg-green-600 text-white py-3 px-6 rounded hover:bg-green-700 self-start bug-mobile-hidden\">Thêm vào giỏ hàng</button>\u001b[22m\n\u001b[2m       - unexpected value \"Thêm vào giỏ hàng\"\u001b[22m\n\n\n  79 |           await expect(quantity).toHaveValue(row.quantity!);\n  80 |           await addButton.click();\n> 81 |           await expect(addButton).toContainText(/Đã thêm/i);\n     |                                   ^\n  82 |           break;\n  83 |         case \"reject-zero\":\n  84 |         case \"reject-negative\":\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:81:35"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-07, EP-VAL-06-08, BVA-BND-06-01",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T17:17:07.853Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-06"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-VAL-06-07, EP-VAL-06-08, BVA-BND-06-01"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR06-12-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjA2LTEyIiwKICAidGl0bGUiOiAiYWNjZXB0IGFuIGluLXJhbmdlIGludGVnZXIgcXVhbnRpdHkgYW5kIGdpdmUgZmVlZGJhY2siLAogICJwcmlvcml0eSI6ICJoaWdoIiwKICAicGFydGl0aW9uIjogWwogICAgIkVQLVZBTC0wNi0wNyIsCiAgICAiRVAtVkFMLTA2LTA4IgogIF0sCiAgImJvdW5kYXJ5IjogWwogICAgIkJWQS1CTkQtMDYtMDEiCiAgXSwKICAicHJvZHVjdElkIjogNCwKICAiYXNzZXJ0aW9uIjogImFkZC1mZWVkYmFjay12YWxpZC1xdWFudGl0eSIsCiAgInF1YW50aXR5IjogIjIiCn0K"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--3759e--quantity-and-give-feedback-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--3759e--quantity-and-give-feedback-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--3759e--quantity-and-give-feedback-webkit\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--3759e--quantity-and-give-feedback-webkit\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                        "column": 35,
+                        "line": 81
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-a2606624d2acac02854f",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 14,
+              "column": 5
+            },
+            {
+              "title": "FR06-13 [high] reject quantity zero",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-06"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-INV-06-01, BVA-BND-06-01"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2217,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:87:94",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                          "column": 94,
+                          "line": 87
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 85 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"reject-fraction\"\u001b[39m\u001b[33m:\u001b[39m\n \u001b[90m 86 |\u001b[39m           \u001b[36mawait\u001b[39m quantity\u001b[33m.\u001b[39mfill(row\u001b[33m.\u001b[39mquantity\u001b[33m!\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 87 |\u001b[39m           expect(\u001b[36mawait\u001b[39m quantity\u001b[33m.\u001b[39mevaluate((input\u001b[33m:\u001b[39m \u001b[33mHTMLInputElement\u001b[39m) \u001b[33m=>\u001b[39m input\u001b[33m.\u001b[39mvalidity\u001b[33m.\u001b[39mvalid))\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 88 |\u001b[39m           \u001b[36mbreak\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 89 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"not-found\"\u001b[39m\u001b[33m:\u001b[39m\n \u001b[90m 90 |\u001b[39m           \u001b[36mawait\u001b[39m expect(main)\u001b[33m.\u001b[39mtoContainText(\u001b[35m/không tồn tại|not found/i\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                            "column": 94,
+                            "line": 87
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n  85 |         case \"reject-fraction\":\n  86 |           await quantity.fill(row.quantity!);\n> 87 |           expect(await quantity.evaluate((input: HTMLInputElement) => input.validity.valid)).toBe(false);\n     |                                                                                              ^\n  88 |           break;\n  89 |         case \"not-found\":\n  90 |           await expect(main).toContainText(/không tồn tại|not found/i);\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:87:94"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-06-01, BVA-BND-06-01",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T17:17:19.773Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-06"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-INV-06-01, BVA-BND-06-01"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR06-13-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjA2LTEzIiwKICAidGl0bGUiOiAicmVqZWN0IHF1YW50aXR5IHplcm8iLAogICJwcmlvcml0eSI6ICJoaWdoIiwKICAicGFydGl0aW9uIjogWwogICAgIkVQLUlOVi0wNi0wMSIKICBdLAogICJib3VuZGFyeSI6IFsKICAgICJCVkEtQk5ELTA2LTAxIgogIF0sCiAgInByb2R1Y3RJZCI6IDEsCiAgImFzc2VydGlvbiI6ICJyZWplY3QtemVybyIsCiAgInF1YW50aXR5IjogIjAiCn0K"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--1f703-3-high-reject-quantity-zero-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--1f703-3-high-reject-quantity-zero-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--1f703-3-high-reject-quantity-zero-webkit\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--1f703-3-high-reject-quantity-zero-webkit\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                        "column": 94,
+                        "line": 87
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-6cc00fff69f5e801cf45",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 14,
+              "column": 5
+            },
+            {
+              "title": "FR06-14 [high] reject a negative quantity",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-06"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-INV-06-01, BVA-BND-06-01"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1964,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:87:94",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                          "column": 94,
+                          "line": 87
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 85 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"reject-fraction\"\u001b[39m\u001b[33m:\u001b[39m\n \u001b[90m 86 |\u001b[39m           \u001b[36mawait\u001b[39m quantity\u001b[33m.\u001b[39mfill(row\u001b[33m.\u001b[39mquantity\u001b[33m!\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 87 |\u001b[39m           expect(\u001b[36mawait\u001b[39m quantity\u001b[33m.\u001b[39mevaluate((input\u001b[33m:\u001b[39m \u001b[33mHTMLInputElement\u001b[39m) \u001b[33m=>\u001b[39m input\u001b[33m.\u001b[39mvalidity\u001b[33m.\u001b[39mvalid))\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 88 |\u001b[39m           \u001b[36mbreak\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 89 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"not-found\"\u001b[39m\u001b[33m:\u001b[39m\n \u001b[90m 90 |\u001b[39m           \u001b[36mawait\u001b[39m expect(main)\u001b[33m.\u001b[39mtoContainText(\u001b[35m/không tồn tại|not found/i\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                            "column": 94,
+                            "line": 87
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n  85 |         case \"reject-fraction\":\n  86 |           await quantity.fill(row.quantity!);\n> 87 |           expect(await quantity.evaluate((input: HTMLInputElement) => input.validity.valid)).toBe(false);\n     |                                                                                              ^\n  88 |           break;\n  89 |         case \"not-found\":\n  90 |           await expect(main).toContainText(/không tồn tại|not found/i);\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:87:94"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-06-01, BVA-BND-06-01",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T17:17:23.310Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-06"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-INV-06-01, BVA-BND-06-01"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR06-14-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjA2LTE0IiwKICAidGl0bGUiOiAicmVqZWN0IGEgbmVnYXRpdmUgcXVhbnRpdHkiLAogICJwcmlvcml0eSI6ICJoaWdoIiwKICAicGFydGl0aW9uIjogWwogICAgIkVQLUlOVi0wNi0wMSIKICBdLAogICJib3VuZGFyeSI6IFsKICAgICJCVkEtQk5ELTA2LTAxIgogIF0sCiAgInByb2R1Y3RJZCI6IDEsCiAgImFzc2VydGlvbiI6ICJyZWplY3QtbmVnYXRpdmUiLAogICJxdWFudGl0eSI6ICItMSIKfQo="
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--9889a--reject-a-negative-quantity-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--9889a--reject-a-negative-quantity-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--9889a--reject-a-negative-quantity-webkit\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--9889a--reject-a-negative-quantity-webkit\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                        "column": 94,
+                        "line": 87
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-86a56953524bf96efd24",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 14,
+              "column": 5
+            },
+            {
+              "title": "FR06-15 [high] reject a fractional quantity",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-06"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-INV-06-02, BVA-BND-06-02"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2045,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-06-02, BVA-BND-06-02",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T17:17:26.765Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-06"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-INV-06-02, BVA-BND-06-02"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR06-15-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjA2LTE1IiwKICAidGl0bGUiOiAicmVqZWN0IGEgZnJhY3Rpb25hbCBxdWFudGl0eSIsCiAgInByaW9yaXR5IjogImhpZ2giLAogICJwYXJ0aXRpb24iOiBbCiAgICAiRVAtSU5WLTA2LTAyIgogIF0sCiAgImJvdW5kYXJ5IjogWwogICAgIkJWQS1CTkQtMDYtMDIiCiAgXSwKICAicHJvZHVjdElkIjogMSwKICAiYXNzZXJ0aW9uIjogInJlamVjdC1mcmFjdGlvbiIsCiAgInF1YW50aXR5IjogIjEuNSIKfQo="
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-851c808fa995ee199ce8",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 14,
+              "column": 5
+            },
+            {
+              "title": "FR06-16 [medium] show a clear not-found state for an unknown product",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-06"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "medium"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-INV-06-03"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1972,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-06-03",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T17:17:28.893Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-06"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "medium"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-INV-06-03"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR06-16-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjA2LTE2IiwKICAidGl0bGUiOiAic2hvdyBhIGNsZWFyIG5vdC1mb3VuZCBzdGF0ZSBmb3IgYW4gdW5rbm93biBwcm9kdWN0IiwKICAicHJpb3JpdHkiOiAibWVkaXVtIiwKICAicGFydGl0aW9uIjogWwogICAgIkVQLUlOVi0wNi0wMyIKICBdLAogICJwcm9kdWN0SWQiOiA5OTk5OTksCiAgImFzc2VydGlvbiI6ICJub3QtZm91bmQiCn0K"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-cba19026dde98ccadd12",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 14,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-08-09T17:16:12.046Z",
+    "duration": 78941.46299999999,
+    "expected": 10,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  }
+}
