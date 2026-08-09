@@ -26,6 +26,16 @@ for (const browser of selectedBrowsers) {
 
 const executable = process.execPath;
 const playwrightCli = path.resolve("node_modules", "@playwright", "test", "cli.js");
+const sourceRevisionResult = spawnSync("git", ["rev-parse", "HEAD"], {
+  cwd: process.cwd(),
+  encoding: "utf8",
+  shell: false,
+});
+if (sourceRevisionResult.status !== 0) {
+  throw new Error(`Unable to resolve the exact Git revision: ${sourceRevisionResult.stderr}`);
+}
+const sourceRevision = sourceRevisionResult.stdout.trim();
+const executionCommand = ["node", "scripts/run-matrix.mjs", ...process.argv.slice(2)].join(" ");
 const results = [];
 
 function escapeHtml(value) {
@@ -39,7 +49,7 @@ function escapeHtml(value) {
 function stampHtmlReport(reportKey, feature, browser, runTimestamp, status) {
   const indexPath = path.resolve("reports", reportKey, "index.html");
   if (!existsSync(indexPath)) return;
-  const banner = `<aside id="hw04-run-attribution" style="position:fixed;right:12px;bottom:12px;z-index:2147483647;padding:10px 14px;border:2px solid #1d4ed8;border-radius:8px;background:#eff6ff;color:#172554;font:600 12px/1.5 system-ui;box-shadow:0 4px 14px #0003">Run by: 23127404 | ${escapeHtml(runTimestamp)} | ${escapeHtml(feature)} | ${escapeHtml(browser)} | ${escapeHtml(status)}</aside>`;
+  const banner = `<aside id="hw04-run-attribution" style="position:fixed;right:12px;bottom:12px;z-index:2147483647;padding:10px 14px;border:2px solid #1d4ed8;border-radius:8px;background:#eff6ff;color:#172554;font:600 12px/1.5 system-ui;box-shadow:0 4px 14px #0003">Run by: 23127404 | ${escapeHtml(runTimestamp)} | ${escapeHtml(feature)} | ${escapeHtml(browser)} | ${escapeHtml(status)} | Revision: ${escapeHtml(sourceRevision)}</aside>`;
   const html = readFileSync(indexPath, "utf8");
   writeFileSync(indexPath, html.replace("</body>", `${banner}</body>`), "utf8");
 }
@@ -62,6 +72,9 @@ for (const feature of selectedFeatures) {
           BROWSER_KEY: browser,
           RUN_TIMESTAMP: runTimestamp,
           REPORT_KEY: reportKey,
+          SUT_REVISION: sourceRevision,
+          AUTOMATION_REVISION: sourceRevision,
+          EXECUTION_COMMAND: executionCommand,
         },
         stdio: "inherit",
         shell: false,

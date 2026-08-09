@@ -10,6 +10,8 @@ const reportKey = process.env.REPORT_KEY ?? `${feature}-${browser}-${safeTimesta
 const reportDir = path.resolve("reports", reportKey);
 const listOnly = process.argv.includes("--list");
 const title = `HW04 ${feature} ${browser} | Run by: ${studentId} | ${runTimestamp}`;
+const sourceRevision = process.env.AUTOMATION_REVISION ?? process.env.SUT_REVISION ?? "unknown";
+const executionCommand = process.env.EXECUTION_COMMAND ?? "unknown";
 
 export default defineConfig({
   testDir: "./tests",
@@ -25,6 +27,9 @@ export default defineConfig({
     "Run timestamp": runTimestamp,
     Feature: feature,
     Browser: browser,
+    "Automation revision": sourceRevision,
+    "SUT revision": process.env.SUT_REVISION ?? sourceRevision,
+    "Execution command": executionCommand,
   },
   reporter: listOnly
     ? [["list"]]
@@ -34,7 +39,16 @@ export default defineConfig({
         ["json", { outputFile: path.join(reportDir, "results.json") }],
         [
           "./src/reporters/run-metadata-reporter.ts",
-          { reportDir, studentId, runTimestamp, feature, browser },
+          {
+            reportDir,
+            studentId,
+            runTimestamp,
+            feature,
+            browser,
+            automationRevision: sourceRevision,
+            sutRevision: process.env.SUT_REVISION ?? sourceRevision,
+            executionCommand,
+          },
         ],
       ],
   use: {

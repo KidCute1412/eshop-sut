@@ -8,6 +8,9 @@ interface Options {
   runTimestamp: string;
   feature: string;
   browser: string;
+  automationRevision: string;
+  sutRevision: string;
+  executionCommand: string;
 }
 
 export default class RunMetadataReporter implements Reporter {
@@ -34,6 +37,9 @@ export default class RunMetadataReporter implements Reporter {
           runTimestamp: this.options.runTimestamp,
           feature: this.options.feature,
           browser: this.options.browser,
+          automationRevision: this.options.automationRevision,
+          sutRevision: this.options.sutRevision,
+          executionCommand: this.options.executionCommand,
           ...result,
         },
         null,
