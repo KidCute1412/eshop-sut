@@ -71,7 +71,7 @@ Create professional English HW04 submission documentation/templates under docs/a
 
 ### AI output
 
-The interaction initially produced the English submission scaffold under `docs/assignments/HW04/deliverables/` and the manual guide under `docs/assignments/HW04/specs/manual.md`. Subsequent evidence reconciliation replaced the planning matrix with the actual 51-row case/data/spec/browser-result matrix, recorded 153 attempts with 102 reaching assertions and 51 Firefox fixture failures, and exported nine qualifying HW04 test-script commits across two days. Student-controlled identity fields, Issue URLs, screenshots, videos, and public-link verification remain unfilled.
+The interaction initially produced the English submission scaffold under `docs/assignments/HW04/deliverables/` and the manual guide under `docs/assignments/HW04/specs/manual.md`. Subsequent evidence reconciliation replaced the planning matrix with the actual 51-row case/data/spec/browser-result matrix, recorded 153 attempts with all 153 reaching assertions (96 passed and 57 assertion failures), and exported nine qualifying HW04 test-script commits across two days. Student-controlled identity fields, Issue URLs, screenshots, videos, and public-link verification remain unfilled.
 
 ### Human review required
 
@@ -118,8 +118,8 @@ The `domain-bva-tester` guidance was used to structure equivalence partitions an
 
 - Accepted the 51-case external-data architecture and three-browser matrix after TypeScript discovery produced 153 scheduled cells.
 - Corrected the FR-10 substring row locator to exact order-ID cell matching and repeated the FR-10 matrix.
-- Rejected classification of 51 Firefox page-fixture timeouts as SUT defects.
-- Retained 38 assertion failures as candidates pending student reproduction and public Issue evidence.
+- Rejected classification of the original Firefox page-fixture failures as SUT defects; removing incompatible device options produced a successful 51-case Firefox rerun.
+- Retained 57 assertion failures as candidates pending student reproduction and public Issue evidence.
 - Accepted the student's explicit direction to make the required commit count immediately, while disclosing that the four-calendar-day condition remains unmet.
 - Commissioned an independent read-only quality audit; its traceability, wording, validator-scope, critique, and Git-log findings were incorporated before packaging.
 

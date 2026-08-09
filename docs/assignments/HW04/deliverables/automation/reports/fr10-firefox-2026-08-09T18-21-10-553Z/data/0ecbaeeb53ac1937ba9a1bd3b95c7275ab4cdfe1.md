@@ -1,0 +1,210 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - link "EShop" [ref=e5] [cursor=pointer]:
+      - /url: /
+    - navigation [ref=e6]:
+      - link "Giỏ hàng" [ref=e7] [cursor=pointer]:
+        - /url: /cart
+      - generic [ref=e8]:
+        - link "Chào, Test User" [ref=e9] [cursor=pointer]:
+          - /url: /profile
+          - generic [ref=e10] [cursor=pointer]: Chào, Test User
+        - button "Thoát" [ref=e11] [cursor=pointer]
+  - main [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - heading "Hồ sơ của bạn" [level=2] [ref=e15]
+        - generic [ref=e16]:
+          - generic [ref=e17]:
+            - generic [ref=e18]: Email (Không đổi)
+            - textbox [disabled] [ref=e19]: test@eshop.com
+          - generic [ref=e20]:
+            - generic [ref=e21]: Họ Tên
+            - textbox [ref=e22]: Test User
+          - generic [ref=e23]:
+            - generic [ref=e24]: Số điện thoại
+            - 'textbox "VD: 0912345678" [ref=e25]'
+          - generic [ref=e26]:
+            - generic [ref=e27]: Địa chỉ giao hàng
+            - textbox "Nhập địa chỉ của bạn" [ref=e28]
+          - button "Cập nhật" [ref=e29] [cursor=pointer]
+      - generic [ref=e30]:
+        - heading "Lịch sử đơn hàng" [level=2] [ref=e31]
+        - table [ref=e32]:
+          - rowgroup [ref=e33]:
+            - row "Mã ĐH Ngày đặt Tổng tiền Trạng thái Thao tác" [ref=e34]:
+              - cell "Mã ĐH" [ref=e35]
+              - cell "Ngày đặt" [ref=e36]
+              - cell "Tổng tiền" [ref=e37]
+              - cell "Trạng thái" [ref=e38]
+              - cell "Thao tác" [ref=e39]
+          - rowgroup [ref=e40]:
+            - row "#22 8/9/2026 30,000,000 ₫ Đang giao Hủy đơn" [ref=e41]:
+              - cell "#22" [ref=e42]
+              - cell "8/9/2026" [ref=e43]
+              - cell "30,000,000 ₫" [ref=e44]
+              - cell "Đang giao" [ref=e45]:
+                - generic [ref=e46]: Đang giao
+              - cell "Hủy đơn" [ref=e47]:
+                - button "Hủy đơn" [ref=e48] [cursor=pointer]
+            - row "#21 8/9/2026 30,000,000 ₫ Chờ xác nhận Hủy đơn" [ref=e49]:
+              - cell "#21" [ref=e50]
+              - cell "8/9/2026" [ref=e51]
+              - cell "30,000,000 ₫" [ref=e52]
+              - cell "Chờ xác nhận" [ref=e53]:
+                - generic [ref=e54]: Chờ xác nhận
+              - cell "Hủy đơn" [ref=e55]:
+                - button "Hủy đơn" [ref=e56] [cursor=pointer]
+            - row "#20 8/9/2026 30,000,000 ₫ Chờ xác nhận Hủy đơn" [ref=e57]:
+              - cell "#20" [ref=e58]
+              - cell "8/9/2026" [ref=e59]
+              - cell "30,000,000 ₫" [ref=e60]
+              - cell "Chờ xác nhận" [ref=e61]:
+                - generic [ref=e62]: Chờ xác nhận
+              - cell "Hủy đơn" [ref=e63]:
+                - button "Hủy đơn" [ref=e64] [cursor=pointer]
+            - row "#19 8/9/2026 30,000,000 ₫ Đã hủy" [ref=e65]:
+              - cell "#19" [ref=e66]
+              - cell "8/9/2026" [ref=e67]
+              - cell "30,000,000 ₫" [ref=e68]
+              - cell "Đã hủy" [ref=e69]:
+                - generic [ref=e70]: Đã hủy
+              - cell [ref=e71]
+            - row "#18 8/9/2026 30,000,000 ₫ Đã hủy" [ref=e72]:
+              - cell "#18" [ref=e73]
+              - cell "8/9/2026" [ref=e74]
+              - cell "30,000,000 ₫" [ref=e75]
+              - cell "Đã hủy" [ref=e76]:
+                - generic [ref=e77]: Đã hủy
+              - cell [ref=e78]
+            - row "#17 8/9/2026 30,000,000 ₫ Đã xác nhận Hủy đơn" [ref=e79]:
+              - cell "#17" [ref=e80]
+              - cell "8/9/2026" [ref=e81]
+              - cell "30,000,000 ₫" [ref=e82]
+              - cell "Đã xác nhận" [ref=e83]:
+                - generic [ref=e84]: Đã xác nhận
+              - cell "Hủy đơn" [ref=e85]:
+                - button "Hủy đơn" [ref=e86] [cursor=pointer]
+            - row "#16 8/9/2026 30,000,000 ₫ Đã giao" [ref=e87]:
+              - cell "#16" [ref=e88]
+              - cell "8/9/2026" [ref=e89]
+              - cell "30,000,000 ₫" [ref=e90]
+              - cell "Đã giao" [ref=e91]:
+                - generic [ref=e92]: Đã giao
+              - cell [ref=e93]
+            - row "#15 8/9/2026 30,000,000 ₫ Đã hủy" [ref=e94]:
+              - cell "#15" [ref=e95]
+              - cell "8/9/2026" [ref=e96]
+              - cell "30,000,000 ₫" [ref=e97]
+              - cell "Đã hủy" [ref=e98]:
+                - generic [ref=e99]: Đã hủy
+              - cell [ref=e100]
+            - row "#14 8/9/2026 30,000,000 ₫ Đã giao" [ref=e101]:
+              - cell "#14" [ref=e102]
+              - cell "8/9/2026" [ref=e103]
+              - cell "30,000,000 ₫" [ref=e104]
+              - cell "Đã giao" [ref=e105]:
+                - generic [ref=e106]: Đã giao
+              - cell [ref=e107]
+            - row "#13 8/9/2026 30,000,000 ₫ Đã giao" [ref=e108]:
+              - cell "#13" [ref=e109]
+              - cell "8/9/2026" [ref=e110]
+              - cell "30,000,000 ₫" [ref=e111]
+              - cell "Đã giao" [ref=e112]:
+                - generic [ref=e113]: Đã giao
+              - cell [ref=e114]
+            - row "#12 8/9/2026 30,000,000 ₫ Đã hủy" [ref=e115]:
+              - cell "#12" [ref=e116]
+              - cell "8/9/2026" [ref=e117]
+              - cell "30,000,000 ₫" [ref=e118]
+              - cell "Đã hủy" [ref=e119]:
+                - generic [ref=e120]: Đã hủy
+              - cell [ref=e121]
+            - row "#11 8/9/2026 30,000,000 ₫ Đang giao Hủy đơn" [ref=e122]:
+              - cell "#11" [ref=e123]
+              - cell "8/9/2026" [ref=e124]
+              - cell "30,000,000 ₫" [ref=e125]
+              - cell "Đang giao" [ref=e126]:
+                - generic [ref=e127]: Đang giao
+              - cell "Hủy đơn" [ref=e128]:
+                - button "Hủy đơn" [ref=e129] [cursor=pointer]
+            - row "#10 8/9/2026 30,000,000 ₫ Đã giao" [ref=e130]:
+              - cell "#10" [ref=e131]
+              - cell "8/9/2026" [ref=e132]
+              - cell "30,000,000 ₫" [ref=e133]
+              - cell "Đã giao" [ref=e134]:
+                - generic [ref=e135]: Đã giao
+              - cell [ref=e136]
+            - row "#9 8/9/2026 30,000,000 ₫ Đã xác nhận Hủy đơn" [ref=e137]:
+              - cell "#9" [ref=e138]
+              - cell "8/9/2026" [ref=e139]
+              - cell "30,000,000 ₫" [ref=e140]
+              - cell "Đã xác nhận" [ref=e141]:
+                - generic [ref=e142]: Đã xác nhận
+              - cell "Hủy đơn" [ref=e143]:
+                - button "Hủy đơn" [ref=e144] [cursor=pointer]
+            - row "#8 8/9/2026 30,000,000 ₫ Đã hủy" [ref=e145]:
+              - cell "#8" [ref=e146]
+              - cell "8/9/2026" [ref=e147]
+              - cell "30,000,000 ₫" [ref=e148]
+              - cell "Đã hủy" [ref=e149]:
+                - generic [ref=e150]: Đã hủy
+              - cell [ref=e151]
+            - row "#7 8/9/2026 30,000,000 ₫ Đã hủy" [ref=e152]:
+              - cell "#7" [ref=e153]
+              - cell "8/9/2026" [ref=e154]
+              - cell "30,000,000 ₫" [ref=e155]
+              - cell "Đã hủy" [ref=e156]:
+                - generic [ref=e157]: Đã hủy
+              - cell [ref=e158]
+            - row "#6 8/9/2026 30,000,000 ₫ Đang giao Hủy đơn" [ref=e159]:
+              - cell "#6" [ref=e160]
+              - cell "8/9/2026" [ref=e161]
+              - cell "30,000,000 ₫" [ref=e162]
+              - cell "Đang giao" [ref=e163]:
+                - generic [ref=e164]: Đang giao
+              - cell "Hủy đơn" [ref=e165]:
+                - button "Hủy đơn" [ref=e166] [cursor=pointer]
+            - row "#5 8/9/2026 30,000,000 ₫ Chờ xác nhận Hủy đơn" [ref=e167]:
+              - cell "#5" [ref=e168]
+              - cell "8/9/2026" [ref=e169]
+              - cell "30,000,000 ₫" [ref=e170]
+              - cell "Chờ xác nhận" [ref=e171]:
+                - generic [ref=e172]: Chờ xác nhận
+              - cell "Hủy đơn" [ref=e173]:
+                - button "Hủy đơn" [ref=e174] [cursor=pointer]
+            - row "#4 8/9/2026 30,000,000 ₫ Chờ xác nhận Hủy đơn" [ref=e175]:
+              - cell "#4" [ref=e176]
+              - cell "8/9/2026" [ref=e177]
+              - cell "30,000,000 ₫" [ref=e178]
+              - cell "Chờ xác nhận" [ref=e179]:
+                - generic [ref=e180]: Chờ xác nhận
+              - cell "Hủy đơn" [ref=e181]:
+                - button "Hủy đơn" [ref=e182] [cursor=pointer]
+            - row "#3 8/9/2026 30,000,000 ₫ Đã hủy" [ref=e183]:
+              - cell "#3" [ref=e184]
+              - cell "8/9/2026" [ref=e185]
+              - cell "30,000,000 ₫" [ref=e186]
+              - cell "Đã hủy" [ref=e187]:
+                - generic [ref=e188]: Đã hủy
+              - cell [ref=e189]
+            - row "#2 8/9/2026 30,000,000 ₫ Đã hủy" [ref=e190]:
+              - cell "#2" [ref=e191]
+              - cell "8/9/2026" [ref=e192]
+              - cell "30,000,000 ₫" [ref=e193]
+              - cell "Đã hủy" [ref=e194]:
+                - generic [ref=e195]: Đã hủy
+              - cell [ref=e196]
+            - row "#1 8/9/2026 30,000,000 ₫ Đã xác nhận Hủy đơn" [ref=e197]:
+              - cell "#1" [ref=e198]
+              - cell "8/9/2026" [ref=e199]
+              - cell "30,000,000 ₫" [ref=e200]
+              - cell "Đã xác nhận" [ref=e201]:
+                - generic [ref=e202]: Đã xác nhận
+              - cell "Hủy đơn" [ref=e203]:
+                - button "Hủy đơn" [ref=e204] [cursor=pointer]
+  - contentinfo [ref=e205]: © 2026 EShop SUT. Dành cho mục đích kiểm thử.
+```

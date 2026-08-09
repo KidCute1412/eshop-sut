@@ -11,17 +11,17 @@
 | Branch inspected | `23127404-LeTuanLoc` |
 | Report status | Nine-run execution evidence reconciled; manual submission artifacts pending |
 | Final submission timestamp | **PENDING — ISO 8601** |
-| Execution revision | `656991a598bafe43cbed13b54bf1ac3f429c30f2`; recorded in every selected report metadata file |
+| Execution revision | Final Firefox rerun: `a390bc125713a1759443a4e84929641d432a45dc`; each selected report records its exact revision |
 
 ## Executive summary
 
 HW04 requires data-driven automation for the same three web features selected in HW02: FR-06 Product detail view, FR-10 Order state machine, and FR-12 Access control. Each feature requires at least 12 cases and execution on three browsers, producing at least nine attributable HTML reports overall.
 
-The deliverables suite defines 51 external-data cases: 16 for FR-06, 16 for FR-10, and 19 for FR-12. All cases were scheduled on Chromium, Firefox, and WebKit in nine selected feature/browser runs. The nine complete HTML/JSON/metadata report directories passed structural identity, timestamp, case-count, completion, and totals validation. Across 153 browser attempts, 102 reached assertions: 64 passed and 38 failed across 19 unique logical cases. The other 51 attempts failed during Firefox `browserContext.newPage()` fixture setup before the test body could observe the SUT.
+The deliverables suite defines 51 external-data cases: 16 for FR-06, 16 for FR-10, and 19 for FR-12. All cases were scheduled on Chromium, Firefox, and WebKit in nine selected feature/browser runs. The nine complete HTML/JSON/metadata report directories passed structural identity, timestamp, case-count, completion, and totals validation. Across 153 browser attempts, all 153 reached assertions: 96 passed and 57 failed across 19 unique logical cases. No selected final run failed during Firefox page-fixture setup.
 
 FR-06 produced 20 passes and 28 recorded failures across 48 executions; 16 failures were environmental and 12 were assertions. FR-10 produced 24 passes and 24 recorded failures across 48 executions; 16 were environmental and 8 were assertions. FR-12 produced 20 passes and 37 recorded failures across 57 executions; 19 were environmental and 18 were assertions.
 
-Firefox was run headful after headless Firefox failed before `newPage()` on the assignment Windows environment. The headful final runs remained intermittently affected by `newPage()` timeouts; those failures are not counted as SUT defect candidates. The Markdown/PDF report set is complete. No public HW04 Issue URL or demo video is currently verified, and the four-day Git-history span remains noncompliant.
+Firefox was rerun headless with an option-free Playwright context after isolating the incompatible `Desktop Firefox` device options that caused the prior `newPage()` failures. All 51 Firefox cases reached assertions. The Markdown/PDF report set is complete. No public HW04 Issue URL or demo video is currently verified, and the four-day Git-history span remains noncompliant.
 
 The full HW04 Git history contains nine qualifying test-script commits across 27 July and 9 August 2026, so the commit-count minimum is met. The separate four-calendar-day requirement remains noncompliant. This report does not infer, manufacture, or backdate missing history.
 
@@ -41,9 +41,9 @@ The final 51-row matrix is in `../supporting-materials/test_case_matrix.md`, wit
 
 | Feature | Planned IDs | Positive | Negative/boundary/edge focus | Automated now | Final evidence |
 |---|---|---|---|---:|---|
-| FR-06 | Source `FR06-01`–`FR06-16` | Existing products and valid quantity boundaries | Content/format, quantity constraints, feedback, unknown ID | 16 cases × 3 browsers | 48 attempted; 32 reached assertions: 20 pass, 12 fail; 16 fixture failures |
-| FR-10 | Source `FR10-01`–`FR10-16` | Permitted admin/user transitions | Skipped transitions, role limits, and final-state exits | 16 cases × 3 browsers | 48 attempted; 32 reached assertions: 24 pass, 8 fail; 16 fixture failures |
-| FR-12 | Source `FR12-01`–`FR12-19` | Authorized Admin UI/API operations | Guest/user/malformed authorization and protected mutations | 19 cases × 3 browsers | 57 attempted; 38 reached assertions: 20 pass, 18 fail; 19 fixture failures |
+| FR-06 | Source `FR06-01`–`FR06-16` | Existing products and valid quantity boundaries | Content/format, quantity constraints, feedback, unknown ID | 16 cases × 3 browsers | 48 attempted; 48 reached assertions: 30 pass, 18 fail |
+| FR-10 | Source `FR10-01`–`FR10-16` | Permitted admin/user transitions | Skipped transitions, role limits, and final-state exits | 16 cases × 3 browsers | 48 attempted; 48 reached assertions: 36 pass, 12 fail |
+| FR-12 | Source `FR12-01`–`FR12-19` | Authorized Admin UI/API operations | Guest/user/malformed authorization and protected mutations | 19 cases × 3 browsers | 57 attempted; 57 reached assertions: 30 pass, 27 fail |
 
 ### 2.2 Required row-level traceability
 
@@ -86,10 +86,10 @@ The legacy bundle outside deliverables still produces one combined `playwright-r
 | Operating system | Windows 10 Home Single Language; Windows NT `10.0.26200.0` |
 | Node.js / npm | Node.js `22.17.0`; npm `10.9.2` |
 | Playwright | `1.55.0` |
-| Browser modes/versions | Chromium `140.0.7339.16` headless; Firefox `141.0` headful; WebKit `26.0` headless |
+| Browser modes/versions | Chromium `140.0.7339.16` headless; Firefox `141.0` headless; WebKit `26.0` headless |
 | Frontend URL | Current default `http://localhost:5173`; **confirm final URL** |
 | Backend URL | Current default `http://localhost:3000`; **confirm final URL** |
-| Execution revision/data seed | `656991a598bafe43cbed13b54bf1ac3f429c30f2`; reports generated from clean seed database and metadata records the revision/command |
+| Execution revision/data seed | Firefox correction revision `a390bc125713a1759443a4e84929641d432a45dc`; reports generated from clean seed database and metadata records each revision/command |
 | Execution operator | Lê Tuấn Lộc — 23127404 |
 
 ### 4.2 Historical repository evidence — excluded from final totals
@@ -110,19 +110,19 @@ The preceding row is provenance-aware reporting of an existing artifact. It does
 | Run ID | Feature/browser | ISO timestamp | Attempted | Passed | Recorded failed | Environment failures within failed | Selected report directory |
 |---|---|---|---:|---:|---:|---:|---|
 | `RUN-A-CHR` | FR-06 / Chromium | `2026-08-09T17:11:54.712Z` | 16 | 10 | 6 | 0 | `automation/reports/fr06-chromium-2026-08-09T17-11-54-712Z/` |
-| `RUN-A-FF` | FR-06 / Firefox | `2026-08-09T17:13:19.066Z` | 16 | 0 | 16 | 16 | `automation/reports/fr06-firefox-2026-08-09T17-13-19-066Z/` |
+| `RUN-A-FF` | FR-06 / Firefox | `2026-08-09T18:19:41.178Z` | 16 | 10 | 6 | 0 | `automation/reports/fr06-firefox-2026-08-09T18-19-41-178Z/` |
 | `RUN-A-WK` | FR-06 / WebKit | `2026-08-09T17:16:10.035Z` | 16 | 10 | 6 | 0 | `automation/reports/fr06-webkit-2026-08-09T17-16-10-035Z/` |
 | `RUN-B-CHR` | FR-10 / Chromium | `2026-08-09T17:17:32.516Z` | 16 | 12 | 4 | 0 | `automation/reports/fr10-chromium-2026-08-09T17-17-32-516Z/` |
-| `RUN-B-FF` | FR-10 / Firefox | `2026-08-09T17:18:43.660Z` | 16 | 0 | 16 | 16 | `automation/reports/fr10-firefox-2026-08-09T17-18-43-660Z/` |
+| `RUN-B-FF` | FR-10 / Firefox | `2026-08-09T18:21:10.553Z` | 16 | 12 | 4 | 0 | `automation/reports/fr10-firefox-2026-08-09T18-21-10-553Z/` |
 | `RUN-B-WK` | FR-10 / WebKit | `2026-08-09T17:21:22.978Z` | 16 | 12 | 4 | 0 | `automation/reports/fr10-webkit-2026-08-09T17-21-22-978Z/` |
 | `RUN-C-CHR` | FR-12 / Chromium | `2026-08-09T17:22:38.418Z` | 19 | 10 | 9 | 0 | `automation/reports/fr12-chromium-2026-08-09T17-22-38-418Z/` |
-| `RUN-C-FF` | FR-12 / Firefox | `2026-08-09T17:28:39.697Z` | 19 | 0 | 19 | 19 | `automation/reports/fr12-firefox-2026-08-09T17-28-39-697Z/` |
+| `RUN-C-FF` | FR-12 / Firefox | `2026-08-09T18:22:31.674Z` | 19 | 10 | 9 | 0 | `automation/reports/fr12-firefox-2026-08-09T18-22-31-674Z/` |
 | `RUN-C-WK` | FR-12 / WebKit | `2026-08-09T17:27:20.694Z` | 19 | 10 | 9 | 0 | `automation/reports/fr12-webkit-2026-08-09T17-27-20-694Z/` |
-| **Total** | **3 features / 3 browsers** | — | **153 attempts** | **64** | **89** | **51** | **Nine structurally validated directories** |
+| **Total** | **3 features / 3 browsers** | — | **153 attempts** | **96** | **57** | **0** | **Nine structurally validated directories** |
 
-The 89 runner failures equal 38 assertion failures plus 51 Firefox environment failures. All nine selected HTML/JSON/metadata report sets passed structural identity, timestamp, case-count, completion, report/data-directory presence, and totals validation. Each selected report metadata file records the exact `node scripts/run-matrix.mjs` command and revision `656991a598bafe43cbed13b54bf1ac3f429c30f2`.
+All 57 recorded failures are assertion failures across 19 unique logical cases. All nine selected HTML/JSON/metadata report sets passed structural identity, timestamp, case-count, completion, report/data-directory presence, and totals validation. Each selected report metadata file records the exact `node scripts/run-matrix.mjs --browser firefox` or feature/browser command and revision `a390bc125713a1759443a4e84929641d432a45dc` for the Firefox rerun; the Chromium/WebKit reports retain their own recorded exact revision.
 
-The selected reports were generated from revision `656991a598bafe43cbed13b54bf1ac3f429c30f2`; the revision is embedded in every report metadata file and HTML attribution banner.
+The final Firefox reports were generated from revision `a390bc125713a1759443a4e84929641d432a45dc`; each selected report metadata file and HTML attribution banner records its exact revision.
 
 ## 5. Human review and AI gap analysis
 
@@ -135,14 +135,14 @@ Human review retained strict requirement assertions, corrected one demonstrated 
 | FR-06 / data | Inline literals would violate data-driven requirement | Inline test arrays/objects are explicitly disallowed | Input and expected values were moved to external JSON | Visible in current spec/data |
 | FR-06 / waits | Fixed sleeps could hide timing defects and cause flakiness | Duration is environment-dependent | Playwright assertions and auto-waiting are used | Visible in current spec |
 | FR-10 / `FR10-02` | Initial row filtering used substring matching for an order ID | Order `#2` could match rows such as `#20`, producing a false WebKit failure | Filter now requires an exact table cell for `#<orderId>`; all three FR-10 runs were repeated | `FR10-02` no longer fails in the selected final Chromium, Firefox, or WebKit reports |
-| Firefox environment | A browser failure could be misreported as a product defect | Headless Firefox failed before `newPage()`; headful runs still had page-setup timeouts | Firefox configured headful; 51 `newPage()` timeouts classified as environment failures | Final Firefox JSON reports: 16 FR-06, 16 FR-10, 19 FR-12 environment failures |
+| Firefox environment | A browser failure could be misreported as a product defect | Previous `Desktop Firefox` device options caused `newPage()` failures | Firefox configured headless with an option-free context; smoke test and full rerun passed fixture setup | Final Firefox JSON reports contain 51 assertion-reaching cases |
 | FR-12 / authorization assertions | Passing over status mismatches would hide security behavior | FR-12 requires valid admin JWT and role for protected endpoints | Expected 401/403 assertions were retained; actual 200/400 responses remain failures | 18 assertion failures across nine logical cases in the selected reports |
 
 The mandatory critique is in `ai_critique.md`. The interaction record is in `ai_audit_report.md`.
 
 ## 6. Defects and issue tracking
 
-The final runs produced 38 assertion failures across 19 unique logical cases: six FR-06, four FR-10, and nine FR-12 cases. These are documented as runtime-observed candidates in `../bugs/bug_report.md`; the 51 Firefox `newPage()` failures are documented separately as environment failures. No candidate is represented as a filed GitHub defect because no verified public HW04 Issue URL or attached public screenshot has been supplied.
+The final runs produced 57 assertion failures across 19 unique logical cases: six FR-06, four FR-10, and nine FR-12 cases. These are documented as runtime-observed candidates in `../bugs/bug_report.md`. No candidate is represented as a filed GitHub defect because no verified public HW04 Issue URL or attached public screenshot has been supplied.
 
 For every final failure:
 
@@ -175,7 +175,7 @@ The Agent Skills assessment category is currently claimed as 0/10. Complete sour
 
 - The 51 cases have qualifying selected reports, but the exact execution commit and verbatim per-run shell commands were not embedded/retained. Environment and browser versions are recorded.
 - The 19 assertion-failing cases require final root-cause deduplication, public GitHub Issues, and authentic Issue screenshots before they can be claimed as submitted defects.
-- Firefox produced 51 `newPage()` environment failures even in headful mode; those cases were not observed by the SUT assertions.
+- The prior Firefox `newPage()` failures were eliminated by removing incompatible device options; all final Firefox cases reached assertions.
 - Historical and current AI logs still require complete prompt/output coverage for every generation/review interaction.
 - Environment and browser versions are recorded; the exact execution revision remains unavailable because it was not embedded in the selected reports.
 - No HW04 public Issue URL or final defect screenshot is verified.
@@ -193,12 +193,12 @@ This table is reconciled from the nine selected final JSON reports and their env
 | Designed logical cases | 16 | 16 | 19 | **51** |
 | Automated logical cases | 16 | 16 | 19 | **51** |
 | Browser attempts | 48 | 48 | 57 | **153** |
-| Attempts reaching assertions | 32 | 32 | 38 | **102** |
-| Passed assertions | 20 | 24 | 20 | **64** |
-| Recorded runner failures | 28 | 24 | 37 | **89** |
-| Environment failures within recorded failures | 16 | 16 | 19 | **51** |
+| Attempts reaching assertions | 48 | 48 | 57 | **153** |
+| Passed assertions | 30 | 36 | 30 | **96** |
+| Recorded runner failures | 18 | 12 | 27 | **57** |
+| Environment failures within recorded failures | 0 | 0 | 0 | **0** |
 | Assertion failures | 12 | 8 | 18 | **38** |
 | Unique assertion-failing logical cases | 6 | 4 | 9 | **19** |
 | Verified public HW04 Issues | 0 | 0 | 0 | **0** |
 
-The arithmetic reconciles: `64 + 38 + 51 = 153`, `64 + 38 = 102`, and `38 + 51 = 89`. Issue counts must be updated only from verified public URLs.
+The arithmetic reconciles: `96 + 57 = 153`. Issue counts must be updated only from verified public URLs.

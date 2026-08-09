@@ -2,10 +2,9 @@
 
 ## Evidence status
 
-The nine selected final runs scheduled 153 browser cases: 102 reached assertions (64 passed and 38 assertion-failed) and 51 failed during Firefox page-fixture setup before SUT observation. Triage separates the 89 runner failures into:
+The nine selected final runs scheduled 153 browser cases: all 153 reached assertions (96 passed and 57 assertion-failed). The final Firefox configuration produced no page-fixture failures.
 
-- **38 assertion failures** across **19 unique logical cases**: FR-06 has 12 assertion failures, FR-10 has 8, and FR-12 has 18.
-- **51 Firefox environment failures**: 16 FR-06, 16 FR-10, and 19 FR-12 cases timed out while Playwright set up `page` through `browserContext.newPage()`.
+- **57 assertion failures** across **19 unique logical cases**: FR-06 has 18 assertion failures, FR-10 has 12, and FR-12 has 27.
 
 The assertion-failing cases below are runtime-observed defect candidates. No candidate is represented as a filed GitHub defect because no verified public HW04 Issue URL or public Issue screenshot has been supplied. Prior HW02/HW03 issues may be consulted as regression context only; they are not new HW04 Issues.
 
@@ -13,15 +12,15 @@ The assertion-failing cases below are runtime-observed defect candidates. No can
 
 | Feature | Chromium report | Firefox report | WebKit report |
 |---|---|---|---|
-| FR-06 | `automation/reports/fr06-chromium-2026-08-09T17-11-54-712Z/` | `automation/reports/fr06-firefox-2026-08-09T17-13-19-066Z/` | `automation/reports/fr06-webkit-2026-08-09T17-16-10-035Z/` |
-| FR-10 | `automation/reports/fr10-chromium-2026-08-09T17-17-32-516Z/` | `automation/reports/fr10-firefox-2026-08-09T17-18-43-660Z/` | `automation/reports/fr10-webkit-2026-08-09T17-21-22-978Z/` |
-| FR-12 | `automation/reports/fr12-chromium-2026-08-09T17-22-38-418Z/` | `automation/reports/fr12-firefox-2026-08-09T17-28-39-697Z/` | `automation/reports/fr12-webkit-2026-08-09T17-27-20-694Z/` |
+| FR-06 | `automation/reports/fr06-chromium-2026-08-09T17-11-54-712Z/` | `automation/reports/fr06-firefox-2026-08-09T18-19-41-178Z/` | `automation/reports/fr06-webkit-2026-08-09T17-16-10-035Z/` |
+| FR-10 | `automation/reports/fr10-chromium-2026-08-09T17-17-32-516Z/` | `automation/reports/fr10-firefox-2026-08-09T18-21-10-553Z/` | `automation/reports/fr10-webkit-2026-08-09T17-21-22-978Z/` |
+| FR-12 | `automation/reports/fr12-chromium-2026-08-09T17-22-38-418Z/` | `automation/reports/fr12-firefox-2026-08-09T18-22-31-674Z/` | `automation/reports/fr12-webkit-2026-08-09T17-27-20-694Z/` |
 
 All nine HTML/JSON/metadata directories passed structural identity, timestamp, case-count, completion, and totals validation. Interactive rendering and links still require the documented manual opening step.
 
 ## Candidate register
 
-The recurrence column counts assertion failures only; Firefox environment failures are not attributed to candidates.
+The recurrence column counts assertion failures across all three browsers.
 
 | Candidate | Case | Runtime-observed mismatch | Assertion recurrence | Severity | Public Issue |
 |---|---|---|---:|---|---|

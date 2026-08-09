@@ -1,0 +1,12 @@
+{
+  "runBy": "23127404",
+  "runTimestamp": "2026-08-09T18:19:41.178Z",
+  "feature": "fr06",
+  "browser": "firefox",
+  "automationRevision": "a390bc125713a1759443a4e84929641d432a45dc",
+  "sutRevision": "a390bc125713a1759443a4e84929641d432a45dc",
+  "executionCommand": "node scripts/run-matrix.mjs --browser firefox",
+  "status": "failed",
+  "total": 16,
+  "durationMs": 84952.27
+}

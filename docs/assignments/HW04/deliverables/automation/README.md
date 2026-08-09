@@ -26,11 +26,11 @@ npm run check
 ```
 
 Default URLs can be overridden with `API_URL`, `WEB_URL`, and `ADMIN_URL`.
-The Firefox project intentionally runs headful on this Windows environment:
-headless Firefox launches but fails in Playwright before `newPage()`, while a
-minimal headful smoke test succeeds. Full headful Firefox runs remained
-intermittently affected by page-fixture timeouts. Chromium and WebKit remain
-headless.
+The Firefox project uses the Playwright-managed headless binary with an
+option-free context. The previous `Desktop Firefox` device options caused
+`browserContext.newPage()` failures on this Windows environment; removing
+those options was verified by a smoke test and a complete 51-case Firefox
+rerun. Chromium and WebKit remain headless.
 
 ## Execution
 

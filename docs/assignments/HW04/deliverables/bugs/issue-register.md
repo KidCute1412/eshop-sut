@@ -28,7 +28,7 @@ Current verified public HW04 Issue count: **0**.
 | `HW04-CAND-018` | FR-12 | `FR12-17` | Chromium, Firefox, WebKit | Awaiting deduplication/filing | **PENDING** | No |
 | `HW04-CAND-019` | FR-12 | `FR12-19` | Chromium, Firefox, WebKit | Awaiting deduplication/filing | **PENDING** | No |
 
-`ENV-FIREFOX-NEWPAGE` is excluded from this Issue register because its 22 failures occurred during Playwright page setup and are classified as environment failures, not SUT behaviors.
+`ENV-FIREFOX-NEWPAGE` is retained only as historical diagnosis; the selected final Firefox rerun reached all 51 assertions after the project-context fix. It is not an HW04 SUT defect.
 
 ## Reconciliation rules
 

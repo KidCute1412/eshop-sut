@@ -1,0 +1,2147 @@
+{
+  "config": {
+    "configFile": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\playwright.config.ts",
+    "rootDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "Run by": "23127404",
+      "Run timestamp": "2026-08-09T18:22:31.674Z",
+      "Feature": "fr12",
+      "Browser": "firefox",
+      "Automation revision": "a390bc125713a1759443a4e84929641d432a45dc",
+      "SUT revision": "a390bc125713a1759443a4e84929641d432a45dc",
+      "Execution command": "node scripts/run-matrix.mjs --browser firefox",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\reports\\fr12-firefox-2026-08-09T18-22-31-674Z",
+          "open": "never",
+          "title": "HW04 fr12 firefox | Run by: 23127404 | 2026-08-09T18:22:31.674Z"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\reports\\fr12-firefox-2026-08-09T18-22-31-674Z\\results.json"
+        }
+      ],
+      [
+        "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\src\\reporters\\run-metadata-reporter.ts",
+        {
+          "reportDir": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\reports\\fr12-firefox-2026-08-09T18-22-31-674Z",
+          "studentId": "23127404",
+          "runTimestamp": "2026-08-09T18:22:31.674Z",
+          "feature": "fr12",
+          "browser": "firefox",
+          "automationRevision": "a390bc125713a1759443a4e84929641d432a45dc",
+          "sutRevision": "a390bc125713a1759443a4e84929641d432a45dc",
+          "executionCommand": "node scripts/run-matrix.mjs --browser firefox"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127404",
+          "Run timestamp": "2026-08-09T18:22:31.674Z",
+          "Feature": "fr12",
+          "Browser": "firefox",
+          "Automation revision": "a390bc125713a1759443a4e84929641d432a45dc",
+          "SUT revision": "a390bc125713a1759443a4e84929641d432a45dc",
+          "Execution command": "node scripts/run-matrix.mjs --browser firefox",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127404",
+          "Run timestamp": "2026-08-09T18:22:31.674Z",
+          "Feature": "fr12",
+          "Browser": "firefox",
+          "Automation revision": "a390bc125713a1759443a4e84929641d432a45dc",
+          "SUT revision": "a390bc125713a1759443a4e84929641d432a45dc",
+          "Execution command": "node scripts/run-matrix.mjs --browser firefox",
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127404",
+          "Run timestamp": "2026-08-09T18:22:31.674Z",
+          "Feature": "fr12",
+          "Browser": "firefox",
+          "Automation revision": "a390bc125713a1759443a4e84929641d432a45dc",
+          "SUT revision": "a390bc125713a1759443a4e84929641d432a45dc",
+          "Execution command": "node scripts/run-matrix.mjs --browser firefox",
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.55.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "fr12-access-control.spec.ts",
+      "file": "fr12-access-control.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-12 Access Control",
+          "file": "fr12-access-control.spec.ts",
+          "line": 35,
+          "column": 6,
+          "specs": [
+            {
+              "title": "FR12-01 [high] none GET /admin/users: reject anonymous admin user listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-12"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-INV-12-01"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2456,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-01",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T18:22:35.534Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-12"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-INV-12-01"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR12-01-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjEyLTAxIiwKICAidGl0bGUiOiAicmVqZWN0IGFub255bW91cyBhZG1pbiB1c2VyIGxpc3RpbmciLAogICJwcmlvcml0eSI6ICJoaWdoIiwKICAicGFydGl0aW9uIjogWwogICAgIkVQLUlOVi0xMi0wMSIKICBdLAogICJtZXRob2QiOiAiR0VUIiwKICAicGF0aCI6ICIvYWRtaW4vdXNlcnMiLAogICJhdXRoIjogIm5vbmUiLAogICJleHBlY3RlZFN0YXR1cyI6IDQwMQp9Cg=="
+                        },
+                        {
+                          "name": "FR12-01-api-response.json",
+                          "contentType": "application/json; charset=utf-8",
+                          "body": "eyJlcnJvciI6IlVuYXV0aG9yaXplZCJ9"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-cad6b6d1b8459ff7f103",
+              "file": "fr12-access-control.spec.ts",
+              "line": 48,
+              "column": 5
+            },
+            {
+              "title": "FR12-02 [high] malformed GET /admin/users: reject malformed JWT on admin user listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-12"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-INV-12-02"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 843,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-02",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T18:22:38.768Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-12"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-INV-12-02"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR12-02-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjEyLTAyIiwKICAidGl0bGUiOiAicmVqZWN0IG1hbGZvcm1lZCBKV1Qgb24gYWRtaW4gdXNlciBsaXN0aW5nIiwKICAicHJpb3JpdHkiOiAiaGlnaCIsCiAgInBhcnRpdGlvbiI6IFsKICAgICJFUC1JTlYtMTItMDIiCiAgXSwKICAibWV0aG9kIjogIkdFVCIsCiAgInBhdGgiOiAiL2FkbWluL3VzZXJzIiwKICAiYXV0aCI6ICJtYWxmb3JtZWQiLAogICJleHBlY3RlZFN0YXR1cyI6IDQwMwp9Cg=="
+                        },
+                        {
+                          "name": "FR12-02-api-response.json",
+                          "contentType": "application/json; charset=utf-8",
+                          "body": "eyJlcnJvciI6IkZvcmJpZGRlbiJ9"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-5db54091d0ccf8c9cbfe",
+              "file": "fr12-access-control.spec.ts",
+              "line": 48,
+              "column": 5
+            },
+            {
+              "title": "FR12-03 [high] user GET /admin/users: reject regular user JWT on admin user listing",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-12"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-INV-12-03"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4201,
+                      "error": {
+                        "message": "Error: GET /admin/users: [{\"id\":1,\"name\":\"Admin User\",\"email\":\"admin@eshop.com\",\"role\":\"admin\",\"login_attempts\":0,\"locked_until\":null,\"shipping_address\":null},{\"id\":2,\"name\":\"Test User\",\"email\":\"test@eshop.com\",\"role\":\"user\",\"login_attempts\":0,\"locked_until\":null,\"shipping_address\":null}]\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: GET /admin/users: [{\"id\":1,\"name\":\"Admin User\",\"email\":\"admin@eshop.com\",\"role\":\"admin\",\"login_attempts\":0,\"locked_until\":null,\"shipping_address\":null},{\"id\":2,\"name\":\"Test User\",\"email\":\"test@eshop.com\",\"role\":\"user\",\"login_attempts\":0,\"locked_until\":null,\"shipping_address\":null}]\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:84:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 84
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 82 |\u001b[39m         }\n \u001b[90m 83 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 84 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 85 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 86 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 87 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 84
+                          },
+                          "message": "Error: GET /admin/users: [{\"id\":1,\"name\":\"Admin User\",\"email\":\"admin@eshop.com\",\"role\":\"admin\",\"login_attempts\":0,\"locked_until\":null,\"shipping_address\":null},{\"id\":2,\"name\":\"Test User\",\"email\":\"test@eshop.com\",\"role\":\"user\",\"login_attempts\":0,\"locked_until\":null,\"shipping_address\":null}]\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  82 |         }\n  83 |\n> 84 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  85 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  86 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  87 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:84:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 58,
+                            "line": 86
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|unauthorized|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"[{\\\"id\\\":1,\\\"name\\\":\\\"Admin User\\\",\\\"email\\\":\\\"admin@eshop.com\\\",\\\"role\\\":\\\"admin\\\",\\\"login_attempts\\\":0,\\\"locked_until\\\":null,\\\"shipping_address\\\":null},{\\\"id\\\":2,\\\"name\\\":\\\"Test User\\\",\\\"email\\\":\\\"test@eshop.com\\\",\\\"role\\\":\\\"user\\\",\\\"login_attempts\\\":0,\\\"locked_until\\\":null,\\\"shipping_address\\\":null}]\"\u001b[39m\n\n  84 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n  85 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n> 86 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n     |                                                          ^\n  87 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n  88 |           expect.soft(Array.isArray(JSON.parse(text))).toBe(true);\n  89 |         }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:86:58"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 79,
+                            "line": 104
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  getByRole('heading', { name: 'Admin Login' })\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  3000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Admin Login' })\u001b[22m\n\n\n  102 |         await expect.soft(page.getByRole(\"heading\", { name: \"EShop Admin\" })).toBeVisible({ timeout: 3_000 });\n  103 |       } else {\n> 104 |         await expect.soft(page.getByRole(\"heading\", { name: \"Admin Login\" })).toBeVisible({ timeout: 3_000 });\n      |                                                                               ^\n  105 |       }\n  106 |     });\n  107 |   }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:104:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-03",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T18:22:39.645Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-12"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-INV-12-03"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR12-03-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjEyLTAzIiwKICAidGl0bGUiOiAicmVqZWN0IHJlZ3VsYXIgdXNlciBKV1Qgb24gYWRtaW4gdXNlciBsaXN0aW5nIiwKICAicHJpb3JpdHkiOiAiaGlnaCIsCiAgInBhcnRpdGlvbiI6IFsKICAgICJFUC1JTlYtMTItMDMiCiAgXSwKICAibWV0aG9kIjogIkdFVCIsCiAgInBhdGgiOiAiL2FkbWluL3VzZXJzIiwKICAiYXV0aCI6ICJ1c2VyIiwKICAiZXhwZWN0ZWRTdGF0dXMiOiA0MDMKfQo="
+                        },
+                        {
+                          "name": "FR12-03-api-response.json",
+                          "contentType": "application/json; charset=utf-8",
+                          "body": "W3siaWQiOjEsIm5hbWUiOiJBZG1pbiBVc2VyIiwiZW1haWwiOiJhZG1pbkBlc2hvcC5jb20iLCJyb2xlIjoiYWRtaW4iLCJsb2dpbl9hdHRlbXB0cyI6MCwibG9ja2VkX3VudGlsIjpudWxsLCJzaGlwcGluZ19hZGRyZXNzIjpudWxsfSx7ImlkIjoyLCJuYW1lIjoiVGVzdCBVc2VyIiwiZW1haWwiOiJ0ZXN0QGVzaG9wLmNvbSIsInJvbGUiOiJ1c2VyIiwibG9naW5fYXR0ZW1wdHMiOjAsImxvY2tlZF91bnRpbCI6bnVsbCwic2hpcHBpbmdfYWRkcmVzcyI6bnVsbH1d"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--d9537-r-JWT-on-admin-user-listing-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--d9537-r-JWT-on-admin-user-listing-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--d9537-r-JWT-on-admin-user-listing-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--d9537-r-JWT-on-admin-user-listing-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 84
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-202368ecd9441a9995f8",
+              "file": "fr12-access-control.spec.ts",
+              "line": 48,
+              "column": 5
+            },
+            {
+              "title": "FR12-04 [high] admin GET /admin/users: allow admin JWT on admin user listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-12"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-VAL-12-01"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1697,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-12-01",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T18:22:46.979Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-12"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-VAL-12-01"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR12-04-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjEyLTA0IiwKICAidGl0bGUiOiAiYWxsb3cgYWRtaW4gSldUIG9uIGFkbWluIHVzZXIgbGlzdGluZyIsCiAgInByaW9yaXR5IjogImhpZ2giLAogICJwYXJ0aXRpb24iOiBbCiAgICAiRVAtVkFMLTEyLTAxIgogIF0sCiAgIm1ldGhvZCI6ICJHRVQiLAogICJwYXRoIjogIi9hZG1pbi91c2VycyIsCiAgImF1dGgiOiAiYWRtaW4iLAogICJleHBlY3RlZFN0YXR1cyI6IDIwMAp9Cg=="
+                        },
+                        {
+                          "name": "FR12-04-api-response.json",
+                          "contentType": "application/json; charset=utf-8",
+                          "body": "W3siaWQiOjEsIm5hbWUiOiJBZG1pbiBVc2VyIiwiZW1haWwiOiJhZG1pbkBlc2hvcC5jb20iLCJyb2xlIjoiYWRtaW4iLCJsb2dpbl9hdHRlbXB0cyI6MCwibG9ja2VkX3VudGlsIjpudWxsLCJzaGlwcGluZ19hZGRyZXNzIjpudWxsfSx7ImlkIjoyLCJuYW1lIjoiVGVzdCBVc2VyIiwiZW1haWwiOiJ0ZXN0QGVzaG9wLmNvbSIsInJvbGUiOiJ1c2VyIiwibG9naW5fYXR0ZW1wdHMiOjAsImxvY2tlZF91bnRpbCI6bnVsbCwic2hpcHBpbmdfYWRkcmVzcyI6bnVsbH1d"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-7655bbd85ac496773552",
+              "file": "fr12-access-control.spec.ts",
+              "line": 48,
+              "column": 5
+            },
+            {
+              "title": "FR12-05 [high] none GET /admin/orders: reject anonymous admin order listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-12"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-INV-12-01"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 807,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-01",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T18:22:49.393Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-12"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-INV-12-01"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR12-05-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjEyLTA1IiwKICAidGl0bGUiOiAicmVqZWN0IGFub255bW91cyBhZG1pbiBvcmRlciBsaXN0aW5nIiwKICAicHJpb3JpdHkiOiAiaGlnaCIsCiAgInBhcnRpdGlvbiI6IFsKICAgICJFUC1JTlYtMTItMDEiCiAgXSwKICAibWV0aG9kIjogIkdFVCIsCiAgInBhdGgiOiAiL2FkbWluL29yZGVycyIsCiAgImF1dGgiOiAibm9uZSIsCiAgImV4cGVjdGVkU3RhdHVzIjogNDAxCn0K"
+                        },
+                        {
+                          "name": "FR12-05-api-response.json",
+                          "contentType": "application/json; charset=utf-8",
+                          "body": "eyJlcnJvciI6IlVuYXV0aG9yaXplZCJ9"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-3cf3fbd232c50d990cae",
+              "file": "fr12-access-control.spec.ts",
+              "line": 48,
+              "column": 5
+            },
+            {
+              "title": "FR12-06 [high] user GET /admin/orders: reject regular user JWT on admin order listing",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-12"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-INV-12-03"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4418,
+                      "error": {
+                        "message": "Error: GET /admin/orders: [{\"id\":32,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order a28821fb-b74f-439a-bb40-b999e385717b\",\"created_at\":\"2026-08-09 18:22:18\",\"user_name\":\"Test User\"},{\"id\":31,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order c6d834c7-883e-46c9-88e3-3cbacfb3a1e3\",\"created_at\":\"2026-08-09 18:22:16\",\"user_name\":\"Test User\"},{\"id\":30,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order dc4fcd51-bd60-4f01-b161-aa9ee00a878a\",\"created_at\":\"2026-08-09 18:22:15\",\"user_name\":\"Test User\"},{\"id\":29,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 504f8d32-b2a5-4f02-847d-105f9011089d\",\"created_at\":\"2026-08-09 18:22:13\",\"user_name\":\"Test User\"},{\"id\":28,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 98f18dd2-db32-472f-b186-b9cbec7145de\",\"created_at\":\"2026-08-09 18:21:58\",\"user_name\":\"Test User\"},{\"id\":27,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order 585737fc-8fa1-4a3b-98bc-bebaa2579329\",\"created_at\":\"2026-08-09 18:21:43\",\"user_name\":\"Test User\"},{\"id\":26,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order aff6bf35-b267-44ac-b0db-265a43f4ba0c\",\"created_at\":\"2026-08-09 18:21:41\",\"user_name\":\"Test User\"},{\"id\":25,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order e440f4c3-3a29-48f2-a15b-a0fe78fbe584\",\"created_at\":\"2026-08-09 18:21:40\",\"user_name\":\"Test User\"},{\"id\":24,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order a388852c-0411-4dc5-8557-b40d6000d6e7\",\"created_at\":\"2026-08-09 18:21:39\",\"user_name\":\"Test User\"},{\"id\":23,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 84910b67-ff97-4182-990a-1487e070ae60\",\"created_at\":\"2026-08-09 18:21:37\",\"user_name\":\"Test User\"},{\"id\":22,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order 147c7407-b3b7-4bb1-b05a-e994a7b8fe3a\",\"created_at\":\"2026-08-09 18:21:23\",\"user_name\":\"Test User\"},{\"id\":21,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order e4aaa1d8-be67-444c-a206-3636a0f0e968\",\"created_at\":\"2026-08-09 18:21:21\",\"user_name\":\"Test User\"},{\"id\":20,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order a6c42c67-b2c0-466a-b461-c282b6707108\",\"created_at\":\"2026-08-09 18:21:20\",\"user_name\":\"Test User\"},{\"id\":19,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order d6015e9c-2359-4fed-bb72-92b4c47315b3\",\"created_at\":\"2026-08-09 18:21:19\",\"user_name\":\"Test User\"},{\"id\":18,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 1ac1d925-9561-4f13-a7e5-f8a1b153d052\",\"created_at\":\"2026-08-09 18:21:18\",\"user_name\":\"Test User\"},{\"id\":17,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order 5cdc158c-66ce-4469-9bce-3a7aba9796ba\",\"created_at\":\"2026-08-09 18:21:16\",\"user_name\":\"Test User\"},{\"id\":16,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order acbd0494-3ea4-4664-a9e4-947f5ca8eb31\",\"created_at\":\"2026-08-09 18:16:35\",\"user_name\":\"Test User\"},{\"id\":15,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order bad66cd8-cfd7-4ab5-b4f8-307a51d2bdc8\",\"created_at\":\"2026-08-09 18:16:34\",\"user_name\":\"Test User\"},{\"id\":14,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 04a7eaf5-00a5-4b88-94c9-e8b5a1dd66ce\",\"created_at\":\"2026-08-09 18:16:33\",\"user_name\":\"Test User\"},{\"id\":13,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 658f1b9a-5e13-447c-938b-1295632aa1b1\",\"created_at\":\"2026-08-09 18:16:31\",\"user_name\":\"Test User\"},{\"id\":12,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order ab3e46ae-fc10-4e16-b1a1-0ec643432021\",\"created_at\":\"2026-08-09 18:16:17\",\"user_name\":\"Test User\"},{\"id\":11,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order 39110d4e-76b8-4f9e-b183-3fbceb8465bd\",\"created_at\":\"2026-08-09 18:16:02\",\"user_name\":\"Test User\"},{\"id\":10,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order ceef3e32-a379-4677-a11e-3994b2c31cfd\",\"created_at\":\"2026-08-09 18:16:01\",\"user_name\":\"Test User\"},{\"id\":9,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order 5b71b239-db26-43eb-8db8-af7835fe035b\",\"created_at\":\"2026-08-09 18:16:00\",\"user_name\":\"Test User\"},{\"id\":8,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 91a2daa5-94ac-4b66-9eac-da64a4dfa031\",\"created_at\":\"2026-08-09 18:15:59\",\"user_name\":\"Test User\"},{\"id\":7,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order c65e5d43-c1cb-4e5f-a989-f3b90924a76c\",\"created_at\":\"2026-08-09 18:15:57\",\"user_name\":\"Test User\"},{\"id\":6,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order 9aec6fce-8428-4ec1-a23f-86674fb0b839\",\"created_at\":\"2026-08-09 18:15:42\",\"user_name\":\"Test User\"},{\"id\":5,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order ad17b7be-d868-474f-8d6c-c12b51154ffd\",\"created_at\":\"2026-08-09 18:15:41\",\"user_name\":\"Test User\"},{\"id\":4,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order 8c85a07f-32b4-42c5-80d4-d0bac18480c6\",\"created_at\":\"2026-08-09 18:15:40\",\"user_name\":\"Test User\"},{\"id\":3,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 021c49f1-105f-4847-ba7c-b0c8efe38ce5\",\"created_at\":\"2026-08-09 18:15:39\",\"user_name\":\"Test User\"},{\"id\":2,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 429fea82-66a0-4842-999a-53c8339fe0be\",\"created_at\":\"2026-08-09 18:15:38\",\"user_name\":\"Test User\"},{\"id\":1,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order f0956429-d39a-4adf-bd24-9ef28821ccd3\",\"created_at\":\"2026-08-09 18:15:36\",\"user_name\":\"Test User\"}]\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: GET /admin/orders: [{\"id\":32,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order a28821fb-b74f-439a-bb40-b999e385717b\",\"created_at\":\"2026-08-09 18:22:18\",\"user_name\":\"Test User\"},{\"id\":31,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order c6d834c7-883e-46c9-88e3-3cbacfb3a1e3\",\"created_at\":\"2026-08-09 18:22:16\",\"user_name\":\"Test User\"},{\"id\":30,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order dc4fcd51-bd60-4f01-b161-aa9ee00a878a\",\"created_at\":\"2026-08-09 18:22:15\",\"user_name\":\"Test User\"},{\"id\":29,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 504f8d32-b2a5-4f02-847d-105f9011089d\",\"created_at\":\"2026-08-09 18:22:13\",\"user_name\":\"Test User\"},{\"id\":28,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 98f18dd2-db32-472f-b186-b9cbec7145de\",\"created_at\":\"2026-08-09 18:21:58\",\"user_name\":\"Test User\"},{\"id\":27,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order 585737fc-8fa1-4a3b-98bc-bebaa2579329\",\"created_at\":\"2026-08-09 18:21:43\",\"user_name\":\"Test User\"},{\"id\":26,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order aff6bf35-b267-44ac-b0db-265a43f4ba0c\",\"created_at\":\"2026-08-09 18:21:41\",\"user_name\":\"Test User\"},{\"id\":25,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order e440f4c3-3a29-48f2-a15b-a0fe78fbe584\",\"created_at\":\"2026-08-09 18:21:40\",\"user_name\":\"Test User\"},{\"id\":24,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order a388852c-0411-4dc5-8557-b40d6000d6e7\",\"created_at\":\"2026-08-09 18:21:39\",\"user_name\":\"Test User\"},{\"id\":23,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 84910b67-ff97-4182-990a-1487e070ae60\",\"created_at\":\"2026-08-09 18:21:37\",\"user_name\":\"Test User\"},{\"id\":22,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order 147c7407-b3b7-4bb1-b05a-e994a7b8fe3a\",\"created_at\":\"2026-08-09 18:21:23\",\"user_name\":\"Test User\"},{\"id\":21,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order e4aaa1d8-be67-444c-a206-3636a0f0e968\",\"created_at\":\"2026-08-09 18:21:21\",\"user_name\":\"Test User\"},{\"id\":20,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order a6c42c67-b2c0-466a-b461-c282b6707108\",\"created_at\":\"2026-08-09 18:21:20\",\"user_name\":\"Test User\"},{\"id\":19,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order d6015e9c-2359-4fed-bb72-92b4c47315b3\",\"created_at\":\"2026-08-09 18:21:19\",\"user_name\":\"Test User\"},{\"id\":18,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 1ac1d925-9561-4f13-a7e5-f8a1b153d052\",\"created_at\":\"2026-08-09 18:21:18\",\"user_name\":\"Test User\"},{\"id\":17,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order 5cdc158c-66ce-4469-9bce-3a7aba9796ba\",\"created_at\":\"2026-08-09 18:21:16\",\"user_name\":\"Test User\"},{\"id\":16,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order acbd0494-3ea4-4664-a9e4-947f5ca8eb31\",\"created_at\":\"2026-08-09 18:16:35\",\"user_name\":\"Test User\"},{\"id\":15,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order bad66cd8-cfd7-4ab5-b4f8-307a51d2bdc8\",\"created_at\":\"2026-08-09 18:16:34\",\"user_name\":\"Test User\"},{\"id\":14,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 04a7eaf5-00a5-4b88-94c9-e8b5a1dd66ce\",\"created_at\":\"2026-08-09 18:16:33\",\"user_name\":\"Test User\"},{\"id\":13,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 658f1b9a-5e13-447c-938b-1295632aa1b1\",\"created_at\":\"2026-08-09 18:16:31\",\"user_name\":\"Test User\"},{\"id\":12,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order ab3e46ae-fc10-4e16-b1a1-0ec643432021\",\"created_at\":\"2026-08-09 18:16:17\",\"user_name\":\"Test User\"},{\"id\":11,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order 39110d4e-76b8-4f9e-b183-3fbceb8465bd\",\"created_at\":\"2026-08-09 18:16:02\",\"user_name\":\"Test User\"},{\"id\":10,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order ceef3e32-a379-4677-a11e-3994b2c31cfd\",\"created_at\":\"2026-08-09 18:16:01\",\"user_name\":\"Test User\"},{\"id\":9,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order 5b71b239-db26-43eb-8db8-af7835fe035b\",\"created_at\":\"2026-08-09 18:16:00\",\"user_name\":\"Test User\"},{\"id\":8,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 91a2daa5-94ac-4b66-9eac-da64a4dfa031\",\"created_at\":\"2026-08-09 18:15:59\",\"user_name\":\"Test User\"},{\"id\":7,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order c65e5d43-c1cb-4e5f-a989-f3b90924a76c\",\"created_at\":\"2026-08-09 18:15:57\",\"user_name\":\"Test User\"},{\"id\":6,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order 9aec6fce-8428-4ec1-a23f-86674fb0b839\",\"created_at\":\"2026-08-09 18:15:42\",\"user_name\":\"Test User\"},{\"id\":5,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order ad17b7be-d868-474f-8d6c-c12b51154ffd\",\"created_at\":\"2026-08-09 18:15:41\",\"user_name\":\"Test User\"},{\"id\":4,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order 8c85a07f-32b4-42c5-80d4-d0bac18480c6\",\"created_at\":\"2026-08-09 18:15:40\",\"user_name\":\"Test User\"},{\"id\":3,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 021c49f1-105f-4847-ba7c-b0c8efe38ce5\",\"created_at\":\"2026-08-09 18:15:39\",\"user_name\":\"Test User\"},{\"id\":2,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 429fea82-66a0-4842-999a-53c8339fe0be\",\"created_at\":\"2026-08-09 18:15:38\",\"user_name\":\"Test User\"},{\"id\":1,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order f0956429-d39a-4adf-bd24-9ef28821ccd3\",\"created_at\":\"2026-08-09 18:15:36\",\"user_name\":\"Test User\"}]\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:84:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 84
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 82 |\u001b[39m         }\n \u001b[90m 83 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 84 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 85 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 86 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 87 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 84
+                          },
+                          "message": "Error: GET /admin/orders: [{\"id\":32,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order a28821fb-b74f-439a-bb40-b999e385717b\",\"created_at\":\"2026-08-09 18:22:18\",\"user_name\":\"Test User\"},{\"id\":31,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order c6d834c7-883e-46c9-88e3-3cbacfb3a1e3\",\"created_at\":\"2026-08-09 18:22:16\",\"user_name\":\"Test User\"},{\"id\":30,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order dc4fcd51-bd60-4f01-b161-aa9ee00a878a\",\"created_at\":\"2026-08-09 18:22:15\",\"user_name\":\"Test User\"},{\"id\":29,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 504f8d32-b2a5-4f02-847d-105f9011089d\",\"created_at\":\"2026-08-09 18:22:13\",\"user_name\":\"Test User\"},{\"id\":28,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 98f18dd2-db32-472f-b186-b9cbec7145de\",\"created_at\":\"2026-08-09 18:21:58\",\"user_name\":\"Test User\"},{\"id\":27,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order 585737fc-8fa1-4a3b-98bc-bebaa2579329\",\"created_at\":\"2026-08-09 18:21:43\",\"user_name\":\"Test User\"},{\"id\":26,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order aff6bf35-b267-44ac-b0db-265a43f4ba0c\",\"created_at\":\"2026-08-09 18:21:41\",\"user_name\":\"Test User\"},{\"id\":25,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order e440f4c3-3a29-48f2-a15b-a0fe78fbe584\",\"created_at\":\"2026-08-09 18:21:40\",\"user_name\":\"Test User\"},{\"id\":24,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order a388852c-0411-4dc5-8557-b40d6000d6e7\",\"created_at\":\"2026-08-09 18:21:39\",\"user_name\":\"Test User\"},{\"id\":23,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 84910b67-ff97-4182-990a-1487e070ae60\",\"created_at\":\"2026-08-09 18:21:37\",\"user_name\":\"Test User\"},{\"id\":22,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order 147c7407-b3b7-4bb1-b05a-e994a7b8fe3a\",\"created_at\":\"2026-08-09 18:21:23\",\"user_name\":\"Test User\"},{\"id\":21,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order e4aaa1d8-be67-444c-a206-3636a0f0e968\",\"created_at\":\"2026-08-09 18:21:21\",\"user_name\":\"Test User\"},{\"id\":20,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order a6c42c67-b2c0-466a-b461-c282b6707108\",\"created_at\":\"2026-08-09 18:21:20\",\"user_name\":\"Test User\"},{\"id\":19,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order d6015e9c-2359-4fed-bb72-92b4c47315b3\",\"created_at\":\"2026-08-09 18:21:19\",\"user_name\":\"Test User\"},{\"id\":18,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 1ac1d925-9561-4f13-a7e5-f8a1b153d052\",\"created_at\":\"2026-08-09 18:21:18\",\"user_name\":\"Test User\"},{\"id\":17,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order 5cdc158c-66ce-4469-9bce-3a7aba9796ba\",\"created_at\":\"2026-08-09 18:21:16\",\"user_name\":\"Test User\"},{\"id\":16,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order acbd0494-3ea4-4664-a9e4-947f5ca8eb31\",\"created_at\":\"2026-08-09 18:16:35\",\"user_name\":\"Test User\"},{\"id\":15,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order bad66cd8-cfd7-4ab5-b4f8-307a51d2bdc8\",\"created_at\":\"2026-08-09 18:16:34\",\"user_name\":\"Test User\"},{\"id\":14,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 04a7eaf5-00a5-4b88-94c9-e8b5a1dd66ce\",\"created_at\":\"2026-08-09 18:16:33\",\"user_name\":\"Test User\"},{\"id\":13,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 658f1b9a-5e13-447c-938b-1295632aa1b1\",\"created_at\":\"2026-08-09 18:16:31\",\"user_name\":\"Test User\"},{\"id\":12,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order ab3e46ae-fc10-4e16-b1a1-0ec643432021\",\"created_at\":\"2026-08-09 18:16:17\",\"user_name\":\"Test User\"},{\"id\":11,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order 39110d4e-76b8-4f9e-b183-3fbceb8465bd\",\"created_at\":\"2026-08-09 18:16:02\",\"user_name\":\"Test User\"},{\"id\":10,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order ceef3e32-a379-4677-a11e-3994b2c31cfd\",\"created_at\":\"2026-08-09 18:16:01\",\"user_name\":\"Test User\"},{\"id\":9,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order 5b71b239-db26-43eb-8db8-af7835fe035b\",\"created_at\":\"2026-08-09 18:16:00\",\"user_name\":\"Test User\"},{\"id\":8,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 91a2daa5-94ac-4b66-9eac-da64a4dfa031\",\"created_at\":\"2026-08-09 18:15:59\",\"user_name\":\"Test User\"},{\"id\":7,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order c65e5d43-c1cb-4e5f-a989-f3b90924a76c\",\"created_at\":\"2026-08-09 18:15:57\",\"user_name\":\"Test User\"},{\"id\":6,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order 9aec6fce-8428-4ec1-a23f-86674fb0b839\",\"created_at\":\"2026-08-09 18:15:42\",\"user_name\":\"Test User\"},{\"id\":5,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order ad17b7be-d868-474f-8d6c-c12b51154ffd\",\"created_at\":\"2026-08-09 18:15:41\",\"user_name\":\"Test User\"},{\"id\":4,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order 8c85a07f-32b4-42c5-80d4-d0bac18480c6\",\"created_at\":\"2026-08-09 18:15:40\",\"user_name\":\"Test User\"},{\"id\":3,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 021c49f1-105f-4847-ba7c-b0c8efe38ce5\",\"created_at\":\"2026-08-09 18:15:39\",\"user_name\":\"Test User\"},{\"id\":2,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 429fea82-66a0-4842-999a-53c8339fe0be\",\"created_at\":\"2026-08-09 18:15:38\",\"user_name\":\"Test User\"},{\"id\":1,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order f0956429-d39a-4adf-bd24-9ef28821ccd3\",\"created_at\":\"2026-08-09 18:15:36\",\"user_name\":\"Test User\"}]\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  82 |         }\n  83 |\n> 84 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  85 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  86 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  87 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:84:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 58,
+                            "line": 86
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|unauthorized|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"[{\\\"id\\\":32,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"delivered\\\",\\\"shipping_address\\\":\\\"HW04 isolated order a28821fb-b74f-439a-bb40-b999e385717b\\\",\\\"created_at\\\":\\\"2026-08-09 18:22:18\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":31,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order c6d834c7-883e-46c9-88e3-3cbacfb3a1e3\\\",\\\"created_at\\\":\\\"2026-08-09 18:22:16\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":30,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"delivered\\\",\\\"shipping_address\\\":\\\"HW04 isolated order dc4fcd51-bd60-4f01-b161-aa9ee00a878a\\\",\\\"created_at\\\":\\\"2026-08-09 18:22:15\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":29,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"delivered\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 504f8d32-b2a5-4f02-847d-105f9011089d\\\",\\\"created_at\\\":\\\"2026-08-09 18:22:13\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":28,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 98f18dd2-db32-472f-b186-b9cbec7145de\\\",\\\"created_at\\\":\\\"2026-08-09 18:21:58\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":27,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"shipping\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 585737fc-8fa1-4a3b-98bc-bebaa2579329\\\",\\\"created_at\\\":\\\"2026-08-09 18:21:43\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":26,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"delivered\\\",\\\"shipping_address\\\":\\\"HW04 isolated order aff6bf35-b267-44ac-b0db-265a43f4ba0c\\\",\\\"created_at\\\":\\\"2026-08-09 18:21:41\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":25,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"confirmed\\\",\\\"shipping_address\\\":\\\"HW04 isolated order e440f4c3-3a29-48f2-a15b-a0fe78fbe584\\\",\\\"created_at\\\":\\\"2026-08-09 18:21:40\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":24,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order a388852c-0411-4dc5-8557-b40d6000d6e7\\\",\\\"created_at\\\":\\\"2026-08-09 18:21:39\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":23,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 84910b67-ff97-4182-990a-1487e070ae60\\\",\\\"created_at\\\":\\\"2026-08-09 18:21:37\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":22,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"shipping\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 147c7407-b3b7-4bb1-b05a-e994a7b8fe3a\\\",\\\"created_at\\\":\\\"2026-08-09 18:21:23\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":21,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"pending\\\",\\\"shipping_address\\\":\\\"HW04 isolated order e4aaa1d8-be67-444c-a206-3636a0f0e968\\\",\\\"created_at\\\":\\\"2026-08-09 18:21:21\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":20,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"pending\\\",\\\"shipping_address\\\":\\\"HW04 isolated order a6c42c67-b2c0-466a-b461-c282b6707108\\\",\\\"created_at\\\":\\\"2026-08-09 18:21:20\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":19,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order d6015e9c-2359-4fed-bb72-92b4c47315b3\\\",\\\"created_at\\\":\\\"2026-08-09 18:21:19\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":18,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 1ac1d925-9561-4f13-a7e5-f8a1b153d052\\\",\\\"created_at\\\":\\\"2026-08-09 18:21:18\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":17,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"confirmed\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 5cdc158c-66ce-4469-9bce-3a7aba9796ba\\\",\\\"created_at\\\":\\\"2026-08-09 18:21:16\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":16,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"delivered\\\",\\\"shipping_address\\\":\\\"HW04 isolated order acbd0494-3ea4-4664-a9e4-947f5ca8eb31\\\",\\\"created_at\\\":\\\"2026-08-09 18:16:35\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":15,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order bad66cd8-cfd7-4ab5-b4f8-307a51d2bdc8\\\",\\\"created_at\\\":\\\"2026-08-09 18:16:34\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":14,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"delivered\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 04a7eaf5-00a5-4b88-94c9-e8b5a1dd66ce\\\",\\\"created_at\\\":\\\"2026-08-09 18:16:33\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":13,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"delivered\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 658f1b9a-5e13-447c-938b-1295632aa1b1\\\",\\\"created_at\\\":\\\"2026-08-09 18:16:31\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":12,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order ab3e46ae-fc10-4e16-b1a1-0ec643432021\\\",\\\"created_at\\\":\\\"2026-08-09 18:16:17\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":11,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"shipping\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 39110d4e-76b8-4f9e-b183-3fbceb8465bd\\\",\\\"created_at\\\":\\\"2026-08-09 18:16:02\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":10,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"delivered\\\",\\\"shipping_address\\\":\\\"HW04 isolated order ceef3e32-a379-4677-a11e-3994b2c31cfd\\\",\\\"created_at\\\":\\\"2026-08-09 18:16:01\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":9,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"confirmed\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 5b71b239-db26-43eb-8db8-af7835fe035b\\\",\\\"created_at\\\":\\\"2026-08-09 18:16:00\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":8,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 91a2daa5-94ac-4b66-9eac-da64a4dfa031\\\",\\\"created_at\\\":\\\"2026-08-09 18:15:59\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":7,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order c65e5d43-c1cb-4e5f-a989-f3b90924a76c\\\",\\\"created_at\\\":\\\"2026-08-09 18:15:57\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":6,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"shipping\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 9aec6fce-8428-4ec1-a23f-86674fb0b839\\\",\\\"created_at\\\":\\\"2026-08-09 18:15:42\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":5,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"pending\\\",\\\"shipping_address\\\":\\\"HW04 isolated order ad17b7be-d868-474f-8d6c-c12b51154ffd\\\",\\\"created_at\\\":\\\"2026-08-09 18:15:41\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":4,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"pending\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 8c85a07f-32b4-42c5-80d4-d0bac18480c6\\\",\\\"created_at\\\":\\\"2026-08-09 18:15:40\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":3,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 021c49f1-105f-4847-ba7c-b0c8efe38ce5\\\",\\\"created_at\\\":\\\"2026-08-09 18:15:39\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":2,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 429fea82-66a0-4842-999a-53c8339fe0be\\\",\\\"created_at\\\":\\\"2026-08-09 18:15:38\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":1,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"confirmed\\\",\\\"shipping_address\\\":\\\"HW04 isolated order f0956429-d39a-4adf-bd24-9ef28821ccd3\\\",\\\"created_at\\\":\\\"2026-08-09 18:15:36\\\",\\\"user_name\\\":\\\"Test User\\\"}]\"\u001b[39m\n\n  84 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n  85 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n> 86 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n     |                                                          ^\n  87 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n  88 |           expect.soft(Array.isArray(JSON.parse(text))).toBe(true);\n  89 |         }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:86:58"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 79,
+                            "line": 104
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  getByRole('heading', { name: 'Admin Login' })\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  3000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Admin Login' })\u001b[22m\n\n\n  102 |         await expect.soft(page.getByRole(\"heading\", { name: \"EShop Admin\" })).toBeVisible({ timeout: 3_000 });\n  103 |       } else {\n> 104 |         await expect.soft(page.getByRole(\"heading\", { name: \"Admin Login\" })).toBeVisible({ timeout: 3_000 });\n      |                                                                               ^\n  105 |       }\n  106 |     });\n  107 |   }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:104:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-03",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T18:22:50.235Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-12"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-INV-12-03"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR12-06-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjEyLTA2IiwKICAidGl0bGUiOiAicmVqZWN0IHJlZ3VsYXIgdXNlciBKV1Qgb24gYWRtaW4gb3JkZXIgbGlzdGluZyIsCiAgInByaW9yaXR5IjogImhpZ2giLAogICJwYXJ0aXRpb24iOiBbCiAgICAiRVAtSU5WLTEyLTAzIgogIF0sCiAgIm1ldGhvZCI6ICJHRVQiLAogICJwYXRoIjogIi9hZG1pbi9vcmRlcnMiLAogICJhdXRoIjogInVzZXIiLAogICJleHBlY3RlZFN0YXR1cyI6IDQwMwp9Cg=="
+                        },
+                        {
+                          "name": "FR12-06-api-response.json",
+                          "contentType": "application/json; charset=utf-8",
+                          "body": "W3siaWQiOjMyLCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJkZWxpdmVyZWQiLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciBhMjg4MjFmYi1iNzRmLTQzOWEtYmI0MC1iOTk5ZTM4NTcxN2IiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoyMjoxOCIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjMxLCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJjYW5jZWxlZCIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIGM2ZDgzNGM3LTg4M2UtNDZjOS04OGUzLTNjYmFjZmIzYTFlMyIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjIyOjE2IiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6MzAsInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImRlbGl2ZXJlZCIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIGRjNGZjZDUxLWJkNjAtNGYwMS1iMTYxLWFhOWVlMDBhODc4YSIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjIyOjE1IiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6MjksInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImRlbGl2ZXJlZCIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIDUwNGY4ZDMyLWIyYTUtNGYwMi04NDdkLTEwNWY5MDExMDg5ZCIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjIyOjEzIiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6MjgsInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImNhbmNlbGVkIiwic2hpcHBpbmdfYWRkcmVzcyI6IkhXMDQgaXNvbGF0ZWQgb3JkZXIgOThmMThkZDItZGIzMi00NzJmLWIxODYtYjljYmVjNzE0NWRlIiwiY3JlYXRlZF9hdCI6IjIwMjYtMDgtMDkgMTg6MjE6NTgiLCJ1c2VyX25hbWUiOiJUZXN0IFVzZXIifSx7ImlkIjoyNywidXNlcl9pZCI6MiwidG90YWxfYW1vdW50IjozMDAwMDAwMCwic3RhdHVzIjoic2hpcHBpbmciLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciA1ODU3MzdmYy04ZmExLTRhM2ItOThiYy1iZWJhYTI1NzkzMjkiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoyMTo0MyIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjI2LCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJkZWxpdmVyZWQiLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciBhZmY2YmYzNS1iMjY3LTQ0YWMtYjBkYi0yNjVhNDNmNGJhMGMiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoyMTo0MSIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjI1LCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJjb25maXJtZWQiLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciBlNDQwZjRjMy0zYTI5LTQ4ZjItYTE1Yi1hMGZlNzhmYmU1ODQiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoyMTo0MCIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjI0LCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJjYW5jZWxlZCIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIGEzODg4NTJjLTA0MTEtNGRjNS04NTU3LWI0MGQ2MDAwZDZlNyIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjIxOjM5IiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6MjMsInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImNhbmNlbGVkIiwic2hpcHBpbmdfYWRkcmVzcyI6IkhXMDQgaXNvbGF0ZWQgb3JkZXIgODQ5MTBiNjctZmY5Ny00MTgyLTk5MGEtMTQ4N2UwNzBhZTYwIiwiY3JlYXRlZF9hdCI6IjIwMjYtMDgtMDkgMTg6MjE6MzciLCJ1c2VyX25hbWUiOiJUZXN0IFVzZXIifSx7ImlkIjoyMiwidXNlcl9pZCI6MiwidG90YWxfYW1vdW50IjozMDAwMDAwMCwic3RhdHVzIjoic2hpcHBpbmciLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciAxNDdjNzQwNy1iM2I3LTRiYjEtYjA1YS1lOTk0YTdiOGZlM2EiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoyMToyMyIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjIxLCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJwZW5kaW5nIiwic2hpcHBpbmdfYWRkcmVzcyI6IkhXMDQgaXNvbGF0ZWQgb3JkZXIgZTRhYWExZDgtYmU2Ny00NDRjLWEyMDYtMzYzNmEwZjBlOTY4IiwiY3JlYXRlZF9hdCI6IjIwMjYtMDgtMDkgMTg6MjE6MjEiLCJ1c2VyX25hbWUiOiJUZXN0IFVzZXIifSx7ImlkIjoyMCwidXNlcl9pZCI6MiwidG90YWxfYW1vdW50IjozMDAwMDAwMCwic3RhdHVzIjoicGVuZGluZyIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIGE2YzQyYzY3LWIyYzAtNDY2YS1iNDYxLWMyODJiNjcwNzEwOCIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjIxOjIwIiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6MTksInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImNhbmNlbGVkIiwic2hpcHBpbmdfYWRkcmVzcyI6IkhXMDQgaXNvbGF0ZWQgb3JkZXIgZDYwMTVlOWMtMjM1OS00ZmVkLWJiNzItOTJiNGM0NzMxNWIzIiwiY3JlYXRlZF9hdCI6IjIwMjYtMDgtMDkgMTg6MjE6MTkiLCJ1c2VyX25hbWUiOiJUZXN0IFVzZXIifSx7ImlkIjoxOCwidXNlcl9pZCI6MiwidG90YWxfYW1vdW50IjozMDAwMDAwMCwic3RhdHVzIjoiY2FuY2VsZWQiLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciAxYWMxZDkyNS05NTYxLTRmMTMtYTdlNS1mOGExYjE1M2QwNTIiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoyMToxOCIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjE3LCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJjb25maXJtZWQiLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciA1Y2RjMTU4Yy02NmNlLTQ0NjktOWJjZS0zYTdhYmE5Nzk2YmEiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoyMToxNiIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjE2LCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJkZWxpdmVyZWQiLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciBhY2JkMDQ5NC0zZWE0LTQ2NjQtYTllNC05NDdmNWNhOGViMzEiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoxNjozNSIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjE1LCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJjYW5jZWxlZCIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIGJhZDY2Y2Q4LWNmZDctNGFiNS1iNGY4LTMwN2E1MWQyYmRjOCIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjE2OjM0IiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6MTQsInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImRlbGl2ZXJlZCIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIDA0YTdlYWY1LTAwYTUtNGI4OC05NGM5LWU4YjVhMWRkNjZjZSIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjE2OjMzIiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6MTMsInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImRlbGl2ZXJlZCIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIDY1OGYxYjlhLTVlMTMtNDQ3Yy05MzhiLTEyOTU2MzJhYTFiMSIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjE2OjMxIiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6MTIsInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImNhbmNlbGVkIiwic2hpcHBpbmdfYWRkcmVzcyI6IkhXMDQgaXNvbGF0ZWQgb3JkZXIgYWIzZTQ2YWUtZmMxMC00ZTE2LWIxYTEtMGVjNjQzNDMyMDIxIiwiY3JlYXRlZF9hdCI6IjIwMjYtMDgtMDkgMTg6MTY6MTciLCJ1c2VyX25hbWUiOiJUZXN0IFVzZXIifSx7ImlkIjoxMSwidXNlcl9pZCI6MiwidG90YWxfYW1vdW50IjozMDAwMDAwMCwic3RhdHVzIjoic2hpcHBpbmciLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciAzOTExMGQ0ZS03NmI4LTRmOWUtYjE4My0zZmJjZWI4NDY1YmQiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoxNjowMiIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjEwLCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJkZWxpdmVyZWQiLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciBjZWVmM2UzMi1hMzc5LTQ2NzctYTExZS0zOTk0YjJjMzFjZmQiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoxNjowMSIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjksInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImNvbmZpcm1lZCIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIDViNzFiMjM5LWRiMjYtNDNlYi04ZGI4LWFmNzgzNWZlMDM1YiIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjE2OjAwIiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6OCwidXNlcl9pZCI6MiwidG90YWxfYW1vdW50IjozMDAwMDAwMCwic3RhdHVzIjoiY2FuY2VsZWQiLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciA5MWEyZGFhNS05NGFjLTRiNjYtOWVhYy1kYTY0YTRkZmEwMzEiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoxNTo1OSIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjcsInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImNhbmNlbGVkIiwic2hpcHBpbmdfYWRkcmVzcyI6IkhXMDQgaXNvbGF0ZWQgb3JkZXIgYzY1ZTVkNDMtYzFjYi00ZTVmLWE5ODktZjNiOTA5MjRhNzZjIiwiY3JlYXRlZF9hdCI6IjIwMjYtMDgtMDkgMTg6MTU6NTciLCJ1c2VyX25hbWUiOiJUZXN0IFVzZXIifSx7ImlkIjo2LCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJzaGlwcGluZyIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIDlhZWM2ZmNlLTg0MjgtNGVjMS1hMjNmLTg2Njc0ZmIwYjgzOSIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjE1OjQyIiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6NSwidXNlcl9pZCI6MiwidG90YWxfYW1vdW50IjozMDAwMDAwMCwic3RhdHVzIjoicGVuZGluZyIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIGFkMTdiN2JlLWQ4NjgtNDc0Zi04ZDZjLWMxMmI1MTE1NGZmZCIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjE1OjQxIiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6NCwidXNlcl9pZCI6MiwidG90YWxfYW1vdW50IjozMDAwMDAwMCwic3RhdHVzIjoicGVuZGluZyIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIDhjODVhMDdmLTMyYjQtNDJjNS04MGQ0LWQwYmFjMTg0ODBjNiIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjE1OjQwIiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6MywidXNlcl9pZCI6MiwidG90YWxfYW1vdW50IjozMDAwMDAwMCwic3RhdHVzIjoiY2FuY2VsZWQiLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciAwMjFjNDlmMS0xMDVmLTQ4NDctYmE3Yy1iMGM4ZWZlMzhjZTUiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoxNTozOSIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjIsInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImNhbmNlbGVkIiwic2hpcHBpbmdfYWRkcmVzcyI6IkhXMDQgaXNvbGF0ZWQgb3JkZXIgNDI5ZmVhODItNjZhMC00ODQyLTk5OWEtNTNjODMzOWZlMGJlIiwiY3JlYXRlZF9hdCI6IjIwMjYtMDgtMDkgMTg6MTU6MzgiLCJ1c2VyX25hbWUiOiJUZXN0IFVzZXIifSx7ImlkIjoxLCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJjb25maXJtZWQiLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciBmMDk1NjQyOS1kMzlhLTRhZGYtYmQyNC05ZWYyODgyMWNjZDMiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoxNTozNiIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9XQ=="
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--95cdb--JWT-on-admin-order-listing-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--95cdb--JWT-on-admin-order-listing-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--95cdb--JWT-on-admin-order-listing-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--95cdb--JWT-on-admin-order-listing-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 84
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-62747147d4c015980889",
+              "file": "fr12-access-control.spec.ts",
+              "line": 48,
+              "column": 5
+            },
+            {
+              "title": "FR12-07 [high] admin GET /admin/orders: allow admin JWT on admin order listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-12"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-VAL-12-01"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1714,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-12-01",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T18:22:58.209Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-12"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-VAL-12-01"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR12-07-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjEyLTA3IiwKICAidGl0bGUiOiAiYWxsb3cgYWRtaW4gSldUIG9uIGFkbWluIG9yZGVyIGxpc3RpbmciLAogICJwcmlvcml0eSI6ICJoaWdoIiwKICAicGFydGl0aW9uIjogWwogICAgIkVQLVZBTC0xMi0wMSIKICBdLAogICJtZXRob2QiOiAiR0VUIiwKICAicGF0aCI6ICIvYWRtaW4vb3JkZXJzIiwKICAiYXV0aCI6ICJhZG1pbiIsCiAgImV4cGVjdGVkU3RhdHVzIjogMjAwCn0K"
+                        },
+                        {
+                          "name": "FR12-07-api-response.json",
+                          "contentType": "application/json; charset=utf-8",
+                          "body": "W3siaWQiOjMyLCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJkZWxpdmVyZWQiLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciBhMjg4MjFmYi1iNzRmLTQzOWEtYmI0MC1iOTk5ZTM4NTcxN2IiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoyMjoxOCIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjMxLCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJjYW5jZWxlZCIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIGM2ZDgzNGM3LTg4M2UtNDZjOS04OGUzLTNjYmFjZmIzYTFlMyIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjIyOjE2IiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6MzAsInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImRlbGl2ZXJlZCIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIGRjNGZjZDUxLWJkNjAtNGYwMS1iMTYxLWFhOWVlMDBhODc4YSIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjIyOjE1IiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6MjksInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImRlbGl2ZXJlZCIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIDUwNGY4ZDMyLWIyYTUtNGYwMi04NDdkLTEwNWY5MDExMDg5ZCIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjIyOjEzIiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6MjgsInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImNhbmNlbGVkIiwic2hpcHBpbmdfYWRkcmVzcyI6IkhXMDQgaXNvbGF0ZWQgb3JkZXIgOThmMThkZDItZGIzMi00NzJmLWIxODYtYjljYmVjNzE0NWRlIiwiY3JlYXRlZF9hdCI6IjIwMjYtMDgtMDkgMTg6MjE6NTgiLCJ1c2VyX25hbWUiOiJUZXN0IFVzZXIifSx7ImlkIjoyNywidXNlcl9pZCI6MiwidG90YWxfYW1vdW50IjozMDAwMDAwMCwic3RhdHVzIjoic2hpcHBpbmciLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciA1ODU3MzdmYy04ZmExLTRhM2ItOThiYy1iZWJhYTI1NzkzMjkiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoyMTo0MyIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjI2LCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJkZWxpdmVyZWQiLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciBhZmY2YmYzNS1iMjY3LTQ0YWMtYjBkYi0yNjVhNDNmNGJhMGMiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoyMTo0MSIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjI1LCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJjb25maXJtZWQiLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciBlNDQwZjRjMy0zYTI5LTQ4ZjItYTE1Yi1hMGZlNzhmYmU1ODQiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoyMTo0MCIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjI0LCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJjYW5jZWxlZCIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIGEzODg4NTJjLTA0MTEtNGRjNS04NTU3LWI0MGQ2MDAwZDZlNyIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjIxOjM5IiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6MjMsInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImNhbmNlbGVkIiwic2hpcHBpbmdfYWRkcmVzcyI6IkhXMDQgaXNvbGF0ZWQgb3JkZXIgODQ5MTBiNjctZmY5Ny00MTgyLTk5MGEtMTQ4N2UwNzBhZTYwIiwiY3JlYXRlZF9hdCI6IjIwMjYtMDgtMDkgMTg6MjE6MzciLCJ1c2VyX25hbWUiOiJUZXN0IFVzZXIifSx7ImlkIjoyMiwidXNlcl9pZCI6MiwidG90YWxfYW1vdW50IjozMDAwMDAwMCwic3RhdHVzIjoic2hpcHBpbmciLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciAxNDdjNzQwNy1iM2I3LTRiYjEtYjA1YS1lOTk0YTdiOGZlM2EiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoyMToyMyIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjIxLCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJwZW5kaW5nIiwic2hpcHBpbmdfYWRkcmVzcyI6IkhXMDQgaXNvbGF0ZWQgb3JkZXIgZTRhYWExZDgtYmU2Ny00NDRjLWEyMDYtMzYzNmEwZjBlOTY4IiwiY3JlYXRlZF9hdCI6IjIwMjYtMDgtMDkgMTg6MjE6MjEiLCJ1c2VyX25hbWUiOiJUZXN0IFVzZXIifSx7ImlkIjoyMCwidXNlcl9pZCI6MiwidG90YWxfYW1vdW50IjozMDAwMDAwMCwic3RhdHVzIjoicGVuZGluZyIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIGE2YzQyYzY3LWIyYzAtNDY2YS1iNDYxLWMyODJiNjcwNzEwOCIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjIxOjIwIiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6MTksInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImNhbmNlbGVkIiwic2hpcHBpbmdfYWRkcmVzcyI6IkhXMDQgaXNvbGF0ZWQgb3JkZXIgZDYwMTVlOWMtMjM1OS00ZmVkLWJiNzItOTJiNGM0NzMxNWIzIiwiY3JlYXRlZF9hdCI6IjIwMjYtMDgtMDkgMTg6MjE6MTkiLCJ1c2VyX25hbWUiOiJUZXN0IFVzZXIifSx7ImlkIjoxOCwidXNlcl9pZCI6MiwidG90YWxfYW1vdW50IjozMDAwMDAwMCwic3RhdHVzIjoiY2FuY2VsZWQiLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciAxYWMxZDkyNS05NTYxLTRmMTMtYTdlNS1mOGExYjE1M2QwNTIiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoyMToxOCIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjE3LCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJjb25maXJtZWQiLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciA1Y2RjMTU4Yy02NmNlLTQ0NjktOWJjZS0zYTdhYmE5Nzk2YmEiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoyMToxNiIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjE2LCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJkZWxpdmVyZWQiLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciBhY2JkMDQ5NC0zZWE0LTQ2NjQtYTllNC05NDdmNWNhOGViMzEiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoxNjozNSIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjE1LCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJjYW5jZWxlZCIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIGJhZDY2Y2Q4LWNmZDctNGFiNS1iNGY4LTMwN2E1MWQyYmRjOCIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjE2OjM0IiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6MTQsInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImRlbGl2ZXJlZCIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIDA0YTdlYWY1LTAwYTUtNGI4OC05NGM5LWU4YjVhMWRkNjZjZSIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjE2OjMzIiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6MTMsInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImRlbGl2ZXJlZCIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIDY1OGYxYjlhLTVlMTMtNDQ3Yy05MzhiLTEyOTU2MzJhYTFiMSIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjE2OjMxIiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6MTIsInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImNhbmNlbGVkIiwic2hpcHBpbmdfYWRkcmVzcyI6IkhXMDQgaXNvbGF0ZWQgb3JkZXIgYWIzZTQ2YWUtZmMxMC00ZTE2LWIxYTEtMGVjNjQzNDMyMDIxIiwiY3JlYXRlZF9hdCI6IjIwMjYtMDgtMDkgMTg6MTY6MTciLCJ1c2VyX25hbWUiOiJUZXN0IFVzZXIifSx7ImlkIjoxMSwidXNlcl9pZCI6MiwidG90YWxfYW1vdW50IjozMDAwMDAwMCwic3RhdHVzIjoic2hpcHBpbmciLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciAzOTExMGQ0ZS03NmI4LTRmOWUtYjE4My0zZmJjZWI4NDY1YmQiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoxNjowMiIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjEwLCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJkZWxpdmVyZWQiLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciBjZWVmM2UzMi1hMzc5LTQ2NzctYTExZS0zOTk0YjJjMzFjZmQiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoxNjowMSIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjksInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImNvbmZpcm1lZCIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIDViNzFiMjM5LWRiMjYtNDNlYi04ZGI4LWFmNzgzNWZlMDM1YiIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjE2OjAwIiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6OCwidXNlcl9pZCI6MiwidG90YWxfYW1vdW50IjozMDAwMDAwMCwic3RhdHVzIjoiY2FuY2VsZWQiLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciA5MWEyZGFhNS05NGFjLTRiNjYtOWVhYy1kYTY0YTRkZmEwMzEiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoxNTo1OSIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjcsInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImNhbmNlbGVkIiwic2hpcHBpbmdfYWRkcmVzcyI6IkhXMDQgaXNvbGF0ZWQgb3JkZXIgYzY1ZTVkNDMtYzFjYi00ZTVmLWE5ODktZjNiOTA5MjRhNzZjIiwiY3JlYXRlZF9hdCI6IjIwMjYtMDgtMDkgMTg6MTU6NTciLCJ1c2VyX25hbWUiOiJUZXN0IFVzZXIifSx7ImlkIjo2LCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJzaGlwcGluZyIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIDlhZWM2ZmNlLTg0MjgtNGVjMS1hMjNmLTg2Njc0ZmIwYjgzOSIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjE1OjQyIiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6NSwidXNlcl9pZCI6MiwidG90YWxfYW1vdW50IjozMDAwMDAwMCwic3RhdHVzIjoicGVuZGluZyIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIGFkMTdiN2JlLWQ4NjgtNDc0Zi04ZDZjLWMxMmI1MTE1NGZmZCIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjE1OjQxIiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6NCwidXNlcl9pZCI6MiwidG90YWxfYW1vdW50IjozMDAwMDAwMCwic3RhdHVzIjoicGVuZGluZyIsInNoaXBwaW5nX2FkZHJlc3MiOiJIVzA0IGlzb2xhdGVkIG9yZGVyIDhjODVhMDdmLTMyYjQtNDJjNS04MGQ0LWQwYmFjMTg0ODBjNiIsImNyZWF0ZWRfYXQiOiIyMDI2LTA4LTA5IDE4OjE1OjQwIiwidXNlcl9uYW1lIjoiVGVzdCBVc2VyIn0seyJpZCI6MywidXNlcl9pZCI6MiwidG90YWxfYW1vdW50IjozMDAwMDAwMCwic3RhdHVzIjoiY2FuY2VsZWQiLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciAwMjFjNDlmMS0xMDVmLTQ4NDctYmE3Yy1iMGM4ZWZlMzhjZTUiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoxNTozOSIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9LHsiaWQiOjIsInVzZXJfaWQiOjIsInRvdGFsX2Ftb3VudCI6MzAwMDAwMDAsInN0YXR1cyI6ImNhbmNlbGVkIiwic2hpcHBpbmdfYWRkcmVzcyI6IkhXMDQgaXNvbGF0ZWQgb3JkZXIgNDI5ZmVhODItNjZhMC00ODQyLTk5OWEtNTNjODMzOWZlMGJlIiwiY3JlYXRlZF9hdCI6IjIwMjYtMDgtMDkgMTg6MTU6MzgiLCJ1c2VyX25hbWUiOiJUZXN0IFVzZXIifSx7ImlkIjoxLCJ1c2VyX2lkIjoyLCJ0b3RhbF9hbW91bnQiOjMwMDAwMDAwLCJzdGF0dXMiOiJjb25maXJtZWQiLCJzaGlwcGluZ19hZGRyZXNzIjoiSFcwNCBpc29sYXRlZCBvcmRlciBmMDk1NjQyOS1kMzlhLTRhZGYtYmQyNC05ZWYyODgyMWNjZDMiLCJjcmVhdGVkX2F0IjoiMjAyNi0wOC0wOSAxODoxNTozNiIsInVzZXJfbmFtZSI6IlRlc3QgVXNlciJ9XQ=="
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-5dad066fae93fd6a26f7",
+              "file": "fr12-access-control.spec.ts",
+              "line": 48,
+              "column": 5
+            },
+            {
+              "title": "FR12-08 [high] none POST /products: reject anonymous product creation",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-12"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-INV-12-01"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1054,
+                      "error": {
+                        "message": "Error: POST /products: {\"message\":\"Product created\",\"id\":9}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m401\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: POST /products: {\"message\":\"Product created\",\"id\":9}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m401\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:84:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 84
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 82 |\u001b[39m         }\n \u001b[90m 83 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 84 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 85 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 86 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 87 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 84
+                          },
+                          "message": "Error: POST /products: {\"message\":\"Product created\",\"id\":9}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m401\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  82 |         }\n  83 |\n> 84 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  85 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  86 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  87 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:84:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 58,
+                            "line": 86
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|unauthorized|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"{\\\"message\\\":\\\"Product created\\\",\\\"id\\\":9}\"\u001b[39m\n\n  84 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n  85 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n> 86 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n     |                                                          ^\n  87 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n  88 |           expect.soft(Array.isArray(JSON.parse(text))).toBe(true);\n  89 |         }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:86:58"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-01",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T18:23:00.821Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-12"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-INV-12-01"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR12-08-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjEyLTA4IiwKICAidGl0bGUiOiAicmVqZWN0IGFub255bW91cyBwcm9kdWN0IGNyZWF0aW9uIiwKICAicHJpb3JpdHkiOiAiaGlnaCIsCiAgInBhcnRpdGlvbiI6IFsKICAgICJFUC1JTlYtMTItMDEiCiAgXSwKICAibWV0aG9kIjogIlBPU1QiLAogICJwYXRoIjogIi9wcm9kdWN0cyIsCiAgImF1dGgiOiAibm9uZSIsCiAgImV4cGVjdGVkU3RhdHVzIjogNDAxLAogICJib2R5IjogewogICAgIm5hbWUiOiAiSFcwNCBkaXNwb3NhYmxlIHByb2R1Y3QiLAogICAgInByaWNlIjogMSwKICAgICJkZXNjcmlwdGlvbiI6ICJhY2Nlc3MtY29udHJvbCBwcm9iZSIsCiAgICAiaW1hZ2VVcmwiOiAiIiwKICAgICJjYXRlZ29yeV9pZCI6IDEKICB9LAogICJjbGVhbnVwIjogInByb2R1Y3QiCn0K"
+                        },
+                        {
+                          "name": "FR12-08-api-response.json",
+                          "contentType": "application/json; charset=utf-8",
+                          "body": "eyJtZXNzYWdlIjoiUHJvZHVjdCBjcmVhdGVkIiwiaWQiOjl9"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--2260b--anonymous-product-creation-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--2260b--anonymous-product-creation-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--2260b--anonymous-product-creation-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--2260b--anonymous-product-creation-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 84
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-beb0920ccd5ec9e1e948",
+              "file": "fr12-access-control.spec.ts",
+              "line": 48,
+              "column": 5
+            },
+            {
+              "title": "FR12-09 [high] user POST /products: reject regular user product creation",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-12"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-INV-12-03"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5398,
+                      "error": {
+                        "message": "Error: POST /products: {\"message\":\"Product created\",\"id\":10}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: POST /products: {\"message\":\"Product created\",\"id\":10}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:84:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 84
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 82 |\u001b[39m         }\n \u001b[90m 83 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 84 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 85 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 86 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 87 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 84
+                          },
+                          "message": "Error: POST /products: {\"message\":\"Product created\",\"id\":10}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  82 |         }\n  83 |\n> 84 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  85 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  86 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  87 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:84:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 58,
+                            "line": 86
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|unauthorized|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"{\\\"message\\\":\\\"Product created\\\",\\\"id\\\":10}\"\u001b[39m\n\n  84 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n  85 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n> 86 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n     |                                                          ^\n  87 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n  88 |           expect.soft(Array.isArray(JSON.parse(text))).toBe(true);\n  89 |         }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:86:58"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 79,
+                            "line": 104
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  getByRole('heading', { name: 'Admin Login' })\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  3000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Admin Login' })\u001b[22m\n\n\n  102 |         await expect.soft(page.getByRole(\"heading\", { name: \"EShop Admin\" })).toBeVisible({ timeout: 3_000 });\n  103 |       } else {\n> 104 |         await expect.soft(page.getByRole(\"heading\", { name: \"Admin Login\" })).toBeVisible({ timeout: 3_000 });\n      |                                                                               ^\n  105 |       }\n  106 |     });\n  107 |   }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:104:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-03",
+                          "duration": 2
+                        }
+                      ],
+                      "startTime": "2026-08-09T18:23:04.224Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-12"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-INV-12-03"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR12-09-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjEyLTA5IiwKICAidGl0bGUiOiAicmVqZWN0IHJlZ3VsYXIgdXNlciBwcm9kdWN0IGNyZWF0aW9uIiwKICAicHJpb3JpdHkiOiAiaGlnaCIsCiAgInBhcnRpdGlvbiI6IFsKICAgICJFUC1JTlYtMTItMDMiCiAgXSwKICAibWV0aG9kIjogIlBPU1QiLAogICJwYXRoIjogIi9wcm9kdWN0cyIsCiAgImF1dGgiOiAidXNlciIsCiAgImV4cGVjdGVkU3RhdHVzIjogNDAzLAogICJib2R5IjogewogICAgIm5hbWUiOiAiSFcwNCBkaXNwb3NhYmxlIHByb2R1Y3QiLAogICAgInByaWNlIjogMSwKICAgICJkZXNjcmlwdGlvbiI6ICJhY2Nlc3MtY29udHJvbCBwcm9iZSIsCiAgICAiaW1hZ2VVcmwiOiAiIiwKICAgICJjYXRlZ29yeV9pZCI6IDEKICB9LAogICJjbGVhbnVwIjogInByb2R1Y3QiCn0K"
+                        },
+                        {
+                          "name": "FR12-09-api-response.json",
+                          "contentType": "application/json; charset=utf-8",
+                          "body": "eyJtZXNzYWdlIjoiUHJvZHVjdCBjcmVhdGVkIiwiaWQiOjEwfQ=="
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bdc6e-gular-user-product-creation-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bdc6e-gular-user-product-creation-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bdc6e-gular-user-product-creation-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bdc6e-gular-user-product-creation-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 84
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-8b42e1c83298f430791b",
+              "file": "fr12-access-control.spec.ts",
+              "line": 48,
+              "column": 5
+            },
+            {
+              "title": "FR12-10 [high] admin POST /products: allow admin product creation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-12"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-VAL-12-02"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2118,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-12-02",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T18:23:14.311Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-12"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-VAL-12-02"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR12-10-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjEyLTEwIiwKICAidGl0bGUiOiAiYWxsb3cgYWRtaW4gcHJvZHVjdCBjcmVhdGlvbiIsCiAgInByaW9yaXR5IjogImhpZ2giLAogICJwYXJ0aXRpb24iOiBbCiAgICAiRVAtVkFMLTEyLTAyIgogIF0sCiAgIm1ldGhvZCI6ICJQT1NUIiwKICAicGF0aCI6ICIvcHJvZHVjdHMiLAogICJhdXRoIjogImFkbWluIiwKICAiZXhwZWN0ZWRTdGF0dXMiOiAyMDAsCiAgImJvZHkiOiB7CiAgICAibmFtZSI6ICJIVzA0IGRpc3Bvc2FibGUgcHJvZHVjdCIsCiAgICAicHJpY2UiOiAxLAogICAgImRlc2NyaXB0aW9uIjogImFjY2Vzcy1jb250cm9sIHByb2JlIiwKICAgICJpbWFnZVVybCI6ICIiLAogICAgImNhdGVnb3J5X2lkIjogMQogIH0sCiAgImNsZWFudXAiOiAicHJvZHVjdCIKfQo="
+                        },
+                        {
+                          "name": "FR12-10-api-response.json",
+                          "contentType": "application/json; charset=utf-8",
+                          "body": "eyJtZXNzYWdlIjoiUHJvZHVjdCBjcmVhdGVkIiwiaWQiOjExfQ=="
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-8809d874ec46b4088cd7",
+              "file": "fr12-access-control.spec.ts",
+              "line": 48,
+              "column": 5
+            },
+            {
+              "title": "FR12-11 [high] none PUT /products/999999: reject anonymous product update",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-12"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-INV-12-01"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1212,
+                      "error": {
+                        "message": "Error: PUT /products/999999: {\"message\":\"Product updated\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m401\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: PUT /products/999999: {\"message\":\"Product updated\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m401\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:84:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 84
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 82 |\u001b[39m         }\n \u001b[90m 83 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 84 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 85 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 86 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 87 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 84
+                          },
+                          "message": "Error: PUT /products/999999: {\"message\":\"Product updated\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m401\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  82 |         }\n  83 |\n> 84 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  85 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  86 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  87 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:84:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 58,
+                            "line": 86
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|unauthorized|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"{\\\"message\\\":\\\"Product updated\\\"}\"\u001b[39m\n\n  84 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n  85 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n> 86 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n     |                                                          ^\n  87 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n  88 |           expect.soft(Array.isArray(JSON.parse(text))).toBe(true);\n  89 |         }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:86:58"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-01",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T18:23:17.296Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-12"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-INV-12-01"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR12-11-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjEyLTExIiwKICAidGl0bGUiOiAicmVqZWN0IGFub255bW91cyBwcm9kdWN0IHVwZGF0ZSIsCiAgInByaW9yaXR5IjogImhpZ2giLAogICJwYXJ0aXRpb24iOiBbCiAgICAiRVAtSU5WLTEyLTAxIgogIF0sCiAgIm1ldGhvZCI6ICJQVVQiLAogICJwYXRoIjogIi9wcm9kdWN0cy85OTk5OTkiLAogICJhdXRoIjogIm5vbmUiLAogICJleHBlY3RlZFN0YXR1cyI6IDQwMSwKICAiYm9keSI6IHsKICAgICJuYW1lIjogIm11c3Qgbm90IHVwZGF0ZSIsCiAgICAicHJpY2UiOiAxLAogICAgImRlc2NyaXB0aW9uIjogIiIsCiAgICAiaW1hZ2VVcmwiOiAiIiwKICAgICJjYXRlZ29yeV9pZCI6IDEKICB9Cn0K"
+                        },
+                        {
+                          "name": "FR12-11-api-response.json",
+                          "contentType": "application/json; charset=utf-8",
+                          "body": "eyJtZXNzYWdlIjoiUHJvZHVjdCB1cGRhdGVkIn0="
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--1b3ac-ct-anonymous-product-update-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--1b3ac-ct-anonymous-product-update-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--1b3ac-ct-anonymous-product-update-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--1b3ac-ct-anonymous-product-update-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 84
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-e2df48c60650cedf2676",
+              "file": "fr12-access-control.spec.ts",
+              "line": 48,
+              "column": 5
+            },
+            {
+              "title": "FR12-12 [high] user DELETE /products/999999: reject regular user product deletion",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-12"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-INV-12-03"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5219,
+                      "error": {
+                        "message": "Error: DELETE /products/999999: {\"message\":\"Product deleted\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: DELETE /products/999999: {\"message\":\"Product deleted\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:84:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 84
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 82 |\u001b[39m         }\n \u001b[90m 83 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 84 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 85 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 86 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 87 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 84
+                          },
+                          "message": "Error: DELETE /products/999999: {\"message\":\"Product deleted\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  82 |         }\n  83 |\n> 84 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  85 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  86 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  87 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:84:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 58,
+                            "line": 86
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|unauthorized|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"{\\\"message\\\":\\\"Product deleted\\\"}\"\u001b[39m\n\n  84 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n  85 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n> 86 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n     |                                                          ^\n  87 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n  88 |           expect.soft(Array.isArray(JSON.parse(text))).toBe(true);\n  89 |         }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:86:58"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 79,
+                            "line": 104
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  getByRole('heading', { name: 'Admin Login' })\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  3000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Admin Login' })\u001b[22m\n\n\n  102 |         await expect.soft(page.getByRole(\"heading\", { name: \"EShop Admin\" })).toBeVisible({ timeout: 3_000 });\n  103 |       } else {\n> 104 |         await expect.soft(page.getByRole(\"heading\", { name: \"Admin Login\" })).toBeVisible({ timeout: 3_000 });\n      |                                                                               ^\n  105 |       }\n  106 |     });\n  107 |   }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:104:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-03",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T18:23:21.356Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-12"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-INV-12-03"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR12-12-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjEyLTEyIiwKICAidGl0bGUiOiAicmVqZWN0IHJlZ3VsYXIgdXNlciBwcm9kdWN0IGRlbGV0aW9uIiwKICAicHJpb3JpdHkiOiAiaGlnaCIsCiAgInBhcnRpdGlvbiI6IFsKICAgICJFUC1JTlYtMTItMDMiCiAgXSwKICAibWV0aG9kIjogIkRFTEVURSIsCiAgInBhdGgiOiAiL3Byb2R1Y3RzLzk5OTk5OSIsCiAgImF1dGgiOiAidXNlciIsCiAgImV4cGVjdGVkU3RhdHVzIjogNDAzCn0K"
+                        },
+                        {
+                          "name": "FR12-12-api-response.json",
+                          "contentType": "application/json; charset=utf-8",
+                          "body": "eyJtZXNzYWdlIjoiUHJvZHVjdCBkZWxldGVkIn0="
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bae0e-gular-user-product-deletion-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bae0e-gular-user-product-deletion-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bae0e-gular-user-product-deletion-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bae0e-gular-user-product-deletion-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 84
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-ef9c42099695269ab76a",
+              "file": "fr12-access-control.spec.ts",
+              "line": 48,
+              "column": 5
+            },
+            {
+              "title": "FR12-13 [high] none POST /categories: reject anonymous category creation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-12"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-INV-12-01"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1841,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-01",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T18:23:30.675Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-12"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-INV-12-01"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR12-13-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjEyLTEzIiwKICAidGl0bGUiOiAicmVqZWN0IGFub255bW91cyBjYXRlZ29yeSBjcmVhdGlvbiIsCiAgInByaW9yaXR5IjogImhpZ2giLAogICJwYXJ0aXRpb24iOiBbCiAgICAiRVAtSU5WLTEyLTAxIgogIF0sCiAgIm1ldGhvZCI6ICJQT1NUIiwKICAicGF0aCI6ICIvY2F0ZWdvcmllcyIsCiAgImF1dGgiOiAibm9uZSIsCiAgImV4cGVjdGVkU3RhdHVzIjogNDAxLAogICJib2R5IjogewogICAgIm5hbWUiOiAiSFcwNCBkaXNwb3NhYmxlIGNhdGVnb3J5IgogIH0sCiAgImNsZWFudXAiOiAiY2F0ZWdvcnkiCn0K"
+                        },
+                        {
+                          "name": "FR12-13-api-response.json",
+                          "contentType": "application/json; charset=utf-8",
+                          "body": "eyJlcnJvciI6IlVuYXV0aG9yaXplZCJ9"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-557ede6738160fc8d901",
+              "file": "fr12-access-control.spec.ts",
+              "line": 48,
+              "column": 5
+            },
+            {
+              "title": "FR12-14 [high] user POST /categories: reject regular user category creation",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-12"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-INV-12-03"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4257,
+                      "error": {
+                        "message": "Error: POST /categories: {\"message\":\"Category created\",\"id\":6}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: POST /categories: {\"message\":\"Category created\",\"id\":6}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:84:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 84
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 82 |\u001b[39m         }\n \u001b[90m 83 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 84 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 85 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 86 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 87 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 84
+                          },
+                          "message": "Error: POST /categories: {\"message\":\"Category created\",\"id\":6}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  82 |         }\n  83 |\n> 84 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  85 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  86 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  87 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:84:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 58,
+                            "line": 86
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|unauthorized|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"{\\\"message\\\":\\\"Category created\\\",\\\"id\\\":6}\"\u001b[39m\n\n  84 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n  85 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n> 86 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n     |                                                          ^\n  87 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n  88 |           expect.soft(Array.isArray(JSON.parse(text))).toBe(true);\n  89 |         }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:86:58"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 79,
+                            "line": 104
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  getByRole('heading', { name: 'Admin Login' })\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  3000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Admin Login' })\u001b[22m\n\n\n  102 |         await expect.soft(page.getByRole(\"heading\", { name: \"EShop Admin\" })).toBeVisible({ timeout: 3_000 });\n  103 |       } else {\n> 104 |         await expect.soft(page.getByRole(\"heading\", { name: \"Admin Login\" })).toBeVisible({ timeout: 3_000 });\n      |                                                                               ^\n  105 |       }\n  106 |     });\n  107 |   }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:104:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-03",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T18:23:33.306Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-12"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-INV-12-03"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR12-14-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjEyLTE0IiwKICAidGl0bGUiOiAicmVqZWN0IHJlZ3VsYXIgdXNlciBjYXRlZ29yeSBjcmVhdGlvbiIsCiAgInByaW9yaXR5IjogImhpZ2giLAogICJwYXJ0aXRpb24iOiBbCiAgICAiRVAtSU5WLTEyLTAzIgogIF0sCiAgIm1ldGhvZCI6ICJQT1NUIiwKICAicGF0aCI6ICIvY2F0ZWdvcmllcyIsCiAgImF1dGgiOiAidXNlciIsCiAgImV4cGVjdGVkU3RhdHVzIjogNDAzLAogICJib2R5IjogewogICAgIm5hbWUiOiAiSFcwNCBkaXNwb3NhYmxlIGNhdGVnb3J5IgogIH0sCiAgImNsZWFudXAiOiAiY2F0ZWdvcnkiCn0K"
+                        },
+                        {
+                          "name": "FR12-14-api-response.json",
+                          "contentType": "application/json; charset=utf-8",
+                          "body": "eyJtZXNzYWdlIjoiQ2F0ZWdvcnkgY3JlYXRlZCIsImlkIjo2fQ=="
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--5aa0a-ular-user-category-creation-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--5aa0a-ular-user-category-creation-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--5aa0a-ular-user-category-creation-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--5aa0a-ular-user-category-creation-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 84
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-f8b6f6ba92448602bd1d",
+              "file": "fr12-access-control.spec.ts",
+              "line": 48,
+              "column": 5
+            },
+            {
+              "title": "FR12-15 [high] admin POST /categories: allow admin category creation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-12"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-VAL-12-02"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1899,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-12-02",
+                          "duration": 2
+                        }
+                      ],
+                      "startTime": "2026-08-09T18:23:40.358Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-12"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-VAL-12-02"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR12-15-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjEyLTE1IiwKICAidGl0bGUiOiAiYWxsb3cgYWRtaW4gY2F0ZWdvcnkgY3JlYXRpb24iLAogICJwcmlvcml0eSI6ICJoaWdoIiwKICAicGFydGl0aW9uIjogWwogICAgIkVQLVZBTC0xMi0wMiIKICBdLAogICJtZXRob2QiOiAiUE9TVCIsCiAgInBhdGgiOiAiL2NhdGVnb3JpZXMiLAogICJhdXRoIjogImFkbWluIiwKICAiZXhwZWN0ZWRTdGF0dXMiOiAyMDAsCiAgImJvZHkiOiB7CiAgICAibmFtZSI6ICJIVzA0IGRpc3Bvc2FibGUgY2F0ZWdvcnkiCiAgfSwKICAiY2xlYW51cCI6ICJjYXRlZ29yeSIKfQo="
+                        },
+                        {
+                          "name": "FR12-15-api-response.json",
+                          "contentType": "application/json; charset=utf-8",
+                          "body": "eyJtZXNzYWdlIjoiQ2F0ZWdvcnkgY3JlYXRlZCIsImlkIjo3fQ=="
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-741d75b6da48a2930709",
+              "file": "fr12-access-control.spec.ts",
+              "line": 48,
+              "column": 5
+            },
+            {
+              "title": "FR12-16 [high] none POST /admin/coupons: reject anonymous coupon creation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-12"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-INV-12-01"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 877,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-01",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T18:23:43.039Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-12"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-INV-12-01"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR12-16-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjEyLTE2IiwKICAidGl0bGUiOiAicmVqZWN0IGFub255bW91cyBjb3Vwb24gY3JlYXRpb24iLAogICJwcmlvcml0eSI6ICJoaWdoIiwKICAicGFydGl0aW9uIjogWwogICAgIkVQLUlOVi0xMi0wMSIKICBdLAogICJtZXRob2QiOiAiUE9TVCIsCiAgInBhdGgiOiAiL2FkbWluL2NvdXBvbnMiLAogICJhdXRoIjogIm5vbmUiLAogICJleHBlY3RlZFN0YXR1cyI6IDQwMSwKICAiYm9keSI6IHsKICAgICJjb2RlIjogIkhXMDRBTk9OIiwKICAgICJ0eXBlIjogImZpeGVkIiwKICAgICJkaXNjb3VudF92YWx1ZSI6IDEsCiAgICAibWluX29yZGVyX2Ftb3VudCI6IDAsCiAgICAiZXhwaXJlZF9hdCI6ICIyMDk5LTEyLTMxIiwKICAgICJtYXhfdXNlc19wZXJfdXNlciI6IDEKICB9LAogICJjbGVhbnVwIjogImNvdXBvbiIKfQo="
+                        },
+                        {
+                          "name": "FR12-16-api-response.json",
+                          "contentType": "application/json; charset=utf-8",
+                          "body": "eyJlcnJvciI6IlVuYXV0aG9yaXplZCJ9"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-93eb77d2cb513179f38b",
+              "file": "fr12-access-control.spec.ts",
+              "line": 48,
+              "column": 5
+            },
+            {
+              "title": "FR12-17 [high] user POST /admin/coupons: reject regular user coupon creation",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-12"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-INV-12-03"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4250,
+                      "error": {
+                        "message": "Error: POST /admin/coupons: {\"message\":\"Coupon created\",\"id\":7}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: POST /admin/coupons: {\"message\":\"Coupon created\",\"id\":7}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:84:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 84
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 82 |\u001b[39m         }\n \u001b[90m 83 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 84 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 85 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 86 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 87 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 84
+                          },
+                          "message": "Error: POST /admin/coupons: {\"message\":\"Coupon created\",\"id\":7}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  82 |         }\n  83 |\n> 84 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  85 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  86 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  87 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:84:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 58,
+                            "line": 86
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|unauthorized|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"{\\\"message\\\":\\\"Coupon created\\\",\\\"id\\\":7}\"\u001b[39m\n\n  84 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n  85 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n> 86 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n     |                                                          ^\n  87 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n  88 |           expect.soft(Array.isArray(JSON.parse(text))).toBe(true);\n  89 |         }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:86:58"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 79,
+                            "line": 104
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  getByRole('heading', { name: 'Admin Login' })\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  3000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Admin Login' })\u001b[22m\n\n\n  102 |         await expect.soft(page.getByRole(\"heading\", { name: \"EShop Admin\" })).toBeVisible({ timeout: 3_000 });\n  103 |       } else {\n> 104 |         await expect.soft(page.getByRole(\"heading\", { name: \"Admin Login\" })).toBeVisible({ timeout: 3_000 });\n      |                                                                               ^\n  105 |       }\n  106 |     });\n  107 |   }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:104:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-03",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T18:23:43.949Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-12"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-INV-12-03"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR12-17-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjEyLTE3IiwKICAidGl0bGUiOiAicmVqZWN0IHJlZ3VsYXIgdXNlciBjb3Vwb24gY3JlYXRpb24iLAogICJwcmlvcml0eSI6ICJoaWdoIiwKICAicGFydGl0aW9uIjogWwogICAgIkVQLUlOVi0xMi0wMyIKICBdLAogICJtZXRob2QiOiAiUE9TVCIsCiAgInBhdGgiOiAiL2FkbWluL2NvdXBvbnMiLAogICJhdXRoIjogInVzZXIiLAogICJleHBlY3RlZFN0YXR1cyI6IDQwMywKICAiYm9keSI6IHsKICAgICJjb2RlIjogIkhXMDRVU0VSIiwKICAgICJ0eXBlIjogImZpeGVkIiwKICAgICJkaXNjb3VudF92YWx1ZSI6IDEsCiAgICAibWluX29yZGVyX2Ftb3VudCI6IDAsCiAgICAiZXhwaXJlZF9hdCI6ICIyMDk5LTEyLTMxIiwKICAgICJtYXhfdXNlc19wZXJfdXNlciI6IDEKICB9LAogICJjbGVhbnVwIjogImNvdXBvbiIKfQo="
+                        },
+                        {
+                          "name": "FR12-17-api-response.json",
+                          "contentType": "application/json; charset=utf-8",
+                          "body": "eyJtZXNzYWdlIjoiQ291cG9uIGNyZWF0ZWQiLCJpZCI6N30="
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--686db-egular-user-coupon-creation-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--686db-egular-user-coupon-creation-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--686db-egular-user-coupon-creation-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--686db-egular-user-coupon-creation-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 84
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-cdddd65b9d343b2b3664",
+              "file": "fr12-access-control.spec.ts",
+              "line": 48,
+              "column": 5
+            },
+            {
+              "title": "FR12-18 [high] admin POST /admin/coupons: allow admin coupon creation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-12"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-VAL-12-01"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1869,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-12-01",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T18:23:51.673Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-12"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-VAL-12-01"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR12-18-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjEyLTE4IiwKICAidGl0bGUiOiAiYWxsb3cgYWRtaW4gY291cG9uIGNyZWF0aW9uIiwKICAicHJpb3JpdHkiOiAiaGlnaCIsCiAgInBhcnRpdGlvbiI6IFsKICAgICJFUC1WQUwtMTItMDEiCiAgXSwKICAibWV0aG9kIjogIlBPU1QiLAogICJwYXRoIjogIi9hZG1pbi9jb3Vwb25zIiwKICAiYXV0aCI6ICJhZG1pbiIsCiAgImV4cGVjdGVkU3RhdHVzIjogMjAwLAogICJib2R5IjogewogICAgImNvZGUiOiAiSFcwNEFETUlOIiwKICAgICJ0eXBlIjogImZpeGVkIiwKICAgICJkaXNjb3VudF92YWx1ZSI6IDEsCiAgICAibWluX29yZGVyX2Ftb3VudCI6IDAsCiAgICAiZXhwaXJlZF9hdCI6ICIyMDk5LTEyLTMxIiwKICAgICJtYXhfdXNlc19wZXJfdXNlciI6IDEKICB9LAogICJjbGVhbnVwIjogImNvdXBvbiIKfQo="
+                        },
+                        {
+                          "name": "FR12-18-api-response.json",
+                          "contentType": "application/json; charset=utf-8",
+                          "body": "eyJtZXNzYWdlIjoiQ291cG9uIGNyZWF0ZWQiLCJpZCI6OH0="
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-0d3641c95bb2fa0e4d11",
+              "file": "fr12-access-control.spec.ts",
+              "line": 48,
+              "column": 5
+            },
+            {
+              "title": "FR12-19 [high] user POST /admin/import-products: reject regular user access to admin import",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "requirement",
+                      "description": "FR-12"
+                    },
+                    {
+                      "type": "priority",
+                      "description": "high"
+                    },
+                    {
+                      "type": "traceability",
+                      "description": "EP-INV-12-03"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4262,
+                      "error": {
+                        "message": "Error: POST /admin/import-products: {\"error\":\"Không có dữ liệu để import\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m400\u001b[39m",
+                        "stack": "Error: POST /admin/import-products: {\"error\":\"Không có dữ liệu để import\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m400\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:84:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 84
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 82 |\u001b[39m         }\n \u001b[90m 83 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 84 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 85 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 86 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 87 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 84
+                          },
+                          "message": "Error: POST /admin/import-products: {\"error\":\"Không có dữ liệu để import\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m400\u001b[39m\n\n  82 |         }\n  83 |\n> 84 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  85 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  86 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  87 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:84:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 79,
+                            "line": 104
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  getByRole('heading', { name: 'Admin Login' })\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  3000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Admin Login' })\u001b[22m\n\n\n  102 |         await expect.soft(page.getByRole(\"heading\", { name: \"EShop Admin\" })).toBeVisible({ timeout: 3_000 });\n  103 |       } else {\n> 104 |         await expect.soft(page.getByRole(\"heading\", { name: \"Admin Login\" })).toBeVisible({ timeout: 3_000 });\n      |                                                                               ^\n  105 |       }\n  106 |     });\n  107 |   }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:104:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-03",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T18:23:54.379Z",
+                      "annotations": [
+                        {
+                          "type": "requirement",
+                          "description": "FR-12"
+                        },
+                        {
+                          "type": "priority",
+                          "description": "high"
+                        },
+                        {
+                          "type": "traceability",
+                          "description": "EP-INV-12-03"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "FR12-19-case-contract.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJpZCI6ICJGUjEyLTE5IiwKICAidGl0bGUiOiAicmVqZWN0IHJlZ3VsYXIgdXNlciBhY2Nlc3MgdG8gYWRtaW4gaW1wb3J0IiwKICAicHJpb3JpdHkiOiAiaGlnaCIsCiAgInBhcnRpdGlvbiI6IFsKICAgICJFUC1JTlYtMTItMDMiCiAgXSwKICAibWV0aG9kIjogIlBPU1QiLAogICJwYXRoIjogIi9hZG1pbi9pbXBvcnQtcHJvZHVjdHMiLAogICJhdXRoIjogInVzZXIiLAogICJleHBlY3RlZFN0YXR1cyI6IDQwMywKICAiYm9keSI6IHsKICAgICJwcm9kdWN0cyI6IFtdCiAgfQp9Cg=="
+                        },
+                        {
+                          "name": "FR12-19-api-response.json",
+                          "contentType": "application/json; charset=utf-8",
+                          "body": "eyJlcnJvciI6Iktow7RuZyBjw7MgZOG7ryBsaeG7h3UgxJHhu4MgaW1wb3J0In0="
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--21126-user-access-to-admin-import-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--21126-user-access-to-admin-import-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--21126-user-access-to-admin-import-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--21126-user-access-to-admin-import-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 84
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-af1664a6fcd73df7e4d0",
+              "file": "fr12-access-control.spec.ts",
+              "line": 48,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-08-09T18:22:33.637Z",
+    "duration": 85944.902,
+    "expected": 10,
+    "skipped": 0,
+    "unexpected": 9,
+    "flaky": 0
+  }
+}
