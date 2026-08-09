@@ -4,6 +4,13 @@ import { loadCases } from "../src/data-loader.js";
 import type { OrderTransitionCase } from "../src/types.js";
 
 const cases = loadCases<OrderTransitionCase>("../test-data/fr10-order-state-machine.json", 12);
+const statusLabels = {
+  pending: "Chờ xác nhận",
+  confirmed: "Đã xác nhận",
+  shipping: "Đang giao",
+  delivered: "Đã giao",
+  canceled: "Đã hủy",
+} as const;
 
 test.describe("FR-10 Order State Machine", () => {
   let adminToken: string;
@@ -45,7 +52,9 @@ test.describe("FR-10 Order State Machine", () => {
       });
       const orderRow = page.getByRole("row").filter({ has: exactOrderCell });
       await expect(orderRow).toBeVisible();
-      await expect(orderRow.locator("span")).not.toBeEmpty();
+      await expect(orderRow.locator("span")).toHaveText(
+        statusLabels[row.expectedFinalState],
+      );
       const userMayCancel = row.expectedFinalState === "pending" || row.expectedFinalState === "confirmed";
       await expect(orderRow.getByRole("button")).toHaveCount(userMayCancel ? 1 : 0);
     });
