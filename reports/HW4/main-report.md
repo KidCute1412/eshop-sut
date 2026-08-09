@@ -63,8 +63,6 @@ Nine bugs were confirmed:
 - `BUG-HW04-FR07-001` through `BUG-HW04-FR07-005`: shopping-cart requirement defects. See [FR-07/bug-report.md](FR-07/bug-report.md).
 - `BUG-HW04-FR17-001` and `BUG-HW04-FR17-002`: coupon numeric lower-bound defects. See [FR-17/bug-report.md](FR-17/bug-report.md).
 
-The GitHub Issue link is pending because no authenticated GitHub issue creation was available in this local run.
-
 ## Task 2 - Demo Videos
 
 The required YouTube demo videos were recorded:
@@ -103,7 +101,7 @@ See [ai-critique.md](ai-critique.md).
 
 ## Git Commit Log
 
-See [git-commit-log.txt](git-commit-log.txt). 
+See [git-commit-log.txt](git-commit-log.txt).
 
 ## Self-Assessment
 

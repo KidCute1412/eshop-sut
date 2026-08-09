@@ -5,7 +5,6 @@
 - Feature: FR-01 Account registration
 - Severity: High
 - Status: Confirmed by automation
-- GitHub Issue: Pending real issue creation
 - Affected browsers: Chromium, Firefox, WebKit
 - Failing test: `FR01-DT-011 Negative registration`
 
@@ -25,14 +24,13 @@ The system returns HTTP 200 and redirects to Login, meaning the duplicate accoun
 
 ### Evidence
 
-- HTML report: `reports/html-23127539/index.html`
+- HTML report: `reports/index.html`
 
 ## BUG-HW04-FR01-002 - Registration rejects documented special characters in strong passwords
 
 - Feature: FR-01 Account registration
 - Severity: High
 - Status: Confirmed by automation
-- GitHub Issue: Pending real issue creation
 - Affected browsers: Chromium, Firefox, WebKit
 - Failing tests: `FR01-DT-006`, `FR01-BVA-009`, `FR01-BVA-010`
 

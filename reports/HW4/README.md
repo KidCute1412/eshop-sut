@@ -7,7 +7,7 @@
 - Browsers: Chromium, Firefox, WebKit
 - Full report: [main-report.md](main-report.md)
 - AI Critique: [ai-critique.md](ai-critique.md)
-- Final HTML report: [reports/html-23127539/index.html](reports/html-23127539/index.html)
+- Final HTML report: [reports/index.html](reports/index.html)
 - Demo video: [https://youtu.be/mN1KJbr8aFo](https://youtu.be/mN1KJbr8aFo)
 - Agent Skill demo video: [https://youtu.be/k_f_I4ccgjo](https://youtu.be/k_f_I4ccgjo)
 
