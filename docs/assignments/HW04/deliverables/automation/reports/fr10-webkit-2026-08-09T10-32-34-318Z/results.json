@@ -1,0 +1,1005 @@
+{
+  "config": {
+    "configFile": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\playwright.config.ts",
+    "rootDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "Run by": "23127404",
+      "Run timestamp": "2026-08-09T10:32:34.318Z",
+      "Feature": "fr10",
+      "Browser": "webkit",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\reports\\fr10-webkit-2026-08-09T10-32-34-318Z",
+          "open": "never",
+          "title": "HW04 fr10 webkit | Run by: 23127404 | 2026-08-09T10:32:34.318Z"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\reports\\fr10-webkit-2026-08-09T10-32-34-318Z\\results.json"
+        }
+      ],
+      [
+        "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\src\\reporters\\run-metadata-reporter.ts",
+        {
+          "reportDir": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\reports\\fr10-webkit-2026-08-09T10-32-34-318Z",
+          "studentId": "23127404",
+          "runTimestamp": "2026-08-09T10:32:34.318Z",
+          "feature": "fr10",
+          "browser": "webkit"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127404",
+          "Run timestamp": "2026-08-09T10:32:34.318Z",
+          "Feature": "fr10",
+          "Browser": "webkit",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127404",
+          "Run timestamp": "2026-08-09T10:32:34.318Z",
+          "Feature": "fr10",
+          "Browser": "webkit",
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127404",
+          "Run timestamp": "2026-08-09T10:32:34.318Z",
+          "Feature": "fr10",
+          "Browser": "webkit",
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.55.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "fr10-order-state-machine.spec.ts",
+      "file": "fr10-order-state-machine.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-10 Order State Machine",
+          "file": "fr10-order-state-machine.spec.ts",
+          "line": 8,
+          "column": 6,
+          "specs": [
+            {
+              "title": "FR10-01 [high] pending -> confirmed: admin confirms a pending order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2223,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-10-01",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:32:36.821Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-db8c3b4e0680a324f82f",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 21,
+              "column": 5
+            },
+            {
+              "title": "FR10-02 [high] pending -> canceled: admin cancels a pending order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1904,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-10-02",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:32:40.118Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-17e38071db543185cb75",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 21,
+              "column": 5
+            },
+            {
+              "title": "FR10-03 [high] pending -> canceled: user cancels their pending order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1959,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-10-03",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:32:42.045Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-0504745f108c65b8124c",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 21,
+              "column": 5
+            },
+            {
+              "title": "FR10-04 [high] pending -> shipping: reject pending directly to shipping",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1859,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-10-01",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:32:44.025Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-73296c1bd0ab5bc34045",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 21,
+              "column": 5
+            },
+            {
+              "title": "FR10-05 [high] pending -> delivered: reject pending directly to delivered",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1937,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-10-01",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:32:45.902Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-0bdda7ea951ebabf9150",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 21,
+              "column": 5
+            },
+            {
+              "title": "FR10-06 [high] confirmed -> shipping: admin starts shipping a confirmed order",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 9874,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('row').filter({ has: getByRole('cell', { name: '#31', exact: true }) }).getByRole('button')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('row').filter({ has: getByRole('cell', { name: '#31', exact: true }) }).getByRole('button')\u001b[22m\n\u001b[2m    11 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('row').filter({ has: getByRole('cell', { name: '#31', exact: true }) }).getByRole('button')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('row').filter({ has: getByRole('cell', { name: '#31', exact: true }) }).getByRole('button')\u001b[22m\n\u001b[2m    11 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts:50:50",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts",
+                          "column": 50,
+                          "line": 50
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 48 |\u001b[39m       \u001b[36mawait\u001b[39m expect(orderRow\u001b[33m.\u001b[39mlocator(\u001b[32m\"span\"\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeEmpty()\u001b[33m;\u001b[39m\n \u001b[90m 49 |\u001b[39m       \u001b[36mconst\u001b[39m userMayCancel \u001b[33m=\u001b[39m row\u001b[33m.\u001b[39mexpectedFinalState \u001b[33m===\u001b[39m \u001b[32m\"pending\"\u001b[39m \u001b[33m||\u001b[39m row\u001b[33m.\u001b[39mexpectedFinalState \u001b[33m===\u001b[39m \u001b[32m\"confirmed\"\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 50 |\u001b[39m       \u001b[36mawait\u001b[39m expect(orderRow\u001b[33m.\u001b[39mgetByRole(\u001b[32m\"button\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(userMayCancel \u001b[33m?\u001b[39m \u001b[35m1\u001b[39m \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 51 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 52 |\u001b[39m   }\n \u001b[90m 53 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts",
+                            "column": 50,
+                            "line": 50
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('row').filter({ has: getByRole('cell', { name: '#31', exact: true }) }).getByRole('button')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('row').filter({ has: getByRole('cell', { name: '#31', exact: true }) }).getByRole('button')\u001b[22m\n\u001b[2m    11 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n\n  48 |       await expect(orderRow.locator(\"span\")).not.toBeEmpty();\n  49 |       const userMayCancel = row.expectedFinalState === \"pending\" || row.expectedFinalState === \"confirmed\";\n> 50 |       await expect(orderRow.getByRole(\"button\")).toHaveCount(userMayCancel ? 1 : 0);\n     |                                                  ^\n  51 |     });\n  52 |   }\n  53 | });\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts:50:50"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-10-04",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:32:47.862Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-17596--shipping-a-confirmed-order-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-17596--shipping-a-confirmed-order-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-17596--shipping-a-confirmed-order-webkit\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-17596--shipping-a-confirmed-order-webkit\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts",
+                        "column": 50,
+                        "line": 50
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-8b964f66bf5151f84a1c",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 21,
+              "column": 5
+            },
+            {
+              "title": "FR10-07 [high] confirmed -> canceled: admin cancels a confirmed order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1842,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-10-05",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:32:59.084Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-4e3206df466360e4db7c",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 21,
+              "column": 5
+            },
+            {
+              "title": "FR10-08 [high] confirmed -> canceled: user cancels their confirmed order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1922,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-10-06",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:33:01.190Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-63392d394b90d194846e",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 21,
+              "column": 5
+            },
+            {
+              "title": "FR10-09 [high] confirmed -> delivered: reject confirmed directly to delivered",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1946,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-10-02",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:33:03.134Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-1677069b19b17ecbb949",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 21,
+              "column": 5
+            },
+            {
+              "title": "FR10-10 [high] shipping -> delivered: admin delivers a shipping order",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1883,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-10-07",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:33:05.101Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-6b0c6f3729f77077a713",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 21,
+              "column": 5
+            },
+            {
+              "title": "FR10-11 [high] shipping -> canceled: reject admin cancel of a shipping order",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 9956,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('row').filter({ has: getByRole('cell', { name: '#36', exact: true }) }).getByRole('button')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('row').filter({ has: getByRole('cell', { name: '#36', exact: true }) }).getByRole('button')\u001b[22m\n\u001b[2m    11 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('row').filter({ has: getByRole('cell', { name: '#36', exact: true }) }).getByRole('button')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('row').filter({ has: getByRole('cell', { name: '#36', exact: true }) }).getByRole('button')\u001b[22m\n\u001b[2m    11 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts:50:50",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts",
+                          "column": 50,
+                          "line": 50
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 48 |\u001b[39m       \u001b[36mawait\u001b[39m expect(orderRow\u001b[33m.\u001b[39mlocator(\u001b[32m\"span\"\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeEmpty()\u001b[33m;\u001b[39m\n \u001b[90m 49 |\u001b[39m       \u001b[36mconst\u001b[39m userMayCancel \u001b[33m=\u001b[39m row\u001b[33m.\u001b[39mexpectedFinalState \u001b[33m===\u001b[39m \u001b[32m\"pending\"\u001b[39m \u001b[33m||\u001b[39m row\u001b[33m.\u001b[39mexpectedFinalState \u001b[33m===\u001b[39m \u001b[32m\"confirmed\"\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 50 |\u001b[39m       \u001b[36mawait\u001b[39m expect(orderRow\u001b[33m.\u001b[39mgetByRole(\u001b[32m\"button\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(userMayCancel \u001b[33m?\u001b[39m \u001b[35m1\u001b[39m \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 51 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 52 |\u001b[39m   }\n \u001b[90m 53 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts",
+                            "column": 50,
+                            "line": 50
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('row').filter({ has: getByRole('cell', { name: '#36', exact: true }) }).getByRole('button')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('row').filter({ has: getByRole('cell', { name: '#36', exact: true }) }).getByRole('button')\u001b[22m\n\u001b[2m    11 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n\n  48 |       await expect(orderRow.locator(\"span\")).not.toBeEmpty();\n  49 |       const userMayCancel = row.expectedFinalState === \"pending\" || row.expectedFinalState === \"confirmed\";\n> 50 |       await expect(orderRow.getByRole(\"button\")).toHaveCount(userMayCancel ? 1 : 0);\n     |                                                  ^\n  51 |     });\n  52 |   }\n  53 | });\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts:50:50"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-10-03",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:33:07.004Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-35e84--cancel-of-a-shipping-order-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-35e84--cancel-of-a-shipping-order-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-35e84--cancel-of-a-shipping-order-webkit\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-35e84--cancel-of-a-shipping-order-webkit\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts",
+                        "column": 50,
+                        "line": 50
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-e6b34076c03d670110b0",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 21,
+              "column": 5
+            },
+            {
+              "title": "FR10-12 [high] shipping -> canceled: reject user cancel of a shipping order",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2167,
+                      "error": {
+                        "message": "Error: {\"message\":\"Order canceled successfully\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: {\"message\":\"Order canceled successfully\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts:32:61",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts",
+                          "column": 61,
+                          "line": 32
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m           \u001b[33m:\u001b[39m \u001b[36mawait\u001b[39m api\u001b[33m.\u001b[39muserCancel(orderId\u001b[33m,\u001b[39m userToken)\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[36mawait\u001b[39m response\u001b[33m.\u001b[39mtext())\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) {\n \u001b[90m 34 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(\u001b[36mawait\u001b[39m response\u001b[33m.\u001b[39mtext())\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|invalid|cannot|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m       }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts",
+                            "column": 61,
+                            "line": 32
+                          },
+                          "message": "Error: {\"message\":\"Order canceled successfully\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  30 |           : await api.userCancel(orderId, userToken);\n  31 |\n> 32 |       expect.soft(response.status(), await response.text()).toBe(row.expectedStatus);\n     |                                                             ^\n  33 |       if (row.expectedStatus >= 400) {\n  34 |         expect.soft(await response.text()).toMatch(/error|invalid|cannot|forbidden/i);\n  35 |       }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts:32:61"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts",
+                            "column": 44,
+                            "line": 34
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|invalid|cannot|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"{\\\"message\\\":\\\"Order canceled successfully\\\"}\"\u001b[39m\n\n  32 |       expect.soft(response.status(), await response.text()).toBe(row.expectedStatus);\n  33 |       if (row.expectedStatus >= 400) {\n> 34 |         expect.soft(await response.text()).toMatch(/error|invalid|cannot|forbidden/i);\n     |                                            ^\n  35 |       }\n  36 |       expect.soft((await api.getOrder(orderId)).status, \"persisted state after transition\").toBe(\n  37 |         row.expectedFinalState,\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts:34:44"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts",
+                            "column": 93,
+                            "line": 36
+                          },
+                          "message": "Error: persisted state after transition\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"shipping\"\u001b[39m\nReceived: \u001b[31m\"canceled\"\u001b[39m\n\n  34 |         expect.soft(await response.text()).toMatch(/error|invalid|cannot|forbidden/i);\n  35 |       }\n> 36 |       expect.soft((await api.getOrder(orderId)).status, \"persisted state after transition\").toBe(\n     |                                                                                             ^\n  37 |         row.expectedFinalState,\n  38 |       );\n  39 |\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts:36:93"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-10-04",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:33:18.332Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-eb562--cancel-of-a-shipping-order-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-eb562--cancel-of-a-shipping-order-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-eb562--cancel-of-a-shipping-order-webkit\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-eb562--cancel-of-a-shipping-order-webkit\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts",
+                        "column": 61,
+                        "line": 32
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-6b8ea2e9e9f7c06fd571",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 21,
+              "column": 5
+            },
+            {
+              "title": "FR10-13 [high] delivered -> confirmed: keep delivered terminal when confirmation is requested",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1953,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-10-05",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:33:22.184Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-cd4e24b4df5ac749d6a3",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 21,
+              "column": 5
+            },
+            {
+              "title": "FR10-14 [high] delivered -> canceled: keep delivered terminal when cancellation is requested",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1939,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-10-05",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:33:24.401Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-f0da7c6a92cb8b8db997",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 21,
+              "column": 5
+            },
+            {
+              "title": "FR10-15 [high] canceled -> confirmed: keep canceled terminal when confirmation is requested",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1730,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-10-06",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:33:26.360Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-b51f298d679ff044183b",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 21,
+              "column": 5
+            },
+            {
+              "title": "FR10-16 [high] canceled -> delivered: keep canceled terminal when delivery is requested",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2163,
+                      "error": {
+                        "message": "Error: {\"message\":\"Order status updated\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: {\"message\":\"Order status updated\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts:32:61",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts",
+                          "column": 61,
+                          "line": 32
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m           \u001b[33m:\u001b[39m \u001b[36mawait\u001b[39m api\u001b[33m.\u001b[39muserCancel(orderId\u001b[33m,\u001b[39m userToken)\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m       expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[36mawait\u001b[39m response\u001b[33m.\u001b[39mtext())\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) {\n \u001b[90m 34 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(\u001b[36mawait\u001b[39m response\u001b[33m.\u001b[39mtext())\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|invalid|cannot|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m       }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts",
+                            "column": 61,
+                            "line": 32
+                          },
+                          "message": "Error: {\"message\":\"Order status updated\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m400\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  30 |           : await api.userCancel(orderId, userToken);\n  31 |\n> 32 |       expect.soft(response.status(), await response.text()).toBe(row.expectedStatus);\n     |                                                             ^\n  33 |       if (row.expectedStatus >= 400) {\n  34 |         expect.soft(await response.text()).toMatch(/error|invalid|cannot|forbidden/i);\n  35 |       }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts:32:61"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts",
+                            "column": 44,
+                            "line": 34
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|invalid|cannot|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"{\\\"message\\\":\\\"Order status updated\\\"}\"\u001b[39m\n\n  32 |       expect.soft(response.status(), await response.text()).toBe(row.expectedStatus);\n  33 |       if (row.expectedStatus >= 400) {\n> 34 |         expect.soft(await response.text()).toMatch(/error|invalid|cannot|forbidden/i);\n     |                                            ^\n  35 |       }\n  36 |       expect.soft((await api.getOrder(orderId)).status, \"persisted state after transition\").toBe(\n  37 |         row.expectedFinalState,\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts:34:44"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts",
+                            "column": 93,
+                            "line": 36
+                          },
+                          "message": "Error: persisted state after transition\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"\u001b[7mcancel\u001b[27med\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mdeliver\u001b[27med\"\u001b[39m\n\n  34 |         expect.soft(await response.text()).toMatch(/error|invalid|cannot|forbidden/i);\n  35 |       }\n> 36 |       expect.soft((await api.getOrder(orderId)).status, \"persisted state after transition\").toBe(\n     |                                                                                             ^\n  37 |         row.expectedFinalState,\n  38 |       );\n  39 |\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts:36:93"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-10-06",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:33:28.112Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-67f4b--when-delivery-is-requested-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-67f4b--when-delivery-is-requested-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-67f4b--when-delivery-is-requested-webkit\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr10-order-state-machine-F-67f4b--when-delivery-is-requested-webkit\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr10-order-state-machine.spec.ts",
+                        "column": 61,
+                        "line": 32
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "4eab54ca0ef3d23d079a-d53d129dab76df1b9f78",
+              "file": "fr10-order-state-machine.spec.ts",
+              "line": 21,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-08-09T10:32:35.634Z",
+    "duration": 54887.511,
+    "expected": 12,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

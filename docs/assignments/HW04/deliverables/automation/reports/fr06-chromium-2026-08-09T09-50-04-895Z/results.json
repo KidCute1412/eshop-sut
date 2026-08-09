@@ -1,0 +1,1072 @@
+{
+  "config": {
+    "argv": [
+      "D:\\NodeJS\\node.exe",
+      "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/fr06-product-detail.spec.ts",
+      "--project=chromium"
+    ],
+    "configFile": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\playwright.config.ts",
+    "rootDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "Run by": "23127404",
+      "Run timestamp": "2026-08-09T09:50:04.895Z",
+      "Feature": "fr06",
+      "Browser": "chromium",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127404",
+          "Run timestamp": "2026-08-09T09:50:04.895Z",
+          "Feature": "fr06",
+          "Browser": "chromium",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127404",
+          "Run timestamp": "2026-08-09T09:50:04.895Z",
+          "Feature": "fr06",
+          "Browser": "chromium",
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127404",
+          "Run timestamp": "2026-08-09T09:50:04.895Z",
+          "Feature": "fr06",
+          "Browser": "chromium",
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\reports\\fr06-chromium-2026-08-09T09-50-04-895Z",
+          "open": "never",
+          "title": "HW04 fr06 chromium | Run by: 23127404 | 2026-08-09T09:50:04.895Z"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\reports\\fr06-chromium-2026-08-09T09-50-04-895Z\\results.json"
+        }
+      ],
+      [
+        "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\src\\reporters\\run-metadata-reporter.ts",
+        {
+          "reportDir": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\reports\\fr06-chromium-2026-08-09T09-50-04-895Z",
+          "studentId": "23127404",
+          "runTimestamp": "2026-08-09T09:50:04.895Z",
+          "feature": "fr06",
+          "browser": "chromium"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "fr06-product-detail.spec.ts",
+      "file": "fr06-product-detail.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-06 Product Detail",
+          "file": "fr06-product-detail.spec.ts",
+          "line": 11,
+          "column": 6,
+          "specs": [
+            {
+              "title": "FR06-01 [high] show the complete seeded product detail",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1652,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-01",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:50:06.484Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-09de054637123a020fbb",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 13,
+              "column": 5
+            },
+            {
+              "title": "FR06-02 [medium] render exactly one product page heading",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 833,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-01",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:50:08.595Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-b7b7684cde01088f4405",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 13,
+              "column": 5
+            },
+            {
+              "title": "FR06-03 [high] show a large product image with descriptive alt text",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 965,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-02",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:50:09.445Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-ea0f768f6d809f514782",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 13,
+              "column": 5
+            },
+            {
+              "title": "FR06-04 [high] format a numeric price with thousands separators and dong",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 771,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-03",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:50:10.426Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-b3a304c53bd908cc5900",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 13,
+              "column": 5
+            },
+            {
+              "title": "FR06-05 [high] format a backend string price without NaN",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 772,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-04",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:50:11.215Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-e8b576c140a9d329eed0",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 13,
+              "column": 5
+            },
+            {
+              "title": "FR06-06 [medium] show the complete product description",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 759,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-05",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:50:12.004Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-276db1c158d9acbafc84",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 13,
+              "column": 5
+            },
+            {
+              "title": "FR06-07 [high] show the product category",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 9736,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main').getByText('Điện thoại', { exact: true })\nExpected: visible\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByText('Điện thoại', { exact: true })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main').getByText('Điện thoại', { exact: true })\nExpected: visible\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByText('Điện thoại', { exact: true })\u001b[22m\n\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:53:82",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                          "column": 82,
+                          "line": 53
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 51 |\u001b[39m           \u001b[36mbreak\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 52 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"category\"\u001b[39m\u001b[33m:\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 53 |\u001b[39m           \u001b[36mawait\u001b[39m expect(main\u001b[33m.\u001b[39mgetByText(row\u001b[33m.\u001b[39mexpected\u001b[33m!\u001b[39m\u001b[33m.\u001b[39mcategory\u001b[33m!\u001b[39m\u001b[33m,\u001b[39m { exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 54 |\u001b[39m           \u001b[36mbreak\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 55 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"quantity-type\"\u001b[39m\u001b[33m:\u001b[39m\n \u001b[90m 56 |\u001b[39m           \u001b[36mawait\u001b[39m expect(quantity)\u001b[33m.\u001b[39mtoHaveAttribute(\u001b[32m\"type\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"number\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                            "column": 82,
+                            "line": 53
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main').getByText('Điện thoại', { exact: true })\nExpected: visible\nTimeout: 8000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByText('Điện thoại', { exact: true })\u001b[22m\n\n\n  51 |           break;\n  52 |         case \"category\":\n> 53 |           await expect(main.getByText(row.expected!.category!, { exact: true })).toBeVisible();\n     |                                                                                  ^\n  54 |           break;\n  55 |         case \"quantity-type\":\n  56 |           await expect(quantity).toHaveAttribute(\"type\", \"number\");\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:53:82"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-06",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:50:12.782Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--4319d-h-show-the-product-category-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--4319d-h-show-the-product-category-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--4319d-h-show-the-product-category-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--4319d-h-show-the-product-category-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                        "column": 82,
+                        "line": 53
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-2f02898d1b2bbaef2ab5",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 13,
+              "column": 5
+            },
+            {
+              "title": "FR06-08 [medium] use a numeric quantity input",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1067,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-07",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:50:23.978Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-f74201bb688c58c98350",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 13,
+              "column": 5
+            },
+            {
+              "title": "FR06-09 [high] declare the minimum quantity as one",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 9661,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('main').getByRole('spinbutton')\nExpected: \u001b[32m\"1\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByRole('spinbutton')\u001b[22m\n\u001b[2m    19 × locator resolved to <input value=\"1\" type=\"number\" class=\"border p-2 w-20 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"null\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('main').getByRole('spinbutton')\nExpected: \u001b[32m\"1\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByRole('spinbutton')\u001b[22m\n\u001b[2m    19 × locator resolved to <input value=\"1\" type=\"number\" class=\"border p-2 w-20 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"null\"\u001b[22m\n\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:59:34",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                          "column": 34,
+                          "line": 59
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 57 |\u001b[39m           \u001b[36mbreak\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 58 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"quantity-min\"\u001b[39m\u001b[33m:\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 59 |\u001b[39m           \u001b[36mawait\u001b[39m expect(quantity)\u001b[33m.\u001b[39mtoHaveAttribute(\u001b[32m\"min\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"1\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 60 |\u001b[39m           \u001b[36mbreak\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 61 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"quantity-default\"\u001b[39m\u001b[33m:\u001b[39m\n \u001b[90m 62 |\u001b[39m           \u001b[36mawait\u001b[39m expect(quantity)\u001b[33m.\u001b[39mtoHaveValue(\u001b[32m\"1\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                            "column": 34,
+                            "line": 59
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('main').getByRole('spinbutton')\nExpected: \u001b[32m\"1\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByRole('spinbutton')\u001b[22m\n\u001b[2m    19 × locator resolved to <input value=\"1\" type=\"number\" class=\"border p-2 w-20 rounded\"/>\u001b[22m\n\u001b[2m       - unexpected value \"null\"\u001b[22m\n\n\n  57 |           break;\n  58 |         case \"quantity-min\":\n> 59 |           await expect(quantity).toHaveAttribute(\"min\", \"1\");\n     |                                  ^\n  60 |           break;\n  61 |         case \"quantity-default\":\n  62 |           await expect(quantity).toHaveValue(\"1\");\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:59:34"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-07, BVA-BND-06-01",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:50:25.644Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--8f505-the-minimum-quantity-as-one-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--8f505-the-minimum-quantity-as-one-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--8f505-the-minimum-quantity-as-one-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--8f505-the-minimum-quantity-as-one-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                        "column": 34,
+                        "line": 59
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-b2dff6f24e35c947a549",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 13,
+              "column": 5
+            },
+            {
+              "title": "FR06-10 [high] default quantity to the minimum valid value",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1022,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-07, BVA-BND-06-01",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:50:37.723Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-09231cd16af81353cf6a",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 13,
+              "column": 5
+            },
+            {
+              "title": "FR06-11 [high] give visual feedback after the first add click",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 9843,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main').getByRole('button')\nExpected pattern: \u001b[32m/Đã thêm/i\u001b[39m\nReceived string:  \u001b[31m\"Thêm vào giỏ hàng\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByRole('button')\u001b[22m\n\u001b[2m    19 × locator resolved to <button class=\"bg-green-600 text-white py-3 px-6 rounded hover:bg-green-700 self-start bug-mobile-hidden\">Thêm vào giỏ hàng</button>\u001b[22m\n\u001b[2m       - unexpected value \"Thêm vào giỏ hàng\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main').getByRole('button')\nExpected pattern: \u001b[32m/Đã thêm/i\u001b[39m\nReceived string:  \u001b[31m\"Thêm vào giỏ hàng\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByRole('button')\u001b[22m\n\u001b[2m    19 × locator resolved to <button class=\"bg-green-600 text-white py-3 px-6 rounded hover:bg-green-700 self-start bug-mobile-hidden\">Thêm vào giỏ hàng</button>\u001b[22m\n\u001b[2m       - unexpected value \"Thêm vào giỏ hàng\"\u001b[22m\n\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:69:35",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                          "column": 35,
+                          "line": 69
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 67 |\u001b[39m           \u001b[36mawait\u001b[39m expect(quantity)\u001b[33m.\u001b[39mtoHaveValue(row\u001b[33m.\u001b[39mquantity\u001b[33m!\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 68 |\u001b[39m           \u001b[36mawait\u001b[39m addButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 69 |\u001b[39m           \u001b[36mawait\u001b[39m expect(addButton)\u001b[33m.\u001b[39mtoContainText(\u001b[35m/Đã thêm/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 70 |\u001b[39m           \u001b[36mbreak\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 71 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"reject-zero\"\u001b[39m\u001b[33m:\u001b[39m\n \u001b[90m 72 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"reject-negative\"\u001b[39m\u001b[33m:\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                            "column": 35,
+                            "line": 69
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main').getByRole('button')\nExpected pattern: \u001b[32m/Đã thêm/i\u001b[39m\nReceived string:  \u001b[31m\"Thêm vào giỏ hàng\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByRole('button')\u001b[22m\n\u001b[2m    19 × locator resolved to <button class=\"bg-green-600 text-white py-3 px-6 rounded hover:bg-green-700 self-start bug-mobile-hidden\">Thêm vào giỏ hàng</button>\u001b[22m\n\u001b[2m       - unexpected value \"Thêm vào giỏ hàng\"\u001b[22m\n\n\n  67 |           await expect(quantity).toHaveValue(row.quantity!);\n  68 |           await addButton.click();\n> 69 |           await expect(addButton).toContainText(/Đã thêm/i);\n     |                                   ^\n  70 |           break;\n  71 |         case \"reject-zero\":\n  72 |         case \"reject-negative\":\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:69:35"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-08",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:50:39.231Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--b65c6-k-after-the-first-add-click-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--b65c6-k-after-the-first-add-click-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--b65c6-k-after-the-first-add-click-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--b65c6-k-after-the-first-add-click-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                        "column": 35,
+                        "line": 69
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-17e296057a10394beebc",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 13,
+              "column": 5
+            },
+            {
+              "title": "FR06-12 [high] accept an in-range integer quantity and give feedback",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 10553,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main').getByRole('button')\nExpected pattern: \u001b[32m/Đã thêm/i\u001b[39m\nReceived string:  \u001b[31m\"Thêm vào giỏ hàng\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByRole('button')\u001b[22m\n\u001b[2m    19 × locator resolved to <button class=\"bg-green-600 text-white py-3 px-6 rounded hover:bg-green-700 self-start bug-mobile-hidden\">Thêm vào giỏ hàng</button>\u001b[22m\n\u001b[2m       - unexpected value \"Thêm vào giỏ hàng\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main').getByRole('button')\nExpected pattern: \u001b[32m/Đã thêm/i\u001b[39m\nReceived string:  \u001b[31m\"Thêm vào giỏ hàng\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByRole('button')\u001b[22m\n\u001b[2m    19 × locator resolved to <button class=\"bg-green-600 text-white py-3 px-6 rounded hover:bg-green-700 self-start bug-mobile-hidden\">Thêm vào giỏ hàng</button>\u001b[22m\n\u001b[2m       - unexpected value \"Thêm vào giỏ hàng\"\u001b[22m\n\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:69:35",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                          "column": 35,
+                          "line": 69
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 67 |\u001b[39m           \u001b[36mawait\u001b[39m expect(quantity)\u001b[33m.\u001b[39mtoHaveValue(row\u001b[33m.\u001b[39mquantity\u001b[33m!\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 68 |\u001b[39m           \u001b[36mawait\u001b[39m addButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 69 |\u001b[39m           \u001b[36mawait\u001b[39m expect(addButton)\u001b[33m.\u001b[39mtoContainText(\u001b[35m/Đã thêm/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 70 |\u001b[39m           \u001b[36mbreak\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 71 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"reject-zero\"\u001b[39m\u001b[33m:\u001b[39m\n \u001b[90m 72 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"reject-negative\"\u001b[39m\u001b[33m:\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                            "column": 35,
+                            "line": 69
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main').getByRole('button')\nExpected pattern: \u001b[32m/Đã thêm/i\u001b[39m\nReceived string:  \u001b[31m\"Thêm vào giỏ hàng\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').getByRole('button')\u001b[22m\n\u001b[2m    19 × locator resolved to <button class=\"bg-green-600 text-white py-3 px-6 rounded hover:bg-green-700 self-start bug-mobile-hidden\">Thêm vào giỏ hàng</button>\u001b[22m\n\u001b[2m       - unexpected value \"Thêm vào giỏ hàng\"\u001b[22m\n\n\n  67 |           await expect(quantity).toHaveValue(row.quantity!);\n  68 |           await addButton.click();\n> 69 |           await expect(addButton).toContainText(/Đã thêm/i);\n     |                                   ^\n  70 |           break;\n  71 |         case \"reject-zero\":\n  72 |         case \"reject-negative\":\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:69:35"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-06-07, EP-VAL-06-08, BVA-BND-06-01",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:50:51.989Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--3759e--quantity-and-give-feedback-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--3759e--quantity-and-give-feedback-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--3759e--quantity-and-give-feedback-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--3759e--quantity-and-give-feedback-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                        "column": 35,
+                        "line": 69
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-72f59b5efa5e7aaf1ad8",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 13,
+              "column": 5
+            },
+            {
+              "title": "FR06-13 [high] reject quantity zero",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1097,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:75:94",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                          "column": 94,
+                          "line": 75
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 73 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"reject-fraction\"\u001b[39m\u001b[33m:\u001b[39m\n \u001b[90m 74 |\u001b[39m           \u001b[36mawait\u001b[39m quantity\u001b[33m.\u001b[39mfill(row\u001b[33m.\u001b[39mquantity\u001b[33m!\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 75 |\u001b[39m           expect(\u001b[36mawait\u001b[39m quantity\u001b[33m.\u001b[39mevaluate((input\u001b[33m:\u001b[39m \u001b[33mHTMLInputElement\u001b[39m) \u001b[33m=>\u001b[39m input\u001b[33m.\u001b[39mvalidity\u001b[33m.\u001b[39mvalid))\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 76 |\u001b[39m           \u001b[36mbreak\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 77 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"not-found\"\u001b[39m\u001b[33m:\u001b[39m\n \u001b[90m 78 |\u001b[39m           \u001b[36mawait\u001b[39m expect(main)\u001b[33m.\u001b[39mtoContainText(\u001b[35m/không tồn tại|not found/i\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                            "column": 94,
+                            "line": 75
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n  73 |         case \"reject-fraction\":\n  74 |           await quantity.fill(row.quantity!);\n> 75 |           expect(await quantity.evaluate((input: HTMLInputElement) => input.validity.valid)).toBe(false);\n     |                                                                                              ^\n  76 |           break;\n  77 |         case \"not-found\":\n  78 |           await expect(main).toContainText(/không tồn tại|not found/i);\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:75:94"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-06-01, BVA-BND-06-01",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:51:05.602Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--1f703-3-high-reject-quantity-zero-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--1f703-3-high-reject-quantity-zero-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--1f703-3-high-reject-quantity-zero-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--1f703-3-high-reject-quantity-zero-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                        "column": 94,
+                        "line": 75
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-fda21e535a7fb31fa8bc",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 13,
+              "column": 5
+            },
+            {
+              "title": "FR06-14 [high] reject a negative quantity",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1078,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:75:94",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                          "column": 94,
+                          "line": 75
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 73 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"reject-fraction\"\u001b[39m\u001b[33m:\u001b[39m\n \u001b[90m 74 |\u001b[39m           \u001b[36mawait\u001b[39m quantity\u001b[33m.\u001b[39mfill(row\u001b[33m.\u001b[39mquantity\u001b[33m!\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 75 |\u001b[39m           expect(\u001b[36mawait\u001b[39m quantity\u001b[33m.\u001b[39mevaluate((input\u001b[33m:\u001b[39m \u001b[33mHTMLInputElement\u001b[39m) \u001b[33m=>\u001b[39m input\u001b[33m.\u001b[39mvalidity\u001b[33m.\u001b[39mvalid))\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 76 |\u001b[39m           \u001b[36mbreak\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 77 |\u001b[39m         \u001b[36mcase\u001b[39m \u001b[32m\"not-found\"\u001b[39m\u001b[33m:\u001b[39m\n \u001b[90m 78 |\u001b[39m           \u001b[36mawait\u001b[39m expect(main)\u001b[33m.\u001b[39mtoContainText(\u001b[35m/không tồn tại|not found/i\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                            "column": 94,
+                            "line": 75
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n  73 |         case \"reject-fraction\":\n  74 |           await quantity.fill(row.quantity!);\n> 75 |           expect(await quantity.evaluate((input: HTMLInputElement) => input.validity.valid)).toBe(false);\n     |                                                                                              ^\n  76 |           break;\n  77 |         case \"not-found\":\n  78 |           await expect(main).toContainText(/không tồn tại|not found/i);\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts:75:94"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-06-01, BVA-BND-06-01",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:51:08.897Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--9889a--reject-a-negative-quantity-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--9889a--reject-a-negative-quantity-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--9889a--reject-a-negative-quantity-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr06-product-detail-FR-06--9889a--reject-a-negative-quantity-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr06-product-detail.spec.ts",
+                        "column": 94,
+                        "line": 75
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-a1035c27ea0e0e135382",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 13,
+              "column": 5
+            },
+            {
+              "title": "FR06-15 [high] reject a fractional quantity",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 998,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-06-02, BVA-BND-06-02",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:51:11.467Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-126dbc678ad1f3d3d7f3",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 13,
+              "column": 5
+            },
+            {
+              "title": "FR06-16 [medium] show a clear not-found state for an unknown product",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 808,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-06-03",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:51:12.855Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed7a0fe7aea0ed1fd115-bab5764debb51a3ac1fc",
+              "file": "fr06-product-detail.spec.ts",
+              "line": 13,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-08-09T09:50:05.732Z",
+    "duration": 68682.18800000001,
+    "expected": 10,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  }
+}

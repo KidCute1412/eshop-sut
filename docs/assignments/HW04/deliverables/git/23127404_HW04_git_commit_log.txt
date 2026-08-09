@@ -1,0 +1,57 @@
+commit aa316e0bdb75ef27e2af1cf05e37570ee403bcf7
+Author: KidCute1412 <letuanloc1412@gmail.com>
+Date: 2026-08-09T17:41:07+07:00
+Subject: test(hw04): attach external case contracts to every result
+docs/assignments/HW04/deliverables/automation/tests/fr06-product-detail.spec.ts
+docs/assignments/HW04/deliverables/automation/tests/fr10-order-state-machine.spec.ts
+docs/assignments/HW04/deliverables/automation/tests/fr12-access-control.spec.ts
+
+commit 532ebc2c2b9d54889ecc15dd0e780f11151159e1
+Author: KidCute1412 <letuanloc1412@gmail.com>
+Date: 2026-08-09T17:38:45+07:00
+Subject: test(hw04): expose requirement traceability in reports
+docs/assignments/HW04/deliverables/automation/tests/fr06-product-detail.spec.ts
+docs/assignments/HW04/deliverables/automation/tests/fr10-order-state-machine.spec.ts
+docs/assignments/HW04/deliverables/automation/tests/fr12-access-control.spec.ts
+
+commit 238cf27be74d465b533f7a0cfa5f445e114263e5
+Author: KidCute1412 <letuanloc1412@gmail.com>
+Date: 2026-08-09T17:37:41+07:00
+Subject: test(hw04): attach FR-12 authorization responses to evidence
+docs/assignments/HW04/deliverables/automation/tests/fr12-access-control.spec.ts
+
+commit eac34741e06488413d793d4c7dc7715a6c6e3826
+Author: KidCute1412 <letuanloc1412@gmail.com>
+Date: 2026-08-09T17:37:19+07:00
+Subject: test(hw04): assert persisted FR-10 status labels in UI
+docs/assignments/HW04/deliverables/automation/tests/fr10-order-state-machine.spec.ts
+
+commit 24638bc99509c77f72bed8b65b51c4b67641ab8d
+Author: KidCute1412 <letuanloc1412@gmail.com>
+Date: 2026-08-09T17:36:57+07:00
+Subject: test(hw04): harden FR-06 navigation and control locators
+docs/assignments/HW04/deliverables/automation/tests/fr06-product-detail.spec.ts
+
+commit 053ec243f389fde880db21d7f779fd9ae9ce807b
+Author: KidCute1412 <letuanloc1412@gmail.com>
+Date: 2026-08-09T17:36:37+07:00
+Subject: test(hw04): automate FR-12 access control matrix
+docs/assignments/HW04/deliverables/automation/tests/fr12-access-control.spec.ts
+
+commit 969c17ca5002f55e507945c5754881448800897f
+Author: KidCute1412 <letuanloc1412@gmail.com>
+Date: 2026-08-09T17:36:25+07:00
+Subject: test(hw04): automate FR-10 state transition graph
+docs/assignments/HW04/deliverables/automation/tests/fr10-order-state-machine.spec.ts
+
+commit f732b2cb56feb30639b69c7b52ee90c237316534
+Author: KidCute1412 <letuanloc1412@gmail.com>
+Date: 2026-08-09T17:36:12+07:00
+Subject: test(hw04): build data-driven FR-06 browser suite
+docs/assignments/HW04/deliverables/automation/tests/fr06-product-detail.spec.ts
+
+commit f9055465f9c7496f4f7499c20016a74478399765
+Author: KidCute1412 <letuanloc1412@gmail.com>
+Date: 2026-07-27T15:21:13+07:00
+Subject: assignment automation testing 27-07
+docs/assignments/HW04/schools/23127404-automation/tests/fr06-product-detail.spec.ts

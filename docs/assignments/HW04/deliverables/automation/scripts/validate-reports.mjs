@@ -10,6 +10,11 @@ const expectedPairs = new Set(
     ["chromium", "firefox", "webkit"].map((browser) => `${feature}/${browser}`),
   ),
 );
+const expectedCases = { fr06: 16, fr10: 16, fr12: 19 };
+
+function allSpecs(suite) {
+  return [...(suite.specs ?? []), ...(suite.suites ?? []).flatMap(allSpecs)];
+}
 
 if (!existsSync(reportRoot)) throw new Error("No reports directory. Execute npm run run:matrix first.");
 
@@ -41,6 +46,7 @@ for (const pair of expectedPairs) {
   }
   const { metadata, indexPath, dir } = found;
   const html = readFileSync(indexPath, "utf8");
+  const expectedTotal = expectedCases[metadata.feature];
   if (metadata.runBy !== studentId) errors.push(`${pair}: wrong runBy metadata`);
   if (!isoPattern.test(metadata.runTimestamp)) errors.push(`${pair}: invalid ISO timestamp`);
   if (metadata.status === "running") errors.push(`${pair}: incomplete run metadata`);
@@ -48,6 +54,17 @@ for (const pair of expectedPairs) {
   if (!html.includes(metadata.runTimestamp)) errors.push(`${pair}: timestamp is not embedded in HTML`);
   const jsonReport = JSON.parse(readFileSync(path.join(dir, "results.json"), "utf8"));
   if (!Array.isArray(jsonReport.suites)) errors.push(`${pair}: invalid Playwright JSON report`);
+  const specCount = Array.isArray(jsonReport.suites) ? jsonReport.suites.flatMap(allSpecs).length : 0;
+  const statsTotal = ["expected", "skipped", "unexpected", "flaky"]
+    .reduce((sum, key) => sum + (jsonReport.stats?.[key] ?? 0), 0);
+  if (metadata.total !== expectedTotal || specCount !== expectedTotal) {
+    errors.push(`${pair}: expected ${expectedTotal} cases, metadata=${metadata.total}, JSON specs=${specCount}`);
+  }
+  if (statsTotal !== metadata.total) errors.push(`${pair}: JSON stats total ${statsTotal} differs from metadata ${metadata.total}`);
+  if (Buffer.byteLength(html) < 100_000) errors.push(`${pair}: HTML report is unexpectedly small`);
+  if ((jsonReport.stats?.unexpected ?? 0) > 0 && !existsSync(path.join(dir, "data"))) {
+    errors.push(`${pair}: failed run has no retained data directory`);
+  }
   console.log(`FOUND ${pair}: ${path.relative(process.cwd(), dir)} (${metadata.status}, ${metadata.total} tests)`);
 }
 

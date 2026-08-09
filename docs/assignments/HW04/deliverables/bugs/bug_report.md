@@ -1,0 +1,79 @@
+# HW04 Runtime Failure and Defect-Candidate Report
+
+## Evidence status
+
+The nine selected final runs scheduled 153 browser cases: 131 reached assertions (79 passed and 52 assertion-failed) and 22 failed during Firefox page-fixture setup before SUT observation. Triage separates the 74 runner failures into:
+
+- **52 assertion failures** across **19 unique logical cases**: FR-06 has 16 assertion failures across six cases, FR-10 has 12 across four, and FR-12 has 24 across nine.
+- **22 Firefox environment failures**: 7 FR-06, 7 FR-10, and 8 FR-12 cases timed out while Playwright set up `page` through `browserContext.newPage()`.
+
+The assertion-failing cases below are runtime-observed defect candidates. No candidate is represented as a filed GitHub defect because no verified public HW04 Issue URL or public Issue screenshot has been supplied. Prior HW02/HW03 issues may be consulted as regression context only; they are not new HW04 Issues.
+
+## Selected evidence
+
+| Feature | Chromium report | Firefox report | WebKit report |
+|---|---|---|---|
+| FR-06 | `automation/reports/fr06-chromium-2026-08-09T09-50-04-895Z/` | `automation/reports/fr06-firefox-2026-08-09T10-07-59-582Z/` | `automation/reports/fr06-webkit-2026-08-09T09-52-14-569Z/` |
+| FR-10 | `automation/reports/fr10-chromium-2026-08-09T10-26-40-345Z/` | `automation/reports/fr10-firefox-2026-08-09T10-27-32-954Z/` | `automation/reports/fr10-webkit-2026-08-09T10-32-34-318Z/` |
+| FR-12 | `automation/reports/fr12-chromium-2026-08-09T09-56-03-803Z/` | `automation/reports/fr12-firefox-2026-08-09T10-18-54-806Z/` | `automation/reports/fr12-webkit-2026-08-09T09-57-54-553Z/` |
+
+All nine HTML/JSON/metadata directories passed structural identity, timestamp, case-count, completion, and totals validation. Interactive rendering and links still require the documented manual opening step.
+
+## Candidate register
+
+The recurrence column counts assertion failures only; Firefox environment failures are not attributed to candidates.
+
+| Candidate | Case | Runtime-observed mismatch | Assertion recurrence | Severity | Public Issue |
+|---|---|---|---:|---|---|
+| `HW04-CAND-001` | `FR06-07` | Required category text `Điện thoại` was not found | 3/3 browsers | Medium | **PENDING** |
+| `HW04-CAND-002` | `FR06-09` | Quantity input lacked required `min="1"` attribute | 3/3 browsers | Medium | **PENDING** |
+| `HW04-CAND-003` | `FR06-11` | First add click left button text as `Thêm vào giỏ hàng`; expected visible feedback | 2/3 browsers; Firefox environment failure | Medium | **PENDING** |
+| `HW04-CAND-004` | `FR06-12` | Valid quantity add left button text unchanged; expected visible feedback | 2/3 browsers; Firefox environment failure | Medium | **PENDING** |
+| `HW04-CAND-005` | `FR06-13` | Quantity `0` remained HTML-valid | 3/3 browsers | High | **PENDING** |
+| `HW04-CAND-006` | `FR06-14` | Quantity `-1` remained HTML-valid | 3/3 browsers | High | **PENDING** |
+| `HW04-CAND-007` | `FR10-06` | After `confirmed → shipping`, Customer UI still exposed one cancel button | 3/3 browsers | Medium | **PENDING** |
+| `HW04-CAND-008` | `FR10-11` | Shipping-order UI still exposed one cancel button after rejected Admin cancellation | 3/3 browsers | Medium | **PENDING** |
+| `HW04-CAND-009` | `FR10-12` | User cancellation of `shipping` returned 200 success instead of rejection | 3/3 browsers | High | **PENDING** |
+| `HW04-CAND-010` | `FR10-16` | `canceled → delivered` returned 200 instead of preserving the final state | 3/3 browsers | High | **PENDING** |
+| `HW04-CAND-011` | `FR12-03` | User JWT read `/api/admin/users` with 200 and received user data | 3/3 browsers | Critical | **PENDING** |
+| `HW04-CAND-012` | `FR12-06` | User JWT read `/api/admin/orders` with 200 | 3/3 browsers | Critical | **PENDING** |
+| `HW04-CAND-013` | `FR12-08` | Anonymous `POST /api/products` returned 200 and created a product | 2/3 browsers; Firefox environment failure | Critical | **PENDING** |
+| `HW04-CAND-014` | `FR12-09` | User JWT `POST /api/products` returned 200 and created a product | 3/3 browsers | Critical | **PENDING** |
+| `HW04-CAND-015` | `FR12-11` | Anonymous `PUT /api/products/999999` returned 200 | 2/3 browsers; Firefox environment failure | Critical | **PENDING** |
+| `HW04-CAND-016` | `FR12-12` | User JWT `DELETE /api/products/999999` returned 200 | 3/3 browsers | Critical | **PENDING** |
+| `HW04-CAND-017` | `FR12-14` | User JWT `POST /api/categories` returned 200 and created a category | 2/3 browsers; Firefox environment failure | Critical | **PENDING** |
+| `HW04-CAND-018` | `FR12-17` | User JWT `POST /api/admin/coupons` returned 200 and created a coupon | 3/3 browsers | Critical | **PENDING** |
+| `HW04-CAND-019` | `FR12-19` | User JWT reached import validation and returned 400, not authorization rejection 403 | 3/3 browsers | Critical | **PENDING** |
+
+Severity is an initial risk-based classification grounded in FR-06/FR-10/FR-12 impact. The student must confirm it during GitHub Issue triage.
+
+## Environment finding — not an SUT defect
+
+### `ENV-FIREFOX-NEWPAGE` — intermittent Firefox page setup timeout
+
+| Field | Value |
+|---|---|
+| Environment | Playwright 1.55.0; Firefox 141.0 headful; Windows 10 Home Single Language / NT `10.0.26200.0` |
+| Symptom | `Test timeout of 30000ms exceeded while setting up "page"` and `browserContext.newPage: Test timeout of 30000ms exceeded` |
+| Affected executions | 22 total: FR-06 7, FR-10 7, FR-12 8 |
+| Classification | Environment/runtime failure; excluded from SUT defect candidates |
+| Rationale | Failure occurred before the test could observe the target application behavior |
+
+Headful Firefox was used because headless Firefox failed before `newPage()` in this environment. The remaining intermittent failures are preserved in the reports and are not converted into passes, assertion failures, or bugs.
+
+## Human-correction evidence
+
+An earlier WebKit FR-10 run produced a false `FR10-02` failure because substring row matching allowed order `#2` to match another order such as `#20`. Human review changed the locator to require an exact order-ID cell and reran all three FR-10 browser runs. `FR10-02` passes in the selected final Chromium, Firefox, and WebKit reports; it is not included as a candidate.
+
+## Issue filing gate
+
+Before promoting a candidate to a GitHub Issue:
+
+1. record the exact SUT commit, URLs, OS, and browser version;
+2. reproduce the behavior from a controlled seed/state and rule out assertion/data defects;
+3. preserve the relevant final report, trace, and authentic screenshot;
+4. deduplicate cases that share one root behavior;
+5. create the public Issue with steps, expected/actual result, severity rationale, case/run IDs, and screenshot; and
+6. verify the URL and attachment while logged out where practical.
+
+Multiple failing cases may map to one root defect. The current count is **19 assertion-failing logical cases**, not a claim of 19 deduplicated product defects.

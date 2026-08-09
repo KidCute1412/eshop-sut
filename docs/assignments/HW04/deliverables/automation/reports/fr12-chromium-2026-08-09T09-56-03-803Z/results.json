@@ -1,0 +1,1447 @@
+{
+  "config": {
+    "argv": [
+      "D:\\NodeJS\\node.exe",
+      "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/fr12-access-control.spec.ts",
+      "--project=chromium"
+    ],
+    "configFile": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\playwright.config.ts",
+    "rootDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "Run by": "23127404",
+      "Run timestamp": "2026-08-09T09:56:03.803Z",
+      "Feature": "fr12",
+      "Browser": "chromium",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127404",
+          "Run timestamp": "2026-08-09T09:56:03.803Z",
+          "Feature": "fr12",
+          "Browser": "chromium",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127404",
+          "Run timestamp": "2026-08-09T09:56:03.803Z",
+          "Feature": "fr12",
+          "Browser": "chromium",
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127404",
+          "Run timestamp": "2026-08-09T09:56:03.803Z",
+          "Feature": "fr12",
+          "Browser": "chromium",
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\reports\\fr12-chromium-2026-08-09T09-56-03-803Z",
+          "open": "never",
+          "title": "HW04 fr12 chromium | Run by: 23127404 | 2026-08-09T09:56:03.803Z"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\reports\\fr12-chromium-2026-08-09T09-56-03-803Z\\results.json"
+        }
+      ],
+      [
+        "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\src\\reporters\\run-metadata-reporter.ts",
+        {
+          "reportDir": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\reports\\fr12-chromium-2026-08-09T09-56-03-803Z",
+          "studentId": "23127404",
+          "runTimestamp": "2026-08-09T09:56:03.803Z",
+          "feature": "fr12",
+          "browser": "chromium"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "fr12-access-control.spec.ts",
+      "file": "fr12-access-control.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-12 Access Control",
+          "file": "fr12-access-control.spec.ts",
+          "line": 34,
+          "column": 6,
+          "specs": [
+            {
+              "title": "FR12-01 [high] none GET /admin/users: reject anonymous admin user listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1588,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-01",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:56:05.247Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-ecbd889aa48dc384ab85",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-02 [high] malformed GET /admin/users: reject malformed JWT on admin user listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 682,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-02",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:56:07.302Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-cd2e270169407c9944a3",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-03 [high] user GET /admin/users: reject regular user JWT on admin user listing",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4287,
+                      "error": {
+                        "message": "Error: GET /admin/users: [{\"id\":1,\"name\":\"Admin User\",\"email\":\"admin@eshop.com\",\"role\":\"admin\",\"login_attempts\":0,\"locked_until\":null,\"shipping_address\":null},{\"id\":2,\"name\":\"Test User\",\"email\":\"test@eshop.com\",\"role\":\"user\",\"login_attempts\":0,\"locked_until\":null,\"shipping_address\":null}]\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: GET /admin/users: [{\"id\":1,\"name\":\"Admin User\",\"email\":\"admin@eshop.com\",\"role\":\"admin\",\"login_attempts\":0,\"locked_until\":null,\"shipping_address\":null},{\"id\":2,\"name\":\"Test User\",\"email\":\"test@eshop.com\",\"role\":\"user\",\"login_attempts\":0,\"locked_until\":null,\"shipping_address\":null}]\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 72
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         }\n \u001b[90m 71 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 72
+                          },
+                          "message": "Error: GET /admin/users: [{\"id\":1,\"name\":\"Admin User\",\"email\":\"admin@eshop.com\",\"role\":\"admin\",\"login_attempts\":0,\"locked_until\":null,\"shipping_address\":null},{\"id\":2,\"name\":\"Test User\",\"email\":\"test@eshop.com\",\"role\":\"user\",\"login_attempts\":0,\"locked_until\":null,\"shipping_address\":null}]\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  70 |         }\n  71 |\n> 72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 58,
+                            "line": 74
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|unauthorized|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"[{\\\"id\\\":1,\\\"name\\\":\\\"Admin User\\\",\\\"email\\\":\\\"admin@eshop.com\\\",\\\"role\\\":\\\"admin\\\",\\\"login_attempts\\\":0,\\\"locked_until\\\":null,\\\"shipping_address\\\":null},{\\\"id\\\":2,\\\"name\\\":\\\"Test User\\\",\\\"email\\\":\\\"test@eshop.com\\\",\\\"role\\\":\\\"user\\\",\\\"login_attempts\\\":0,\\\"locked_until\\\":null,\\\"shipping_address\\\":null}]\"\u001b[39m\n\n  72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n> 74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n     |                                                          ^\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n  76 |           expect.soft(Array.isArray(JSON.parse(text))).toBe(true);\n  77 |         }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:74:58"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 79,
+                            "line": 92
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: 'Admin Login' })\nExpected: visible\nTimeout: 3000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"soft toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Admin Login' })\u001b[22m\n\n\n  90 |         await expect.soft(page.getByRole(\"heading\", { name: \"EShop Admin\" })).toBeVisible({ timeout: 3_000 });\n  91 |       } else {\n> 92 |         await expect.soft(page.getByRole(\"heading\", { name: \"Admin Login\" })).toBeVisible({ timeout: 3_000 });\n     |                                                                               ^\n  93 |       }\n  94 |     });\n  95 |   }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:92:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-03",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:56:07.998Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--d9537-r-JWT-on-admin-user-listing-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--d9537-r-JWT-on-admin-user-listing-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--d9537-r-JWT-on-admin-user-listing-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--d9537-r-JWT-on-admin-user-listing-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 72
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-9a0f41ea3e21eaaa9d8e",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-04 [high] admin GET /admin/users: allow admin JWT on admin user listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 875,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-12-01",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:56:13.765Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-a505ebf57c0c09354e82",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-05 [high] none GET /admin/orders: reject anonymous admin order listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 647,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-01",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:56:15.147Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-78cdb99c27193c41763f",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-06 [high] user GET /admin/orders: reject regular user JWT on admin order listing",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4135,
+                      "error": {
+                        "message": "Error: GET /admin/orders: [{\"id\":32,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order d3e2cad1-9ec9-4d5a-b81b-e5957c1cb4f4\",\"created_at\":\"2026-08-09 09:56:01\",\"user_name\":\"Test User\"},{\"id\":31,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order a2490d79-2c89-4621-b656-d536291705ba\",\"created_at\":\"2026-08-09 09:55:59\",\"user_name\":\"Test User\"},{\"id\":30,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 687e2ba6-c31b-4c3f-ad4b-3ae76e1504ae\",\"created_at\":\"2026-08-09 09:55:57\",\"user_name\":\"Test User\"},{\"id\":29,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order e8527197-dc93-4fd8-8551-02ecf87ba5ee\",\"created_at\":\"2026-08-09 09:55:55\",\"user_name\":\"Test User\"},{\"id\":28,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 88835610-def1-43f5-af67-7342902a1699\",\"created_at\":\"2026-08-09 09:55:51\",\"user_name\":\"Test User\"},{\"id\":27,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order a25f1520-d84b-47a8-ba51-7a41b8d94b9d\",\"created_at\":\"2026-08-09 09:55:40\",\"user_name\":\"Test User\"},{\"id\":26,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 2eb19201-03b2-40fe-a027-e6dba122855c\",\"created_at\":\"2026-08-09 09:55:38\",\"user_name\":\"Test User\"},{\"id\":25,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order 09b07b81-6383-4c2a-9224-b9b38c9fe555\",\"created_at\":\"2026-08-09 09:55:36\",\"user_name\":\"Test User\"},{\"id\":24,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 8c82885c-6bf6-4e63-aae8-930c17963ff0\",\"created_at\":\"2026-08-09 09:55:34\",\"user_name\":\"Test User\"},{\"id\":23,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 36a9c7fa-a35a-4a82-9530-1e28f54b455e\",\"created_at\":\"2026-08-09 09:55:31\",\"user_name\":\"Test User\"},{\"id\":22,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order 1e7a6da7-d93e-4854-8b87-c1660b7c3454\",\"created_at\":\"2026-08-09 09:55:20\",\"user_name\":\"Test User\"},{\"id\":21,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order c257d8e8-aff2-495f-95e1-6d4f85e0a4d4\",\"created_at\":\"2026-08-09 09:55:18\",\"user_name\":\"Test User\"},{\"id\":20,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order 9add22cc-56bf-4dc4-915e-00324181333c\",\"created_at\":\"2026-08-09 09:55:15\",\"user_name\":\"Test User\"},{\"id\":19,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order c57709d5-8f02-4059-a2aa-f41350ba76b3\",\"created_at\":\"2026-08-09 09:55:13\",\"user_name\":\"Test User\"},{\"id\":18,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order fd91d6eb-4730-49c7-97af-e2c373d95e89\",\"created_at\":\"2026-08-09 09:55:10\",\"user_name\":\"Test User\"},{\"id\":17,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order 408a0c88-c83e-4c23-a7f0-f6caece92b1f\",\"created_at\":\"2026-08-09 09:55:08\",\"user_name\":\"Test User\"},{\"id\":16,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 0ee86917-a5a3-49ac-a56d-00a08d372cae\",\"created_at\":\"2026-08-09 09:54:19\",\"user_name\":\"Test User\"},{\"id\":15,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 27af9605-e1d3-43cb-a141-d463b9efdabf\",\"created_at\":\"2026-08-09 09:54:18\",\"user_name\":\"Test User\"},{\"id\":14,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 535246e5-4a81-4071-bd61-a5416b2cf6a8\",\"created_at\":\"2026-08-09 09:54:17\",\"user_name\":\"Test User\"},{\"id\":13,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 7ee151c4-3eb9-4ef4-9e63-1e5deba36d43\",\"created_at\":\"2026-08-09 09:54:16\",\"user_name\":\"Test User\"},{\"id\":12,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 1d773abf-3bf7-4de3-a310-a468eec764d3\",\"created_at\":\"2026-08-09 09:54:13\",\"user_name\":\"Test User\"},{\"id\":11,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order 7c84f1b5-e865-4f50-a629-d7941db67e55\",\"created_at\":\"2026-08-09 09:54:00\",\"user_name\":\"Test User\"},{\"id\":10,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 1a244172-1965-4ff4-9007-fd05f8a344d9\",\"created_at\":\"2026-08-09 09:53:59\",\"user_name\":\"Test User\"},{\"id\":9,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order acfa833e-03b3-4dd0-be6c-12071dfb080a\",\"created_at\":\"2026-08-09 09:53:59\",\"user_name\":\"Test User\"},{\"id\":8,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 58e3c86a-5898-44e3-987a-5a861efbb5f2\",\"created_at\":\"2026-08-09 09:53:58\",\"user_name\":\"Test User\"},{\"id\":7,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 3ad4cca6-b194-4b21-aff2-a0098aafbd24\",\"created_at\":\"2026-08-09 09:53:57\",\"user_name\":\"Test User\"},{\"id\":6,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order c0628bed-e0eb-49c6-9e01-91761fb9a436\",\"created_at\":\"2026-08-09 09:53:44\",\"user_name\":\"Test User\"},{\"id\":5,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order 233bca50-95d7-40c9-991c-6031c3953d0b\",\"created_at\":\"2026-08-09 09:53:43\",\"user_name\":\"Test User\"},{\"id\":4,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order 81435727-0224-4dbf-8f2d-345c555a1df7\",\"created_at\":\"2026-08-09 09:53:42\",\"user_name\":\"Test User\"},{\"id\":3,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 98da4955-8f3a-4297-ac61-24c2e5a1ba1c\",\"created_at\":\"2026-08-09 09:53:42\",\"user_name\":\"Test User\"},{\"id\":2,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order ffdca052-326a-4cf0-b1c3-a5b0b111aa2c\",\"created_at\":\"2026-08-09 09:53:41\",\"user_name\":\"Test User\"},{\"id\":1,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order 99c518c8-8f91-4aad-b19f-181224a2f934\",\"created_at\":\"2026-08-09 09:53:40\",\"user_name\":\"Test User\"}]\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: GET /admin/orders: [{\"id\":32,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order d3e2cad1-9ec9-4d5a-b81b-e5957c1cb4f4\",\"created_at\":\"2026-08-09 09:56:01\",\"user_name\":\"Test User\"},{\"id\":31,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order a2490d79-2c89-4621-b656-d536291705ba\",\"created_at\":\"2026-08-09 09:55:59\",\"user_name\":\"Test User\"},{\"id\":30,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 687e2ba6-c31b-4c3f-ad4b-3ae76e1504ae\",\"created_at\":\"2026-08-09 09:55:57\",\"user_name\":\"Test User\"},{\"id\":29,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order e8527197-dc93-4fd8-8551-02ecf87ba5ee\",\"created_at\":\"2026-08-09 09:55:55\",\"user_name\":\"Test User\"},{\"id\":28,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 88835610-def1-43f5-af67-7342902a1699\",\"created_at\":\"2026-08-09 09:55:51\",\"user_name\":\"Test User\"},{\"id\":27,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order a25f1520-d84b-47a8-ba51-7a41b8d94b9d\",\"created_at\":\"2026-08-09 09:55:40\",\"user_name\":\"Test User\"},{\"id\":26,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 2eb19201-03b2-40fe-a027-e6dba122855c\",\"created_at\":\"2026-08-09 09:55:38\",\"user_name\":\"Test User\"},{\"id\":25,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order 09b07b81-6383-4c2a-9224-b9b38c9fe555\",\"created_at\":\"2026-08-09 09:55:36\",\"user_name\":\"Test User\"},{\"id\":24,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 8c82885c-6bf6-4e63-aae8-930c17963ff0\",\"created_at\":\"2026-08-09 09:55:34\",\"user_name\":\"Test User\"},{\"id\":23,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 36a9c7fa-a35a-4a82-9530-1e28f54b455e\",\"created_at\":\"2026-08-09 09:55:31\",\"user_name\":\"Test User\"},{\"id\":22,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order 1e7a6da7-d93e-4854-8b87-c1660b7c3454\",\"created_at\":\"2026-08-09 09:55:20\",\"user_name\":\"Test User\"},{\"id\":21,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order c257d8e8-aff2-495f-95e1-6d4f85e0a4d4\",\"created_at\":\"2026-08-09 09:55:18\",\"user_name\":\"Test User\"},{\"id\":20,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order 9add22cc-56bf-4dc4-915e-00324181333c\",\"created_at\":\"2026-08-09 09:55:15\",\"user_name\":\"Test User\"},{\"id\":19,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order c57709d5-8f02-4059-a2aa-f41350ba76b3\",\"created_at\":\"2026-08-09 09:55:13\",\"user_name\":\"Test User\"},{\"id\":18,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order fd91d6eb-4730-49c7-97af-e2c373d95e89\",\"created_at\":\"2026-08-09 09:55:10\",\"user_name\":\"Test User\"},{\"id\":17,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order 408a0c88-c83e-4c23-a7f0-f6caece92b1f\",\"created_at\":\"2026-08-09 09:55:08\",\"user_name\":\"Test User\"},{\"id\":16,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 0ee86917-a5a3-49ac-a56d-00a08d372cae\",\"created_at\":\"2026-08-09 09:54:19\",\"user_name\":\"Test User\"},{\"id\":15,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 27af9605-e1d3-43cb-a141-d463b9efdabf\",\"created_at\":\"2026-08-09 09:54:18\",\"user_name\":\"Test User\"},{\"id\":14,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 535246e5-4a81-4071-bd61-a5416b2cf6a8\",\"created_at\":\"2026-08-09 09:54:17\",\"user_name\":\"Test User\"},{\"id\":13,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 7ee151c4-3eb9-4ef4-9e63-1e5deba36d43\",\"created_at\":\"2026-08-09 09:54:16\",\"user_name\":\"Test User\"},{\"id\":12,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 1d773abf-3bf7-4de3-a310-a468eec764d3\",\"created_at\":\"2026-08-09 09:54:13\",\"user_name\":\"Test User\"},{\"id\":11,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order 7c84f1b5-e865-4f50-a629-d7941db67e55\",\"created_at\":\"2026-08-09 09:54:00\",\"user_name\":\"Test User\"},{\"id\":10,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 1a244172-1965-4ff4-9007-fd05f8a344d9\",\"created_at\":\"2026-08-09 09:53:59\",\"user_name\":\"Test User\"},{\"id\":9,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order acfa833e-03b3-4dd0-be6c-12071dfb080a\",\"created_at\":\"2026-08-09 09:53:59\",\"user_name\":\"Test User\"},{\"id\":8,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 58e3c86a-5898-44e3-987a-5a861efbb5f2\",\"created_at\":\"2026-08-09 09:53:58\",\"user_name\":\"Test User\"},{\"id\":7,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 3ad4cca6-b194-4b21-aff2-a0098aafbd24\",\"created_at\":\"2026-08-09 09:53:57\",\"user_name\":\"Test User\"},{\"id\":6,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order c0628bed-e0eb-49c6-9e01-91761fb9a436\",\"created_at\":\"2026-08-09 09:53:44\",\"user_name\":\"Test User\"},{\"id\":5,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order 233bca50-95d7-40c9-991c-6031c3953d0b\",\"created_at\":\"2026-08-09 09:53:43\",\"user_name\":\"Test User\"},{\"id\":4,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order 81435727-0224-4dbf-8f2d-345c555a1df7\",\"created_at\":\"2026-08-09 09:53:42\",\"user_name\":\"Test User\"},{\"id\":3,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 98da4955-8f3a-4297-ac61-24c2e5a1ba1c\",\"created_at\":\"2026-08-09 09:53:42\",\"user_name\":\"Test User\"},{\"id\":2,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order ffdca052-326a-4cf0-b1c3-a5b0b111aa2c\",\"created_at\":\"2026-08-09 09:53:41\",\"user_name\":\"Test User\"},{\"id\":1,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order 99c518c8-8f91-4aad-b19f-181224a2f934\",\"created_at\":\"2026-08-09 09:53:40\",\"user_name\":\"Test User\"}]\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 72
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         }\n \u001b[90m 71 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 72
+                          },
+                          "message": "Error: GET /admin/orders: [{\"id\":32,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order d3e2cad1-9ec9-4d5a-b81b-e5957c1cb4f4\",\"created_at\":\"2026-08-09 09:56:01\",\"user_name\":\"Test User\"},{\"id\":31,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order a2490d79-2c89-4621-b656-d536291705ba\",\"created_at\":\"2026-08-09 09:55:59\",\"user_name\":\"Test User\"},{\"id\":30,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 687e2ba6-c31b-4c3f-ad4b-3ae76e1504ae\",\"created_at\":\"2026-08-09 09:55:57\",\"user_name\":\"Test User\"},{\"id\":29,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order e8527197-dc93-4fd8-8551-02ecf87ba5ee\",\"created_at\":\"2026-08-09 09:55:55\",\"user_name\":\"Test User\"},{\"id\":28,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 88835610-def1-43f5-af67-7342902a1699\",\"created_at\":\"2026-08-09 09:55:51\",\"user_name\":\"Test User\"},{\"id\":27,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order a25f1520-d84b-47a8-ba51-7a41b8d94b9d\",\"created_at\":\"2026-08-09 09:55:40\",\"user_name\":\"Test User\"},{\"id\":26,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 2eb19201-03b2-40fe-a027-e6dba122855c\",\"created_at\":\"2026-08-09 09:55:38\",\"user_name\":\"Test User\"},{\"id\":25,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order 09b07b81-6383-4c2a-9224-b9b38c9fe555\",\"created_at\":\"2026-08-09 09:55:36\",\"user_name\":\"Test User\"},{\"id\":24,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 8c82885c-6bf6-4e63-aae8-930c17963ff0\",\"created_at\":\"2026-08-09 09:55:34\",\"user_name\":\"Test User\"},{\"id\":23,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 36a9c7fa-a35a-4a82-9530-1e28f54b455e\",\"created_at\":\"2026-08-09 09:55:31\",\"user_name\":\"Test User\"},{\"id\":22,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order 1e7a6da7-d93e-4854-8b87-c1660b7c3454\",\"created_at\":\"2026-08-09 09:55:20\",\"user_name\":\"Test User\"},{\"id\":21,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order c257d8e8-aff2-495f-95e1-6d4f85e0a4d4\",\"created_at\":\"2026-08-09 09:55:18\",\"user_name\":\"Test User\"},{\"id\":20,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order 9add22cc-56bf-4dc4-915e-00324181333c\",\"created_at\":\"2026-08-09 09:55:15\",\"user_name\":\"Test User\"},{\"id\":19,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order c57709d5-8f02-4059-a2aa-f41350ba76b3\",\"created_at\":\"2026-08-09 09:55:13\",\"user_name\":\"Test User\"},{\"id\":18,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order fd91d6eb-4730-49c7-97af-e2c373d95e89\",\"created_at\":\"2026-08-09 09:55:10\",\"user_name\":\"Test User\"},{\"id\":17,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order 408a0c88-c83e-4c23-a7f0-f6caece92b1f\",\"created_at\":\"2026-08-09 09:55:08\",\"user_name\":\"Test User\"},{\"id\":16,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 0ee86917-a5a3-49ac-a56d-00a08d372cae\",\"created_at\":\"2026-08-09 09:54:19\",\"user_name\":\"Test User\"},{\"id\":15,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 27af9605-e1d3-43cb-a141-d463b9efdabf\",\"created_at\":\"2026-08-09 09:54:18\",\"user_name\":\"Test User\"},{\"id\":14,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 535246e5-4a81-4071-bd61-a5416b2cf6a8\",\"created_at\":\"2026-08-09 09:54:17\",\"user_name\":\"Test User\"},{\"id\":13,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 7ee151c4-3eb9-4ef4-9e63-1e5deba36d43\",\"created_at\":\"2026-08-09 09:54:16\",\"user_name\":\"Test User\"},{\"id\":12,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 1d773abf-3bf7-4de3-a310-a468eec764d3\",\"created_at\":\"2026-08-09 09:54:13\",\"user_name\":\"Test User\"},{\"id\":11,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order 7c84f1b5-e865-4f50-a629-d7941db67e55\",\"created_at\":\"2026-08-09 09:54:00\",\"user_name\":\"Test User\"},{\"id\":10,\"user_id\":2,\"total_amount\":30000000,\"status\":\"delivered\",\"shipping_address\":\"HW04 isolated order 1a244172-1965-4ff4-9007-fd05f8a344d9\",\"created_at\":\"2026-08-09 09:53:59\",\"user_name\":\"Test User\"},{\"id\":9,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order acfa833e-03b3-4dd0-be6c-12071dfb080a\",\"created_at\":\"2026-08-09 09:53:59\",\"user_name\":\"Test User\"},{\"id\":8,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 58e3c86a-5898-44e3-987a-5a861efbb5f2\",\"created_at\":\"2026-08-09 09:53:58\",\"user_name\":\"Test User\"},{\"id\":7,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 3ad4cca6-b194-4b21-aff2-a0098aafbd24\",\"created_at\":\"2026-08-09 09:53:57\",\"user_name\":\"Test User\"},{\"id\":6,\"user_id\":2,\"total_amount\":30000000,\"status\":\"shipping\",\"shipping_address\":\"HW04 isolated order c0628bed-e0eb-49c6-9e01-91761fb9a436\",\"created_at\":\"2026-08-09 09:53:44\",\"user_name\":\"Test User\"},{\"id\":5,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order 233bca50-95d7-40c9-991c-6031c3953d0b\",\"created_at\":\"2026-08-09 09:53:43\",\"user_name\":\"Test User\"},{\"id\":4,\"user_id\":2,\"total_amount\":30000000,\"status\":\"pending\",\"shipping_address\":\"HW04 isolated order 81435727-0224-4dbf-8f2d-345c555a1df7\",\"created_at\":\"2026-08-09 09:53:42\",\"user_name\":\"Test User\"},{\"id\":3,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order 98da4955-8f3a-4297-ac61-24c2e5a1ba1c\",\"created_at\":\"2026-08-09 09:53:42\",\"user_name\":\"Test User\"},{\"id\":2,\"user_id\":2,\"total_amount\":30000000,\"status\":\"canceled\",\"shipping_address\":\"HW04 isolated order ffdca052-326a-4cf0-b1c3-a5b0b111aa2c\",\"created_at\":\"2026-08-09 09:53:41\",\"user_name\":\"Test User\"},{\"id\":1,\"user_id\":2,\"total_amount\":30000000,\"status\":\"confirmed\",\"shipping_address\":\"HW04 isolated order 99c518c8-8f91-4aad-b19f-181224a2f934\",\"created_at\":\"2026-08-09 09:53:40\",\"user_name\":\"Test User\"}]\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  70 |         }\n  71 |\n> 72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 58,
+                            "line": 74
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|unauthorized|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"[{\\\"id\\\":32,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"delivered\\\",\\\"shipping_address\\\":\\\"HW04 isolated order d3e2cad1-9ec9-4d5a-b81b-e5957c1cb4f4\\\",\\\"created_at\\\":\\\"2026-08-09 09:56:01\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":31,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order a2490d79-2c89-4621-b656-d536291705ba\\\",\\\"created_at\\\":\\\"2026-08-09 09:55:59\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":30,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"delivered\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 687e2ba6-c31b-4c3f-ad4b-3ae76e1504ae\\\",\\\"created_at\\\":\\\"2026-08-09 09:55:57\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":29,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"delivered\\\",\\\"shipping_address\\\":\\\"HW04 isolated order e8527197-dc93-4fd8-8551-02ecf87ba5ee\\\",\\\"created_at\\\":\\\"2026-08-09 09:55:55\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":28,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 88835610-def1-43f5-af67-7342902a1699\\\",\\\"created_at\\\":\\\"2026-08-09 09:55:51\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":27,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"shipping\\\",\\\"shipping_address\\\":\\\"HW04 isolated order a25f1520-d84b-47a8-ba51-7a41b8d94b9d\\\",\\\"created_at\\\":\\\"2026-08-09 09:55:40\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":26,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"delivered\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 2eb19201-03b2-40fe-a027-e6dba122855c\\\",\\\"created_at\\\":\\\"2026-08-09 09:55:38\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":25,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"confirmed\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 09b07b81-6383-4c2a-9224-b9b38c9fe555\\\",\\\"created_at\\\":\\\"2026-08-09 09:55:36\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":24,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 8c82885c-6bf6-4e63-aae8-930c17963ff0\\\",\\\"created_at\\\":\\\"2026-08-09 09:55:34\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":23,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 36a9c7fa-a35a-4a82-9530-1e28f54b455e\\\",\\\"created_at\\\":\\\"2026-08-09 09:55:31\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":22,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"shipping\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 1e7a6da7-d93e-4854-8b87-c1660b7c3454\\\",\\\"created_at\\\":\\\"2026-08-09 09:55:20\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":21,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"pending\\\",\\\"shipping_address\\\":\\\"HW04 isolated order c257d8e8-aff2-495f-95e1-6d4f85e0a4d4\\\",\\\"created_at\\\":\\\"2026-08-09 09:55:18\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":20,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"pending\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 9add22cc-56bf-4dc4-915e-00324181333c\\\",\\\"created_at\\\":\\\"2026-08-09 09:55:15\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":19,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order c57709d5-8f02-4059-a2aa-f41350ba76b3\\\",\\\"created_at\\\":\\\"2026-08-09 09:55:13\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":18,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order fd91d6eb-4730-49c7-97af-e2c373d95e89\\\",\\\"created_at\\\":\\\"2026-08-09 09:55:10\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":17,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"confirmed\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 408a0c88-c83e-4c23-a7f0-f6caece92b1f\\\",\\\"created_at\\\":\\\"2026-08-09 09:55:08\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":16,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"delivered\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 0ee86917-a5a3-49ac-a56d-00a08d372cae\\\",\\\"created_at\\\":\\\"2026-08-09 09:54:19\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":15,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 27af9605-e1d3-43cb-a141-d463b9efdabf\\\",\\\"created_at\\\":\\\"2026-08-09 09:54:18\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":14,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"delivered\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 535246e5-4a81-4071-bd61-a5416b2cf6a8\\\",\\\"created_at\\\":\\\"2026-08-09 09:54:17\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":13,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"delivered\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 7ee151c4-3eb9-4ef4-9e63-1e5deba36d43\\\",\\\"created_at\\\":\\\"2026-08-09 09:54:16\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":12,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 1d773abf-3bf7-4de3-a310-a468eec764d3\\\",\\\"created_at\\\":\\\"2026-08-09 09:54:13\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":11,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"shipping\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 7c84f1b5-e865-4f50-a629-d7941db67e55\\\",\\\"created_at\\\":\\\"2026-08-09 09:54:00\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":10,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"delivered\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 1a244172-1965-4ff4-9007-fd05f8a344d9\\\",\\\"created_at\\\":\\\"2026-08-09 09:53:59\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":9,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"confirmed\\\",\\\"shipping_address\\\":\\\"HW04 isolated order acfa833e-03b3-4dd0-be6c-12071dfb080a\\\",\\\"created_at\\\":\\\"2026-08-09 09:53:59\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":8,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 58e3c86a-5898-44e3-987a-5a861efbb5f2\\\",\\\"created_at\\\":\\\"2026-08-09 09:53:58\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":7,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 3ad4cca6-b194-4b21-aff2-a0098aafbd24\\\",\\\"created_at\\\":\\\"2026-08-09 09:53:57\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":6,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"shipping\\\",\\\"shipping_address\\\":\\\"HW04 isolated order c0628bed-e0eb-49c6-9e01-91761fb9a436\\\",\\\"created_at\\\":\\\"2026-08-09 09:53:44\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":5,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"pending\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 233bca50-95d7-40c9-991c-6031c3953d0b\\\",\\\"created_at\\\":\\\"2026-08-09 09:53:43\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":4,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"pending\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 81435727-0224-4dbf-8f2d-345c555a1df7\\\",\\\"created_at\\\":\\\"2026-08-09 09:53:42\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":3,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 98da4955-8f3a-4297-ac61-24c2e5a1ba1c\\\",\\\"created_at\\\":\\\"2026-08-09 09:53:42\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":2,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"canceled\\\",\\\"shipping_address\\\":\\\"HW04 isolated order ffdca052-326a-4cf0-b1c3-a5b0b111aa2c\\\",\\\"created_at\\\":\\\"2026-08-09 09:53:41\\\",\\\"user_name\\\":\\\"Test User\\\"},{\\\"id\\\":1,\\\"user_id\\\":2,\\\"total_amount\\\":30000000,\\\"status\\\":\\\"confirmed\\\",\\\"shipping_address\\\":\\\"HW04 isolated order 99c518c8-8f91-4aad-b19f-181224a2f934\\\",\\\"created_at\\\":\\\"2026-08-09 09:53:40\\\",\\\"user_name\\\":\\\"Test User\\\"}]\"\u001b[39m\n\n  72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n> 74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n     |                                                          ^\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n  76 |           expect.soft(Array.isArray(JSON.parse(text))).toBe(true);\n  77 |         }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:74:58"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 79,
+                            "line": 92
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: 'Admin Login' })\nExpected: visible\nTimeout: 3000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"soft toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Admin Login' })\u001b[22m\n\n\n  90 |         await expect.soft(page.getByRole(\"heading\", { name: \"EShop Admin\" })).toBeVisible({ timeout: 3_000 });\n  91 |       } else {\n> 92 |         await expect.soft(page.getByRole(\"heading\", { name: \"Admin Login\" })).toBeVisible({ timeout: 3_000 });\n     |                                                                               ^\n  93 |       }\n  94 |     });\n  95 |   }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:92:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-03",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:56:15.806Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--95cdb--JWT-on-admin-order-listing-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--95cdb--JWT-on-admin-order-listing-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--95cdb--JWT-on-admin-order-listing-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--95cdb--JWT-on-admin-order-listing-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 72
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-50d28f77c38150f5b6df",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-07 [high] admin GET /admin/orders: allow admin JWT on admin order listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 873,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-12-01",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:56:21.372Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-b15d6adc858ea987543d",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-08 [high] none POST /products: reject anonymous product creation",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 726,
+                      "error": {
+                        "message": "Error: POST /products: {\"message\":\"Product created\",\"id\":6}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m401\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: POST /products: {\"message\":\"Product created\",\"id\":6}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m401\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 72
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         }\n \u001b[90m 71 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 72
+                          },
+                          "message": "Error: POST /products: {\"message\":\"Product created\",\"id\":6}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m401\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  70 |         }\n  71 |\n> 72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 58,
+                            "line": 74
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|unauthorized|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"{\\\"message\\\":\\\"Product created\\\",\\\"id\\\":6}\"\u001b[39m\n\n  72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n> 74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n     |                                                          ^\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n  76 |           expect.soft(Array.isArray(JSON.parse(text))).toBe(true);\n  77 |         }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:74:58"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-01",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:56:22.728Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--2260b--anonymous-product-creation-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--2260b--anonymous-product-creation-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--2260b--anonymous-product-creation-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--2260b--anonymous-product-creation-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 72
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-a3f3565e99970b730107",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-09 [high] user POST /products: reject regular user product creation",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4146,
+                      "error": {
+                        "message": "Error: POST /products: {\"message\":\"Product created\",\"id\":7}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: POST /products: {\"message\":\"Product created\",\"id\":7}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 72
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         }\n \u001b[90m 71 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 72
+                          },
+                          "message": "Error: POST /products: {\"message\":\"Product created\",\"id\":7}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  70 |         }\n  71 |\n> 72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 58,
+                            "line": 74
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|unauthorized|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"{\\\"message\\\":\\\"Product created\\\",\\\"id\\\":7}\"\u001b[39m\n\n  72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n> 74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n     |                                                          ^\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n  76 |           expect.soft(Array.isArray(JSON.parse(text))).toBe(true);\n  77 |         }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:74:58"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 79,
+                            "line": 92
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: 'Admin Login' })\nExpected: visible\nTimeout: 3000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"soft toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Admin Login' })\u001b[22m\n\n\n  90 |         await expect.soft(page.getByRole(\"heading\", { name: \"EShop Admin\" })).toBeVisible({ timeout: 3_000 });\n  91 |       } else {\n> 92 |         await expect.soft(page.getByRole(\"heading\", { name: \"Admin Login\" })).toBeVisible({ timeout: 3_000 });\n     |                                                                               ^\n  93 |       }\n  94 |     });\n  95 |   }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:92:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-03",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:56:24.818Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bdc6e-gular-user-product-creation-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bdc6e-gular-user-product-creation-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bdc6e-gular-user-product-creation-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bdc6e-gular-user-product-creation-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 72
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-6559018c3ed0ee72b237",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-10 [high] admin POST /products: allow admin product creation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 919,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-12-02",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:56:30.852Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-c82a6e7f0b4098b18f11",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-11 [high] none PUT /products/999999: reject anonymous product update",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 712,
+                      "error": {
+                        "message": "Error: PUT /products/999999: {\"message\":\"Product updated\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m401\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: PUT /products/999999: {\"message\":\"Product updated\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m401\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 72
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         }\n \u001b[90m 71 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 72
+                          },
+                          "message": "Error: PUT /products/999999: {\"message\":\"Product updated\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m401\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  70 |         }\n  71 |\n> 72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 58,
+                            "line": 74
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|unauthorized|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"{\\\"message\\\":\\\"Product updated\\\"}\"\u001b[39m\n\n  72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n> 74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n     |                                                          ^\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n  76 |           expect.soft(Array.isArray(JSON.parse(text))).toBe(true);\n  77 |         }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:74:58"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-01",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:56:32.267Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--1b3ac-ct-anonymous-product-update-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--1b3ac-ct-anonymous-product-update-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--1b3ac-ct-anonymous-product-update-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--1b3ac-ct-anonymous-product-update-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 72
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-0fe67277e96a5de312e3",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-12 [high] user DELETE /products/999999: reject regular user product deletion",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4073,
+                      "error": {
+                        "message": "Error: DELETE /products/999999: {\"message\":\"Product deleted\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: DELETE /products/999999: {\"message\":\"Product deleted\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 72
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         }\n \u001b[90m 71 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 72
+                          },
+                          "message": "Error: DELETE /products/999999: {\"message\":\"Product deleted\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  70 |         }\n  71 |\n> 72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 58,
+                            "line": 74
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|unauthorized|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"{\\\"message\\\":\\\"Product deleted\\\"}\"\u001b[39m\n\n  72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n> 74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n     |                                                          ^\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n  76 |           expect.soft(Array.isArray(JSON.parse(text))).toBe(true);\n  77 |         }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:74:58"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 79,
+                            "line": 92
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: 'Admin Login' })\nExpected: visible\nTimeout: 3000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"soft toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Admin Login' })\u001b[22m\n\n\n  90 |         await expect.soft(page.getByRole(\"heading\", { name: \"EShop Admin\" })).toBeVisible({ timeout: 3_000 });\n  91 |       } else {\n> 92 |         await expect.soft(page.getByRole(\"heading\", { name: \"Admin Login\" })).toBeVisible({ timeout: 3_000 });\n     |                                                                               ^\n  93 |       }\n  94 |     });\n  95 |   }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:92:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-03",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:56:34.427Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bae0e-gular-user-product-deletion-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bae0e-gular-user-product-deletion-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bae0e-gular-user-product-deletion-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bae0e-gular-user-product-deletion-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 72
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-f8521b691ae791c633cd",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-13 [high] none POST /categories: reject anonymous category creation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 860,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-01",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:56:40.383Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-706463ae259014d4c01c",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-14 [high] user POST /categories: reject regular user category creation",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4208,
+                      "error": {
+                        "message": "Error: POST /categories: {\"message\":\"Category created\",\"id\":4}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: POST /categories: {\"message\":\"Category created\",\"id\":4}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 72
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         }\n \u001b[90m 71 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 72
+                          },
+                          "message": "Error: POST /categories: {\"message\":\"Category created\",\"id\":4}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  70 |         }\n  71 |\n> 72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 58,
+                            "line": 74
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|unauthorized|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"{\\\"message\\\":\\\"Category created\\\",\\\"id\\\":4}\"\u001b[39m\n\n  72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n> 74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n     |                                                          ^\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n  76 |           expect.soft(Array.isArray(JSON.parse(text))).toBe(true);\n  77 |         }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:74:58"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 79,
+                            "line": 92
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: 'Admin Login' })\nExpected: visible\nTimeout: 3000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"soft toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Admin Login' })\u001b[22m\n\n\n  90 |         await expect.soft(page.getByRole(\"heading\", { name: \"EShop Admin\" })).toBeVisible({ timeout: 3_000 });\n  91 |       } else {\n> 92 |         await expect.soft(page.getByRole(\"heading\", { name: \"Admin Login\" })).toBeVisible({ timeout: 3_000 });\n     |                                                                               ^\n  93 |       }\n  94 |     });\n  95 |   }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:92:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-03",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:56:41.720Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--5aa0a-ular-user-category-creation-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--5aa0a-ular-user-category-creation-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--5aa0a-ular-user-category-creation-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--5aa0a-ular-user-category-creation-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 72
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-e65c16241c081e379043",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-15 [high] admin POST /categories: allow admin category creation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 870,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-12-02",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:56:47.344Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-e7afb0ee32e3a2ab0325",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-16 [high] none POST /admin/coupons: reject anonymous coupon creation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 628,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-01",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:56:48.702Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-1ec28860515fbb30ae46",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-17 [high] user POST /admin/coupons: reject regular user coupon creation",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4180,
+                      "error": {
+                        "message": "Error: POST /admin/coupons: {\"message\":\"Coupon created\",\"id\":5}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: POST /admin/coupons: {\"message\":\"Coupon created\",\"id\":5}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 72
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         }\n \u001b[90m 71 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 72
+                          },
+                          "message": "Error: POST /admin/coupons: {\"message\":\"Coupon created\",\"id\":5}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  70 |         }\n  71 |\n> 72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 58,
+                            "line": 74
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|unauthorized|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"{\\\"message\\\":\\\"Coupon created\\\",\\\"id\\\":5}\"\u001b[39m\n\n  72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n> 74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n     |                                                          ^\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n  76 |           expect.soft(Array.isArray(JSON.parse(text))).toBe(true);\n  77 |         }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:74:58"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 79,
+                            "line": 92
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: 'Admin Login' })\nExpected: visible\nTimeout: 3000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"soft toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Admin Login' })\u001b[22m\n\n\n  90 |         await expect.soft(page.getByRole(\"heading\", { name: \"EShop Admin\" })).toBeVisible({ timeout: 3_000 });\n  91 |       } else {\n> 92 |         await expect.soft(page.getByRole(\"heading\", { name: \"Admin Login\" })).toBeVisible({ timeout: 3_000 });\n     |                                                                               ^\n  93 |       }\n  94 |     });\n  95 |   }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:92:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-03",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:56:49.343Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--686db-egular-user-coupon-creation-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--686db-egular-user-coupon-creation-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--686db-egular-user-coupon-creation-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--686db-egular-user-coupon-creation-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 72
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-86540489c8e40afcf1cd",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-18 [high] admin POST /admin/coupons: allow admin coupon creation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 893,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-12-01",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:56:54.932Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-4a239cb415cf654b0b25",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-19 [high] user POST /admin/import-products: reject regular user access to admin import",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4169,
+                      "error": {
+                        "message": "Error: POST /admin/import-products: {\"error\":\"Không có dữ liệu để import\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m400\u001b[39m",
+                        "stack": "Error: POST /admin/import-products: {\"error\":\"Không có dữ liệu để import\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m400\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 72
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         }\n \u001b[90m 71 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 72
+                          },
+                          "message": "Error: POST /admin/import-products: {\"error\":\"Không có dữ liệu để import\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m400\u001b[39m\n\n  70 |         }\n  71 |\n> 72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 79,
+                            "line": 92
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: 'Admin Login' })\nExpected: visible\nTimeout: 3000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"soft toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Admin Login' })\u001b[22m\n\n\n  90 |         await expect.soft(page.getByRole(\"heading\", { name: \"EShop Admin\" })).toBeVisible({ timeout: 3_000 });\n  91 |       } else {\n> 92 |         await expect.soft(page.getByRole(\"heading\", { name: \"Admin Login\" })).toBeVisible({ timeout: 3_000 });\n     |                                                                               ^\n  93 |       }\n  94 |     });\n  95 |   }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:92:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-03",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T09:56:56.274Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--21126-user-access-to-admin-import-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--21126-user-access-to-admin-import-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--21126-user-access-to-admin-import-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--21126-user-access-to-admin-import-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 72
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-e35d9ee56d0336cd38cb",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-08-09T09:56:04.573Z",
+    "duration": 56647.524,
+    "expected": 10,
+    "skipped": 0,
+    "unexpected": 9,
+    "flaky": 0
+  }
+}

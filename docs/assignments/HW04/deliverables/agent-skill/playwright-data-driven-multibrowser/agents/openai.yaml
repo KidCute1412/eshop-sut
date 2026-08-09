@@ -1,0 +1,4 @@
+interface:
+  display_name: "Playwright Data-Driven Multibrowser"
+  short_description: "Build data-driven tests across Playwright browsers"
+  default_prompt: "Use $playwright-data-driven-multibrowser to build and validate a data-driven Playwright suite across three browser projects."

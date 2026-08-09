@@ -1,0 +1,1359 @@
+{
+  "config": {
+    "configFile": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\playwright.config.ts",
+    "rootDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "Run by": "23127404",
+      "Run timestamp": "2026-08-09T10:18:54.806Z",
+      "Feature": "fr12",
+      "Browser": "firefox",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\reports\\fr12-firefox-2026-08-09T10-18-54-806Z",
+          "open": "never",
+          "title": "HW04 fr12 firefox | Run by: 23127404 | 2026-08-09T10:18:54.806Z"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\reports\\fr12-firefox-2026-08-09T10-18-54-806Z\\results.json"
+        }
+      ],
+      [
+        "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\src\\reporters\\run-metadata-reporter.ts",
+        {
+          "reportDir": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\reports\\fr12-firefox-2026-08-09T10-18-54-806Z",
+          "studentId": "23127404",
+          "runTimestamp": "2026-08-09T10:18:54.806Z",
+          "feature": "fr12",
+          "browser": "firefox"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127404",
+          "Run timestamp": "2026-08-09T10:18:54.806Z",
+          "Feature": "fr12",
+          "Browser": "firefox",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127404",
+          "Run timestamp": "2026-08-09T10:18:54.806Z",
+          "Feature": "fr12",
+          "Browser": "firefox",
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Run by": "23127404",
+          "Run timestamp": "2026-08-09T10:18:54.806Z",
+          "Feature": "fr12",
+          "Browser": "firefox",
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/HCMUS/Third Year/Software Testing/eshop-sut/docs/assignments/HW04/deliverables/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.55.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "fr12-access-control.spec.ts",
+      "file": "fr12-access-control.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "FR-12 Access Control",
+          "file": "fr12-access-control.spec.ts",
+          "line": 34,
+          "column": 6,
+          "specs": [
+            {
+              "title": "FR12-01 [high] none GET /admin/users: reject anonymous admin user listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4087,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-01",
+                          "duration": 2
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:18:57.522Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-cad6b6d1b8459ff7f103",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-02 [high] malformed GET /admin/users: reject malformed JWT on admin user listing",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30054,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m"
+                        },
+                        {
+                          "message": "Error: browserContext.newPage: Test timeout of 30000ms exceeded."
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T10:19:02.599Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--2d80c-d-JWT-on-admin-user-listing-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-5db54091d0ccf8c9cbfe",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-03 [high] user GET /admin/users: reject regular user JWT on admin user listing",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6442,
+                      "error": {
+                        "message": "Error: GET /admin/users: [{\"id\":1,\"name\":\"Admin User\",\"email\":\"admin@eshop.com\",\"role\":\"admin\",\"login_attempts\":0,\"locked_until\":null,\"shipping_address\":null},{\"id\":2,\"name\":\"Test User\",\"email\":\"test@eshop.com\",\"role\":\"user\",\"login_attempts\":0,\"locked_until\":null,\"shipping_address\":null}]\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: GET /admin/users: [{\"id\":1,\"name\":\"Admin User\",\"email\":\"admin@eshop.com\",\"role\":\"admin\",\"login_attempts\":0,\"locked_until\":null,\"shipping_address\":null},{\"id\":2,\"name\":\"Test User\",\"email\":\"test@eshop.com\",\"role\":\"user\",\"login_attempts\":0,\"locked_until\":null,\"shipping_address\":null}]\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 72
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         }\n \u001b[90m 71 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 72
+                          },
+                          "message": "Error: GET /admin/users: [{\"id\":1,\"name\":\"Admin User\",\"email\":\"admin@eshop.com\",\"role\":\"admin\",\"login_attempts\":0,\"locked_until\":null,\"shipping_address\":null},{\"id\":2,\"name\":\"Test User\",\"email\":\"test@eshop.com\",\"role\":\"user\",\"login_attempts\":0,\"locked_until\":null,\"shipping_address\":null}]\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  70 |         }\n  71 |\n> 72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 58,
+                            "line": 74
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|unauthorized|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"[{\\\"id\\\":1,\\\"name\\\":\\\"Admin User\\\",\\\"email\\\":\\\"admin@eshop.com\\\",\\\"role\\\":\\\"admin\\\",\\\"login_attempts\\\":0,\\\"locked_until\\\":null,\\\"shipping_address\\\":null},{\\\"id\\\":2,\\\"name\\\":\\\"Test User\\\",\\\"email\\\":\\\"test@eshop.com\\\",\\\"role\\\":\\\"user\\\",\\\"login_attempts\\\":0,\\\"locked_until\\\":null,\\\"shipping_address\\\":null}]\"\u001b[39m\n\n  72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n> 74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n     |                                                          ^\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n  76 |           expect.soft(Array.isArray(JSON.parse(text))).toBe(true);\n  77 |         }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:74:58"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 79,
+                            "line": 92
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  getByRole('heading', { name: 'Admin Login' })\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  3000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Admin Login' })\u001b[22m\n\n\n  90 |         await expect.soft(page.getByRole(\"heading\", { name: \"EShop Admin\" })).toBeVisible({ timeout: 3_000 });\n  91 |       } else {\n> 92 |         await expect.soft(page.getByRole(\"heading\", { name: \"Admin Login\" })).toBeVisible({ timeout: 3_000 });\n     |                                                                               ^\n  93 |       }\n  94 |     });\n  95 |   }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:92:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-03",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:19:34.761Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--d9537-r-JWT-on-admin-user-listing-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--d9537-r-JWT-on-admin-user-listing-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--d9537-r-JWT-on-admin-user-listing-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--d9537-r-JWT-on-admin-user-listing-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 72
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-202368ecd9441a9995f8",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-04 [high] admin GET /admin/users: allow admin JWT on admin user listing",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30051,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m"
+                        },
+                        {
+                          "message": "Error: browserContext.newPage: Test timeout of 30000ms exceeded."
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T10:19:44.460Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--3d102-n-JWT-on-admin-user-listing-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-7655bbd85ac496773552",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-05 [high] none GET /admin/orders: reject anonymous admin order listing",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30059,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m"
+                        },
+                        {
+                          "message": "Error: browserContext.newPage: Test timeout of 30000ms exceeded."
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T10:20:17.328Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--402b4-onymous-admin-order-listing-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-3cf3fbd232c50d990cae",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-06 [high] user GET /admin/orders: reject regular user JWT on admin order listing",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6246,
+                      "error": {
+                        "message": "Error: GET /admin/orders: []\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: GET /admin/orders: []\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 72
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         }\n \u001b[90m 71 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 72
+                          },
+                          "message": "Error: GET /admin/orders: []\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  70 |         }\n  71 |\n> 72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 58,
+                            "line": 74
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|unauthorized|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"[]\"\u001b[39m\n\n  72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n> 74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n     |                                                          ^\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n  76 |           expect.soft(Array.isArray(JSON.parse(text))).toBe(true);\n  77 |         }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:74:58"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 79,
+                            "line": 92
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  getByRole('heading', { name: 'Admin Login' })\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  3000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Admin Login' })\u001b[22m\n\n\n  90 |         await expect.soft(page.getByRole(\"heading\", { name: \"EShop Admin\" })).toBeVisible({ timeout: 3_000 });\n  91 |       } else {\n> 92 |         await expect.soft(page.getByRole(\"heading\", { name: \"Admin Login\" })).toBeVisible({ timeout: 3_000 });\n     |                                                                               ^\n  93 |       }\n  94 |     });\n  95 |   }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:92:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-03",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:20:50.138Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--95cdb--JWT-on-admin-order-listing-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--95cdb--JWT-on-admin-order-listing-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--95cdb--JWT-on-admin-order-listing-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--95cdb--JWT-on-admin-order-listing-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 72
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-62747147d4c015980889",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-07 [high] admin GET /admin/orders: allow admin JWT on admin order listing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3703,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-12-01",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:20:59.626Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-5dad066fae93fd6a26f7",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-08 [high] none POST /products: reject anonymous product creation",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30041,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m"
+                        },
+                        {
+                          "message": "Error: browserContext.newPage: Test timeout of 30000ms exceeded."
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T10:21:04.264Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--2260b--anonymous-product-creation-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-beb0920ccd5ec9e1e948",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-09 [high] user POST /products: reject regular user product creation",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6374,
+                      "error": {
+                        "message": "Error: POST /products: {\"message\":\"Product created\",\"id\":6}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: POST /products: {\"message\":\"Product created\",\"id\":6}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 72
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         }\n \u001b[90m 71 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 72
+                          },
+                          "message": "Error: POST /products: {\"message\":\"Product created\",\"id\":6}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  70 |         }\n  71 |\n> 72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 58,
+                            "line": 74
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|unauthorized|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"{\\\"message\\\":\\\"Product created\\\",\\\"id\\\":6}\"\u001b[39m\n\n  72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n> 74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n     |                                                          ^\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n  76 |           expect.soft(Array.isArray(JSON.parse(text))).toBe(true);\n  77 |         }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:74:58"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 79,
+                            "line": 92
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  getByRole('heading', { name: 'Admin Login' })\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  3000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Admin Login' })\u001b[22m\n\n\n  90 |         await expect.soft(page.getByRole(\"heading\", { name: \"EShop Admin\" })).toBeVisible({ timeout: 3_000 });\n  91 |       } else {\n> 92 |         await expect.soft(page.getByRole(\"heading\", { name: \"Admin Login\" })).toBeVisible({ timeout: 3_000 });\n     |                                                                               ^\n  93 |       }\n  94 |     });\n  95 |   }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:92:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-03",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:21:36.415Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bdc6e-gular-user-product-creation-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bdc6e-gular-user-product-creation-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bdc6e-gular-user-product-creation-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bdc6e-gular-user-product-creation-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 72
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-8b42e1c83298f430791b",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-10 [high] admin POST /products: allow admin product creation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3830,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-12-02",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:21:45.904Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-8809d874ec46b4088cd7",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-11 [high] none PUT /products/999999: reject anonymous product update",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30058,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m"
+                        },
+                        {
+                          "message": "Error: browserContext.newPage: Test timeout of 30000ms exceeded."
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T10:21:50.589Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--1b3ac-ct-anonymous-product-update-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-e2df48c60650cedf2676",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-12 [high] user DELETE /products/999999: reject regular user product deletion",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6168,
+                      "error": {
+                        "message": "Error: DELETE /products/999999: {\"message\":\"Product deleted\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: DELETE /products/999999: {\"message\":\"Product deleted\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 72
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         }\n \u001b[90m 71 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 72
+                          },
+                          "message": "Error: DELETE /products/999999: {\"message\":\"Product deleted\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  70 |         }\n  71 |\n> 72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 58,
+                            "line": 74
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|unauthorized|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"{\\\"message\\\":\\\"Product deleted\\\"}\"\u001b[39m\n\n  72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n> 74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n     |                                                          ^\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n  76 |           expect.soft(Array.isArray(JSON.parse(text))).toBe(true);\n  77 |         }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:74:58"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 79,
+                            "line": 92
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  getByRole('heading', { name: 'Admin Login' })\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  3000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Admin Login' })\u001b[22m\n\n\n  90 |         await expect.soft(page.getByRole(\"heading\", { name: \"EShop Admin\" })).toBeVisible({ timeout: 3_000 });\n  91 |       } else {\n> 92 |         await expect.soft(page.getByRole(\"heading\", { name: \"Admin Login\" })).toBeVisible({ timeout: 3_000 });\n     |                                                                               ^\n  93 |       }\n  94 |     });\n  95 |   }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:92:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-03",
+                          "duration": 2
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:22:22.844Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bae0e-gular-user-product-deletion-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bae0e-gular-user-product-deletion-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bae0e-gular-user-product-deletion-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--bae0e-gular-user-product-deletion-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 72
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-ef9c42099695269ab76a",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-13 [high] none POST /categories: reject anonymous category creation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3443,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-01",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:22:32.245Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-557ede6738160fc8d901",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-14 [high] user POST /categories: reject regular user category creation",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30048,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m"
+                        },
+                        {
+                          "message": "Error: browserContext.newPage: Test timeout of 30000ms exceeded."
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T10:22:36.542Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--5aa0a-ular-user-category-creation-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-f8b6f6ba92448602bd1d",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-15 [high] admin POST /categories: allow admin category creation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3831,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-VAL-12-02",
+                          "duration": 0
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:23:08.693Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-741d75b6da48a2930709",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-16 [high] none POST /admin/coupons: reject anonymous coupon creation",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30053,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m"
+                        },
+                        {
+                          "message": "Error: browserContext.newPage: Test timeout of 30000ms exceeded."
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T10:23:13.442Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--b981e-t-anonymous-coupon-creation-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-93eb77d2cb513179f38b",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-17 [high] user POST /admin/coupons: reject regular user coupon creation",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6019,
+                      "error": {
+                        "message": "Error: POST /admin/coupons: {\"message\":\"Coupon created\",\"id\":5}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m",
+                        "stack": "Error: POST /admin/coupons: {\"message\":\"Coupon created\",\"id\":5}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 72
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         }\n \u001b[90m 71 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 72
+                          },
+                          "message": "Error: POST /admin/coupons: {\"message\":\"Coupon created\",\"id\":5}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m200\u001b[39m\n\n  70 |         }\n  71 |\n> 72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 58,
+                            "line": 74
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: \u001b[32m/error|unauthorized|forbidden/i\u001b[39m\nReceived string:  \u001b[31m\"{\\\"message\\\":\\\"Coupon created\\\",\\\"id\\\":5}\"\u001b[39m\n\n  72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n> 74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n     |                                                          ^\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n  76 |           expect.soft(Array.isArray(JSON.parse(text))).toBe(true);\n  77 |         }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:74:58"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 79,
+                            "line": 92
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  getByRole('heading', { name: 'Admin Login' })\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  3000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Admin Login' })\u001b[22m\n\n\n  90 |         await expect.soft(page.getByRole(\"heading\", { name: \"EShop Admin\" })).toBeVisible({ timeout: 3_000 });\n  91 |       } else {\n> 92 |         await expect.soft(page.getByRole(\"heading\", { name: \"Admin Login\" })).toBeVisible({ timeout: 3_000 });\n     |                                                                               ^\n  93 |       }\n  94 |     });\n  95 |   }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:92:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-03",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:23:45.559Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--686db-egular-user-coupon-creation-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--686db-egular-user-coupon-creation-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--686db-egular-user-coupon-creation-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--686db-egular-user-coupon-creation-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 72
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-cdddd65b9d343b2b3664",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-18 [high] admin POST /admin/coupons: allow admin coupon creation",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30048,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded while setting up \"page\".\u001b[39m"
+                        },
+                        {
+                          "message": "Error: browserContext.newPage: Test timeout of 30000ms exceeded."
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-09T10:23:54.688Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--95434-allow-admin-coupon-creation-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-0d3641c95bb2fa0e4d11",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            },
+            {
+              "title": "FR12-19 [high] user POST /admin/import-products: reject regular user access to admin import",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5925,
+                      "error": {
+                        "message": "Error: POST /admin/import-products: {\"error\":\"Không có dữ liệu để import\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m400\u001b[39m",
+                        "stack": "Error: POST /admin/import-products: {\"error\":\"Không có dữ liệu để import\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m400\u001b[39m\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78",
+                        "location": {
+                          "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                          "column": 78,
+                          "line": 72
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m         }\n \u001b[90m 71 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${row.method} ${row.path}: ${text}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(row\u001b[33m.\u001b[39mexpectedStatus)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(response\u001b[33m.\u001b[39mheaders()[\u001b[32m\"content-type\"\u001b[39m])\u001b[33m.\u001b[39mtoContain(\u001b[32m\"application/json\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m>=\u001b[39m \u001b[35m400\u001b[39m) expect\u001b[33m.\u001b[39msoft(text)\u001b[33m.\u001b[39mtoMatch(\u001b[35m/error|unauthorized|forbidden/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m         \u001b[36mif\u001b[39m (row\u001b[33m.\u001b[39mexpectedStatus \u001b[33m===\u001b[39m \u001b[35m200\u001b[39m \u001b[33m&&\u001b[39m row\u001b[33m.\u001b[39mmethod \u001b[33m===\u001b[39m \u001b[32m\"GET\"\u001b[39m) {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 78,
+                            "line": 72
+                          },
+                          "message": "Error: POST /admin/import-products: {\"error\":\"Không có dữ liệu để import\"}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m403\u001b[39m\nReceived: \u001b[31m400\u001b[39m\n\n  70 |         }\n  71 |\n> 72 |         expect.soft(response.status(), `${row.method} ${row.path}: ${text}`).toBe(row.expectedStatus);\n     |                                                                              ^\n  73 |         expect.soft(response.headers()[\"content-type\"]).toContain(\"application/json\");\n  74 |         if (row.expectedStatus >= 400) expect.soft(text).toMatch(/error|unauthorized|forbidden/i);\n  75 |         if (row.expectedStatus === 200 && row.method === \"GET\") {\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:72:78"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                            "column": 79,
+                            "line": 92
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  getByRole('heading', { name: 'Admin Login' })\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  3000ms\n\nCall log:\n\u001b[2m  - Expect \"soft toBeVisible\" with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Admin Login' })\u001b[22m\n\n\n  90 |         await expect.soft(page.getByRole(\"heading\", { name: \"EShop Admin\" })).toBeVisible({ timeout: 3_000 });\n  91 |       } else {\n> 92 |         await expect.soft(page.getByRole(\"heading\", { name: \"Admin Login\" })).toBeVisible({ timeout: 3_000 });\n     |                                                                               ^\n  93 |       }\n  94 |     });\n  95 |   }\n    at D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts:92:79"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Traceability: EP-INV-12-03",
+                          "duration": 1
+                        }
+                      ],
+                      "startTime": "2026-08-09T10:24:27.487Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--21126-user-access-to-admin-import-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--21126-user-access-to-admin-import-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--21126-user-access-to-admin-import-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\test-results\\fr12-access-control-FR-12--21126-user-access-to-admin-import-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\HCMUS\\Third Year\\Software Testing\\eshop-sut\\docs\\assignments\\HW04\\deliverables\\automation\\tests\\fr12-access-control.spec.ts",
+                        "column": 78,
+                        "line": 72
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ca8557f1899db2cf01b5-af1664a6fcd73df7e4d0",
+              "file": "fr12-access-control.spec.ts",
+              "line": 47,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-08-09T10:18:56.273Z",
+    "duration": 339083.859,
+    "expected": 5,
+    "skipped": 0,
+    "unexpected": 14,
+    "flaky": 0
+  }
+}

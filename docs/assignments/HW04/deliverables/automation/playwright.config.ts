@@ -50,9 +50,9 @@ export default defineConfig({
     {
       name: "firefox",
       // On the assignment Windows image, Playwright Firefox launches in
-      // headless mode but fails before newPage(). Headful mode is stable and
-      // still exercises the same browser engine, so keep this explicit and
-      // document it in the execution evidence.
+      // headless mode but fails before newPage(). A minimal headful smoke
+      // check succeeds, although full runs remain intermittently affected by
+      // page-fixture timeouts; preserve and classify those outcomes honestly.
       use: { ...devices["Desktop Firefox"], headless: false },
     },
     { name: "webkit", use: { ...devices["Desktop Safari"] } },
