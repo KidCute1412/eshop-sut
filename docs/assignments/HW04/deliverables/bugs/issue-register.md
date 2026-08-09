@@ -1,5 +1,9 @@
 # HW04 GitHub Issue Register
 
+> **Generated reconciliation index.** `bug_report.md` is the single source of truth for detailed defect entries,
+> screenshots, dispositions, and Issue URLs. The student should not maintain the same URL twice: update
+> `bug_report.md` once, then ask the automation agent to refresh this index before packaging.
+
 ## Current status
 
 The final reports contain assertion failures in 19 unique logical cases. They are registered below as runtime-observed candidates, not as 19 deduplicated defects. No verified public HW04 Issue URL or public Issue screenshot has been supplied.
@@ -41,6 +45,9 @@ Current verified public HW04 Issue count: **0**.
 7. If a candidate is rejected, preserve the disposition (`test defect`, `data defect`, `environment defect`, `duplicate`, or `not reproducible`) without inflating the defect count.
 
 ## Final Issue mapping template
+
+The agent copies the final mapping from the canonical entries in `bug_report.md`. This table is retained in the
+submission because it lets a reviewer audit candidate-to-defect deduplication without reading every narrative.
 
 | Defect ID | Candidate/case IDs | Root behavior | Run IDs | Evidence paths | Reproduction | Severity | Public Issue URL | Attachment verified | Disposition |
 |---|---|---|---|---|---|---|---|---|---|

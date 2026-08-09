@@ -1,5 +1,9 @@
 # HW04 Runtime Failure and Defect-Candidate Report
 
+> **Canonical defect-entry file.** After a candidate is verified and filed, update this file only. Record the
+> deduplicated defect ID, Issue URL, screenshot path, and disposition here; `issue-register.md` is the compact
+> reconciliation index and should be refreshed from this file by the automation agent.
+
 ## Evidence status
 
 The nine selected final runs scheduled 153 browser cases: all 153 reached assertions (96 passed and 57 assertion-failed). The final Firefox configuration produced no page-fixture failures.
