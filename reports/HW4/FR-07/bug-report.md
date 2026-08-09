@@ -1,12 +1,5 @@
 # Bug Report - FR-07
 
-Latest FR-07 multi-browser execution:
-
-- Command: `HW4_SKIP_WEBSERVER=1 WEB_BASE_URL=http://127.0.0.1:5176 npx playwright test FR-07/tests/fr-07-cart.spec.js --timeout=30000`
-- Browser executions: 42
-- Passed: 21
-- Failed: 21
-
 ## BUG-HW04-FR07-001 - Duplicate product creates separate cart rows
 
 - Affected tests: `FR07-DT-004` on Chromium, Firefox, and WebKit

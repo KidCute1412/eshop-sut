@@ -40,7 +40,7 @@ module.exports = defineConfig({
     [
       "html",
       {
-        outputFolder: `reports/html-${STUDENT_ID}`,
+        outputFolder: `reports`,
         open: "never",
         title: `Run by: ${STUDENT_ID} - ${runStamp}`
       }
@@ -48,9 +48,9 @@ module.exports = defineConfig({
   ],
   use: {
     baseURL: process.env.WEB_BASE_URL || "http://localhost:5173",
-    trace: "retain-on-failure",
-    screenshot: "only-on-failure",
-    video: "retain-on-failure"
+    trace: "on",
+    screenshot: "on",
+    video: "on"
   },
   projects: [
     { name: "chromium", use: { ...devices["Desktop Chrome"] } },

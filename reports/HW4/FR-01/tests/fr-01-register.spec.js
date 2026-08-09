@@ -46,7 +46,7 @@ test.describe("FR-01 Account registration", () => {
         expect(response && response.ok()).toBeTruthy();
         await expect(page).toHaveURL(/\/login$/);
       }
-
+      
       if (data.expected === "password_error") {
         await expect(page.locator("[class*='bg-red']").first()).toBeVisible();
         await expect(page).toHaveURL(/\/register$/);

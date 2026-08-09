@@ -4,7 +4,7 @@ const { spawnSync } = require("child_process");
 
 const studentId = process.env.STUDENT_ID || "23127539";
 const stamp = `Run by: ${studentId} - ${new Date().toISOString()}`;
-const reportDir = path.join(__dirname, "..", "reports", `html-${studentId}`);
+const reportDir = path.join(__dirname, "..", "reports");
 
 const playwrightArgs = ["playwright", "test", ...process.argv.slice(2)];
 const command = process.platform === "win32" ? "cmd.exe" : "npx";
