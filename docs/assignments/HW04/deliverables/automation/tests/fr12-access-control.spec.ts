@@ -44,7 +44,7 @@ test.describe("FR-12 Access Control", () => {
   });
 
   for (const row of cases) {
-    test(`${row.id} [${row.priority}] ${row.auth} ${row.method} ${row.path}: ${row.title}`, async ({ page, request }) => {
+    test(`${row.id} [${row.priority}] ${row.auth} ${row.method} ${row.path}: ${row.title}`, async ({ page, request }, testInfo) => {
       await test.step(`Traceability: ${row.partition.join(", ")}`, async () => {});
       const token = tokenFor(row.auth, adminToken, userToken);
       let response: APIResponse | undefined;
@@ -62,6 +62,10 @@ test.describe("FR-12 Access Control", () => {
         });
 
         const text = await response.text();
+        await testInfo.attach(`${row.id}-api-response.json`, {
+          body: Buffer.from(text, "utf8"),
+          contentType: response.headers()["content-type"] ?? "application/json",
+        });
         try {
           const body = JSON.parse(text) as { id?: number };
           createdId = body.id;
