@@ -18,7 +18,7 @@ archive.pipe(output);
 archive.glob("**/*", {
   cwd: process.cwd(),
   dot: true,
-  ignore: ["node_modules/**", "test-results/**", "reports/**", "dist/**"],
+  ignore: ["node_modules/**", "test-results/**", "reports/**", "dist/**", "**/*.log"],
 });
 await archive.finalize();
 await finished;
