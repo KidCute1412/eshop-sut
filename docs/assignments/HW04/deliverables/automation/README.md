@@ -65,4 +65,6 @@ FR-10 creates uniquely identified orders because the SUT has no order-delete API
 - `scripts/export-git-log.mjs`: exports committed `.spec.ts` history; it refuses to invent an empty history.
 - `scripts/package-source.mjs`: creates an automation-source-only convenience ZIP and excludes dependencies, runtime results, and selected submission reports.
 
+The final submission archive also omits generated per-test `.webm` captures and duplicated report trace-viewer bundles to remain below the Moodle 20 MB limit. HTML/JSON/metadata reports, screenshots, selected trace ZIPs, and all bug evidence remain included; omitted attachments are reproducible from the committed suite.
+
 After qualifying commits exist, use `npm run git:export`. `npm run package:source` creates `dist/23127404_HW04_Automation_Source.zip`; this is a source convenience archive, not the assignment's final self-assessed submission archive.

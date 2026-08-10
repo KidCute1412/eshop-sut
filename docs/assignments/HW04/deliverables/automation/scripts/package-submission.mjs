@@ -27,6 +27,8 @@ archive.glob("**/*", {
     "automation/test-results/**",
     "automation/dist/**",
     "automation/**/*.log",
+    "automation/reports/**/*.webm",
+    "automation/reports/**/trace/**",
     "*_HW04_AI_Automation_*.zip",
   ],
 });
