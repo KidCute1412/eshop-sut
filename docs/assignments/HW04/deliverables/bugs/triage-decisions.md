@@ -1,6 +1,6 @@
 # HW04 Agent Triage Decisions
 
-Generated from fresh candidate reruns at revision `6b884900be153b5af78a4865c9cca98cedcd9fc9`. The agent classified each candidate using the requirement oracle, runtime result, and test-design audit. The 17 confirmed rows now map to the public Issue URLs in `bug_report.md` and `issue-register.md`.
+Generated from fresh candidate reruns at revision `6b884900be153b5af78a4865c9cca98cedcd9fc9`. This is the candidate-evidence rerun revision; the selected nine-run matrix reports retain their own exact revisions in `automation/reports/*/run-metadata.json`. The agent classified each candidate using the requirement oracle, runtime result, and test-design audit. The 17 confirmed rows now map to the public Issue URLs in `bug_report.md` and `issue-register.md`.
 
 | Candidate | Case | Decision | Defect | Rationale | Screenshot |
 |---|---|---|---|---|---|

@@ -1,6 +1,6 @@
 # HW04 Bug Evidence Workflow
 
-`bug_report.md` is the only file that requires manual URL entry. Agent triage and evidence are already prepared:
+All 17 public Issue URLs are currently recorded. Perform the final logged-out URL and attachment check before packaging. Agent triage and evidence are already prepared:
 
 - `triage-decisions.md` — decision for all 19 candidates;
 - `evidence/HW04-CAND-###/` — authentic screenshot, trace, and metadata;

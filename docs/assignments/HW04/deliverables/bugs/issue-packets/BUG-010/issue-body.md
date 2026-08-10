@@ -1,8 +1,14 @@
-# [23127404][FR-12] Regular user JWT reads -api-admin-orders
+# [23127404][FR-12] Regular user JWT reads `/api/admin/orders`
 
 ## Summary
 
 Regular user JWT reads `/api/admin/orders`.
+
+Observed response excerpt (HTTP 200; order identifiers and addresses redacted):
+
+```json
+[{ "user_id": 2, "status": "delivered" }, { "user_id": 2, "status": "pending" }]
+```
 
 ## Affected requirements and cases
 
@@ -51,4 +57,4 @@ The failure was observed by the automated rerun; see the attached evidence metad
 
 ## Scope
 
-This Issue was prepared from the HW04 runtime candidate and should be filed only after confirming the attached evidence is visible and contains no sensitive data.
+This Issue has been filed from the HW04 runtime candidate. Before final packaging, confirm that the public Issue and its screenshot attachment are visible to a logged-out viewer and contain no sensitive data.

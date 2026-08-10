@@ -4,6 +4,12 @@
 
 Regular user JWT creates an admin coupon.
 
+Observed response (HTTP 200):
+
+```json
+{ "message": "Coupon created", "id": 7 }
+```
+
 ## Affected requirements and cases
 
 - Requirement: FR-12
@@ -51,4 +57,4 @@ The failure was observed by the automated rerun; see the attached evidence metad
 
 ## Scope
 
-This Issue was prepared from the HW04 runtime candidate and should be filed only after confirming the attached evidence is visible and contains no sensitive data.
+This Issue has been filed from the HW04 runtime candidate. Before final packaging, confirm that the public Issue and its screenshot attachment are visible to a logged-out viewer and contain no sensitive data.
