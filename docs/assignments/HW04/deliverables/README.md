@@ -52,7 +52,7 @@ The selected final report set is listed in `supporting-materials/execution_manif
 
 ## Critical compliance disclosure
 
-The exported full HW04 history contains nine qualifying `.spec.ts` commits: legacy `f905546` on 27 July 2026 and eight deliverables-suite commits ending at `aa316e0` on 9 August 2026. The count requirement is met, but the history spans only two calendar days, so the separate four-day requirement remains **not satisfied**. Documentation changes do not count, and no history has been invented or backdated. See `git/23127404_HW04_git_commit_log.txt`.
+The exported log contains the complete current-branch HW04 history (25 commits touching `docs/assignments/HW04`) plus a separate qualifying section with nine commits that touch HW04 Playwright `.spec.ts` files. The qualifying count requirement is met, but those commits span only two calendar days, so the separate four-day requirement remains **not satisfied**. Documentation changes are retained in the complete-history section but do not count toward the qualifying total. No history has been invented or backdated. See `git/23127404_HW04_git_commit_log.txt`.
 
 ## Deliverable map
 
