@@ -166,8 +166,8 @@ The exported log in `../git/23127404_HW04_git_commit_log.txt` contains nine qual
 
 | Item | Requirement | Current status | Evidence |
 |---|---|---|---|
-| Main demo | Unlisted YouTube, at least 5 minutes, Vietnamese narration, end-to-end script, multi-browser run/report, one human fix, authorship evidence | Not recorded | `../video/demo_video.md` |
-| Agent Skill | Reusable data-driven multi-browser workflow plus separate end-to-end video | Source present; end-to-end validation/demo not verified | `../agent-skill/playwright-data-driven-multibrowser/`; `../video/agent_skill_demo.md` |
+| Main demo | Unlisted YouTube, at least 5 minutes, Vietnamese narration, end-to-end script, multi-browser run/report, one human fix, authorship evidence | URL supplied: https://youtu.be/Uz9ogf7fKFY | `../video/demo_video.md` |
+| Agent Skill | Reusable data-driven multi-browser workflow plus separate end-to-end video | URL supplied: https://youtu.be/PL3qLI-KcPE | `../agent-skill/playwright-data-driven-multibrowser/`; `../video/agent_skill_demo.md` |
 
 The Agent Skills assessment category is currently claimed as 0/10. Complete source exists, but this must change only after a valid end-to-end demonstration is recorded and verified.
 

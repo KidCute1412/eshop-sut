@@ -15,9 +15,9 @@
 | Execution source/SUT revision | Final Firefox rerun: `a390bc125713a1759443a4e84929641d432a45dc`; each report records its own exact revision |
 | Environment | Windows 10 Home Single Language, NT `10.0.26200.0`; Node.js 22.17.0; npm 10.9.2; Playwright 1.55.0 |
 | Browsers | Chromium 140.0.7339.16 headless; Firefox 141.0 headless; WebKit 26.0 headless |
-| Main demo video | **PENDING — unlisted YouTube URL not supplied** |
-| Agent Skill | Source present at `agent-skill/playwright-data-driven-multibrowser/`; structural validation and independent forward-use audit passed; video pending |
-| Agent Skill demo | **Not recorded; no URL supplied** |
+| Main demo video | https://youtu.be/Uz9ogf7fKFY (YouTube Unlisted) |
+| Agent Skill | Source present at `agent-skill/playwright-data-driven-multibrowser/`; demo video supplied |
+| Agent Skill demo | https://youtu.be/PL3qLI-KcPE (YouTube Unlisted) |
 
 ## Scope
 
@@ -46,7 +46,7 @@ This submission excludes Pool D/mobile. The requirement oracle is the repository
 | Separate final HTML/JSON/metadata report directories | 9 validated | Complete selected set under `automation/reports/` |
 | HW04 defects with verified public Issue URLs | 17 | BUG-001…BUG-017; rejected candidates excluded |
 | Qualifying test-script commits | 9 | Count met; two calendar days, so four-day span not met |
-| Main demo videos | 0 | 1 unlisted video, at least 5 minutes |
+| Main demo videos | 1 | 1 unlisted video, at least 5 minutes |
 
 The selected final report set is listed in `supporting-materials/execution_manifest.md`; `automation/reports/` now contains only those nine directories. All nine contain HTML, JSON, and metadata and passed the report validator. Firefox now runs headless with an option-free Playwright context; all 51 Firefox attempts reached test assertions. A legacy July report outside `deliverables/` remains historical input only and is not included in the totals above.
 
