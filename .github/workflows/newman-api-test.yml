@@ -26,20 +26,23 @@ jobs:
       - name: Start backend server
         working-directory: ./backend
         run: |
-          node server.js &
-          sleep 5
+          node server.js > server.log 2>&1 &
+          echo "Backend PID: $!"
+          sleep 8
+          cat server.log || true
 
       - name: Verify backend is running
         run: |
-          for i in {1..10}; do
+          for i in {1..15}; do
             if curl -s http://localhost:3000/api/products > /dev/null 2>&1; then
-              echo "Backend is ready"
+              echo "Backend is ready after attempt $i"
               exit 0
             fi
-            echo "Waiting for backend... attempt $i"
-            sleep 2
+            echo "Waiting for backend... attempt $i/15"
+            sleep 3
           done
-          echo "Backend failed to start"
+          echo "Backend failed to start after 15 attempts"
+          cat backend/server.log || true
           exit 1
 
       - name: Install Newman
