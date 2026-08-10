@@ -9,8 +9,8 @@
 | Class | `CSC13003_23KTPM3` (student-confirmed) |
 | Repository | https://github.com/KidCute1412/eshop-sut (student-confirmed public repository) |
 | Branch inspected | `23127404-LeTuanLoc` |
-| Report status | Nine-run execution evidence and defect/Issue/video artifacts reconciled; final timestamp and student sign-off pending |
-| Final submission timestamp | **PENDING — ISO 8601** |
+| Report status | Nine-run execution evidence and defect/Issue/video artifacts reconciled; submission timestamp recorded |
+| Final submission timestamp | `2026-08-10T10:40:00+07:00` (Vietnam time) |
 | Execution revision | Final Firefox rerun: `a390bc125713a1759443a4e84929641d432a45dc`; each selected report records its exact revision |
 
 ## Executive summary

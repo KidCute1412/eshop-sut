@@ -1,6 +1,6 @@
 # HW04 — AI-Assisted Automation Testing Submission
 
-> Submission status: **EXECUTION EVIDENCE, REPORT PDFs, BUG/ISSUE PACKETS, VIDEO LINKS, AND SOURCE PACKAGE ARE PREPARED; final submission remains pending timestamp, logged-out link checks, ZIP generation, and student sign-off.**
+> Submission status: **EXECUTION EVIDENCE, REPORT PDFs, BUG/ISSUE PACKETS, VIDEO LINKS, AND SOURCE PACKAGE ARE PREPARED; submission timestamp recorded, with logged-out link checks and student sign-off remaining.**
 
 ## Identity
 
@@ -11,7 +11,7 @@
 | Class | `CSC13003_23KTPM3` (student-confirmed) |
 | Repository | https://github.com/KidCute1412/eshop-sut (student-confirmed public repository) |
 | Working branch observed | `23127404-LeTuanLoc` |
-| Submission date/time | **PENDING — record final ISO 8601 submission time** |
+| Submission date/time | `2026-08-10T10:40:00+07:00` (Vietnam time) |
 | Execution source/SUT revision | Final Firefox rerun: `a390bc125713a1759443a4e84929641d432a45dc`; each report records its own exact revision |
 | Environment | Windows 10 Home Single Language, NT `10.0.26200.0`; Node.js 22.17.0; npm 10.9.2; Playwright 1.55.0 |
 | Browsers | Chromium 140.0.7339.16 headless; Firefox 141.0 headless; WebKit 26.0 headless |
