@@ -1,0 +1,22 @@
+{
+  "id": "TC08",
+  "requirement": "FR-11",
+  "objective": "Verify order status text is localized to Vietnamese and not empty.",
+  "preconditions": ["Frontend running at localhost:5173", "User has order history entries"],
+  "inputs": {
+    "url": "http://localhost:5173/",
+    "loginLink": "Đăng nhập|Sign In",
+    "emailField": "Email",
+    "passwordField": "Password|Mật khẩu",
+    "loginButtonName": "Sign In|Đăng nhập",
+    "orderHistoryLink": "Lịch sử đơn hàng|Order History",
+    "email": "test@eshop.com",
+    "password": "Test1234!"
+  },
+  "expected": {
+    "statusTextPattern": "Chờ xác nhận|Đã xác nhận|Đang vận chuyển|Đã giao|Đã hủy"
+  },
+  "metadata": {
+    "assertions": ["localization", "visibility", "style-check"]
+  }
+}

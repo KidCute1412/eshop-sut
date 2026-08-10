@@ -150,3 +150,15 @@ once SKILL.md is fully done, add a log of this conversation into logs.md
  - Text Output: Regenerated 5 data-driven Playwright specs and JSON data files with strengthened assertions (h1, price format, safe rendering, loading check), plus updated traceability matrix and human-readable report for FR-05. Verdicts are blank until test execution.
  - File Outputs: auto-tests/TC01.spec.js; auto-tests/TC01.json; auto-tests/TC02.spec.js; auto-tests/TC02.json; auto-tests/TC03.spec.js; auto-tests/TC03.json; auto-tests/TC04.spec.js; auto-tests/TC04.json; auto-tests/TC05.spec.js; auto-tests/TC05.json; setup/report/FR-05-traceability.md; setup/report/FR-05-report.md
 ------
+- Name of the AI tool: GitHub Copilot
+- Date and time: 10/08/2026 12:40
+- Full text of given prompt: use the automation skill to now create 4 test cases for the following requirement:
+### FR-11: Xem lịch sử đơn hàng (User)
+
+- Người dùng chỉ xem được đơn hàng của chính mình.
+- Hiển thị: Mã đơn, Ngày đặt, Tổng tiền, Trạng thái hiện tại.
+- Trạng thái phải được dịch sang tiếng Việt rõ ràng và phân biệt màu sắc.
+- Attached file names: auto-tests/TC06.spec.js; auto-tests/TC06.json; auto-tests/TC07.spec.js; auto-tests/TC07.json; auto-tests/TC08.spec.js; auto-tests/TC08.json; auto-tests/TC09.spec.js; auto-tests/TC09.json; setup/report/FR-11-traceability.md; setup/report/FR-11-report.md
+- Text Output: Generated 4 data-driven Playwright specs and JSON data files for FR-11, plus traceability matrix and human-readable report. Test names are fixed as TC06-TC09 and assertions focus on UI behavior and user-specific order history.
+- File Outputs: auto-tests/TC06.spec.js; auto-tests/TC06.json; auto-tests/TC07.spec.js; auto-tests/TC07.json; auto-tests/TC08.spec.js; auto-tests/TC08.json; auto-tests/TC09.spec.js; auto-tests/TC09.json; setup/report/FR-11-traceability.md; setup/report/FR-11-report.md
+------

@@ -1,0 +1,23 @@
+{
+  "id": "TC06",
+  "requirement": "FR-11",
+  "objective": "Verify authenticated user can open order history and see expected order columns.",
+  "preconditions": ["Frontend running at localhost:5173", "User test account exists"],
+  "inputs": {
+    "url": "http://localhost:5173/",
+    "loginLink": "Đăng nhập|Sign In",
+    "emailField": "Email",
+    "passwordField": "Password|Mật khẩu",
+    "loginButtonName": "Sign In|Đăng nhập",
+    "orderHistoryLink": "Lịch sử đơn hàng|Order History",
+    "email": "test@eshop.com",
+    "password": "Test1234!"
+  },
+  "expected": {
+    "pageHeading": "Lịch sử đơn hàng|Order History",
+    "columnHeaders": ["Mã ĐH|Order ID", "Ngày đặt|Date", "Tổng tiền|Total", "Trạng thái|Status"]
+  },
+  "metadata": {
+    "assertions": ["role-visibility", "column-structure", "authentication"]
+  }
+}

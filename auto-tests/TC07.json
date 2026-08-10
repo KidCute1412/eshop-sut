@@ -1,0 +1,23 @@
+{
+  "id": "TC07",
+  "requirement": "FR-11",
+  "objective": "Verify each order row contains an order code, order date, total amount in ₫, and a translated Vietnamese status.",
+  "preconditions": ["Frontend running at localhost:5173", "User has at least one order"],
+  "inputs": {
+    "url": "http://localhost:5173/",
+    "loginLink": "Đăng nhập|Sign In",
+    "emailField": "Email",
+    "passwordField": "Password|Mật khẩu",
+    "loginButtonName": "Sign In|Đăng nhập",
+    "orderHistoryLink": "Lịch sử đơn hàng|Order History",
+    "email": "test@eshop.com",
+    "password": "Test1234!"
+  },
+  "expected": {
+    "totalAmountPattern": "₫",
+    "statusTextPattern": "Chờ xác nhận|Đã xác nhận|Đang vận chuyển|Đã giao|Đã hủy"
+  },
+  "metadata": {
+    "assertions": ["row-content", "format-check", "localization"]
+  }
+}

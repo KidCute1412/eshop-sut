@@ -1,0 +1,23 @@
+{
+  "id": "TC09",
+  "requirement": "FR-11",
+  "objective": "Verify authenticated user only sees their own orders in order history.",
+  "preconditions": ["Frontend running at localhost:5173", "Test user has multiple own orders"],
+  "inputs": {
+    "url": "http://localhost:5173/",
+    "loginLink": "Đăng nhập|Sign In",
+    "emailField": "Email",
+    "passwordField": "Password|Mật khẩu",
+    "loginButtonName": "Sign In|Đăng nhập",
+    "orderHistoryLink": "Lịch sử đơn hàng|Order History",
+    "email": "test@eshop.com",
+    "password": "Test1234!"
+  },
+  "expected": {
+    "userIdentifier": "test@eshop.com|Test User|Chào, Test",
+    "otherUserIdentifier": "admin@eshop.com|Admin"
+  },
+  "metadata": {
+    "assertions": ["access-control", "data-isolation", "role-visibility"]
+  }
+}
