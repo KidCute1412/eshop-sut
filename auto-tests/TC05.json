@@ -1,0 +1,9 @@
+{
+  "id": "TC05",
+  "requirement": "FR-05",
+  "objective": "Verify non-matching search shows empty state and no products",
+  "preconditions": ["dev server running at localhost:5173"],
+  "inputs": { "url": "http://localhost:5173/", "search": "zzzzz", "searchBoxName": "Tìm kiếm...", "searchButtonName": "Tìm" },
+  "expected": { "emptyMessage": "Không có sản phẩm nào." },
+  "metadata": { "assertions": ["count-zero","empty-state"] }
+}

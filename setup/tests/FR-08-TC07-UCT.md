@@ -1,3 +1,0 @@
-|ID|Objective|Input|Steps|Expected|Actual|Verdict|
-|-|-|-|-|-|-|-|
-|FR-08-TC07|Ensure backend ignores malicious client `total_amount`|Authenticated user with cart items and manipulated `total_amount` payload|1. Log in as a valid user.<br>2. Add items to cart and open Checkout.<br>3. Submit checkout request with a tampered `total_amount` value lower than the server total.|1. Backend ignores the client-supplied `total_amount` and recalculates the total from cart/product prices.<br>2. Order is created only if the backend total is valid and payment succeeds.<br>3. Returned order total matches server-side calculation, not the tampered value.|The total is modified to a larger number and the cart is updated accordingly. |Failed|

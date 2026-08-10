@@ -1,3 +1,0 @@
-|ID|Objective|Input|Steps|Expected|Actual|Verdict|
-|-|-|-|-|-|-|-|
-|FR-08-TC05|Reject checkout when authentication is lost before submission|User logs in, then token becomes invalid before submit|1. Log in as a valid user.<br>2. Add items to cart and open Checkout.<br>3. Invalidate the session by logging out in another tab, expiring the token, or removing the auth token.<br>4. Submit the checkout request.|1. Backend rejects submission with HTTP 401/403.<br>2. No order is created.<br>3. Cart remains unchanged.<br>4. User is prompted to log in again.|An error occured: "Lỗi khi thanh toán: Unauthorized" and no order is made. |Passed|

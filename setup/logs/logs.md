@@ -88,3 +88,65 @@ make sure to read the info folder for more information
  - Text Output: Created 12 Phase 2 state-transition test case files for `FR-08` under `setup/tests/` covering positive, negative, concurrent, and malicious-input scenarios. Updated TODO list to mark enumeration complete.
  - File Outputs: setup/tests/FR-08-TC01-STT.md; setup/tests/FR-08-TC02-STT.md; setup/tests/FR-08-TC03-STT.md; setup/tests/FR-08-TC04-STT.md; setup/tests/FR-08-TC05-STT.md; setup/tests/FR-08-TC06-STT.md; setup/tests/FR-08-TC07-STT.md; setup/tests/FR-08-TC08-STT.md; setup/tests/FR-08-TC09-STT.md; setup/tests/FR-08-TC10-STT.md; setup/tests/FR-08-TC11-STT.md; setup/tests/FR-08-TC12-STT.md
  ------
+ - Name of the AI tool: GitHub Copilot
+ - Date and time: 10/08/2026 12:00
+ - Full text of given prompt: create a new automation skill that can generate automated tests for the users based on the given requirements, the user can also specify the number of test cases
+
+create a new automation skill that can generate automated tests for the users based on the given requirements, the user can also specify the number of test cases
+
+like other skills, the same principle of reading from the setup/info folder and documentation within the setup/logs/logs.md apply
+
+from the given requirements and the specified number of test cases needed, generate a test-suite of automation scripts, following the format and information found within examples.spec.js
+
+each test case must be given 2 separate files, a "TCXX.spec.js" for the script and a "TCXX.json" for the data that will be used for the script to get the information, this is to made the test cases data driven, these files should be created in the auto-tests folder for playwright to read them
+
+among the scripts, there must be at least 3 distinct assertion techniques or patterns
+
+internally, create a matrix to trace each test case back to the original requirement
+
+once all test cases are created, generate a report in the setup/report folder, detailing each test case's objective and verdict (which is empty until tested), as well as the functional requirement it is used to test for
+
+write in full details, avoid hallucination and assumptions, the skill must also know and integrate successfully with playwright
+
+once SKILL.md is fully done, add a log of this conversation into logs.md
+
+ - Attached file names: .github/skills/automation/SKILL.md
+ - Text Output: Created a new automation skill definition and appended a session log entry.
+ - File Outputs: .github/skills/automation/SKILL.md; setup/logs/logs.md
+------
+ - Name of the AI tool: GitHub Copilot
+ - Date and time: 10/08/2026 12:10
+ - Full text of given prompt: use tha automation skill to create 5 scripts for the following functional requirements:
+
+ FR-05: Xem danh sách & Tìm kiếm sản phẩm
+
+- Trang chủ hiển thị danh sách tất cả sản phẩm dạng lưới (grid).
+- Mỗi sản phẩm hiển thị: **Ảnh** (tỷ lệ chuẩn, có alt text mô tả), **Tên sản phẩm**, **Giá** (đơn vị: ₫, định dạng phân cách hàng nghìn).
+- Thanh tìm kiếm tìm theo tên sản phẩm. Từ khóa tìm kiếm phải được **hiển thị an toàn** (không render HTML).
+- Khi đang tải dữ liệu phải hiển thị trạng thái **loading**.
+- Khi không có kết quả tìm kiếm phải hiển thị thông báo **empty state** phù hợp.
+- Trang chủ chỉ có **đúng một thẻ `<h1>`**.
+- Mỗi trang chỉ có 1 `<h1>` duy nhất.
+
+ - Attached file names: auto-tests/TC01.spec.js; auto-tests/TC01.json; auto-tests/TC02.spec.js; auto-tests/TC02.json; auto-tests/TC03.spec.js; auto-tests/TC03.json; auto-tests/TC04.spec.js; auto-tests/TC04.json; auto-tests/TC05.spec.js; auto-tests/TC05.json; setup/report/FR-05-traceability.md; setup/report/FR-05-report.md
+ - Text Output: Generated 5 data-driven Playwright specs and JSON data files, plus a traceability matrix and human-readable report for FR-05. Verdicts are blank until test execution.
+ - File Outputs: auto-tests/TC01.spec.js; auto-tests/TC01.json; auto-tests/TC02.spec.js; auto-tests/TC02.json; auto-tests/TC03.spec.js; auto-tests/TC03.json; auto-tests/TC04.spec.js; auto-tests/TC04.json; auto-tests/TC05.spec.js; auto-tests/TC05.json; setup/report/FR-05-traceability.md; setup/report/FR-05-report.md
+------
+- Name of the AI tool: GitHub Copilot
+- Date and time: 10/08/2026 12:20
+- Full text of given prompt: redo: use tha automation skill to create 5 scripts for the following functional requirements:
+
+ FR-05: Xem danh sách & Tìm kiếm sản phẩm
+
+- Trang chủ hiển thị danh sách tất cả sản phẩm dạng lưới (grid).
+- Mỗi sản phẩm hiển thị: **Ảnh** (tỷ lệ chuẩn, có alt text mô tả), **Tên sản phẩm**, **Giá** (đơn vị: ₫, định dạng phânách hàng nghìn).
+- Thanh tìm kiếm tìm theo tên sản phẩm. Từ khóa tìm kiếm phải được **hiển thị an toàn** (không render HTML).
+- Khi đang tải dữ liệu phải hiển thị trạng thái **loading**.
+- Khi không có kết quả tìm kiếm phải hiển thị thông báo **empty state** phù hợp.
+- Trang chủ chỉ có **đúng một thẻ `<h1>`**.
+- Mỗi trang chỉ có 1 `<h1>` duy nhất.
+
+ - Attached file names: auto-tests/TC01.spec.js; auto-tests/TC01.json; auto-tests/TC02.spec.js; auto-tests/TC02.json; auto-tests/TC03.spec.js; auto-tests/TC03.json; auto-tests/TC04.spec.js; auto-tests/TC04.json; auto-tests/TC05.spec.js; auto-tests/TC05.json; setup/report/FR-05-traceability.md; setup/report/FR-05-report.md
+ - Text Output: Regenerated 5 data-driven Playwright specs and JSON data files with strengthened assertions (h1, price format, safe rendering, loading check), plus updated traceability matrix and human-readable report for FR-05. Verdicts are blank until test execution.
+ - File Outputs: auto-tests/TC01.spec.js; auto-tests/TC01.json; auto-tests/TC02.spec.js; auto-tests/TC02.json; auto-tests/TC03.spec.js; auto-tests/TC03.json; auto-tests/TC04.spec.js; auto-tests/TC04.json; auto-tests/TC05.spec.js; auto-tests/TC05.json; setup/report/FR-05-traceability.md; setup/report/FR-05-report.md
+------

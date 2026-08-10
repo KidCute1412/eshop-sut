@@ -1,3 +1,0 @@
-|ID|Objective|Input|Steps|Expected|Actual|Verdict|
-|-|-|-|-|-|-|-|
-|FR-08-TC10|Malicious client `total_amount` manipulation is ignored by backend|Authenticated user with cart items; client tampers `total_amount`|1. Login; ensure cart has items and note server total. <br> 2. Submit payment payload with `total_amount` set to a much lower value.<br>3. Simulate gateway success.|Backend ignores client `total_amount`, recomputes total, charges correct amount, and creates order using server total. Response includes server-calculated total. If discrepancy logs/audits should record the mismatch.|The total is modified to a larger number and the cart is updated accordingly. |Failed|

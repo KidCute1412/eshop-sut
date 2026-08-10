@@ -1,3 +1,0 @@
-|ID|Objective|Input|Steps|Expected|Actual|Verdict|
-|-|-|-|-|-|-|-|
-|FR-08-TC12|Retry checkout after initial payment failure|Authenticated user with cart items and transient payment failure|1. Log in as a valid user.<br>2. Add items to cart and open Checkout.<br>3. Submit checkout with payment details causing a simulated gateway failure.<br>4. After failure, resubmit checkout with valid payment details.|1. First submission fails and preserves the cart.<br>2. Second submission succeeds, backend recalculates the authoritative total, creates the order, and clears the cart.<br>3. User receives success confirmation on retry.|Repayment is accounted for and the order was successful. |Passed|

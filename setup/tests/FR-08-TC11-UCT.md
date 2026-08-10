@@ -1,3 +1,0 @@
-|ID|Objective|Input|Steps|Expected|Actual|Verdict|
-|-|-|-|-|-|-|-|
-|FR-08-TC11|Reject checkout when inventory changes before submit|Authenticated user with cart items and inventory updated before submission|1. Log in as a valid user.<br>2. Add an item with limited stock to cart and open Checkout.<br>3. Reduce inventory or purchase the same item in another session so stock becomes insufficient.<br>4. Submit the checkout request.|1. Backend detects inventory or availability issue during validation.<br>2. Submission is rejected with HTTP 400/409 and a clear reason about unavailable item.<br>3. Cart remains unchanged.<br>4. User sees a message to update the cart.| |Blocked|

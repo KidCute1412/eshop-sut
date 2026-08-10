@@ -1,3 +1,0 @@
-|ID|Objective|Input|Steps|Expected|Actual|Verdict|
-|-|-|-|-|-|-|-|
-|FR-08-TC09|Handle concurrent cart change between checkout open and submit|Authenticated user with cart items, cart changed before submission|1. Log in as a valid user.<br>2. Add items A and B to cart and open Checkout.<br>3. Change the cart in another session or tab (remove item B or change quantity).<br>4. Submit checkout from original page.|1. Backend uses the latest cart state and recalculates the total accordingly.<br>2. If the updated cart is valid, order is created with the new total.<br>3. If validation fails, backend rejects submission and preserves the cart.<br>4. User receives a message reflecting the updated cart state.| |Blocked|

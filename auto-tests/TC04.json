@@ -1,0 +1,9 @@
+{
+  "id": "TC04",
+  "requirement": "FR-05",
+  "objective": "Verify blank search resets the listing to full product set",
+  "preconditions": ["dev server running at localhost:5173"],
+  "inputs": { "url": "http://localhost:5173/", "search": " ", "searchBoxName": "Tìm kiếm...", "searchButtonName": "Tìm" },
+  "expected": { "fullCount": 5 },
+  "metadata": { "assertions": ["count","blank-input"] }
+}

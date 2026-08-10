@@ -1,0 +1,9 @@
+{
+  "id": "TC01",
+  "requirement": "FR-05",
+  "objective": "Verify default product listing shows a grid with products, images, names, and prices",
+  "preconditions": ["dev server running at localhost:5173"],
+  "inputs": { "url": "http://localhost:5173/", "search": "", "searchBoxName": "Tìm kiếm..." },
+  "expected": { "heading": "Danh sách sản phẩm", "brand": "EShop", "visibleCount": 5, "hasImages": true },
+  "metadata": { "assertions": ["role-visibility","count","input-empty"] }
+}

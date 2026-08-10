@@ -1,3 +1,0 @@
-|ID|Objective|Input|Steps|Expected|Actual|Verdict|
-|-|-|-|-|-|-|-|
-|FR-08-TC03|Checkout UI displays full product list and read-only total|Authenticated user with multiple cart items|1. Log in as a valid user.<br>2. Add at least two different products to the cart with known quantities.<br>3. Navigate to the Checkout page.<br>4. Inspect the displayed product list and total field.|1. Checkout UI shows all cart items, each with name, quantity, unit price, and line total.<br>2. Total amount is displayed and cannot be edited by the user.<br>3. Total equals client-side cart sum and labels are correct.|2 types of products are added, the sum is correct and no price modification can be made. |Passed|

@@ -18,7 +18,7 @@ test('TC-XX: Login', async ({ page }) => {
 });
 
 // An example run of the frontend for web
-test('test', async ({ page }) => {
+test('w', async ({ page }) => {
   await page.goto('http://localhost:5173/');
   await expect(page.getByRole('heading', { name: 'Danh sách sản phẩm' })).toBeVisible();
   await expect(page.getByRole('banner')).toContainText('EShop');
@@ -58,7 +58,7 @@ test('test', async ({ page }) => {
   await page.getByRole('button', { name: 'Xác Nhận Thanh Toán' }).click();
 });
 // An example run of the frontend for web 2
-test('test', async ({ page }) => {
+test('w2', async ({ page }) => {
   await page.goto('http://localhost:5173/');
   await page.getByRole('link', { name: 'Đăng nhập' }).click();
   await page.getByRole('textbox').first().click();
@@ -93,7 +93,7 @@ test('test', async ({ page }) => {
   await page.getByText('Hồ sơ của bạnEmail (Không đổi').click();
 });
 // An example run of the frontend for admins
-test('test', async ({ page }) => {
+test('ad', async ({ page }) => {
   await page.goto('http://localhost:5174/');
   await page.getByRole('textbox', { name: 'Email' }).click();
   await page.getByRole('textbox', { name: 'Email' }).fill('admin@eshop.com');
