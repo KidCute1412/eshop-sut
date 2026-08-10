@@ -9,7 +9,7 @@
 | Class | `CSC13003_23KTPM3` (student-confirmed) |
 | Repository | https://github.com/KidCute1412/eshop-sut (student-confirmed public repository) |
 | Branch inspected | `23127404-LeTuanLoc` |
-| Report status | Nine-run execution evidence reconciled; manual submission artifacts pending |
+| Report status | Nine-run execution evidence and defect/Issue/video artifacts reconciled; final timestamp and student sign-off pending |
 | Final submission timestamp | **PENDING — ISO 8601** |
 | Execution revision | Final Firefox rerun: `a390bc125713a1759443a4e84929641d432a45dc`; each selected report records its exact revision |
 
@@ -21,7 +21,7 @@ The deliverables suite defines 51 external-data cases: 16 for FR-06, 16 for FR-1
 
 FR-06 produced 30 passes and 18 assertion failures across 48 executions. FR-10 produced 36 passes and 12 assertion failures across 48 executions. FR-12 produced 30 passes and 27 assertion failures across 57 executions.
 
-Firefox was rerun headless with an option-free Playwright context after isolating the incompatible `Desktop Firefox` device options that caused the prior `newPage()` failures. All 51 Firefox cases reached assertions. The Markdown/PDF report set is complete. Seventeen confirmed HW04 defects now have public Issue URLs; the mandatory demo video is still pending, and the four-day Git-history span remains noncompliant.
+Firefox was rerun headless with an option-free Playwright context after isolating the incompatible `Desktop Firefox` device options that caused the prior `newPage()` failures. All 51 Firefox cases reached assertions. The Markdown/PDF report set is complete. Seventeen confirmed HW04 defects now have public Issue URLs, and both required/claimed demo-video URLs are recorded. The four-day Git-history span remains noncompliant.
 
 The full HW04 Git history contains nine qualifying test-script commits across 27 July and 9 August 2026, so the commit-count minimum is met. The separate four-calendar-day requirement remains noncompliant. This report does not infer, manufacture, or backdate missing history.
 
@@ -69,7 +69,7 @@ The deliverables suite pins Playwright `1.55.0` and defines Chromium, Firefox, a
 
 The legacy bundle outside deliverables still produces one combined `playwright-report` directory. The new `run:matrix` workflow is intended to preserve distinct feature/browser report directories under the automation workspace. Each generated directory must still be opened and verified before it enters the final manifest.
 
-### 3.3 Final implementation inventory template
+### 3.3 Final implementation inventory
 
 | Feature | Case count | Spec file(s) | Data file(s) | Locator strategy | Assertions | Isolation/reset | Reviewer approval |
 |---|---:|---|---|---|---|---|---|
@@ -87,8 +87,8 @@ The legacy bundle outside deliverables still produces one combined `playwright-r
 | Node.js / npm | Node.js `22.17.0`; npm `10.9.2` |
 | Playwright | `1.55.0` |
 | Browser modes/versions | Chromium `140.0.7339.16` headless; Firefox `141.0` headless; WebKit `26.0` headless |
-| Frontend URL | Current default `http://localhost:5173`; **confirm final URL** |
-| Backend URL | Current default `http://localhost:3000`; **confirm final URL** |
+| Frontend URL | Local SUT default `http://localhost:5173` used for the selected runs |
+| Backend URL | Local SUT default `http://localhost:3000` used for the selected runs |
 | Execution revision/data seed | Firefox correction revision `a390bc125713a1759443a4e84929641d432a45dc`; reports generated from clean seed database and metadata records each revision/command |
 | Execution operator | Lê Tuấn Lộc — 23127404 |
 
@@ -160,7 +160,7 @@ Required declaration: **I use AI tools for the following tasks,** preparing auto
 
 ## 8. Git history
 
-The exported log in `../git/23127404_HW04_git_commit_log.txt` contains nine qualifying `.spec.ts` commits: legacy `f905546` on 27 July 2026 plus eight deliverables-suite commits from `f732b2c` through `aa316e0` on 9 August 2026. The commit minimum is met across two calendar days. The separate four-day requirement remains **noncompliant**; documentation commits do not change the qualifying span, and the shortfall must not be hidden through backdating or altered timestamps.
+The exported log in `../git/23127404_HW04_git_commit_log.txt` contains a 26-commit complete HW04 history snapshot and a separate qualifying section with nine `.spec.ts` commits: legacy `f905546` on 27 July 2026 plus eight deliverables-suite commits from `f732b2c` through `aa316e0` on 9 August 2026. The qualifying commit minimum is met across two calendar days. The separate four-day requirement remains **noncompliant**; documentation commits do not change the qualifying span, and the shortfall must not be hidden through backdating or altered timestamps.
 
 ## 9. Demonstration videos and Agent Skill
 

@@ -71,7 +71,7 @@ Create professional English HW04 submission documentation/templates under docs/a
 
 ### AI output
 
-The interaction initially produced the English submission scaffold under `docs/assignments/HW04/deliverables/` and the manual guide under `docs/assignments/HW04/specs/manual.md`. Subsequent evidence reconciliation replaced the planning matrix with the actual 51-row case/data/spec/browser-result matrix, recorded 153 attempts with all 153 reaching assertions (96 passed and 57 assertion failures), and exported nine qualifying HW04 test-script commits across two days. Student-controlled identity fields, Issue URLs, screenshots, videos, and public-link verification remain unfilled.
+The interaction initially produced the English submission scaffold under `docs/assignments/HW04/deliverables/` and the manual guide under `docs/assignments/HW04/specs/manual.md`. Subsequent evidence reconciliation replaced the planning matrix with the actual 51-row case/data/spec/browser-result matrix, recorded 153 attempts with all 153 reaching assertions (96 passed and 57 assertion failures), and exported the complete HW04 history plus nine qualifying HW04 test-script commits across two days. Student identity, class, repository, 17 Issue URLs, screenshots, and both demo-video URLs are now recorded; final logged-out link checks and submission timestamp remain student sign-off items.
 
 ### Human review required
 
@@ -107,7 +107,7 @@ oke thực hiện plan trên
 The durable output is preserved in the repository rather than reconstructed as a conversational transcript:
 
 - automation source and external data: `../automation/`, including 51 case rows and three browser projects;
-- eight new qualifying deliverables-suite commits from `f732b2c` through `aa316e0`, plus the earlier qualifying HW04 commit recorded in `../git/23127404_HW04_git_commit_log.txt`;
+- a complete current-branch HW04 history snapshot and nine qualifying test-script commits recorded in `../git/23127404_HW04_git_commit_log.txt`;
 - nine selected HTML/JSON/metadata report directories and the exact 51-row traceability matrix;
 - reusable skill source at `../agent-skill/playwright-data-driven-multibrowser/`;
 - professional reports, bug/Issue registers, video scripts, PDFs, checklist, and manual-action guide.
@@ -142,28 +142,8 @@ The accessible workspace contains durable outputs and selected exact prompts, bu
 
 The missing internal delegation prompts and unavailable historical timestamps are intentionally not invented. This limitation affects transcript completeness only; it does not alter the authenticity of the committed source, runtime reports, screenshots, traces, Issue URLs, or PDF exports. Any later recovered conversation export may be appended as an additive record.
 
-## Archived template for subsequent interactions
+## Archived interaction record
 
 No additional exact historical records are asserted. If an authentic transcript export is recovered, append it here with its original timestamp and source path; otherwise the reconstructed ledger above is the final audit record.
 
-### Interaction AI-___ — [short purpose]
-
-| Field | Record |
-|---|---|
-| AI tool | **PENDING** |
-| Date/time | **PENDING — ISO 8601** |
-| Feature/case | **PENDING** |
-| Prompt | Reproduce exactly below |
-| Output | Preserve exact response below or attach a stable transcript path |
-
-```text
-PENDING — exact prompt
-```
-
-```text
-PENDING — exact AI output, or a path to the complete retained output
-```
-
-**Human decision:** PENDING — accepted / modified / rejected / added manually.
-
-**Reason and final evidence:** PENDING — explain the technical judgment and link the final spec/data/report/commit.
+No additional exact historical interaction record is retained in the accessible workspace. Do not add reconstructed prompts, timestamps, outputs, or decisions to this report. Any later authentic export may be appended as a dated addendum with its source path.
