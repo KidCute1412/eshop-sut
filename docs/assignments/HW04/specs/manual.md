@@ -8,7 +8,7 @@ This guide separates work that requires the student's direct action from documen
 |---|---|
 | Student | Lê Tuấn Lộc |
 | Student ID | 23127404 |
-| Class | `CSC15003` (student-confirmed) |
+| Class | `CSC13003_23KTPM3` (student-confirmed) |
 | Public repository | https://github.com/KidCute1412/eshop-sut (student-confirmed public repository) |
 | Pool A | FR-06 — Product detail view |
 | Pool B | FR-10 — Order state machine |

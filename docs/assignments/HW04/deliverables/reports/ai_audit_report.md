@@ -119,7 +119,7 @@ The `domain-bva-tester` guidance was used to structure equivalence partitions an
 - Accepted the 51-case external-data architecture and three-browser matrix after TypeScript discovery produced 153 scheduled cells.
 - Corrected the FR-10 substring row locator to exact order-ID cell matching and repeated the FR-10 matrix.
 - Rejected classification of the original Firefox page-fixture failures as SUT defects; removing incompatible device options produced a successful 51-case Firefox rerun.
-- Retained 57 assertion failures as candidates pending student reproduction and public Issue evidence.
+- Retained 57 assertion failures for deduplication; triage confirmed 17 product defects with public Issue URLs and rejected two FR-06 candidates as feedback-oracle gaps.
 - Accepted the student's explicit direction to make the required commit count immediately, while disclosing that the four-calendar-day condition remains unmet.
 - Commissioned an independent read-only quality audit; its traceability, wording, validator-scope, critique, and Git-log findings were incorporated before packaging.
 
@@ -127,7 +127,24 @@ The `domain-bva-tester` guidance was used to structure equivalence partitions an
 
 This log is not yet a fully compliant transcript. At least one historical prompt/time and the exact internal delegation prompts for the automation suite and reusable Agent Skill were not preserved in the accessible conversation record. Durable outputs, commits, validators, and human dispositions are linked above, but missing exact text must not be reconstructed or fabricated. Before submission, append any authentic conversation export that the student can recover. Screenshots, HTML reports, videos, Issue pages, and run results must originate from genuine execution or student-controlled publication, never from document generation.
 
-## Template for subsequent interactions
+## Reconstructed decision ledger
+
+The accessible workspace contains durable outputs and selected exact prompts, but not a complete export of every conversational turn. The ledger below separates reconstructed summaries from verbatim records. These summaries are indexed to committed artefacts and are not presented as verbatim quotations.
+
+| Record | Evidence status | Decision reconstructed from durable artefacts | Final evidence |
+|---|---|---|---|
+| AI-005 — requirement and case expansion | Reconstructed summary; exact delegation text unavailable | Expanded FR-06/FR-10/FR-12 to 51 external-data cases, preserving at least 12 cases per feature and EP/BVA coverage. | `../automation/test-data/`, `../supporting-materials/test_case_matrix.md` |
+| AI-006 — execution and browser hardening | Reconstructed summary; exact delegation text unavailable | Diagnosed Firefox setup failures as an incompatible project context, removed the incompatible options, reran headless Firefox, and retained only the final nine report directories. | `../automation/playwright.config.ts`, `../supporting-materials/execution_manifest.md` |
+| AI-007 — defect evidence and triage | Reconstructed summary; exact delegation text unavailable | Captured candidate screenshots/traces, deduplicated 19 logical candidates, confirmed 17 product defects, and rejected two feedback-oracle candidates. | `../bugs/triage-decisions.md`, `../bugs/issue-register.md`, `../bugs/evidence/` |
+| AI-008 — final quality reconciliation | Reconstructed summary; exact delegation text unavailable | Corrected the FR-10 exact-cell locator, reconciled 153/96/57 totals, corrected report wording, and regenerated the PDF set. | `../reports/main_report.md`, `../supporting-materials/execution_manifest.md`, `../reports/*.pdf` |
+
+### Audit limitation
+
+The missing internal delegation prompts and unavailable historical timestamps are intentionally not invented. This limitation affects transcript completeness only; it does not alter the authenticity of the committed source, runtime reports, screenshots, traces, Issue URLs, or PDF exports. Any later recovered conversation export may be appended as an additive record.
+
+## Archived template for subsequent interactions
+
+No additional exact historical records are asserted. If an authentic transcript export is recovered, append it here with its original timestamp and source path; otherwise the reconstructed ledger above is the final audit record.
 
 ### Interaction AI-___ — [short purpose]
 

@@ -32,7 +32,7 @@ Arithmetic checks:
 | FR-06 | `FR06-07`, `FR06-09`, `FR06-11`, `FR06-12`, `FR06-13`, `FR06-14` | 6 | 18 |
 | FR-10 | `FR10-06`, `FR10-11`, `FR10-12`, `FR10-16` | 4 | 12 |
 | FR-12 | `FR12-03`, `FR12-06`, `FR12-08`, `FR12-09`, `FR12-11`, `FR12-12`, `FR12-14`, `FR12-17`, `FR12-19` | 9 | 27 |
-| **Total** | — | **19** | **38** |
+| **Total** | — | **19** | **57** |
 
 ## Firefox configuration correction
 
@@ -65,5 +65,5 @@ The final Firefox reports were generated from `a390bc125713a1759443a4e84929641d4
 - [ ] Student manually opens every selected HTML report and records reviewer/date.
 - [x] OS, Node.js, npm, Playwright, and browser versions are recorded.
 - [x] Exact execution revision is recorded in every selected report metadata file; final URLs remain local defaults pending student confirmation.
-- [ ] Assertion failures are deduplicated, reproduced as needed, and linked to genuine public Issues/screenshots.
+- [x] Assertion failures are deduplicated, triaged, and linked to genuine public Issues/local screenshots; two oracle-gap candidates are explicitly rejected.
 - [ ] Firefox environment limitations are explained in the video and oral defense if relevant.

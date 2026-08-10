@@ -8,7 +8,7 @@
 |---|---|
 | Student | Lê Tuấn Lộc |
 | Student ID | 23127404 |
-| Class | `CSC15003` (student-confirmed) |
+| Class | `CSC13003_23KTPM3` (student-confirmed) |
 | Repository | https://github.com/KidCute1412/eshop-sut (student-confirmed public repository) |
 | Working branch observed | `23127404-LeTuanLoc` |
 | Submission date/time | **PENDING — record final ISO 8601 submission time** |
@@ -70,7 +70,7 @@ The exported full HW04 history contains nine qualifying `.spec.ts` commits: lega
 | `bugs/issue-packets/` | Copy-ready GitHub Issue bodies | 17 packets; each includes reproduction, severity and evidence references |
 | `bugs/evidence/` | Authentic runtime evidence | 19 PNG screenshots, 19 traces and per-candidate metadata |
 | `video/demo_video.md` | Main demo plan and link record | Not recorded |
-| `video/vietnamese_narration_script.md` | Vietnamese recording script | Ready for student recording |
+| `../specs/HW04_vietnamese_narration_script.md` | Vietnamese recording script | Preparation material outside the submission package |
 | `video/agent_skill_demo.md` | Optional Agent Skill source/demo record | Source present; end-to-end validation and demo pending |
 | `supporting-materials/test_case_matrix.md` | Final case/data/spec/browser-result traceability | 51 actual source rows with 153 per-browser outcomes |
 | `supporting-materials/execution_manifest.md` | Nine-run evidence ledger | Complete and reconciled: 153/96/57; 0 environment failures |

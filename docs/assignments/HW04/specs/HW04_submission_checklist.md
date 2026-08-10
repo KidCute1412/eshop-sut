@@ -114,7 +114,7 @@ Suggested review table:
 - [x] Embed an ISO 8601 timestamp in every report.
 - [ ] Open each report and visually verify the identifier, timestamp, browser, executed cases, and pass/fail status.
 - [x] Preserve the complete selected report directories, including their retained `data/` diagnostics.
-- [x] Distinguish expected negative-test passes, assertion failures, and 22 pre-test Firefox fixture failures.
+- [x] Distinguish expected negative-test passes and 57 final assertion failures from the superseded Firefox fixture diagnosis (0 fixture failures in the selected final runs).
 - [x] Record exact run commands, date/time, SUT URL/version, browser/version, totals, and report location.
 
 | Feature | Browser | Command | ISO timestamp | HTML report path | Executed | Passed | Failed | Verified |
@@ -131,10 +131,10 @@ Suggested review table:
 
 ## 7. Report genuine defects
 
-- [ ] Treat a failing assertion as a possible SUT defect only after ruling out script/data/environment errors.
-- [ ] For every genuine defect found, create a GitHub Issue in the public repository.
+- [x] Treat a failing assertion as a possible SUT defect only after ruling out script/data/environment errors.
+- [x] For every genuine defect found, create a GitHub Issue in the public repository (17 confirmed defects; two oracle-gap candidates rejected).
 - [ ] Include reproduction steps, actual and expected results, environment, severity/priority, and evidence in the GitHub Issue.
-- [ ] Attach a screenshot to each GitHub Issue.
+- [ ] Attach and verify a screenshot on each public GitHub Issue while logged out.
 - [ ] Add the issue URL and matching screenshot(s) to the Markdown bug report.
 - [ ] Link the affected test case, browser run, and HTML report in the bug report.
 - [ ] If no genuine bugs are found, state this explicitly in the main report and README test summary.
@@ -204,12 +204,12 @@ deliverables/
 
 ## 12. Complete `README.md` and self-assessment
 
-- [ ] Add the public GitHub repository URL.
+- [x] Add the public GitHub repository URL.
 - [ ] Add the unlisted YouTube demo video URL.
 - [ ] Add the Agent Skill path and demo URL if applicable.
 - [x] Include a summary of features, logical cases, attempts, assertion outcomes, fixture failures, runs, and candidates.
 - [x] Reconcile totals with every selected JSON report and the 51-row matrix.
-- [ ] Add this self-assessment table and fill every score:
+- [x] Add the self-assessment table and fill the current provisional score; recalculate after video/skill evidence:
 
 | No. | Criterion | Maximum | Self-assessed grade | Evidence |
 | ---: | --- | ---: | ---: | --- |
@@ -233,17 +233,17 @@ deliverables/
 - [ ] Verify the YouTube video is unlisted, at least 5 minutes, narrated in Vietnamese, shows multi-browser/report evidence, an AI fix, and face-cam or `whoami` + `hostname`.
 - [ ] Ensure no required document is missing; the specification states that missing any required document results in a score of 0.
 - [x] Set the current evidence-based provisional self-assessment to `063`; recalculate after adding student-controlled evidence.
-- [x] Create `23127404_HW04_AI_Automation_063.zip` inside `deliverables/`; regenerate if the grade/evidence changes.
-- [x] Inspect the ZIP: required documents/source/skill are present, nine report triplets exist, and `node_modules`, `test-results`, and `dist` are absent.
+- [ ] Create the final `<StudentID>_HW04_AI_Automation_<000-100>.zip` after all student-controlled evidence and grade updates.
+- [ ] Inspect the final ZIP: required documents/source/skill are present, nine report triplets exist, and `node_modules`, `test-results`, and `dist` are absent. (The existing `..._063.zip` is provisional and stale after later documentation changes.)
 - [ ] Submit the ZIP to Moodle before the stated deadline.
 
 ## Final evidence count (minimum)
 
 - [x] 3 selected web features, one each from Pools A, B, and C: FR-06, FR-10, and FR-12.
-- [ ] 12+ test cases per selected feature (36+ planned cases total).
-- [ ] 3 external data files or equivalent external CSV/JSON datasets used by scripts.
-- [ ] 3+ assertion patterns.
-- [ ] 9+ browser runs and an HTML report for every run.
+- [x] 12+ test cases per selected feature (36+ planned cases total).
+- [x] 3 external data files or equivalent external CSV/JSON datasets used by scripts.
+- [x] 3+ assertion patterns.
+- [x] 9+ browser runs and an HTML report for every run.
 - [ ] 8+ qualifying test-script commits spanning 4+ days.
 - [ ] 1 unlisted Vietnamese demo video, 5+ minutes.
 - [x] Markdown and PDF forms of the main report, AI Audit Report, and AI Critique.
