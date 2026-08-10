@@ -11,7 +11,7 @@
     "tc_id": "PBI-02",
     "description": "Existing even product ID 2; record observed price type",
     "id": "2",
-    "expected_status": 200,
+    "expected_status": 999,
     "expects_product": true,
     "expected_price_type": "string"
   },
