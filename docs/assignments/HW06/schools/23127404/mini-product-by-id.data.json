@@ -1,0 +1,42 @@
+[
+  {
+    "tc_id": "PBI-01",
+    "description": "Existing product ID 1",
+    "id": "1",
+    "expected_status": 200,
+    "expects_product": true,
+    "expected_price_type": "number"
+  },
+  {
+    "tc_id": "PBI-02",
+    "description": "Existing even product ID 2; record observed price type",
+    "id": "2",
+    "expected_status": 200,
+    "expects_product": true,
+    "expected_price_type": "string"
+  },
+  {
+    "tc_id": "PBI-03",
+    "description": "Existing product ID 3",
+    "id": "3",
+    "expected_status": 200,
+    "expects_product": true,
+    "expected_price_type": "number"
+  },
+  {
+    "tc_id": "PBI-04",
+    "description": "Very large non-existing numeric ID; record observed behavior",
+    "id": "999999",
+    "expected_status": 200,
+    "expects_product": false,
+    "expected_price_type": ""
+  },
+  {
+    "tc_id": "PBI-05",
+    "description": "Non-numeric ID; record observed behavior",
+    "id": "abc",
+    "expected_status": 200,
+    "expects_product": false,
+    "expected_price_type": ""
+  }
+]

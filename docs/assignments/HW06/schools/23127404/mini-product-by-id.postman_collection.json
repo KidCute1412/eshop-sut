@@ -1,0 +1,73 @@
+{
+  "info": {
+    "_postman_id": "b0bd8952-3724-4bcf-afb8-231274040006",
+    "name": "MINI - Product by ID - 23127404",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET /api/products/:id - data driven",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.request.headers.upsert({", 
+              "  key: 'X-Student-Id',", 
+              "  value: pm.environment.get('studentId'),", 
+              "});"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const iterData = pm.iterationData;",
+              "const expectsProduct = iterData.get('expects_product') === true || iterData.get('expects_product') === 'true';",
+              "const expectedStatus = Number(iterData.get('expected_status'));",
+              "pm.test('[MINI] Status matches iteration data', () => {",
+              "  pm.response.to.have.status(expectedStatus);",
+              "});",
+              "pm.test('[MINI] Response is JSON', () => {",
+              "  pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+              "});",
+              "pm.test('[MINI] Response time is below 2000 ms', () => {",
+              "  pm.expect(pm.response.responseTime).to.be.below(2000);",
+              "});",
+              "const body = pm.response.json();",
+              "if (expectsProduct) {",
+              "  pm.test('[MINI] Product response has contract fields', () => {",
+              "    pm.expect(body).to.have.all.keys('id', 'name', 'price', 'description', 'imageUrl', 'category_id');",
+              "    pm.expect(body.id).to.be.a('number');",
+              "    pm.expect(body.name).to.be.a('string').and.not.empty;",
+              "    pm.expect(body.price).to.be.a(iterData.get('expected_price_type'));",
+              "    pm.expect(body.description).to.be.a('string');",
+              "    pm.expect(body.imageUrl).to.be.a('string');",
+              "    pm.expect(body.category_id).to.be.a('number');",
+              "  });",
+              "} else {",
+              "  pm.test('[MINI] Non-existing or malformed ID has observed empty object response', () => {",
+              "    pm.expect(body).to.eql({});",
+              "  });",
+              "}",
+              "console.log('[MINI] X-Student-Id=' + pm.request.headers.get('X-Student-Id'));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/products/{{id}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "products", "{{id}}"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
