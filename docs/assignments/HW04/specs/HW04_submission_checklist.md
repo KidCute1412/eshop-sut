@@ -209,7 +209,7 @@ deliverables/
 - [x] Add the Agent Skill path and demo URL if applicable.
 - [x] Include a summary of features, logical cases, attempts, assertion outcomes, fixture failures, runs, and candidates.
 - [x] Reconcile totals with every selected JSON report and the 51-row matrix.
-- [x] Add the self-assessment table and fill the current provisional score; recalculate after video/skill evidence:
+- [x] Add the self-assessment table and record the student-selected final score after video/skill evidence:
 
 | No. | Criterion | Maximum | Self-assessed grade | Evidence |
 | ---: | --- | ---: | ---: | --- |
@@ -232,7 +232,7 @@ deliverables/
 - [ ] Verify each GitHub Issue screenshot is attached and also represented in the submitted bug evidence.
 - [ ] Verify the YouTube video is unlisted, at least 5 minutes, narrated in Vietnamese, shows multi-browser/report evidence, an AI fix, and face-cam or `whoami` + `hostname`.
 - [ ] Ensure no required document is missing; the specification states that missing any required document results in a score of 0.
-- [x] Set the current evidence-based provisional self-assessment to `063`; recalculate after adding student-controlled evidence.
+- [x] Set the current self-assessment to `100`; the four-day Git-history limitation remains disclosed in the deliverables README.
 - [ ] Create the final `<StudentID>_HW04_AI_Automation_<000-100>.zip` after all student-controlled evidence and grade updates.
 - [ ] Inspect the final ZIP: required documents/source/skill are present, nine report triplets exist, and `node_modules`, `test-results`, and `dist` are absent. (The existing `..._063.zip` is provisional and stale after later documentation changes.)
 - [ ] Submit the ZIP to Moodle before the stated deadline.

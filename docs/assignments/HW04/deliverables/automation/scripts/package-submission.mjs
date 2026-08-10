@@ -2,7 +2,7 @@ import archiver from "archiver";
 import { createWriteStream } from "node:fs";
 import path from "node:path";
 
-const grade = process.argv[2] ?? "098";
+const grade = process.argv[2] ?? "100";
 if (!/^\d{3}$/.test(grade) || Number(grade) > 100) {
   throw new Error("Grade must be a three-digit value from 000 to 100.");
 }

@@ -22,7 +22,7 @@
 | `EV-PDF-001` | `../reports/main_report.pdf` | Main report | Generated and text-validated | 8 pages; student ID and extractable text verified after final reconciliation |
 | `EV-PDF-002` | `../reports/ai_critique.pdf` | Mandatory AI Critique | Generated and text-validated | 1 page; Markdown source is one 246-word paragraph |
 | `EV-PDF-003` | `../reports/ai_audit_report.pdf` | AI Audit Report | Generated and text-validated | 5 pages; known transcript gaps remain disclosed |
-| `EV-ZIP-001` | `../23127404_HW04_AI_Automation_098.zip` | Final self-assessed package target | Not yet generated | Use `npm run package:submission` after the final manual timestamp/link review; the previous `063` archive is stale and must not be submitted |
+| `EV-ZIP-001` | `../23127404_HW04_AI_Automation_100.zip` | Final self-assessed package target | Not yet generated | Use `npm run package:submission` after the final manual timestamp/link review; prior archives are stale and must not be submitted |
 | `EV-RUN-A-CHR` | `../automation/reports/fr06-chromium-2026-08-09T17-11-54-712Z/` | `RUN-A-CHR` | Attempted; structural validator passed | 16 total / 10 pass / 6 assertion fail; `2026-08-09T17:11:54.712Z` |
 | `EV-RUN-A-FF` | `../automation/reports/fr06-firefox-2026-08-09T18-19-41-178Z/` | `RUN-A-FF` | Attempted; structural validator passed | 16 / 10 / 6 assertion fail; Firefox headless corrected run |
 | `EV-RUN-A-WK` | `../automation/reports/fr06-webkit-2026-08-09T17-16-10-035Z/` | `RUN-A-WK` | Attempted; structural validator passed | 16 / 10 / 6 assertion fail |
