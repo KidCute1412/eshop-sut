@@ -90,5 +90,5 @@ Data: `automation/test-data/fr12-access-control.json` · Spec: `automation/tests
 
 - All 51 rows are external JSON objects loaded at runtime; no inline case array is used.
 - The selected evidence represents 153 scheduled/attempted browser cases. Exactly 153 reached assertions; 0 Firefox attempts failed in page-fixture setup before SUT observation.
-- Assertion failures are defect candidates, not automatically confirmed product defects. Public Issue creation and screenshots remain student-controlled manual work.
+- Assertion failures are defect candidates, not automatically confirmed product defects. Agent triage has now confirmed 17 defects, rejected two oracle-gap candidates, and recorded the corresponding public Issue URLs and local screenshots under `../bugs/`.
 - The FR-06 invalid-quantity oracle checks browser constraint validity but does not also prove that cart state remained unchanged after an Add attempt. The FR-12 cleanup helper sends cleanup requests but does not assert deletion success/absence. These are documented current-source limitations and must not be hidden by the historical reports.

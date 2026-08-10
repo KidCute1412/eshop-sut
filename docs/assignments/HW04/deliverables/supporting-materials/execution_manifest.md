@@ -64,6 +64,6 @@ The final Firefox reports were generated from `a390bc125713a1759443a4e84929641d4
 - [x] Report validator accepted identity, timestamps, feature/browser matrix, case counts, completion, report/data-directory presence, and JSON/metadata totals.
 - [ ] Student manually opens every selected HTML report and records reviewer/date.
 - [x] OS, Node.js, npm, Playwright, and browser versions are recorded.
-- [x] Exact execution revision is recorded in every selected report metadata file; final URLs remain local defaults pending student confirmation.
+- [x] Exact execution revision is recorded in every selected report metadata file; the selected runs intentionally use the documented local SUT defaults and make no public-deployment claim.
 - [x] Assertion failures are deduplicated, triaged, and linked to genuine public Issues/local screenshots; two oracle-gap candidates are explicitly rejected.
 - [ ] Firefox environment limitations are explained in the video and oral defense if relevant.
