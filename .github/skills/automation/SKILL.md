@@ -38,6 +38,7 @@ This skill generates data-driven Playwright test suites from given functional re
 - Each generated spec contains a single `test()` using data from the corresponding JSON file.
 
 - When writing generated test scripts, the `test()` title must be the `TCXX` identifier only (for example: `test('TC01', async (...) => { ... })`). This ensures stable, traceable test names that map directly to the traceability matrix.
+- Generated tests should focus on UI behavior and element structure instead of asserting specific product data values. Avoid hard-coded product labels such as `iPhone 15 Pro Max` or any other fixed catalog item.
 
 ## Assertion techniques (at least three distinct patterns)
 The generated scripts will include a mix of these assertion styles across the suite:
@@ -96,18 +97,20 @@ The skill will distribute these patterns across generated cases to ensure variet
 }
 
 ## Templates
-- The skill will use a spec template similar to `auto-tests/examples.spec.js`:
+- The skill will use a spec template similar to `auto-tests/examples.spec.js` and avoid fixed product data values:
 
 import { test, expect } from '@playwright/test';
 import fs from 'fs';
 
 const data = JSON.parse(await fs.promises.readFile(new URL('./TC01.json', import.meta.url)));
 
-test(data.id, async ({ page }) => {
+// always use `TCXX` for the test title and avoid hard-coded product text
+test('TC01', async ({ page }) => {
   await page.goto(data.inputs.url);
   // interactions derived from data.inputs
   // sample assertions (choose per-case):
-  // await expect(page.getByRole('heading', { name: data.expected.heading })).toBeVisible();
+  // await expect(page.getByRole('heading')).not.toHaveText('');
+  // await expect(page.locator('img')).first().toHaveAttribute('alt', /\S+/);
 });
 
 Note: actual generated specs will contain full step-by-step actions derived from `inputs` and corresponding assertions from `expected`.
