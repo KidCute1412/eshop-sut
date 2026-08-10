@@ -2,7 +2,7 @@
   {
     "tc_id": "AI-01",
     "search": "",
-    "expected_status": 200,
+    "expected_status": 999,
     "expected_count": 5,
     "expected_content_type": "application/json",
     "description": "No search parameter - returns all 5 products"
