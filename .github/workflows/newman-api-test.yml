@@ -21,9 +21,7 @@ jobs:
 
       - name: Install backend dependencies
         working-directory: ./backend
-        run: |
-          npm install
-          npm install sqlite3 --build-from-source || true
+        run: npm ci
 
       - name: Start backend server
         working-directory: ./backend
@@ -50,20 +48,13 @@ jobs:
       - name: Install Newman
         run: npm install -g newman
 
-      - name: Run Newman collection
+      - name: Run Newman collection and export JSON report
         run: |
           newman run mini_exercise_api/mini-products.postman_collection.json \
             --environment mini_exercise_api/mini-local.postman_environment.json \
             --iteration-data mini_exercise_api/mini-products.data.json \
-            --reporters cli
-
-      - name: Run Newman with JSON report
-        run: |
-          newman run mini_exercise_api/mini-products.postman_collection.json \
-            --environment mini_exercise_api/mini-local.postman_environment.json \
-            --iteration-data mini_exercise_api/mini-products.data.json \
-            --reporters cli \
-            --reporter-json-export mini_exercise_api/mini-newman-report.json || true
+            --reporters cli,json \
+            --reporter-json-export mini_exercise_api/mini-newman-report.json
 
       - name: Upload Newman report
         uses: actions/upload-artifact@v4
