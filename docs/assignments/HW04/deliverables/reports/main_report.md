@@ -167,9 +167,9 @@ The exported log in `../git/23127404_HW04_git_commit_log.txt` contains nine qual
 | Item | Requirement | Current status | Evidence |
 |---|---|---|---|
 | Main demo | Unlisted YouTube, at least 5 minutes, Vietnamese narration, end-to-end script, multi-browser run/report, one human fix, authorship evidence | URL supplied: https://youtu.be/Uz9ogf7fKFY | `../video/demo_video.md` |
-| Agent Skill | Reusable data-driven multi-browser workflow plus separate end-to-end video | URL supplied: https://youtu.be/PL3qLI-KcPE | `../agent-skill/playwright-data-driven-multibrowser/`; `../video/agent_skill_demo.md` |
+| Agent Skill | Reusable data-driven multi-browser workflow plus separate end-to-end video | URL supplied: https://youtu.be/PL3qLI-KcPE; self-assessed 10/10 | `../agent-skill/playwright-data-driven-multibrowser/`; `../video/agent_skill_demo.md` |
 
-The Agent Skills assessment category is currently claimed as 0/10. Complete source exists, but this must change only after a valid end-to-end demonstration is recorded and verified.
+The Agent Skills assessment category is self-assessed at 10/10 based on the submitted reusable source and separate demonstration URL. The student remains responsible for the final logged-out accessibility check before upload.
 
 ## 10. Limitations and remaining work
 
@@ -179,7 +179,7 @@ The Agent Skills assessment category is currently claimed as 0/10. Complete sour
 - Historical and current AI logs still require complete prompt/output coverage for every generation/review interaction.
 - Environment, browser versions, exact execution revisions, and commands are recorded in each selected report metadata file.
 - Seventeen HW04 public Issue URLs and local defect screenshots are recorded; logged-out attachment verification remains a final manual check.
-- Both video links are absent; the main demo is mandatory, and Agent Skill points cannot be claimed from source alone.
+- Both video links are recorded in the submission package; final logged-out accessibility and duration checks remain student sign-off items.
 - Historical AI logging lacks at least one exact prompt and timestamp.
 - Nine qualifying commits are present across two days; the four-calendar-day history requirement remains unsatisfied.
 - Markdown-to-PDF exports are complete and text-validated; the final archive must be regenerated after student-controlled URLs and identity fields are supplied.

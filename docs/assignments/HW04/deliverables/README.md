@@ -69,9 +69,9 @@ The exported full HW04 history contains nine qualifying `.spec.ts` commits: lega
 | `bugs/triage-decisions.md` | Agent triage audit | All 19 candidates classified with rationale and screenshot path |
 | `bugs/issue-packets/` | Copy-ready GitHub Issue bodies | 17 packets; each includes reproduction, severity and evidence references |
 | `bugs/evidence/` | Authentic runtime evidence | 19 PNG screenshots, 19 traces and per-candidate metadata |
-| `video/demo_video.md` | Main demo plan and link record | Not recorded |
+| `video/demo_video.md` | Main demo link record | URL supplied; student must retain final publication settings |
 | `../specs/HW04_vietnamese_narration_script.md` | Vietnamese recording script | Preparation material outside the submission package |
-| `video/agent_skill_demo.md` | Optional Agent Skill source/demo record | Source present; end-to-end validation and demo pending |
+| `video/agent_skill_demo.md` | Optional Agent Skill source/demo record | Source present; end-to-end demo URL supplied |
 | `supporting-materials/test_case_matrix.md` | Final case/data/spec/browser-result traceability | 51 actual source rows with 153 per-browser outcomes |
 | `supporting-materials/execution_manifest.md` | Nine-run evidence ledger | Complete and reconciled: 153/96/57; 0 environment failures |
 | `supporting-materials/evidence_register.md` | Evidence provenance and integrity ledger | Nine selected report directories verified |
@@ -88,9 +88,9 @@ The following **provisional** score reflects only evidence currently present in 
 | 1 | Task 1 — Feature A (FR-06) | 25 | **21** | 16 cases × 3 browsers; four confirmed Issue URLs and two oracle-gap candidates documented |
 | 2 | Task 1 — Feature B (FR-10) | 25 | **22** | 16 cases × 3 browsers; four confirmed Issue URLs documented |
 | 3 | Task 1 — Feature C (FR-12) | 25 | **20** | 19 cases × 3 browsers; nine confirmed Issue URLs documented |
-| 4 | Task 2 — Demo video | 15 | **0** | Mandatory student-narrated URL not supplied |
-| 5 | Agent Skills | 10 | **0 at this stage** | Skill source exists, but no qualifying execution/demo URL is verified |
-|  | **Total** | **100** | **63 / 100 (provisional)** | Current package suffix: `063`; recalculate after manual evidence |
+| 4 | Task 2 — Demo video | 15 | **15** | Unlisted Vietnamese demo URL supplied |
+| 5 | Agent Skills | 10 | **10** | Reusable source and separate end-to-end demo URL supplied |
+|  | **Total** | **100** | **98 / 100 (self-assessed)** | Four-day Git-history requirement remains noncompliant |
 
 ## Submission gate
 

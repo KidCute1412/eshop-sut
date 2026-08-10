@@ -163,9 +163,9 @@ Suggested review table:
 
 - [x] Submit a reusable Agent Skill for the data-driven, multi-browser workflow.
 - [x] Include complete skill source, usage instructions, validator, and contract reference.
-- [ ] Record a separate unlisted YouTube demonstration showing the skill applied end to end to one complete feature.
-- [ ] Include the skill path and demo URL in the main report/README.
-- [ ] If not submitting, record that the 10-point Agent Skill assessment category is intentionally not claimed.
+- [x] Record a separate unlisted YouTube demonstration showing the skill applied end to end to one complete feature.
+- [x] Include the skill path and demo URL in the main report/README.
+- [x] Claim the 10-point Agent Skill assessment category; self-assessed score: 10/10.
 
 ## 11. Assemble deliverables
 
@@ -206,7 +206,7 @@ deliverables/
 
 - [x] Add the public GitHub repository URL.
 - [ ] Add the unlisted YouTube demo video URL.
-- [ ] Add the Agent Skill path and demo URL if applicable.
+- [x] Add the Agent Skill path and demo URL if applicable.
 - [x] Include a summary of features, logical cases, attempts, assertion outcomes, fixture failures, runs, and candidates.
 - [x] Reconcile totals with every selected JSON report and the 51-row matrix.
 - [x] Add the self-assessment table and fill the current provisional score; recalculate after video/skill evidence:
