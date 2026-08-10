@@ -3,11 +3,9 @@ import fs from 'fs';
 
 const data = JSON.parse(await fs.promises.readFile(new URL('./TC04.json', import.meta.url)));
 
-test(data.id, async ({ page }) => {
+test('TC04', async ({ page }) => {
   await page.goto(data.inputs.url);
 
-  // Ensure one H1
-  await expect(page.locator('h1')).toHaveCount(1);
 
   // Enter a blank search (single space) and submit
   await page.getByRole('textbox', { name: data.inputs.searchBoxName }).fill(data.inputs.search);

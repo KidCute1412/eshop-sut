@@ -3,7 +3,7 @@ import fs from 'fs';
 
 const data = JSON.parse(await fs.promises.readFile(new URL('./TC01.json', import.meta.url)));
 
-test("TC01", async ({ page }) => {
+test('TC01', async ({ page }) => {
   await page.goto(data.inputs.url);
 
   // Ensure exactly one H1 on the page

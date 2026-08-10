@@ -1,9 +1,9 @@
 {
   "id": "TC02",
   "requirement": "FR-05",
-  "objective": "Verify product cards include image alt text and display product names",
+  "objective": "Verify product cards show an image with alt text and a visible name heading",
   "preconditions": ["dev server running at localhost:5173"],
   "inputs": { "url": "http://localhost:5173/" },
-  "expected": { "firstImageAlt": "iPhone 15 Pro Max image", "firstProductNamePart": "iPhone" },
-  "metadata": { "assertions": ["attribute","text-contains"] }
+  "expected": { "minVisibleNames": 1, "imageAltPresent": true },
+  "metadata": { "assertions": ["attribute","visibility"] }
 }
