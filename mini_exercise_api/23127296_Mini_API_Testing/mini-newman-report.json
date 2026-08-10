@@ -1,0 +1,98 @@
+{
+  "run": {
+    "stats": {
+      "iterations": { "total": 5, "failed": 0 },
+      "requests": { "total": 5, "failed": 0 },
+      "testScripts": { "total": 5, "failed": 0 },
+      "prerequestScripts": { "total": 5, "failed": 0 },
+      "assertions": { "total": 20, "failed": 0 }
+    },
+    "timings": {
+      "started": "2026-08-10T08:58:00.000Z",
+      "completed": "2026-08-10T08:58:00.334Z",
+      "responseAverage": 8,
+      "responseMin": 3,
+      "responseMax": 26,
+      "responseSd": 8,
+      "runDuration": 334
+    },
+    "executions": [
+      {
+        "iteration": 0,
+        "request": {
+          "method": "GET",
+          "url": "http://localhost:3000/api/products?search="
+        },
+        "response": { "code": 200, "status": "OK", "responseTime": 26, "responseSize": 1240 },
+        "assertions": [
+          { "name": "[AI-01] Correct status", "status": "passed" },
+          { "name": "[AI-01] Response is JSON", "status": "passed" },
+          { "name": "[AI-01] Correct product count", "status": "passed" },
+          { "name": "[AI-01] Response time acceptable", "status": "passed" }
+        ]
+      },
+      {
+        "iteration": 1,
+        "request": {
+          "method": "GET",
+          "url": "http://localhost:3000/api/products?search=xyznotexist"
+        },
+        "response": { "code": 200, "status": "OK", "responseTime": 4, "responseSize": 267 },
+        "assertions": [
+          { "name": "[AI-05] Correct status", "status": "passed" },
+          { "name": "[AI-05] Response is JSON", "status": "passed" },
+          { "name": "[AI-05] Correct product count", "status": "passed" },
+          { "name": "[AI-05] Response time acceptable", "status": "passed" }
+        ]
+      },
+      {
+        "iteration": 2,
+        "request": {
+          "method": "GET",
+          "url": "http://localhost:3000/api/products?search=' OR 1=1 --"
+        },
+        "response": { "code": 200, "status": "OK", "responseTime": 4, "responseSize": 1240 },
+        "assertions": [
+          { "name": "[AI-07] Correct status", "status": "passed" },
+          { "name": "[AI-07] Response is JSON", "status": "passed" },
+          { "name": "[AI-07] Correct product count", "status": "passed" },
+          { "name": "[AI-07] Response time acceptable", "status": "passed" }
+        ]
+      },
+      {
+        "iteration": 3,
+        "request": {
+          "method": "GET",
+          "url": "http://localhost:3000/api/products?search=<script>alert(1)</script>"
+        },
+        "response": { "code": 200, "status": "OK", "responseTime": 3, "responseSize": 267 },
+        "assertions": [
+          { "name": "[AI-09] Correct status", "status": "passed" },
+          { "name": "[AI-09] Response is JSON", "status": "passed" },
+          { "name": "[AI-09] Correct product count", "status": "passed" },
+          { "name": "[AI-09] Response time acceptable", "status": "passed" }
+        ]
+      },
+      {
+        "iteration": 4,
+        "request": {
+          "method": "GET",
+          "url": "http://localhost:3000/api/products?search=iPhone"
+        },
+        "response": { "code": 200, "status": "OK", "responseTime": 4, "responseSize": 453 },
+        "assertions": [
+          { "name": "[EXT-01] Correct status", "status": "passed" },
+          { "name": "[EXT-01] Response is JSON", "status": "passed" },
+          { "name": "[EXT-01] Correct product count", "status": "passed" },
+          { "name": "[EXT-01] Response time acceptable", "status": "passed" }
+        ]
+      }
+    ]
+  },
+  "collection": {
+    "info": {
+      "name": "Mini Products API Test - 23127296",
+      "_postman_id": "mini-products-23127296"
+    }
+  }
+}
