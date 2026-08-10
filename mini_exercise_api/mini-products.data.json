@@ -1,0 +1,42 @@
+[
+  {
+    "tc_id": "AI-01",
+    "search": "",
+    "expected_status": 200,
+    "expected_count": 5,
+    "expected_content_type": "application/json",
+    "description": "No search parameter - returns all 5 products"
+  },
+  {
+    "tc_id": "AI-05",
+    "search": "xyznotexist",
+    "expected_status": 200,
+    "expected_count": 0,
+    "expected_content_type": "application/json",
+    "description": "Non-existent search term - returns empty array"
+  },
+  {
+    "tc_id": "AI-07",
+    "search": "' OR 1=1 --",
+    "expected_status": 200,
+    "expected_count": 5,
+    "expected_content_type": "application/json",
+    "description": "SQL injection - bypasses WHERE clause"
+  },
+  {
+    "tc_id": "AI-09",
+    "search": "<script>alert(1)</script>",
+    "expected_status": 200,
+    "expected_count": 0,
+    "expected_content_type": "application/json",
+    "description": "XSS payload - no match, returns empty"
+  },
+  {
+    "tc_id": "EXT-01",
+    "search": "iPhone",
+    "expected_status": 200,
+    "expected_count": 1,
+    "expected_content_type": "application/json",
+    "description": "Valid search - returns matching product"
+  }
+]

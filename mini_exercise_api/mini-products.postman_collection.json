@@ -1,0 +1,97 @@
+{
+  "info": {
+    "name": "Mini Products API Test - 23127296",
+    "_postman_id": "mini-products-23127296",
+    "description": "Data-driven API testing for GET /api/products",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET /api/products",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.request.headers.upsert({",
+              "    key: \"X-Student-Id\",",
+              "    value: pm.environment.get(\"studentId\")",
+              "});"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// Status assertion",
+              "pm.test(`[${pm.iterationData.get(\"tc_id\")}] Correct status`, () => {",
+              "    pm.response.to.have.status(",
+              "        Number(pm.iterationData.get(\"expected_status\"))",
+              "    );",
+              "});",
+              "",
+              "// Content-Type assertion",
+              "pm.test(`[${pm.iterationData.get(\"tc_id\")}] Response is JSON`, () => {",
+              "    pm.expect(",
+              "        pm.response.headers.get(\"Content-Type\")",
+              "    ).to.include(\"application/json\");",
+              "});",
+              "",
+              "// Response count assertion",
+              "pm.test(`[${pm.iterationData.get(\"tc_id\")}] Correct product count`, () => {",
+              "    const jsonData = pm.response.json();",
+              "    const expectedCount = Number(pm.iterationData.get(\"expected_count\"));",
+              "    if (Array.isArray(jsonData)) {",
+              "        pm.expect(jsonData.length).to.equal(expectedCount);",
+              "    } else {",
+              "        // Handle case where response is wrapped in {value: [...]}",
+              "        const count = jsonData.value ? jsonData.value.length : 0;",
+              "        pm.expect(count).to.equal(expectedCount);",
+              "    }",
+              "});",
+              "",
+              "// Response time assertion",
+              "pm.test(`[${pm.iterationData.get(\"tc_id\")}] Response time acceptable`, () => {",
+              "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-Student-Id",
+            "value": "{{studentId}}",
+            "description": "Student ID for tracking"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/products?search={{search}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "products"],
+          "query": [
+            {
+              "key": "search",
+              "value": "{{search}}",
+              "description": "Search query parameter"
+            }
+          ]
+        },
+        "description": "GET /api/products with search parameter"
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "search",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
