@@ -1,149 +1,136 @@
-# Task 3 — Continuous Performance Testing Proposal
+# Task 3 - Continuous Performance Testing Proposal
 
-## 1. Overview
+## 1. Goal
 
-Propose a continuous performance-testing model that integrates with the SUT's development workflow to automatically detect performance regressions.
+The proposed model continuously watches SUT changes, decides when performance tests are worth running, compares p95 latency against a baseline, and flags regressions before merge.
 
----
+## 2. Pipeline Flow
 
-## 2. Proposed Pipeline Flow
-
-```
-┌─────────────┐    ┌──────────────┐    ┌─────────────────┐    ┌──────────────────┐
-│  Developer   │───▶│  Git Push /  │───▶│  CI/CD Trigger  │───▶│  Decision Engine │
-│  Commit      │    │  PR Created  │    │  (GitHub Actions)│    │  (Run Tests?)    │
-└─────────────┘    └──────────────┘    └─────────────────┘    └────────┬─────────┘
-                                                                      │
-                                                              ┌───────▼───────┐
-                                                              │  YES: Run     │
-                                                              │  Performance  │
-                                                              │  Tests        │
-                                                              └───────┬───────┘
-                                                                      │
-                                                          ┌───────────▼───────────┐
-                                                          │  Execute Load/Stress  │
-                                                          │  Test Suite (JMeter)  │
-                                                          └───────────┬───────────┘
-                                                                      │
-                                                          ┌───────────▼───────────┐
-                                                          │  Collect .jtl Logs    │
-                                                          │  Generate Reports     │
-                                                          └───────────┬───────────┘
-                                                                      │
-                                                          ┌───────────▼───────────┐
-                                                          │  Compare Against      │
-                                                          │  Baseline Thresholds  │
-                                                          └───────────┬───────────┘
-                                                                      │
-                                                      ┌───────────────┼───────────────┐
-                                                      │               │               │
-                                              ┌───────▼──────┐ ┌─────▼─────┐ ┌───────▼──────┐
-                                              │  ✅ PASS     │ │  ⚠️ WARN  │ │  ❌ FAIL     │
-                                              │  No regression│ │ p95 > 10% │ │ p95 > 25%   │
-                                              │  of baseline │ │ above BL  │ │ above BL    │
-                                              └───────┬──────┘ └─────┬─────┘ └───────┬──────┘
-                                                      │               │               │
-                                              ┌───────▼──────┐ ┌─────▼─────┐ ┌───────▼──────┐
-                                              │  PR Approved │ │  Warning  │ │  PR Blocked  │
-                                              │  Merge Ready │ │  Comment  │ │  Must Fix    │
-                                              └──────────────┘ └───────────┘ └──────────────┘
+```text
+Developer commit / PR
+        |
+        v
+GitHub Actions trigger
+        |
+        v
+Decision engine checks changed files
+        |
+        +-- docs-only or frontend-only change --> Skip performance suite
+        |
+        +-- backend / database / dependency change
+                |
+                v
+        Start SUT on CI runner
+                |
+                v
+        Seed performance data
+                |
+                v
+        Run quick JMeter load plan
+                |
+                v
+        Collect .jtl + HTML report
+                |
+                v
+        Parse p95, p99, error rate, throughput
+                |
+                v
+        Compare against baseline
+                |
+                +-- p95 <= baseline + 10% and errors within limit --> PASS
+                |
+                +-- p95 > baseline + 10% but <= +25% --> WARN in PR
+                |
+                +-- p95 > baseline + 25% or error rate too high --> FAIL / block PR
 ```
 
----
+## 3. Decision Engine
 
-## 3. Decision Engine: When to Run Performance Tests
+Performance tests run when at least one condition is true:
 
-### Trigger Conditions
-Performance tests run when ANY of the following conditions are met:
+| Trigger | Reason |
+|---------|--------|
+| `backend/**` changed | Direct API performance impact |
+| `backend/database.js` or database files changed | Query shape, seed data, or write behavior may change |
+| `package.json` or lockfile changed | Dependency upgrades can change runtime behavior |
+| Manual workflow dispatch | Allows investigation before release |
+| Nightly schedule | Detects accumulated regressions |
 
-| # | Trigger | Rationale |
-|---|---------|-----------|
-| 1 | **PR touches backend code** (`backend/**`) | Direct impact on API performance |
-| 2 | **PR touches database schema/migrations** | Schema changes can degrade queries |
-| 3 | **Dependency version bump** (`package.json`, `requirements.txt`) | New versions may introduce performance changes |
-| 4 | **Scheduled nightly run** | Catch gradual degradation from accumulated changes |
-| 5 | **Manual trigger** (`/run-perf-tests` in PR comment) | On-demand for specific investigations |
+Performance tests are skipped when:
 
-### Skip Conditions
-Tests are SKIPPED when:
-- PR only touches documentation (`docs/**`, `*.md`)
-- PR only touches frontend (`frontend/**`) — unless it impacts API calls
-- PR only touches test files (`**/*_test.*`, `**/*.test.*`)
-- Commit message contains `[skip-perf]` (with justification required)
-
----
+- Only Markdown/report files changed.
+- Only screenshots or homework documents changed.
+- Only frontend styling changed and API calls are unaffected.
+- Commit message contains `[skip-perf]` with a written reason.
 
 ## 4. Baseline Thresholds
 
-Established from initial test runs on target hardware:
+Final baseline values must come from the real `.jtl` logs generated on the target machine.
 
-| Metric | Baseline Value | Warning Threshold (+10%) | Fail Threshold (+25%) |
-|--------|---------------|-------------------------|----------------------|
-| Login p95 Response Time | [__] ms | [__] ms | [__] ms |
-| Product List p95 Response Time | [__] ms | [__] ms | [__] ms |
-| Checkout p95 Response Time | [__] ms | [__] ms | [__] ms |
-| Overall Error Rate | [__]% | [__]% | [__]% |
-| Max Throughput (RPS) | [__] | [__] | [__] |
+| Metric | Baseline Value | Warn Threshold | Fail Threshold | Source |
+|--------|----------------|----------------|----------------|--------|
+| Login p95 response time | PENDING_JTL_LOGS | baseline + 10% | baseline + 25% | Load `.jtl` |
+| Product list p95 response time | PENDING_JTL_LOGS | baseline + 10% | baseline + 25% | Load `.jtl` |
+| Checkout p95 response time | PENDING_JTL_LOGS | baseline + 10% | baseline + 25% | Load `.jtl` |
+| Overall error rate | PENDING_JTL_LOGS | > 1% | > 5% | Load/Stress `.jtl` |
+| Max stable throughput | PENDING_JTL_LOGS | -10% from baseline | -25% from baseline | Soak run |
 
-### Baseline Update Policy
-- Baselines are recalculated monthly or after significant infrastructure changes
-- Baseline updates require approval from [team lead / instructor]
-- Historical baselines are retained for trend analysis
+## 5. Test Suite Tiers
 
----
+| Tier | Trigger | Scenario | Duration | Purpose |
+|------|---------|----------|----------|---------|
+| PR smoke | Backend-related PR | 5 VUsers | 60s | Fast feedback |
+| PR load check | High-risk backend/database PR | 10 VUsers | 300s | Regression detection |
+| Nightly load | Schedule | 10 VUsers | 600s | Stable baseline tracking |
+| Weekly stress | Schedule/manual | 50 VUsers | 600s | Capacity trend and breaking-point check |
 
-## 5. Test Suite Configuration
+## 6. Implementation Sketch
 
-### Automated Test Scenarios
+```yaml
+name: performance-check
 
-| Scenario | VUsers | Duration | Purpose |
-|----------|--------|----------|---------|
-| Quick Smoke | 5 | 60s | Verify basic functionality under light load |
-| Standard Load | 10 | 300s | Compare against baseline |
-| Regression Check | 20 | 300s | Detect degradation under moderate load |
+on:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 18 * * *"
 
-### Execution Flow
-1. Checkout PR branch
-2. Start SUT backend (if not running)
-3. Run JMeter test with `.jmx` plan
-4. Parse `.jtl` output for p95, p99, error rate, throughput
-5. Compare metrics against baseline thresholds
-6. Generate report and post results as PR comment
+jobs:
+  decide-and-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decide whether to run performance tests
+        run: |
+          echo "Check changed files and skip docs-only changes"
+      - name: Install backend dependencies
+        working-directory: backend
+        run: npm ci
+      - name: Start backend
+        working-directory: backend
+        run: nohup node server.js &
+      - name: Seed performance data
+        run: node hw05/submit/task1/seed_performance_data.js
+      - name: Run JMeter
+        run: |
+          jmeter -n -t hw05/submit/task1/23127296_Load_20260815.jmx \
+            -l hw05/submit/task1/ci_load.jtl \
+            -e -o hw05/submit/task1/ci_load_html
+      - name: Analyze JTL
+        run: node hw05/submit/task2/analyze_jtl.mjs hw05/submit/task1/ci_load.jtl
+```
 
----
+## 7. Trade-Offs
 
-## 6. Trade-Off Discussion
-
-### Cost vs. Benefit
-
-| Factor | Discussion |
-|--------|------------|
-| **CI/CD Build Time** | Adding performance tests increases build time by ~5-10 minutes. Mitigation: run only on backend-related PRs, use quick smoke for PRs and full suite for nightly. |
-| **Infrastructure Cost** | Running JMeter on CI runners requires moderate CPU/memory. Mitigation: use self-hosted runners or cloud-based load testing services. |
-| **False Alarms** | Network波动 or background processes on shared CI runners can cause flaky results. Mitigation: run tests 3x and use median values; add tolerance margins. |
-| **False Negatives** | Thresholds set too loosely may miss real regressions. Mitigation: regularly review and tighten thresholds based on production data. |
-| **Maintenance Burden** | Test plans and baselines need ongoing maintenance as the application evolves. Mitigation: version control test plans, automate baseline updates. |
-| **Developer Experience** | Blocking PRs on performance failures may frustrate developers. Mitigation: use warnings for minor regressions, only block on severe degradation (>25%). |
-
-### Recommended Approach
-- **PR-level**: Quick smoke test (5 VUsers, 60s) — fast feedback, low cost
-- **Nightly**: Standard load test (10 VUsers, 5min) — comprehensive comparison
-- **Weekly**: Stress test (50 VUsers, 10min) — capacity planning
-
----
-
-## 7. Implementation Tools
-
-| Component | Tool | Alternative |
-|-----------|------|-------------|
-| CI/CD | GitHub Actions | GitLab CI, Jenkins |
-| Load Testing | JMeter | k6, Gatling |
-| Result Parsing | JMeter CLI report | Custom Python script |
-| Notification | GitHub PR comments | Slack, Email |
-| Dashboard | Grafana + InfluxDB | Datadog, New Relic |
-
----
+| Trade-off | Discussion | Mitigation |
+|-----------|------------|------------|
+| CI time | Performance tests add minutes to feedback time. | Run smoke checks on PRs and longer tests nightly. |
+| Hardware noise | Shared runners can vary in CPU, memory, and I/O. | Use medians across repeated runs or a stable self-hosted runner. |
+| False alarms | Temporary machine load can make p95 exceed threshold. | Warn at +10%, fail only at +25% or repeated regression. |
+| False negatives | Loose thresholds can miss smaller regressions. | Review trend history monthly and tighten baselines gradually. |
+| Maintenance cost | JMeter plans and CSV data must evolve with the API. | Version plans with backend changes and keep seed data scripted. |
+| Data pollution | Checkout tests create orders repeatedly. | Use dedicated performance users and reset/clean test data after runs. |
 
 ## 8. Conclusion
 
-A continuous performance testing pipeline provides early detection of regressions while balancing cost and developer experience. The key is to make tests fast enough for PR feedback and comprehensive enough for nightly regression detection. By setting appropriate thresholds and using tiered testing (smoke → load → stress), the pipeline catches issues before they reach production without becoming a bottleneck in the development workflow.
+The recommended continuous model is tiered: quick PR smoke tests for fast feedback, nightly load tests for baseline tracking, and weekly/manual stress tests for capacity insight. This balances cost and regression detection while keeping p95 latency, error rate, and throughput visible in every backend change.

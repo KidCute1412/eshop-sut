@@ -1,131 +1,108 @@
-# Task 1 — AI Assisted Test Design and Execution
+# Task 1 - AI Assisted Test Design and Execution
 
-## 1. AI-First Strategy: Test Plan Generation
+## 1. Workflow Design
 
-### End-to-End Workflow Design
+The three JMeter plans exercise the same end-to-end e-commerce workflow:
 
-The workflow covers all three endpoint groups in a single user journey:
+1. Auth-heavy: `POST /api/login`
+2. Read-heavy: `GET /api/products`, `GET /api/products?search=`, `GET /api/products/:id`, `GET /api/categories`
+3. Transactional: `POST /api/cart`, `GET /api/cart`, `POST /api/checkout`, `GET /api/orders/my-orders`
 
-1. **Auth-Heavy**: `POST /api/login` — user authenticates and receives JWT token
-2. **Read-Heavy**: `GET /api/products`, `GET /api/products?search=`, `GET /api/products/:id`, `GET /api/categories` — user browses and searches products
-3. **Transactional**: `POST /api/cart`, `GET /api/cart`, `POST /api/checkout`, `GET /api/orders/my-orders` — user adds items to cart and completes purchase
+This simulates a realistic user journey: login, browse products, add an item to cart, checkout, then view orders.
 
-**Justification**: This workflow simulates a realistic e-commerce user journey: login → browse → add to cart → checkout. It exercises all three endpoint groups with data-driven parameters from CSV files.
+## 2. Final Test Plans
 
-### AI Tool Used for Design
-- **Tool**: [AI tool name, e.g., ChatGPT / Claude / Gemini]
-- **Date**: [Date of interaction]
-- **Key Prompts Used**:
-  1. "Design a JMeter test plan for an e-commerce API with auth, product browsing, and checkout workflow"
-  2. "What ramp-up and think time values are realistic for a load test of 10 VUsers?"
-  3. "Help me design CSV data files for parameterizing user credentials and product data"
-  4. "What are appropriate thread counts for stress and spike tests on a local server?"
+| Scenario | File | VUsers | Ramp-up | Duration | Listener |
+|----------|------|--------|---------|----------|----------|
+| Load | `23127296_Load_20260815.jmx` | 10 | 60s | 600s | Summary Report |
+| Stress | `23127296_Stress_20260815.jmx` | 50 | 120s | 600s | View Results Tree |
+| Spike | `23127296_Spike_20260815.jmx` | 5 -> 100 -> 5 | 10s / 5s / 10s | 60s + 30s + 120s | Aggregate Report |
 
-### AI Output Summary
-[Paste or summarize what the AI generated]
+The plans use CSV files for credentials, products, and checkout data:
 
----
+- `test_data_users.csv`
+- `test_data_products.csv`
+- `test_data_checkout.csv`
 
-## 2. Review and Fix (Human Review)
+## 3. Human Review and Fixes
 
-### Issues Found in AI-Generated Plans
+| # | Issue Found | Correction Applied | Reason |
+|---|-------------|--------------------|--------|
+| 1 | Original file names used sample ID `25127001` and old date. | Renamed plans to `23127296_*_20260815.jmx`. | Required format is `{StudentID}_{ScenarioType}_{YYYYMMDD}`. |
+| 2 | CSV users were not present in the default SQLite seed data. | Added `seed_performance_data.js`. | Without seeding, `/api/login` returns 401 and all protected requests fail. |
+| 3 | Generic lockout wording assumed three wrong passwords. | Documented backend behavior: failed attempts increase by 2, so two wrong passwords can lock an account for 180s. | This was verified in `backend/server.js`. |
+| 4 | AI-style plan review did not mention real environment blockers. | Added `runbook.md` and marked real-run evidence as pending. | `jmeter` and `node` are not on PATH in this terminal. |
+| 5 | Report tables contained placeholders that looked final. | Replaced placeholders with `PENDING_REAL_RUN`, `PENDING_JTL_LOGS`, or verified values. | Avoids fabricated metrics. |
 
-| # | Issue | What AI Got Wrong | Correction Applied | Why AI Missed It |
-|---|-------|-------------------|-------------------|------------------|
-| 1 | Account lockout handling | AI did not account for 3-fail lockout (180s) on `/api/login` | Used valid credentials from CSV; documented reset steps between stress/spike runs | Model limitation — endpoint-specific behavior not in training data |
-| 2 | Ramp-up time too aggressive | AI suggested 10s ramp-up for 50 VUsers (stress) | Changed to 120s for gradual degradation observation | Generic template response, not tuned for local SQLite backend |
-| 3 | Think time too short | AI suggested 0.5s think time | Changed to 1-3s uniform random to mimic real browsing | AI optimized for throughput, not realism |
-| 4 | Missing auth header on cart/checkout | AI forgot to add `Authorization: Bearer` header | Added HeaderManager with JWT token extraction | Common oversight — AI focused on body, not headers |
-| 5 | Wrong CSV variable references | AI used `${username}` instead of `${email}` | Corrected variable names to match CSV headers | Prompt quality — did not specify exact CSV structure |
+## 4. Assertions and Auth Handling
 
-### Corrected Parameters
+Verified from the JMX files:
 
-| Parameter | Load Test | Stress Test | Spike Test |
-|-----------|-----------|-------------|------------|
-| VUsers | 10 | 50 | 5 → 100 → 5 |
-| Ramp-Up | 60s | 120s | 5s (spike) |
-| Duration | 600s | 600s | 60s + 30s + 120s |
-| Think Time | 1-3s random | 1-3s random | 1-3s random |
-| Report View | Summary Report | View Results Tree | Aggregate Report |
+- Login response assertion checks HTTP 200.
+- JWT token is extracted using a JSON post-processor at `$.token`.
+- Protected cart, checkout, and order requests send `Authorization: Bearer ${auth_token}`.
+- Read endpoints use CSV-driven `product_id` and `search_keyword`.
 
----
+## 5. Account Lockout Reset
 
-## 3. Test Execution Evidence
+The backend locks users for 180 seconds after enough failed login attempts. In this implementation, each wrong password adds 2 attempts:
 
-### Screenshots Required
-- [ ] Load test running in JMeter + Task Manager screenshot
-- [ ] Stress test running in JMeter + Task Manager screenshot
-- [ ] Spike test running in JMeter + Task Manager screenshot
-- [ ] Hardware spec (dxdiag / screenfetch)
-- [ ] Account lockout reset steps documented
+```js
+const newAttempts = user.login_attempts + 2;
+```
 
-### Raw Output Files
-- [ ] `25127001_Load_20260813.jtl` — raw log for Load test
-- [ ] `25127001_Stress_20260813.jtl` — raw log for Stress test
-- [ ] `25127001_Spike_20260813.jtl` — raw log for Spike test
-- [ ] `25127001_Load_20260813/` — HTML report folder for Load test
-- [ ] `25127001_Stress_20260813/` — HTML report folder for Stress test
-- [ ] `25127001_Spike_20260813/` — HTML report folder for Spike test
+Before each Stress or Spike run, reset performance accounts:
 
-### Account Lockout Reset
-When stress/spike runs trigger the 3-fail login lockout:
-1. Observe error responses in JMeter (HTTP 423 or lockout message)
-2. Wait 180 seconds for lockout to expire, OR
-3. Manually reset by modifying the SQLite database:
-   ```sql
-   UPDATE users SET login_attempts = 0 WHERE email = 'user_load_001@test.com';
-   ```
-4. Document the reset step and timestamp
+```sql
+UPDATE users
+SET login_attempts = 0, locked_until = NULL
+WHERE email LIKE 'user_load_%@test.com';
+```
 
----
+The included seed script performs this reset by recreating the performance users.
 
-## 4. Endurance Threshold
+## 6. Execution Evidence Status
 
-### Soak Test Setup
-- **Duration**: 10-15 minutes at sustained load
-- **VUsers**: [Adjust based on Load test results — start with 10, increase if stable]
-- **Expected Metrics to Record**:
-  - Maximum stable RPS (Requests Per Second)
-  - Memory ceiling (RAM usage before degradation)
-  - Response time degradation point
-  - Error rate threshold
+| Required Evidence | Status |
+|-------------------|--------|
+| Load `.jtl` raw log | PENDING_REAL_RUN |
+| Stress `.jtl` raw log | PENDING_REAL_RUN |
+| Spike `.jtl` raw log | PENDING_REAL_RUN |
+| Load HTML report folder | PENDING_REAL_RUN |
+| Stress HTML report folder | PENDING_REAL_RUN |
+| Spike HTML report folder | PENDING_REAL_RUN |
+| JMeter + Task Manager screenshots | PENDING_REAL_RUN |
+| Hardware spec screenshot | PENDING_REAL_RUN |
+| Demo video >= 6 minutes | PENDING_USER_INPUT |
 
-### Endurance Results (Fill After Execution)
+## 7. Endurance Threshold
 
-| Metric | Value | Threshold |
-|--------|-------|-----------|
-| Max Stable RPS | [__] | [__] |
-| Memory Ceiling | [__] MB | [__] MB |
-| Avg Response Time (stable) | [__] ms | [__] ms |
-| Response Time Degradation Point | [__] VUsers | [__] VUsers |
-| Error Rate at Threshold | [__]% | [__]% |
-| CPU Usage at Threshold | [__]% | [__]% |
+Use the Load plan as a 10-minute soak test after seeding data. Fill these values only from the generated `.jtl` and resource screenshots:
 
-### Conclusion
-[Describe your hardware's endurance threshold based on empirical data]
+| Metric | Value | Source |
+|--------|-------|--------|
+| Max Stable RPS | PENDING_JTL_LOGS | JMeter dashboard / `.jtl` |
+| Memory Ceiling | PENDING_SCREENSHOT | Task Manager |
+| Avg Response Time | PENDING_JTL_LOGS | `.jtl` |
+| p95 Response Time | PENDING_JTL_LOGS | `.jtl` |
+| Error Rate | PENDING_JTL_LOGS | `.jtl` |
+| CPU Usage at Threshold | PENDING_SCREENSHOT | Task Manager |
 
----
+## 8. How To Run
 
-## 5. Demo Video
+Follow `runbook.md`:
 
-- **YouTube Link**: [Paste unlisted YouTube link here]
-- **Duration**: At least 6 minutes total
-- **Content**: Shows JMeter tool and resource monitor (Task Manager) in same frame, with Vietnamese narration
-- **Segments**:
-  - [ ] Load test demo: [timestamp range]
-  - [ ] Stress test demo: [timestamp range]
-  - [ ] Spike test demo: [timestamp range]
+1. Start backend on `localhost:3000`.
+2. Run `node hw05\submit\task1\seed_performance_data.js`.
+3. Run the three JMeter CLI commands.
+4. Generate screenshots and video evidence.
+5. Analyze `.jtl` files with `node hw05\submit\task2\analyze_jtl.mjs <jtl files>`.
 
----
+## 9. Bugs and Performance Issues
 
-## 6. Bug/Performance Issues Report
+No GitHub Issues can be filed until the real runs produce evidence. Candidate issues to watch:
 
-### Issues Found (Log on GitHub Issues)
-
-| # | Type | Description | Endpoint | Severity | GitHub Issue Link |
-|---|------|-------------|----------|----------|-------------------|
-| 1 | Performance | [e.g., High latency under load] | [endpoint] | [Low/Med/High] | [link] |
-| 2 | Functional Bug | [e.g., Cart not cleared after checkout] | POST /api/checkout | [Low/Med/High] | [link] |
-| 3 | Security | [e.g., SQL injection in search] | GET /api/products?search= | [Low/Med/High] | [link] |
-
-[Add or remove rows as needed]
+- High p95 or p99 latency during Stress or Spike.
+- Any non-2xx responses in protected endpoints after successful login.
+- Backend crash or sustained memory growth.
+- Product search performance degradation because `/api/products?search=` builds SQL using string interpolation.

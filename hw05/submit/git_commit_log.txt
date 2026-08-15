@@ -1,0 +1,70 @@
+﻿282e0d6 (HEAD -> 23127296-NguyenThanhLuan, origin/23127296-NguyenThanhLuan) add template for hw05
+58ea4be docs: package mini API testing submission
+58b2354 fix(test): restore mini API expected status
+b9b904b test: demonstrate intentional CI failure
+c4f4b7f fix(ci): make Newman report step fail on test errors
+faa9ad1 fix(ci): add sqlite3 build fallback
+eaa8958 fix(ci): improve backend startup and health check
+a0038c9 test: add mini API testing for GET /api/products (MSSV: 23127296)
+c5f2341 add missing steps for review AI gap
+3e04b9a update hw04
+2079bf3 hw04: refresh git commit log export
+fb5503d hw04: add bug report, agent skill, AI audit/critique, README, and git log
+44a6d28 hw04: add data-driven Playwright automation for FR-03/FR-09/FR-13
+4c27794 hw03: export full branch commit history to git_commit_log.txt
+b064daa hw03: add README with self-assessment, generated PDFs and Excel checklist
+5112aab AI audit: log full interaction history through final submission cleanup
+e12f6bc Task 3: finalize cross-platform test log and report from real Chrome/Firefox/Safari screenshots
+c7ad309 Task 1: finalize report to match executed 42-item checklist and filed GitHub issues
+daed585 hw03: remove process/instructional files not part of final submission
+2f9ff9a update task 2 and 3
+60599f1 add ai audit and cross platform template
+0d3e802 add agent skill
+09b7ecd add bug report and screenshot task 1
+468ca16 add task 3 templatet
+7128deb add template for task 2
+c042a43 add gui checklist
+15b2aeb delete hw2
+c4d4530 add bug report
+04267e1 add github issue evidence
+fb885cf add prompt log 28/06
+6b224a6 update feature fr-13
+cfcdb73 add test cases and evidence for fr-13
+ed71078 add evidence images for discount coupons feature
+e578598 add evidence images for feature 1
+bc93972 added test for feature coupons
+295c912 update feature forget password
+b0818a5 add report feature forget password
+6f51497 add agent skill
+85af3ba (upstream/main, upstream/HEAD, origin/main, origin/HEAD, main) first upload
+2f9bf2b Initial commit
+282e0d6 (HEAD -> 23127296-NguyenThanhLuan, origin/23127296-NguyenThanhLuan) add template for hw05
+58ea4be docs: package mini API testing submission
+58b2354 fix(test): restore mini API expected status
+b9b904b test: demonstrate intentional CI failure
+c4f4b7f fix(ci): make Newman report step fail on test errors
+faa9ad1 fix(ci): add sqlite3 build fallback
+eaa8958 fix(ci): improve backend startup and health check
+a0038c9 test: add mini API testing for GET /api/products (MSSV: 23127296)
+c5f2341 add missing steps for review AI gap
+3e04b9a update hw04
+2079bf3 hw04: refresh git commit log export
+fb5503d hw04: add bug report, agent skill, AI audit/critique, README, and git log
+44a6d28 hw04: add data-driven Playwright automation for FR-03/FR-09/FR-13
+4c27794 hw03: export full branch commit history to git_commit_log.txt
+b064daa hw03: add README with self-assessment, generated PDFs and Excel checklist
+5112aab AI audit: log full interaction history through final submission cleanup
+e12f6bc Task 3: finalize cross-platform test log and report from real Chrome/Firefox/Safari screenshots
+c7ad309 Task 1: finalize report to match executed 42-item checklist and filed GitHub issues
+daed585 hw03: remove process/instructional files not part of final submission
+2f9ff9a update task 2 and 3
+60599f1 add ai audit and cross platform template
+0d3e802 add agent skill
+09b7ecd add bug report and screenshot task 1
+468ca16 add task 3 templatet
+7128deb add template for task 2
+c042a43 add gui checklist
+15b2aeb delete hw2
+c4d4530 add bug report
+04267e1 add github issue evidence
+fb885cf add prompt log 28/06
