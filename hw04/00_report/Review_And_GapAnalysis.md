@@ -17,14 +17,10 @@ While writing the FR-09 checkout E2E test (`FR09-TC13`), the suite surfaced two 
 - **BUG-FR09-006**: `POST /api/checkout` never clears the user's in-memory cart (`userCarts[userId]`) after a successful order — spec (`README.md` FR-08): *"Sau thanh toán thành công, giỏ hàng được xóa."* Confirmed by `GET /api/cart` still returning the pre-checkout item after `/api/checkout` returns 200.
 - **BUG-FR09-007**: `POST /api/checkout` trusts a client-supplied `total_amount` and inserts it directly into the `orders` table — spec (`README.md` FR-08): *"Backend phải tự tính lại tổng tiền; không chấp nhận giá trị `total_amount` do client gửi lên."* The endpoint (`backend/server.js:297-309`) never recomputes the total from the cart/coupon server-side.
 
-These are logged here for the record; whether to file new GitHub issues for them (in addition to reusing #25–#35/#50–#51 for the already-known bugs) is a decision left to you — see `../02_bug_reports/`.
+These are logged here for the record. BUG-FR09-006 is included in the formal HW04 bug report because it was confirmed by a failing automated assertion; BUG-FR09-007 is documented as a code-review finding because it was found while reading the checkout implementation rather than by a failing test assertion.
 
 ## 3. Test cases the AI could not (or should not) automate
 
 - **FR03-TC04 (malformed email, no format validation)** — the backend has no server-side email-format check at all, so this case is really "documents current behavior," not a meaningful pass/fail spec check; kept as a single data-driven row rather than a dedicated scenario to avoid inflating the count with a non-assertion.
 - **Mobile OTP flow (FR-03M in the HW02/HW03 backlog)** — out of scope for HW04 by the assignment's own instructions ("Pool D mobile is not used in this homework"), so it was intentionally not re-automated here even though it appears in the existing GitHub issue backlog (#50).
 - **Email delivery itself** — FR-03 spec says the OTP is sent via email; the demo environment shows it directly in the API/UI response instead, so there is nothing to automate against a real mailbox (this is explicitly called out as demo-environment behavior in the README, not a gap).
-
-## 4. Why these specific mistakes, in one paragraph (for the demo video narration)
-
-Items 1 and 4 above are the strongest candidates to narrate on camera ("fix I made to the AI-generated script"): both are configuration-level mistakes (Playwright's `serial` mode semantics, and `reuseExistingServer` defaults) that come from the AI applying a generically-reasonable pattern without checking it against this specific SUT's stateful, DB-resetting backend. Item 3 (the flaky wait) is the more "textbook" flaky-wait example called out by the assignment brief, and is a good second example if more time is available in the video.

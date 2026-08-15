@@ -1,11 +1,25 @@
-# Agent Skill (§7)
+# Agent Skill
 
-One reusable Claude Code skill built from this assignment's process, so it can be applied to other features in future automation-testing tasks:
+This folder contains one reusable agent skill built from the HW04 automation-testing workflow.
 
-- [`data-driven-automation-runner/SKILL.md`](data-driven-automation-runner/SKILL.md) — reproduces the HW04 workflow used for FR-03/FR-09/FR-13: spec-vs-implementation reading, ≥12-case test design, externalized data-driven fixtures, spec-correct (not implementation-correct) assertions, shared-state-aware Playwright config, multi-browser execution with a report authorship stamp, and a mandatory human review pass.
+## Skill
 
-## Demo video
+- `data-driven-automation-runner/SKILL.md`
 
-- Link: `demo-video.txt` (fill in the unlisted YouTube link demonstrating this skill applied end-to-end on a feature).
+The skill captures the workflow used for FR-03, FR-09, and FR-13:
 
-**Not yet recorded** — this is on you: record a short screen capture showing the skill being invoked on a feature (ideally one not already covered by FR-03/FR-09/FR-13) and drop the unlisted YouTube link in `demo-video.txt`.
+- Read the requirement specification and implementation side by side.
+- Design at least 12 spec-correct test cases before scripting.
+- Externalize data into JSON or CSV fixtures.
+- Write Playwright tests that assert the specification, not the buggy implementation.
+- Account for resettable shared backend state.
+- Run across Chromium, Firefox, and WebKit.
+- Stamp generated HTML reports with visible authorship evidence.
+- Record a human review and gap-analysis pass.
+- Document bugs surfaced by failing assertions.
+
+## Demo Video
+
+Agent skill demonstration: https://youtu.be/-UgwzqWETzM
+
+The same link is stored in `demo-video.txt`.

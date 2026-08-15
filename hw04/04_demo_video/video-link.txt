@@ -1,6 +1,1 @@
-TODO: paste the unlisted YouTube link here (Task 2 — >=5 minutes, narrated in Vietnamese).
-
-Required content per the assignment brief (2026.HW04.Automation Testing_En.md, Task 2):
-- Demonstrate one of the automation scripts running end-to-end, including the multi-browser run and the generated HTML report.
-- Narrate at least one fix you made to the AI-generated script during review (see ../00_report/Review_And_GapAnalysis.md — items 1 and 4 are the strongest candidates: the test.describe "serial mode" mistake, and the reuseExistingServer state-leak mistake).
-- Show evidence of authorship: your face-cam, OR a terminal running `whoami` and `hostname`.
+https://youtu.be/ftJ5TKZbfsk
