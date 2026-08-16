@@ -1,0 +1,4 @@
+interface:
+  display_name: "Performance Testing"
+  short_description: "HW05 load, stress, spike testing workflow"
+  default_prompt: "Use $performance-testing to design, run, analyse, and report HW05 performance tests for an EShop workflow."
