@@ -97,6 +97,14 @@
 
 ## 7. Kết quả execution và CI
 
-- Lệnh Newman và file `mini-newman-report.json` là bằng chứng execution local.
+- Local Newman: 5 iterations, 20 assertions và 0 failures; chi tiết trong `mini-newman-report.json`.
 - Workflow `newman-api-test.yml` cài dependencies, chạy provider, đợi readiness, chạy Newman và upload report.
-- `ci-pass.png` và `ci-fail.png` sẽ được thêm sau khi push hai trạng thái lên GitHub Actions; commit cuối phải khôi phục data đúng để workflow pass.
+- Evidence GitHub Actions: [ci-pass.png](images/ci-pass.png) xác nhận workflow pass sau khi khôi phục data đúng; [ci-fail.png](images/ci-fail.png) xác nhận failure có chủ đích khi một `expected_status` được đổi thành `999` (1 assertion fail). 
+
+### CI pass
+
+![GitHub Actions workflow pass](images/ci-pass.png)
+
+### CI fail có chủ đích
+
+![GitHub Actions workflow fail](images/ci-fail.png)
