@@ -1,0 +1,1501 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1786780231790,28,01 Login,200,OK,Spike Users 1-4,text,true,,635,228,6,6,http://localhost:3000/api/login,28,0,15
+1786780231837,4,01 Login,200,OK,Spike Users 1-5,text,true,,635,228,7,7,http://localhost:3000/api/login,4,0,1
+1786780231770,47,01 Login,200,OK,Spike Users 1-1,text,true,,635,228,6,6,http://localhost:3000/api/login,47,0,34
+1786780231771,47,01 Login,200,OK,Spike Users 1-3,text,true,,635,228,6,6,http://localhost:3000/api/login,47,0,34
+1786780231770,47,01 Login,200,OK,Spike Users 1-2,text,true,,635,228,6,6,http://localhost:3000/api/login,47,0,34
+1786780231892,4,01 Login,200,OK,Spike Users 1-6,text,true,,635,228,8,8,http://localhost:3000/api/login,4,0,1
+1786780231938,3,01 Login,200,OK,Spike Users 1-7,text,true,,635,228,9,9,http://localhost:3000/api/login,3,0,1
+1786780231944,3,02 Search Product,200,OK,Spike Users 1-5,text,true,,469,145,9,9,http://localhost:3000/api/products?search=Keychron,3,0,0
+1786780231945,2,02 Search Product,200,OK,Spike Users 1-4,text,true,,461,144,9,9,http://localhost:3000/api/products?search=AirPods,2,0,0
+1786780231944,3,02 Search Product,200,OK,Spike Users 1-3,text,true,,450,144,9,9,http://localhost:3000/api/products?search=MacBook,3,0,0
+1786780231944,4,02 Search Product,200,OK,Spike Users 1-1,text,true,,453,143,9,9,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786780231944,4,02 Search Product,200,OK,Spike Users 1-2,text,true,,480,144,9,9,http://localhost:3000/api/products?search=Samsung,4,0,0
+1786780231988,3,01 Login,200,OK,Spike Users 1-8,text,true,,635,228,10,10,http://localhost:3000/api/login,3,0,1
+1786780231997,2,02 Search Product,200,OK,Spike Users 1-6,text,true,,453,143,10,10,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786780232037,6,01 Login,200,OK,Spike Users 1-9,text,true,,635,228,11,11,http://localhost:3000/api/login,6,0,1
+1786780232043,2,02 Search Product,200,OK,Spike Users 1-7,text,true,,480,144,11,11,http://localhost:3000/api/products?search=Samsung,2,0,0
+1786780232048,4,03 View Detail,200,OK,Spike Users 1-4,text,true,,461,131,11,11,http://localhost:3000/api/products/4,4,0,0
+1786780232048,4,03 View Detail,200,OK,Spike Users 1-3,text,true,,448,131,11,11,http://localhost:3000/api/products/3,4,0,0
+1786780232048,4,03 View Detail,200,OK,Spike Users 1-5,text,true,,467,131,11,11,http://localhost:3000/api/products/5,4,0,0
+1786780232049,5,03 View Detail,200,OK,Spike Users 1-1,text,true,,451,131,11,11,http://localhost:3000/api/products/1,5,0,0
+1786780232049,6,03 View Detail,200,OK,Spike Users 1-2,text,true,,480,131,11,11,http://localhost:3000/api/products/2,6,0,0
+1786780232086,2,01 Login,200,OK,Spike Users 1-10,text,true,,635,228,12,12,http://localhost:3000/api/login,2,0,0
+1786780232094,2,02 Search Product,200,OK,Spike Users 1-8,text,true,,450,144,12,12,http://localhost:3000/api/products?search=MacBook,2,0,0
+1786780232101,2,03 View Detail,200,OK,Spike Users 1-6,text,true,,451,131,12,12,http://localhost:3000/api/products/1,1,0,0
+1786780232138,3,01 Login,200,OK,Spike Users 1-11,text,true,,635,228,13,13,http://localhost:3000/api/login,3,0,1
+1786780232145,1,02 Search Product,200,OK,Spike Users 1-9,text,true,,461,144,13,13,http://localhost:3000/api/products?search=AirPods,1,0,0
+1786780232146,2,03 View Detail,200,OK,Spike Users 1-7,text,true,,480,131,13,13,http://localhost:3000/api/products/2,2,0,0
+1786780232153,3,04 Add to Cart,200,OK,Spike Users 1-3,text,true,,294,397,13,13,http://localhost:3000/api/cart,3,0,0
+1786780232154,4,04 Add to Cart,200,OK,Spike Users 1-4,text,true,,294,404,13,13,http://localhost:3000/api/cart,4,0,0
+1786780232154,6,04 Add to Cart,200,OK,Spike Users 1-5,text,true,,294,405,13,13,http://localhost:3000/api/cart,6,0,0
+1786780232156,6,04 Add to Cart,200,OK,Spike Users 1-1,text,true,,294,400,13,13,http://localhost:3000/api/cart,6,0,0
+1786780232156,7,04 Add to Cart,200,OK,Spike Users 1-2,text,true,,294,407,13,13,http://localhost:3000/api/cart,7,0,0
+1786780232187,3,01 Login,200,OK,Spike Users 1-12,text,true,,635,228,14,14,http://localhost:3000/api/login,3,0,1
+1786780232191,1,02 Search Product,200,OK,Spike Users 1-10,text,true,,469,145,14,14,http://localhost:3000/api/products?search=Keychron,1,0,0
+1786780232197,2,03 View Detail,200,OK,Spike Users 1-8,text,true,,448,131,14,14,http://localhost:3000/api/products/3,2,0,0
+1786780232203,2,04 Add to Cart,200,OK,Spike Users 1-6,text,true,,294,400,14,14,http://localhost:3000/api/cart,2,0,0
+1786780232235,3,01 Login,200,OK,Spike Users 1-13,text,true,,635,228,15,15,http://localhost:3000/api/login,3,0,1
+1786780232243,2,02 Search Product,200,OK,Spike Users 1-11,text,true,,453,143,15,15,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786780232247,2,03 View Detail,200,OK,Spike Users 1-9,text,true,,461,131,15,15,http://localhost:3000/api/products/4,2,0,0
+1786780232249,2,04 Add to Cart,200,OK,Spike Users 1-7,text,true,,294,407,15,15,http://localhost:3000/api/cart,2,0,0
+1786780232284,4,01 Login,200,OK,Spike Users 1-14,text,true,,635,228,16,16,http://localhost:3000/api/login,4,0,2
+1786780232292,2,02 Search Product,200,OK,Spike Users 1-12,text,true,,480,144,16,16,http://localhost:3000/api/products?search=Samsung,2,0,0
+1786780232293,2,03 View Detail,200,OK,Spike Users 1-10,text,true,,467,131,16,16,http://localhost:3000/api/products/5,2,0,0
+1786780232301,4,04 Add to Cart,200,OK,Spike Users 1-8,text,true,,294,397,16,16,http://localhost:3000/api/cart,3,0,0
+1786780232340,4,02 Search Product,200,OK,Spike Users 1-13,text,true,,450,144,17,17,http://localhost:3000/api/products?search=MacBook,4,0,0
+1786780232337,9,01 Login,200,OK,Spike Users 1-15,text,true,,635,228,17,17,http://localhost:3000/api/login,9,0,2
+1786780232346,3,03 View Detail,200,OK,Spike Users 1-11,text,true,,451,131,17,17,http://localhost:3000/api/products/1,3,0,0
+1786780232351,3,04 Add to Cart,200,OK,Spike Users 1-9,text,true,,294,404,17,17,http://localhost:3000/api/cart,3,0,0
+1786780232381,5,01 Login,200,OK,Spike Users 1-16,text,true,,635,228,18,18,http://localhost:3000/api/login,5,0,1
+1786780232391,5,02 Search Product,200,OK,Spike Users 1-14,text,true,,461,144,18,18,http://localhost:3000/api/products?search=AirPods,5,0,0
+1786780232395,5,03 View Detail,200,OK,Spike Users 1-12,text,true,,480,131,18,18,http://localhost:3000/api/products/2,4,0,0
+1786780232397,6,04 Add to Cart,200,OK,Spike Users 1-10,text,true,,294,405,18,18,http://localhost:3000/api/cart,5,0,0
+1786780232437,5,01 Login,200,OK,Spike Users 1-17,text,true,,635,228,19,19,http://localhost:3000/api/login,5,0,2
+1786780232445,3,03 View Detail,200,OK,Spike Users 1-13,text,true,,448,131,19,19,http://localhost:3000/api/products/3,3,0,0
+1786780232447,4,02 Search Product,200,OK,Spike Users 1-15,text,true,,469,145,19,19,http://localhost:3000/api/products?search=Keychron,4,0,0
+1786780232451,5,04 Add to Cart,200,OK,Spike Users 1-11,text,true,,294,400,19,19,http://localhost:3000/api/cart,4,0,0
+1786780232483,4,01 Login,200,OK,Spike Users 1-18,text,true,,635,228,20,20,http://localhost:3000/api/login,4,0,1
+1786780232488,3,02 Search Product,200,OK,Spike Users 1-16,text,true,,453,143,20,20,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786780232497,2,03 View Detail,200,OK,Spike Users 1-14,text,true,,461,131,20,20,http://localhost:3000/api/products/4,2,0,0
+1786780232502,4,04 Add to Cart,200,OK,Spike Users 1-12,text,true,,294,407,20,20,http://localhost:3000/api/cart,4,0,0
+1786780232535,6,01 Login,200,OK,Spike Users 1-19,text,true,,635,228,21,21,http://localhost:3000/api/login,6,0,1
+1786780232543,3,02 Search Product,200,OK,Spike Users 1-17,text,true,,480,144,21,21,http://localhost:3000/api/products?search=Samsung,3,0,0
+1786780232550,4,04 Add to Cart,200,OK,Spike Users 1-13,text,true,,294,397,21,21,http://localhost:3000/api/cart,4,0,0
+1786780232552,4,03 View Detail,200,OK,Spike Users 1-15,text,true,,467,131,21,21,http://localhost:3000/api/products/5,4,0,0
+1786780232582,5,01 Login,200,OK,Spike Users 1-20,text,true,,635,228,22,22,http://localhost:3000/api/login,5,0,1
+1786780232589,7,02 Search Product,200,OK,Spike Users 1-18,text,true,,450,144,22,22,http://localhost:3000/api/products?search=MacBook,7,0,0
+1786780232592,5,03 View Detail,200,OK,Spike Users 1-16,text,true,,451,131,22,22,http://localhost:3000/api/products/1,5,0,0
+1786780232601,4,04 Add to Cart,200,OK,Spike Users 1-14,text,true,,294,404,22,22,http://localhost:3000/api/cart,4,0,0
+1786780232633,27,01 Login,200,OK,Spike Users 1-21,text,true,,635,228,23,23,http://localhost:3000/api/login,27,0,4
+1786780232657,5,04 Add to Cart,200,OK,Spike Users 1-15,text,true,,294,405,23,23,http://localhost:3000/api/cart,5,0,0
+1786780232647,17,03 View Detail,200,OK,Spike Users 1-17,text,true,,480,131,23,23,http://localhost:3000/api/products/2,17,0,0
+1786780232659,5,02 Search Product,200,OK,Spike Users 1-19,text,true,,461,144,23,23,http://localhost:3000/api/products?search=AirPods,5,0,0
+1786780232675,7,01 Login,200,OK,Spike Users 1-22,text,true,,635,228,24,24,http://localhost:3000/api/login,7,0,3
+1786780232690,4,02 Search Product,200,OK,Spike Users 1-20,text,true,,469,145,24,24,http://localhost:3000/api/products?search=Keychron,4,0,0
+1786780232697,3,03 View Detail,200,OK,Spike Users 1-18,text,true,,448,131,24,24,http://localhost:3000/api/products/3,3,0,0
+1786780232699,4,04 Add to Cart,200,OK,Spike Users 1-16,text,true,,294,400,24,24,http://localhost:3000/api/cart,3,0,0
+1786780232749,8,01 Login,200,OK,Spike Users 1-23,text,true,,635,228,25,25,http://localhost:3000/api/login,8,0,2
+1786780232761,2,02 Search Product,200,OK,Spike Users 1-21,text,true,,453,143,25,25,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786780232765,4,04 Add to Cart,200,OK,Spike Users 1-17,text,true,,294,407,26,26,http://localhost:3000/api/cart,4,0,0
+1786780232765,5,03 View Detail,200,OK,Spike Users 1-19,text,true,,461,131,26,26,http://localhost:3000/api/products/4,5,0,0
+1786780232774,6,01 Login,200,OK,Spike Users 1-24,text,true,,635,228,26,26,http://localhost:3000/api/login,5,0,1
+1786780232784,2,02 Search Product,200,OK,Spike Users 1-22,text,true,,480,144,26,26,http://localhost:3000/api/products?search=Samsung,2,0,0
+1786780232795,3,03 View Detail,200,OK,Spike Users 1-20,text,true,,467,131,26,26,http://localhost:3000/api/products/5,3,0,0
+1786780232802,4,04 Add to Cart,200,OK,Spike Users 1-18,text,true,,294,397,26,26,http://localhost:3000/api/cart,4,0,0
+1786780232824,6,01 Login,200,OK,Spike Users 1-25,text,true,,635,228,27,27,http://localhost:3000/api/login,5,0,2
+1786780232859,1,02 Search Product,200,OK,Spike Users 1-23,text,true,,450,144,27,27,http://localhost:3000/api/products?search=MacBook,1,0,0
+1786780232866,1,03 View Detail,200,OK,Spike Users 1-21,text,true,,451,131,27,27,http://localhost:3000/api/products/1,1,0,0
+1786780232869,5,01 Login,200,OK,Spike Users 1-26,text,true,,635,228,28,28,http://localhost:3000/api/login,5,0,2
+1786780232873,2,04 Add to Cart,200,OK,Spike Users 1-19,text,true,,294,404,28,28,http://localhost:3000/api/cart,2,0,0
+1786780232882,2,02 Search Product,200,OK,Spike Users 1-24,text,true,,461,144,28,28,http://localhost:3000/api/products?search=AirPods,2,0,0
+1786780232888,3,03 View Detail,200,OK,Spike Users 1-22,text,true,,480,131,28,28,http://localhost:3000/api/products/2,3,0,0
+1786780232900,4,04 Add to Cart,200,OK,Spike Users 1-20,text,true,,294,405,28,28,http://localhost:3000/api/cart,3,0,0
+1786780232922,9,01 Login,200,OK,Spike Users 1-27,text,true,,635,228,29,29,http://localhost:3000/api/login,9,0,2
+1786780232931,5,02 Search Product,200,OK,Spike Users 1-25,text,true,,469,145,29,29,http://localhost:3000/api/products?search=Keychron,5,0,0
+1786780232963,4,03 View Detail,200,OK,Spike Users 1-23,text,true,,448,131,29,29,http://localhost:3000/api/products/3,4,0,0
+1786780232968,4,04 Add to Cart,200,OK,Spike Users 1-21,text,true,,294,400,30,30,http://localhost:3000/api/cart,4,0,0
+1786780232970,7,01 Login,200,OK,Spike Users 1-28,text,true,,635,228,30,30,http://localhost:3000/api/login,7,0,1
+1786780232975,4,02 Search Product,200,OK,Spike Users 1-26,text,true,,453,143,30,30,http://localhost:3000/api/products?search=iPhone,4,0,0
+1786780232985,3,03 View Detail,200,OK,Spike Users 1-24,text,true,,461,131,30,30,http://localhost:3000/api/products/4,3,0,0
+1786780232992,4,04 Add to Cart,200,OK,Spike Users 1-22,text,true,,294,407,30,30,http://localhost:3000/api/cart,4,0,0
+1786780233017,5,01 Login,200,OK,Spike Users 1-29,text,true,,635,228,31,31,http://localhost:3000/api/login,5,0,1
+1786780233032,3,02 Search Product,200,OK,Spike Users 1-27,text,true,,480,144,31,31,http://localhost:3000/api/products?search=Samsung,3,0,0
+1786780233037,2,03 View Detail,200,OK,Spike Users 1-25,text,true,,467,131,31,31,http://localhost:3000/api/products/5,2,0,0
+1786780233070,3,04 Add to Cart,200,OK,Spike Users 1-23,text,true,,294,397,32,32,http://localhost:3000/api/cart,3,0,0
+1786780233071,4,01 Login,200,OK,Spike Users 1-30,text,true,,635,228,32,32,http://localhost:3000/api/login,3,0,1
+1786780233079,1,02 Search Product,200,OK,Spike Users 1-28,text,true,,450,144,32,32,http://localhost:3000/api/products?search=MacBook,1,0,0
+1786780233080,1,03 View Detail,200,OK,Spike Users 1-26,text,true,,451,131,32,32,http://localhost:3000/api/products/1,1,0,0
+1786780233089,2,04 Add to Cart,200,OK,Spike Users 1-24,text,true,,294,404,32,32,http://localhost:3000/api/cart,2,0,0
+1786780233117,4,01 Login,200,OK,Spike Users 1-31,text,true,,635,228,33,33,http://localhost:3000/api/login,4,0,1
+1786780233124,2,02 Search Product,200,OK,Spike Users 1-29,text,true,,461,144,33,33,http://localhost:3000/api/products?search=AirPods,2,0,0
+1786780233136,2,03 View Detail,200,OK,Spike Users 1-27,text,true,,480,131,33,33,http://localhost:3000/api/products/2,2,0,0
+1786780233140,2,04 Add to Cart,200,OK,Spike Users 1-25,text,true,,294,405,33,33,http://localhost:3000/api/cart,2,0,0
+1786780233166,4,01 Login,200,OK,Spike Users 1-32,text,true,,635,228,34,34,http://localhost:3000/api/login,4,0,1
+1786780233176,2,02 Search Product,200,OK,Spike Users 1-30,text,true,,469,145,34,34,http://localhost:3000/api/products?search=Keychron,2,0,0
+1786780233181,2,03 View Detail,200,OK,Spike Users 1-28,text,true,,448,131,34,34,http://localhost:3000/api/products/3,2,0,0
+1786780233183,6,04 Add to Cart,200,OK,Spike Users 1-26,text,true,,294,400,34,34,http://localhost:3000/api/cart,6,0,0
+1786780233220,4,01 Login,200,OK,Spike Users 1-33,text,true,,635,228,35,35,http://localhost:3000/api/login,4,0,1
+1786780233224,2,02 Search Product,200,OK,Spike Users 1-31,text,true,,453,143,35,35,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786780233227,3,03 View Detail,200,OK,Spike Users 1-29,text,true,,461,131,35,35,http://localhost:3000/api/products/4,3,0,0
+1786780233239,3,04 Add to Cart,200,OK,Spike Users 1-27,text,true,,294,407,35,35,http://localhost:3000/api/cart,3,0,0
+1786780232258,1023,05 Checkout,200,OK,Spike Users 1-3,text,true,,316,425,36,36,http://localhost:3000/api/checkout,1023,0,0
+1786780233099,199,05 Checkout,200,OK,Spike Users 1-22,text,true,,316,418,36,36,http://localhost:3000/api/checkout,199,0,0
+1786780232977,323,05 Checkout,200,OK,Spike Users 1-19,text,true,,316,418,36,36,http://localhost:3000/api/checkout,323,0,0
+1786780233074,226,05 Checkout,200,OK,Spike Users 1-21,text,true,,316,414,36,36,http://localhost:3000/api/checkout,226,0,0
+1786780233007,293,05 Checkout,200,OK,Spike Users 1-20,text,true,,316,416,36,36,http://localhost:3000/api/checkout,293,0,0
+1786780232907,393,05 Checkout,200,OK,Spike Users 1-18,text,true,,316,425,36,36,http://localhost:3000/api/checkout,393,0,0
+1786780232870,434,05 Checkout,200,OK,Spike Users 1-17,text,true,,316,418,36,36,http://localhost:3000/api/checkout,434,0,0
+1786780233284,20,04 Add to Cart,200,OK,Spike Users 1-28,text,true,,294,397,36,36,http://localhost:3000/api/cart,20,0,0
+1786780233243,62,05 Checkout,200,OK,Spike Users 1-25,text,true,,316,416,36,36,http://localhost:3000/api/checkout,61,0,0
+1786780232764,541,05 Checkout,200,OK,Spike Users 1-15,text,true,,316,416,36,36,http://localhost:3000/api/checkout,541,0,0
+1786780232706,600,05 Checkout,200,OK,Spike Users 1-14,text,true,,316,418,36,36,http://localhost:3000/api/checkout,600,0,0
+1786780233174,132,05 Checkout,200,OK,Spike Users 1-23,text,true,,316,425,36,36,http://localhost:3000/api/checkout,132,0,0
+1786780233192,124,05 Checkout,200,OK,Spike Users 1-24,text,true,,316,418,37,37,http://localhost:3000/api/checkout,124,0,0
+1786780232806,518,05 Checkout,200,OK,Spike Users 1-16,text,true,,316,414,37,37,http://localhost:3000/api/checkout,518,0,0
+1786780232660,676,05 Checkout,200,OK,Spike Users 1-13,text,true,,316,425,37,37,http://localhost:3000/api/checkout,676,0,0
+1786780232608,730,05 Checkout,200,OK,Spike Users 1-12,text,true,,316,418,37,37,http://localhost:3000/api/checkout,730,0,0
+1786780232456,882,05 Checkout,200,OK,Spike Users 1-9,text,true,,316,418,37,37,http://localhost:3000/api/checkout,882,0,0
+1786780232557,781,05 Checkout,200,OK,Spike Users 1-11,text,true,,316,414,37,37,http://localhost:3000/api/checkout,781,0,0
+1786780232406,932,05 Checkout,200,OK,Spike Users 1-8,text,true,,316,425,37,37,http://localhost:3000/api/checkout,932,0,0
+1786780232263,1076,05 Checkout,200,OK,Spike Users 1-1,text,true,,316,414,37,37,http://localhost:3000/api/checkout,1076,0,0
+1786780232262,1077,05 Checkout,200,OK,Spike Users 1-5,text,true,,316,416,37,37,http://localhost:3000/api/checkout,1077,0,0
+1786780232504,836,05 Checkout,200,OK,Spike Users 1-10,text,true,,316,416,37,37,http://localhost:3000/api/checkout,836,0,0
+1786780232265,1075,05 Checkout,200,OK,Spike Users 1-2,text,true,,316,418,37,37,http://localhost:3000/api/checkout,1075,0,0
+1786780232306,1034,05 Checkout,200,OK,Spike Users 1-6,text,true,,316,414,37,37,http://localhost:3000/api/checkout,1034,0,0
+1786780232260,1080,05 Checkout,200,OK,Spike Users 1-4,text,true,,316,418,37,37,http://localhost:3000/api/checkout,1080,0,0
+1786780233331,13,04 Add to Cart,200,OK,Spike Users 1-29,text,true,,294,404,37,37,http://localhost:3000/api/cart,13,0,0
+1786780233272,73,02 Search Product,200,OK,Spike Users 1-32,text,true,,480,144,37,37,http://localhost:3000/api/products?search=Samsung,73,0,0
+1786780232353,993,05 Checkout,200,OK,Spike Users 1-7,text,true,,316,418,37,37,http://localhost:3000/api/checkout,993,0,0
+1786780233266,85,01 Login,200,OK,Spike Users 1-34,text,true,,635,228,37,37,http://localhost:3000/api/login,85,0,1
+1786780233279,72,03 View Detail,200,OK,Spike Users 1-30,text,true,,467,131,37,37,http://localhost:3000/api/products/5,72,0,0
+1786780233326,29,02 Search Product,200,OK,Spike Users 1-33,text,true,,450,144,37,37,http://localhost:3000/api/products?search=MacBook,28,0,0
+1786780233290,64,05 Checkout,200,OK,Spike Users 1-26,text,true,,316,414,37,37,http://localhost:3000/api/checkout,64,0,0
+1786780233327,28,03 View Detail,200,OK,Spike Users 1-31,text,true,,451,131,37,37,http://localhost:3000/api/products/1,28,0,0
+1786780233320,36,01 Login,200,OK,Spike Users 1-35,text,true,,635,228,37,37,http://localhost:3000/api/login,36,0,1
+1786780233344,15,05 Checkout,200,OK,Spike Users 1-27,text,true,,316,418,37,37,http://localhost:3000/api/checkout,15,0,0
+1786780233365,3,01 Login,200,OK,Spike Users 1-36,text,true,,635,228,38,38,http://localhost:3000/api/login,3,0,1
+1786780233382,2,01 Login,200,OK,Spike Users 1-3,text,true,,635,228,38,38,http://localhost:3000/api/login,2,0,0
+1786780233400,2,01 Login,200,OK,Spike Users 1-22,text,true,,635,228,38,38,http://localhost:3000/api/login,2,0,0
+1786780233401,4,01 Login,200,OK,Spike Users 1-18,text,true,,635,228,38,38,http://localhost:3000/api/login,4,0,0
+1786780233401,4,01 Login,200,OK,Spike Users 1-19,text,true,,635,228,38,38,http://localhost:3000/api/login,4,0,0
+1786780233402,4,01 Login,200,OK,Spike Users 1-20,text,true,,635,228,38,38,http://localhost:3000/api/login,4,0,0
+1786780233402,5,01 Login,200,OK,Spike Users 1-21,text,true,,635,228,38,38,http://localhost:3000/api/login,5,0,0
+1786780233406,7,05 Checkout,200,OK,Spike Users 1-28,text,true,,316,425,39,39,http://localhost:3000/api/checkout,7,0,0
+1786780233406,8,01 Login,200,OK,Spike Users 1-25,text,true,,635,228,39,39,http://localhost:3000/api/login,8,0,0
+1786780233407,9,01 Login,200,OK,Spike Users 1-23,text,true,,635,228,39,39,http://localhost:3000/api/login,9,0,0
+1786780233407,11,01 Login,200,OK,Spike Users 1-14,text,true,,635,228,39,39,http://localhost:3000/api/login,11,0,0
+1786780233406,13,01 Login,200,OK,Spike Users 1-17,text,true,,635,228,39,39,http://localhost:3000/api/login,13,0,0
+1786780233407,13,01 Login,200,OK,Spike Users 1-15,text,true,,635,228,39,39,http://localhost:3000/api/login,13,0,0
+1786780233416,5,01 Login,200,OK,Spike Users 1-37,text,true,,635,228,39,39,http://localhost:3000/api/login,5,0,1
+1786780233417,5,01 Login,200,OK,Spike Users 1-24,text,true,,635,228,39,39,http://localhost:3000/api/login,5,0,0
+1786780233426,2,01 Login,200,OK,Spike Users 1-16,text,true,,635,228,39,39,http://localhost:3000/api/login,2,0,0
+1786780233438,2,01 Login,200,OK,Spike Users 1-13,text,true,,635,228,39,39,http://localhost:3000/api/login,2,0,0
+1786780233440,3,01 Login,200,OK,Spike Users 1-1,text,true,,635,228,39,39,http://localhost:3000/api/login,3,0,0
+1786780233439,5,01 Login,200,OK,Spike Users 1-9,text,true,,635,228,39,39,http://localhost:3000/api/login,5,0,0
+1786780233440,5,01 Login,200,OK,Spike Users 1-5,text,true,,635,228,39,39,http://localhost:3000/api/login,5,0,0
+1786780233439,7,01 Login,200,OK,Spike Users 1-12,text,true,,635,228,39,39,http://localhost:3000/api/login,7,0,0
+1786780233440,6,01 Login,200,OK,Spike Users 1-8,text,true,,635,228,39,39,http://localhost:3000/api/login,6,0,0
+1786780233439,8,01 Login,200,OK,Spike Users 1-11,text,true,,635,228,39,39,http://localhost:3000/api/login,8,0,0
+1786780233441,9,01 Login,200,OK,Spike Users 1-6,text,true,,635,228,39,39,http://localhost:3000/api/login,9,0,0
+1786780233441,10,01 Login,200,OK,Spike Users 1-4,text,true,,635,228,39,39,http://localhost:3000/api/login,10,0,0
+1786780233452,2,04 Add to Cart,200,OK,Spike Users 1-30,text,true,,294,405,39,39,http://localhost:3000/api/cart,2,0,0
+1786780233445,10,05 Checkout,200,OK,Spike Users 1-29,text,true,,316,418,39,39,http://localhost:3000/api/checkout,10,0,0
+1786780233446,9,03 View Detail,200,OK,Spike Users 1-32,text,true,,480,131,39,39,http://localhost:3000/api/products/2,9,0,0
+1786780233442,14,01 Login,200,OK,Spike Users 1-2,text,true,,635,228,39,39,http://localhost:3000/api/login,14,0,0
+1786780233442,16,01 Login,200,OK,Spike Users 1-10,text,true,,635,228,39,39,http://localhost:3000/api/login,16,0,0
+1786780233447,12,01 Login,200,OK,Spike Users 1-7,text,true,,635,228,39,39,http://localhost:3000/api/login,12,0,0
+1786780233456,4,04 Add to Cart,200,OK,Spike Users 1-31,text,true,,294,400,39,39,http://localhost:3000/api/cart,4,0,0
+1786780233452,9,02 Search Product,200,OK,Spike Users 1-34,text,true,,461,144,39,39,http://localhost:3000/api/products?search=AirPods,9,0,0
+1786780233457,4,02 Search Product,200,OK,Spike Users 1-35,text,true,,469,145,39,39,http://localhost:3000/api/products?search=Keychron,4,0,0
+1786780233456,5,03 View Detail,200,OK,Spike Users 1-33,text,true,,448,131,39,39,http://localhost:3000/api/products/3,5,0,0
+1786780233456,6,01 Login,200,OK,Spike Users 1-26,text,true,,635,228,40,40,http://localhost:3000/api/login,6,0,0
+1786780233460,3,01 Login,200,OK,Spike Users 1-27,text,true,,635,228,40,40,http://localhost:3000/api/login,3,0,0
+1786780233465,3,01 Login,200,OK,Spike Users 1-38,text,true,,635,228,40,40,http://localhost:3000/api/login,3,0,1
+1786780233469,1,02 Search Product,200,OK,Spike Users 1-36,text,true,,453,143,40,40,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786780233485,2,02 Search Product,200,OK,Spike Users 1-3,text,true,,480,144,40,40,http://localhost:3000/api/products?search=Samsung,2,0,0
+1786780233503,2,02 Search Product,200,OK,Spike Users 1-22,text,true,,450,144,40,40,http://localhost:3000/api/products?search=MacBook,2,0,0
+1786780233505,2,02 Search Product,200,OK,Spike Users 1-18,text,true,,469,145,40,40,http://localhost:3000/api/products?search=Keychron,2,0,0
+1786780233506,2,02 Search Product,200,OK,Spike Users 1-19,text,true,,461,144,40,40,http://localhost:3000/api/products?search=AirPods,2,0,0
+1786780233507,1,02 Search Product,200,OK,Spike Users 1-20,text,true,,480,144,40,40,http://localhost:3000/api/products?search=Samsung,1,0,0
+1786780233508,1,02 Search Product,200,OK,Spike Users 1-21,text,true,,453,143,40,40,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786780233514,2,01 Login,200,OK,Spike Users 1-28,text,true,,635,228,41,41,http://localhost:3000/api/login,2,0,0
+1786780233514,3,01 Login,200,OK,Spike Users 1-39,text,true,,635,228,41,41,http://localhost:3000/api/login,3,0,1
+1786780233515,3,02 Search Product,200,OK,Spike Users 1-25,text,true,,461,144,41,41,http://localhost:3000/api/products?search=AirPods,3,0,0
+1786780233517,1,02 Search Product,200,OK,Spike Users 1-23,text,true,,480,144,41,41,http://localhost:3000/api/products?search=Samsung,1,0,0
+1786780233518,1,02 Search Product,200,OK,Spike Users 1-14,text,true,,453,143,41,41,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786780233519,1,02 Search Product,200,OK,Spike Users 1-17,text,true,,450,144,41,41,http://localhost:3000/api/products?search=MacBook,1,0,0
+1786780233520,1,02 Search Product,200,OK,Spike Users 1-15,text,true,,469,145,41,41,http://localhost:3000/api/products?search=Keychron,1,0,0
+1786780233522,1,02 Search Product,200,OK,Spike Users 1-37,text,true,,450,144,41,41,http://localhost:3000/api/products?search=MacBook,1,0,0
+1786780233523,1,02 Search Product,200,OK,Spike Users 1-24,text,true,,461,144,41,41,http://localhost:3000/api/products?search=AirPods,1,0,0
+1786780233529,2,02 Search Product,200,OK,Spike Users 1-16,text,true,,469,145,41,41,http://localhost:3000/api/products?search=Keychron,2,0,0
+1786780233542,2,02 Search Product,200,OK,Spike Users 1-13,text,true,,453,143,41,41,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786780233545,2,02 Search Product,200,OK,Spike Users 1-9,text,true,,450,144,41,41,http://localhost:3000/api/products?search=MacBook,2,0,0
+1786780233545,3,02 Search Product,200,OK,Spike Users 1-1,text,true,,453,143,41,41,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786780233546,3,02 Search Product,200,OK,Spike Users 1-5,text,true,,480,144,41,41,http://localhost:3000/api/products?search=Samsung,3,0,0
+1786780233547,3,02 Search Product,200,OK,Spike Users 1-12,text,true,,461,144,41,41,http://localhost:3000/api/products?search=AirPods,3,0,0
+1786780233548,3,02 Search Product,200,OK,Spike Users 1-11,text,true,,480,144,41,41,http://localhost:3000/api/products?search=Samsung,3,0,0
+1786780233549,2,02 Search Product,200,OK,Spike Users 1-8,text,true,,469,145,41,41,http://localhost:3000/api/products?search=Keychron,2,0,0
+1786780233552,1,02 Search Product,200,OK,Spike Users 1-6,text,true,,461,144,41,41,http://localhost:3000/api/products?search=AirPods,1,0,0
+1786780233552,2,02 Search Product,200,OK,Spike Users 1-4,text,true,,469,145,41,41,http://localhost:3000/api/products?search=Keychron,2,0,0
+1786780233556,4,04 Add to Cart,200,OK,Spike Users 1-32,text,true,,294,407,42,42,http://localhost:3000/api/cart,4,0,0
+1786780233562,8,04 Add to Cart,200,OK,Spike Users 1-33,text,true,,294,397,42,42,http://localhost:3000/api/cart,8,0,0
+1786780233556,15,05 Checkout,200,OK,Spike Users 1-30,text,true,,316,416,42,42,http://localhost:3000/api/checkout,15,0,0
+1786780233556,16,01 Login,200,OK,Spike Users 1-29,text,true,,635,228,42,42,http://localhost:3000/api/login,16,0,0
+1786780233560,15,02 Search Product,200,OK,Spike Users 1-7,text,true,,480,144,42,42,http://localhost:3000/api/products?search=Samsung,15,0,0
+1786780233559,16,02 Search Product,200,OK,Spike Users 1-10,text,true,,450,144,42,42,http://localhost:3000/api/products?search=MacBook,16,0,0
+1786780233558,18,02 Search Product,200,OK,Spike Users 1-2,text,true,,453,143,42,42,http://localhost:3000/api/products?search=iPhone,18,0,0
+1786780233562,14,03 View Detail,200,OK,Spike Users 1-35,text,true,,467,131,42,42,http://localhost:3000/api/products/5,14,0,0
+1786780233562,14,03 View Detail,200,OK,Spike Users 1-34,text,true,,461,131,42,42,http://localhost:3000/api/products/4,14,0,0
+1786780233561,15,05 Checkout,200,OK,Spike Users 1-31,text,true,,316,414,42,42,http://localhost:3000/api/checkout,15,0,0
+1786780233564,13,02 Search Product,200,OK,Spike Users 1-27,text,true,,461,144,42,42,http://localhost:3000/api/products?search=AirPods,13,0,0
+1786780233564,13,02 Search Product,200,OK,Spike Users 1-26,text,true,,450,144,42,42,http://localhost:3000/api/products?search=MacBook,13,0,0
+1786780233570,9,03 View Detail,200,OK,Spike Users 1-36,text,true,,451,131,42,42,http://localhost:3000/api/products/1,9,0,0
+1786780233564,15,01 Login,200,OK,Spike Users 1-40,text,true,,635,228,42,42,http://localhost:3000/api/login,15,0,1
+1786780233570,9,02 Search Product,200,OK,Spike Users 1-38,text,true,,469,145,42,42,http://localhost:3000/api/products?search=Keychron,9,0,0
+1786780233588,2,03 View Detail,200,OK,Spike Users 1-3,text,true,,480,131,42,42,http://localhost:3000/api/products/2,2,0,0
+1786780233606,2,03 View Detail,200,OK,Spike Users 1-22,text,true,,448,131,42,42,http://localhost:3000/api/products/3,2,0,0
+1786780233607,2,03 View Detail,200,OK,Spike Users 1-18,text,true,,467,131,43,43,http://localhost:3000/api/products/5,1,0,0
+1786780233609,3,03 View Detail,200,OK,Spike Users 1-19,text,true,,461,131,43,43,http://localhost:3000/api/products/4,3,0,0
+1786780233609,3,03 View Detail,200,OK,Spike Users 1-20,text,true,,480,131,43,43,http://localhost:3000/api/products/2,3,0,0
+1786780233612,2,03 View Detail,200,OK,Spike Users 1-21,text,true,,451,131,43,43,http://localhost:3000/api/products/1,2,0,0
+1786780233613,3,01 Login,200,OK,Spike Users 1-41,text,true,,635,228,43,43,http://localhost:3000/api/login,3,0,0
+1786780233628,4,03 View Detail,200,OK,Spike Users 1-24,text,true,,461,131,43,43,http://localhost:3000/api/products/4,4,0,0
+1786780233628,4,02 Search Product,200,OK,Spike Users 1-28,text,true,,480,144,43,43,http://localhost:3000/api/products?search=Samsung,4,0,0
+1786780233628,4,03 View Detail,200,OK,Spike Users 1-37,text,true,,448,131,43,43,http://localhost:3000/api/products/3,4,0,0
+1786780233628,5,02 Search Product,200,OK,Spike Users 1-39,text,true,,453,143,43,43,http://localhost:3000/api/products?search=iPhone,5,0,0
+1786780233628,5,03 View Detail,200,OK,Spike Users 1-14,text,true,,451,131,43,43,http://localhost:3000/api/products/1,5,0,0
+1786780233628,5,03 View Detail,200,OK,Spike Users 1-15,text,true,,467,131,43,43,http://localhost:3000/api/products/5,5,0,0
+1786780233628,5,03 View Detail,200,OK,Spike Users 1-17,text,true,,448,131,43,43,http://localhost:3000/api/products/3,5,0,0
+1786780233628,5,03 View Detail,200,OK,Spike Users 1-25,text,true,,461,131,43,43,http://localhost:3000/api/products/4,5,0,0
+1786780233628,5,03 View Detail,200,OK,Spike Users 1-23,text,true,,480,131,43,43,http://localhost:3000/api/products/2,5,0,0
+1786780233643,2,03 View Detail,200,OK,Spike Users 1-16,text,true,,467,131,43,43,http://localhost:3000/api/products/5,2,0,0
+1786780233644,1,03 View Detail,200,OK,Spike Users 1-13,text,true,,451,131,43,43,http://localhost:3000/api/products/1,1,0,0
+1786780233648,1,03 View Detail,200,OK,Spike Users 1-9,text,true,,448,131,43,43,http://localhost:3000/api/products/3,1,0,0
+1786780233650,1,03 View Detail,200,OK,Spike Users 1-1,text,true,,451,131,43,43,http://localhost:3000/api/products/1,1,0,0
+1786780233650,1,03 View Detail,200,OK,Spike Users 1-5,text,true,,480,131,43,43,http://localhost:3000/api/products/2,1,0,0
+1786780233651,1,03 View Detail,200,OK,Spike Users 1-12,text,true,,461,131,43,43,http://localhost:3000/api/products/4,1,0,0
+1786780233653,1,03 View Detail,200,OK,Spike Users 1-11,text,true,,480,131,43,43,http://localhost:3000/api/products/2,1,0,0
+1786780233653,1,03 View Detail,200,OK,Spike Users 1-8,text,true,,467,131,43,43,http://localhost:3000/api/products/5,1,0,0
+1786780233655,1,03 View Detail,200,OK,Spike Users 1-6,text,true,,461,131,43,43,http://localhost:3000/api/products/4,1,0,0
+1786780233655,1,03 View Detail,200,OK,Spike Users 1-4,text,true,,467,131,43,43,http://localhost:3000/api/products/5,1,0,0
+1786780233661,6,05 Checkout,200,OK,Spike Users 1-32,text,true,,316,418,44,44,http://localhost:3000/api/checkout,6,0,0
+1786780233663,5,01 Login,200,OK,Spike Users 1-42,text,true,,635,228,44,44,http://localhost:3000/api/login,5,0,1
+1786780233671,6,05 Checkout,200,OK,Spike Users 1-33,text,true,,316,425,44,44,http://localhost:3000/api/checkout,6,0,0
+1786780233673,6,01 Login,200,OK,Spike Users 1-30,text,true,,635,228,44,44,http://localhost:3000/api/login,6,0,0
+1786780233674,5,02 Search Product,200,OK,Spike Users 1-29,text,true,,450,144,44,44,http://localhost:3000/api/products?search=MacBook,5,0,0
+1786780233677,4,04 Add to Cart,200,OK,Spike Users 1-35,text,true,,294,405,44,44,http://localhost:3000/api/cart,4,0,0
+1786780233677,5,04 Add to Cart,200,OK,Spike Users 1-34,text,true,,294,404,44,44,http://localhost:3000/api/cart,5,0,0
+1786780233676,6,03 View Detail,200,OK,Spike Users 1-2,text,true,,451,131,44,44,http://localhost:3000/api/products/1,6,0,0
+1786780233676,6,03 View Detail,200,OK,Spike Users 1-7,text,true,,480,131,44,44,http://localhost:3000/api/products/2,6,0,0
+1786780233676,7,03 View Detail,200,OK,Spike Users 1-10,text,true,,448,131,44,44,http://localhost:3000/api/products/3,7,0,0
+1786780233681,3,04 Add to Cart,200,OK,Spike Users 1-36,text,true,,294,400,44,44,http://localhost:3000/api/cart,3,0,0
+1786780233678,7,03 View Detail,200,OK,Spike Users 1-27,text,true,,461,131,44,44,http://localhost:3000/api/products/4,7,0,0
+1786780233681,4,03 View Detail,200,OK,Spike Users 1-38,text,true,,467,131,44,44,http://localhost:3000/api/products/5,4,0,0
+1786780233681,5,02 Search Product,200,OK,Spike Users 1-40,text,true,,461,144,44,44,http://localhost:3000/api/products?search=AirPods,5,0,0
+1786780233678,9,03 View Detail,200,OK,Spike Users 1-26,text,true,,448,131,44,44,http://localhost:3000/api/products/3,8,0,0
+1786780233678,8,01 Login,200,OK,Spike Users 1-31,text,true,,635,228,44,44,http://localhost:3000/api/login,8,0,0
+1786780233690,3,04 Add to Cart,200,OK,Spike Users 1-3,text,true,,294,407,44,44,http://localhost:3000/api/cart,3,0,0
+1786780233708,3,04 Add to Cart,200,OK,Spike Users 1-22,text,true,,294,397,45,45,http://localhost:3000/api/cart,3,0,0
+1786780233709,3,04 Add to Cart,200,OK,Spike Users 1-18,text,true,,294,405,45,45,http://localhost:3000/api/cart,3,0,0
+1786780233710,4,01 Login,200,OK,Spike Users 1-43,text,true,,635,228,45,45,http://localhost:3000/api/login,4,0,0
+1786780233713,3,04 Add to Cart,200,OK,Spike Users 1-19,text,true,,294,404,45,45,http://localhost:3000/api/cart,3,0,0
+1786780233713,3,04 Add to Cart,200,OK,Spike Users 1-20,text,true,,294,407,45,45,http://localhost:3000/api/cart,3,0,0
+1786780233714,3,04 Add to Cart,200,OK,Spike Users 1-21,text,true,,294,400,45,45,http://localhost:3000/api/cart,3,0,0
+1786780233718,1,02 Search Product,200,OK,Spike Users 1-41,text,true,,469,145,45,45,http://localhost:3000/api/products?search=Keychron,1,0,0
+1786780233733,3,04 Add to Cart,200,OK,Spike Users 1-15,text,true,,294,405,45,45,http://localhost:3000/api/cart,3,0,0
+1786780233733,4,04 Add to Cart,200,OK,Spike Users 1-17,text,true,,294,397,45,45,http://localhost:3000/api/cart,4,0,0
+1786780233734,4,04 Add to Cart,200,OK,Spike Users 1-23,text,true,,294,407,45,45,http://localhost:3000/api/cart,4,0,0
+1786780233734,5,04 Add to Cart,200,OK,Spike Users 1-24,text,true,,294,404,45,45,http://localhost:3000/api/cart,5,0,0
+1786780233734,5,04 Add to Cart,200,OK,Spike Users 1-37,text,true,,294,397,45,45,http://localhost:3000/api/cart,5,0,0
+1786780233734,6,04 Add to Cart,200,OK,Spike Users 1-14,text,true,,294,400,45,45,http://localhost:3000/api/cart,6,0,0
+1786780233734,7,04 Add to Cart,200,OK,Spike Users 1-25,text,true,,294,404,45,45,http://localhost:3000/api/cart,7,0,0
+1786780233734,8,03 View Detail,200,OK,Spike Users 1-39,text,true,,451,131,45,45,http://localhost:3000/api/products/1,8,0,0
+1786780233734,8,03 View Detail,200,OK,Spike Users 1-28,text,true,,480,131,45,45,http://localhost:3000/api/products/2,8,0,0
+1786780233745,2,04 Add to Cart,200,OK,Spike Users 1-16,text,true,,294,405,45,45,http://localhost:3000/api/cart,2,0,0
+1786780233747,2,04 Add to Cart,200,OK,Spike Users 1-13,text,true,,294,400,45,45,http://localhost:3000/api/cart,2,0,0
+1786780233750,2,04 Add to Cart,200,OK,Spike Users 1-9,text,true,,294,397,45,45,http://localhost:3000/api/cart,2,0,0
+1786780233753,2,04 Add to Cart,200,OK,Spike Users 1-12,text,true,,294,404,45,45,http://localhost:3000/api/cart,2,0,0
+1786780233753,3,04 Add to Cart,200,OK,Spike Users 1-5,text,true,,294,407,45,45,http://localhost:3000/api/cart,3,0,0
+1786780233753,4,04 Add to Cart,200,OK,Spike Users 1-1,text,true,,294,400,45,45,http://localhost:3000/api/cart,4,0,0
+1786780233756,3,04 Add to Cart,200,OK,Spike Users 1-11,text,true,,294,407,46,46,http://localhost:3000/api/cart,3,0,0
+1786780233756,4,04 Add to Cart,200,OK,Spike Users 1-8,text,true,,294,405,46,46,http://localhost:3000/api/cart,4,0,0
+1786780233758,3,04 Add to Cart,200,OK,Spike Users 1-4,text,true,,294,405,46,46,http://localhost:3000/api/cart,3,0,0
+1786780233758,4,04 Add to Cart,200,OK,Spike Users 1-6,text,true,,294,404,46,46,http://localhost:3000/api/cart,3,0,0
+1786780233759,4,01 Login,200,OK,Spike Users 1-44,text,true,,635,228,46,46,http://localhost:3000/api/login,4,0,1
+1786780233769,2,02 Search Product,200,OK,Spike Users 1-42,text,true,,453,143,46,46,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786780233768,4,01 Login,200,OK,Spike Users 1-32,text,true,,635,228,46,46,http://localhost:3000/api/login,4,0,0
+1786780233778,2,01 Login,200,OK,Spike Users 1-33,text,true,,635,228,46,46,http://localhost:3000/api/login,2,0,0
+1786780233780,1,03 View Detail,200,OK,Spike Users 1-29,text,true,,448,131,46,46,http://localhost:3000/api/products/3,1,0,0
+1786780233780,1,02 Search Product,200,OK,Spike Users 1-30,text,true,,480,144,46,46,http://localhost:3000/api/products?search=Samsung,1,0,0
+1786780233783,2,04 Add to Cart,200,OK,Spike Users 1-10,text,true,,294,397,46,46,http://localhost:3000/api/cart,2,0,0
+1786780233783,3,04 Add to Cart,200,OK,Spike Users 1-2,text,true,,294,400,46,46,http://localhost:3000/api/cart,3,0,0
+1786780233783,5,04 Add to Cart,200,OK,Spike Users 1-7,text,true,,294,407,46,46,http://localhost:3000/api/cart,5,0,0
+1786780233786,6,04 Add to Cart,200,OK,Spike Users 1-38,text,true,,294,405,46,46,http://localhost:3000/api/cart,6,0,0
+1786780233786,8,04 Add to Cart,200,OK,Spike Users 1-27,text,true,,294,404,46,46,http://localhost:3000/api/cart,8,0,0
+1786780233787,8,04 Add to Cart,200,OK,Spike Users 1-26,text,true,,294,397,46,46,http://localhost:3000/api/cart,8,0,0
+1786780233782,14,05 Checkout,200,OK,Spike Users 1-35,text,true,,316,416,46,46,http://localhost:3000/api/checkout,14,0,0
+1786780233784,15,05 Checkout,200,OK,Spike Users 1-34,text,true,,316,418,46,46,http://localhost:3000/api/checkout,15,0,0
+1786780233787,15,02 Search Product,200,OK,Spike Users 1-31,text,true,,450,144,46,46,http://localhost:3000/api/products?search=MacBook,15,0,0
+1786780233785,20,05 Checkout,200,OK,Spike Users 1-36,text,true,,316,414,46,46,http://localhost:3000/api/checkout,20,0,0
+1786780233786,19,03 View Detail,200,OK,Spike Users 1-40,text,true,,461,131,46,46,http://localhost:3000/api/products/4,19,0,0
+1786780233795,11,05 Checkout,200,OK,Spike Users 1-3,text,true,,316,418,46,46,http://localhost:3000/api/checkout,11,0,0
+1786780233809,4,01 Login,200,OK,Spike Users 1-45,text,true,,635,228,47,47,http://localhost:3000/api/login,3,0,1
+1786780233812,8,05 Checkout,200,OK,Spike Users 1-22,text,true,,316,425,47,47,http://localhost:3000/api/checkout,8,0,0
+1786780233813,13,05 Checkout,200,OK,Spike Users 1-18,text,true,,316,416,47,47,http://localhost:3000/api/checkout,13,0,0
+1786780233816,11,02 Search Product,200,OK,Spike Users 1-43,text,true,,461,144,47,47,http://localhost:3000/api/products?search=AirPods,11,0,0
+1786780233820,14,03 View Detail,200,OK,Spike Users 1-41,text,true,,467,131,47,47,http://localhost:3000/api/products/5,14,0,0
+1786780233818,16,05 Checkout,200,OK,Spike Users 1-20,text,true,,316,418,47,47,http://localhost:3000/api/checkout,16,0,0
+1786780233819,15,05 Checkout,200,OK,Spike Users 1-21,text,true,,316,414,47,47,http://localhost:3000/api/checkout,15,0,0
+1786780233816,19,05 Checkout,200,OK,Spike Users 1-19,text,true,,316,418,47,47,http://localhost:3000/api/checkout,18,0,0
+1786780233842,7,04 Add to Cart,200,OK,Spike Users 1-39,text,true,,294,400,47,47,http://localhost:3000/api/cart,7,0,0
+1786780233843,12,04 Add to Cart,200,OK,Spike Users 1-28,text,true,,294,407,47,47,http://localhost:3000/api/cart,12,0,0
+1786780233837,18,05 Checkout,200,OK,Spike Users 1-15,text,true,,316,416,47,47,http://localhost:3000/api/checkout,18,0,0
+1786780233838,17,05 Checkout,200,OK,Spike Users 1-17,text,true,,316,425,47,47,http://localhost:3000/api/checkout,17,0,0
+1786780233838,17,05 Checkout,200,OK,Spike Users 1-23,text,true,,316,418,47,47,http://localhost:3000/api/checkout,17,0,0
+1786780233840,26,05 Checkout,200,OK,Spike Users 1-24,text,true,,316,418,48,48,http://localhost:3000/api/checkout,26,0,0
+1786780233842,25,05 Checkout,200,OK,Spike Users 1-25,text,true,,316,418,48,48,http://localhost:3000/api/checkout,25,0,0
+1786780233840,29,05 Checkout,200,OK,Spike Users 1-37,text,true,,316,425,48,48,http://localhost:3000/api/checkout,29,0,0
+1786780233842,27,05 Checkout,200,OK,Spike Users 1-14,text,true,,316,414,48,48,http://localhost:3000/api/checkout,27,0,0
+1786780233848,33,05 Checkout,200,OK,Spike Users 1-16,text,true,,316,416,48,48,http://localhost:3000/api/checkout,32,0,0
+1786780233856,25,05 Checkout,200,OK,Spike Users 1-5,text,true,,316,418,48,48,http://localhost:3000/api/checkout,25,0,0
+1786780233856,25,05 Checkout,200,OK,Spike Users 1-12,text,true,,316,418,48,48,http://localhost:3000/api/checkout,25,0,0
+1786780233849,35,05 Checkout,200,OK,Spike Users 1-13,text,true,,316,414,48,48,http://localhost:3000/api/checkout,35,0,0
+1786780233853,31,05 Checkout,200,OK,Spike Users 1-9,text,true,,316,425,48,48,http://localhost:3000/api/checkout,31,0,0
+1786780233882,7,04 Add to Cart,200,OK,Spike Users 1-29,text,true,,294,397,48,48,http://localhost:3000/api/cart,7,0,0
+1786780233857,32,05 Checkout,200,OK,Spike Users 1-1,text,true,,316,414,48,48,http://localhost:3000/api/checkout,32,0,0
+1786780233860,36,05 Checkout,200,OK,Spike Users 1-11,text,true,,316,418,48,48,http://localhost:3000/api/checkout,36,0,0
+1786780233864,32,02 Search Product,200,OK,Spike Users 1-44,text,true,,469,145,48,48,http://localhost:3000/api/products?search=Keychron,32,0,0
+1786780233861,39,05 Checkout,200,OK,Spike Users 1-8,text,true,,316,416,48,48,http://localhost:3000/api/checkout,39,0,0
+1786780233863,38,05 Checkout,200,OK,Spike Users 1-6,text,true,,316,418,48,48,http://localhost:3000/api/checkout,37,0,0
+1786780233862,38,05 Checkout,200,OK,Spike Users 1-4,text,true,,316,416,48,48,http://localhost:3000/api/checkout,38,0,0
+1786780233860,42,01 Login,200,OK,Spike Users 1-46,text,true,,635,228,48,48,http://localhost:3000/api/login,42,0,1
+1786780233873,29,02 Search Product,200,OK,Spike Users 1-32,text,true,,453,143,48,48,http://localhost:3000/api/products?search=iPhone,29,0,0
+1786780233882,20,03 View Detail,200,OK,Spike Users 1-30,text,true,,480,131,48,48,http://localhost:3000/api/products/2,20,0,0
+1786780233872,30,03 View Detail,200,OK,Spike Users 1-42,text,true,,451,131,48,48,http://localhost:3000/api/products/1,30,0,0
+1786780233881,21,02 Search Product,200,OK,Spike Users 1-33,text,true,,480,144,48,48,http://localhost:3000/api/products?search=Samsung,21,0,0
+1786780233887,21,05 Checkout,200,OK,Spike Users 1-10,text,true,,316,425,49,49,http://localhost:3000/api/checkout,21,0,0
+1786780233887,23,05 Checkout,200,OK,Spike Users 1-2,text,true,,316,414,49,49,http://localhost:3000/api/checkout,23,0,0
+1786780233906,8,04 Add to Cart,200,OK,Spike Users 1-40,text,true,,294,404,49,49,http://localhost:3000/api/cart,7,0,0
+1786780233888,27,05 Checkout,200,OK,Spike Users 1-7,text,true,,316,418,49,49,http://localhost:3000/api/checkout,27,0,0
+1786780233897,20,05 Checkout,200,OK,Spike Users 1-26,text,true,,316,425,49,49,http://localhost:3000/api/checkout,20,0,0
+1786780233895,22,05 Checkout,200,OK,Spike Users 1-27,text,true,,316,418,49,49,http://localhost:3000/api/checkout,22,0,0
+1786780233894,24,05 Checkout,200,OK,Spike Users 1-38,text,true,,316,416,49,49,http://localhost:3000/api/checkout,24,0,0
+1786780233897,23,01 Login,200,OK,Spike Users 1-35,text,true,,635,228,49,49,http://localhost:3000/api/login,23,0,0
+1786780233904,16,03 View Detail,200,OK,Spike Users 1-31,text,true,,448,131,49,49,http://localhost:3000/api/products/3,16,0,0
+1786780233906,15,01 Login,200,OK,Spike Users 1-3,text,true,,635,228,49,49,http://localhost:3000/api/login,15,0,0
+1786780233906,17,01 Login,200,OK,Spike Users 1-36,text,true,,635,228,49,49,http://localhost:3000/api/login,17,0,0
+1786780233902,22,01 Login,200,OK,Spike Users 1-34,text,true,,635,228,49,49,http://localhost:3000/api/login,21,0,0
+1786780233914,10,02 Search Product,200,OK,Spike Users 1-45,text,true,,450,144,49,49,http://localhost:3000/api/products?search=MacBook,10,0,0
+1786780233908,16,01 Login,200,OK,Spike Users 1-47,text,true,,635,228,49,49,http://localhost:3000/api/login,16,0,1
+1786780233922,4,01 Login,200,OK,Spike Users 1-22,text,true,,635,228,49,49,http://localhost:3000/api/login,4,0,0
+1786780233928,2,01 Login,200,OK,Spike Users 1-18,text,true,,635,228,49,49,http://localhost:3000/api/login,2,0,0
+1786780233929,1,03 View Detail,200,OK,Spike Users 1-43,text,true,,461,131,49,49,http://localhost:3000/api/products/4,1,0,0
+1786780233935,2,04 Add to Cart,200,OK,Spike Users 1-41,text,true,,294,405,49,49,http://localhost:3000/api/cart,2,0,0
+1786780233935,3,01 Login,200,OK,Spike Users 1-20,text,true,,635,228,49,49,http://localhost:3000/api/login,3,0,0
+1786780233935,4,01 Login,200,OK,Spike Users 1-21,text,true,,635,228,49,49,http://localhost:3000/api/login,4,0,0
+1786780233936,4,01 Login,200,OK,Spike Users 1-19,text,true,,635,228,49,49,http://localhost:3000/api/login,4,0,0
+1786780233950,5,05 Checkout,200,OK,Spike Users 1-39,text,true,,316,414,50,50,http://localhost:3000/api/checkout,5,0,0
+1786780233955,6,05 Checkout,200,OK,Spike Users 1-28,text,true,,316,418,50,50,http://localhost:3000/api/checkout,6,0,0
+1786780233956,7,01 Login,200,OK,Spike Users 1-15,text,true,,635,228,50,50,http://localhost:3000/api/login,7,0,0
+1786780233956,8,01 Login,200,OK,Spike Users 1-23,text,true,,635,228,50,50,http://localhost:3000/api/login,8,0,0
+1786780233956,9,01 Login,200,OK,Spike Users 1-17,text,true,,635,228,50,50,http://localhost:3000/api/login,9,0,0
+1786780233958,8,01 Login,200,OK,Spike Users 1-48,text,true,,635,228,50,50,http://localhost:3000/api/login,8,0,2
+1786780233967,2,01 Login,200,OK,Spike Users 1-25,text,true,,635,228,50,50,http://localhost:3000/api/login,2,0,0
+1786780233967,3,01 Login,200,OK,Spike Users 1-24,text,true,,635,228,50,50,http://localhost:3000/api/login,3,0,0
+1786780233970,2,01 Login,200,OK,Spike Users 1-37,text,true,,635,228,50,50,http://localhost:3000/api/login,2,0,0
+1786780233970,3,01 Login,200,OK,Spike Users 1-14,text,true,,635,228,50,50,http://localhost:3000/api/login,3,0,0
+1786780233982,4,01 Login,200,OK,Spike Users 1-12,text,true,,635,228,50,50,http://localhost:3000/api/login,4,0,0
+1786780233982,6,01 Login,200,OK,Spike Users 1-5,text,true,,635,228,50,50,http://localhost:3000/api/login,5,0,0
+1786780233982,7,01 Login,200,OK,Spike Users 1-16,text,true,,635,228,50,50,http://localhost:3000/api/login,7,0,0
+1786780233986,7,01 Login,200,OK,Spike Users 1-13,text,true,,635,228,50,50,http://localhost:3000/api/login,7,0,0
+1786780233986,8,01 Login,200,OK,Spike Users 1-9,text,true,,635,228,50,50,http://localhost:3000/api/login,8,0,0
+1786780233989,8,05 Checkout,200,OK,Spike Users 1-29,text,true,,316,425,50,50,http://localhost:3000/api/checkout,8,0,0
+1786780233990,9,01 Login,200,OK,Spike Users 1-1,text,true,,635,228,50,50,http://localhost:3000/api/login,9,0,0
+1786780233997,4,03 View Detail,200,OK,Spike Users 1-44,text,true,,467,131,50,50,http://localhost:3000/api/products/5,4,0,0
+1786780233997,5,01 Login,200,OK,Spike Users 1-11,text,true,,635,228,50,50,http://localhost:3000/api/login,5,0,0
+1786780234003,2,04 Add to Cart,200,OK,Spike Users 1-42,text,true,,294,400,51,51,http://localhost:3000/api/cart,2,0,0
+1786780234003,3,04 Add to Cart,200,OK,Spike Users 1-30,text,true,,294,407,51,51,http://localhost:3000/api/cart,3,0,0
+1786780234002,5,01 Login,200,OK,Spike Users 1-8,text,true,,635,228,51,51,http://localhost:3000/api/login,5,0,0
+1786780234002,5,02 Search Product,200,OK,Spike Users 1-46,text,true,,461,144,51,51,http://localhost:3000/api/products?search=AirPods,5,0,0
+1786780234002,6,01 Login,200,OK,Spike Users 1-4,text,true,,635,228,51,51,http://localhost:3000/api/login,6,0,0
+1786780234002,6,03 View Detail,200,OK,Spike Users 1-32,text,true,,451,131,51,51,http://localhost:3000/api/products/1,6,0,0
+1786780234002,7,01 Login,200,OK,Spike Users 1-6,text,true,,635,228,51,51,http://localhost:3000/api/login,7,0,0
+1786780234003,6,03 View Detail,200,OK,Spike Users 1-33,text,true,,480,131,51,51,http://localhost:3000/api/products/2,6,0,0
+1786780234007,4,01 Login,200,OK,Spike Users 1-49,text,true,,635,228,51,51,http://localhost:3000/api/login,4,0,1
+1786780234010,3,01 Login,200,OK,Spike Users 1-10,text,true,,635,228,51,51,http://localhost:3000/api/login,3,0,0
+1786780234011,3,01 Login,200,OK,Spike Users 1-2,text,true,,635,228,51,51,http://localhost:3000/api/login,3,0,0
+1786780234015,6,05 Checkout,200,OK,Spike Users 1-40,text,true,,316,418,51,51,http://localhost:3000/api/checkout,6,0,0
+1786780234016,6,01 Login,200,OK,Spike Users 1-7,text,true,,635,228,51,51,http://localhost:3000/api/login,6,0,0
+1786780234021,3,04 Add to Cart,200,OK,Spike Users 1-31,text,true,,294,397,51,51,http://localhost:3000/api/cart,3,0,0
+1786780234018,7,01 Login,200,OK,Spike Users 1-26,text,true,,635,228,51,51,http://localhost:3000/api/login,7,0,0
+1786780234018,8,01 Login,200,OK,Spike Users 1-27,text,true,,635,228,51,51,http://localhost:3000/api/login,8,0,0
+1786780234019,8,01 Login,200,OK,Spike Users 1-38,text,true,,635,228,51,51,http://localhost:3000/api/login,8,0,0
+1786780234021,7,02 Search Product,200,OK,Spike Users 1-35,text,true,,469,145,51,51,http://localhost:3000/api/products?search=Keychron,7,0,0
+1786780234023,7,02 Search Product,200,OK,Spike Users 1-3,text,true,,450,144,51,51,http://localhost:3000/api/products?search=MacBook,7,0,0
+1786780234023,7,02 Search Product,200,OK,Spike Users 1-36,text,true,,480,144,51,51,http://localhost:3000/api/products?search=Samsung,7,0,0
+1786780234024,6,02 Search Product,200,OK,Spike Users 1-34,text,true,,453,143,51,51,http://localhost:3000/api/products?search=iPhone,6,0,0
+1786780234025,6,02 Search Product,200,OK,Spike Users 1-47,text,true,,461,144,51,51,http://localhost:3000/api/products?search=AirPods,6,0,0
+1786780234027,4,02 Search Product,200,OK,Spike Users 1-22,text,true,,469,145,51,51,http://localhost:3000/api/products?search=Keychron,4,0,0
+1786780234024,7,03 View Detail,200,OK,Spike Users 1-45,text,true,,448,131,51,51,http://localhost:3000/api/products/3,7,0,0
+1786780234030,2,02 Search Product,200,OK,Spike Users 1-18,text,true,,453,143,51,51,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786780234032,2,04 Add to Cart,200,OK,Spike Users 1-43,text,true,,294,404,51,51,http://localhost:3000/api/cart,1,0,0
+1786780234039,4,02 Search Product,200,OK,Spike Users 1-20,text,true,,480,144,51,51,http://localhost:3000/api/products?search=Samsung,4,0,0
+1786780234039,7,05 Checkout,200,OK,Spike Users 1-41,text,true,,316,416,51,51,http://localhost:3000/api/checkout,7,0,0
+1786780234040,6,02 Search Product,200,OK,Spike Users 1-21,text,true,,450,144,51,51,http://localhost:3000/api/products?search=MacBook,6,0,0
+1786780234041,5,02 Search Product,200,OK,Spike Users 1-19,text,true,,461,144,51,51,http://localhost:3000/api/products?search=AirPods,5,0,0
+1786780234055,3,01 Login,200,OK,Spike Users 1-39,text,true,,635,228,52,52,http://localhost:3000/api/login,3,0,0
+1786780234055,4,01 Login,200,OK,Spike Users 1-50,text,true,,635,228,52,52,http://localhost:3000/api/login,4,0,1
+1786780234063,2,01 Login,200,OK,Spike Users 1-28,text,true,,635,228,52,52,http://localhost:3000/api/login,2,0,0
+1786780234063,3,02 Search Product,200,OK,Spike Users 1-15,text,true,,469,145,52,52,http://localhost:3000/api/products?search=Keychron,3,0,0
+1786780234064,2,02 Search Product,200,OK,Spike Users 1-23,text,true,,480,144,52,52,http://localhost:3000/api/products?search=Samsung,2,0,0
+1786780234066,1,02 Search Product,200,OK,Spike Users 1-17,text,true,,453,143,52,52,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786780234066,1,02 Search Product,200,OK,Spike Users 1-48,text,true,,450,144,52,52,http://localhost:3000/api/products?search=MacBook,1,0,0
+1786780234070,1,02 Search Product,200,OK,Spike Users 1-25,text,true,,469,145,52,52,http://localhost:3000/api/products?search=Keychron,1,0,0
+1786780234072,1,02 Search Product,200,OK,Spike Users 1-24,text,true,,461,144,52,52,http://localhost:3000/api/products?search=AirPods,1,0,0
+1786780234073,1,02 Search Product,200,OK,Spike Users 1-37,text,true,,480,144,52,52,http://localhost:3000/api/products?search=Samsung,1,0,0
+1786780234074,1,02 Search Product,200,OK,Spike Users 1-14,text,true,,453,143,52,52,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786780234088,1,02 Search Product,200,OK,Spike Users 1-12,text,true,,469,145,52,52,http://localhost:3000/api/products?search=Keychron,1,0,0
+1786780234088,1,02 Search Product,200,OK,Spike Users 1-5,text,true,,461,144,52,52,http://localhost:3000/api/products?search=AirPods,1,0,0
+1786780234090,1,02 Search Product,200,OK,Spike Users 1-16,text,true,,450,144,52,52,http://localhost:3000/api/products?search=MacBook,1,0,0
+1786780234095,2,02 Search Product,200,OK,Spike Users 1-13,text,true,,453,143,52,52,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786780234096,1,02 Search Product,200,OK,Spike Users 1-9,text,true,,480,144,52,52,http://localhost:3000/api/products?search=Samsung,1,0,0
+1786780234097,2,01 Login,200,OK,Spike Users 1-29,text,true,,635,228,52,52,http://localhost:3000/api/login,2,0,0
+1786780234100,1,02 Search Product,200,OK,Spike Users 1-1,text,true,,450,144,52,52,http://localhost:3000/api/products?search=MacBook,1,0,0
+1786780234101,3,04 Add to Cart,200,OK,Spike Users 1-44,text,true,,294,405,53,53,http://localhost:3000/api/cart,3,0,0
+1786780234102,3,02 Search Product,200,OK,Spike Users 1-11,text,true,,461,144,53,53,http://localhost:3000/api/products?search=AirPods,3,0,0
+1786780234104,2,01 Login,200,OK,Spike Users 1-51,text,true,,635,228,53,53,http://localhost:3000/api/login,2,0,1
+1786780234109,4,04 Add to Cart,200,OK,Spike Users 1-32,text,true,,294,400,53,53,http://localhost:3000/api/cart,4,0,0
+1786780234110,5,04 Add to Cart,200,OK,Spike Users 1-33,text,true,,294,407,53,53,http://localhost:3000/api/cart,5,0,0
+1786780234106,9,05 Checkout,200,OK,Spike Users 1-42,text,true,,316,414,53,53,http://localhost:3000/api/checkout,9,0,0
+1786780234109,8,02 Search Product,200,OK,Spike Users 1-4,text,true,,480,144,53,53,http://localhost:3000/api/products?search=Samsung,8,0,0
+1786780234110,9,02 Search Product,200,OK,Spike Users 1-6,text,true,,453,143,53,53,http://localhost:3000/api/products?search=iPhone,9,0,0
+1786780234107,13,05 Checkout,200,OK,Spike Users 1-30,text,true,,316,418,53,53,http://localhost:3000/api/checkout,13,0,0
+1786780234108,12,02 Search Product,200,OK,Spike Users 1-8,text,true,,469,145,53,53,http://localhost:3000/api/products?search=Keychron,12,0,0
+1786780234108,12,03 View Detail,200,OK,Spike Users 1-46,text,true,,461,131,53,53,http://localhost:3000/api/products/4,12,0,0
+1786780234112,8,02 Search Product,200,OK,Spike Users 1-49,text,true,,450,144,53,53,http://localhost:3000/api/products?search=MacBook,8,0,0
+1786780234113,7,02 Search Product,200,OK,Spike Users 1-10,text,true,,461,144,53,53,http://localhost:3000/api/products?search=AirPods,7,0,0
+1786780234115,5,02 Search Product,200,OK,Spike Users 1-2,text,true,,469,145,53,53,http://localhost:3000/api/products?search=Keychron,5,0,0
+1786780234121,2,01 Login,200,OK,Spike Users 1-40,text,true,,635,228,53,53,http://localhost:3000/api/login,2,0,0
+1786780234123,1,02 Search Product,200,OK,Spike Users 1-7,text,true,,453,143,53,53,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786780234125,4,05 Checkout,200,OK,Spike Users 1-31,text,true,,316,425,53,53,http://localhost:3000/api/checkout,4,0,0
+1786780234127,3,02 Search Product,200,OK,Spike Users 1-26,text,true,,450,144,53,53,http://localhost:3000/api/products?search=MacBook,3,0,0
+1786780234128,2,02 Search Product,200,OK,Spike Users 1-38,text,true,,461,144,53,53,http://localhost:3000/api/products?search=AirPods,2,0,0
+1786780234127,3,02 Search Product,200,OK,Spike Users 1-27,text,true,,480,144,53,53,http://localhost:3000/api/products?search=Samsung,3,0,0
+1786780234128,3,03 View Detail,200,OK,Spike Users 1-35,text,true,,467,131,53,53,http://localhost:3000/api/products/5,2,0,0
+1786780234130,2,03 View Detail,200,OK,Spike Users 1-36,text,true,,480,131,53,53,http://localhost:3000/api/products/2,2,0,0
+1786780234130,2,03 View Detail,200,OK,Spike Users 1-3,text,true,,448,131,53,53,http://localhost:3000/api/products/3,2,0,0
+1786780234131,3,04 Add to Cart,200,OK,Spike Users 1-45,text,true,,294,397,53,53,http://localhost:3000/api/cart,3,0,0
+1786780234131,3,03 View Detail,200,OK,Spike Users 1-47,text,true,,461,131,53,53,http://localhost:3000/api/products/4,3,0,0
+1786780234131,3,03 View Detail,200,OK,Spike Users 1-22,text,true,,467,131,53,53,http://localhost:3000/api/products/5,3,0,0
+1786780234131,4,03 View Detail,200,OK,Spike Users 1-34,text,true,,451,131,53,53,http://localhost:3000/api/products/1,4,0,0
+1786780234132,3,03 View Detail,200,OK,Spike Users 1-18,text,true,,451,131,53,53,http://localhost:3000/api/products/1,3,0,0
+1786780234134,5,05 Checkout,200,OK,Spike Users 1-43,text,true,,316,418,53,53,http://localhost:3000/api/checkout,5,0,0
+1786780234143,1,03 View Detail,200,OK,Spike Users 1-20,text,true,,480,131,53,53,http://localhost:3000/api/products/2,1,0,0
+1786780234147,1,03 View Detail,200,OK,Spike Users 1-21,text,true,,448,131,53,53,http://localhost:3000/api/products/3,1,0,0
+1786780234147,2,01 Login,200,OK,Spike Users 1-41,text,true,,635,228,53,53,http://localhost:3000/api/login,2,0,0
+1786780234147,2,03 View Detail,200,OK,Spike Users 1-19,text,true,,461,131,53,53,http://localhost:3000/api/products/4,2,0,0
+1786780234155,3,01 Login,200,OK,Spike Users 1-52,text,true,,635,228,54,54,http://localhost:3000/api/login,3,0,1
+1786780234159,1,02 Search Product,200,OK,Spike Users 1-50,text,true,,469,145,54,54,http://localhost:3000/api/products?search=Keychron,1,0,0
+1786780234159,1,02 Search Product,200,OK,Spike Users 1-39,text,true,,453,143,54,54,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786780234165,1,02 Search Product,200,OK,Spike Users 1-28,text,true,,480,144,54,54,http://localhost:3000/api/products?search=Samsung,1,0,0
+1786780234166,2,03 View Detail,200,OK,Spike Users 1-23,text,true,,480,131,54,54,http://localhost:3000/api/products/2,2,0,0
+1786780234166,2,03 View Detail,200,OK,Spike Users 1-15,text,true,,467,131,54,54,http://localhost:3000/api/products/5,2,0,0
+1786780234167,3,03 View Detail,200,OK,Spike Users 1-17,text,true,,451,131,54,54,http://localhost:3000/api/products/1,3,0,0
+1786780234168,2,03 View Detail,200,OK,Spike Users 1-48,text,true,,448,131,54,54,http://localhost:3000/api/products/3,2,0,0
+1786780234172,2,03 View Detail,200,OK,Spike Users 1-25,text,true,,467,131,54,54,http://localhost:3000/api/products/5,2,0,0
+1786780234174,1,03 View Detail,200,OK,Spike Users 1-24,text,true,,461,131,54,54,http://localhost:3000/api/products/4,1,0,0
+1786780234174,1,03 View Detail,200,OK,Spike Users 1-37,text,true,,480,131,54,54,http://localhost:3000/api/products/2,1,0,0
+1786780234176,1,03 View Detail,200,OK,Spike Users 1-14,text,true,,451,131,54,54,http://localhost:3000/api/products/1,1,0,0
+1786780234189,2,03 View Detail,200,OK,Spike Users 1-12,text,true,,467,131,54,54,http://localhost:3000/api/products/5,2,0,0
+1786780234190,1,03 View Detail,200,OK,Spike Users 1-5,text,true,,461,131,54,54,http://localhost:3000/api/products/4,1,0,0
+1786780234192,1,03 View Detail,200,OK,Spike Users 1-16,text,true,,448,131,54,54,http://localhost:3000/api/products/3,1,0,0
+1786780234197,2,03 View Detail,200,OK,Spike Users 1-13,text,true,,451,131,54,54,http://localhost:3000/api/products/1,2,0,0
+1786780234198,3,03 View Detail,200,OK,Spike Users 1-9,text,true,,480,131,54,54,http://localhost:3000/api/products/2,3,0,0
+1786780234201,1,02 Search Product,200,OK,Spike Users 1-29,text,true,,450,144,54,54,http://localhost:3000/api/products?search=MacBook,1,0,0
+1786780234202,2,03 View Detail,200,OK,Spike Users 1-1,text,true,,448,131,54,54,http://localhost:3000/api/products/3,2,0,0
+1786780234204,6,05 Checkout,200,OK,Spike Users 1-44,text,true,,316,416,55,55,http://localhost:3000/api/checkout,6,0,0
+1786780234205,5,03 View Detail,200,OK,Spike Users 1-11,text,true,,461,131,55,55,http://localhost:3000/api/products/4,5,0,0
+1786780234207,4,02 Search Product,200,OK,Spike Users 1-51,text,true,,461,144,55,55,http://localhost:3000/api/products?search=AirPods,4,0,0
+1786780234204,8,01 Login,200,OK,Spike Users 1-53,text,true,,635,228,55,55,http://localhost:3000/api/login,8,0,1
+1786780234213,6,05 Checkout,200,OK,Spike Users 1-32,text,true,,316,414,55,55,http://localhost:3000/api/checkout,6,0,0
+1786780234220,3,04 Add to Cart,200,OK,Spike Users 1-46,text,true,,294,404,55,55,http://localhost:3000/api/cart,3,0,0
+1786780234216,9,05 Checkout,200,OK,Spike Users 1-33,text,true,,316,418,55,55,http://localhost:3000/api/checkout,9,0,0
+1786780234217,8,03 View Detail,200,OK,Spike Users 1-4,text,true,,480,131,55,55,http://localhost:3000/api/products/2,8,0,0
+1786780234216,10,01 Login,200,OK,Spike Users 1-42,text,true,,635,228,55,55,http://localhost:3000/api/login,10,0,0
+1786780234219,7,03 View Detail,200,OK,Spike Users 1-6,text,true,,451,131,55,55,http://localhost:3000/api/products/1,7,0,0
+1786780234220,7,01 Login,200,OK,Spike Users 1-30,text,true,,635,228,55,55,http://localhost:3000/api/login,7,0,0
+1786780234221,7,03 View Detail,200,OK,Spike Users 1-49,text,true,,448,131,55,55,http://localhost:3000/api/products/3,7,0,0
+1786780234221,7,03 View Detail,200,OK,Spike Users 1-10,text,true,,461,131,55,55,http://localhost:3000/api/products/4,7,0,0
+1786780234220,8,03 View Detail,200,OK,Spike Users 1-8,text,true,,467,131,55,55,http://localhost:3000/api/products/5,8,0,0
+1786780234221,7,03 View Detail,200,OK,Spike Users 1-2,text,true,,467,131,55,55,http://localhost:3000/api/products/5,7,0,0
+1786780234225,4,02 Search Product,200,OK,Spike Users 1-40,text,true,,469,145,55,55,http://localhost:3000/api/products?search=Keychron,4,0,0
+1786780234225,4,03 View Detail,200,OK,Spike Users 1-7,text,true,,451,131,55,55,http://localhost:3000/api/products/1,4,0,0
+1786780234231,2,04 Add to Cart,200,OK,Spike Users 1-35,text,true,,294,405,55,55,http://localhost:3000/api/cart,2,0,0
+1786780234231,3,03 View Detail,200,OK,Spike Users 1-27,text,true,,480,131,55,55,http://localhost:3000/api/products/2,3,0,0
+1786780234233,2,04 Add to Cart,200,OK,Spike Users 1-3,text,true,,294,397,55,55,http://localhost:3000/api/cart,2,0,0
+1786780234233,3,04 Add to Cart,200,OK,Spike Users 1-36,text,true,,294,407,55,55,http://localhost:3000/api/cart,3,0,0
+1786780234232,5,03 View Detail,200,OK,Spike Users 1-38,text,true,,461,131,55,55,http://localhost:3000/api/products/4,5,0,0
+1786780234232,5,03 View Detail,200,OK,Spike Users 1-26,text,true,,448,131,55,55,http://localhost:3000/api/products/3,5,0,0
+1786780234232,6,01 Login,200,OK,Spike Users 1-31,text,true,,635,228,55,55,http://localhost:3000/api/login,6,0,0
+1786780234235,4,04 Add to Cart,200,OK,Spike Users 1-22,text,true,,294,405,55,55,http://localhost:3000/api/cart,4,0,0
+1786780234235,4,04 Add to Cart,200,OK,Spike Users 1-34,text,true,,294,400,55,55,http://localhost:3000/api/cart,4,0,0
+1786780234235,5,04 Add to Cart,200,OK,Spike Users 1-47,text,true,,294,404,55,55,http://localhost:3000/api/cart,5,0,0
+1786780234236,5,04 Add to Cart,200,OK,Spike Users 1-18,text,true,,294,400,55,55,http://localhost:3000/api/cart,5,0,0
+1786780234236,9,05 Checkout,200,OK,Spike Users 1-45,text,true,,316,425,55,55,http://localhost:3000/api/checkout,9,0,0
+1786780234240,6,01 Login,200,OK,Spike Users 1-43,text,true,,635,228,55,55,http://localhost:3000/api/login,6,0,0
+1786780234245,3,04 Add to Cart,200,OK,Spike Users 1-20,text,true,,294,407,55,55,http://localhost:3000/api/cart,3,0,0
+1786780234249,2,04 Add to Cart,200,OK,Spike Users 1-21,text,true,,294,397,55,55,http://localhost:3000/api/cart,2,0,0
+1786780234250,2,04 Add to Cart,200,OK,Spike Users 1-19,text,true,,294,404,56,56,http://localhost:3000/api/cart,2,0,0
+1786780234250,3,02 Search Product,200,OK,Spike Users 1-41,text,true,,453,143,56,56,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786780234256,3,01 Login,200,OK,Spike Users 1-54,text,true,,635,228,56,56,http://localhost:3000/api/login,3,0,1
+1786780234259,2,02 Search Product,200,OK,Spike Users 1-52,text,true,,480,144,56,56,http://localhost:3000/api/products?search=Samsung,2,0,0
+1786780234262,2,03 View Detail,200,OK,Spike Users 1-50,text,true,,467,131,56,56,http://localhost:3000/api/products/5,2,0,0
+1786780234262,2,03 View Detail,200,OK,Spike Users 1-39,text,true,,451,131,56,56,http://localhost:3000/api/products/1,2,0,0
+1786780234267,2,03 View Detail,200,OK,Spike Users 1-28,text,true,,480,131,56,56,http://localhost:3000/api/products/2,2,0,0
+1786780234268,3,04 Add to Cart,200,OK,Spike Users 1-15,text,true,,294,405,56,56,http://localhost:3000/api/cart,2,0,0
+1786780234268,4,04 Add to Cart,200,OK,Spike Users 1-23,text,true,,294,407,56,56,http://localhost:3000/api/cart,4,0,0
+1786780234270,3,04 Add to Cart,200,OK,Spike Users 1-17,text,true,,294,400,56,56,http://localhost:3000/api/cart,3,0,0
+1786780234270,4,04 Add to Cart,200,OK,Spike Users 1-48,text,true,,294,397,56,56,http://localhost:3000/api/cart,4,0,0
+1786780234275,2,04 Add to Cart,200,OK,Spike Users 1-25,text,true,,294,405,56,56,http://localhost:3000/api/cart,2,0,0
+1786780234275,3,04 Add to Cart,200,OK,Spike Users 1-24,text,true,,294,404,56,56,http://localhost:3000/api/cart,3,0,0
+1786780234276,3,04 Add to Cart,200,OK,Spike Users 1-37,text,true,,294,407,56,56,http://localhost:3000/api/cart,3,0,0
+1786780234278,2,04 Add to Cart,200,OK,Spike Users 1-14,text,true,,294,400,56,56,http://localhost:3000/api/cart,2,0,0
+1786780234291,2,04 Add to Cart,200,OK,Spike Users 1-12,text,true,,294,405,56,56,http://localhost:3000/api/cart,2,0,0
+1786780234293,1,04 Add to Cart,200,OK,Spike Users 1-5,text,true,,294,404,56,56,http://localhost:3000/api/cart,1,0,0
+1786780234294,2,04 Add to Cart,200,OK,Spike Users 1-16,text,true,,294,397,56,56,http://localhost:3000/api/cart,2,0,0
+1786780234300,2,04 Add to Cart,200,OK,Spike Users 1-13,text,true,,294,400,56,56,http://localhost:3000/api/cart,2,0,0
+1786780234301,2,04 Add to Cart,200,OK,Spike Users 1-9,text,true,,294,407,56,56,http://localhost:3000/api/cart,2,0,0
+1786780234304,2,04 Add to Cart,200,OK,Spike Users 1-1,text,true,,294,397,57,57,http://localhost:3000/api/cart,2,0,0
+1786780234303,4,03 View Detail,200,OK,Spike Users 1-29,text,true,,448,131,57,57,http://localhost:3000/api/products/3,4,0,0
+1786780234306,3,01 Login,200,OK,Spike Users 1-55,text,true,,635,228,57,57,http://localhost:3000/api/login,3,0,1
+1786780234311,2,04 Add to Cart,200,OK,Spike Users 1-11,text,true,,294,404,57,57,http://localhost:3000/api/cart,2,0,0
+1786780234311,3,03 View Detail,200,OK,Spike Users 1-51,text,true,,461,131,57,57,http://localhost:3000/api/products/4,3,0,0
+1786780234311,4,01 Login,200,OK,Spike Users 1-44,text,true,,635,228,57,57,http://localhost:3000/api/login,4,0,0
+1786780234314,1,02 Search Product,200,OK,Spike Users 1-53,text,true,,450,144,57,57,http://localhost:3000/api/products?search=MacBook,1,0,0
+1786780234321,2,01 Login,200,OK,Spike Users 1-32,text,true,,635,228,57,57,http://localhost:3000/api/login,2,0,0
+1786780234325,2,04 Add to Cart,200,OK,Spike Users 1-4,text,true,,294,407,57,57,http://localhost:3000/api/cart,2,0,0
+1786780234326,3,04 Add to Cart,200,OK,Spike Users 1-6,text,true,,294,400,57,57,http://localhost:3000/api/cart,3,0,0
+1786780234328,4,04 Add to Cart,200,OK,Spike Users 1-49,text,true,,294,397,57,57,http://localhost:3000/api/cart,4,0,0
+1786780234328,6,04 Add to Cart,200,OK,Spike Users 1-8,text,true,,294,405,57,57,http://localhost:3000/api/cart,6,0,0
+1786780234328,7,04 Add to Cart,200,OK,Spike Users 1-10,text,true,,294,404,57,57,http://localhost:3000/api/cart,7,0,0
+1786780234329,7,04 Add to Cart,200,OK,Spike Users 1-2,text,true,,294,405,57,57,http://localhost:3000/api/cart,7,0,0
+1786780234324,13,05 Checkout,200,OK,Spike Users 1-46,text,true,,316,418,57,57,http://localhost:3000/api/checkout,13,0,0
+1786780234325,13,01 Login,200,OK,Spike Users 1-33,text,true,,635,228,57,57,http://localhost:3000/api/login,13,0,0
+1786780234331,10,04 Add to Cart,200,OK,Spike Users 1-7,text,true,,294,400,57,57,http://localhost:3000/api/cart,10,0,0
+1786780234335,9,04 Add to Cart,200,OK,Spike Users 1-27,text,true,,294,407,57,57,http://localhost:3000/api/cart,9,0,0
+1786780234326,20,02 Search Product,200,OK,Spike Users 1-42,text,true,,461,144,57,57,http://localhost:3000/api/products?search=AirPods,20,0,0
+1786780234327,19,02 Search Product,200,OK,Spike Users 1-30,text,true,,469,145,57,57,http://localhost:3000/api/products?search=Keychron,19,0,0
+1786780234329,18,03 View Detail,200,OK,Spike Users 1-40,text,true,,467,131,57,57,http://localhost:3000/api/products/5,18,0,0
+1786780234337,11,04 Add to Cart,200,OK,Spike Users 1-26,text,true,,294,397,57,57,http://localhost:3000/api/cart,11,0,0
+1786780234337,13,04 Add to Cart,200,OK,Spike Users 1-38,text,true,,294,404,57,57,http://localhost:3000/api/cart,13,0,0
+1786780234333,28,05 Checkout,200,OK,Spike Users 1-35,text,true,,316,416,58,58,http://localhost:3000/api/checkout,28,0,0
+1786780234336,26,05 Checkout,200,OK,Spike Users 1-3,text,true,,316,425,58,58,http://localhost:3000/api/checkout,26,0,0
+1786780234337,38,05 Checkout,200,OK,Spike Users 1-36,text,true,,316,418,57,57,http://localhost:3000/api/checkout,38,0,0
+1786780234341,36,05 Checkout,200,OK,Spike Users 1-47,text,true,,316,418,57,57,http://localhost:3000/api/checkout,36,0,0
+1786780234342,38,05 Checkout,200,OK,Spike Users 1-18,text,true,,316,414,57,57,http://localhost:3000/api/checkout,37,0,0
+1786780234345,36,01 Login,200,OK,Spike Users 1-45,text,true,,635,228,56,56,http://localhost:3000/api/login,36,0,0
+1786780234365,19,04 Add to Cart,200,OK,Spike Users 1-50,text,true,,294,405,56,56,http://localhost:3000/api/cart,19,0,0
+1786780234365,21,04 Add to Cart,200,OK,Spike Users 1-39,text,true,,294,400,56,56,http://localhost:3000/api/cart,21,0,0
+1786780234371,17,04 Add to Cart,200,OK,Spike Users 1-28,text,true,,294,407,56,56,http://localhost:3000/api/cart,17,0,0
+1786780234341,53,05 Checkout,200,OK,Spike Users 1-34,text,true,,316,414,56,56,http://localhost:3000/api/checkout,53,0,0
+1786780234338,56,02 Search Product,200,OK,Spike Users 1-31,text,true,,453,143,56,56,http://localhost:3000/api/products?search=iPhone,56,0,0
+1786780234339,55,05 Checkout,200,OK,Spike Users 1-22,text,true,,316,416,56,56,http://localhost:3000/api/checkout,55,0,0
+1786780234347,48,02 Search Product,200,OK,Spike Users 1-43,text,true,,480,144,56,56,http://localhost:3000/api/products?search=Samsung,48,0,0
+1786780234348,47,05 Checkout,200,OK,Spike Users 1-20,text,true,,316,418,55,55,http://localhost:3000/api/checkout,47,0,0
+1786780234352,44,05 Checkout,200,OK,Spike Users 1-21,text,true,,316,425,55,55,http://localhost:3000/api/checkout,44,0,0
+1786780234353,43,05 Checkout,200,OK,Spike Users 1-19,text,true,,316,418,54,54,http://localhost:3000/api/checkout,43,0,0
+1786780234353,44,03 View Detail,200,OK,Spike Users 1-41,text,true,,451,131,52,52,http://localhost:3000/api/products/1,44,0,0
+1786780234360,45,02 Search Product,200,OK,Spike Users 1-54,text,true,,450,144,53,53,http://localhost:3000/api/products?search=MacBook,45,0,0
+1786780234353,56,01 Login,200,OK,Spike Users 1-56,text,true,,635,228,53,53,http://localhost:3000/api/login,56,0,2
+1786780234362,47,03 View Detail,200,OK,Spike Users 1-52,text,true,,480,131,53,53,http://localhost:3000/api/products/2,47,0,0
+1786780234372,38,05 Checkout,200,OK,Spike Users 1-15,text,true,,316,416,53,53,http://localhost:3000/api/checkout,38,0,0
+1786780234374,36,05 Checkout,200,OK,Spike Users 1-17,text,true,,316,414,53,53,http://localhost:3000/api/checkout,36,0,0
+1786780234375,38,05 Checkout,200,OK,Spike Users 1-48,text,true,,316,425,51,51,http://localhost:3000/api/checkout,38,0,0
+1786780234373,48,05 Checkout,200,OK,Spike Users 1-23,text,true,,316,418,51,51,http://localhost:3000/api/checkout,48,0,0
+1786780234378,43,05 Checkout,200,OK,Spike Users 1-25,text,true,,316,416,51,51,http://localhost:3000/api/checkout,43,0,0
+1786780234408,23,04 Add to Cart,200,OK,Spike Users 1-29,text,true,,294,397,49,49,http://localhost:3000/api/cart,23,0,0
+1786780234415,24,04 Add to Cart,200,OK,Spike Users 1-51,text,true,,294,404,49,49,http://localhost:3000/api/cart,24,0,0
+1786780234379,63,05 Checkout,200,OK,Spike Users 1-24,text,true,,316,418,49,49,http://localhost:3000/api/checkout,63,0,0
+1786780234380,62,05 Checkout,200,OK,Spike Users 1-37,text,true,,316,418,49,49,http://localhost:3000/api/checkout,62,0,0
+1786780234381,62,05 Checkout,200,OK,Spike Users 1-14,text,true,,316,414,49,49,http://localhost:3000/api/checkout,62,0,0
+1786780234394,49,05 Checkout,200,OK,Spike Users 1-12,text,true,,316,416,49,49,http://localhost:3000/api/checkout,49,0,0
+1786780234395,48,05 Checkout,200,OK,Spike Users 1-5,text,true,,316,418,49,49,http://localhost:3000/api/checkout,48,0,0
+1786780234396,48,05 Checkout,200,OK,Spike Users 1-16,text,true,,316,425,45,45,http://localhost:3000/api/checkout,48,0,0
+1786780234403,43,05 Checkout,200,OK,Spike Users 1-13,text,true,,316,414,44,44,http://localhost:3000/api/checkout,43,0,0
+1786780234404,43,05 Checkout,200,OK,Spike Users 1-9,text,true,,316,418,44,44,http://localhost:3000/api/checkout,43,0,0
+1786780234408,53,05 Checkout,200,OK,Spike Users 1-1,text,true,,316,425,43,43,http://localhost:3000/api/checkout,53,0,0
+1786780234414,47,05 Checkout,200,OK,Spike Users 1-11,text,true,,316,418,43,43,http://localhost:3000/api/checkout,47,0,0
+1786780234410,51,02 Search Product,200,OK,Spike Users 1-55,text,true,,461,144,43,43,http://localhost:3000/api/products?search=AirPods,51,0,0
+1786780234416,45,03 View Detail,200,OK,Spike Users 1-53,text,true,,448,131,43,43,http://localhost:3000/api/products/3,45,0,0
+1786780234416,49,02 Search Product,200,OK,Spike Users 1-44,text,true,,469,145,41,41,http://localhost:3000/api/products?search=Keychron,49,0,0
+1786780234407,60,01 Login,200,OK,Spike Users 1-57,text,true,,635,228,41,41,http://localhost:3000/api/login,60,0,1
+1786780234448,22,04 Add to Cart,200,OK,Spike Users 1-40,text,true,,294,405,41,41,http://localhost:3000/api/cart,22,0,0
+1786780234424,51,02 Search Product,200,OK,Spike Users 1-32,text,true,,453,143,41,41,http://localhost:3000/api/products?search=iPhone,51,0,0
+1786780234428,47,05 Checkout,200,OK,Spike Users 1-4,text,true,,316,418,41,41,http://localhost:3000/api/checkout,47,0,0
+1786780234430,50,05 Checkout,200,OK,Spike Users 1-6,text,true,,316,414,40,40,http://localhost:3000/api/checkout,50,0,0
+1786780234437,43,05 Checkout,200,OK,Spike Users 1-2,text,true,,316,416,40,40,http://localhost:3000/api/checkout,43,0,0
+1786780234434,46,05 Checkout,200,OK,Spike Users 1-8,text,true,,316,416,40,40,http://localhost:3000/api/checkout,46,0,0
+1786780234439,41,02 Search Product,200,OK,Spike Users 1-33,text,true,,480,144,40,40,http://localhost:3000/api/products?search=Samsung,41,0,0
+1786780234441,41,05 Checkout,200,OK,Spike Users 1-7,text,true,,316,414,37,37,http://localhost:3000/api/checkout,41,0,0
+1786780234433,49,05 Checkout,200,OK,Spike Users 1-49,text,true,,316,425,37,37,http://localhost:3000/api/checkout,49,0,0
+1786780234435,52,05 Checkout,200,OK,Spike Users 1-10,text,true,,316,418,36,36,http://localhost:3000/api/checkout,52,0,0
+1786780234438,52,01 Login,200,OK,Spike Users 1-46,text,true,,635,228,35,35,http://localhost:3000/api/login,52,0,0
+1786780234445,47,05 Checkout,200,OK,Spike Users 1-27,text,true,,316,418,35,35,http://localhost:3000/api/checkout,47,0,0
+1786780234449,43,05 Checkout,200,OK,Spike Users 1-26,text,true,,316,425,35,35,http://localhost:3000/api/checkout,43,0,0
+1786780234451,41,05 Checkout,200,OK,Spike Users 1-38,text,true,,316,418,35,35,http://localhost:3000/api/checkout,41,0,0
+1786780234448,45,03 View Detail,200,OK,Spike Users 1-30,text,true,,467,131,33,33,http://localhost:3000/api/products/5,45,0,0
+1786780234448,45,03 View Detail,200,OK,Spike Users 1-42,text,true,,461,131,33,33,http://localhost:3000/api/products/4,45,0,0
+1786780234453,42,01 Login,200,OK,Spike Users 1-58,text,true,,635,228,33,33,http://localhost:3000/api/login,42,0,1
+1786780234462,34,01 Login,200,OK,Spike Users 1-35,text,true,,635,228,33,33,http://localhost:3000/api/login,34,0,0
+1786780234482,18,02 Search Product,200,OK,Spike Users 1-45,text,true,,450,144,33,33,http://localhost:3000/api/products?search=MacBook,18,0,0
+1786780234476,24,01 Login,200,OK,Spike Users 1-36,text,true,,635,228,33,33,http://localhost:3000/api/login,24,0,0
+1786780234478,23,01 Login,200,OK,Spike Users 1-47,text,true,,635,228,33,33,http://localhost:3000/api/login,23,0,0
+1786780234498,6,04 Add to Cart,200,OK,Spike Users 1-41,text,true,,294,400,34,34,http://localhost:3000/api/cart,6,0,0
+1786780234485,24,05 Checkout,200,OK,Spike Users 1-50,text,true,,316,416,34,34,http://localhost:3000/api/checkout,24,0,0
+1786780234486,24,05 Checkout,200,OK,Spike Users 1-39,text,true,,316,414,34,34,http://localhost:3000/api/checkout,24,0,0
+1786780234489,21,05 Checkout,200,OK,Spike Users 1-28,text,true,,316,418,34,34,http://localhost:3000/api/checkout,21,0,0
+1786780234495,15,03 View Detail,200,OK,Spike Users 1-31,text,true,,451,131,34,34,http://localhost:3000/api/products/1,15,0,0
+1786780234496,16,03 View Detail,200,OK,Spike Users 1-43,text,true,,480,131,33,33,http://localhost:3000/api/products/2,16,0,0
+1786780234495,17,01 Login,200,OK,Spike Users 1-34,text,true,,635,228,33,33,http://localhost:3000/api/login,17,0,0
+1786780234502,12,01 Login,200,OK,Spike Users 1-59,text,true,,635,228,33,33,http://localhost:3000/api/login,12,0,1
+1786780234511,5,04 Add to Cart,200,OK,Spike Users 1-52,text,true,,294,407,33,33,http://localhost:3000/api/cart,5,0,0
+1786780234506,10,03 View Detail,200,OK,Spike Users 1-54,text,true,,448,131,33,33,http://localhost:3000/api/products/3,10,0,0
+1786780234511,6,02 Search Product,200,OK,Spike Users 1-56,text,true,,461,144,33,33,http://localhost:3000/api/products?search=AirPods,6,0,0
+1786780234514,4,01 Login,200,OK,Spike Users 1-48,text,true,,635,228,33,33,http://localhost:3000/api/login,4,0,0
+1786780234533,5,05 Checkout,200,OK,Spike Users 1-29,text,true,,316,425,33,33,http://localhost:3000/api/checkout,5,0,0
+1786780234540,6,05 Checkout,200,OK,Spike Users 1-51,text,true,,316,418,32,32,http://localhost:3000/api/checkout,6,0,0
+1786780234543,5,01 Login,200,OK,Spike Users 1-37,text,true,,635,228,32,32,http://localhost:3000/api/login,5,0,0
+1786780234553,3,01 Login,200,OK,Spike Users 1-60,text,true,,635,228,33,33,http://localhost:3000/api/login,3,0,0
+1786780234562,2,04 Add to Cart,200,OK,Spike Users 1-53,text,true,,294,397,33,33,http://localhost:3000/api/cart,2,0,0
+1786780234562,3,03 View Detail,200,OK,Spike Users 1-55,text,true,,461,131,33,33,http://localhost:3000/api/products/4,3,0,0
+1786780234566,2,03 View Detail,200,OK,Spike Users 1-44,text,true,,467,131,33,33,http://localhost:3000/api/products/5,2,0,0
+1786780234568,2,02 Search Product,200,OK,Spike Users 1-57,text,true,,469,145,33,33,http://localhost:3000/api/products?search=Keychron,2,0,0
+1786780234571,5,05 Checkout,200,OK,Spike Users 1-40,text,true,,316,416,33,33,http://localhost:3000/api/checkout,5,0,0
+1786780234576,1,03 View Detail,200,OK,Spike Users 1-32,text,true,,451,131,33,33,http://localhost:3000/api/products/1,1,0,0
+1786780234582,1,03 View Detail,200,OK,Spike Users 1-33,text,true,,480,131,33,33,http://localhost:3000/api/products/2,1,0,0
+1786780234584,1,01 Login,200,OK,Spike Users 1-49,text,true,,635,228,33,33,http://localhost:3000/api/login,1,0,0
+1786780234592,1,02 Search Product,200,OK,Spike Users 1-46,text,true,,453,143,33,33,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786780234593,2,01 Login,200,OK,Spike Users 1-38,text,true,,635,228,33,33,http://localhost:3000/api/login,2,0,0
+1786780234594,2,04 Add to Cart,200,OK,Spike Users 1-30,text,true,,294,405,33,33,http://localhost:3000/api/cart,2,0,0
+1786780234594,3,04 Add to Cart,200,OK,Spike Users 1-42,text,true,,294,404,33,33,http://localhost:3000/api/cart,3,0,0
+1786780234596,2,02 Search Product,200,OK,Spike Users 1-58,text,true,,480,144,33,33,http://localhost:3000/api/products?search=Samsung,2,0,0
+1786780234597,1,02 Search Product,200,OK,Spike Users 1-35,text,true,,450,144,33,33,http://localhost:3000/api/products?search=MacBook,1,0,0
+1786780234600,1,03 View Detail,200,OK,Spike Users 1-45,text,true,,448,131,34,34,http://localhost:3000/api/products/3,1,0,0
+1786780234601,1,02 Search Product,200,OK,Spike Users 1-36,text,true,,461,144,34,34,http://localhost:3000/api/products?search=AirPods,1,0,0
+1786780234602,1,02 Search Product,200,OK,Spike Users 1-47,text,true,,469,145,34,34,http://localhost:3000/api/products?search=Keychron,1,0,0
+1786780234611,3,04 Add to Cart,200,OK,Spike Users 1-31,text,true,,294,400,34,34,http://localhost:3000/api/cart,3,0,0
+1786780234611,9,05 Checkout,200,OK,Spike Users 1-41,text,true,,316,414,34,34,http://localhost:3000/api/checkout,9,0,0
+1786780234611,10,01 Login,200,OK,Spike Users 1-39,text,true,,635,228,34,34,http://localhost:3000/api/login,10,0,0
+1786780234611,11,01 Login,200,OK,Spike Users 1-50,text,true,,635,228,34,34,http://localhost:3000/api/login,11,0,0
+1786780234612,11,01 Login,200,OK,Spike Users 1-61,text,true,,635,228,34,34,http://localhost:3000/api/login,11,0,0
+1786780234626,2,04 Add to Cart,200,OK,Spike Users 1-54,text,true,,294,397,34,34,http://localhost:3000/api/cart,2,0,0
+1786780234626,4,04 Add to Cart,200,OK,Spike Users 1-43,text,true,,294,407,34,34,http://localhost:3000/api/cart,4,0,0
+1786780234626,6,02 Search Product,200,OK,Spike Users 1-48,text,true,,450,144,34,34,http://localhost:3000/api/products?search=MacBook,6,0,0
+1786780234626,9,05 Checkout,200,OK,Spike Users 1-52,text,true,,316,418,34,34,http://localhost:3000/api/checkout,9,0,0
+1786780234626,9,02 Search Product,200,OK,Spike Users 1-59,text,true,,480,144,34,34,http://localhost:3000/api/products?search=Samsung,9,0,0
+1786780234626,10,02 Search Product,200,OK,Spike Users 1-34,text,true,,453,143,34,34,http://localhost:3000/api/products?search=iPhone,10,0,0
+1786780234626,10,03 View Detail,200,OK,Spike Users 1-56,text,true,,461,131,34,34,http://localhost:3000/api/products/4,10,0,0
+1786780234648,2,01 Login,200,OK,Spike Users 1-51,text,true,,635,228,35,35,http://localhost:3000/api/login,2,0,0
+1786780234649,1,02 Search Product,200,OK,Spike Users 1-37,text,true,,461,144,35,35,http://localhost:3000/api/products?search=AirPods,1,0,0
+1786780234653,2,01 Login,200,OK,Spike Users 1-62,text,true,,635,228,35,35,http://localhost:3000/api/login,2,0,1
+1786780234657,0,02 Search Product,200,OK,Spike Users 1-60,text,true,,469,145,35,35,http://localhost:3000/api/products?search=Keychron,0,0,0
+1786780234666,2,04 Add to Cart,200,OK,Spike Users 1-55,text,true,,294,404,35,35,http://localhost:3000/api/cart,2,0,0
+1786780234668,1,04 Add to Cart,200,OK,Spike Users 1-44,text,true,,294,405,35,35,http://localhost:3000/api/cart,1,0,0
+1786780234665,5,05 Checkout,200,OK,Spike Users 1-53,text,true,,316,425,35,35,http://localhost:3000/api/checkout,5,0,0
+1786780234671,1,03 View Detail,200,OK,Spike Users 1-57,text,true,,467,131,35,35,http://localhost:3000/api/products/5,1,0,0
+1786780234677,2,01 Login,200,OK,Spike Users 1-40,text,true,,635,228,35,35,http://localhost:3000/api/login,1,0,0
+1786780234678,2,04 Add to Cart,200,OK,Spike Users 1-32,text,true,,294,400,35,35,http://localhost:3000/api/cart,2,0,0
+1786780234684,1,04 Add to Cart,200,OK,Spike Users 1-33,text,true,,294,407,35,35,http://localhost:3000/api/cart,1,0,0
+1786780234686,1,02 Search Product,200,OK,Spike Users 1-49,text,true,,453,143,35,35,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786780234694,1,03 View Detail,200,OK,Spike Users 1-46,text,true,,451,131,35,35,http://localhost:3000/api/products/1,1,0,0
+1786780234696,1,02 Search Product,200,OK,Spike Users 1-38,text,true,,480,144,36,36,http://localhost:3000/api/products?search=Samsung,1,0,0
+1786780234703,2,04 Add to Cart,200,OK,Spike Users 1-45,text,true,,294,397,36,36,http://localhost:3000/api/cart,2,0,0
+1786780234698,7,05 Checkout,200,OK,Spike Users 1-42,text,true,,316,418,36,36,http://localhost:3000/api/checkout,7,0,0
+1786780234698,8,05 Checkout,200,OK,Spike Users 1-30,text,true,,316,416,36,36,http://localhost:3000/api/checkout,8,0,0
+1786780234699,7,03 View Detail,200,OK,Spike Users 1-58,text,true,,480,131,36,36,http://localhost:3000/api/products/2,7,0,0
+1786780234699,8,03 View Detail,200,OK,Spike Users 1-35,text,true,,448,131,36,36,http://localhost:3000/api/products/3,8,0,0
+1786780234703,7,03 View Detail,200,OK,Spike Users 1-47,text,true,,467,131,35,35,http://localhost:3000/api/products/5,7,0,0
+1786780234702,8,01 Login,200,OK,Spike Users 1-63,text,true,,635,228,35,35,http://localhost:3000/api/login,8,0,0
+1786780234703,7,03 View Detail,200,OK,Spike Users 1-36,text,true,,461,131,35,35,http://localhost:3000/api/products/4,7,0,0
+1786780234715,4,05 Checkout,200,OK,Spike Users 1-31,text,true,,316,414,35,35,http://localhost:3000/api/checkout,4,0,0
+1786780234722,1,02 Search Product,200,OK,Spike Users 1-39,text,true,,469,145,34,34,http://localhost:3000/api/products?search=Keychron,1,0,0
+1786780234723,1,02 Search Product,200,OK,Spike Users 1-50,text,true,,461,144,34,34,http://localhost:3000/api/products?search=AirPods,1,0,0
+1786780234722,2,01 Login,200,OK,Spike Users 1-41,text,true,,635,228,34,34,http://localhost:3000/api/login,2,0,0
+1786780234724,1,02 Search Product,200,OK,Spike Users 1-61,text,true,,450,144,34,34,http://localhost:3000/api/products?search=MacBook,1,0,0
+1786780234729,5,05 Checkout,200,OK,Spike Users 1-54,text,true,,316,425,34,34,http://localhost:3000/api/checkout,5,0,0
+1786780234731,6,05 Checkout,200,OK,Spike Users 1-43,text,true,,316,418,34,34,http://localhost:3000/api/checkout,6,0,0
+1786780234733,4,03 View Detail,200,OK,Spike Users 1-48,text,true,,448,131,34,34,http://localhost:3000/api/products/3,4,0,0
+1786780234737,2,04 Add to Cart,200,OK,Spike Users 1-56,text,true,,294,404,34,34,http://localhost:3000/api/cart,2,0,0
+1786780234737,3,03 View Detail,200,OK,Spike Users 1-59,text,true,,480,131,34,34,http://localhost:3000/api/products/2,3,0,0
+1786780234737,3,01 Login,200,OK,Spike Users 1-52,text,true,,635,228,34,34,http://localhost:3000/api/login,3,0,0
+1786780234737,3,03 View Detail,200,OK,Spike Users 1-34,text,true,,451,131,34,34,http://localhost:3000/api/products/1,3,0,0
+1786780234749,3,01 Login,200,OK,Spike Users 1-64,text,true,,635,228,35,35,http://localhost:3000/api/login,3,0,1
+1786780234752,1,02 Search Product,200,OK,Spike Users 1-51,text,true,,453,143,35,35,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786780234752,1,03 View Detail,200,OK,Spike Users 1-37,text,true,,461,131,35,35,http://localhost:3000/api/products/4,1,0,0
+1786780234756,1,02 Search Product,200,OK,Spike Users 1-62,text,true,,480,144,35,35,http://localhost:3000/api/products?search=Samsung,1,0,0
+1786780234758,0,03 View Detail,200,OK,Spike Users 1-60,text,true,,467,131,35,35,http://localhost:3000/api/products/5,0,0,0
+1786780234768,6,05 Checkout,200,OK,Spike Users 1-55,text,true,,316,418,35,35,http://localhost:3000/api/checkout,6,0,0
+1786780234772,3,04 Add to Cart,200,OK,Spike Users 1-57,text,true,,294,405,35,35,http://localhost:3000/api/cart,3,0,0
+1786780234770,6,05 Checkout,200,OK,Spike Users 1-44,text,true,,316,416,35,35,http://localhost:3000/api/checkout,6,0,0
+1786780234771,6,01 Login,200,OK,Spike Users 1-53,text,true,,635,228,35,35,http://localhost:3000/api/login,6,0,0
+1786780234779,1,02 Search Product,200,OK,Spike Users 1-40,text,true,,450,144,35,35,http://localhost:3000/api/products?search=MacBook,1,0,0
+1786780234780,4,05 Checkout,200,OK,Spike Users 1-32,text,true,,316,414,35,35,http://localhost:3000/api/checkout,4,0,0
+1786780234786,4,05 Checkout,200,OK,Spike Users 1-33,text,true,,316,418,34,34,http://localhost:3000/api/checkout,4,0,0
+1786780234788,2,03 View Detail,200,OK,Spike Users 1-49,text,true,,451,131,34,34,http://localhost:3000/api/products/1,2,0,0
+1786780234796,1,04 Add to Cart,200,OK,Spike Users 1-46,text,true,,294,400,33,33,http://localhost:3000/api/cart,1,0,0
+1786780234797,2,01 Login,200,OK,Spike Users 1-65,text,true,,635,228,34,34,http://localhost:3000/api/login,2,0,1
+1786780234799,1,03 View Detail,200,OK,Spike Users 1-38,text,true,,480,131,34,34,http://localhost:3000/api/products/2,1,0,0
+1786780234807,1,04 Add to Cart,200,OK,Spike Users 1-58,text,true,,294,407,34,34,http://localhost:3000/api/cart,1,0,0
+1786780234808,1,04 Add to Cart,200,OK,Spike Users 1-35,text,true,,294,397,34,34,http://localhost:3000/api/cart,1,0,0
+1786780234806,4,05 Checkout,200,OK,Spike Users 1-45,text,true,,316,425,34,34,http://localhost:3000/api/checkout,4,0,0
+1786780234806,5,01 Login,200,OK,Spike Users 1-42,text,true,,635,228,34,34,http://localhost:3000/api/login,5,0,0
+1786780234811,2,04 Add to Cart,200,OK,Spike Users 1-47,text,true,,294,405,34,34,http://localhost:3000/api/cart,2,0,0
+1786780234811,2,04 Add to Cart,200,OK,Spike Users 1-36,text,true,,294,404,34,34,http://localhost:3000/api/cart,2,0,0
+1786780234811,3,02 Search Product,200,OK,Spike Users 1-63,text,true,,461,144,34,34,http://localhost:3000/api/products?search=AirPods,3,0,0
+1786780234824,1,03 View Detail,200,OK,Spike Users 1-39,text,true,,467,131,34,34,http://localhost:3000/api/products/5,1,0,0
+1786780234825,1,03 View Detail,200,OK,Spike Users 1-50,text,true,,461,131,34,34,http://localhost:3000/api/products/4,1,0,0
+1786780234825,2,03 View Detail,200,OK,Spike Users 1-61,text,true,,448,131,34,34,http://localhost:3000/api/products/3,2,0,0
+1786780234825,2,02 Search Product,200,OK,Spike Users 1-41,text,true,,469,145,34,34,http://localhost:3000/api/products?search=Keychron,2,0,0
+1786780234835,2,01 Login,200,OK,Spike Users 1-54,text,true,,635,228,34,34,http://localhost:3000/api/login,2,0,0
+1786780234837,1,04 Add to Cart,200,OK,Spike Users 1-48,text,true,,294,397,34,34,http://localhost:3000/api/cart,1,0,0
+1786780234837,3,01 Login,200,OK,Spike Users 1-43,text,true,,635,228,34,34,http://localhost:3000/api/login,3,0,0
+1786780234840,2,04 Add to Cart,200,OK,Spike Users 1-59,text,true,,294,407,34,34,http://localhost:3000/api/cart,2,0,0
+1786780234840,3,04 Add to Cart,200,OK,Spike Users 1-34,text,true,,294,400,34,34,http://localhost:3000/api/cart,3,0,0
+1786780234839,4,05 Checkout,200,OK,Spike Users 1-56,text,true,,316,418,34,34,http://localhost:3000/api/checkout,4,0,0
+1786780234840,4,02 Search Product,200,OK,Spike Users 1-52,text,true,,453,143,34,34,http://localhost:3000/api/products?search=iPhone,4,0,0
+1786780234849,3,01 Login,200,OK,Spike Users 1-66,text,true,,635,228,35,35,http://localhost:3000/api/login,3,0,1
+1786780234852,1,02 Search Product,200,OK,Spike Users 1-64,text,true,,480,144,35,35,http://localhost:3000/api/products?search=Samsung,1,0,0
+1786780234853,1,04 Add to Cart,200,OK,Spike Users 1-37,text,true,,294,404,35,35,http://localhost:3000/api/cart,1,0,0
+1786780234853,2,03 View Detail,200,OK,Spike Users 1-51,text,true,,451,131,35,35,http://localhost:3000/api/products/1,2,0,0
+1786780234857,1,03 View Detail,200,OK,Spike Users 1-62,text,true,,480,131,35,35,http://localhost:3000/api/products/2,1,0,0
+1786780234859,1,04 Add to Cart,200,OK,Spike Users 1-60,text,true,,294,405,35,35,http://localhost:3000/api/cart,1,0,0
+1786780234874,4,01 Login,200,OK,Spike Users 1-55,text,true,,635,228,35,35,http://localhost:3000/api/login,4,0,0
+1786780234875,6,05 Checkout,200,OK,Spike Users 1-57,text,true,,316,416,35,35,http://localhost:3000/api/checkout,6,0,0
+1786780234878,4,02 Search Product,200,OK,Spike Users 1-53,text,true,,450,144,35,35,http://localhost:3000/api/products?search=MacBook,4,0,0
+1786780234878,5,01 Login,200,OK,Spike Users 1-44,text,true,,635,228,35,35,http://localhost:3000/api/login,5,0,0
+1786780234881,2,03 View Detail,200,OK,Spike Users 1-40,text,true,,448,131,35,35,http://localhost:3000/api/products/3,2,0,0
+1786780234891,2,04 Add to Cart,200,OK,Spike Users 1-49,text,true,,294,400,35,35,http://localhost:3000/api/cart,2,0,0
+1786780234898,4,05 Checkout,200,OK,Spike Users 1-46,text,true,,316,414,36,36,http://localhost:3000/api/checkout,4,0,0
+1786780234901,3,04 Add to Cart,200,OK,Spike Users 1-38,text,true,,294,407,36,36,http://localhost:3000/api/cart,3,0,0
+1786780234901,3,02 Search Product,200,OK,Spike Users 1-65,text,true,,461,144,36,36,http://localhost:3000/api/products?search=AirPods,3,0,0
+1786780234902,4,01 Login,200,OK,Spike Users 1-67,text,true,,635,228,36,36,http://localhost:3000/api/login,4,0,1
+1786780234909,4,05 Checkout,200,OK,Spike Users 1-58,text,true,,316,418,36,36,http://localhost:3000/api/checkout,4,0,0
+1786780234910,7,05 Checkout,200,OK,Spike Users 1-35,text,true,,316,425,36,36,http://localhost:3000/api/checkout,7,0,0
+1786780234913,6,05 Checkout,200,OK,Spike Users 1-47,text,true,,316,416,35,35,http://localhost:3000/api/checkout,6,0,0
+1786780234914,6,03 View Detail,200,OK,Spike Users 1-63,text,true,,461,131,35,35,http://localhost:3000/api/products/4,6,0,0
+1786780234912,10,02 Search Product,200,OK,Spike Users 1-42,text,true,,469,145,35,35,http://localhost:3000/api/products?search=Keychron,10,0,0
+1786780234910,12,01 Login,200,OK,Spike Users 1-45,text,true,,635,228,35,35,http://localhost:3000/api/login,12,0,0
+1786780234915,8,05 Checkout,200,OK,Spike Users 1-36,text,true,,316,418,35,35,http://localhost:3000/api/checkout,8,0,0
+1786780234926,2,04 Add to Cart,200,OK,Spike Users 1-39,text,true,,294,405,34,34,http://localhost:3000/api/cart,2,0,0
+1786780234927,2,04 Add to Cart,200,OK,Spike Users 1-50,text,true,,294,404,34,34,http://localhost:3000/api/cart,2,0,0
+1786780234928,3,04 Add to Cart,200,OK,Spike Users 1-61,text,true,,294,397,34,34,http://localhost:3000/api/cart,3,0,0
+1786780234928,3,03 View Detail,200,OK,Spike Users 1-41,text,true,,467,131,34,34,http://localhost:3000/api/products/5,3,0,0
+1786780234938,1,02 Search Product,200,OK,Spike Users 1-54,text,true,,453,143,34,34,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786780234939,4,05 Checkout,200,OK,Spike Users 1-48,text,true,,316,425,34,34,http://localhost:3000/api/checkout,4,0,0
+1786780234941,4,02 Search Product,200,OK,Spike Users 1-43,text,true,,480,144,34,34,http://localhost:3000/api/products?search=Samsung,4,0,0
+1786780234942,6,05 Checkout,200,OK,Spike Users 1-59,text,true,,316,418,35,35,http://localhost:3000/api/checkout,5,0,0
+1786780234944,6,05 Checkout,200,OK,Spike Users 1-34,text,true,,316,414,35,35,http://localhost:3000/api/checkout,6,0,0
+1786780234944,8,03 View Detail,200,OK,Spike Users 1-52,text,true,,451,131,34,34,http://localhost:3000/api/products/1,8,0,0
+1786780234944,8,01 Login,200,OK,Spike Users 1-56,text,true,,635,228,34,34,http://localhost:3000/api/login,7,0,0
+1786780234947,6,01 Login,200,OK,Spike Users 1-68,text,true,,635,228,34,34,http://localhost:3000/api/login,6,0,1
+1786780234952,2,02 Search Product,200,OK,Spike Users 1-66,text,true,,450,144,34,34,http://localhost:3000/api/products?search=MacBook,2,0,0
+1786780234955,0,03 View Detail,200,OK,Spike Users 1-64,text,true,,480,131,34,34,http://localhost:3000/api/products/2,0,0,0
+1786780234956,1,04 Add to Cart,200,OK,Spike Users 1-51,text,true,,294,400,34,34,http://localhost:3000/api/cart,1,0,0
+1786780234958,2,04 Add to Cart,200,OK,Spike Users 1-62,text,true,,294,407,34,34,http://localhost:3000/api/cart,2,0,0
+1786780234956,4,05 Checkout,200,OK,Spike Users 1-37,text,true,,316,418,34,34,http://localhost:3000/api/checkout,4,0,0
+1786780234961,4,05 Checkout,200,OK,Spike Users 1-60,text,true,,316,416,33,33,http://localhost:3000/api/checkout,4,0,0
+1786780234979,1,02 Search Product,200,OK,Spike Users 1-55,text,true,,461,144,33,33,http://localhost:3000/api/products?search=AirPods,1,0,0
+1786780234982,2,03 View Detail,200,OK,Spike Users 1-53,text,true,,448,131,33,33,http://localhost:3000/api/products/3,2,0,0
+1786780234982,2,01 Login,200,OK,Spike Users 1-57,text,true,,635,228,33,33,http://localhost:3000/api/login,2,0,0
+1786780234983,3,04 Add to Cart,200,OK,Spike Users 1-40,text,true,,294,397,33,33,http://localhost:3000/api/cart,3,0,0
+1786780234983,3,02 Search Product,200,OK,Spike Users 1-44,text,true,,469,145,33,33,http://localhost:3000/api/products?search=Keychron,3,0,0
+1786780234993,5,05 Checkout,200,OK,Spike Users 1-49,text,true,,316,414,34,34,http://localhost:3000/api/checkout,5,0,0
+1786780234996,4,01 Login,200,OK,Spike Users 1-69,text,true,,635,228,34,34,http://localhost:3000/api/login,4,0,1
+1786780235004,1,01 Login,200,OK,Spike Users 1-46,text,true,,635,228,34,34,http://localhost:3000/api/login,1,0,0
+1786780235005,5,05 Checkout,200,OK,Spike Users 1-38,text,true,,316,418,34,34,http://localhost:3000/api/checkout,5,0,0
+1786780235005,5,03 View Detail,200,OK,Spike Users 1-65,text,true,,461,131,34,34,http://localhost:3000/api/products/4,5,0,0
+1786780235008,3,02 Search Product,200,OK,Spike Users 1-67,text,true,,453,143,34,34,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786780235014,2,01 Login,200,OK,Spike Users 1-58,text,true,,635,228,33,33,http://localhost:3000/api/login,2,0,0
+1786780235020,2,04 Add to Cart,200,OK,Spike Users 1-63,text,true,,294,404,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235020,3,01 Login,200,OK,Spike Users 1-47,text,true,,635,228,33,33,http://localhost:3000/api/login,3,0,0
+1786780235023,1,02 Search Product,200,OK,Spike Users 1-45,text,true,,480,144,33,33,http://localhost:3000/api/products?search=Samsung,1,0,0
+1786780235023,1,03 View Detail,200,OK,Spike Users 1-42,text,true,,467,131,33,33,http://localhost:3000/api/products/5,1,0,0
+1786780235032,1,04 Add to Cart,200,OK,Spike Users 1-41,text,true,,294,405,33,33,http://localhost:3000/api/cart,1,0,0
+1786780235030,5,05 Checkout,200,OK,Spike Users 1-50,text,true,,316,418,33,33,http://localhost:3000/api/checkout,5,0,0
+1786780235030,7,05 Checkout,200,OK,Spike Users 1-39,text,true,,316,416,33,33,http://localhost:3000/api/checkout,7,0,0
+1786780235032,8,05 Checkout,200,OK,Spike Users 1-61,text,true,,316,425,32,32,http://localhost:3000/api/checkout,8,0,0
+1786780235039,2,03 View Detail,200,OK,Spike Users 1-54,text,true,,451,131,32,32,http://localhost:3000/api/products/1,2,0,0
+1786780235043,2,01 Login,200,OK,Spike Users 1-48,text,true,,635,228,33,33,http://localhost:3000/api/login,2,0,0
+1786780235045,1,03 View Detail,200,OK,Spike Users 1-43,text,true,,480,131,33,33,http://localhost:3000/api/products/2,1,0,0
+1786780235047,3,01 Login,200,OK,Spike Users 1-70,text,true,,635,228,33,33,http://localhost:3000/api/login,3,0,1
+1786780235049,3,01 Login,200,OK,Spike Users 1-59,text,true,,635,228,33,33,http://localhost:3000/api/login,3,0,0
+1786780235052,2,04 Add to Cart,200,OK,Spike Users 1-52,text,true,,294,400,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235052,2,02 Search Product,200,OK,Spike Users 1-56,text,true,,450,144,33,33,http://localhost:3000/api/products?search=MacBook,2,0,0
+1786780235053,1,02 Search Product,200,OK,Spike Users 1-68,text,true,,461,144,33,33,http://localhost:3000/api/products?search=AirPods,1,0,0
+1786780235054,1,03 View Detail,200,OK,Spike Users 1-66,text,true,,448,131,33,33,http://localhost:3000/api/products/3,1,0,0
+1786780235056,2,04 Add to Cart,200,OK,Spike Users 1-64,text,true,,294,407,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235057,4,05 Checkout,200,OK,Spike Users 1-51,text,true,,316,414,33,33,http://localhost:3000/api/checkout,4,0,0
+1786780235061,5,05 Checkout,200,OK,Spike Users 1-62,text,true,,316,418,33,33,http://localhost:3000/api/checkout,5,0,0
+1786780235066,3,01 Login,200,OK,Spike Users 1-60,text,true,,635,228,33,33,http://localhost:3000/api/login,3,0,0
+1786780235080,1,03 View Detail,200,OK,Spike Users 1-55,text,true,,461,131,33,33,http://localhost:3000/api/products/4,1,0,0
+1786780235085,2,04 Add to Cart,200,OK,Spike Users 1-53,text,true,,294,397,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235085,2,02 Search Product,200,OK,Spike Users 1-57,text,true,,469,145,33,33,http://localhost:3000/api/products?search=Keychron,2,0,0
+1786780235087,4,05 Checkout,200,OK,Spike Users 1-40,text,true,,316,425,33,33,http://localhost:3000/api/checkout,4,0,0
+1786780235087,5,03 View Detail,200,OK,Spike Users 1-44,text,true,,467,131,33,33,http://localhost:3000/api/products/5,5,0,0
+1786780235097,3,01 Login,200,OK,Spike Users 1-71,text,true,,635,228,33,33,http://localhost:3000/api/login,3,0,1
+1786780235098,2,01 Login,200,OK,Spike Users 1-49,text,true,,635,228,33,33,http://localhost:3000/api/login,2,0,0
+1786780235101,1,02 Search Product,200,OK,Spike Users 1-69,text,true,,453,143,33,33,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786780235106,1,02 Search Product,200,OK,Spike Users 1-46,text,true,,480,144,33,33,http://localhost:3000/api/products?search=Samsung,1,0,0
+1786780235111,2,04 Add to Cart,200,OK,Spike Users 1-65,text,true,,294,404,33,33,http://localhost:3000/api/cart,1,0,0
+1786780235111,2,03 View Detail,200,OK,Spike Users 1-67,text,true,,451,131,33,33,http://localhost:3000/api/products/1,2,0,0
+1786780235117,1,02 Search Product,200,OK,Spike Users 1-58,text,true,,450,144,33,33,http://localhost:3000/api/products?search=MacBook,1,0,0
+1786780235122,4,05 Checkout,200,OK,Spike Users 1-63,text,true,,316,418,33,33,http://localhost:3000/api/checkout,4,0,0
+1786780235125,2,04 Add to Cart,200,OK,Spike Users 1-42,text,true,,294,405,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235125,2,02 Search Product,200,OK,Spike Users 1-47,text,true,,461,144,33,33,http://localhost:3000/api/products?search=AirPods,2,0,0
+1786780235124,3,03 View Detail,200,OK,Spike Users 1-45,text,true,,480,131,33,33,http://localhost:3000/api/products/2,3,0,0
+1786780235135,4,05 Checkout,200,OK,Spike Users 1-41,text,true,,316,416,33,33,http://localhost:3000/api/checkout,4,0,0
+1786780235136,4,01 Login,200,OK,Spike Users 1-50,text,true,,635,228,32,32,http://localhost:3000/api/login,4,0,0
+1786780235141,2,01 Login,200,OK,Spike Users 1-61,text,true,,635,228,33,33,http://localhost:3000/api/login,2,0,0
+1786780235142,2,04 Add to Cart,200,OK,Spike Users 1-54,text,true,,294,400,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235144,2,01 Login,200,OK,Spike Users 1-72,text,true,,635,228,33,33,http://localhost:3000/api/login,2,0,1
+1786780235146,1,02 Search Product,200,OK,Spike Users 1-48,text,true,,469,145,33,33,http://localhost:3000/api/products?search=Keychron,1,0,0
+1786780235147,2,04 Add to Cart,200,OK,Spike Users 1-43,text,true,,294,407,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235150,1,02 Search Product,200,OK,Spike Users 1-70,text,true,,453,143,33,33,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786780235152,1,02 Search Product,200,OK,Spike Users 1-59,text,true,,480,144,33,33,http://localhost:3000/api/products?search=Samsung,1,0,0
+1786780235155,2,04 Add to Cart,200,OK,Spike Users 1-66,text,true,,294,397,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235154,3,03 View Detail,200,OK,Spike Users 1-56,text,true,,448,131,33,33,http://localhost:3000/api/products/3,3,0,0
+1786780235154,4,05 Checkout,200,OK,Spike Users 1-52,text,true,,316,414,33,33,http://localhost:3000/api/checkout,4,0,0
+1786780235155,5,03 View Detail,200,OK,Spike Users 1-68,text,true,,461,131,33,33,http://localhost:3000/api/products/4,5,0,0
+1786780235158,5,05 Checkout,200,OK,Spike Users 1-64,text,true,,316,418,33,33,http://localhost:3000/api/checkout,5,0,0
+1786780235162,2,01 Login,200,OK,Spike Users 1-51,text,true,,635,228,33,33,http://localhost:3000/api/login,2,0,0
+1786780235167,1,01 Login,200,OK,Spike Users 1-62,text,true,,635,228,33,33,http://localhost:3000/api/login,1,0,0
+1786780235169,1,02 Search Product,200,OK,Spike Users 1-60,text,true,,450,144,33,33,http://localhost:3000/api/products?search=MacBook,1,0,0
+1786780235182,1,04 Add to Cart,200,OK,Spike Users 1-55,text,true,,294,404,33,33,http://localhost:3000/api/cart,1,0,0
+1786780235187,4,05 Checkout,200,OK,Spike Users 1-53,text,true,,316,425,33,33,http://localhost:3000/api/checkout,4,0,0
+1786780235188,3,03 View Detail,200,OK,Spike Users 1-57,text,true,,467,131,33,33,http://localhost:3000/api/products/5,3,0,0
+1786780235192,2,04 Add to Cart,200,OK,Spike Users 1-44,text,true,,294,405,34,34,http://localhost:3000/api/cart,2,0,0
+1786780235193,3,01 Login,200,OK,Spike Users 1-73,text,true,,635,228,34,34,http://localhost:3000/api/login,3,0,1
+1786780235200,1,02 Search Product,200,OK,Spike Users 1-71,text,true,,461,144,34,34,http://localhost:3000/api/products?search=AirPods,1,0,0
+1786780235201,1,02 Search Product,200,OK,Spike Users 1-49,text,true,,469,145,34,34,http://localhost:3000/api/products?search=Keychron,1,0,0
+1786780235202,0,03 View Detail,200,OK,Spike Users 1-69,text,true,,451,131,34,34,http://localhost:3000/api/products/1,0,0,0
+1786780235208,1,03 View Detail,200,OK,Spike Users 1-46,text,true,,480,131,34,34,http://localhost:3000/api/products/2,1,0,0
+1786780235213,1,04 Add to Cart,200,OK,Spike Users 1-67,text,true,,294,400,34,34,http://localhost:3000/api/cart,1,0,0
+1786780235213,5,05 Checkout,200,OK,Spike Users 1-65,text,true,,316,418,34,34,http://localhost:3000/api/checkout,5,0,0
+1786780235219,1,03 View Detail,200,OK,Spike Users 1-58,text,true,,448,131,34,34,http://localhost:3000/api/products/3,1,0,0
+1786780235227,2,01 Login,200,OK,Spike Users 1-63,text,true,,635,228,34,34,http://localhost:3000/api/login,2,0,0
+1786780235228,2,04 Add to Cart,200,OK,Spike Users 1-45,text,true,,294,407,34,34,http://localhost:3000/api/cart,2,0,0
+1786780235228,5,05 Checkout,200,OK,Spike Users 1-42,text,true,,316,416,34,34,http://localhost:3000/api/checkout,5,0,0
+1786780235228,5,03 View Detail,200,OK,Spike Users 1-47,text,true,,461,131,34,34,http://localhost:3000/api/products/4,5,0,0
+1786780235242,1,02 Search Product,200,OK,Spike Users 1-50,text,true,,453,143,34,34,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786780235242,3,01 Login,200,OK,Spike Users 1-74,text,true,,635,228,34,34,http://localhost:3000/api/login,3,0,1
+1786780235244,1,02 Search Product,200,OK,Spike Users 1-61,text,true,,480,144,34,34,http://localhost:3000/api/products?search=Samsung,1,0,0
+1786780235245,3,05 Checkout,200,OK,Spike Users 1-54,text,true,,316,414,34,34,http://localhost:3000/api/checkout,3,0,0
+1786780235247,1,02 Search Product,200,OK,Spike Users 1-72,text,true,,450,144,34,34,http://localhost:3000/api/products?search=MacBook,1,0,0
+1786780235248,1,03 View Detail,200,OK,Spike Users 1-48,text,true,,467,131,34,34,http://localhost:3000/api/products/5,1,0,0
+1786780235249,4,05 Checkout,200,OK,Spike Users 1-43,text,true,,316,418,34,34,http://localhost:3000/api/checkout,4,0,0
+1786780235252,1,03 View Detail,200,OK,Spike Users 1-70,text,true,,451,131,34,34,http://localhost:3000/api/products/1,1,0,0
+1786780235254,1,03 View Detail,200,OK,Spike Users 1-59,text,true,,480,131,33,33,http://localhost:3000/api/products/2,1,0,0
+1786780235258,2,04 Add to Cart,200,OK,Spike Users 1-56,text,true,,294,397,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235261,1,04 Add to Cart,200,OK,Spike Users 1-68,text,true,,294,404,33,33,http://localhost:3000/api/cart,1,0,0
+1786780235257,5,05 Checkout,200,OK,Spike Users 1-66,text,true,,316,425,33,33,http://localhost:3000/api/checkout,5,0,0
+1786780235259,5,01 Login,200,OK,Spike Users 1-52,text,true,,635,228,33,33,http://localhost:3000/api/login,5,0,0
+1786780235264,2,01 Login,200,OK,Spike Users 1-64,text,true,,635,228,33,33,http://localhost:3000/api/login,2,0,0
+1786780235265,1,02 Search Product,200,OK,Spike Users 1-51,text,true,,461,144,33,33,http://localhost:3000/api/products?search=AirPods,1,0,0
+1786780235269,1,02 Search Product,200,OK,Spike Users 1-62,text,true,,469,145,33,33,http://localhost:3000/api/products?search=Keychron,1,0,0
+1786780235270,1,03 View Detail,200,OK,Spike Users 1-60,text,true,,448,131,33,33,http://localhost:3000/api/products/3,1,0,0
+1786780235285,5,05 Checkout,200,OK,Spike Users 1-55,text,true,,316,418,33,33,http://localhost:3000/api/checkout,5,0,0
+1786780235292,1,04 Add to Cart,200,OK,Spike Users 1-57,text,true,,294,405,34,34,http://localhost:3000/api/cart,1,0,0
+1786780235293,2,01 Login,200,OK,Spike Users 1-53,text,true,,635,228,34,34,http://localhost:3000/api/login,2,0,0
+1786780235295,6,05 Checkout,200,OK,Spike Users 1-44,text,true,,316,416,34,34,http://localhost:3000/api/checkout,6,0,0
+1786780235296,5,02 Search Product,200,OK,Spike Users 1-73,text,true,,453,143,34,34,http://localhost:3000/api/products?search=iPhone,5,0,0
+1786780235295,8,01 Login,200,OK,Spike Users 1-75,text,true,,635,228,33,33,http://localhost:3000/api/login,8,0,1
+1786780235303,3,04 Add to Cart,200,OK,Spike Users 1-69,text,true,,294,400,33,33,http://localhost:3000/api/cart,3,0,0
+1786780235303,3,03 View Detail,200,OK,Spike Users 1-71,text,true,,461,131,33,33,http://localhost:3000/api/products/4,3,0,0
+1786780235303,4,03 View Detail,200,OK,Spike Users 1-49,text,true,,467,131,33,33,http://localhost:3000/api/products/5,4,0,0
+1786780235309,2,04 Add to Cart,200,OK,Spike Users 1-46,text,true,,294,407,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235320,3,04 Add to Cart,200,OK,Spike Users 1-58,text,true,,294,397,33,33,http://localhost:3000/api/cart,3,0,0
+1786780235316,7,05 Checkout,200,OK,Spike Users 1-67,text,true,,316,414,33,33,http://localhost:3000/api/checkout,7,0,0
+1786780235320,5,01 Login,200,OK,Spike Users 1-65,text,true,,635,228,33,33,http://localhost:3000/api/login,5,0,0
+1786780235331,3,02 Search Product,200,OK,Spike Users 1-63,text,true,,480,144,33,33,http://localhost:3000/api/products?search=Samsung,3,0,0
+1786780235334,3,04 Add to Cart,200,OK,Spike Users 1-47,text,true,,294,404,33,33,http://localhost:3000/api/cart,3,0,0
+1786780235331,6,05 Checkout,200,OK,Spike Users 1-45,text,true,,316,418,33,33,http://localhost:3000/api/checkout,6,0,0
+1786780235344,3,03 View Detail,200,OK,Spike Users 1-50,text,true,,451,131,33,33,http://localhost:3000/api/products/1,3,0,0
+1786780235345,3,02 Search Product,200,OK,Spike Users 1-74,text,true,,450,144,33,33,http://localhost:3000/api/products?search=MacBook,3,0,0
+1786780235345,5,01 Login,200,OK,Spike Users 1-76,text,true,,635,228,33,33,http://localhost:3000/api/login,5,0,0
+1786780235350,4,04 Add to Cart,200,OK,Spike Users 1-48,text,true,,294,405,33,33,http://localhost:3000/api/cart,4,0,0
+1786780235346,8,03 View Detail,200,OK,Spike Users 1-61,text,true,,480,131,33,33,http://localhost:3000/api/products/2,8,0,0
+1786780235354,2,04 Add to Cart,200,OK,Spike Users 1-70,text,true,,294,400,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235349,8,03 View Detail,200,OK,Spike Users 1-72,text,true,,448,131,33,33,http://localhost:3000/api/products/3,8,0,0
+1786780235349,11,01 Login,200,OK,Spike Users 1-54,text,true,,635,228,33,33,http://localhost:3000/api/login,11,0,0
+1786780235355,7,04 Add to Cart,200,OK,Spike Users 1-59,text,true,,294,407,33,33,http://localhost:3000/api/cart,7,0,0
+1786780235361,8,05 Checkout,200,OK,Spike Users 1-56,text,true,,316,425,33,33,http://localhost:3000/api/checkout,8,0,0
+1786780235364,9,05 Checkout,200,OK,Spike Users 1-68,text,true,,316,418,33,33,http://localhost:3000/api/checkout,9,0,0
+1786780235365,10,02 Search Product,200,OK,Spike Users 1-52,text,true,,461,144,33,33,http://localhost:3000/api/products?search=AirPods,10,0,0
+1786780235364,11,01 Login,200,OK,Spike Users 1-66,text,true,,635,228,33,33,http://localhost:3000/api/login,11,0,0
+1786780235366,10,02 Search Product,200,OK,Spike Users 1-64,text,true,,469,145,33,33,http://localhost:3000/api/products?search=Keychron,10,0,0
+1786780235372,6,04 Add to Cart,200,OK,Spike Users 1-60,text,true,,294,397,33,33,http://localhost:3000/api/cart,6,0,0
+1786780235371,8,03 View Detail,200,OK,Spike Users 1-62,text,true,,467,131,33,33,http://localhost:3000/api/products/5,8,0,0
+1786780235367,12,03 View Detail,200,OK,Spike Users 1-51,text,true,,461,131,33,33,http://localhost:3000/api/products/4,12,0,0
+1786780235391,3,01 Login,200,OK,Spike Users 1-55,text,true,,635,228,34,34,http://localhost:3000/api/login,3,0,0
+1786780235392,5,01 Login,200,OK,Spike Users 1-77,text,true,,635,228,34,34,http://localhost:3000/api/login,5,0,1
+1786780235394,8,05 Checkout,200,OK,Spike Users 1-57,text,true,,316,416,34,34,http://localhost:3000/api/checkout,8,0,0
+1786780235396,6,02 Search Product,200,OK,Spike Users 1-53,text,true,,453,143,34,34,http://localhost:3000/api/products?search=iPhone,6,0,0
+1786780235402,2,03 View Detail,200,OK,Spike Users 1-73,text,true,,451,131,34,34,http://localhost:3000/api/products/1,2,0,0
+1786780235404,1,02 Search Product,200,OK,Spike Users 1-75,text,true,,480,144,34,34,http://localhost:3000/api/products?search=Samsung,1,0,0
+1786780235407,3,04 Add to Cart,200,OK,Spike Users 1-49,text,true,,294,405,34,34,http://localhost:3000/api/cart,3,0,0
+1786780235407,4,04 Add to Cart,200,OK,Spike Users 1-71,text,true,,294,404,34,34,http://localhost:3000/api/cart,4,0,0
+1786780235406,9,05 Checkout,200,OK,Spike Users 1-69,text,true,,316,414,34,34,http://localhost:3000/api/checkout,9,0,0
+1786780235412,6,05 Checkout,200,OK,Spike Users 1-46,text,true,,316,418,34,34,http://localhost:3000/api/checkout,6,0,0
+1786780235424,7,05 Checkout,200,OK,Spike Users 1-58,text,true,,316,425,33,33,http://localhost:3000/api/checkout,7,0,0
+1786780235424,9,01 Login,200,OK,Spike Users 1-67,text,true,,635,228,33,33,http://localhost:3000/api/login,9,0,0
+1786780235427,6,02 Search Product,200,OK,Spike Users 1-65,text,true,,450,144,33,33,http://localhost:3000/api/products?search=MacBook,6,0,0
+1786780235434,2,03 View Detail,200,OK,Spike Users 1-63,text,true,,480,131,33,33,http://localhost:3000/api/products/2,2,0,0
+1786780235437,6,05 Checkout,200,OK,Spike Users 1-47,text,true,,316,418,34,34,http://localhost:3000/api/checkout,6,0,0
+1786780235441,5,01 Login,200,OK,Spike Users 1-78,text,true,,635,228,33,33,http://localhost:3000/api/login,5,0,2
+1786780235448,2,04 Add to Cart,200,OK,Spike Users 1-50,text,true,,294,400,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235449,2,03 View Detail,200,OK,Spike Users 1-74,text,true,,448,131,33,33,http://localhost:3000/api/products/3,2,0,0
+1786780235451,2,02 Search Product,200,OK,Spike Users 1-76,text,true,,461,144,33,33,http://localhost:3000/api/products?search=AirPods,2,0,0
+1786780235454,2,04 Add to Cart,200,OK,Spike Users 1-61,text,true,,294,407,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235457,2,04 Add to Cart,200,OK,Spike Users 1-72,text,true,,294,397,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235454,8,05 Checkout,200,OK,Spike Users 1-48,text,true,,316,416,33,33,http://localhost:3000/api/checkout,8,0,0
+1786780235458,7,05 Checkout,200,OK,Spike Users 1-70,text,true,,316,414,32,32,http://localhost:3000/api/checkout,7,0,0
+1786780235461,6,02 Search Product,200,OK,Spike Users 1-54,text,true,,469,145,32,32,http://localhost:3000/api/products?search=Keychron,6,0,0
+1786780235463,7,05 Checkout,200,OK,Spike Users 1-59,text,true,,316,418,32,32,http://localhost:3000/api/checkout,7,0,0
+1786780235471,4,01 Login,200,OK,Spike Users 1-56,text,true,,635,228,32,32,http://localhost:3000/api/login,4,0,0
+1786780235474,4,01 Login,200,OK,Spike Users 1-68,text,true,,635,228,32,32,http://localhost:3000/api/login,4,0,0
+1786780235479,2,04 Add to Cart,200,OK,Spike Users 1-62,text,true,,294,405,32,32,http://localhost:3000/api/cart,2,0,0
+1786780235476,7,02 Search Product,200,OK,Spike Users 1-66,text,true,,453,143,32,32,http://localhost:3000/api/products?search=iPhone,7,0,0
+1786780235476,7,03 View Detail,200,OK,Spike Users 1-52,text,true,,461,131,32,32,http://localhost:3000/api/products/4,7,0,0
+1786780235479,6,04 Add to Cart,200,OK,Spike Users 1-51,text,true,,294,404,32,32,http://localhost:3000/api/cart,6,0,0
+1786780235476,9,03 View Detail,200,OK,Spike Users 1-64,text,true,,467,131,32,32,http://localhost:3000/api/products/5,9,0,0
+1786780235479,7,05 Checkout,200,OK,Spike Users 1-60,text,true,,316,425,32,32,http://localhost:3000/api/checkout,7,0,0
+1786780235490,4,01 Login,200,OK,Spike Users 1-79,text,true,,635,228,33,33,http://localhost:3000/api/login,4,0,1
+1786780235495,1,02 Search Product,200,OK,Spike Users 1-55,text,true,,480,144,33,33,http://localhost:3000/api/products?search=Samsung,1,0,0
+1786780235497,2,02 Search Product,200,OK,Spike Users 1-77,text,true,,450,144,33,33,http://localhost:3000/api/products?search=MacBook,2,0,0
+1786780235502,4,01 Login,200,OK,Spike Users 1-57,text,true,,635,228,33,33,http://localhost:3000/api/login,4,0,0
+1786780235503,3,03 View Detail,200,OK,Spike Users 1-53,text,true,,451,131,33,33,http://localhost:3000/api/products/1,3,0,0
+1786780235505,4,04 Add to Cart,200,OK,Spike Users 1-73,text,true,,294,400,33,33,http://localhost:3000/api/cart,4,0,0
+1786780235506,5,03 View Detail,200,OK,Spike Users 1-75,text,true,,480,131,33,33,http://localhost:3000/api/products/2,5,0,0
+1786780235510,8,05 Checkout,200,OK,Spike Users 1-49,text,true,,316,416,33,33,http://localhost:3000/api/checkout,8,0,0
+1786780235511,10,05 Checkout,200,OK,Spike Users 1-71,text,true,,316,418,32,32,http://localhost:3000/api/checkout,10,0,0
+1786780235516,7,01 Login,200,OK,Spike Users 1-69,text,true,,635,228,32,32,http://localhost:3000/api/login,7,0,0
+1786780235534,2,02 Search Product,200,OK,Spike Users 1-67,text,true,,461,144,32,32,http://localhost:3000/api/products?search=AirPods,2,0,0
+1786780235534,4,03 View Detail,200,OK,Spike Users 1-65,text,true,,448,131,32,32,http://localhost:3000/api/products/3,4,0,0
+1786780235532,6,01 Login,200,OK,Spike Users 1-58,text,true,,635,228,32,32,http://localhost:3000/api/login,6,0,0
+1786780235536,4,04 Add to Cart,200,OK,Spike Users 1-63,text,true,,294,407,33,33,http://localhost:3000/api/cart,4,0,0
+1786780235541,3,01 Login,200,OK,Spike Users 1-80,text,true,,635,228,33,33,http://localhost:3000/api/login,3,0,0
+1786780235548,1,02 Search Product,200,OK,Spike Users 1-78,text,true,,469,145,33,33,http://localhost:3000/api/products?search=Keychron,1,0,0
+1786780235553,3,04 Add to Cart,200,OK,Spike Users 1-74,text,true,,294,397,33,33,http://localhost:3000/api/cart,3,0,0
+1786780235551,5,05 Checkout,200,OK,Spike Users 1-50,text,true,,316,414,33,33,http://localhost:3000/api/checkout,5,0,0
+1786780235553,3,03 View Detail,200,OK,Spike Users 1-76,text,true,,461,131,33,33,http://localhost:3000/api/products/4,3,0,0
+1786780235558,5,05 Checkout,200,OK,Spike Users 1-61,text,true,,316,418,32,32,http://localhost:3000/api/checkout,5,0,0
+1786780235560,5,05 Checkout,200,OK,Spike Users 1-72,text,true,,316,425,32,32,http://localhost:3000/api/checkout,5,0,0
+1786780235566,2,01 Login,200,OK,Spike Users 1-70,text,true,,635,228,32,32,http://localhost:3000/api/login,2,0,0
+1786780235569,1,03 View Detail,200,OK,Spike Users 1-54,text,true,,467,131,32,32,http://localhost:3000/api/products/5,1,0,0
+1786780235571,4,01 Login,200,OK,Spike Users 1-59,text,true,,635,228,32,32,http://localhost:3000/api/login,4,0,0
+1786780235576,2,02 Search Product,200,OK,Spike Users 1-56,text,true,,453,143,32,32,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786780235578,2,02 Search Product,200,OK,Spike Users 1-68,text,true,,480,144,32,32,http://localhost:3000/api/products?search=Samsung,2,0,0
+1786780235584,2,04 Add to Cart,200,OK,Spike Users 1-52,text,true,,294,404,32,32,http://localhost:3000/api/cart,2,0,0
+1786780235581,5,05 Checkout,200,OK,Spike Users 1-62,text,true,,316,416,32,32,http://localhost:3000/api/checkout,5,0,0
+1786780235586,2,04 Add to Cart,200,OK,Spike Users 1-64,text,true,,294,405,32,32,http://localhost:3000/api/cart,2,0,0
+1786780235583,6,03 View Detail,200,OK,Spike Users 1-66,text,true,,451,131,32,32,http://localhost:3000/api/products/1,6,0,0
+1786780235586,6,05 Checkout,200,OK,Spike Users 1-51,text,true,,316,418,33,33,http://localhost:3000/api/checkout,6,0,0
+1786780235587,7,01 Login,200,OK,Spike Users 1-60,text,true,,635,228,32,32,http://localhost:3000/api/login,7,0,0
+1786780235592,4,01 Login,200,OK,Spike Users 1-81,text,true,,635,228,32,32,http://localhost:3000/api/login,4,0,1
+1786780235595,2,02 Search Product,200,OK,Spike Users 1-79,text,true,,450,144,32,32,http://localhost:3000/api/products?search=MacBook,2,0,0
+1786780235597,1,03 View Detail,200,OK,Spike Users 1-55,text,true,,480,131,32,32,http://localhost:3000/api/products/2,1,0,0
+1786780235600,0,03 View Detail,200,OK,Spike Users 1-77,text,true,,448,131,32,32,http://localhost:3000/api/products/3,0,0,0
+1786780235607,2,04 Add to Cart,200,OK,Spike Users 1-53,text,true,,294,400,32,32,http://localhost:3000/api/cart,2,0,0
+1786780235607,3,02 Search Product,200,OK,Spike Users 1-57,text,true,,461,144,32,32,http://localhost:3000/api/products?search=AirPods,3,0,0
+1786780235613,4,04 Add to Cart,200,OK,Spike Users 1-75,text,true,,294,407,32,32,http://localhost:3000/api/cart,4,0,0
+1786780235610,7,05 Checkout,200,OK,Spike Users 1-73,text,true,,316,414,32,32,http://localhost:3000/api/checkout,7,0,0
+1786780235621,2,01 Login,200,OK,Spike Users 1-71,text,true,,635,228,32,32,http://localhost:3000/api/login,2,0,0
+1786780235623,1,02 Search Product,200,OK,Spike Users 1-69,text,true,,469,145,32,32,http://localhost:3000/api/products?search=Keychron,1,0,0
+1786780235637,2,03 View Detail,200,OK,Spike Users 1-67,text,true,,461,131,32,32,http://localhost:3000/api/products/4,2,0,0
+1786780235639,3,04 Add to Cart,200,OK,Spike Users 1-65,text,true,,294,397,33,33,http://localhost:3000/api/cart,3,0,0
+1786780235639,6,02 Search Product,200,OK,Spike Users 1-58,text,true,,453,143,33,33,http://localhost:3000/api/products?search=iPhone,6,0,0
+1786780235642,6,05 Checkout,200,OK,Spike Users 1-63,text,true,,316,418,33,33,http://localhost:3000/api/checkout,6,0,0
+1786780235645,3,02 Search Product,200,OK,Spike Users 1-80,text,true,,480,144,33,33,http://localhost:3000/api/products?search=Samsung,3,0,0
+1786780235641,8,01 Login,200,OK,Spike Users 1-82,text,true,,635,228,33,33,http://localhost:3000/api/login,8,0,1
+1786780235650,0,03 View Detail,200,OK,Spike Users 1-78,text,true,,467,131,33,33,http://localhost:3000/api/products/5,0,0,0
+1786780235657,2,04 Add to Cart,200,OK,Spike Users 1-76,text,true,,294,404,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235656,6,05 Checkout,200,OK,Spike Users 1-74,text,true,,316,425,33,33,http://localhost:3000/api/checkout,6,0,0
+1786780235663,2,01 Login,200,OK,Spike Users 1-61,text,true,,635,228,33,33,http://localhost:3000/api/login,2,0,0
+1786780235667,2,01 Login,200,OK,Spike Users 1-72,text,true,,635,228,33,33,http://localhost:3000/api/login,2,0,0
+1786780235671,1,04 Add to Cart,200,OK,Spike Users 1-54,text,true,,294,405,33,33,http://localhost:3000/api/cart,1,0,0
+1786780235670,3,02 Search Product,200,OK,Spike Users 1-70,text,true,,450,144,33,33,http://localhost:3000/api/products?search=MacBook,3,0,0
+1786780235676,1,02 Search Product,200,OK,Spike Users 1-59,text,true,,461,144,33,33,http://localhost:3000/api/products?search=AirPods,1,0,0
+1786780235679,1,03 View Detail,200,OK,Spike Users 1-56,text,true,,451,131,33,33,http://localhost:3000/api/products/1,1,0,0
+1786780235680,1,03 View Detail,200,OK,Spike Users 1-68,text,true,,480,131,33,33,http://localhost:3000/api/products/2,1,0,0
+1786780235690,2,04 Add to Cart,200,OK,Spike Users 1-66,text,true,,294,400,34,34,http://localhost:3000/api/cart,2,0,0
+1786780235687,7,05 Checkout,200,OK,Spike Users 1-52,text,true,,316,418,34,34,http://localhost:3000/api/checkout,7,0,0
+1786780235688,7,01 Login,200,OK,Spike Users 1-62,text,true,,635,228,33,33,http://localhost:3000/api/login,7,0,0
+1786780235690,8,05 Checkout,200,OK,Spike Users 1-64,text,true,,316,416,33,33,http://localhost:3000/api/checkout,8,0,0
+1786780235695,3,02 Search Product,200,OK,Spike Users 1-60,text,true,,469,145,33,33,http://localhost:3000/api/products?search=Keychron,3,0,0
+1786780235691,8,01 Login,200,OK,Spike Users 1-83,text,true,,635,228,33,33,http://localhost:3000/api/login,8,0,1
+1786780235697,3,03 View Detail,200,OK,Spike Users 1-79,text,true,,448,131,33,33,http://localhost:3000/api/products/3,3,0,0
+1786780235699,2,04 Add to Cart,200,OK,Spike Users 1-55,text,true,,294,407,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235698,3,02 Search Product,200,OK,Spike Users 1-81,text,true,,453,143,33,33,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786780235701,2,04 Add to Cart,200,OK,Spike Users 1-77,text,true,,294,397,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235710,5,05 Checkout,200,OK,Spike Users 1-53,text,true,,316,414,33,33,http://localhost:3000/api/checkout,5,0,0
+1786780235710,5,03 View Detail,200,OK,Spike Users 1-57,text,true,,461,131,33,33,http://localhost:3000/api/products/4,5,0,0
+1786780235718,4,01 Login,200,OK,Spike Users 1-73,text,true,,635,228,32,32,http://localhost:3000/api/login,4,0,0
+1786780235718,5,05 Checkout,200,OK,Spike Users 1-75,text,true,,316,418,32,32,http://localhost:3000/api/checkout,5,0,0
+1786780235724,2,02 Search Product,200,OK,Spike Users 1-71,text,true,,480,144,32,32,http://localhost:3000/api/products?search=Samsung,2,0,0
+1786780235725,1,03 View Detail,200,OK,Spike Users 1-69,text,true,,467,131,32,32,http://localhost:3000/api/products/5,1,0,0
+1786780235739,2,04 Add to Cart,200,OK,Spike Users 1-67,text,true,,294,404,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235742,4,05 Checkout,200,OK,Spike Users 1-65,text,true,,316,425,33,33,http://localhost:3000/api/checkout,4,0,0
+1786780235746,2,03 View Detail,200,OK,Spike Users 1-58,text,true,,451,131,33,33,http://localhost:3000/api/products/1,2,0,0
+1786780235741,7,01 Login,200,OK,Spike Users 1-84,text,true,,635,228,33,33,http://localhost:3000/api/login,7,0,1
+1786780235749,2,03 View Detail,200,OK,Spike Users 1-80,text,true,,480,131,33,33,http://localhost:3000/api/products/2,2,0,0
+1786780235749,3,01 Login,200,OK,Spike Users 1-63,text,true,,635,228,33,33,http://localhost:3000/api/login,3,0,0
+1786780235752,2,04 Add to Cart,200,OK,Spike Users 1-78,text,true,,294,405,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235750,4,02 Search Product,200,OK,Spike Users 1-82,text,true,,450,144,33,33,http://localhost:3000/api/products?search=MacBook,4,0,0
+1786780235760,4,05 Checkout,200,OK,Spike Users 1-76,text,true,,316,418,33,33,http://localhost:3000/api/checkout,4,0,0
+1786780235763,3,01 Login,200,OK,Spike Users 1-74,text,true,,635,228,33,33,http://localhost:3000/api/login,3,0,0
+1786780235766,1,02 Search Product,200,OK,Spike Users 1-61,text,true,,461,144,33,33,http://localhost:3000/api/products?search=AirPods,1,0,0
+1786780235770,2,02 Search Product,200,OK,Spike Users 1-72,text,true,,469,145,33,33,http://localhost:3000/api/products?search=Keychron,2,0,0
+1786780235776,3,03 View Detail,200,OK,Spike Users 1-70,text,true,,448,131,33,33,http://localhost:3000/api/products/3,3,0,0
+1786780235781,6,04 Add to Cart,200,OK,Spike Users 1-56,text,true,,294,400,34,34,http://localhost:3000/api/cart,6,0,0
+1786780235782,6,04 Add to Cart,200,OK,Spike Users 1-68,text,true,,294,407,34,34,http://localhost:3000/api/cart,6,0,0
+1786780235776,13,05 Checkout,200,OK,Spike Users 1-54,text,true,,316,416,34,34,http://localhost:3000/api/checkout,13,0,0
+1786780235778,11,03 View Detail,200,OK,Spike Users 1-59,text,true,,461,131,34,34,http://localhost:3000/api/products/4,11,0,0
+1786780235787,5,01 Login,200,OK,Spike Users 1-85,text,true,,635,228,33,33,http://localhost:3000/api/login,5,0,2
+1786780235793,5,05 Checkout,200,OK,Spike Users 1-66,text,true,,316,414,33,33,http://localhost:3000/api/checkout,5,0,0
+1786780235796,3,02 Search Product,200,OK,Spike Users 1-62,text,true,,453,143,33,33,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786780235798,4,01 Login,200,OK,Spike Users 1-64,text,true,,635,228,33,33,http://localhost:3000/api/login,4,0,0
+1786780235800,3,03 View Detail,200,OK,Spike Users 1-60,text,true,,467,131,33,33,http://localhost:3000/api/products/5,3,0,0
+1786780235800,4,02 Search Product,200,OK,Spike Users 1-83,text,true,,480,144,33,33,http://localhost:3000/api/products?search=Samsung,4,0,0
+1786780235803,4,04 Add to Cart,200,OK,Spike Users 1-79,text,true,,294,397,33,33,http://localhost:3000/api/cart,4,0,0
+1786780235803,6,03 View Detail,200,OK,Spike Users 1-81,text,true,,451,131,33,33,http://localhost:3000/api/products/1,6,0,0
+1786780235803,9,05 Checkout,200,OK,Spike Users 1-77,text,true,,316,425,33,33,http://localhost:3000/api/checkout,9,0,0
+1786780235804,11,05 Checkout,200,OK,Spike Users 1-55,text,true,,316,418,33,33,http://localhost:3000/api/checkout,11,0,0
+1786780235816,2,04 Add to Cart,200,OK,Spike Users 1-57,text,true,,294,404,32,32,http://localhost:3000/api/cart,2,0,0
+1786780235823,2,02 Search Product,200,OK,Spike Users 1-73,text,true,,450,144,32,32,http://localhost:3000/api/products?search=MacBook,2,0,0
+1786780235824,2,01 Login,200,OK,Spike Users 1-75,text,true,,635,228,32,32,http://localhost:3000/api/login,2,0,0
+1786780235827,2,04 Add to Cart,200,OK,Spike Users 1-69,text,true,,294,405,32,32,http://localhost:3000/api/cart,2,0,0
+1786780235827,3,03 View Detail,200,OK,Spike Users 1-71,text,true,,480,131,32,32,http://localhost:3000/api/products/2,3,0,0
+1786780235836,5,01 Login,200,OK,Spike Users 1-86,text,true,,635,228,33,33,http://localhost:3000/api/login,5,0,1
+1786780235842,6,05 Checkout,200,OK,Spike Users 1-67,text,true,,316,418,33,33,http://localhost:3000/api/checkout,6,0,0
+1786780235849,2,04 Add to Cart,200,OK,Spike Users 1-58,text,true,,294,400,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235849,3,02 Search Product,200,OK,Spike Users 1-84,text,true,,461,144,33,33,http://localhost:3000/api/products?search=AirPods,3,0,0
+1786780235848,4,01 Login,200,OK,Spike Users 1-65,text,true,,635,228,33,33,http://localhost:3000/api/login,4,0,0
+1786780235851,2,04 Add to Cart,200,OK,Spike Users 1-80,text,true,,294,407,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235853,1,02 Search Product,200,OK,Spike Users 1-63,text,true,,469,145,33,33,http://localhost:3000/api/products?search=Keychron,1,0,0
+1786780235854,4,05 Checkout,200,OK,Spike Users 1-78,text,true,,316,416,33,33,http://localhost:3000/api/checkout,4,0,0
+1786780235855,4,03 View Detail,200,OK,Spike Users 1-82,text,true,,448,131,33,33,http://localhost:3000/api/products/3,4,0,0
+1786780235866,1,01 Login,200,OK,Spike Users 1-76,text,true,,635,228,33,33,http://localhost:3000/api/login,1,0,0
+1786780235867,1,02 Search Product,200,OK,Spike Users 1-74,text,true,,453,143,33,33,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786780235868,0,03 View Detail,200,OK,Spike Users 1-61,text,true,,461,131,33,33,http://localhost:3000/api/products/4,0,0,0
+1786780235872,1,03 View Detail,200,OK,Spike Users 1-72,text,true,,467,131,33,33,http://localhost:3000/api/products/5,1,0,0
+1786780235882,1,04 Add to Cart,200,OK,Spike Users 1-70,text,true,,294,397,33,33,http://localhost:3000/api/cart,1,0,0
+1786780235890,3,04 Add to Cart,200,OK,Spike Users 1-59,text,true,,294,404,34,34,http://localhost:3000/api/cart,2,0,0
+1786780235888,7,05 Checkout,200,OK,Spike Users 1-56,text,true,,316,414,34,34,http://localhost:3000/api/checkout,7,0,0
+1786780235890,8,05 Checkout,200,OK,Spike Users 1-68,text,true,,316,418,33,33,http://localhost:3000/api/checkout,8,0,0
+1786780235888,11,01 Login,200,OK,Spike Users 1-87,text,true,,635,228,33,33,http://localhost:3000/api/login,11,0,1
+1786780235893,7,02 Search Product,200,OK,Spike Users 1-85,text,true,,480,144,33,33,http://localhost:3000/api/products?search=Samsung,7,0,0
+1786780235898,3,01 Login,200,OK,Spike Users 1-66,text,true,,635,228,33,33,http://localhost:3000/api/login,3,0,0
+1786780235899,3,03 View Detail,200,OK,Spike Users 1-62,text,true,,451,131,33,33,http://localhost:3000/api/products/1,3,0,0
+1786780235903,1,02 Search Product,200,OK,Spike Users 1-64,text,true,,450,144,33,33,http://localhost:3000/api/products?search=MacBook,1,0,0
+1786780235905,2,04 Add to Cart,200,OK,Spike Users 1-60,text,true,,294,405,33,33,http://localhost:3000/api/cart,2,0,0
+1786780235905,2,03 View Detail,200,OK,Spike Users 1-83,text,true,,480,131,33,33,http://localhost:3000/api/products/2,2,0,0
+1786780235910,1,04 Add to Cart,200,OK,Spike Users 1-81,text,true,,294,400,33,33,http://localhost:3000/api/cart,1,0,0
+1786780235908,4,05 Checkout,200,OK,Spike Users 1-79,text,true,,316,425,33,33,http://localhost:3000/api/checkout,4,0,0
+1786780235913,2,01 Login,200,OK,Spike Users 1-77,text,true,,635,228,33,33,http://localhost:3000/api/login,1,0,0
+1786780235919,4,05 Checkout,200,OK,Spike Users 1-57,text,true,,316,418,33,33,http://localhost:3000/api/checkout,4,0,0
+1786780235927,0,02 Search Product,200,OK,Spike Users 1-75,text,true,,461,144,32,32,http://localhost:3000/api/products?search=AirPods,0,0,0
+1786780235926,2,03 View Detail,200,OK,Spike Users 1-73,text,true,,448,131,32,32,http://localhost:3000/api/products/3,2,0,0
+1786780235931,1,04 Add to Cart,200,OK,Spike Users 1-71,text,true,,294,407,32,32,http://localhost:3000/api/cart,1,0,0
+1786780235930,5,05 Checkout,200,OK,Spike Users 1-69,text,true,,316,416,32,32,http://localhost:3000/api/checkout,5,0,0
+1786780235937,3,01 Login,200,OK,Spike Users 1-88,text,true,,635,228,33,33,http://localhost:3000/api/login,3,0,1
+1786780235942,1,02 Search Product,200,OK,Spike Users 1-86,text,true,,469,145,33,33,http://localhost:3000/api/products?search=Keychron,1,0,0
+1786780235949,2,01 Login,200,OK,Spike Users 1-67,text,true,,635,228,33,33,http://localhost:3000/api/login,2,0,0
+1786780235951,5,05 Checkout,200,OK,Spike Users 1-58,text,true,,316,414,33,33,http://localhost:3000/api/checkout,5,0,0
+1786780235954,3,02 Search Product,200,OK,Spike Users 1-65,text,true,,453,143,32,32,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786780235954,3,03 View Detail,200,OK,Spike Users 1-84,text,true,,461,131,32,32,http://localhost:3000/api/products/4,3,0,0
+1786780235954,3,03 View Detail,200,OK,Spike Users 1-63,text,true,,467,131,32,32,http://localhost:3000/api/products/5,3,0,0
+1786780235955,5,05 Checkout,200,OK,Spike Users 1-80,text,true,,316,418,32,32,http://localhost:3000/api/checkout,5,0,0
+1786780235960,2,04 Add to Cart,200,OK,Spike Users 1-82,text,true,,294,397,32,32,http://localhost:3000/api/cart,2,0,0
+1786780235960,3,01 Login,200,OK,Spike Users 1-78,text,true,,635,228,32,32,http://localhost:3000/api/login,3,0,0
+1786780235968,2,02 Search Product,200,OK,Spike Users 1-76,text,true,,480,144,32,32,http://localhost:3000/api/products?search=Samsung,2,0,0
+1786780235968,2,03 View Detail,200,OK,Spike Users 1-74,text,true,,451,131,32,32,http://localhost:3000/api/products/1,2,0,0
+1786780235969,2,04 Add to Cart,200,OK,Spike Users 1-61,text,true,,294,404,32,32,http://localhost:3000/api/cart,2,0,0
+1786780235973,2,04 Add to Cart,200,OK,Spike Users 1-72,text,true,,294,405,32,32,http://localhost:3000/api/cart,2,0,0
+1786780235983,5,05 Checkout,200,OK,Spike Users 1-70,text,true,,316,425,33,33,http://localhost:3000/api/checkout,5,0,0
+1786780235985,5,01 Login,200,OK,Spike Users 1-89,text,true,,635,228,33,33,http://localhost:3000/api/login,5,0,1
+1786780235993,4,05 Checkout,200,OK,Spike Users 1-59,text,true,,316,418,33,33,http://localhost:3000/api/checkout,4,0,0
+1786780236000,1,02 Search Product,200,OK,Spike Users 1-87,text,true,,450,144,32,32,http://localhost:3000/api/products?search=MacBook,1,0,0
+1786780235999,3,01 Login,200,OK,Spike Users 1-68,text,true,,635,228,32,32,http://localhost:3000/api/login,3,0,0
+1786780236000,2,03 View Detail,200,OK,Spike Users 1-85,text,true,,480,131,32,32,http://localhost:3000/api/products/2,2,0,0
+1786780236002,1,04 Add to Cart,200,OK,Spike Users 1-62,text,true,,294,400,32,32,http://localhost:3000/api/cart,1,0,0
+1786780236002,2,02 Search Product,200,OK,Spike Users 1-66,text,true,,461,144,32,32,http://localhost:3000/api/products?search=AirPods,2,0,0
+1786780236006,0,03 View Detail,200,OK,Spike Users 1-64,text,true,,448,131,32,32,http://localhost:3000/api/products/3,0,0,0
+1786780236008,1,04 Add to Cart,200,OK,Spike Users 1-83,text,true,,294,407,32,32,http://localhost:3000/api/cart,1,0,0
+1786780236007,5,05 Checkout,200,OK,Spike Users 1-60,text,true,,316,416,32,32,http://localhost:3000/api/checkout,5,0,0
+1786780236013,5,05 Checkout,200,OK,Spike Users 1-81,text,true,,316,414,31,31,http://localhost:3000/api/checkout,5,0,0
+1786780236013,6,01 Login,200,OK,Spike Users 1-79,text,true,,635,228,31,31,http://localhost:3000/api/login,6,0,0
+1786780236015,5,02 Search Product,200,OK,Spike Users 1-77,text,true,,469,145,31,31,http://localhost:3000/api/products?search=Keychron,5,0,0
+1786780236028,1,03 View Detail,200,OK,Spike Users 1-75,text,true,,461,131,31,31,http://localhost:3000/api/products/4,1,0,0
+1786780236029,1,04 Add to Cart,200,OK,Spike Users 1-73,text,true,,294,397,31,31,http://localhost:3000/api/cart,1,0,0
+1786780236033,4,05 Checkout,200,OK,Spike Users 1-71,text,true,,316,418,32,32,http://localhost:3000/api/checkout,4,0,0
+1786780236035,4,01 Login,200,OK,Spike Users 1-69,text,true,,635,228,32,32,http://localhost:3000/api/login,4,0,0
+1786780236037,3,01 Login,200,OK,Spike Users 1-90,text,true,,635,228,32,32,http://localhost:3000/api/login,3,0,0
+1786780236041,1,02 Search Product,200,OK,Spike Users 1-88,text,true,,453,143,32,32,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786780236044,0,03 View Detail,200,OK,Spike Users 1-86,text,true,,467,131,32,32,http://localhost:3000/api/products/5,0,0,0
+1786780236052,0,02 Search Product,200,OK,Spike Users 1-67,text,true,,480,144,32,32,http://localhost:3000/api/products?search=Samsung,0,0,0
+1786780236058,1,04 Add to Cart,200,OK,Spike Users 1-63,text,true,,294,405,32,32,http://localhost:3000/api/cart,1,0,0
+1786780236058,2,04 Add to Cart,200,OK,Spike Users 1-84,text,true,,294,404,32,32,http://localhost:3000/api/cart,2,0,0
+1786780236058,2,03 View Detail,200,OK,Spike Users 1-65,text,true,,451,131,32,32,http://localhost:3000/api/products/1,2,0,0
+1786780236061,2,01 Login,200,OK,Spike Users 1-80,text,true,,635,228,32,32,http://localhost:3000/api/login,2,0,0
+1786780236062,4,05 Checkout,200,OK,Spike Users 1-82,text,true,,316,425,32,32,http://localhost:3000/api/checkout,4,0,0
+1786780236065,1,02 Search Product,200,OK,Spike Users 1-78,text,true,,450,144,32,32,http://localhost:3000/api/products?search=MacBook,1,0,0
+1786780236070,2,04 Add to Cart,200,OK,Spike Users 1-74,text,true,,294,400,32,32,http://localhost:3000/api/cart,2,0,0
+1786780236070,3,03 View Detail,200,OK,Spike Users 1-76,text,true,,480,131,32,32,http://localhost:3000/api/products/2,3,0,0
+1786780236071,4,05 Checkout,200,OK,Spike Users 1-61,text,true,,316,418,32,32,http://localhost:3000/api/checkout,4,0,0
+1786780236077,3,05 Checkout,200,OK,Spike Users 1-72,text,true,,316,416,31,31,http://localhost:3000/api/checkout,3,0,0
+1786780236085,2,01 Login,200,OK,Spike Users 1-91,text,true,,635,228,32,32,http://localhost:3000/api/login,2,0,1
+1786780236089,1,01 Login,200,OK,Spike Users 1-70,text,true,,635,228,32,32,http://localhost:3000/api/login,1,0,0
+1786780236091,1,02 Search Product,200,OK,Spike Users 1-89,text,true,,461,144,32,32,http://localhost:3000/api/products?search=AirPods,1,0,0
+1786780236103,1,04 Add to Cart,200,OK,Spike Users 1-85,text,true,,294,407,32,32,http://localhost:3000/api/cart,1,0,0
+1786780236103,3,03 View Detail,200,OK,Spike Users 1-87,text,true,,448,131,32,32,http://localhost:3000/api/products/3,3,0,0
+1786780236103,6,02 Search Product,200,OK,Spike Users 1-68,text,true,,469,145,32,32,http://localhost:3000/api/products?search=Keychron,6,0,0
+1786780236104,5,03 View Detail,200,OK,Spike Users 1-66,text,true,,461,131,32,32,http://localhost:3000/api/products/4,5,0,0
+1786780236104,5,05 Checkout,200,OK,Spike Users 1-62,text,true,,316,414,32,32,http://localhost:3000/api/checkout,5,0,0
+1786780236107,4,04 Add to Cart,200,OK,Spike Users 1-64,text,true,,294,397,31,31,http://localhost:3000/api/cart,4,0,0
+1786780236110,4,05 Checkout,200,OK,Spike Users 1-83,text,true,,316,418,31,31,http://localhost:3000/api/checkout,4,0,0
+1786780236119,1,01 Login,200,OK,Spike Users 1-81,text,true,,635,228,31,31,http://localhost:3000/api/login,1,0,0
+1786780236120,1,02 Search Product,200,OK,Spike Users 1-79,text,true,,453,143,31,31,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786780236120,1,03 View Detail,200,OK,Spike Users 1-77,text,true,,467,131,31,31,http://localhost:3000/api/products/5,1,0,0
+1786780236129,1,04 Add to Cart,200,OK,Spike Users 1-75,text,true,,294,404,31,31,http://localhost:3000/api/cart,1,0,0
+1786780236130,4,05 Checkout,200,OK,Spike Users 1-73,text,true,,316,425,32,32,http://localhost:3000/api/checkout,4,0,0
+1786780236136,3,01 Login,200,OK,Spike Users 1-92,text,true,,635,228,32,32,http://localhost:3000/api/login,3,0,1
+1786780236139,1,01 Login,200,OK,Spike Users 1-71,text,true,,635,228,32,32,http://localhost:3000/api/login,1,0,0
+1786780236140,1,02 Search Product,200,OK,Spike Users 1-69,text,true,,480,144,32,32,http://localhost:3000/api/products?search=Samsung,1,0,0
+1786780236141,1,02 Search Product,200,OK,Spike Users 1-90,text,true,,450,144,32,32,http://localhost:3000/api/products?search=MacBook,1,0,0
+1786780236142,1,03 View Detail,200,OK,Spike Users 1-88,text,true,,451,131,32,32,http://localhost:3000/api/products/1,1,0,0
+1786780236145,1,04 Add to Cart,200,OK,Spike Users 1-86,text,true,,294,405,32,32,http://localhost:3000/api/cart,1,0,0
+1786780236153,1,03 View Detail,200,OK,Spike Users 1-67,text,true,,480,131,32,32,http://localhost:3000/api/products/2,1,0,0
+1786780236161,2,04 Add to Cart,200,OK,Spike Users 1-65,text,true,,294,400,32,32,http://localhost:3000/api/cart,2,0,0
+1786780236160,6,05 Checkout,200,OK,Spike Users 1-63,text,true,,316,416,32,32,http://localhost:3000/api/checkout,6,0,0
+1786780236161,8,05 Checkout,200,OK,Spike Users 1-84,text,true,,316,418,31,31,http://localhost:3000/api/checkout,8,0,0
+1786780236164,5,02 Search Product,200,OK,Spike Users 1-80,text,true,,461,144,31,31,http://localhost:3000/api/products?search=AirPods,5,0,0
+1786780236167,2,03 View Detail,200,OK,Spike Users 1-78,text,true,,448,131,31,31,http://localhost:3000/api/products/3,2,0,0
+1786780236167,3,01 Login,200,OK,Spike Users 1-82,text,true,,635,228,31,31,http://localhost:3000/api/login,3,0,0
+1786780236173,2,04 Add to Cart,200,OK,Spike Users 1-76,text,true,,294,407,31,31,http://localhost:3000/api/cart,2,0,0
+1786780236172,5,05 Checkout,200,OK,Spike Users 1-74,text,true,,316,414,31,31,http://localhost:3000/api/checkout,5,0,0
+1786780236181,2,01 Login,200,OK,Spike Users 1-72,text,true,,635,228,32,32,http://localhost:3000/api/login,2,0,0
+1786780236186,2,01 Login,200,OK,Spike Users 1-93,text,true,,635,228,32,32,http://localhost:3000/api/login,2,0,0
+1786780236189,1,02 Search Product,200,OK,Spike Users 1-91,text,true,,469,145,32,32,http://localhost:3000/api/products?search=Keychron,1,0,0
+1786780236192,1,03 View Detail,200,OK,Spike Users 1-89,text,true,,461,131,32,32,http://localhost:3000/api/products/4,1,0,0
+1786780236192,1,02 Search Product,200,OK,Spike Users 1-70,text,true,,453,143,32,32,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786780236207,1,04 Add to Cart,200,OK,Spike Users 1-87,text,true,,294,397,32,32,http://localhost:3000/api/cart,1,0,0
+1786780236205,3,05 Checkout,200,OK,Spike Users 1-85,text,true,,316,418,32,32,http://localhost:3000/api/checkout,3,0,0
+1786780236209,2,04 Add to Cart,200,OK,Spike Users 1-66,text,true,,294,404,32,32,http://localhost:3000/api/cart,2,0,0
+1786780236210,2,03 View Detail,200,OK,Spike Users 1-68,text,true,,467,131,32,32,http://localhost:3000/api/products/5,2,0,0
+1786780236212,4,05 Checkout,200,OK,Spike Users 1-64,text,true,,316,425,32,32,http://localhost:3000/api/checkout,4,0,0
+1786780236215,3,01 Login,200,OK,Spike Users 1-83,text,true,,635,228,31,31,http://localhost:3000/api/login,3,0,0
+1786780236221,1,02 Search Product,200,OK,Spike Users 1-81,text,true,,480,144,31,31,http://localhost:3000/api/products?search=Samsung,1,0,0
+1786780236221,1,03 View Detail,200,OK,Spike Users 1-79,text,true,,451,131,31,31,http://localhost:3000/api/products/1,1,0,0
+1786780236222,1,04 Add to Cart,200,OK,Spike Users 1-77,text,true,,294,405,31,31,http://localhost:3000/api/cart,1,0,0
+1786780236230,5,05 Checkout,200,OK,Spike Users 1-75,text,true,,316,418,32,32,http://localhost:3000/api/checkout,5,0,0
+1786780236234,3,01 Login,200,OK,Spike Users 1-94,text,true,,635,228,32,32,http://localhost:3000/api/login,3,0,0
+1786780236235,3,01 Login,200,OK,Spike Users 1-73,text,true,,635,228,32,32,http://localhost:3000/api/login,3,0,0
+1786780236240,0,02 Search Product,200,OK,Spike Users 1-92,text,true,,450,144,32,32,http://localhost:3000/api/products?search=MacBook,0,0,0
+1786780236241,0,02 Search Product,200,OK,Spike Users 1-71,text,true,,461,144,32,32,http://localhost:3000/api/products?search=AirPods,0,0,0
+1786780236242,0,03 View Detail,200,OK,Spike Users 1-69,text,true,,480,131,32,32,http://localhost:3000/api/products/2,0,0,0
+1786780236243,0,03 View Detail,200,OK,Spike Users 1-90,text,true,,448,131,32,32,http://localhost:3000/api/products/3,0,0,0
+1786780236244,1,04 Add to Cart,200,OK,Spike Users 1-88,text,true,,294,400,32,32,http://localhost:3000/api/cart,1,0,0
+1786780236247,4,05 Checkout,200,OK,Spike Users 1-86,text,true,,316,416,32,32,http://localhost:3000/api/checkout,4,0,0
+1786780236254,1,04 Add to Cart,200,OK,Spike Users 1-67,text,true,,294,407,32,32,http://localhost:3000/api/cart,1,0,0
+1786780236263,4,05 Checkout,200,OK,Spike Users 1-65,text,true,,316,414,32,32,http://localhost:3000/api/checkout,4,0,0
+1786780236270,1,04 Add to Cart,200,OK,Spike Users 1-78,text,true,,294,397,31,31,http://localhost:3000/api/cart,1,0,0
+1786780236270,2,03 View Detail,200,OK,Spike Users 1-80,text,true,,461,131,31,31,http://localhost:3000/api/products/4,2,0,0
+1786780236271,2,02 Search Product,200,OK,Spike Users 1-82,text,true,,469,145,31,31,http://localhost:3000/api/products?search=Keychron,2,0,0
+1786780236270,3,01 Login,200,OK,Spike Users 1-84,text,true,,635,228,31,31,http://localhost:3000/api/login,3,0,0
+1786780236275,4,05 Checkout,200,OK,Spike Users 1-76,text,true,,316,418,32,32,http://localhost:3000/api/checkout,4,0,0
+1786780236277,3,01 Login,200,OK,Spike Users 1-74,text,true,,635,228,32,32,http://localhost:3000/api/login,3,0,0
+1786780236284,4,02 Search Product,200,OK,Spike Users 1-72,text,true,,453,143,32,32,http://localhost:3000/api/products?search=iPhone,4,0,0
+1786780236283,4,01 Login,200,OK,Spike Users 1-95,text,true,,635,228,32,32,http://localhost:3000/api/login,4,0,1
+1786780236289,0,02 Search Product,200,OK,Spike Users 1-93,text,true,,480,144,32,32,http://localhost:3000/api/products?search=Samsung,0,0,0
+1786780236291,1,03 View Detail,200,OK,Spike Users 1-91,text,true,,467,131,32,32,http://localhost:3000/api/products/5,1,0,0
+1786780236294,1,04 Add to Cart,200,OK,Spike Users 1-89,text,true,,294,404,32,32,http://localhost:3000/api/cart,1,0,0
+1786780236294,2,03 View Detail,200,OK,Spike Users 1-70,text,true,,451,131,32,32,http://localhost:3000/api/products/1,2,0,0
+1786780236309,5,01 Login,200,OK,Spike Users 1-85,text,true,,635,228,32,32,http://localhost:3000/api/login,5,0,0
+1786780236312,3,04 Add to Cart,200,OK,Spike Users 1-68,text,true,,294,405,32,32,http://localhost:3000/api/cart,3,0,0
+1786780236309,8,05 Checkout,200,OK,Spike Users 1-87,text,true,,316,425,32,32,http://localhost:3000/api/checkout,8,0,0
+1786780236312,8,05 Checkout,200,OK,Spike Users 1-66,text,true,,316,418,32,32,http://localhost:3000/api/checkout,8,0,0
+1786780236318,2,02 Search Product,200,OK,Spike Users 1-83,text,true,,450,144,32,32,http://localhost:3000/api/products?search=MacBook,2,0,0
+1786780236323,2,04 Add to Cart,200,OK,Spike Users 1-79,text,true,,294,400,31,31,http://localhost:3000/api/cart,2,0,0
+1786780236323,3,03 View Detail,200,OK,Spike Users 1-81,text,true,,480,131,31,31,http://localhost:3000/api/products/2,3,0,0
+1786780236324,4,05 Checkout,200,OK,Spike Users 1-77,text,true,,316,416,31,31,http://localhost:3000/api/checkout,4,0,0
+1786780236332,3,01 Login,200,OK,Spike Users 1-96,text,true,,635,228,32,32,http://localhost:3000/api/login,2,0,1
+1786780236336,1,01 Login,200,OK,Spike Users 1-75,text,true,,635,228,32,32,http://localhost:3000/api/login,1,0,0
+1786780236340,1,02 Search Product,200,OK,Spike Users 1-94,text,true,,461,144,32,32,http://localhost:3000/api/products?search=AirPods,1,0,0
+1786780236340,1,02 Search Product,200,OK,Spike Users 1-73,text,true,,469,145,32,32,http://localhost:3000/api/products?search=Keychron,1,0,0
+1786780236342,0,03 View Detail,200,OK,Spike Users 1-92,text,true,,448,131,32,32,http://localhost:3000/api/products/3,0,0,0
+1786780236342,1,03 View Detail,200,OK,Spike Users 1-71,text,true,,461,131,32,32,http://localhost:3000/api/products/4,1,0,0
+1786780236344,1,04 Add to Cart,200,OK,Spike Users 1-90,text,true,,294,397,32,32,http://localhost:3000/api/cart,1,0,0
+1786780236344,1,04 Add to Cart,200,OK,Spike Users 1-69,text,true,,294,407,32,32,http://localhost:3000/api/cart,1,0,0
+1786780236347,4,05 Checkout,200,OK,Spike Users 1-88,text,true,,316,414,32,32,http://localhost:3000/api/checkout,4,0,0
+1786780236351,2,01 Login,200,OK,Spike Users 1-86,text,true,,635,228,32,32,http://localhost:3000/api/login,2,0,0
+1786780236356,4,05 Checkout,200,OK,Spike Users 1-67,text,true,,316,418,32,32,http://localhost:3000/api/checkout,4,0,0
+1786780236374,1,04 Add to Cart,200,OK,Spike Users 1-80,text,true,,294,404,31,31,http://localhost:3000/api/cart,1,0,0
+1786780236374,5,05 Checkout,200,OK,Spike Users 1-78,text,true,,316,425,32,32,http://localhost:3000/api/checkout,5,0,0
+1786780236374,5,03 View Detail,200,OK,Spike Users 1-82,text,true,,467,131,32,32,http://localhost:3000/api/products/5,5,0,0
+1786780236375,4,02 Search Product,200,OK,Spike Users 1-84,text,true,,453,143,32,32,http://localhost:3000/api/products?search=iPhone,4,0,0
+1786780236381,1,02 Search Product,200,OK,Spike Users 1-74,text,true,,480,144,32,32,http://localhost:3000/api/products?search=Samsung,1,0,0
+1786780236380,3,01 Login,200,OK,Spike Users 1-76,text,true,,635,228,32,32,http://localhost:3000/api/login,3,0,0
+1786780236380,4,01 Login,200,OK,Spike Users 1-97,text,true,,635,228,32,32,http://localhost:3000/api/login,4,0,1
+1786780236394,2,04 Add to Cart,200,OK,Spike Users 1-91,text,true,,294,405,32,32,http://localhost:3000/api/cart,2,0,0
+1786780236394,3,02 Search Product,200,OK,Spike Users 1-95,text,true,,450,144,32,32,http://localhost:3000/api/products?search=MacBook,2,0,0
+1786780236394,3,03 View Detail,200,OK,Spike Users 1-72,text,true,,451,131,32,32,http://localhost:3000/api/products/1,3,0,0
+1786780236394,3,03 View Detail,200,OK,Spike Users 1-93,text,true,,480,131,32,32,http://localhost:3000/api/products/2,3,0,0
+1786780236401,2,04 Add to Cart,200,OK,Spike Users 1-70,text,true,,294,400,32,32,http://localhost:3000/api/cart,2,0,0
+1786780236401,5,05 Checkout,200,OK,Spike Users 1-89,text,true,,316,418,32,32,http://localhost:3000/api/checkout,5,0,0
+1786780236415,1,02 Search Product,200,OK,Spike Users 1-85,text,true,,461,144,32,32,http://localhost:3000/api/products?search=AirPods,1,0,0
+1786780236422,5,05 Checkout,200,OK,Spike Users 1-68,text,true,,316,416,33,33,http://localhost:3000/api/checkout,5,0,0
+1786780236422,7,03 View Detail,200,OK,Spike Users 1-83,text,true,,448,131,32,32,http://localhost:3000/api/products/3,7,0,0
+1786780236422,6,01 Login,200,OK,Spike Users 1-87,text,true,,635,228,32,32,http://localhost:3000/api/login,6,0,0
+1786780236426,4,04 Add to Cart,200,OK,Spike Users 1-81,text,true,,294,407,32,32,http://localhost:3000/api/cart,4,0,0
+1786780236425,7,05 Checkout,200,OK,Spike Users 1-79,text,true,,316,414,32,32,http://localhost:3000/api/checkout,7,0,0
+1786780236429,4,01 Login,200,OK,Spike Users 1-98,text,true,,635,228,32,32,http://localhost:3000/api/login,4,0,1
+1786780236429,5,01 Login,200,OK,Spike Users 1-77,text,true,,635,228,32,32,http://localhost:3000/api/login,5,0,0
+1786780236436,1,02 Search Product,200,OK,Spike Users 1-96,text,true,,469,145,32,32,http://localhost:3000/api/products?search=Keychron,1,0,0
+1786780236438,2,02 Search Product,200,OK,Spike Users 1-75,text,true,,453,143,32,32,http://localhost:3000/api/products?search=iPhone,1,0,0
+1786780236441,1,03 View Detail,200,OK,Spike Users 1-94,text,true,,461,131,32,32,http://localhost:3000/api/products/4,1,0,0
+1786780236442,1,03 View Detail,200,OK,Spike Users 1-73,text,true,,467,131,32,32,http://localhost:3000/api/products/5,1,0,0
+1786780236443,2,04 Add to Cart,200,OK,Spike Users 1-92,text,true,,294,397,32,32,http://localhost:3000/api/cart,2,0,0
+1786780236444,2,04 Add to Cart,200,OK,Spike Users 1-71,text,true,,294,404,32,32,http://localhost:3000/api/cart,2,0,0
+1786780236445,6,05 Checkout,200,OK,Spike Users 1-90,text,true,,316,425,32,32,http://localhost:3000/api/checkout,6,0,0
+1786780236446,7,05 Checkout,200,OK,Spike Users 1-69,text,true,,316,418,32,32,http://localhost:3000/api/checkout,7,0,0
+1786780236451,4,01 Login,200,OK,Spike Users 1-88,text,true,,635,228,31,31,http://localhost:3000/api/login,4,0,0
+1786780236454,2,02 Search Product,200,OK,Spike Users 1-86,text,true,,480,144,31,31,http://localhost:3000/api/products?search=Samsung,2,0,0
+1786780236480,4,04 Add to Cart,200,OK,Spike Users 1-82,text,true,,294,405,31,31,http://localhost:3000/api/cart,4,0,0
+1786780236478,7,05 Checkout,200,OK,Spike Users 1-80,text,true,,316,418,31,31,http://localhost:3000/api/checkout,7,0,0
+1786780236480,5,03 View Detail,200,OK,Spike Users 1-84,text,true,,451,131,31,31,http://localhost:3000/api/products/1,5,0,0
+1786780236480,8,01 Login,200,OK,Spike Users 1-78,text,true,,635,228,31,31,http://localhost:3000/api/login,8,0,0
+1786780236486,5,02 Search Product,200,OK,Spike Users 1-97,text,true,,450,144,31,31,http://localhost:3000/api/products?search=MacBook,5,0,0
+1786780236486,5,02 Search Product,200,OK,Spike Users 1-76,text,true,,461,144,31,31,http://localhost:3000/api/products?search=AirPods,5,0,0
+1786780236486,5,03 View Detail,200,OK,Spike Users 1-74,text,true,,480,131,31,31,http://localhost:3000/api/products/2,5,0,0
+1786780236487,7,01 Login,200,OK,Spike Users 1-99,text,true,,635,228,31,31,http://localhost:3000/api/login,7,0,1
+1786780236498,3,04 Add to Cart,200,OK,Spike Users 1-72,text,true,,294,400,31,31,http://localhost:3000/api/cart,3,0,0
+1786780236498,5,04 Add to Cart,200,OK,Spike Users 1-93,text,true,,294,407,31,31,http://localhost:3000/api/cart,5,0,0
+1786780236497,6,05 Checkout,200,OK,Spike Users 1-91,text,true,,316,416,31,31,http://localhost:3000/api/checkout,6,0,0
+1786780236497,6,03 View Detail,200,OK,Spike Users 1-95,text,true,,448,131,31,31,http://localhost:3000/api/products/3,6,0,0
+1786780236515,5,05 Checkout,200,OK,Spike Users 1-70,text,true,,316,414,31,31,http://localhost:3000/api/checkout,5,0,0
+1786780236515,7,01 Login,200,OK,Spike Users 1-89,text,true,,635,228,30,30,http://localhost:3000/api/login,7,0,0
+1786780236518,5,03 View Detail,200,OK,Spike Users 1-85,text,true,,461,131,30,30,http://localhost:3000/api/products/4,5,0,0
+1786780236533,4,04 Add to Cart,200,OK,Spike Users 1-83,text,true,,294,397,30,30,http://localhost:3000/api/cart,4,0,0
+1786780236533,7,02 Search Product,200,OK,Spike Users 1-87,text,true,,469,145,30,30,http://localhost:3000/api/products?search=Keychron,7,0,0
+1786780236533,9,05 Checkout,200,OK,Spike Users 1-81,text,true,,316,418,30,30,http://localhost:3000/api/checkout,9,0,0
+1786780236535,9,02 Search Product,200,OK,Spike Users 1-77,text,true,,453,143,30,30,http://localhost:3000/api/products?search=iPhone,9,0,0
+1786780236533,11,01 Login,200,OK,Spike Users 1-79,text,true,,635,228,30,30,http://localhost:3000/api/login,10,0,0
+1786780236537,7,03 View Detail,200,OK,Spike Users 1-96,text,true,,467,131,30,30,http://localhost:3000/api/products/5,7,0,0
+1786780236534,11,01 Login,200,OK,Spike Users 1-100,text,true,,635,228,30,30,http://localhost:3000/api/login,11,0,1
+1786780236542,4,04 Add to Cart,200,OK,Spike Users 1-94,text,true,,294,404,30,30,http://localhost:3000/api/cart,4,0,0
+1786780236544,4,04 Add to Cart,200,OK,Spike Users 1-73,text,true,,294,405,30,30,http://localhost:3000/api/cart,4,0,0
+1786780236545,8,05 Checkout,200,OK,Spike Users 1-92,text,true,,316,425,30,30,http://localhost:3000/api/checkout,8,0,0
+1786780236547,10,05 Checkout,200,OK,Spike Users 1-71,text,true,,316,418,30,30,http://localhost:3000/api/checkout,10,0,0
+1786780236549,8,02 Search Product,200,OK,Spike Users 1-98,text,true,,480,144,30,30,http://localhost:3000/api/products?search=Samsung,8,0,0
+1786780236549,8,03 View Detail,200,OK,Spike Users 1-75,text,true,,451,131,30,30,http://localhost:3000/api/products/1,8,0,0
+1786780236562,3,02 Search Product,200,OK,Spike Users 1-88,text,true,,450,144,29,29,http://localhost:3000/api/products?search=MacBook,3,0,0
+1786780236562,3,03 View Detail,200,OK,Spike Users 1-86,text,true,,480,131,29,29,http://localhost:3000/api/products/2,3,0,0
+1786780236562,5,01 Login,200,OK,Spike Users 1-90,text,true,,635,228,29,29,http://localhost:3000/api/login,5,0,0
+1786780236589,3,04 Add to Cart,200,OK,Spike Users 1-84,text,true,,294,400,29,29,http://localhost:3000/api/cart,3,0,0
+1786780236589,5,02 Search Product,200,OK,Spike Users 1-78,text,true,,469,145,29,29,http://localhost:3000/api/products?search=Keychron,5,0,0
+1786780236589,9,01 Login,200,OK,Spike Users 1-80,text,true,,635,228,29,29,http://localhost:3000/api/login,9,0,0
+1786780236589,9,05 Checkout,200,OK,Spike Users 1-82,text,true,,316,416,29,29,http://localhost:3000/api/checkout,9,0,0
+1786780236594,7,04 Add to Cart,200,OK,Spike Users 1-74,text,true,,294,407,29,29,http://localhost:3000/api/cart,7,0,0
+1786780236596,7,02 Search Product,200,OK,Spike Users 1-99,text,true,,461,144,29,29,http://localhost:3000/api/products?search=AirPods,7,0,0
+1786780236594,9,03 View Detail,200,OK,Spike Users 1-76,text,true,,461,131,29,29,http://localhost:3000/api/products/4,9,0,0
+1786780236594,9,03 View Detail,200,OK,Spike Users 1-97,text,true,,448,131,29,29,http://localhost:3000/api/products/3,9,0,0
+1786780236604,1,04 Add to Cart,200,OK,Spike Users 1-95,text,true,,294,397,29,29,http://localhost:3000/api/cart,1,0,0
+1786780236604,8,05 Checkout,200,OK,Spike Users 1-93,text,true,,316,418,29,29,http://localhost:3000/api/checkout,8,0,0
+1786780236604,11,05 Checkout,200,OK,Spike Users 1-72,text,true,,316,414,29,29,http://localhost:3000/api/checkout,11,0,0
+1786780236605,12,01 Login,200,OK,Spike Users 1-91,text,true,,635,228,28,28,http://localhost:3000/api/login,12,0,0
+1786780236625,2,04 Add to Cart,200,OK,Spike Users 1-85,text,true,,294,404,28,28,http://localhost:3000/api/cart,2,0,0
+1786780236625,4,02 Search Product,200,OK,Spike Users 1-89,text,true,,453,143,28,28,http://localhost:3000/api/products?search=iPhone,4,0,0
+1786780236638,6,05 Checkout,200,OK,Spike Users 1-83,text,true,,316,425,28,28,http://localhost:3000/api/checkout,6,0,0
+1786780236644,3,04 Add to Cart,200,OK,Spike Users 1-96,text,true,,294,405,28,28,http://localhost:3000/api/cart,3,0,0
+1786780236644,4,02 Search Product,200,OK,Spike Users 1-79,text,true,,450,144,28,28,http://localhost:3000/api/products?search=MacBook,4,0,0
+1786780236644,5,03 View Detail,200,OK,Spike Users 1-77,text,true,,451,131,28,28,http://localhost:3000/api/products/1,5,0,0
+1786780236646,5,05 Checkout,200,OK,Spike Users 1-94,text,true,,316,418,28,28,http://localhost:3000/api/checkout,5,0,0
+1786780236653,6,05 Checkout,200,OK,Spike Users 1-73,text,true,,316,416,28,28,http://localhost:3000/api/checkout,6,0,0
+1786780236653,6,03 View Detail,200,OK,Spike Users 1-87,text,true,,467,131,28,28,http://localhost:3000/api/products/5,6,0,0
+1786780236653,7,02 Search Product,200,OK,Spike Users 1-100,text,true,,480,144,27,27,http://localhost:3000/api/products?search=Samsung,7,0,0
+1786780236653,8,01 Login,200,OK,Spike Users 1-81,text,true,,635,228,27,27,http://localhost:3000/api/login,8,0,0
+1786780236669,2,04 Add to Cart,200,OK,Spike Users 1-86,text,true,,294,407,27,27,http://localhost:3000/api/cart,2,0,0
+1786780236669,2,04 Add to Cart,200,OK,Spike Users 1-75,text,true,,294,400,27,27,http://localhost:3000/api/cart,2,0,0
+1786780236669,3,02 Search Product,200,OK,Spike Users 1-90,text,true,,461,144,27,27,http://localhost:3000/api/products?search=AirPods,3,0,0
+1786780236669,4,03 View Detail,200,OK,Spike Users 1-88,text,true,,448,131,27,27,http://localhost:3000/api/products/3,4,0,0
+1786780236669,4,03 View Detail,200,OK,Spike Users 1-98,text,true,,480,131,27,27,http://localhost:3000/api/products/2,4,0,0
+1786780236669,5,01 Login,200,OK,Spike Users 1-92,text,true,,635,228,27,27,http://localhost:3000/api/login,5,0,0
+1786780236702,3,02 Search Product,200,OK,Spike Users 1-80,text,true,,469,145,27,27,http://localhost:3000/api/products?search=Keychron,3,0,0
+1786780236702,7,05 Checkout,200,OK,Spike Users 1-74,text,true,,316,418,27,27,http://localhost:3000/api/checkout,7,0,0
+1786780236702,7,05 Checkout,200,OK,Spike Users 1-84,text,true,,316,414,27,27,http://localhost:3000/api/checkout,7,0,0
+1786780236702,9,01 Login,200,OK,Spike Users 1-82,text,true,,635,228,26,26,http://localhost:3000/api/login,9,0,0
+1786780236702,9,03 View Detail,200,OK,Spike Users 1-78,text,true,,467,131,26,26,http://localhost:3000/api/products/5,9,0,0
+1786780236717,3,04 Add to Cart,200,OK,Spike Users 1-97,text,true,,294,397,26,26,http://localhost:3000/api/cart,3,0,0
+1786780236717,4,04 Add to Cart,200,OK,Spike Users 1-76,text,true,,294,404,26,26,http://localhost:3000/api/cart,4,0,0
+1786780236717,5,03 View Detail,200,OK,Spike Users 1-99,text,true,,461,131,26,26,http://localhost:3000/api/products/4,5,0,0
+1786780236717,7,05 Checkout,200,OK,Spike Users 1-95,text,true,,316,425,26,26,http://localhost:3000/api/checkout,7,0,0
+1786780236717,8,01 Login,200,OK,Spike Users 1-93,text,true,,635,228,26,26,http://localhost:3000/api/login,8,0,0
+1786780236732,2,02 Search Product,200,OK,Spike Users 1-91,text,true,,453,143,26,26,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786780236732,3,03 View Detail,200,OK,Spike Users 1-89,text,true,,451,131,26,26,http://localhost:3000/api/products/1,3,0,0
+1786780236732,6,05 Checkout,200,OK,Spike Users 1-85,text,true,,316,418,26,26,http://localhost:3000/api/checkout,6,0,0
+1786780236747,4,01 Login,200,OK,Spike Users 1-83,text,true,,635,228,26,26,http://localhost:3000/api/login,4,0,0
+1786780236747,5,05 Checkout,200,OK,Spike Users 1-96,text,true,,316,416,26,26,http://localhost:3000/api/checkout,5,0,0
+1786780236754,2,04 Add to Cart,200,OK,Spike Users 1-77,text,true,,294,400,26,26,http://localhost:3000/api/cart,2,0,0
+1786780236754,4,03 View Detail,200,OK,Spike Users 1-79,text,true,,448,131,26,26,http://localhost:3000/api/products/3,4,0,0
+1786780236754,3,01 Login,200,OK,Spike Users 1-94,text,true,,635,228,26,26,http://localhost:3000/api/login,3,0,0
+1786780236770,2,04 Add to Cart,200,OK,Spike Users 1-87,text,true,,294,405,26,26,http://localhost:3000/api/cart,2,0,0
+1786780236770,2,02 Search Product,200,OK,Spike Users 1-81,text,true,,480,144,26,26,http://localhost:3000/api/products?search=Samsung,2,0,0
+1786780236770,2,03 View Detail,200,OK,Spike Users 1-100,text,true,,480,131,26,26,http://localhost:3000/api/products/2,2,0,0
+1786780236787,2,04 Add to Cart,200,OK,Spike Users 1-88,text,true,,294,397,26,26,http://localhost:3000/api/cart,2,0,0
+1786780236787,3,04 Add to Cart,200,OK,Spike Users 1-98,text,true,,294,407,26,26,http://localhost:3000/api/cart,3,0,0
+1786780236787,6,03 View Detail,200,OK,Spike Users 1-90,text,true,,461,131,26,26,http://localhost:3000/api/products/4,6,0,0
+1786780236787,11,02 Search Product,200,OK,Spike Users 1-92,text,true,,450,144,26,26,http://localhost:3000/api/products?search=MacBook,11,0,0
+1786780236787,11,05 Checkout,200,OK,Spike Users 1-75,text,true,,316,414,26,26,http://localhost:3000/api/checkout,11,0,0
+1786780236787,11,05 Checkout,200,OK,Spike Users 1-86,text,true,,316,418,26,26,http://localhost:3000/api/checkout,11,0,0
+1786780236805,2,03 View Detail,200,OK,Spike Users 1-80,text,true,,467,131,25,25,http://localhost:3000/api/products/5,2,0,0
+1786780236821,2,04 Add to Cart,200,OK,Spike Users 1-78,text,true,,294,405,25,25,http://localhost:3000/api/cart,2,0,0
+1786780236822,4,04 Add to Cart,200,OK,Spike Users 1-99,text,true,,294,404,25,25,http://localhost:3000/api/cart,4,0,0
+1786780236821,5,02 Search Product,200,OK,Spike Users 1-82,text,true,,461,144,25,25,http://localhost:3000/api/products?search=AirPods,5,0,0
+1786780236821,10,05 Checkout,200,OK,Spike Users 1-97,text,true,,316,425,25,25,http://localhost:3000/api/checkout,10,0,0
+1786780236821,10,01 Login,200,OK,Spike Users 1-84,text,true,,635,228,25,25,http://localhost:3000/api/login,10,0,0
+1786780236821,10,05 Checkout,200,OK,Spike Users 1-76,text,true,,316,418,25,25,http://localhost:3000/api/checkout,10,0,0
+1786780236836,2,04 Add to Cart,200,OK,Spike Users 1-89,text,true,,294,400,24,24,http://localhost:3000/api/cart,2,0,0
+1786780236836,3,03 View Detail,200,OK,Spike Users 1-91,text,true,,451,131,24,24,http://localhost:3000/api/products/1,3,0,0
+1786780236836,4,02 Search Product,200,OK,Spike Users 1-93,text,true,,469,145,24,24,http://localhost:3000/api/products?search=Keychron,4,0,0
+1786780236836,4,01 Login,200,OK,Spike Users 1-95,text,true,,635,228,24,24,http://localhost:3000/api/login,4,0,0
+1786780236864,2,04 Add to Cart,200,OK,Spike Users 1-79,text,true,,294,397,24,24,http://localhost:3000/api/cart,2,0,0
+1786780236864,5,02 Search Product,200,OK,Spike Users 1-83,text,true,,453,143,24,24,http://localhost:3000/api/products?search=iPhone,5,0,0
+1786780236864,8,05 Checkout,200,OK,Spike Users 1-77,text,true,,316,414,24,24,http://localhost:3000/api/checkout,8,0,0
+1786780236864,8,02 Search Product,200,OK,Spike Users 1-94,text,true,,480,144,24,24,http://localhost:3000/api/products?search=Samsung,8,0,0
+1786780236864,9,01 Login,200,OK,Spike Users 1-96,text,true,,635,228,23,23,http://localhost:3000/api/login,9,0,0
+1786780236864,11,01 Login,200,OK,Spike Users 1-85,text,true,,635,228,23,23,http://localhost:3000/api/login,11,0,0
+1786780236879,1,04 Add to Cart,200,OK,Spike Users 1-100,text,true,,294,407,23,23,http://localhost:3000/api/cart,1,0,0
+1786780236879,3,03 View Detail,200,OK,Spike Users 1-81,text,true,,480,131,23,23,http://localhost:3000/api/products/2,3,0,0
+1786780236879,5,05 Checkout,200,OK,Spike Users 1-87,text,true,,316,416,23,23,http://localhost:3000/api/checkout,5,0,0
+1786780236895,1,04 Add to Cart,200,OK,Spike Users 1-90,text,true,,294,404,23,23,http://localhost:3000/api/cart,1,0,0
+1786780236895,6,05 Checkout,200,OK,Spike Users 1-88,text,true,,316,425,23,23,http://localhost:3000/api/checkout,6,0,0
+1786780236895,7,05 Checkout,200,OK,Spike Users 1-98,text,true,,316,418,23,23,http://localhost:3000/api/checkout,7,0,0
+1786780236910,2,04 Add to Cart,200,OK,Spike Users 1-80,text,true,,294,405,23,23,http://localhost:3000/api/cart,2,0,0
+1786780236910,2,03 View Detail,200,OK,Spike Users 1-92,text,true,,448,131,23,23,http://localhost:3000/api/products/3,2,0,0
+1786780236910,3,01 Login,200,OK,Spike Users 1-86,text,true,,635,228,23,23,http://localhost:3000/api/login,3,0,0
+1786780236927,3,03 View Detail,200,OK,Spike Users 1-82,text,true,,461,131,23,23,http://localhost:3000/api/products/4,3,0,0
+1786780236927,8,05 Checkout,200,OK,Spike Users 1-99,text,true,,316,418,23,23,http://localhost:3000/api/checkout,8,0,0
+1786780236927,9,05 Checkout,200,OK,Spike Users 1-78,text,true,,316,416,23,23,http://localhost:3000/api/checkout,9,0,0
+1786780236942,1,04 Add to Cart,200,OK,Spike Users 1-91,text,true,,294,400,22,22,http://localhost:3000/api/cart,1,0,0
+1786780236942,3,02 Search Product,200,OK,Spike Users 1-95,text,true,,461,144,22,22,http://localhost:3000/api/products?search=AirPods,3,0,0
+1786780236942,5,05 Checkout,200,OK,Spike Users 1-89,text,true,,316,414,22,22,http://localhost:3000/api/checkout,5,0,0
+1786780236942,5,02 Search Product,200,OK,Spike Users 1-84,text,true,,450,144,22,22,http://localhost:3000/api/products?search=MacBook,5,0,0
+1786780236942,6,03 View Detail,200,OK,Spike Users 1-93,text,true,,467,131,22,22,http://localhost:3000/api/products/5,5,0,0
+1786780236942,6,01 Login,200,OK,Spike Users 1-97,text,true,,635,228,22,22,http://localhost:3000/api/login,6,0,0
+1786780236973,3,03 View Detail,200,OK,Spike Users 1-83,text,true,,451,131,22,22,http://localhost:3000/api/products/1,3,0,0
+1786780236973,6,03 View Detail,200,OK,Spike Users 1-94,text,true,,480,131,22,22,http://localhost:3000/api/products/2,6,0,0
+1786780236973,7,05 Checkout,200,OK,Spike Users 1-79,text,true,,316,425,22,22,http://localhost:3000/api/checkout,7,0,0
+1786780236976,5,02 Search Product,200,OK,Spike Users 1-85,text,true,,469,145,21,21,http://localhost:3000/api/products?search=Keychron,5,0,0
+1786780236976,5,02 Search Product,200,OK,Spike Users 1-96,text,true,,453,143,21,21,http://localhost:3000/api/products?search=iPhone,5,0,0
+1786780237000,2,04 Add to Cart,200,OK,Spike Users 1-81,text,true,,294,407,21,21,http://localhost:3000/api/cart,2,0,0
+1786780237000,6,05 Checkout,200,OK,Spike Users 1-100,text,true,,316,418,21,21,http://localhost:3000/api/checkout,6,0,0
+1786780237000,9,05 Checkout,200,OK,Spike Users 1-90,text,true,,316,418,21,21,http://localhost:3000/api/checkout,9,0,0
+1786780237000,9,01 Login,200,OK,Spike Users 1-87,text,true,,635,228,21,21,http://localhost:3000/api/login,9,0,0
+1786780237015,2,04 Add to Cart,200,OK,Spike Users 1-92,text,true,,294,397,21,21,http://localhost:3000/api/cart,2,0,0
+1786780237015,3,02 Search Product,200,OK,Spike Users 1-86,text,true,,480,144,21,21,http://localhost:3000/api/products?search=Samsung,3,0,0
+1786780237015,5,05 Checkout,200,OK,Spike Users 1-80,text,true,,316,416,21,21,http://localhost:3000/api/checkout,5,0,0
+1786780237015,6,01 Login,200,OK,Spike Users 1-88,text,true,,635,228,20,20,http://localhost:3000/api/login,6,0,0
+1786780237015,7,01 Login,200,OK,Spike Users 1-98,text,true,,635,228,20,20,http://localhost:3000/api/login,7,0,0
+1786780237031,2,04 Add to Cart,200,OK,Spike Users 1-82,text,true,,294,404,20,20,http://localhost:3000/api/cart,2,0,0
+1786780237040,2,01 Login,200,OK,Spike Users 1-99,text,true,,635,228,20,20,http://localhost:3000/api/login,2,0,0
+1786780237056,2,04 Add to Cart,200,OK,Spike Users 1-93,text,true,,294,405,20,20,http://localhost:3000/api/cart,2,0,0
+1786780237056,4,01 Login,200,OK,Spike Users 1-89,text,true,,635,228,20,20,http://localhost:3000/api/login,4,0,0
+1786780237056,6,05 Checkout,200,OK,Spike Users 1-91,text,true,,316,414,20,20,http://localhost:3000/api/checkout,6,0,0
+1786780237056,7,02 Search Product,200,OK,Spike Users 1-97,text,true,,450,144,20,20,http://localhost:3000/api/products?search=MacBook,7,0,0
+1786780237056,7,03 View Detail,200,OK,Spike Users 1-95,text,true,,461,131,20,20,http://localhost:3000/api/products/4,7,0,0
+1786780237056,7,03 View Detail,200,OK,Spike Users 1-84,text,true,,448,131,20,20,http://localhost:3000/api/products/3,7,0,0
+1786780237083,1,04 Add to Cart,200,OK,Spike Users 1-94,text,true,,294,407,20,20,http://localhost:3000/api/cart,1,0,0
+1786780237083,2,04 Add to Cart,200,OK,Spike Users 1-83,text,true,,294,400,20,20,http://localhost:3000/api/cart,2,0,0
+1786780237083,3,03 View Detail,200,OK,Spike Users 1-96,text,true,,451,131,20,20,http://localhost:3000/api/products/1,3,0,0
+1786780237083,3,03 View Detail,200,OK,Spike Users 1-85,text,true,,467,131,20,20,http://localhost:3000/api/products/5,3,0,0
+1786780237115,3,01 Login,200,OK,Spike Users 1-90,text,true,,635,228,20,20,http://localhost:3000/api/login,3,0,0
+1786780237115,7,05 Checkout,200,OK,Spike Users 1-81,text,true,,316,418,20,20,http://localhost:3000/api/checkout,7,0,0
+1786780237115,7,02 Search Product,200,OK,Spike Users 1-87,text,true,,461,144,20,20,http://localhost:3000/api/products?search=AirPods,7,0,0
+1786780237115,8,01 Login,200,OK,Spike Users 1-100,text,true,,635,228,19,19,http://localhost:3000/api/login,8,0,0
+1786780237117,9,05 Checkout,200,OK,Spike Users 1-92,text,true,,316,425,19,19,http://localhost:3000/api/checkout,9,0,0
+1786780237132,2,02 Search Product,200,OK,Spike Users 1-98,text,true,,453,143,19,19,http://localhost:3000/api/products?search=iPhone,2,0,0
+1786780237132,2,02 Search Product,200,OK,Spike Users 1-88,text,true,,469,145,19,19,http://localhost:3000/api/products?search=Keychron,2,0,0
+1786780237132,2,03 View Detail,200,OK,Spike Users 1-86,text,true,,480,131,19,19,http://localhost:3000/api/products/2,2,0,0
+1786780237145,2,02 Search Product,200,OK,Spike Users 1-99,text,true,,480,144,19,19,http://localhost:3000/api/products?search=Samsung,2,0,0
+1786780237145,4,05 Checkout,200,OK,Spike Users 1-82,text,true,,316,418,19,19,http://localhost:3000/api/checkout,4,0,0
+1786780237160,4,05 Checkout,200,OK,Spike Users 1-93,text,true,,316,416,18,18,http://localhost:3000/api/checkout,4,0,0
+1786780237179,2,04 Add to Cart,200,OK,Spike Users 1-95,text,true,,294,404,18,18,http://localhost:3000/api/cart,2,0,0
+1786780237179,3,04 Add to Cart,200,OK,Spike Users 1-84,text,true,,294,397,18,18,http://localhost:3000/api/cart,3,0,0
+1786780237179,4,03 View Detail,200,OK,Spike Users 1-97,text,true,,448,131,18,18,http://localhost:3000/api/products/3,4,0,0
+1786780237179,4,02 Search Product,200,OK,Spike Users 1-89,text,true,,450,144,18,18,http://localhost:3000/api/products?search=MacBook,4,0,0
+1786780237179,4,01 Login,200,OK,Spike Users 1-91,text,true,,635,228,18,18,http://localhost:3000/api/login,4,0,0
+1786780237187,1,04 Add to Cart,200,OK,Spike Users 1-96,text,true,,294,400,18,18,http://localhost:3000/api/cart,1,0,0
+1786780237187,2,04 Add to Cart,200,OK,Spike Users 1-85,text,true,,294,405,18,18,http://localhost:3000/api/cart,2,0,0
+1786780237187,6,05 Checkout,200,OK,Spike Users 1-94,text,true,,316,418,18,18,http://localhost:3000/api/checkout,6,0,0
+1786780237187,8,05 Checkout,200,OK,Spike Users 1-83,text,true,,316,414,18,18,http://localhost:3000/api/checkout,8,0,0
+1786780237228,4,01 Login,200,OK,Spike Users 1-92,text,true,,635,228,17,17,http://localhost:3000/api/login,4,0,0
+1786780237228,4,02 Search Product,200,OK,Spike Users 1-90,text,true,,469,145,17,17,http://localhost:3000/api/products?search=Keychron,4,0,0
+1786780237228,4,02 Search Product,200,OK,Spike Users 1-100,text,true,,461,144,17,17,http://localhost:3000/api/products?search=AirPods,4,0,0
+1786780237228,4,03 View Detail,200,OK,Spike Users 1-87,text,true,,461,131,17,17,http://localhost:3000/api/products/4,4,0,0
+1786780237235,2,04 Add to Cart,200,OK,Spike Users 1-86,text,true,,294,407,17,17,http://localhost:3000/api/cart,2,0,0
+1786780237235,3,03 View Detail,200,OK,Spike Users 1-88,text,true,,467,131,17,17,http://localhost:3000/api/products/5,3,0,0
+1786780237235,3,03 View Detail,200,OK,Spike Users 1-98,text,true,,451,131,17,17,http://localhost:3000/api/products/1,3,0,0
+1786780237249,2,03 View Detail,200,OK,Spike Users 1-99,text,true,,480,131,17,17,http://localhost:3000/api/products/2,2,0,0
+1786780237273,3,01 Login,200,OK,Spike Users 1-93,text,true,,635,228,17,17,http://localhost:3000/api/login,3,0,0
+1786780237291,3,04 Add to Cart,200,OK,Spike Users 1-97,text,true,,294,397,17,17,http://localhost:3000/api/cart,3,0,0
+1786780237291,8,02 Search Product,200,OK,Spike Users 1-91,text,true,,453,143,17,17,http://localhost:3000/api/products?search=iPhone,8,0,0
+1786780237291,14,05 Checkout,200,OK,Spike Users 1-84,text,true,,316,425,17,17,http://localhost:3000/api/checkout,14,0,0
+1786780237291,17,05 Checkout,200,OK,Spike Users 1-95,text,true,,316,418,16,16,http://localhost:3000/api/checkout,17,0,0
+1786780237291,17,05 Checkout,200,OK,Spike Users 1-96,text,true,,316,414,16,16,http://localhost:3000/api/checkout,17,0,0
+1786780237291,17,05 Checkout,200,OK,Spike Users 1-85,text,true,,316,416,16,16,http://localhost:3000/api/checkout,17,0,0
+1786780237291,17,03 View Detail,200,OK,Spike Users 1-89,text,true,,448,131,16,16,http://localhost:3000/api/products/3,17,0,0
+1786780237298,11,01 Login,200,OK,Spike Users 1-94,text,true,,635,228,15,15,http://localhost:3000/api/login,11,0,0
+1786780237332,2,03 View Detail,200,OK,Spike Users 1-90,text,true,,467,131,15,15,http://localhost:3000/api/products/5,2,0,0
+1786780237332,2,02 Search Product,200,OK,Spike Users 1-92,text,true,,480,144,15,15,http://localhost:3000/api/products?search=Samsung,2,0,0
+1786780237332,2,03 View Detail,200,OK,Spike Users 1-100,text,true,,461,131,15,15,http://localhost:3000/api/products/4,2,0,0
+1786780237334,2,04 Add to Cart,200,OK,Spike Users 1-87,text,true,,294,404,15,15,http://localhost:3000/api/cart,2,0,0
+1786780237339,1,04 Add to Cart,200,OK,Spike Users 1-98,text,true,,294,400,15,15,http://localhost:3000/api/cart,1,0,0
+1786780237339,2,04 Add to Cart,200,OK,Spike Users 1-88,text,true,,294,405,15,15,http://localhost:3000/api/cart,2,0,0
+1786780237339,5,05 Checkout,200,OK,Spike Users 1-86,text,true,,316,418,15,15,http://localhost:3000/api/checkout,5,0,0
+1786780237354,1,04 Add to Cart,200,OK,Spike Users 1-99,text,true,,294,407,14,14,http://localhost:3000/api/cart,1,0,0
+1786780237381,1,02 Search Product,200,OK,Spike Users 1-93,text,true,,450,144,14,14,http://localhost:3000/api/products?search=MacBook,1,0,0
+1786780237411,6,04 Add to Cart,200,OK,Spike Users 1-89,text,true,,294,397,14,14,http://localhost:3000/api/cart,6,0,0
+1786780237411,9,02 Search Product,200,OK,Spike Users 1-94,text,true,,461,144,14,14,http://localhost:3000/api/products?search=AirPods,9,0,0
+1786780237411,12,05 Checkout,200,OK,Spike Users 1-97,text,true,,316,425,14,14,http://localhost:3000/api/checkout,12,0,0
+1786780237411,12,03 View Detail,200,OK,Spike Users 1-91,text,true,,451,131,14,14,http://localhost:3000/api/products/1,12,0,0
+1786780237411,13,01 Login,200,OK,Spike Users 1-96,text,true,,635,228,14,14,http://localhost:3000/api/login,13,0,0
+1786780237411,14,01 Login,200,OK,Spike Users 1-95,text,true,,635,228,14,14,http://localhost:3000/api/login,14,0,0
+1786780237438,2,04 Add to Cart,200,OK,Spike Users 1-100,text,true,,294,404,14,14,http://localhost:3000/api/cart,2,0,0
+1786780237438,3,04 Add to Cart,200,OK,Spike Users 1-90,text,true,,294,405,14,14,http://localhost:3000/api/cart,3,0,0
+1786780237438,4,03 View Detail,200,OK,Spike Users 1-92,text,true,,480,131,14,14,http://localhost:3000/api/products/2,4,0,0
+1786780237438,8,05 Checkout,200,OK,Spike Users 1-87,text,true,,316,418,14,14,http://localhost:3000/api/checkout,7,0,0
+1786780237454,5,05 Checkout,200,OK,Spike Users 1-98,text,true,,316,414,13,13,http://localhost:3000/api/checkout,4,0,0
+1786780237454,6,05 Checkout,200,OK,Spike Users 1-88,text,true,,316,416,13,13,http://localhost:3000/api/checkout,6,0,0
+1786780237469,4,05 Checkout,200,OK,Spike Users 1-99,text,true,,316,418,12,12,http://localhost:3000/api/checkout,4,0,0
+1786780237484,2,03 View Detail,200,OK,Spike Users 1-93,text,true,,448,131,12,12,http://localhost:3000/api/products/3,2,0,0
+1786780237520,2,03 View Detail,200,OK,Spike Users 1-94,text,true,,461,131,12,12,http://localhost:3000/api/products/4,2,0,0
+1786780237520,5,05 Checkout,200,OK,Spike Users 1-89,text,true,,316,425,12,12,http://localhost:3000/api/checkout,5,0,0
+1786780237535,2,04 Add to Cart,200,OK,Spike Users 1-91,text,true,,294,400,11,11,http://localhost:3000/api/cart,2,0,0
+1786780237535,3,02 Search Product,200,OK,Spike Users 1-96,text,true,,453,143,11,11,http://localhost:3000/api/products?search=iPhone,3,0,0
+1786780237535,3,02 Search Product,200,OK,Spike Users 1-95,text,true,,469,145,11,11,http://localhost:3000/api/products?search=Keychron,3,0,0
+1786780237535,4,01 Login,200,OK,Spike Users 1-97,text,true,,635,228,11,11,http://localhost:3000/api/login,4,0,0
+1786780237548,1,04 Add to Cart,200,OK,Spike Users 1-92,text,true,,294,407,11,11,http://localhost:3000/api/cart,1,0,0
+1786780237548,6,05 Checkout,200,OK,Spike Users 1-90,text,true,,316,416,11,11,http://localhost:3000/api/checkout,6,0,0
+1786780237548,8,05 Checkout,200,OK,Spike Users 1-100,text,true,,316,418,10,10,http://localhost:3000/api/checkout,8,0,0
+1786780237563,2,01 Login,200,OK,Spike Users 1-98,text,true,,635,228,10,10,http://localhost:3000/api/login,2,0,0
+1786780237575,2,01 Login,200,OK,Spike Users 1-99,text,true,,635,228,10,10,http://localhost:3000/api/login,2,0,0
+1786780237589,2,04 Add to Cart,200,OK,Spike Users 1-93,text,true,,294,397,10,10,http://localhost:3000/api/cart,2,0,0
+1786780237624,2,04 Add to Cart,200,OK,Spike Users 1-94,text,true,,294,404,10,10,http://localhost:3000/api/cart,2,0,0
+1786780237640,3,02 Search Product,200,OK,Spike Users 1-97,text,true,,480,144,10,10,http://localhost:3000/api/products?search=Samsung,3,0,0
+1786780237639,17,05 Checkout,200,OK,Spike Users 1-91,text,true,,316,414,10,10,http://localhost:3000/api/checkout,17,0,0
+1786780237639,17,03 View Detail,200,OK,Spike Users 1-96,text,true,,451,131,10,10,http://localhost:3000/api/products/1,17,0,0
+1786780237639,17,03 View Detail,200,OK,Spike Users 1-95,text,true,,467,131,10,10,http://localhost:3000/api/products/5,17,0,0
+1786780237662,4,01 Login,200,OK,Spike Users 1-100,text,true,,635,228,9,9,http://localhost:3000/api/login,3,0,0
+1786780237662,6,05 Checkout,200,OK,Spike Users 1-92,text,true,,316,418,9,9,http://localhost:3000/api/checkout,6,0,0
+1786780237677,1,02 Search Product,200,OK,Spike Users 1-98,text,true,,450,144,8,8,http://localhost:3000/api/products?search=MacBook,1,0,0
+1786780237678,1,02 Search Product,200,OK,Spike Users 1-99,text,true,,461,144,8,8,http://localhost:3000/api/products?search=AirPods,1,0,0
+1786780237693,6,05 Checkout,200,OK,Spike Users 1-93,text,true,,316,425,8,8,http://localhost:3000/api/checkout,6,0,0
+1786780237735,4,05 Checkout,200,OK,Spike Users 1-94,text,true,,316,418,7,7,http://localhost:3000/api/checkout,4,0,0
+1786780237750,1,03 View Detail,200,OK,Spike Users 1-97,text,true,,480,131,6,6,http://localhost:3000/api/products/2,1,0,0
+1786780237763,1,04 Add to Cart,200,OK,Spike Users 1-95,text,true,,294,405,6,6,http://localhost:3000/api/cart,1,0,0
+1786780237763,2,04 Add to Cart,200,OK,Spike Users 1-96,text,true,,294,400,6,6,http://localhost:3000/api/cart,2,0,0
+1786780237769,1,02 Search Product,200,OK,Spike Users 1-100,text,true,,469,145,6,6,http://localhost:3000/api/products?search=Keychron,1,0,0
+1786780237783,2,03 View Detail,200,OK,Spike Users 1-99,text,true,,461,131,6,6,http://localhost:3000/api/products/4,2,0,0
+1786780237783,2,03 View Detail,200,OK,Spike Users 1-98,text,true,,448,131,6,6,http://localhost:3000/api/products/3,2,0,0
+1786780237853,1,04 Add to Cart,200,OK,Spike Users 1-97,text,true,,294,407,6,6,http://localhost:3000/api/cart,1,0,0
+1786780237866,5,05 Checkout,200,OK,Spike Users 1-95,text,true,,316,416,6,6,http://localhost:3000/api/checkout,5,0,0
+1786780237866,7,05 Checkout,200,OK,Spike Users 1-96,text,true,,316,414,5,5,http://localhost:3000/api/checkout,7,0,0
+1786780237882,1,03 View Detail,200,OK,Spike Users 1-100,text,true,,467,131,4,4,http://localhost:3000/api/products/5,1,0,0
+1786780237912,2,04 Add to Cart,200,OK,Spike Users 1-98,text,true,,294,397,4,4,http://localhost:3000/api/cart,2,0,0
+1786780237912,3,04 Add to Cart,200,OK,Spike Users 1-99,text,true,,294,404,4,4,http://localhost:3000/api/cart,3,0,0
+1786780237959,6,05 Checkout,200,OK,Spike Users 1-97,text,true,,316,418,4,4,http://localhost:3000/api/checkout,6,0,0
+1786780237990,2,04 Add to Cart,200,OK,Spike Users 1-100,text,true,,294,405,3,3,http://localhost:3000/api/cart,2,0,0
+1786780238021,6,05 Checkout,200,OK,Spike Users 1-99,text,true,,316,418,3,3,http://localhost:3000/api/checkout,6,0,0
+1786780238021,8,05 Checkout,200,OK,Spike Users 1-98,text,true,,316,425,2,2,http://localhost:3000/api/checkout,8,0,0
+1786780238114,4,05 Checkout,200,OK,Spike Users 1-100,text,true,,316,416,1,1,http://localhost:3000/api/checkout,4,0,0
