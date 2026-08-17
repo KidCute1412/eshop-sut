@@ -1,0 +1,11 @@
+email,password,name,shipping_address,phone
+user_load_001@test.com,Password123!,Test User 001,"123 Test Street, HCMC",0901234001
+user_load_002@test.com,Password123!,Test User 002,"456 Test Street, HCMC",0901234002
+user_load_003@test.com,Password123!,Test User 003,"789 Test Street, HCMC",0901234003
+user_load_004@test.com,Password123!,Test User 004,"321 Test Street, HCMC",0901234004
+user_load_005@test.com,Password123!,Test User 005,"654 Test Street, HCMC",0901234005
+user_load_006@test.com,Password123!,Test User 006,"987 Test Street, HCMC",0901234006
+user_load_007@test.com,Password123!,Test User 007,"147 Test Street, HCMC",0901234007
+user_load_008@test.com,Password123!,Test User 008,"258 Test Street, HCMC",0901234008
+user_load_009@test.com,Password123!,Test User 009,"369 Test Street, HCMC",0901234009
+user_load_010@test.com,Password123!,Test User 010,"741 Test Street, HCMC",0901234010

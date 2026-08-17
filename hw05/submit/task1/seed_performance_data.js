@@ -1,12 +1,18 @@
 const fs = require("fs");
 const path = require("path");
-const sqlite3 = require("sqlite3").verbose();
 
 const taskDir = __dirname;
 const backendDir = path.resolve(taskDir, "../../../backend");
 const dbPath = path.join(backendDir, "database.sqlite");
 const usersCsv = path.join(taskDir, "test_data_users.csv");
 const productsCsv = path.join(taskDir, "test_data_products.csv");
+let sqlite3;
+
+try {
+  sqlite3 = require("sqlite3").verbose();
+} catch {
+  sqlite3 = require(path.join(backendDir, "node_modules", "sqlite3")).verbose();
+}
 
 function parseCsvLine(line) {
   const cells = [];

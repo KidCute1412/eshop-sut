@@ -1,0 +1,11 @@
+﻿
+
+CsName                      : 
+OsName                      : 
+OsVersion                   : 
+CsProcessor                 : 
+CsNumberOfLogicalProcessors : 
+CsTotalPhysicalMemory       : 
+
+
+
