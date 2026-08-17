@@ -1,0 +1,10 @@
+HW05 material commit history
+Exported: 2026-08-17 10:00:00 +07:00
+Repository baseline before HW05 commits: 22e11214b254865292084d7a10c65e9bd8a8f1bf
+
+94bda4e1cfcb0c490449d4667f27d8aa56f552aa | 2026-08-17T09:59:17+07:00 | docs(hw05): add analysis audit report and submission materials
+fa287085298f8a67e34ece52120d8abd79bfc152 | 2026-08-17T09:59:04+07:00 | test(hw05): preserve verified raw results and execution evidence
+b75726a200cb02d6093cf11ea5e72adb7966cf0e | 2026-08-17T09:58:53+07:00 | test(hw05): add data-driven JMeter plans and test data
+83819ad5e3248926c0b6895df4ba88ce9df3bbd0 | 2026-08-17T09:58:40+07:00 | feat(hw05): add reusable JMeter performance evidence skill
+
+Scope note: `.github/workflows/newman-api-test.yml`, `backend/database.sqlite`, and `.tools/` were deliberately excluded because they are unrelated pre-existing working-tree changes or local tooling.
