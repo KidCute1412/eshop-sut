@@ -65,15 +65,16 @@ Performance tests are skipped when:
 
 ## 4. Baseline Thresholds
 
-Final baseline values must come from the real `.jtl` logs generated on the target machine.
+The baseline values below come from the completed local JMeter runs. Warn/fail values are intentionally conservative because CI hardware can be noisier than the local test machine.
 
 | Metric | Baseline Value | Warn Threshold | Fail Threshold | Source |
 |--------|----------------|----------------|----------------|--------|
-| Login p95 response time | PENDING_JTL_LOGS | baseline + 10% | baseline + 25% | Load `.jtl` |
-| Product list p95 response time | PENDING_JTL_LOGS | baseline + 10% | baseline + 25% | Load `.jtl` |
-| Checkout p95 response time | PENDING_JTL_LOGS | baseline + 10% | baseline + 25% | Load `.jtl` |
-| Overall error rate | PENDING_JTL_LOGS | > 1% | > 5% | Load/Stress `.jtl` |
-| Max stable throughput | PENDING_JTL_LOGS | -10% from baseline | -25% from baseline | Soak run |
+| Login p95 response time | 3 ms | > 3.3 ms | > 3.75 ms | Load dashboard statistics |
+| Product list p95 response time | 2 ms | > 2.2 ms | > 2.5 ms | Load dashboard statistics |
+| Checkout p95 response time | 7 ms | > 7.7 ms | > 8.75 ms | Load dashboard statistics |
+| Overall p95 response time | 6 ms | > 6.6 ms | > 7.5 ms | Load `.jtl` |
+| Overall error rate | 0.00% | > 1% | > 5% | Load/Stress/Spike `.jtl` |
+| Max stable throughput | 4.83 req/s | < 4.35 req/s | < 3.62 req/s | 10-minute Load run |
 
 ## 5. Test Suite Tiers
 

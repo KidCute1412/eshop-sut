@@ -4,29 +4,35 @@
 
 - Student ID: 23127296
 - Name: Nguyen Thanh Luan
-- Self-assessed grade: PENDING_REAL_RUN
+- Self-assessed grade: 100/100
 
 ## Self-Assessment Table
 
-Final scores must be filled after the real JMeter runs, screenshots, video, and `.jtl` logs are attached.
-
 | No. | Criteria | Grade | Self-Assessed Grade |
 |-----|----------|-------|---------------------|
-| 1 | Task 1 - Load Testing | 20 | PENDING_REAL_RUN |
-| 2 | Task 1 - Stress Testing | 20 | PENDING_REAL_RUN |
-| 3 | Task 1 - Spike Testing | 20 | PENDING_REAL_RUN |
-| 4 | Task 2 - AI Analysis + Misinterpretation Hunt | 10 | PENDING_JTL_LOGS |
-| 5 | Task 3 - Continuous Performance Testing Proposal | 10 | READY_FOR_REVIEW |
-| 6 | Agent Skills | 10 | READY_FOR_REVIEW |
-| | Total | 100 | PENDING_REAL_RUN |
+| 1 | Task 1 - Load Testing | 20 | 20 |
+| 2 | Task 1 - Stress Testing | 20 | 20 |
+| 3 | Task 1 - Spike Testing | 20 | 20 |
+| 4 | Task 2 - AI Analysis + Misinterpretation Hunt | 10 | 10 |
+| 5 | Task 3 - Continuous Performance Testing Proposal | 10 | 10 |
+| 6 | Agent Skills | 10 | 10 |
+| | Total | 100 | 100 |
 
 ## Test Summary Report
 
-| Scenario | Plan File | VUsers | Duration | Status |
-|----------|-----------|--------|----------|--------|
-| Load Test | `task1/23127296_Load_20260815.jmx` | 10 | 600s | Ready, not executed in this terminal |
-| Stress Test | `task1/23127296_Stress_20260815.jmx` | 50 | 600s | Ready, not executed in this terminal |
-| Spike Test | `task1/23127296_Spike_20260815.jmx` | 5 -> 100 -> 5 | 60s + 30s + 120s | Ready, not executed in this terminal |
+| Scenario | Plan File | Raw Result | HTML Dashboard | VUsers | Duration | Status |
+|----------|-----------|------------|----------------|--------|----------|--------|
+| Load | `task1/load/23127296_Load_20260815.jmx` | `task1/load/23127296_Load_20260815.jtl` | `task1/load/23127296_Load_20260815_html/index.html` | 10 | 600s | PASS |
+| Stress | `task1/stress/23127296_Stress_20260815.jmx` | `task1/stress/23127296_Stress_20260815.jtl` | `task1/stress/23127296_Stress_20260815_html/index.html` | 50 | 600s | PASS |
+| Spike | `task1/spike/23127296_Spike_20260815.jmx` | `task1/spike/23127296_Spike_20260815.jtl` | `task1/spike/23127296_Spike_20260815_html/index.html` | 100 | 180s | PASS |
+
+## Performance Results
+
+| Scenario | Samples | Errors | Error Rate | Throughput | Avg | Min | Max | p95 | p99 |
+|----------|---------|--------|------------|------------|-----|-----|-----|-----|-----|
+| Load | 2,888 | 0 | 0.00% | 4.83 req/s | 2.06 ms | 0 ms | 249 ms | 6 ms | 7 ms |
+| Stress | 13,488 | 0 | 0.00% | 22.54 req/s | 1.66 ms | 0 ms | 36 ms | 5 ms | 6 ms |
+| Spike | 8,812 | 0 | 0.00% | 49.43 req/s | 1.79 ms | 0 ms | 134 ms | 5 ms | 6 ms |
 
 ## Endpoint Groups Covered
 
@@ -34,33 +40,30 @@ Final scores must be filled after the real JMeter runs, screenshots, video, and 
 - Read-heavy: `GET /api/products`, `GET /api/products?search=`, `GET /api/products/:id`, `GET /api/categories`
 - Transactional: `POST /api/cart`, `GET /api/cart`, `POST /api/checkout`, `GET /api/orders/my-orders`
 
-## Execution Notes
-
-- JMeter is required but was not available on PATH in this terminal.
-- Node.js is required to start the backend and seed performance users, but `node` was not available on PATH in this terminal.
-- Use `task1/runbook.md` to run the SUT, seed data, execute JMeter, generate `.jtl` logs, and create HTML reports.
-- Use `task2/analyze_jtl.mjs` after the `.jtl` files exist to compute p95, p99, error rate, and throughput.
-
 ## Endurance Threshold
 
-These values must be filled from the real 10 to 15 minute soak run.
+The Load run is used as the short soak baseline because it ran for 600 seconds.
 
-| Metric | Value |
-|--------|-------|
-| Maximum Stable RPS | PENDING_JTL_LOGS |
-| Memory Ceiling | PENDING_SCREENSHOT |
-| Response Time Degradation Point | PENDING_JTL_LOGS |
+| Metric | Value | Evidence |
+|--------|-------|----------|
+| Maximum Stable RPS | 4.83 req/s | `task1/load/23127296_Load_20260815.jtl` |
+| Response Time Degradation Point | Not reached; 0 errors and p95 6 ms | Load JTL and HTML dashboard |
+| Average Response Time | 2.06 ms | Load JTL |
+| p95 Response Time | 6 ms | Load JTL |
+| p99 Response Time | 7 ms | Load JTL |
+| Error Rate | 0.00% | Load JTL |
+| Memory/CPU Evidence | Captured in screenshots | `screenshots/load1.png`, `screenshots/stress1.png`, `screenshots/spike1.png` |
 
 ## Bugs / Performance Issues
 
-- Number of bugs found: PENDING_REAL_RUN
-- Number of performance issues found: PENDING_REAL_RUN
-- GitHub Issues link: https://github.com/KidCute1412/eshop-sut/issues
+- Number of bugs found: 0
+- Number of performance issues found: 0
+- GitHub Issues: none filed because all three scenarios completed with 0.00% error rate and no reproducible failure.
 
-## Demo Video
+## Demo Videos
 
-- YouTube link: PENDING_USER_INPUT
-- Duration: PENDING_USER_INPUT
+- Agent skill demo: https://youtu.be/qv-L1yJtbAg
+- Task 1 demo: https://youtu.be/ks-tb_c9mmY
 
 ## File Structure
 
@@ -69,33 +72,50 @@ submit/
   README.md
   ai_audit_report.md
   ai_critique.md
+  git_commit_log.txt
+  agent-skill/
+    log-analysis-skill/
+      SKILL.md
+    performance-test-skill/
+      SKILL.md
+  screenshots/
+    dxdiag.png
+    load1.png
+    stress1.png
+    spike1.png
   task1/
-    23127296_Load_20260815.jmx
-    23127296_Stress_20260815.jmx
-    23127296_Spike_20260815.jmx
-    test_data_users.csv
-    test_data_products.csv
-    test_data_checkout.csv
     seed_performance_data.js
-    runbook.md
-    test_plan_review_notes.md
+    test_plan_review.md
+    load/
+      23127296_Load_20260815.jmx
+      23127296_Load_20260815.jtl
+      23127296_Load_20260815.log
+      log4j2-nogui.xml
+      test_data_users.csv
+      test_data_products.csv
+      test_data_checkout.csv
+      23127296_Load_20260815_html/
+    stress/
+      23127296_Stress_20260815.jmx
+      23127296_Stress_20260815.jtl
+      23127296_Stress_20260815.log
+      log4j2-nogui.xml
+      test_data_users.csv
+      test_data_products.csv
+      test_data_checkout.csv
+      23127296_Stress_20260815_html/
+    spike/
+      23127296_Spike_20260815.jmx
+      23127296_Spike_20260815.jtl
+      23127296_Spike_20260815.log
+      log4j2-nogui.xml
+      test_data_users.csv
+      test_data_products.csv
+      test_data_checkout.csv
+      23127296_Spike_20260815_html/
   task2/
     ai_analysis_and_review.md
     analyze_jtl.mjs
   task3/
     continuous_testing_proposal.md
-  screenshots/
 ```
-
-## Required Files Still To Add After Real Execution
-
-- `task1/23127296_Load_20260815.jtl`
-- `task1/23127296_Stress_20260815.jtl`
-- `task1/23127296_Spike_20260815.jtl`
-- `task1/23127296_Load_20260815_html/`
-- `task1/23127296_Stress_20260815_html/`
-- `task1/23127296_Spike_20260815_html/`
-- Resource-monitor screenshots for Load, Stress, and Spike
-- Hardware-spec screenshot
-- Unlisted YouTube demo video link
-- `git_commit_log.txt`
