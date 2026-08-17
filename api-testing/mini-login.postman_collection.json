@@ -1,0 +1,73 @@
+{
+  "info": {
+    "name": "mini-login",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "POST /api/login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\": \"{{email}}\", \"password\": \"{{password}}\"}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/login",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "login"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.request.headers.upsert({",
+              "  key: 'X-Student-Id',",
+              "  value: pm.environment.get('studentId'),",
+              "});"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('[MINI] Status code is expected', function () {",
+              "  pm.response.to.have.status(pm.iterationData.get('expected_status'));",
+              "});",
+              "pm.test('[MINI] Response is JSON', function () {",
+              "  var contentType = pm.response.headers.get('Content-Type') || '';",
+              "  pm.expect(contentType).to.include('application/json');",
+              "});",
+              "pm.test('[MINI] Response body has correct structure', function () {",
+              "  var status = pm.iterationData.get('expected_status');",
+              "  var body = pm.response.json();",
+              "  if (status === 200) {",
+              "    pm.expect(body).to.have.property('token');",
+              "    pm.expect(body).to.have.property('user');",
+              "  } else {",
+              "    pm.expect(body).to.have.property('error');",
+              "  }",
+              "});"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

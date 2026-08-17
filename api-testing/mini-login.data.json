@@ -1,0 +1,32 @@
+[
+  {
+    "test_case": "TC01",
+    "email": "test@eshop.com",
+    "password": "Test1234!",
+    "expected_status": 200
+  },
+  {
+    "test_case": "TC02",
+    "email": "test@eshop.com",
+    "password": "WrongPass1!",
+    "expected_status": 401
+  },
+  {
+    "test_case": "TC03",
+    "email": "unknown@eshop.com",
+    "password": "SomePass!",
+    "expected_status": 401
+  },
+  {
+    "test_case": "TC04",
+    "email": "test@eshop.com",
+    "password": "",
+    "expected_status": 401
+  },
+  {
+    "test_case": "TC05",
+    "email": "",
+    "password": "Test1234!",
+    "expected_status": 401
+  }
+]

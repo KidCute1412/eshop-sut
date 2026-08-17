@@ -1,0 +1,29 @@
+{
+  "id": "TC10",
+  "requirement": "FR-15",
+  "objective": "Verify admin can add a new product with valid required input fields.",
+  "preconditions": ["Admin frontend running at localhost:5174", "Admin credentials available"],
+  "inputs": {
+    "url": "http://localhost:5174/",
+    "emailPlaceholder": "Email",
+    "passwordPlaceholder": "Password",
+    "email": "admin@eshop.com",
+    "password": "Admin123!",
+    "loginButton": "Login",
+    "productsTab": "Sản phẩm",
+    "productNamePlaceholder": "Tên sản phẩm",
+    "pricePlaceholder": "Giá tiền",
+    "imageUrlPlaceholder": "URL Ảnh",
+    "descriptionPlaceholder": "Mô tả",
+    "categoryIndex": 0,
+    "imageUrl": "https://placehold.co/200x200",
+    "description": "Product created by automation test."
+  },
+  "expected": {
+    "name": "Auto Product A",
+    "priceText": "250000 ₫"
+  },
+  "metadata": {
+    "assertions": ["create", "role-visibility", "format-check"]
+  }
+}

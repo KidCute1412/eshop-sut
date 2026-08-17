@@ -1,0 +1,84 @@
+{
+    "id": "",
+    "name": "Default",
+    "timestamp": 1786352741187,
+    "folder_id": 0,
+    "target_type": "collection",
+    "environment_id": "mini-local-environment",
+    "count": 1,
+    "collection": {
+        "name": "mini-login",
+        "order": [
+            "d6dabd06-fb30-4a19-81bd-d9f21adaea7b"
+        ],
+        "folders": [],
+        "requests": [
+            {
+                "id": "d6dabd06-fb30-4a19-81bd-d9f21adaea7b",
+                "name": "POST /api/login",
+                "collectionId": "a17aa89a-3f58-4052-b04d-1d30acada7f2",
+                "method": "POST",
+                "headers": "Content-Type: application/json",
+                "dataMode": "raw",
+                "data": [],
+                "rawModeData": "{\"email\": \"{{email}}\", \"password\": \"{{password}}\"}",
+                "tests": "pm.test('[MINI] Status code is expected', function () {\n  pm.response.to.have.status(pm.iterationData.get('expected_status'));\n});\npm.test('[MINI] Response is JSON', function () {\n  var contentType = pm.response.headers.get('Content-Type') || '';\n  pm.expect(contentType).to.include('application/json');\n});\npm.test('[MINI] Response body has correct structure', function () {\n  var status = pm.iterationData.get('expected_status');\n  var body = pm.response.json();\n  if (status === 200) {\n    pm.expect(body).to.have.property('token');\n    pm.expect(body).to.have.property('user');\n  } else {\n    pm.expect(body).to.have.property('error');\n  }\n});",
+                "preRequestScript": "pm.request.headers.upsert({\n  key: 'X-Student-Id',\n  value: pm.environment.get('studentId'),\n});",
+                "url": "{{baseUrl}}/api/login"
+            }
+        ]
+    },
+    "folder": null,
+    "globals": {
+        "values": []
+    },
+    "results": [
+        {
+            "id": "d6dabd06-fb30-4a19-81bd-d9f21adaea7b",
+            "name": "POST /api/login",
+            "url": "{{baseUrl}}/api/login",
+            "totalTime": 118,
+            "responseCode": {
+                "code": 401,
+                "name": "",
+                "detail": ""
+            },
+            "tests": {},
+            "totalPassFailCounts": {
+                "pass": 0,
+                "fail": 0
+            },
+            "testPassFailCounts": {},
+            "times": [],
+            "allTests": [
+                {},
+                {},
+                {},
+                {},
+                {}
+            ],
+            "time": 4,
+            "meanResponseTime": 118
+        }
+    ],
+    "environment": {
+        "id": "mini-local-environment",
+        "name": "mini-local",
+        "values": [
+            {
+                "key": "baseUrl",
+                "value": "http://localhost:3000",
+                "enabled": true
+            },
+            {
+                "key": "studentId",
+                "value": "12345678",
+                "enabled": true
+            }
+        ],
+        "timestamp": 0,
+        "synced": false,
+        "_postman_variable_scope": "environment"
+    },
+    "delay": 0
+}
