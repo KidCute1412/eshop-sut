@@ -64,5 +64,5 @@ The AI Audit Report records design, plan, execution-review, and analysis interac
 
 ## 7. External submission links
 
-- Unlisted Vietnamese demo video (at least six minutes): **[STUDENT_TO_PASTE_YOUTUBE_URL]**
-- Confirmed GitHub Issue BUG-HW05-LOCKOUT-001: **[STUDENT_TO_PASTE_GITHUB_ISSUE_URL]**
+- Unlisted Vietnamese demo video (at least six minutes):
+- Confirmed GitHub Issue BUG-HW05-LOCKOUT-001:

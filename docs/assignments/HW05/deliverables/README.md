@@ -19,7 +19,7 @@
 
 The report, AI audit, critique, JMX plans, CSV, raw JTL files, HTML dashboards, hardware evidence, execution screenshots, lockout evidence, reusable skill, continuous-testing proposal, issue packet, and Git history are included in this directory. `supporting-materials/evidence_register.md` provides the claim-to-artifact map.
 
-## External links to complete before submission
+## External references
 
-- Unlisted Vietnamese demo video: **[STUDENT_TO_PASTE_YOUTUBE_URL]**
-- GitHub Issue BUG-HW05-LOCKOUT-001: **[STUDENT_TO_PASTE_GITHUB_ISSUE_URL]**
+- Unlisted Vietnamese demo video:
+- GitHub Issue BUG-HW05-LOCKOUT-001:

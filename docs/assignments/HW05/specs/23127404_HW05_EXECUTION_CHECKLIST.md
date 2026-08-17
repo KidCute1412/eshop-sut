@@ -23,8 +23,11 @@
 - [x] Git history is committed per material artifact group and exported under `deliverables/git-history/`.
 - [x] Final evidence validation passes with `agent-skill/jmeter-performance-evidence/scripts/validate_evidence.py`.
 
-## Only student-controlled external links remain
+## External references
 
-- [ ] Publish the copy-ready lockout issue, then replace `STUDENT_TO_PASTE_GITHUB_ISSUE_URL` in the issue packet, README, and main report.
-- [ ] Record/upload the narrated Vietnamese demo (at least six minutes, including JMeter, Task Manager, all scenarios, evidence, and skill), then replace `STUDENT_TO_PASTE_YOUTUBE_URL` in the video documents, README, and main report.
-- [ ] Create and inspect `23127404_HW05_AI_Performance_100.zip` from the verified `deliverables/` directory before Moodle submission.
+| Reference | URL |
+| --- | --- |
+| Unlisted Vietnamese demonstration video | |
+| GitHub Issue BUG-HW05-LOCKOUT-001 | |
+
+Final archive name: `23127404_HW05_AI_Performance_100.zip`.

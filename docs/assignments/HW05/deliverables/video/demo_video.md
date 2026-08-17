@@ -1,6 +1,6 @@
 # HW05 Demo Video Record
 
-**Unlisted YouTube URL:** [student to add after upload]
+**Unlisted YouTube URL:**
 
 ## Vietnamese narration script
 

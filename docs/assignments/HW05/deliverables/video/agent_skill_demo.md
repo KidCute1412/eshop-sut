@@ -1,6 +1,6 @@
 # Agent Skill Demonstration Record
 
-**Unlisted YouTube URL:** [STUDENT_TO_PASTE_YOUTUBE_URL]
+**Unlisted YouTube URL:**
 
 The linked recording demonstrates the local `.agents/skills/jmeter-performance-evidence` skill on the complete EShop endpoint workflow: verify API contract, inspect the JMeter plan and CSV schema, run/review raw JTL evidence, reproduce metrics with `summarize_jtl.py`, and validate the submission tree with `validate_evidence.py`.
 

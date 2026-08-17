@@ -1,6 +1,6 @@
 # BUG-HW05-LOCKOUT-001 — Account locks after two invalid passwords
 
-**GitHub Issue URL:** [STUDENT_TO_PASTE_GITHUB_ISSUE_URL]
+**GitHub Issue URL:**
 
 | Field | Value |
 | --- | --- |
