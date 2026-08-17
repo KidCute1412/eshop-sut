@@ -38,4 +38,4 @@ The report, AI audit, critique, JMX plans, CSV, raw JTL files, HTML dashboards, 
 ## External references
 
 - Unlisted Vietnamese demo video:
-- GitHub Issue BUG-HW05-LOCKOUT-001:
+- GitHub Issue BUG-HW05-LOCKOUT-001: https://github.com/KidCute1412/eshop-sut/issues/158

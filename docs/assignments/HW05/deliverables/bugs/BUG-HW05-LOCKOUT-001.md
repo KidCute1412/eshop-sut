@@ -1,6 +1,6 @@
 # BUG-HW05-LOCKOUT-001 — Account locks after two invalid passwords
 
-**GitHub Issue URL:**
+**GitHub Issue URL:** https://github.com/KidCute1412/eshop-sut/issues/158
 
 | Field | Value |
 | --- | --- |
