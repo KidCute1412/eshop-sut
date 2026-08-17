@@ -1,0 +1,501 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1786902416735,76,01 Login,200,OK,Spike Virtual Users 1-3,text,true,,635,227,10,10,http://localhost:3000/api/login,76,0,35
+1786902416827,7,01 Login,200,OK,Spike Virtual Users 1-4,text,true,,635,227,10,10,http://localhost:3000/api/login,7,0,1
+1786902416735,76,01 Login,200,OK,Spike Virtual Users 1-2,text,true,,635,227,10,10,http://localhost:3000/api/login,76,0,35
+1786902416764,48,01 Login,200,OK,Spike Virtual Users 1-1,text,true,,635,227,10,10,http://localhost:3000/api/login,48,0,7
+1786902417121,7,01 Login,200,OK,Spike Virtual Users 1-7,text,true,,635,227,14,14,http://localhost:3000/api/login,6,0,1
+1786902417151,8,01 Login,200,OK,Spike Virtual Users 1-5,text,true,,635,227,14,14,http://localhost:3000/api/login,8,0,2
+1786902417197,7,01 Login,200,OK,Spike Virtual Users 1-10,text,true,,635,227,15,15,http://localhost:3000/api/login,7,0,2
+1786902417258,8,01 Login,200,OK,Spike Virtual Users 1-8,text,true,,635,227,16,16,http://localhost:3000/api/login,8,0,1
+1786902417273,8,01 Login,200,OK,Spike Virtual Users 1-9,text,true,,635,227,16,16,http://localhost:3000/api/login,8,0,1
+1786902417397,8,01 Login,200,OK,Spike Virtual Users 1-11,text,true,,635,227,17,17,http://localhost:3000/api/login,8,0,3
+1786902417427,5,02 Product Detail,200,OK,Spike Virtual Users 1-1,text,true,,451,338,18,18,http://localhost:3000/api/products/1,4,0,0
+1786902417472,4,02 Product Detail,200,OK,Spike Virtual Users 1-2,text,true,,451,338,18,18,http://localhost:3000/api/products/1,4,0,0
+1786902417473,5,01 Login,200,OK,Spike Virtual Users 1-6,text,true,,635,227,18,18,http://localhost:3000/api/login,5,0,1
+1786902417549,3,02 Product Detail,200,OK,Spike Virtual Users 1-4,text,true,,451,338,19,19,http://localhost:3000/api/products/1,3,0,0
+1786902417564,3,02 Product Detail,200,OK,Spike Virtual Users 1-3,text,true,,451,338,20,20,http://localhost:3000/api/products/1,3,0,0
+1786902417687,3,02 Product Detail,200,OK,Spike Virtual Users 1-7,text,true,,451,338,21,21,http://localhost:3000/api/products/1,3,0,0
+1786902417702,3,02 Product Detail,200,OK,Spike Virtual Users 1-5,text,true,,451,338,21,21,http://localhost:3000/api/products/1,3,0,0
+1786902417748,6,01 Login,200,OK,Spike Virtual Users 1-13,text,true,,635,227,22,22,http://localhost:3000/api/login,6,0,1
+1786902417811,6,01 Login,200,OK,Spike Virtual Users 1-15,text,true,,635,227,23,23,http://localhost:3000/api/login,5,0,1
+1786902417871,3,02 Product Detail,200,OK,Spike Virtual Users 1-11,text,true,,451,338,23,23,http://localhost:3000/api/products/1,3,0,0
+1786902417903,7,01 Login,200,OK,Spike Virtual Users 1-19,text,true,,635,227,24,24,http://localhost:3000/api/login,6,0,1
+1786902417932,5,01 Login,200,OK,Spike Virtual Users 1-12,text,true,,635,227,24,24,http://localhost:3000/api/login,5,0,2
+1786902417978,5,01 Login,200,OK,Spike Virtual Users 1-17,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,1
+1786902418008,6,03 Add Cart,200,OK,Spike Virtual Users 1-1,text,true,,294,363,25,25,http://localhost:3000/api/cart,6,0,0
+1786902418009,7,02 Product Detail,200,OK,Spike Virtual Users 1-9,text,true,,451,338,25,25,http://localhost:3000/api/products/1,7,0,0
+1786902418009,9,01 Login,200,OK,Spike Virtual Users 1-14,text,true,,635,227,25,25,http://localhost:3000/api/login,9,0,0
+1786902418102,6,01 Login,200,OK,Spike Virtual Users 1-16,text,true,,635,227,25,25,http://localhost:3000/api/login,6,0,2
+1786902418132,4,02 Product Detail,200,OK,Spike Virtual Users 1-10,text,true,,451,338,25,25,http://localhost:3000/api/products/1,4,0,0
+1786902418132,4,02 Product Detail,200,OK,Spike Virtual Users 1-8,text,true,,451,338,25,25,http://localhost:3000/api/products/1,4,0,0
+1786902418179,5,01 Login,200,OK,Spike Virtual Users 1-18,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,1
+1786902418240,5,01 Login,200,OK,Spike Virtual Users 1-20,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,2
+1786902418264,3,02 Product Detail,200,OK,Spike Virtual Users 1-13,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902418290,4,03 Add Cart,200,OK,Spike Virtual Users 1-4,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902418381,3,02 Product Detail,200,OK,Spike Virtual Users 1-12,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902418396,4,03 Add Cart,200,OK,Spike Virtual Users 1-2,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902418413,4,02 Product Detail,200,OK,Spike Virtual Users 1-19,text,true,,451,338,25,25,http://localhost:3000/api/products/1,4,0,0
+1786902418431,5,03 Add Cart,200,OK,Spike Virtual Users 1-7,text,true,,294,363,25,25,http://localhost:3000/api/cart,5,0,0
+1786902418431,6,02 Product Detail,200,OK,Spike Virtual Users 1-6,text,true,,451,338,25,25,http://localhost:3000/api/products/1,6,0,0
+1786902418500,5,01 Login,200,OK,Spike Virtual Users 1-22,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,1
+1786902418515,3,02 Product Detail,200,OK,Spike Virtual Users 1-14,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902418530,3,03 Add Cart,200,OK,Spike Virtual Users 1-3,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902418598,5,01 Login,200,OK,Spike Virtual Users 1-24,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,1
+1786902418598,7,01 Login,200,OK,Spike Virtual Users 1-21,text,true,,635,227,25,25,http://localhost:3000/api/login,7,0,1
+1786902418682,4,03 Add Cart,200,OK,Spike Virtual Users 1-5,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902418682,7,02 Product Detail,200,OK,Spike Virtual Users 1-15,text,true,,451,338,25,25,http://localhost:3000/api/products/1,7,0,0
+1786902418715,6,01 Login,200,OK,Spike Virtual Users 1-23,text,true,,635,227,25,25,http://localhost:3000/api/login,6,0,2
+1786902418732,3,03 Add Cart,200,OK,Spike Virtual Users 1-11,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902418798,3,02 Product Detail,200,OK,Spike Virtual Users 1-17,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902418831,3,03 Add Cart,200,OK,Spike Virtual Users 1-8,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902418831,6,01 Login,200,OK,Spike Virtual Users 1-25,text,true,,635,227,25,25,http://localhost:3000/api/login,6,0,2
+1786902418848,6,03 Add Cart,200,OK,Spike Virtual Users 1-10,text,true,,294,363,25,25,http://localhost:3000/api/cart,6,0,0
+1786902418848,12,04 Checkout,200,OK,Spike Virtual Users 1-1,text,true,,312,429,25,25,http://localhost:3000/api/checkout,12,0,0
+1786902418882,3,02 Product Detail,200,OK,Spike Virtual Users 1-16,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902418916,3,03 Add Cart,200,OK,Spike Virtual Users 1-9,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902418931,9,04 Checkout,200,OK,Spike Virtual Users 1-4,text,true,,312,429,25,25,http://localhost:3000/api/checkout,9,0,0
+1786902418931,9,02 Product Detail,200,OK,Spike Virtual Users 1-18,text,true,,451,338,25,25,http://localhost:3000/api/products/1,9,0,0
+1786902418948,3,02 Product Detail,200,OK,Spike Virtual Users 1-22,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902418967,3,03 Add Cart,200,OK,Spike Virtual Users 1-13,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902418965,12,04 Checkout,200,OK,Spike Virtual Users 1-3,text,true,,312,429,25,25,http://localhost:3000/api/checkout,12,0,0
+1786902418982,3,03 Add Cart,200,OK,Spike Virtual Users 1-12,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902419014,3,02 Product Detail,200,OK,Spike Virtual Users 1-24,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902419098,6,03 Add Cart,200,OK,Spike Virtual Users 1-19,text,true,,294,363,25,25,http://localhost:3000/api/cart,5,0,0
+1786902419098,11,04 Checkout,200,OK,Spike Virtual Users 1-2,text,true,,312,429,25,25,http://localhost:3000/api/checkout,11,0,0
+1786902419133,8,04 Checkout,200,OK,Spike Virtual Users 1-7,text,true,,312,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902419149,3,02 Product Detail,200,OK,Spike Virtual Users 1-21,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902419164,8,04 Checkout,200,OK,Spike Virtual Users 1-5,text,true,,312,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902419233,4,03 Add Cart,200,OK,Spike Virtual Users 1-14,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902419233,4,02 Product Detail,200,OK,Spike Virtual Users 1-20,text,true,,451,338,25,25,http://localhost:3000/api/products/1,4,0,0
+1786902419233,5,02 Product Detail,200,OK,Spike Virtual Users 1-23,text,true,,451,338,25,25,http://localhost:3000/api/products/1,5,0,0
+1786902419348,5,03 Add Cart,200,OK,Spike Virtual Users 1-6,text,true,,294,363,25,25,http://localhost:3000/api/cart,5,0,0
+1786902419348,7,01 Login,200,OK,Spike Virtual Users 1-1,text,true,,635,227,25,25,http://localhost:3000/api/login,7,0,0
+1786902419449,18,04 Checkout,200,OK,Spike Virtual Users 1-12,text,true,,312,429,25,25,http://localhost:3000/api/checkout,18,0,0
+1786902419449,25,04 Checkout,200,OK,Spike Virtual Users 1-11,text,true,,312,429,25,25,http://localhost:3000/api/checkout,24,0,0
+1786902419449,26,01 Login,200,OK,Spike Virtual Users 1-4,text,true,,635,227,25,25,http://localhost:3000/api/login,26,0,0
+1786902419449,27,02 Product Detail,200,OK,Spike Virtual Users 1-25,text,true,,451,338,25,25,http://localhost:3000/api/products/1,27,0,0
+1786902419466,15,04 Checkout,200,OK,Spike Virtual Users 1-9,text,true,,312,429,25,25,http://localhost:3000/api/checkout,15,0,0
+1786902419516,10,04 Checkout,200,OK,Spike Virtual Users 1-10,text,true,,313,429,25,25,http://localhost:3000/api/checkout,10,0,0
+1786902419563,4,01 Login,200,OK,Spike Virtual Users 1-7,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902419582,3,03 Add Cart,200,OK,Spike Virtual Users 1-15,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902419631,4,01 Login,200,OK,Spike Virtual Users 1-3,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902419700,5,03 Add Cart,200,OK,Spike Virtual Users 1-17,text,true,,294,363,25,25,http://localhost:3000/api/cart,5,0,0
+1786902419700,11,04 Checkout,200,OK,Spike Virtual Users 1-8,text,true,,313,429,25,25,http://localhost:3000/api/checkout,11,0,0
+1786902419766,3,03 Add Cart,200,OK,Spike Virtual Users 1-18,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902419782,8,04 Checkout,200,OK,Spike Virtual Users 1-13,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902419816,9,03 Add Cart,200,OK,Spike Virtual Users 1-21,text,true,,294,363,25,25,http://localhost:3000/api/cart,9,0,0
+1786902419816,14,04 Checkout,200,OK,Spike Virtual Users 1-6,text,true,,313,429,25,25,http://localhost:3000/api/checkout,14,0,0
+1786902419816,15,02 Product Detail,200,OK,Spike Virtual Users 1-1,text,true,,451,338,25,25,http://localhost:3000/api/products/1,15,0,0
+1786902419850,5,01 Login,200,OK,Spike Virtual Users 1-2,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,0
+1786902419865,4,03 Add Cart,200,OK,Spike Virtual Users 1-16,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902419899,4,03 Add Cart,200,OK,Spike Virtual Users 1-23,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902419899,5,03 Add Cart,200,OK,Spike Virtual Users 1-22,text,true,,294,363,25,25,http://localhost:3000/api/cart,5,0,0
+1786902419916,4,01 Login,200,OK,Spike Virtual Users 1-12,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902419949,4,03 Add Cart,200,OK,Spike Virtual Users 1-24,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902419983,4,03 Add Cart,200,OK,Spike Virtual Users 1-25,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902420015,4,03 Add Cart,200,OK,Spike Virtual Users 1-20,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902420050,6,01 Login,200,OK,Spike Virtual Users 1-5,text,true,,635,227,25,25,http://localhost:3000/api/login,6,0,0
+1786902420065,9,04 Checkout,200,OK,Spike Virtual Users 1-19,text,true,,313,429,25,25,http://localhost:3000/api/checkout,9,0,0
+1786902420102,9,04 Checkout,200,OK,Spike Virtual Users 1-14,text,true,,313,429,25,25,http://localhost:3000/api/checkout,9,0,0
+1786902420117,10,04 Checkout,200,OK,Spike Virtual Users 1-15,text,true,,313,429,25,25,http://localhost:3000/api/checkout,10,0,0
+1786902420179,10,04 Checkout,200,OK,Spike Virtual Users 1-17,text,true,,313,429,25,25,http://localhost:3000/api/checkout,10,0,0
+1786902420248,5,01 Login,200,OK,Spike Virtual Users 1-10,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,0
+1786902420279,4,02 Product Detail,200,OK,Spike Virtual Users 1-2,text,true,,451,338,25,25,http://localhost:3000/api/products/1,4,0,0
+1786902420279,6,01 Login,200,OK,Spike Virtual Users 1-11,text,true,,635,227,25,25,http://localhost:3000/api/login,6,0,0
+1786902420325,9,01 Login,200,OK,Spike Virtual Users 1-9,text,true,,635,227,25,25,http://localhost:3000/api/login,8,0,0
+1786902420325,12,04 Checkout,200,OK,Spike Virtual Users 1-21,text,true,,313,429,25,25,http://localhost:3000/api/checkout,12,0,0
+1786902420387,3,02 Product Detail,200,OK,Spike Virtual Users 1-7,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902420403,2,03 Add Cart,200,OK,Spike Virtual Users 1-1,text,true,,294,363,25,25,http://localhost:3000/api/cart,2,0,0
+1786902420403,5,01 Login,200,OK,Spike Virtual Users 1-8,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,0
+1786902420434,2,02 Product Detail,200,OK,Spike Virtual Users 1-4,text,true,,451,338,25,25,http://localhost:3000/api/products/1,2,0,0
+1786902420449,4,01 Login,200,OK,Spike Virtual Users 1-6,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902420480,4,01 Login,200,OK,Spike Virtual Users 1-13,text,true,,635,227,25,25,http://localhost:3000/api/login,3,0,0
+1786902420511,8,04 Checkout,200,OK,Spike Virtual Users 1-20,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902420526,9,04 Checkout,200,OK,Spike Virtual Users 1-16,text,true,,313,429,25,25,http://localhost:3000/api/checkout,9,0,0
+1786902420557,3,02 Product Detail,200,OK,Spike Virtual Users 1-3,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902420649,5,02 Product Detail,200,OK,Spike Virtual Users 1-5,text,true,,451,338,25,25,http://localhost:3000/api/products/1,5,0,0
+1786902420649,11,04 Checkout,200,OK,Spike Virtual Users 1-23,text,true,,313,429,25,25,http://localhost:3000/api/checkout,11,0,0
+1786902420664,5,01 Login,200,OK,Spike Virtual Users 1-14,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,0
+1786902420680,15,04 Checkout,200,OK,Spike Virtual Users 1-18,text,true,,313,429,25,25,http://localhost:3000/api/checkout,15,0,0
+1786902420680,15,02 Product Detail,200,OK,Spike Virtual Users 1-12,text,true,,451,338,25,25,http://localhost:3000/api/products/1,15,0,0
+1786902420699,18,01 Login,200,OK,Spike Virtual Users 1-15,text,true,,635,227,25,25,http://localhost:3000/api/login,18,0,0
+1786902420773,11,04 Checkout,200,OK,Spike Virtual Users 1-24,text,true,,313,429,25,25,http://localhost:3000/api/checkout,11,0,0
+1786902420774,18,01 Login,200,OK,Spike Virtual Users 1-19,text,true,,635,227,25,25,http://localhost:3000/api/login,18,0,0
+1786902420788,19,03 Add Cart,200,OK,Spike Virtual Users 1-2,text,true,,294,363,25,25,http://localhost:3000/api/cart,19,0,0
+1786902420803,8,03 Add Cart,200,OK,Spike Virtual Users 1-7,text,true,,294,363,25,25,http://localhost:3000/api/cart,8,0,0
+1786902420804,10,02 Product Detail,200,OK,Spike Virtual Users 1-10,text,true,,451,338,25,25,http://localhost:3000/api/products/1,10,0,0
+1786902420804,12,01 Login,200,OK,Spike Virtual Users 1-17,text,true,,635,227,25,25,http://localhost:3000/api/login,12,0,0
+1786902420849,8,04 Checkout,200,OK,Spike Virtual Users 1-1,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902420864,10,04 Checkout,200,OK,Spike Virtual Users 1-22,text,true,,313,429,25,25,http://localhost:3000/api/checkout,9,0,0
+1786902420880,3,03 Add Cart,200,OK,Spike Virtual Users 1-4,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902420896,8,04 Checkout,200,OK,Spike Virtual Users 1-25,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902420942,3,01 Login,200,OK,Spike Virtual Users 1-16,text,true,,635,227,25,25,http://localhost:3000/api/login,3,0,0
+1786902421020,3,02 Product Detail,200,OK,Spike Virtual Users 1-13,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902421020,3,02 Product Detail,200,OK,Spike Virtual Users 1-11,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902421067,4,02 Product Detail,200,OK,Spike Virtual Users 1-9,text,true,,451,338,25,25,http://localhost:3000/api/products/1,4,0,0
+1786902421113,2,02 Product Detail,200,OK,Spike Virtual Users 1-6,text,true,,451,338,25,25,http://localhost:3000/api/products/1,2,0,0
+1786902421175,4,03 Add Cart,200,OK,Spike Virtual Users 1-5,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902421175,6,01 Login,200,OK,Spike Virtual Users 1-21,text,true,,635,227,25,25,http://localhost:3000/api/login,6,0,0
+1786902421220,5,01 Login,200,OK,Spike Virtual Users 1-24,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902421251,4,03 Add Cart,200,OK,Spike Virtual Users 1-12,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902421266,3,02 Product Detail,200,OK,Spike Virtual Users 1-8,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902421266,5,01 Login,200,OK,Spike Virtual Users 1-23,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,0
+1786902421297,2,02 Product Detail,200,OK,Spike Virtual Users 1-17,text,true,,451,338,25,25,http://localhost:3000/api/products/1,2,0,0
+1786902421390,3,02 Product Detail,200,OK,Spike Virtual Users 1-14,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902421405,4,03 Add Cart,200,OK,Spike Virtual Users 1-3,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902421436,5,03 Add Cart,200,OK,Spike Virtual Users 1-13,text,true,,294,363,25,25,http://localhost:3000/api/cart,5,0,0
+1786902421436,9,01 Login,200,OK,Spike Virtual Users 1-20,text,true,,635,227,25,25,http://localhost:3000/api/login,9,0,0
+1786902421436,10,01 Login,200,OK,Spike Virtual Users 1-18,text,true,,635,227,25,25,http://localhost:3000/api/login,10,0,0
+1786902421528,4,03 Add Cart,200,OK,Spike Virtual Users 1-10,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902421544,3,03 Add Cart,200,OK,Spike Virtual Users 1-9,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902421544,4,02 Product Detail,200,OK,Spike Virtual Users 1-16,text,true,,451,338,25,25,http://localhost:3000/api/products/1,4,0,0
+1786902421574,5,01 Login,200,OK,Spike Virtual Users 1-1,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,0
+1786902421589,9,04 Checkout,200,OK,Spike Virtual Users 1-7,text,true,,313,429,25,25,http://localhost:3000/api/checkout,9,0,0
+1786902421650,4,01 Login,200,OK,Spike Virtual Users 1-22,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902421680,3,03 Add Cart,200,OK,Spike Virtual Users 1-11,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902421696,3,03 Add Cart,200,OK,Spike Virtual Users 1-8,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902421711,4,03 Add Cart,200,OK,Spike Virtual Users 1-17,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902421727,3,02 Product Detail,200,OK,Spike Virtual Users 1-15,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902421742,5,03 Add Cart,200,OK,Spike Virtual Users 1-6,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902421789,8,04 Checkout,200,OK,Spike Virtual Users 1-2,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902421789,8,02 Product Detail,200,OK,Spike Virtual Users 1-19,text,true,,451,338,25,25,http://localhost:3000/api/products/1,8,0,0
+1786902421804,3,03 Add Cart,200,OK,Spike Virtual Users 1-14,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902421819,3,02 Product Detail,200,OK,Spike Virtual Users 1-24,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902421834,10,04 Checkout,200,OK,Spike Virtual Users 1-4,text,true,,313,429,25,25,http://localhost:3000/api/checkout,10,0,0
+1786902421849,5,01 Login,200,OK,Spike Virtual Users 1-25,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,0
+1786902422018,3,03 Add Cart,200,OK,Spike Virtual Users 1-16,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902422048,16,04 Checkout,200,OK,Spike Virtual Users 1-3,text,true,,313,429,25,25,http://localhost:3000/api/checkout,16,0,0
+1786902422048,16,02 Product Detail,200,OK,Spike Virtual Users 1-18,text,true,,451,338,25,25,http://localhost:3000/api/products/1,16,0,0
+1786902422079,7,04 Checkout,200,OK,Spike Virtual Users 1-13,text,true,,313,429,25,25,http://localhost:3000/api/checkout,7,0,0
+1786902422126,8,04 Checkout,200,OK,Spike Virtual Users 1-12,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902422141,5,02 Product Detail,200,OK,Spike Virtual Users 1-20,text,true,,451,338,25,25,http://localhost:3000/api/products/1,5,0,0
+1786902422141,10,04 Checkout,200,OK,Spike Virtual Users 1-5,text,true,,313,429,25,25,http://localhost:3000/api/checkout,10,0,0
+1786902422141,10,02 Product Detail,200,OK,Spike Virtual Users 1-23,text,true,,451,338,25,25,http://localhost:3000/api/products/1,10,0,0
+1786902422157,3,02 Product Detail,200,OK,Spike Virtual Users 1-21,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902422172,10,04 Checkout,200,OK,Spike Virtual Users 1-17,text,true,,313,429,25,25,http://localhost:3000/api/checkout,10,0,0
+1786902422218,3,02 Product Detail,200,OK,Spike Virtual Users 1-1,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902422234,9,04 Checkout,200,OK,Spike Virtual Users 1-9,text,true,,313,429,25,25,http://localhost:3000/api/checkout,9,0,0
+1786902422303,3,02 Product Detail,200,OK,Spike Virtual Users 1-25,text,true,,451,338,25,25,http://localhost:3000/api/products/1,2,0,0
+1786902422353,4,03 Add Cart,200,OK,Spike Virtual Users 1-15,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902422353,5,02 Product Detail,200,OK,Spike Virtual Users 1-22,text,true,,451,338,25,25,http://localhost:3000/api/products/1,5,0,0
+1786902422403,8,04 Checkout,200,OK,Spike Virtual Users 1-6,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902422420,6,01 Login,200,OK,Spike Virtual Users 1-4,text,true,,635,227,25,25,http://localhost:3000/api/login,6,0,0
+1786902422420,11,04 Checkout,200,OK,Spike Virtual Users 1-10,text,true,,313,429,25,25,http://localhost:3000/api/checkout,11,0,0
+1786902422453,5,01 Login,200,OK,Spike Virtual Users 1-2,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,0
+1786902422503,4,01 Login,200,OK,Spike Virtual Users 1-13,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902422520,4,01 Login,200,OK,Spike Virtual Users 1-3,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902422551,10,04 Checkout,200,OK,Spike Virtual Users 1-11,text,true,,313,429,25,25,http://localhost:3000/api/checkout,10,0,0
+1786902422555,8,01 Login,200,OK,Spike Virtual Users 1-7,text,true,,635,227,25,25,http://localhost:3000/api/login,8,0,0
+1786902422570,9,04 Checkout,200,OK,Spike Virtual Users 1-16,text,true,,313,429,25,25,http://localhost:3000/api/checkout,9,0,0
+1786902422638,4,03 Add Cart,200,OK,Spike Virtual Users 1-23,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902422653,9,03 Add Cart,200,OK,Spike Virtual Users 1-24,text,true,,294,363,25,25,http://localhost:3000/api/cart,9,0,0
+1786902422653,15,04 Checkout,200,OK,Spike Virtual Users 1-8,text,true,,313,429,25,25,http://localhost:3000/api/checkout,15,0,0
+1786902422671,6,01 Login,200,OK,Spike Virtual Users 1-12,text,true,,635,227,25,25,http://localhost:3000/api/login,6,0,0
+1786902422688,4,03 Add Cart,200,OK,Spike Virtual Users 1-19,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902422703,4,01 Login,200,OK,Spike Virtual Users 1-9,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902422752,4,03 Add Cart,200,OK,Spike Virtual Users 1-21,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902422786,8,04 Checkout,200,OK,Spike Virtual Users 1-14,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902422801,4,03 Add Cart,200,OK,Spike Virtual Users 1-20,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902422801,6,03 Add Cart,200,OK,Spike Virtual Users 1-1,text,true,,294,363,25,25,http://localhost:3000/api/cart,6,0,0
+1786902422839,3,03 Add Cart,200,OK,Spike Virtual Users 1-18,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902422839,5,01 Login,200,OK,Spike Virtual Users 1-6,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,0
+1786902422988,4,01 Login,200,OK,Spike Virtual Users 1-5,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902423071,4,01 Login,200,OK,Spike Virtual Users 1-11,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902423071,6,01 Login,200,OK,Spike Virtual Users 1-17,text,true,,635,227,25,25,http://localhost:3000/api/login,6,0,0
+1786902423088,3,03 Add Cart,200,OK,Spike Virtual Users 1-22,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902423104,5,01 Login,200,OK,Spike Virtual Users 1-16,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,0
+1786902423104,6,01 Login,200,OK,Spike Virtual Users 1-10,text,true,,635,227,25,25,http://localhost:3000/api/login,6,0,0
+1786902423120,13,04 Checkout,200,OK,Spike Virtual Users 1-23,text,true,,313,429,25,25,http://localhost:3000/api/checkout,13,0,0
+1786902423139,3,03 Add Cart,200,OK,Spike Virtual Users 1-25,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902423135,7,04 Checkout,200,OK,Spike Virtual Users 1-24,text,true,,313,429,25,25,http://localhost:3000/api/checkout,7,0,0
+1786902423189,3,02 Product Detail,200,OK,Spike Virtual Users 1-2,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902423204,8,04 Checkout,200,OK,Spike Virtual Users 1-15,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902423237,3,02 Product Detail,200,OK,Spike Virtual Users 1-13,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902423271,5,02 Product Detail,200,OK,Spike Virtual Users 1-3,text,true,,451,338,25,25,http://localhost:3000/api/products/1,5,0,0
+1786902423271,7,01 Login,200,OK,Spike Virtual Users 1-8,text,true,,635,227,25,25,http://localhost:3000/api/login,6,0,0
+1786902423271,7,02 Product Detail,200,OK,Spike Virtual Users 1-12,text,true,,451,338,25,25,http://localhost:3000/api/products/1,7,0,0
+1786902423370,4,02 Product Detail,200,OK,Spike Virtual Users 1-4,text,true,,451,338,25,25,http://localhost:3000/api/products/1,4,0,0
+1786902423420,14,04 Checkout,200,OK,Spike Virtual Users 1-18,text,true,,313,429,25,25,http://localhost:3000/api/checkout,14,0,0
+1786902423420,16,01 Login,200,OK,Spike Virtual Users 1-14,text,true,,635,227,25,25,http://localhost:3000/api/login,16,0,0
+1786902423456,8,04 Checkout,200,OK,Spike Virtual Users 1-21,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902423490,7,04 Checkout,200,OK,Spike Virtual Users 1-20,text,true,,313,429,25,25,http://localhost:3000/api/checkout,7,0,0
+1786902423506,8,04 Checkout,200,OK,Spike Virtual Users 1-19,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902423506,8,02 Product Detail,200,OK,Spike Virtual Users 1-7,text,true,,451,338,25,25,http://localhost:3000/api/products/1,8,0,0
+1786902423522,8,04 Checkout,200,OK,Spike Virtual Users 1-1,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902423539,3,02 Product Detail,200,OK,Spike Virtual Users 1-9,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902423588,3,02 Product Detail,200,OK,Spike Virtual Users 1-6,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902423606,3,02 Product Detail,200,OK,Spike Virtual Users 1-16,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902423622,9,04 Checkout,200,OK,Spike Virtual Users 1-22,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902423789,5,03 Add Cart,200,OK,Spike Virtual Users 1-2,text,true,,294,363,25,25,http://localhost:3000/api/cart,5,0,0
+1786902423789,12,04 Checkout,200,OK,Spike Virtual Users 1-25,text,true,,313,429,25,25,http://localhost:3000/api/checkout,12,0,0
+1786902423805,4,01 Login,200,OK,Spike Virtual Users 1-23,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902423823,2,02 Product Detail,200,OK,Spike Virtual Users 1-17,text,true,,451,338,25,25,http://localhost:3000/api/products/1,2,0,0
+1786902423858,2,02 Product Detail,200,OK,Spike Virtual Users 1-14,text,true,,451,338,25,25,http://localhost:3000/api/products/1,2,0,0
+1786902423971,4,03 Add Cart,200,OK,Spike Virtual Users 1-4,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902423971,5,03 Add Cart,200,OK,Spike Virtual Users 1-13,text,true,,294,363,25,25,http://localhost:3000/api/cart,5,0,0
+1786902423989,5,02 Product Detail,200,OK,Spike Virtual Users 1-5,text,true,,451,338,25,25,http://localhost:3000/api/products/1,5,0,0
+1786902423989,5,01 Login,200,OK,Spike Virtual Users 1-19,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,0
+1786902424023,4,01 Login,200,OK,Spike Virtual Users 1-24,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902424039,3,02 Product Detail,200,OK,Spike Virtual Users 1-8,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902424039,3,02 Product Detail,200,OK,Spike Virtual Users 1-11,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902424070,4,03 Add Cart,200,OK,Spike Virtual Users 1-12,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902424070,6,02 Product Detail,200,OK,Spike Virtual Users 1-10,text,true,,451,338,25,25,http://localhost:3000/api/products/1,6,0,0
+1786902424070,8,01 Login,200,OK,Spike Virtual Users 1-15,text,true,,635,227,25,25,http://localhost:3000/api/login,8,0,0
+1786902424123,3,03 Add Cart,200,OK,Spike Virtual Users 1-16,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902424138,4,03 Add Cart,200,OK,Spike Virtual Users 1-3,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902424138,6,03 Add Cart,200,OK,Spike Virtual Users 1-7,text,true,,294,363,25,25,http://localhost:3000/api/cart,6,0,0
+1786902424171,7,01 Login,200,OK,Spike Virtual Users 1-20,text,true,,635,227,25,25,http://localhost:3000/api/login,7,0,0
+1786902424171,9,01 Login,200,OK,Spike Virtual Users 1-22,text,true,,635,227,25,25,http://localhost:3000/api/login,9,0,0
+1786902424240,5,03 Add Cart,200,OK,Spike Virtual Users 1-17,text,true,,294,363,25,25,http://localhost:3000/api/cart,5,0,0
+1786902424318,3,03 Add Cart,200,OK,Spike Virtual Users 1-6,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902424318,7,03 Add Cart,200,OK,Spike Virtual Users 1-9,text,true,,294,363,25,25,http://localhost:3000/api/cart,7,0,0
+1786902424349,4,03 Add Cart,200,OK,Spike Virtual Users 1-14,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902424349,8,01 Login,200,OK,Spike Virtual Users 1-18,text,true,,635,227,25,25,http://localhost:3000/api/login,7,0,0
+1786902424365,13,04 Checkout,200,OK,Spike Virtual Users 1-2,text,true,,313,429,25,25,http://localhost:3000/api/checkout,13,0,0
+1786902424426,4,01 Login,200,OK,Spike Virtual Users 1-21,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902424426,9,04 Checkout,200,OK,Spike Virtual Users 1-13,text,true,,313,429,25,25,http://localhost:3000/api/checkout,9,0,0
+1786902424503,4,01 Login,200,OK,Spike Virtual Users 1-1,text,true,,635,227,25,25,http://localhost:3000/api/login,3,0,0
+1786902424549,4,02 Product Detail,200,OK,Spike Virtual Users 1-15,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902424611,3,03 Add Cart,200,OK,Spike Virtual Users 1-10,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902424627,7,04 Checkout,200,OK,Spike Virtual Users 1-4,text,true,,313,429,25,25,http://localhost:3000/api/checkout,7,0,0
+1786902424673,4,03 Add Cart,200,OK,Spike Virtual Users 1-8,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902424689,6,01 Login,200,OK,Spike Virtual Users 1-25,text,true,,635,227,25,25,http://localhost:3000/api/login,6,0,0
+1786902424689,6,02 Product Detail,200,OK,Spike Virtual Users 1-23,text,true,,451,338,25,25,http://localhost:3000/api/products/1,6,0,0
+1786902424689,6,02 Product Detail,200,OK,Spike Virtual Users 1-19,text,true,,451,338,25,25,http://localhost:3000/api/products/1,6,0,0
+1786902424689,7,02 Product Detail,200,OK,Spike Virtual Users 1-20,text,true,,451,338,25,25,http://localhost:3000/api/products/1,7,0,0
+1786902424704,8,04 Checkout,200,OK,Spike Virtual Users 1-3,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902424721,2,02 Product Detail,200,OK,Spike Virtual Users 1-24,text,true,,451,338,25,25,http://localhost:3000/api/products/1,2,0,0
+1786902424858,8,04 Checkout,200,OK,Spike Virtual Users 1-7,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902424919,9,04 Checkout,200,OK,Spike Virtual Users 1-16,text,true,,313,429,25,25,http://localhost:3000/api/checkout,9,0,0
+1786902424935,5,03 Add Cart,200,OK,Spike Virtual Users 1-5,text,true,,294,363,25,25,http://localhost:3000/api/cart,5,0,0
+1786902424935,11,04 Checkout,200,OK,Spike Virtual Users 1-17,text,true,,313,429,25,25,http://localhost:3000/api/checkout,11,0,0
+1786902424966,4,01 Login,200,OK,Spike Virtual Users 1-13,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902424997,8,04 Checkout,200,OK,Spike Virtual Users 1-12,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902425012,4,03 Add Cart,200,OK,Spike Virtual Users 1-11,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902425012,4,02 Product Detail,200,OK,Spike Virtual Users 1-22,text,true,,451,338,25,25,http://localhost:3000/api/products/1,4,0,0
+1786902425104,9,04 Checkout,200,OK,Spike Virtual Users 1-9,text,true,,313,429,25,25,http://localhost:3000/api/checkout,9,0,0
+1786902425165,6,03 Add Cart,200,OK,Spike Virtual Users 1-19,text,true,,294,363,25,25,http://localhost:3000/api/cart,6,0,0
+1786902425165,11,04 Checkout,200,OK,Spike Virtual Users 1-6,text,true,,313,429,25,25,http://localhost:3000/api/checkout,11,0,0
+1786902425196,5,03 Add Cart,200,OK,Spike Virtual Users 1-15,text,true,,294,363,25,25,http://localhost:3000/api/cart,5,0,0
+1786902425196,10,04 Checkout,200,OK,Spike Virtual Users 1-14,text,true,,313,429,25,25,http://localhost:3000/api/checkout,10,0,0
+1786902425227,2,02 Product Detail,200,OK,Spike Virtual Users 1-25,text,true,,451,338,25,25,http://localhost:3000/api/products/1,2,0,0
+1786902425242,3,02 Product Detail,200,OK,Spike Virtual Users 1-18,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902425304,2,02 Product Detail,200,OK,Spike Virtual Users 1-21,text,true,,451,338,25,25,http://localhost:3000/api/products/1,2,0,0
+1786902425335,3,03 Add Cart,200,OK,Spike Virtual Users 1-23,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902425350,3,01 Login,200,OK,Spike Virtual Users 1-2,text,true,,635,227,25,25,http://localhost:3000/api/login,3,0,0
+1786902425380,3,03 Add Cart,200,OK,Spike Virtual Users 1-24,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902425427,3,02 Product Detail,200,OK,Spike Virtual Users 1-1,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902425457,3,03 Add Cart,200,OK,Spike Virtual Users 1-22,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902425457,6,03 Add Cart,200,OK,Spike Virtual Users 1-20,text,true,,294,363,25,25,http://localhost:3000/api/cart,6,0,0
+1786902425473,10,04 Checkout,200,OK,Spike Virtual Users 1-8,text,true,,313,429,25,25,http://localhost:3000/api/checkout,10,0,0
+1786902425473,14,04 Checkout,200,OK,Spike Virtual Users 1-10,text,true,,313,429,25,25,http://localhost:3000/api/checkout,14,0,0
+1786902425489,5,01 Login,200,OK,Spike Virtual Users 1-4,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,0
+1786902425489,7,01 Login,200,OK,Spike Virtual Users 1-7,text,true,,635,227,25,25,http://localhost:3000/api/login,7,0,0
+1786902425520,2,02 Product Detail,200,OK,Spike Virtual Users 1-13,text,true,,451,338,25,25,http://localhost:3000/api/products/1,2,0,0
+1786902425551,10,04 Checkout,200,OK,Spike Virtual Users 1-5,text,true,,313,429,25,25,http://localhost:3000/api/checkout,10,0,0
+1786902425644,3,01 Login,200,OK,Spike Virtual Users 1-6,text,true,,635,227,25,25,http://localhost:3000/api/login,3,0,0
+1786902425675,3,03 Add Cart,200,OK,Spike Virtual Users 1-25,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902425721,3,01 Login,200,OK,Spike Virtual Users 1-3,text,true,,635,227,25,25,http://localhost:3000/api/login,3,0,0
+1786902425737,7,04 Checkout,200,OK,Spike Virtual Users 1-15,text,true,,313,429,25,25,http://localhost:3000/api/checkout,7,0,0
+1786902425752,8,04 Checkout,200,OK,Spike Virtual Users 1-11,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902425767,4,01 Login,200,OK,Spike Virtual Users 1-17,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902425782,4,01 Login,200,OK,Spike Virtual Users 1-16,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902425845,4,01 Login,200,OK,Spike Virtual Users 1-12,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902425938,7,04 Checkout,200,OK,Spike Virtual Users 1-19,text,true,,313,429,25,25,http://localhost:3000/api/checkout,7,0,0
+1786902425985,3,03 Add Cart,200,OK,Spike Virtual Users 1-21,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902426000,3,02 Product Detail,200,OK,Spike Virtual Users 1-4,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902426031,8,04 Checkout,200,OK,Spike Virtual Users 1-23,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902426046,3,02 Product Detail,200,OK,Spike Virtual Users 1-2,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902426062,8,04 Checkout,200,OK,Spike Virtual Users 1-24,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902426077,4,01 Login,200,OK,Spike Virtual Users 1-14,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902426092,5,01 Login,200,OK,Spike Virtual Users 1-9,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,0
+1786902426186,3,01 Login,200,OK,Spike Virtual Users 1-10,text,true,,635,227,25,25,http://localhost:3000/api/login,3,0,0
+1786902426216,4,03 Add Cart,200,OK,Spike Virtual Users 1-18,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902426216,5,01 Login,200,OK,Spike Virtual Users 1-11,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,0
+1786902426233,3,02 Product Detail,200,OK,Spike Virtual Users 1-16,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902426233,3,02 Product Detail,200,OK,Spike Virtual Users 1-6,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902426249,4,03 Add Cart,200,OK,Spike Virtual Users 1-1,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902426249,11,04 Checkout,200,OK,Spike Virtual Users 1-22,text,true,,313,429,25,25,http://localhost:3000/api/checkout,11,0,0
+1786902426292,3,01 Login,200,OK,Spike Virtual Users 1-8,text,true,,635,227,25,25,http://localhost:3000/api/login,3,0,0
+1786902426377,4,02 Product Detail,200,OK,Spike Virtual Users 1-7,text,true,,451,338,25,25,http://localhost:3000/api/products/1,4,0,0
+1786902426377,9,04 Checkout,200,OK,Spike Virtual Users 1-20,text,true,,313,429,25,25,http://localhost:3000/api/checkout,9,0,0
+1786902426493,4,03 Add Cart,200,OK,Spike Virtual Users 1-13,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902426493,6,02 Product Detail,200,OK,Spike Virtual Users 1-3,text,true,,451,338,25,25,http://localhost:3000/api/products/1,6,0,0
+1786902426493,7,01 Login,200,OK,Spike Virtual Users 1-23,text,true,,635,227,25,25,http://localhost:3000/api/login,7,0,0
+1786902426510,4,01 Login,200,OK,Spike Virtual Users 1-19,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902426510,5,01 Login,200,OK,Spike Virtual Users 1-24,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,0
+1786902426526,4,01 Login,200,OK,Spike Virtual Users 1-5,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902426542,4,01 Login,200,OK,Spike Virtual Users 1-15,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902426559,3,02 Product Detail,200,OK,Spike Virtual Users 1-17,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902426609,10,04 Checkout,200,OK,Spike Virtual Users 1-21,text,true,,313,429,25,25,http://localhost:3000/api/checkout,10,0,0
+1786902426609,10,02 Product Detail,200,OK,Spike Virtual Users 1-9,text,true,,451,338,25,25,http://localhost:3000/api/products/1,10,0,0
+1786902426644,8,04 Checkout,200,OK,Spike Virtual Users 1-25,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902426659,3,03 Add Cart,200,OK,Spike Virtual Users 1-6,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902426693,3,02 Product Detail,200,OK,Spike Virtual Users 1-14,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902426729,4,01 Login,200,OK,Spike Virtual Users 1-22,text,true,,635,227,25,25,http://localhost:3000/api/login,3,0,0
+1786902426809,3,02 Product Detail,200,OK,Spike Virtual Users 1-12,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902426843,4,03 Add Cart,200,OK,Spike Virtual Users 1-4,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902426894,3,02 Product Detail,200,OK,Spike Virtual Users 1-10,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902426927,8,04 Checkout,200,OK,Spike Virtual Users 1-18,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902426943,3,03 Add Cart,200,OK,Spike Virtual Users 1-16,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902426962,4,01 Login,200,OK,Spike Virtual Users 1-20,text,true,,635,227,25,25,http://localhost:3000/api/login,3,0,0
+1786902426977,3,03 Add Cart,200,OK,Spike Virtual Users 1-2,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902427075,9,04 Checkout,200,OK,Spike Virtual Users 1-6,text,true,,313,429,25,25,http://localhost:3000/api/checkout,9,0,0
+1786902427110,5,01 Login,200,OK,Spike Virtual Users 1-21,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,0
+1786902427129,8,04 Checkout,200,OK,Spike Virtual Users 1-1,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902427171,3,03 Add Cart,200,OK,Spike Virtual Users 1-3,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902427171,4,02 Product Detail,200,OK,Spike Virtual Users 1-8,text,true,,451,338,25,25,http://localhost:3000/api/products/1,4,0,0
+1786902427178,3,03 Add Cart,200,OK,Spike Virtual Users 1-9,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902427183,2,02 Product Detail,200,OK,Spike Virtual Users 1-11,text,true,,451,338,25,25,http://localhost:3000/api/products/1,2,0,0
+1786902427276,3,03 Add Cart,200,OK,Spike Virtual Users 1-14,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902427276,5,02 Product Detail,200,OK,Spike Virtual Users 1-22,text,true,,451,338,25,25,http://localhost:3000/api/products/1,5,0,0
+1786902427293,3,02 Product Detail,200,OK,Spike Virtual Users 1-24,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902427310,3,02 Product Detail,200,OK,Spike Virtual Users 1-23,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902427360,3,02 Product Detail,200,OK,Spike Virtual Users 1-19,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902427362,12,04 Checkout,200,OK,Spike Virtual Users 1-13,text,true,,313,429,25,25,http://localhost:3000/api/checkout,12,0,0
+1786902427370,5,02 Product Detail,200,OK,Spike Virtual Users 1-5,text,true,,451,338,25,25,http://localhost:3000/api/products/1,5,0,0
+1786902427383,4,03 Add Cart,200,OK,Spike Virtual Users 1-7,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902427410,4,03 Add Cart,200,OK,Spike Virtual Users 1-12,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902427461,2,02 Product Detail,200,OK,Spike Virtual Users 1-20,text,true,,451,338,25,25,http://localhost:3000/api/products/1,2,0,0
+1786902427508,3,02 Product Detail,200,OK,Spike Virtual Users 1-15,text,true,,451,338,25,25,http://localhost:3000/api/products/1,2,0,0
+1786902427528,3,03 Add Cart,200,OK,Spike Virtual Users 1-17,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902427528,6,01 Login,200,OK,Spike Virtual Users 1-25,text,true,,635,227,25,25,http://localhost:3000/api/login,6,0,0
+1786902427576,4,01 Login,200,OK,Spike Virtual Users 1-18,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902427613,3,02 Product Detail,200,OK,Spike Virtual Users 1-21,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902427664,14,04 Checkout,200,OK,Spike Virtual Users 1-9,text,true,,313,429,25,25,http://localhost:3000/api/checkout,13,0,0
+1786902427697,3,03 Add Cart,200,OK,Spike Virtual Users 1-10,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902427713,4,01 Login,200,OK,Spike Virtual Users 1-1,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902427763,3,03 Add Cart,200,OK,Spike Virtual Users 1-8,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902427763,6,01 Login,200,OK,Spike Virtual Users 1-6,text,true,,635,227,25,25,http://localhost:3000/api/login,6,0,0
+1786902427779,8,04 Checkout,200,OK,Spike Virtual Users 1-16,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902427814,5,03 Add Cart,200,OK,Spike Virtual Users 1-11,text,true,,294,363,25,25,http://localhost:3000/api/cart,5,0,0
+1786902427814,11,04 Checkout,200,OK,Spike Virtual Users 1-3,text,true,,313,429,25,25,http://localhost:3000/api/checkout,11,0,0
+1786902427845,11,04 Checkout,200,OK,Spike Virtual Users 1-4,text,true,,313,429,25,25,http://localhost:3000/api/checkout,11,0,0
+1786902427845,15,04 Checkout,200,OK,Spike Virtual Users 1-14,text,true,,313,429,25,25,http://localhost:3000/api/checkout,15,0,0
+1786902427863,8,04 Checkout,200,OK,Spike Virtual Users 1-12,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902427878,3,03 Add Cart,200,OK,Spike Virtual Users 1-20,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902427927,5,03 Add Cart,200,OK,Spike Virtual Users 1-19,text,true,,294,363,25,25,http://localhost:3000/api/cart,5,0,0
+1786902427935,3,03 Add Cart,200,OK,Spike Virtual Users 1-23,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902427927,11,04 Checkout,200,OK,Spike Virtual Users 1-7,text,true,,313,429,25,25,http://localhost:3000/api/checkout,11,0,0
+1786902427946,8,04 Checkout,200,OK,Spike Virtual Users 1-2,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902427961,3,03 Add Cart,200,OK,Spike Virtual Users 1-15,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902427980,3,03 Add Cart,200,OK,Spike Virtual Users 1-24,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902428144,4,03 Add Cart,200,OK,Spike Virtual Users 1-22,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902428160,4,03 Add Cart,200,OK,Spike Virtual Users 1-5,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902428220,14,04 Checkout,200,OK,Spike Virtual Users 1-10,text,true,,313,429,25,25,http://localhost:3000/api/checkout,13,0,0
+1786902428245,4,01 Login,200,OK,Spike Virtual Users 1-3,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902428312,10,04 Checkout,200,OK,Spike Virtual Users 1-17,text,true,,313,429,25,25,http://localhost:3000/api/checkout,10,0,0
+1786902428328,3,01 Login,200,OK,Spike Virtual Users 1-13,text,true,,635,227,25,25,http://localhost:3000/api/login,3,0,0
+1786902428336,7,04 Checkout,200,OK,Spike Virtual Users 1-11,text,true,,313,429,25,25,http://localhost:3000/api/checkout,7,0,0
+1786902428379,3,02 Product Detail,200,OK,Spike Virtual Users 1-25,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902428397,4,03 Add Cart,200,OK,Spike Virtual Users 1-21,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902428428,9,04 Checkout,200,OK,Spike Virtual Users 1-23,text,true,,313,429,25,25,http://localhost:3000/api/checkout,9,0,0
+1786902428496,4,02 Product Detail,200,OK,Spike Virtual Users 1-18,text,true,,451,338,25,25,http://localhost:3000/api/products/1,4,0,0
+1786902428497,5,01 Login,200,OK,Spike Virtual Users 1-14,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,0
+1786902428497,6,01 Login,200,OK,Spike Virtual Users 1-9,text,true,,635,227,25,25,http://localhost:3000/api/login,6,0,0
+1786902428530,5,01 Login,200,OK,Spike Virtual Users 1-12,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,0
+1786902428547,2,02 Product Detail,200,OK,Spike Virtual Users 1-6,text,true,,451,338,25,25,http://localhost:3000/api/products/1,2,0,0
+1786902428562,10,02 Product Detail,200,OK,Spike Virtual Users 1-1,text,true,,451,338,25,25,http://localhost:3000/api/products/1,10,0,0
+1786902428562,10,04 Checkout,200,OK,Spike Virtual Users 1-8,text,true,,313,429,25,25,http://localhost:3000/api/checkout,10,0,0
+1786902428562,12,01 Login,200,OK,Spike Virtual Users 1-4,text,true,,635,227,25,25,http://localhost:3000/api/login,12,0,0
+1786902428628,11,04 Checkout,200,OK,Spike Virtual Users 1-22,text,true,,313,429,25,25,http://localhost:3000/api/checkout,11,0,0
+1786902428628,12,01 Login,200,OK,Spike Virtual Users 1-16,text,true,,635,227,25,25,http://localhost:3000/api/login,12,0,0
+1786902428645,4,01 Login,200,OK,Spike Virtual Users 1-2,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902428663,4,01 Login,200,OK,Spike Virtual Users 1-10,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902428666,13,04 Checkout,200,OK,Spike Virtual Users 1-24,text,true,,313,429,25,25,http://localhost:3000/api/checkout,13,0,0
+1786902428681,4,01 Login,200,OK,Spike Virtual Users 1-7,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902428746,4,01 Login,200,OK,Spike Virtual Users 1-17,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902428763,4,01 Login,200,OK,Spike Virtual Users 1-11,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902428781,8,04 Checkout,200,OK,Spike Virtual Users 1-20,text,true,,313,429,25,25,http://localhost:3000/api/checkout,8,0,0
+1786902428799,9,04 Checkout,200,OK,Spike Virtual Users 1-5,text,true,,313,429,25,25,http://localhost:3000/api/checkout,9,0,0
+1786902428880,11,04 Checkout,200,OK,Spike Virtual Users 1-19,text,true,,313,429,25,25,http://localhost:3000/api/checkout,11,0,0
+1786902428880,14,04 Checkout,200,OK,Spike Virtual Users 1-15,text,true,,313,429,25,25,http://localhost:3000/api/checkout,14,0,0
+1786902428913,9,04 Checkout,200,OK,Spike Virtual Users 1-21,text,true,,313,429,25,25,http://localhost:3000/api/checkout,9,0,0
+1786902428929,3,02 Product Detail,200,OK,Spike Virtual Users 1-3,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902428946,3,03 Add Cart,200,OK,Spike Virtual Users 1-18,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902428946,5,01 Login,200,OK,Spike Virtual Users 1-23,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,0
+1786902428963,3,03 Add Cart,200,OK,Spike Virtual Users 1-25,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902429062,4,03 Add Cart,200,OK,Spike Virtual Users 1-1,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902429077,3,03 Add Cart,200,OK,Spike Virtual Users 1-6,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902429097,3,02 Product Detail,200,OK,Spike Virtual Users 1-12,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902429132,3,02 Product Detail,200,OK,Spike Virtual Users 1-9,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902429164,3,02 Product Detail,200,OK,Spike Virtual Users 1-10,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902429214,3,02 Product Detail,200,OK,Spike Virtual Users 1-17,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902429265,3,02 Product Detail,200,OK,Spike Virtual Users 1-13,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902429283,3,02 Product Detail,200,OK,Spike Virtual Users 1-16,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902429348,3,02 Product Detail,200,OK,Spike Virtual Users 1-2,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902429365,4,01 Login,200,OK,Spike Virtual Users 1-24,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902429381,3,02 Product Detail,200,OK,Spike Virtual Users 1-11,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902429381,4,01 Login,200,OK,Spike Virtual Users 1-22,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902429398,4,02 Product Detail,200,OK,Spike Virtual Users 1-7,text,true,,451,338,25,25,http://localhost:3000/api/products/1,4,0,0
+1786902429398,4,01 Login,200,OK,Spike Virtual Users 1-21,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902429431,4,03 Add Cart,200,OK,Spike Virtual Users 1-3,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902429431,7,01 Login,200,OK,Spike Virtual Users 1-5,text,true,,635,227,25,25,http://localhost:3000/api/login,7,0,0
+1786902429448,3,02 Product Detail,200,OK,Spike Virtual Users 1-14,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902429447,5,01 Login,200,OK,Spike Virtual Users 1-8,text,true,,635,227,25,25,http://localhost:3000/api/login,5,0,0
+1786902429465,4,01 Login,200,OK,Spike Virtual Users 1-20,text,true,,635,227,25,25,http://localhost:3000/api/login,4,0,0
+1786902429515,3,01 Login,200,OK,Spike Virtual Users 1-15,text,true,,635,227,25,25,http://localhost:3000/api/login,3,0,0
+1786902429547,13,04 Checkout,200,OK,Spike Virtual Users 1-18,text,true,,313,429,25,25,http://localhost:3000/api/checkout,13,0,0
+1786902429581,2,02 Product Detail,200,OK,Spike Virtual Users 1-4,text,true,,451,338,25,25,http://localhost:3000/api/products/1,2,0,0
+1786902429615,3,02 Product Detail,200,OK,Spike Virtual Users 1-23,text,true,,451,338,25,25,http://localhost:3000/api/products/1,3,0,0
+1786902429647,3,01 Login,200,OK,Spike Virtual Users 1-19,text,true,,635,227,25,25,http://localhost:3000/api/login,3,0,0
+1786902429665,3,03 Add Cart,200,OK,Spike Virtual Users 1-9,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902429731,4,03 Add Cart,200,OK,Spike Virtual Users 1-17,text,true,,294,363,25,25,http://localhost:3000/api/cart,4,0,0
+1786902429748,9,04 Checkout,200,OK,Spike Virtual Users 1-25,text,true,,314,429,25,25,http://localhost:3000/api/checkout,9,0,0
+1786902429849,3,03 Add Cart,200,OK,Spike Virtual Users 1-10,text,true,,294,363,25,25,http://localhost:3000/api/cart,3,0,0
+1786902429849,6,03 Add Cart,200,OK,Spike Virtual Users 1-2,text,true,,294,363,25,25,http://localhost:3000/api/cart,6,0,0
+1786902429851,6,02 Product Detail,200,OK,Spike Virtual Users 1-22,text,true,,451,338,25,25,http://localhost:3000/api/products/1,6,0,0
+1786902429866,7,04 Checkout,200,OK,Spike Virtual Users 1-6,text,true,,314,429,25,25,http://localhost:3000/api/checkout,7,0,0
+1786902429914,4,03 Add Cart,200,OK,Spike Virtual Users 1-11,text,true,,294,363,24,24,http://localhost:3000/api/cart,3,0,0
+1786902429935,3,02 Product Detail,200,OK,Spike Virtual Users 1-15,text,true,,451,338,24,24,http://localhost:3000/api/products/1,3,0,0
+1786902429983,2,02 Product Detail,200,OK,Spike Virtual Users 1-8,text,true,,451,338,24,24,http://localhost:3000/api/products/1,2,0,0
+1786902429999,8,04 Checkout,200,OK,Spike Virtual Users 1-1,text,true,,314,429,24,24,http://localhost:3000/api/checkout,8,0,0
+1786902430017,3,03 Add Cart,200,OK,Spike Virtual Users 1-13,text,true,,294,363,23,23,http://localhost:3000/api/cart,3,0,0
+1786902430033,3,02 Product Detail,200,OK,Spike Virtual Users 1-24,text,true,,451,338,23,23,http://localhost:3000/api/products/1,2,0,0
+1786902430036,4,01 Login,200,OK,Spike Virtual Users 1-18,text,true,,635,227,23,23,http://localhost:3000/api/login,4,0,0
+1786902430052,2,02 Product Detail,200,OK,Spike Virtual Users 1-21,text,true,,451,338,23,23,http://localhost:3000/api/products/1,2,0,0
+1786902430100,3,03 Add Cart,200,OK,Spike Virtual Users 1-12,text,true,,294,363,23,23,http://localhost:3000/api/cart,3,0,0
+1786902430116,4,03 Add Cart,200,OK,Spike Virtual Users 1-16,text,true,,294,363,23,23,http://localhost:3000/api/cart,4,0,0
+1786902430133,3,02 Product Detail,200,OK,Spike Virtual Users 1-5,text,true,,451,338,23,23,http://localhost:3000/api/products/1,3,0,0
+1786902430149,13,04 Checkout,200,OK,Spike Virtual Users 1-3,text,true,,314,429,23,23,http://localhost:3000/api/checkout,13,0,0
+1786902430182,9,04 Checkout,200,OK,Spike Virtual Users 1-9,text,true,,314,429,22,22,http://localhost:3000/api/checkout,9,0,0
+1786902430264,3,03 Add Cart,200,OK,Spike Virtual Users 1-7,text,true,,294,363,21,21,http://localhost:3000/api/cart,3,0,0
+1786902430340,2,02 Product Detail,200,OK,Spike Virtual Users 1-20,text,true,,451,338,21,21,http://localhost:3000/api/products/1,2,0,0
+1786902430432,2,03 Add Cart,200,OK,Spike Virtual Users 1-14,text,true,,294,363,21,21,http://localhost:3000/api/cart,2,0,0
+1786902430478,4,01 Login,200,OK,Spike Virtual Users 1-25,text,true,,635,227,21,21,http://localhost:3000/api/login,4,0,0
+1786902430494,13,04 Checkout,200,OK,Spike Virtual Users 1-13,text,true,,314,429,21,21,http://localhost:3000/api/checkout,13,0,0
+1786902430541,3,03 Add Cart,200,OK,Spike Virtual Users 1-22,text,true,,294,363,20,20,http://localhost:3000/api/cart,3,0,0
+1786902430557,8,04 Checkout,200,OK,Spike Virtual Users 1-12,text,true,,314,429,20,20,http://localhost:3000/api/checkout,8,0,0
+1786902430572,5,03 Add Cart,200,OK,Spike Virtual Users 1-5,text,true,,294,363,19,19,http://localhost:3000/api/cart,5,0,0
+1786902430572,10,04 Checkout,200,OK,Spike Virtual Users 1-11,text,true,,314,429,19,19,http://localhost:3000/api/checkout,10,0,0
+1786902430588,3,03 Add Cart,200,OK,Spike Virtual Users 1-4,text,true,,294,363,18,18,http://localhost:3000/api/cart,3,0,0
+1786902430588,5,03 Add Cart,200,OK,Spike Virtual Users 1-21,text,true,,294,363,18,18,http://localhost:3000/api/cart,5,0,0
+1786902430604,3,03 Add Cart,200,OK,Spike Virtual Users 1-23,text,true,,294,363,18,18,http://localhost:3000/api/cart,3,0,0
+1786902430618,3,02 Product Detail,200,OK,Spike Virtual Users 1-19,text,true,,451,338,18,18,http://localhost:3000/api/products/1,2,0,0
+1786902430649,3,03 Add Cart,200,OK,Spike Virtual Users 1-8,text,true,,294,363,18,18,http://localhost:3000/api/cart,3,0,0
+1786902430665,2,02 Product Detail,200,OK,Spike Virtual Users 1-18,text,true,,451,338,18,18,http://localhost:3000/api/products/1,2,0,0
+1786902430726,11,04 Checkout,200,OK,Spike Virtual Users 1-16,text,true,,314,429,18,18,http://localhost:3000/api/checkout,11,0,0
+1786902430726,20,04 Checkout,200,OK,Spike Virtual Users 1-10,text,true,,314,429,17,17,http://localhost:3000/api/checkout,19,0,0
+1786902430726,20,04 Checkout,200,OK,Spike Virtual Users 1-17,text,true,,314,429,17,17,http://localhost:3000/api/checkout,20,0,0
+1786902430741,7,03 Add Cart,200,OK,Spike Virtual Users 1-15,text,true,,294,363,15,15,http://localhost:3000/api/cart,7,0,0
+1786902430833,8,04 Checkout,200,OK,Spike Virtual Users 1-7,text,true,,314,429,15,15,http://localhost:3000/api/checkout,8,0,0
+1786902430848,7,04 Checkout,200,OK,Spike Virtual Users 1-2,text,true,,314,429,14,14,http://localhost:3000/api/checkout,7,0,0
+1786902430863,8,04 Checkout,200,OK,Spike Virtual Users 1-14,text,true,,314,429,13,13,http://localhost:3000/api/checkout,8,0,0
+1786902430956,3,03 Add Cart,200,OK,Spike Virtual Users 1-20,text,true,,294,363,12,12,http://localhost:3000/api/cart,3,0,0
+1786902430972,3,03 Add Cart,200,OK,Spike Virtual Users 1-24,text,true,,294,363,12,12,http://localhost:3000/api/cart,3,0,0
+1786902431069,7,04 Checkout,200,OK,Spike Virtual Users 1-5,text,true,,314,429,12,12,http://localhost:3000/api/checkout,7,0,0
+1786902431146,8,04 Checkout,200,OK,Spike Virtual Users 1-4,text,true,,314,429,11,11,http://localhost:3000/api/checkout,8,0,0
+1786902431177,3,03 Add Cart,200,OK,Spike Virtual Users 1-19,text,true,,294,363,10,10,http://localhost:3000/api/cart,3,0,0
+1786902431177,11,04 Checkout,200,OK,Spike Virtual Users 1-15,text,true,,314,429,10,10,http://localhost:3000/api/checkout,11,0,0
+1786902431192,8,04 Checkout,200,OK,Spike Virtual Users 1-8,text,true,,314,429,9,9,http://localhost:3000/api/checkout,8,0,0
+1786902431239,8,04 Checkout,200,OK,Spike Virtual Users 1-23,text,true,,314,429,8,8,http://localhost:3000/api/checkout,8,0,0
+1786902431330,2,02 Product Detail,200,OK,Spike Virtual Users 1-25,text,true,,451,338,7,7,http://localhost:3000/api/products/1,2,0,0
+1786902431408,8,04 Checkout,200,OK,Spike Virtual Users 1-22,text,true,,314,429,7,7,http://localhost:3000/api/checkout,8,0,0
+1786902431439,7,04 Checkout,200,OK,Spike Virtual Users 1-20,text,true,,314,429,6,6,http://localhost:3000/api/checkout,7,0,0
+1786902431593,8,04 Checkout,200,OK,Spike Virtual Users 1-21,text,true,,314,429,5,5,http://localhost:3000/api/checkout,8,0,0
+1786902431607,3,03 Add Cart,200,OK,Spike Virtual Users 1-18,text,true,,294,363,4,4,http://localhost:3000/api/cart,3,0,0
+1786902431717,8,04 Checkout,200,OK,Spike Virtual Users 1-19,text,true,,314,429,4,4,http://localhost:3000/api/checkout,7,0,0
+1786902431778,3,03 Add Cart,200,OK,Spike Virtual Users 1-25,text,true,,294,363,3,3,http://localhost:3000/api/cart,3,0,0
+1786902431809,7,04 Checkout,200,OK,Spike Virtual Users 1-24,text,true,,314,429,3,3,http://localhost:3000/api/checkout,7,0,0
+1786902432468,11,04 Checkout,200,OK,Spike Virtual Users 1-25,text,true,,314,429,2,2,http://localhost:3000/api/checkout,11,0,0
+1786902432468,15,04 Checkout,200,OK,Spike Virtual Users 1-18,text,true,,314,429,1,1,http://localhost:3000/api/checkout,15,0,0

@@ -1,0 +1,201 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1786902265826,75,01 Login,200,OK,Load Virtual Users 1-1,text,true,,635,227,1,1,http://localhost:3000/api/login,75,0,35
+1786902266912,4,02 Product Detail,200,OK,Load Virtual Users 1-1,text,true,,451,338,1,1,http://localhost:3000/api/products/1,4,0,0
+1786902267382,8,03 Add Cart,200,OK,Load Virtual Users 1-1,text,true,,294,363,1,1,http://localhost:3000/api/cart,8,0,0
+1786902268250,15,04 Checkout,200,OK,Load Virtual Users 1-1,text,true,,312,429,2,2,http://localhost:3000/api/checkout,15,0,0
+1786902268836,6,01 Login,200,OK,Load Virtual Users 1-2,text,true,,635,227,2,2,http://localhost:3000/api/login,6,0,1
+1786902268927,5,01 Login,200,OK,Load Virtual Users 1-1,text,true,,635,227,2,2,http://localhost:3000/api/login,5,0,0
+1786902269390,4,02 Product Detail,200,OK,Load Virtual Users 1-1,text,true,,451,338,2,2,http://localhost:3000/api/products/1,4,0,0
+1786902269825,5,02 Product Detail,200,OK,Load Virtual Users 1-2,text,true,,451,338,2,2,http://localhost:3000/api/products/1,5,0,0
+1786902269964,4,03 Add Cart,200,OK,Load Virtual Users 1-1,text,true,,294,363,2,2,http://localhost:3000/api/cart,4,0,0
+1786902270421,15,04 Checkout,200,OK,Load Virtual Users 1-1,text,true,,312,429,2,2,http://localhost:3000/api/checkout,15,0,0
+1786902270738,5,03 Add Cart,200,OK,Load Virtual Users 1-2,text,true,,294,363,2,2,http://localhost:3000/api/cart,5,0,0
+1786902270872,6,01 Login,200,OK,Load Virtual Users 1-1,text,true,,635,227,2,2,http://localhost:3000/api/login,6,0,0
+1786902271222,9,04 Checkout,200,OK,Load Virtual Users 1-2,text,true,,312,429,3,3,http://localhost:3000/api/checkout,9,0,0
+1786902271671,3,02 Product Detail,200,OK,Load Virtual Users 1-1,text,true,,451,338,3,3,http://localhost:3000/api/products/1,3,0,0
+1786902271924,5,01 Login,200,OK,Load Virtual Users 1-2,text,true,,635,227,3,3,http://localhost:3000/api/login,5,0,0
+1786902272055,5,01 Login,200,OK,Load Virtual Users 1-3,text,true,,635,227,3,3,http://localhost:3000/api/login,5,0,2
+1786902272574,3,03 Add Cart,200,OK,Load Virtual Users 1-1,text,true,,294,363,3,3,http://localhost:3000/api/cart,3,0,0
+1786902272641,3,02 Product Detail,200,OK,Load Virtual Users 1-3,text,true,,451,338,3,3,http://localhost:3000/api/products/1,3,0,0
+1786902272712,2,02 Product Detail,200,OK,Load Virtual Users 1-2,text,true,,451,338,3,3,http://localhost:3000/api/products/1,2,0,0
+1786902273124,15,04 Checkout,200,OK,Load Virtual Users 1-1,text,true,,312,429,3,3,http://localhost:3000/api/checkout,15,0,0
+1786902273526,5,03 Add Cart,200,OK,Load Virtual Users 1-3,text,true,,294,363,3,3,http://localhost:3000/api/cart,5,0,0
+1786902273726,4,03 Add Cart,200,OK,Load Virtual Users 1-2,text,true,,294,363,3,3,http://localhost:3000/api/cart,4,0,0
+1786902274060,6,01 Login,200,OK,Load Virtual Users 1-1,text,true,,635,227,4,4,http://localhost:3000/api/login,6,0,0
+1786902274193,9,04 Checkout,200,OK,Load Virtual Users 1-3,text,true,,312,429,4,4,http://localhost:3000/api/checkout,9,0,0
+1786902274492,10,04 Checkout,200,OK,Load Virtual Users 1-2,text,true,,312,429,4,4,http://localhost:3000/api/checkout,10,0,0
+1786902275027,3,02 Product Detail,200,OK,Load Virtual Users 1-1,text,true,,451,338,4,4,http://localhost:3000/api/products/1,3,0,0
+1786902275046,4,01 Login,200,OK,Load Virtual Users 1-4,text,true,,635,227,4,4,http://localhost:3000/api/login,4,0,1
+1786902275062,3,01 Login,200,OK,Load Virtual Users 1-3,text,true,,635,227,4,4,http://localhost:3000/api/login,3,0,0
+1786902275446,3,03 Add Cart,200,OK,Load Virtual Users 1-1,text,true,,294,363,4,4,http://localhost:3000/api/cart,3,0,0
+1786902275461,5,01 Login,200,OK,Load Virtual Users 1-2,text,true,,635,227,4,4,http://localhost:3000/api/login,4,0,0
+1786902275862,3,02 Product Detail,200,OK,Load Virtual Users 1-4,text,true,,451,338,4,4,http://localhost:3000/api/products/1,3,0,0
+1786902275965,10,04 Checkout,200,OK,Load Virtual Users 1-1,text,true,,312,429,4,4,http://localhost:3000/api/checkout,10,0,0
+1786902275997,3,02 Product Detail,200,OK,Load Virtual Users 1-3,text,true,,451,338,4,4,http://localhost:3000/api/products/1,3,0,0
+1786902276045,3,02 Product Detail,200,OK,Load Virtual Users 1-2,text,true,,451,338,4,4,http://localhost:3000/api/products/1,3,0,0
+1786902276480,4,03 Add Cart,200,OK,Load Virtual Users 1-4,text,true,,294,363,4,4,http://localhost:3000/api/cart,4,0,0
+1786902276930,5,01 Login,200,OK,Load Virtual Users 1-1,text,true,,635,227,4,4,http://localhost:3000/api/login,5,0,0
+1786902276948,4,03 Add Cart,200,OK,Load Virtual Users 1-2,text,true,,294,363,4,4,http://localhost:3000/api/cart,3,0,0
+1786902276981,3,03 Add Cart,200,OK,Load Virtual Users 1-3,text,true,,294,363,4,4,http://localhost:3000/api/cart,3,0,0
+1786902277466,14,04 Checkout,200,OK,Load Virtual Users 1-2,text,true,,312,429,5,5,http://localhost:3000/api/checkout,14,0,0
+1786902277481,9,04 Checkout,200,OK,Load Virtual Users 1-4,text,true,,312,429,5,5,http://localhost:3000/api/checkout,9,0,0
+1786902277498,12,04 Checkout,200,OK,Load Virtual Users 1-3,text,true,,313,429,5,5,http://localhost:3000/api/checkout,12,0,0
+1786902277530,2,02 Product Detail,200,OK,Load Virtual Users 1-1,text,true,,451,338,5,5,http://localhost:3000/api/products/1,2,0,0
+1786902278001,5,01 Login,200,OK,Load Virtual Users 1-5,text,true,,635,227,5,5,http://localhost:3000/api/login,5,0,2
+1786902278066,7,01 Login,200,OK,Load Virtual Users 1-3,text,true,,635,227,5,5,http://localhost:3000/api/login,7,0,0
+1786902278282,4,03 Add Cart,200,OK,Load Virtual Users 1-1,text,true,,294,363,5,5,http://localhost:3000/api/cart,4,0,0
+1786902278314,5,01 Login,200,OK,Load Virtual Users 1-2,text,true,,635,227,5,5,http://localhost:3000/api/login,5,0,0
+1786902278450,4,01 Login,200,OK,Load Virtual Users 1-4,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902278989,3,02 Product Detail,200,OK,Load Virtual Users 1-3,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902278989,4,02 Product Detail,200,OK,Load Virtual Users 1-5,text,true,,451,338,5,5,http://localhost:3000/api/products/1,4,0,0
+1786902279098,3,02 Product Detail,200,OK,Load Virtual Users 1-2,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902279114,11,04 Checkout,200,OK,Load Virtual Users 1-1,text,true,,313,429,5,5,http://localhost:3000/api/checkout,11,0,0
+1786902279421,3,02 Product Detail,200,OK,Load Virtual Users 1-4,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902279467,3,03 Add Cart,200,OK,Load Virtual Users 1-5,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902279699,3,03 Add Cart,200,OK,Load Virtual Users 1-3,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902279852,4,03 Add Cart,200,OK,Load Virtual Users 1-4,text,true,,294,363,5,5,http://localhost:3000/api/cart,4,0,0
+1786902279961,4,03 Add Cart,200,OK,Load Virtual Users 1-2,text,true,,294,363,5,5,http://localhost:3000/api/cart,4,0,0
+1786902280008,14,04 Checkout,200,OK,Load Virtual Users 1-5,text,true,,313,429,5,5,http://localhost:3000/api/checkout,14,0,0
+1786902280072,4,01 Login,200,OK,Load Virtual Users 1-1,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902280553,9,04 Checkout,200,OK,Load Virtual Users 1-2,text,true,,313,429,5,5,http://localhost:3000/api/checkout,9,0,0
+1786902280587,3,01 Login,200,OK,Load Virtual Users 1-5,text,true,,635,227,5,5,http://localhost:3000/api/login,3,0,0
+1786902280636,8,04 Checkout,200,OK,Load Virtual Users 1-3,text,true,,313,429,5,5,http://localhost:3000/api/checkout,8,0,0
+1786902280854,8,04 Checkout,200,OK,Load Virtual Users 1-4,text,true,,313,429,5,5,http://localhost:3000/api/checkout,8,0,0
+1786902280870,3,02 Product Detail,200,OK,Load Virtual Users 1-1,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902281021,4,01 Login,200,OK,Load Virtual Users 1-2,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902281489,3,02 Product Detail,200,OK,Load Virtual Users 1-2,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902281537,6,01 Login,200,OK,Load Virtual Users 1-3,text,true,,635,227,5,5,http://localhost:3000/api/login,5,0,0
+1786902281604,2,02 Product Detail,200,OK,Load Virtual Users 1-5,text,true,,451,338,5,5,http://localhost:3000/api/products/1,2,0,0
+1786902281671,3,03 Add Cart,200,OK,Load Virtual Users 1-1,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902281837,4,01 Login,200,OK,Load Virtual Users 1-4,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902282205,13,04 Checkout,200,OK,Load Virtual Users 1-1,text,true,,313,429,5,5,http://localhost:3000/api/checkout,13,0,0
+1786902282354,4,03 Add Cart,200,OK,Load Virtual Users 1-2,text,true,,294,363,5,5,http://localhost:3000/api/cart,4,0,0
+1786902282506,3,02 Product Detail,200,OK,Load Virtual Users 1-3,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902282523,2,02 Product Detail,200,OK,Load Virtual Users 1-4,text,true,,451,338,5,5,http://localhost:3000/api/products/1,2,0,0
+1786902282573,3,03 Add Cart,200,OK,Load Virtual Users 1-5,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902282773,14,04 Checkout,200,OK,Load Virtual Users 1-2,text,true,,313,429,5,5,http://localhost:3000/api/checkout,14,0,0
+1786902282839,4,01 Login,200,OK,Load Virtual Users 1-1,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902283040,11,04 Checkout,200,OK,Load Virtual Users 1-5,text,true,,313,429,5,5,http://localhost:3000/api/checkout,11,0,0
+1786902283224,3,03 Add Cart,200,OK,Load Virtual Users 1-3,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902283324,4,03 Add Cart,200,OK,Load Virtual Users 1-4,text,true,,294,363,5,5,http://localhost:3000/api/cart,4,0,0
+1786902283491,4,01 Login,200,OK,Load Virtual Users 1-5,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902283558,6,01 Login,200,OK,Load Virtual Users 1-2,text,true,,635,227,5,5,http://localhost:3000/api/login,5,0,0
+1786902283592,2,02 Product Detail,200,OK,Load Virtual Users 1-1,text,true,,451,338,5,5,http://localhost:3000/api/products/1,2,0,0
+1786902283842,14,04 Checkout,200,OK,Load Virtual Users 1-4,text,true,,313,429,5,5,http://localhost:3000/api/checkout,14,0,0
+1786902283909,8,04 Checkout,200,OK,Load Virtual Users 1-3,text,true,,313,429,5,5,http://localhost:3000/api/checkout,8,0,0
+1786902284076,3,02 Product Detail,200,OK,Load Virtual Users 1-2,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902284158,3,02 Product Detail,200,OK,Load Virtual Users 1-5,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902284288,4,01 Login,200,OK,Load Virtual Users 1-4,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902284397,3,03 Add Cart,200,OK,Load Virtual Users 1-1,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902284458,4,01 Login,200,OK,Load Virtual Users 1-3,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902284565,3,03 Add Cart,200,OK,Load Virtual Users 1-5,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902284832,3,03 Add Cart,200,OK,Load Virtual Users 1-2,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902284986,2,02 Product Detail,200,OK,Load Virtual Users 1-3,text,true,,451,338,5,5,http://localhost:3000/api/products/1,2,0,0
+1786902285141,3,02 Product Detail,200,OK,Load Virtual Users 1-4,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902285157,13,04 Checkout,200,OK,Load Virtual Users 1-1,text,true,,313,429,5,5,http://localhost:3000/api/checkout,13,0,0
+1786902285434,3,03 Add Cart,200,OK,Load Virtual Users 1-3,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902285541,8,04 Checkout,200,OK,Load Virtual Users 1-5,text,true,,313,429,5,5,http://localhost:3000/api/checkout,8,0,0
+1786902285649,9,04 Checkout,200,OK,Load Virtual Users 1-2,text,true,,313,429,5,5,http://localhost:3000/api/checkout,8,0,0
+1786902285773,4,03 Add Cart,200,OK,Load Virtual Users 1-4,text,true,,294,363,5,5,http://localhost:3000/api/cart,4,0,0
+1786902286115,4,01 Login,200,OK,Load Virtual Users 1-1,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902286177,9,04 Checkout,200,OK,Load Virtual Users 1-3,text,true,,313,429,5,5,http://localhost:3000/api/checkout,9,0,0
+1786902286429,13,04 Checkout,200,OK,Load Virtual Users 1-4,text,true,,313,429,5,5,http://localhost:3000/api/checkout,12,0,0
+1786902286480,4,01 Login,200,OK,Load Virtual Users 1-5,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902286529,3,02 Product Detail,200,OK,Load Virtual Users 1-1,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902286549,4,01 Login,200,OK,Load Virtual Users 1-2,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902287046,5,02 Product Detail,200,OK,Load Virtual Users 1-5,text,true,,451,338,5,5,http://localhost:3000/api/products/1,5,0,0
+1786902287046,5,01 Login,200,OK,Load Virtual Users 1-3,text,true,,635,227,5,5,http://localhost:3000/api/login,5,0,0
+1786902287264,4,01 Login,200,OK,Load Virtual Users 1-4,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902287413,3,02 Product Detail,200,OK,Load Virtual Users 1-2,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902287532,3,03 Add Cart,200,OK,Load Virtual Users 1-1,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902287613,3,03 Add Cart,200,OK,Load Virtual Users 1-5,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902287830,4,03 Add Cart,200,OK,Load Virtual Users 1-2,text,true,,294,363,5,5,http://localhost:3000/api/cart,4,0,0
+1786902287898,3,02 Product Detail,200,OK,Load Virtual Users 1-4,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902288032,2,02 Product Detail,200,OK,Load Virtual Users 1-3,text,true,,451,338,5,5,http://localhost:3000/api/products/1,2,0,0
+1786902288065,8,04 Checkout,200,OK,Load Virtual Users 1-5,text,true,,313,429,5,5,http://localhost:3000/api/checkout,8,0,0
+1786902288370,14,04 Checkout,200,OK,Load Virtual Users 1-1,text,true,,313,429,5,5,http://localhost:3000/api/checkout,14,0,0
+1786902288415,5,03 Add Cart,200,OK,Load Virtual Users 1-4,text,true,,294,363,5,5,http://localhost:3000/api/cart,5,0,0
+1786902288569,8,04 Checkout,200,OK,Load Virtual Users 1-2,text,true,,313,429,5,5,http://localhost:3000/api/checkout,8,0,0
+1786902288600,5,01 Login,200,OK,Load Virtual Users 1-5,text,true,,635,227,5,5,http://localhost:3000/api/login,5,0,0
+1786902288785,3,03 Add Cart,200,OK,Load Virtual Users 1-3,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902289063,3,01 Login,200,OK,Load Virtual Users 1-1,text,true,,635,227,5,5,http://localhost:3000/api/login,3,0,0
+1786902289264,5,01 Login,200,OK,Load Virtual Users 1-2,text,true,,635,227,5,5,http://localhost:3000/api/login,5,0,0
+1786902289358,3,02 Product Detail,200,OK,Load Virtual Users 1-5,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902289405,14,04 Checkout,200,OK,Load Virtual Users 1-4,text,true,,313,429,5,5,http://localhost:3000/api/checkout,14,0,0
+1786902289498,9,04 Checkout,200,OK,Load Virtual Users 1-3,text,true,,313,429,5,5,http://localhost:3000/api/checkout,9,0,0
+1786902289743,3,02 Product Detail,200,OK,Load Virtual Users 1-1,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902289928,5,01 Login,200,OK,Load Virtual Users 1-4,text,true,,635,227,5,5,http://localhost:3000/api/login,5,0,0
+1786902289975,3,03 Add Cart,200,OK,Load Virtual Users 1-5,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902289991,2,02 Product Detail,200,OK,Load Virtual Users 1-2,text,true,,451,338,5,5,http://localhost:3000/api/products/1,2,0,0
+1786902290220,4,01 Login,200,OK,Load Virtual Users 1-3,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902290402,3,03 Add Cart,200,OK,Load Virtual Users 1-1,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902290484,3,03 Add Cart,200,OK,Load Virtual Users 1-2,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902290518,3,02 Product Detail,200,OK,Load Virtual Users 1-4,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902290819,14,04 Checkout,200,OK,Load Virtual Users 1-5,text,true,,313,429,5,5,http://localhost:3000/api/checkout,14,0,0
+1786902290936,3,02 Product Detail,200,OK,Load Virtual Users 1-3,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902291202,15,04 Checkout,200,OK,Load Virtual Users 1-1,text,true,,313,429,5,5,http://localhost:3000/api/checkout,14,0,0
+1786902291370,4,03 Add Cart,200,OK,Load Virtual Users 1-4,text,true,,294,363,5,5,http://localhost:3000/api/cart,4,0,0
+1786902291370,9,04 Checkout,200,OK,Load Virtual Users 1-2,text,true,,313,429,5,5,http://localhost:3000/api/checkout,9,0,0
+1786902291569,3,01 Login,200,OK,Load Virtual Users 1-5,text,true,,635,227,5,5,http://localhost:3000/api/login,3,0,0
+1786902291586,4,03 Add Cart,200,OK,Load Virtual Users 1-3,text,true,,294,363,5,5,http://localhost:3000/api/cart,4,0,0
+1786902291955,9,04 Checkout,200,OK,Load Virtual Users 1-4,text,true,,313,429,5,5,http://localhost:3000/api/checkout,9,0,0
+1786902291985,3,02 Product Detail,200,OK,Load Virtual Users 1-5,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902292000,4,01 Login,200,OK,Load Virtual Users 1-1,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902292120,5,01 Login,200,OK,Load Virtual Users 1-2,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902292155,9,04 Checkout,200,OK,Load Virtual Users 1-3,text,true,,313,429,5,5,http://localhost:3000/api/checkout,9,0,0
+1786902292424,3,03 Add Cart,200,OK,Load Virtual Users 1-5,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902292536,3,02 Product Detail,200,OK,Load Virtual Users 1-2,text,true,,451,338,5,5,http://localhost:3000/api/products/1,2,0,0
+1786902292645,2,02 Product Detail,200,OK,Load Virtual Users 1-1,text,true,,451,338,5,5,http://localhost:3000/api/products/1,2,0,0
+1786902292862,4,01 Login,200,OK,Load Virtual Users 1-3,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902292924,3,01 Login,200,OK,Load Virtual Users 1-4,text,true,,635,227,5,5,http://localhost:3000/api/login,3,0,0
+1786902293079,3,03 Add Cart,200,OK,Load Virtual Users 1-2,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902293188,9,04 Checkout,200,OK,Load Virtual Users 1-5,text,true,,313,429,5,5,http://localhost:3000/api/checkout,9,0,0
+1786902293500,3,03 Add Cart,200,OK,Load Virtual Users 1-1,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902293546,2,02 Product Detail,200,OK,Load Virtual Users 1-4,text,true,,451,338,5,5,http://localhost:3000/api/products/1,2,0,0
+1786902293746,2,02 Product Detail,200,OK,Load Virtual Users 1-3,text,true,,451,338,5,5,http://localhost:3000/api/products/1,2,0,0
+1786902293979,4,01 Login,200,OK,Load Virtual Users 1-5,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902293996,8,04 Checkout,200,OK,Load Virtual Users 1-2,text,true,,313,429,5,5,http://localhost:3000/api/checkout,8,0,0
+1786902294374,9,04 Checkout,200,OK,Load Virtual Users 1-1,text,true,,313,429,5,5,http://localhost:3000/api/checkout,9,0,0
+1786902294390,2,03 Add Cart,200,OK,Load Virtual Users 1-3,text,true,,294,363,4,4,http://localhost:3000/api/cart,2,0,0
+1786902294458,3,03 Add Cart,200,OK,Load Virtual Users 1-4,text,true,,294,363,4,4,http://localhost:3000/api/cart,3,0,0
+1786902294874,3,02 Product Detail,200,OK,Load Virtual Users 1-5,text,true,,451,338,4,4,http://localhost:3000/api/products/1,3,0,0
+1786902294889,5,01 Login,200,OK,Load Virtual Users 1-2,text,true,,635,227,4,4,http://localhost:3000/api/login,4,0,0
+1786902295242,13,04 Checkout,200,OK,Load Virtual Users 1-4,text,true,,313,429,4,4,http://localhost:3000/api/checkout,13,0,0
+1786902295259,9,04 Checkout,200,OK,Load Virtual Users 1-3,text,true,,313,429,4,4,http://localhost:3000/api/checkout,9,0,0
+1786902295310,2,03 Add Cart,200,OK,Load Virtual Users 1-5,text,true,,294,363,4,4,http://localhost:3000/api/cart,2,0,0
+1786902295526,2,02 Product Detail,200,OK,Load Virtual Users 1-2,text,true,,451,338,4,4,http://localhost:3000/api/products/1,2,0,0
+1786902295694,4,01 Login,200,OK,Load Virtual Users 1-4,text,true,,635,227,4,4,http://localhost:3000/api/login,4,0,0
+1786902296041,3,03 Add Cart,200,OK,Load Virtual Users 1-2,text,true,,294,363,4,4,http://localhost:3000/api/cart,3,0,0
+1786902296126,3,01 Login,200,OK,Load Virtual Users 1-3,text,true,,635,227,4,4,http://localhost:3000/api/login,3,0,0
+1786902296160,3,02 Product Detail,200,OK,Load Virtual Users 1-4,text,true,,451,338,4,4,http://localhost:3000/api/products/1,3,0,0
+1786902296193,14,04 Checkout,200,OK,Load Virtual Users 1-5,text,true,,313,429,4,4,http://localhost:3000/api/checkout,14,0,0
+1786902296571,2,02 Product Detail,200,OK,Load Virtual Users 1-3,text,true,,451,338,4,4,http://localhost:3000/api/products/1,2,0,0
+1786902296694,14,04 Checkout,200,OK,Load Virtual Users 1-2,text,true,,313,429,4,4,http://localhost:3000/api/checkout,14,0,0
+1786902296832,3,01 Login,200,OK,Load Virtual Users 1-5,text,true,,635,227,3,3,http://localhost:3000/api/login,3,0,0
+1786902296863,2,03 Add Cart,200,OK,Load Virtual Users 1-4,text,true,,294,363,3,3,http://localhost:3000/api/cart,2,0,0
+1786902297203,3,03 Add Cart,200,OK,Load Virtual Users 1-3,text,true,,294,363,3,3,http://localhost:3000/api/cart,3,0,0
+1786902297451,9,04 Checkout,200,OK,Load Virtual Users 1-4,text,true,,313,429,3,3,http://localhost:3000/api/checkout,9,0,0
+1786902297560,2,02 Product Detail,200,OK,Load Virtual Users 1-5,text,true,,451,338,3,3,http://localhost:3000/api/products/1,2,0,0
+1786902297837,13,04 Checkout,200,OK,Load Virtual Users 1-3,text,true,,313,429,3,3,http://localhost:3000/api/checkout,13,0,0
+1786902297992,3,01 Login,200,OK,Load Virtual Users 1-4,text,true,,635,227,3,3,http://localhost:3000/api/login,3,0,0
+1786902298101,3,03 Add Cart,200,OK,Load Virtual Users 1-5,text,true,,294,363,3,3,http://localhost:3000/api/cart,3,0,0
+1786902298429,3,02 Product Detail,200,OK,Load Virtual Users 1-4,text,true,,451,338,3,3,http://localhost:3000/api/products/1,3,0,0
+1786902298732,9,04 Checkout,200,OK,Load Virtual Users 1-5,text,true,,313,429,3,3,http://localhost:3000/api/checkout,9,0,0
+1786902298848,4,01 Login,200,OK,Load Virtual Users 1-3,text,true,,635,227,3,3,http://localhost:3000/api/login,4,0,0
+1786902299217,4,03 Add Cart,200,OK,Load Virtual Users 1-4,text,true,,294,363,3,3,http://localhost:3000/api/cart,4,0,0
+1786902299365,4,01 Login,200,OK,Load Virtual Users 1-5,text,true,,635,227,3,3,http://localhost:3000/api/login,4,0,0
+1786902299633,2,02 Product Detail,200,OK,Load Virtual Users 1-3,text,true,,451,338,3,3,http://localhost:3000/api/products/1,2,0,0
+1786902300115,8,04 Checkout,200,OK,Load Virtual Users 1-4,text,true,,313,429,3,3,http://localhost:3000/api/checkout,8,0,0
+1786902300183,4,03 Add Cart,200,OK,Load Virtual Users 1-3,text,true,,294,363,3,3,http://localhost:3000/api/cart,4,0,0
+1786902300233,4,02 Product Detail,200,OK,Load Virtual Users 1-5,text,true,,451,338,3,3,http://localhost:3000/api/products/1,4,0,0
+1786902300681,4,01 Login,200,OK,Load Virtual Users 1-4,text,true,,635,227,3,3,http://localhost:3000/api/login,4,0,0
+1786902300914,14,04 Checkout,200,OK,Load Virtual Users 1-3,text,true,,313,429,3,3,http://localhost:3000/api/checkout,14,0,0
+1786902300977,2,03 Add Cart,200,OK,Load Virtual Users 1-5,text,true,,294,363,2,2,http://localhost:3000/api/cart,2,0,0
+1786902301364,2,02 Product Detail,200,OK,Load Virtual Users 1-4,text,true,,451,338,2,2,http://localhost:3000/api/products/1,2,0,0
+1786902301767,9,04 Checkout,200,OK,Load Virtual Users 1-5,text,true,,313,429,2,2,http://localhost:3000/api/checkout,9,0,0
+1786902302260,4,03 Add Cart,200,OK,Load Virtual Users 1-4,text,true,,294,363,2,2,http://localhost:3000/api/cart,4,0,0
+1786902302649,4,01 Login,200,OK,Load Virtual Users 1-5,text,true,,635,227,2,2,http://localhost:3000/api/login,4,0,0
+1786902302679,14,04 Checkout,200,OK,Load Virtual Users 1-4,text,true,,313,429,2,2,http://localhost:3000/api/checkout,14,0,0
+1786902303579,2,02 Product Detail,200,OK,Load Virtual Users 1-5,text,true,,451,338,1,1,http://localhost:3000/api/products/1,2,0,0
+1786902304042,3,03 Add Cart,200,OK,Load Virtual Users 1-5,text,true,,294,363,1,1,http://localhost:3000/api/cart,3,0,0
+1786902304643,14,04 Checkout,200,OK,Load Virtual Users 1-5,text,true,,313,429,1,1,http://localhost:3000/api/checkout,14,0,0

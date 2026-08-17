@@ -1,0 +1,651 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1786902178994,453,01 Login,401,Unauthorized,Load Virtual Users 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,1,1,http://localhost:3000/api/login,453,0,58
+1786902180033,5,02 Product Detail,200,OK,Load Virtual Users 1-1,text,true,,267,223,1,1,http://localhost:3000/api/products/product_id,5,0,0
+1786902180558,7,03 Add Cart,400,Bad Request,Load Virtual Users 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,1,1,http://localhost:3000/api/cart,7,0,0
+1786902181103,4,04 Checkout,400,Bad Request,Load Virtual Users 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,1,1,http://localhost:3000/api/checkout,4,0,0
+1786902181704,4,01 Login,401,Unauthorized,Load Virtual Users 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,2,2,http://localhost:3000/api/login,4,0,1
+1786902181996,9,01 Login,200,OK,Load Virtual Users 1-1,text,true,,635,227,2,2,http://localhost:3000/api/login,9,0,0
+1786902182167,3,02 Product Detail,200,OK,Load Virtual Users 1-2,text,true,,267,223,2,2,http://localhost:3000/api/products/product_id,3,0,0
+1786902182733,5,03 Add Cart,400,Bad Request,Load Virtual Users 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,2,2,http://localhost:3000/api/cart,5,0,0
+1786902182937,4,02 Product Detail,200,OK,Load Virtual Users 1-1,text,true,,451,338,2,2,http://localhost:3000/api/products/1,4,0,0
+1786902183336,3,04 Checkout,400,Bad Request,Load Virtual Users 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,2,2,http://localhost:3000/api/checkout,3,0,0
+1786902183672,6,03 Add Cart,200,OK,Load Virtual Users 1-1,text,true,,294,363,2,2,http://localhost:3000/api/cart,5,0,0
+1786902184222,6,01 Login,200,OK,Load Virtual Users 1-2,text,true,,635,227,3,3,http://localhost:3000/api/login,6,0,0
+1786902184439,10,04 Checkout,200,OK,Load Virtual Users 1-1,text,true,,312,429,3,3,http://localhost:3000/api/checkout,10,0,0
+1786902184626,4,01 Login,401,Unauthorized,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,3,3,http://localhost:3000/api/login,4,0,1
+1786902185010,3,02 Product Detail,200,OK,Load Virtual Users 1-2,text,true,,451,338,3,3,http://localhost:3000/api/products/1,2,0,0
+1786902185181,5,01 Login,200,OK,Load Virtual Users 1-1,text,true,,635,227,3,3,http://localhost:3000/api/login,4,0,0
+1786902185526,4,02 Product Detail,200,OK,Load Virtual Users 1-3,text,true,,267,223,3,3,http://localhost:3000/api/products/product_id,4,0,0
+1786902185586,4,03 Add Cart,200,OK,Load Virtual Users 1-2,text,true,,294,363,3,3,http://localhost:3000/api/cart,4,0,0
+1786902185897,3,02 Product Detail,200,OK,Load Virtual Users 1-1,text,true,,451,338,3,3,http://localhost:3000/api/products/1,3,0,0
+1786902186255,3,03 Add Cart,400,Bad Request,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,3,3,http://localhost:3000/api/cart,3,0,0
+1786902186492,16,04 Checkout,200,OK,Load Virtual Users 1-2,text,true,,312,429,3,3,http://localhost:3000/api/checkout,16,0,0
+1786902186593,4,03 Add Cart,200,OK,Load Virtual Users 1-1,text,true,,294,363,3,3,http://localhost:3000/api/cart,4,0,0
+1786902186943,4,01 Login,401,Unauthorized,Load Virtual Users 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,3,3,http://localhost:3000/api/login,4,0,0
+1786902187077,12,04 Checkout,200,OK,Load Virtual Users 1-1,text,true,,312,429,3,3,http://localhost:3000/api/checkout,12,0,0
+1786902187241,3,04 Checkout,400,Bad Request,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,4,4,http://localhost:3000/api/checkout,3,0,0
+1786902187659,5,01 Login,200,OK,Load Virtual Users 1-1,text,true,,635,227,4,4,http://localhost:3000/api/login,5,0,0
+1786902187859,3,02 Product Detail,200,OK,Load Virtual Users 1-2,text,true,,267,223,4,4,http://localhost:3000/api/products/product_id,3,0,0
+1786902188145,6,01 Login,401,Unauthorized,Load Virtual Users 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,4,4,http://localhost:3000/api/login,6,0,2
+1786902188163,4,01 Login,200,OK,Load Virtual Users 1-3,text,true,,635,227,4,4,http://localhost:3000/api/login,4,0,0
+1786902188178,4,02 Product Detail,200,OK,Load Virtual Users 1-1,text,true,,451,338,4,4,http://localhost:3000/api/products/1,4,0,0
+1786902188645,2,03 Add Cart,400,Bad Request,Load Virtual Users 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,4,4,http://localhost:3000/api/cart,2,0,0
+1786902188754,2,02 Product Detail,200,OK,Load Virtual Users 1-4,text,true,,267,223,4,4,http://localhost:3000/api/products/product_id,2,0,0
+1786902188784,2,02 Product Detail,200,OK,Load Virtual Users 1-3,text,true,,451,338,4,4,http://localhost:3000/api/products/1,2,0,0
+1786902189033,3,03 Add Cart,200,OK,Load Virtual Users 1-1,text,true,,294,363,4,4,http://localhost:3000/api/cart,3,0,0
+1786902189438,2,04 Checkout,400,Bad Request,Load Virtual Users 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,4,4,http://localhost:3000/api/checkout,2,0,0
+1786902189499,9,04 Checkout,200,OK,Load Virtual Users 1-1,text,true,,312,429,4,4,http://localhost:3000/api/checkout,9,0,0
+1786902189531,3,03 Add Cart,400,Bad Request,Load Virtual Users 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,4,4,http://localhost:3000/api/cart,3,0,0
+1786902189593,3,03 Add Cart,200,OK,Load Virtual Users 1-3,text,true,,294,363,4,4,http://localhost:3000/api/cart,3,0,0
+1786902190117,2,01 Login,401,Unauthorized,Load Virtual Users 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,4,4,http://localhost:3000/api/login,2,0,0
+1786902190272,3,04 Checkout,400,Bad Request,Load Virtual Users 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,5,5,http://localhost:3000/api/checkout,3,0,0
+1786902190319,5,01 Login,200,OK,Load Virtual Users 1-1,text,true,,635,227,5,5,http://localhost:3000/api/login,5,0,0
+1786902190366,12,04 Checkout,200,OK,Load Virtual Users 1-3,text,true,,312,429,5,5,http://localhost:3000/api/checkout,12,0,0
+1786902190785,4,01 Login,200,OK,Load Virtual Users 1-4,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902190970,3,02 Product Detail,200,OK,Load Virtual Users 1-1,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902191018,4,01 Login,401,Unauthorized,Load Virtual Users 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,5,5,http://localhost:3000/api/login,4,0,1
+1786902191048,3,02 Product Detail,200,OK,Load Virtual Users 1-2,text,true,,267,223,5,5,http://localhost:3000/api/products/product_id,3,0,0
+1786902191171,3,01 Login,401,Unauthorized,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,5,5,http://localhost:3000/api/login,3,0,0
+1786902191528,2,02 Product Detail,200,OK,Load Virtual Users 1-4,text,true,,451,338,5,5,http://localhost:3000/api/products/1,2,0,0
+1786902191590,3,03 Add Cart,200,OK,Load Virtual Users 1-1,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902191605,2,02 Product Detail,200,OK,Load Virtual Users 1-3,text,true,,267,223,5,5,http://localhost:3000/api/products/product_id,2,0,0
+1786902191946,3,03 Add Cart,400,Bad Request,Load Virtual Users 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,5,5,http://localhost:3000/api/cart,3,0,0
+1786902191992,3,03 Add Cart,200,OK,Load Virtual Users 1-4,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902192007,4,02 Product Detail,200,OK,Load Virtual Users 1-5,text,true,,267,223,5,5,http://localhost:3000/api/products/product_id,4,0,0
+1786902192401,2,03 Add Cart,400,Bad Request,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,5,5,http://localhost:3000/api/cart,2,0,0
+1786902192469,9,04 Checkout,200,OK,Load Virtual Users 1-4,text,true,,312,429,5,5,http://localhost:3000/api/checkout,9,0,0
+1786902192568,9,04 Checkout,200,OK,Load Virtual Users 1-1,text,true,,312,429,5,5,http://localhost:3000/api/checkout,9,0,0
+1786902192885,3,04 Checkout,400,Bad Request,Load Virtual Users 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,5,5,http://localhost:3000/api/checkout,3,0,0
+1786902192985,3,03 Add Cart,400,Bad Request,Load Virtual Users 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,5,5,http://localhost:3000/api/cart,3,0,0
+1786902193020,2,04 Checkout,400,Bad Request,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,5,5,http://localhost:3000/api/checkout,2,0,0
+1786902193351,3,01 Login,401,Unauthorized,Load Virtual Users 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,5,5,http://localhost:3000/api/login,3,0,0
+1786902193403,6,01 Login,200,OK,Load Virtual Users 1-4,text,true,,635,227,5,5,http://localhost:3000/api/login,6,0,0
+1786902193719,2,01 Login,401,Unauthorized,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,5,5,http://localhost:3000/api/login,2,0,0
+1786902193736,2,04 Checkout,400,Bad Request,Load Virtual Users 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,5,5,http://localhost:3000/api/checkout,2,0,0
+1786902193815,4,01 Login,200,OK,Load Virtual Users 1-2,text,true,,635,227,5,5,http://localhost:3000/api/login,3,0,0
+1786902193888,3,02 Product Detail,200,OK,Load Virtual Users 1-1,text,true,,267,223,5,5,http://localhost:3000/api/products/product_id,3,0,0
+1786902194153,4,02 Product Detail,200,OK,Load Virtual Users 1-4,text,true,,451,338,5,5,http://localhost:3000/api/products/1,4,0,0
+1786902194204,3,02 Product Detail,200,OK,Load Virtual Users 1-3,text,true,,267,223,5,5,http://localhost:3000/api/products/product_id,3,0,0
+1786902194468,2,02 Product Detail,200,OK,Load Virtual Users 1-2,text,true,,451,338,5,5,http://localhost:3000/api/products/1,2,0,0
+1786902194703,4,01 Login,200,OK,Load Virtual Users 1-5,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902194718,2,03 Add Cart,400,Bad Request,Load Virtual Users 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,5,5,http://localhost:3000/api/cart,2,0,0
+1786902195057,4,03 Add Cart,200,OK,Load Virtual Users 1-2,text,true,,294,363,5,5,http://localhost:3000/api/cart,4,0,0
+1786902195088,4,03 Add Cart,200,OK,Load Virtual Users 1-4,text,true,,294,363,5,5,http://localhost:3000/api/cart,4,0,0
+1786902195088,5,03 Add Cart,400,Bad Request,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,5,5,http://localhost:3000/api/cart,5,0,0
+1786902195211,3,02 Product Detail,200,OK,Load Virtual Users 1-5,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902195335,3,04 Checkout,400,Bad Request,Load Virtual Users 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,5,5,http://localhost:3000/api/checkout,3,0,0
+1786902195800,19,04 Checkout,200,OK,Load Virtual Users 1-2,text,true,,312,429,5,5,http://localhost:3000/api/checkout,19,0,0
+1786902195893,3,01 Login,401,Unauthorized,Load Virtual Users 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,5,5,http://localhost:3000/api/login,3,0,0
+1786902195956,10,04 Checkout,200,OK,Load Virtual Users 1-4,text,true,,312,429,5,5,http://localhost:3000/api/checkout,10,0,0
+1786902196047,2,04 Checkout,400,Bad Request,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,5,5,http://localhost:3000/api/checkout,2,0,0
+1786902196123,3,03 Add Cart,200,OK,Load Virtual Users 1-5,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902196324,5,01 Login,200,OK,Load Virtual Users 1-2,text,true,,635,227,5,5,http://localhost:3000/api/login,5,0,0
+1786902196541,3,02 Product Detail,200,OK,Load Virtual Users 1-1,text,true,,267,223,5,5,http://localhost:3000/api/products/product_id,3,0,0
+1786902196792,11,04 Checkout,200,OK,Load Virtual Users 1-5,text,true,,313,429,5,5,http://localhost:3000/api/checkout,11,0,0
+1786902196942,2,01 Login,401,Unauthorized,Load Virtual Users 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,5,5,http://localhost:3000/api/login,2,0,0
+1786902197042,4,01 Login,200,OK,Load Virtual Users 1-3,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902197209,3,02 Product Detail,200,OK,Load Virtual Users 1-2,text,true,,451,338,5,5,http://localhost:3000/api/products/1,2,0,0
+1786902197274,3,03 Add Cart,400,Bad Request,Load Virtual Users 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,5,5,http://localhost:3000/api/cart,2,0,0
+1786902197327,4,01 Login,401,Unauthorized,Load Virtual Users 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,5,5,http://localhost:3000/api/login,4,0,0
+1786902197459,3,02 Product Detail,200,OK,Load Virtual Users 1-3,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902197759,3,02 Product Detail,200,OK,Load Virtual Users 1-5,text,true,,267,223,5,5,http://localhost:3000/api/products/product_id,3,0,0
+1786902197912,3,02 Product Detail,200,OK,Load Virtual Users 1-4,text,true,,267,223,5,5,http://localhost:3000/api/products/product_id,3,0,0
+1786902197927,4,03 Add Cart,200,OK,Load Virtual Users 1-2,text,true,,294,363,5,5,http://localhost:3000/api/cart,4,0,0
+1786902198060,3,04 Checkout,400,Bad Request,Load Virtual Users 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,5,5,http://localhost:3000/api/checkout,3,0,0
+1786902198093,4,03 Add Cart,200,OK,Load Virtual Users 1-3,text,true,,294,363,5,5,http://localhost:3000/api/cart,4,0,0
+1786902198412,2,03 Add Cart,400,Bad Request,Load Virtual Users 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,5,5,http://localhost:3000/api/cart,2,0,0
+1786902198494,3,01 Login,200,OK,Load Virtual Users 1-1,text,true,,635,227,5,5,http://localhost:3000/api/login,3,0,0
+1786902198510,3,03 Add Cart,400,Bad Request,Load Virtual Users 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,5,5,http://localhost:3000/api/cart,3,0,0
+1786902198729,8,04 Checkout,200,OK,Load Virtual Users 1-3,text,true,,313,429,5,5,http://localhost:3000/api/checkout,8,0,0
+1786902198929,10,04 Checkout,200,OK,Load Virtual Users 1-2,text,true,,313,429,5,5,http://localhost:3000/api/checkout,10,0,0
+1786902199214,2,04 Checkout,400,Bad Request,Load Virtual Users 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,5,5,http://localhost:3000/api/checkout,2,0,0
+1786902199229,3,04 Checkout,400,Bad Request,Load Virtual Users 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,5,5,http://localhost:3000/api/checkout,3,0,0
+1786902199229,5,02 Product Detail,200,OK,Load Virtual Users 1-1,text,true,,451,338,5,5,http://localhost:3000/api/products/1,5,0,0
+1786902199513,3,01 Login,401,Unauthorized,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,5,5,http://localhost:3000/api/login,3,0,0
+1786902199529,4,01 Login,200,OK,Load Virtual Users 1-2,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902199795,5,01 Login,200,OK,Load Virtual Users 1-5,text,true,,635,227,5,5,http://localhost:3000/api/login,5,0,0
+1786902199964,3,03 Add Cart,200,OK,Load Virtual Users 1-1,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902200149,3,01 Login,401,Unauthorized,Load Virtual Users 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,5,5,http://localhost:3000/api/login,3,0,0
+1786902200198,3,02 Product Detail,200,OK,Load Virtual Users 1-3,text,true,,267,223,5,5,http://localhost:3000/api/products/product_id,2,0,0
+1786902200398,3,02 Product Detail,200,OK,Load Virtual Users 1-2,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902200681,11,04 Checkout,200,OK,Load Virtual Users 1-1,text,true,,313,429,5,5,http://localhost:3000/api/checkout,10,0,0
+1786902200731,3,02 Product Detail,200,OK,Load Virtual Users 1-4,text,true,,267,223,5,5,http://localhost:3000/api/products/product_id,3,0,0
+1786902200800,2,02 Product Detail,200,OK,Load Virtual Users 1-5,text,true,,451,338,5,5,http://localhost:3000/api/products/1,2,0,0
+1786902200932,3,03 Add Cart,400,Bad Request,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,5,5,http://localhost:3000/api/cart,3,0,0
+1786902201064,4,03 Add Cart,200,OK,Load Virtual Users 1-2,text,true,,294,363,5,5,http://localhost:3000/api/cart,4,0,0
+1786902201408,2,03 Add Cart,400,Bad Request,Load Virtual Users 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,5,5,http://localhost:3000/api/cart,2,0,0
+1786902201502,3,03 Add Cart,200,OK,Load Virtual Users 1-5,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902201533,3,01 Login,401,Unauthorized,Load Virtual Users 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,5,5,http://localhost:3000/api/login,3,0,0
+1786902201698,9,04 Checkout,200,OK,Load Virtual Users 1-2,text,true,,313,429,5,5,http://localhost:3000/api/checkout,9,0,0
+1786902201761,3,04 Checkout,400,Bad Request,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,5,5,http://localhost:3000/api/checkout,2,0,0
+1786902201832,2,04 Checkout,400,Bad Request,Load Virtual Users 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,5,5,http://localhost:3000/api/checkout,2,0,0
+1786902202134,15,04 Checkout,200,OK,Load Virtual Users 1-5,text,true,,313,429,5,5,http://localhost:3000/api/checkout,15,0,0
+1786902202249,3,02 Product Detail,200,OK,Load Virtual Users 1-1,text,true,,267,223,5,5,http://localhost:3000/api/products/product_id,3,0,0
+1786902202558,3,01 Login,401,Unauthorized,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,5,5,http://localhost:3000/api/login,3,0,0
+1786902202620,5,01 Login,200,OK,Load Virtual Users 1-4,text,true,,635,227,5,5,http://localhost:3000/api/login,5,0,0
+1786902202682,4,01 Login,200,OK,Load Virtual Users 1-2,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902202884,2,03 Add Cart,400,Bad Request,Load Virtual Users 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,5,5,http://localhost:3000/api/cart,2,0,0
+1786902203055,2,01 Login,401,Unauthorized,Load Virtual Users 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,5,5,http://localhost:3000/api/login,2,0,0
+1786902203070,4,02 Product Detail,200,OK,Load Virtual Users 1-3,text,true,,267,223,5,5,http://localhost:3000/api/products/product_id,3,0,0
+1786902203351,2,04 Checkout,400,Bad Request,Load Virtual Users 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,5,5,http://localhost:3000/api/checkout,2,0,0
+1786902203567,3,02 Product Detail,200,OK,Load Virtual Users 1-4,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902203598,3,02 Product Detail,200,OK,Load Virtual Users 1-5,text,true,,267,223,5,5,http://localhost:3000/api/products/product_id,3,0,0
+1786902203662,2,02 Product Detail,200,OK,Load Virtual Users 1-2,text,true,,451,338,5,5,http://localhost:3000/api/products/1,2,0,0
+1786902203771,2,03 Add Cart,400,Bad Request,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,5,5,http://localhost:3000/api/cart,2,0,0
+1786902203909,4,01 Login,200,OK,Load Virtual Users 1-1,text,true,,635,227,5,5,http://localhost:3000/api/login,4,0,0
+1786902204270,4,03 Add Cart,200,OK,Load Virtual Users 1-4,text,true,,294,363,5,5,http://localhost:3000/api/cart,4,0,0
+1786902204336,2,04 Checkout,400,Bad Request,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,5,5,http://localhost:3000/api/checkout,2,0,0
+1786902204336,3,02 Product Detail,200,OK,Load Virtual Users 1-1,text,true,,451,338,5,5,http://localhost:3000/api/products/1,3,0,0
+1786902204487,2,03 Add Cart,400,Bad Request,Load Virtual Users 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,5,5,http://localhost:3000/api/cart,2,0,0
+1786902204487,4,03 Add Cart,200,OK,Load Virtual Users 1-2,text,true,,294,363,5,5,http://localhost:3000/api/cart,4,0,0
+1786902204819,16,04 Checkout,200,OK,Load Virtual Users 1-4,text,true,,313,429,5,5,http://localhost:3000/api/checkout,16,0,0
+1786902204838,3,01 Login,401,Unauthorized,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,5,5,http://localhost:3000/api/login,3,0,0
+1786902204903,12,04 Checkout,200,OK,Load Virtual Users 1-2,text,true,,313,429,5,5,http://localhost:3000/api/checkout,12,0,0
+1786902204988,3,03 Add Cart,200,OK,Load Virtual Users 1-1,text,true,,294,363,5,5,http://localhost:3000/api/cart,3,0,0
+1786902205406,2,04 Checkout,400,Bad Request,Load Virtual Users 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,5,5,http://localhost:3000/api/checkout,2,0,0
+1786902205506,3,01 Login,401,Unauthorized,Load Virtual Users 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,5,5,http://localhost:3000/api/login,2,0,0
+1786902205723,10,04 Checkout,200,OK,Load Virtual Users 1-1,text,true,,313,429,5,5,http://localhost:3000/api/checkout,10,0,0
+1786902205722,13,01 Login,200,OK,Load Virtual Users 1-4,text,true,,635,227,5,5,http://localhost:3000/api/login,13,0,0
+1786902205739,2,02 Product Detail,200,OK,Load Virtual Users 1-3,text,true,,267,223,4,4,http://localhost:3000/api/products/product_id,2,0,0
+1786902206006,2,02 Product Detail,200,OK,Load Virtual Users 1-2,text,true,,267,223,4,4,http://localhost:3000/api/products/product_id,2,0,0
+1786902206349,5,01 Login,200,OK,Load Virtual Users 1-5,text,true,,635,227,4,4,http://localhost:3000/api/login,5,0,0
+1786902206657,3,03 Add Cart,400,Bad Request,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,4,4,http://localhost:3000/api/cart,3,0,0
+1786902206689,2,02 Product Detail,200,OK,Load Virtual Users 1-4,text,true,,451,338,4,4,http://localhost:3000/api/products/1,2,0,0
+1786902207001,2,03 Add Cart,400,Bad Request,Load Virtual Users 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,4,4,http://localhost:3000/api/cart,2,0,0
+1786902207093,3,02 Product Detail,200,OK,Load Virtual Users 1-5,text,true,,451,338,4,4,http://localhost:3000/api/products/1,2,0,0
+1786902207295,3,03 Add Cart,200,OK,Load Virtual Users 1-4,text,true,,294,363,4,4,http://localhost:3000/api/cart,3,0,0
+1786902207542,4,03 Add Cart,200,OK,Load Virtual Users 1-5,text,true,,294,363,4,4,http://localhost:3000/api/cart,4,0,0
+1786902207542,5,04 Checkout,400,Bad Request,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,4,4,http://localhost:3000/api/checkout,5,0,0
+1786902207683,3,04 Checkout,400,Bad Request,Load Virtual Users 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,4,4,http://localhost:3000/api/checkout,2,0,0
+1786902207853,16,04 Checkout,200,OK,Load Virtual Users 1-4,text,true,,313,429,4,4,http://localhost:3000/api/checkout,16,0,0
+1786902208023,2,01 Login,401,Unauthorized,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,4,4,http://localhost:3000/api/login,2,0,0
+1786902208222,4,01 Login,200,OK,Load Virtual Users 1-2,text,true,,635,227,4,4,http://localhost:3000/api/login,4,0,0
+1786902208424,10,04 Checkout,200,OK,Load Virtual Users 1-5,text,true,,313,429,4,4,http://localhost:3000/api/checkout,10,0,0
+1786902208440,2,01 Login,401,Unauthorized,Load Virtual Users 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,4,4,http://localhost:3000/api/login,2,0,0
+1786902208610,2,02 Product Detail,200,OK,Load Virtual Users 1-3,text,true,,267,223,4,4,http://localhost:3000/api/products/product_id,2,0,0
+1786902209166,3,02 Product Detail,200,OK,Load Virtual Users 1-2,text,true,,451,338,4,4,http://localhost:3000/api/products/1,3,0,0
+1786902209228,4,01 Login,200,OK,Load Virtual Users 1-5,text,true,,635,227,4,4,http://localhost:3000/api/login,4,0,0
+1786902209446,2,02 Product Detail,200,OK,Load Virtual Users 1-4,text,true,,267,223,4,4,http://localhost:3000/api/products/product_id,2,0,0
+1786902209570,2,03 Add Cart,400,Bad Request,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,4,4,http://localhost:3000/api/cart,2,0,0
+1786902209709,3,03 Add Cart,200,OK,Load Virtual Users 1-2,text,true,,294,363,4,4,http://localhost:3000/api/cart,3,0,0
+1786902209925,3,02 Product Detail,200,OK,Load Virtual Users 1-5,text,true,,451,338,4,4,http://localhost:3000/api/products/1,3,0,0
+1786902210174,3,03 Add Cart,400,Bad Request,Load Virtual Users 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,4,4,http://localhost:3000/api/cart,3,0,0
+1786902210190,12,04 Checkout,200,OK,Load Virtual Users 1-2,text,true,,313,429,4,4,http://localhost:3000/api/checkout,12,0,0
+1786902210344,2,04 Checkout,400,Bad Request,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,3,3,http://localhost:3000/api/checkout,2,0,0
+1786902210591,3,03 Add Cart,200,OK,Load Virtual Users 1-5,text,true,,294,363,3,3,http://localhost:3000/api/cart,3,0,0
+1786902210699,3,04 Checkout,400,Bad Request,Load Virtual Users 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,3,3,http://localhost:3000/api/checkout,3,0,0
+1786902210792,2,01 Login,401,Unauthorized,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,3,3,http://localhost:3000/api/login,2,0,0
+1786902211226,3,02 Product Detail,200,OK,Load Virtual Users 1-3,text,true,,267,223,3,3,http://localhost:3000/api/products/product_id,2,0,0
+1786902211381,5,01 Login,200,OK,Load Virtual Users 1-4,text,true,,635,227,3,3,http://localhost:3000/api/login,5,0,0
+1786902211536,8,04 Checkout,200,OK,Load Virtual Users 1-5,text,true,,313,429,3,3,http://localhost:3000/api/checkout,8,0,0
+1786902211908,2,03 Add Cart,400,Bad Request,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,3,3,http://localhost:3000/api/cart,2,0,0
+1786902211970,3,02 Product Detail,200,OK,Load Virtual Users 1-4,text,true,,451,338,3,3,http://localhost:3000/api/products/1,3,0,0
+1786902212416,2,01 Login,401,Unauthorized,Load Virtual Users 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,3,3,http://localhost:3000/api/login,2,0,0
+1786902212532,2,04 Checkout,400,Bad Request,Load Virtual Users 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,3,3,http://localhost:3000/api/checkout,2,0,0
+1786902212532,4,03 Add Cart,200,OK,Load Virtual Users 1-4,text,true,,294,363,2,2,http://localhost:3000/api/cart,4,0,0
+1786902213232,16,04 Checkout,200,OK,Load Virtual Users 1-4,text,true,,313,429,2,2,http://localhost:3000/api/checkout,16,0,0
+1786902213350,3,02 Product Detail,200,OK,Load Virtual Users 1-5,text,true,,267,223,2,2,http://localhost:3000/api/products/product_id,2,0,0
+1786902213869,4,01 Login,200,OK,Load Virtual Users 1-4,text,true,,635,227,2,2,http://localhost:3000/api/login,4,0,0
+1786902214018,3,03 Add Cart,400,Bad Request,Load Virtual Users 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,2,2,http://localhost:3000/api/cart,3,0,0
+1786902214419,3,02 Product Detail,200,OK,Load Virtual Users 1-4,text,true,,451,338,2,2,http://localhost:3000/api/products/1,3,0,0
+1786902214435,2,04 Checkout,400,Bad Request,Load Virtual Users 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,2,2,http://localhost:3000/api/checkout,2,0,0
+1786902215206,4,03 Add Cart,200,OK,Load Virtual Users 1-4,text,true,,294,363,2,2,http://localhost:3000/api/cart,4,0,0
+1786902215313,3,01 Login,401,Unauthorized,Load Virtual Users 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[401]]]
+
+****** comparison: [[[200]]]
+
+/",314,217,2,2,http://localhost:3000/api/login,3,0,0
+1786902215731,10,04 Checkout,200,OK,Load Virtual Users 1-4,text,true,,313,429,2,2,http://localhost:3000/api/checkout,10,0,0
+1786902216122,3,02 Product Detail,200,OK,Load Virtual Users 1-5,text,true,,267,223,1,1,http://localhost:3000/api/products/product_id,3,0,0
+1786902216615,2,03 Add Cart,400,Bad Request,Load Virtual Users 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,255,1,1,http://localhost:3000/api/cart,2,0,0
+1786902217326,2,04 Checkout,400,Bad Request,Load Virtual Users 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",1534,281,1,1,http://localhost:3000/api/checkout,2,0,0
+1786902217946,4,01 Login,200,OK,Load Virtual Users 1-5,text,true,,635,227,1,1,http://localhost:3000/api/login,4,0,0
+1786902218857,3,02 Product Detail,200,OK,Load Virtual Users 1-5,text,true,,451,338,1,1,http://localhost:3000/api/products/1,3,0,0
+1786902219860,4,03 Add Cart,200,OK,Load Virtual Users 1-5,text,true,,294,363,1,1,http://localhost:3000/api/cart,4,0,0
+1786902220828,16,04 Checkout,200,OK,Load Virtual Users 1-5,text,true,,313,429,1,1,http://localhost:3000/api/checkout,16,0,0

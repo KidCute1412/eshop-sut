@@ -1,0 +1,801 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,bytes,sentBytes,grpThreads,allThreads,URL,Latency
+1786929761824,6,01 Login,200,OK,Stress Virtual Users 1-1,text,true,635,227,1,1,http://localhost:3000/api/login,5
+1786929762819,2,02 Product Detail,200,OK,Stress Virtual Users 1-1,text,true,451,338,2,2,http://localhost:3000/api/products/1,2
+1786929763270,3,01 Login,200,OK,Stress Virtual Users 1-2,text,true,635,227,2,2,http://localhost:3000/api/login,3
+1786929763744,3,03 Add Cart,200,OK,Stress Virtual Users 1-1,text,true,294,363,2,2,http://localhost:3000/api/cart,3
+1786929764197,3,02 Product Detail,200,OK,Stress Virtual Users 1-2,text,true,451,338,2,2,http://localhost:3000/api/products/1,2
+1786929764575,6,04 Checkout,200,OK,Stress Virtual Users 1-1,text,true,314,429,3,3,http://localhost:3000/api/checkout,6
+1786929765004,2,03 Add Cart,200,OK,Stress Virtual Users 1-2,text,true,294,363,3,3,http://localhost:3000/api/cart,2
+1786929765222,3,01 Login,200,OK,Stress Virtual Users 1-3,text,true,635,227,3,3,http://localhost:3000/api/login,3
+1786929765294,2,01 Login,200,OK,Stress Virtual Users 1-1,text,true,635,227,3,3,http://localhost:3000/api/login,2
+1786929765603,13,04 Checkout,200,OK,Stress Virtual Users 1-2,text,true,314,429,3,3,http://localhost:3000/api/checkout,12
+1786929765900,2,02 Product Detail,200,OK,Stress Virtual Users 1-3,text,true,451,338,4,4,http://localhost:3000/api/products/1,2
+1786929765907,3,02 Product Detail,200,OK,Stress Virtual Users 1-1,text,true,451,338,4,4,http://localhost:3000/api/products/1,3
+1786929766217,3,01 Login,200,OK,Stress Virtual Users 1-2,text,true,635,227,4,4,http://localhost:3000/api/login,3
+1786929766414,4,01 Login,200,OK,Stress Virtual Users 1-4,text,true,635,227,4,4,http://localhost:3000/api/login,4
+1786929766686,2,02 Product Detail,200,OK,Stress Virtual Users 1-2,text,true,451,338,4,4,http://localhost:3000/api/products/1,2
+1786929766719,2,03 Add Cart,200,OK,Stress Virtual Users 1-3,text,true,294,363,4,4,http://localhost:3000/api/cart,2
+1786929766754,3,03 Add Cart,200,OK,Stress Virtual Users 1-1,text,true,294,363,4,4,http://localhost:3000/api/cart,3
+1786929767059,2,02 Product Detail,200,OK,Stress Virtual Users 1-4,text,true,451,338,4,4,http://localhost:3000/api/products/1,2
+1786929767166,6,04 Checkout,200,OK,Stress Virtual Users 1-1,text,true,314,429,4,4,http://localhost:3000/api/checkout,6
+1786929767297,3,03 Add Cart,200,OK,Stress Virtual Users 1-2,text,true,294,363,5,5,http://localhost:3000/api/cart,3
+1786929767582,2,03 Add Cart,200,OK,Stress Virtual Users 1-4,text,true,294,363,5,5,http://localhost:3000/api/cart,2
+1786929767653,8,04 Checkout,200,OK,Stress Virtual Users 1-3,text,true,314,429,5,5,http://localhost:3000/api/checkout,8
+1786929767716,9,04 Checkout,200,OK,Stress Virtual Users 1-2,text,true,314,429,5,5,http://localhost:3000/api/checkout,9
+1786929767837,3,01 Login,200,OK,Stress Virtual Users 1-1,text,true,635,227,5,5,http://localhost:3000/api/login,3
+1786929767859,4,01 Login,200,OK,Stress Virtual Users 1-5,text,true,635,227,5,5,http://localhost:3000/api/login,4
+1786929768048,12,04 Checkout,200,OK,Stress Virtual Users 1-4,text,true,314,429,5,5,http://localhost:3000/api/checkout,12
+1786929768315,3,02 Product Detail,200,OK,Stress Virtual Users 1-5,text,true,451,338,5,5,http://localhost:3000/api/products/1,2
+1786929768409,3,01 Login,200,OK,Stress Virtual Users 1-3,text,true,635,227,5,5,http://localhost:3000/api/login,3
+1786929768467,3,01 Login,200,OK,Stress Virtual Users 1-4,text,true,635,227,5,5,http://localhost:3000/api/login,3
+1786929768649,3,01 Login,200,OK,Stress Virtual Users 1-2,text,true,635,227,5,5,http://localhost:3000/api/login,3
+1786929768707,3,02 Product Detail,200,OK,Stress Virtual Users 1-1,text,true,451,338,5,5,http://localhost:3000/api/products/1,3
+1786929768936,2,02 Product Detail,200,OK,Stress Virtual Users 1-3,text,true,451,338,6,6,http://localhost:3000/api/products/1,2
+1786929769153,5,01 Login,200,OK,Stress Virtual Users 1-6,text,true,635,227,6,6,http://localhost:3000/api/login,5
+1786929769207,3,03 Add Cart,200,OK,Stress Virtual Users 1-5,text,true,294,363,6,6,http://localhost:3000/api/cart,3
+1786929769449,2,02 Product Detail,200,OK,Stress Virtual Users 1-4,text,true,451,338,6,6,http://localhost:3000/api/products/1,2
+1786929769455,2,02 Product Detail,200,OK,Stress Virtual Users 1-2,text,true,451,338,6,6,http://localhost:3000/api/products/1,2
+1786929769502,2,03 Add Cart,200,OK,Stress Virtual Users 1-1,text,true,294,363,6,6,http://localhost:3000/api/cart,2
+1786929769581,3,03 Add Cart,200,OK,Stress Virtual Users 1-3,text,true,294,363,6,6,http://localhost:3000/api/cart,3
+1786929769867,3,03 Add Cart,200,OK,Stress Virtual Users 1-2,text,true,294,363,6,6,http://localhost:3000/api/cart,2
+1786929769960,7,04 Checkout,200,OK,Stress Virtual Users 1-5,text,true,314,429,6,6,http://localhost:3000/api/checkout,7
+1786929770037,1,02 Product Detail,200,OK,Stress Virtual Users 1-6,text,true,451,338,6,6,http://localhost:3000/api/products/1,1
+1786929770064,3,03 Add Cart,200,OK,Stress Virtual Users 1-4,text,true,294,363,6,6,http://localhost:3000/api/cart,3
+1786929770109,7,04 Checkout,200,OK,Stress Virtual Users 1-1,text,true,314,429,6,6,http://localhost:3000/api/checkout,7
+1786929770171,7,04 Checkout,200,OK,Stress Virtual Users 1-3,text,true,314,429,6,6,http://localhost:3000/api/checkout,7
+1786929770608,2,03 Add Cart,200,OK,Stress Virtual Users 1-6,text,true,294,363,7,7,http://localhost:3000/api/cart,2
+1786929770610,2,01 Login,200,OK,Stress Virtual Users 1-5,text,true,635,227,7,7,http://localhost:3000/api/login,2
+1786929770703,12,04 Checkout,200,OK,Stress Virtual Users 1-4,text,true,314,429,7,7,http://localhost:3000/api/checkout,12
+1786929770799,8,04 Checkout,200,OK,Stress Virtual Users 1-2,text,true,314,429,7,7,http://localhost:3000/api/checkout,8
+1786929770875,3,01 Login,200,OK,Stress Virtual Users 1-1,text,true,635,227,7,7,http://localhost:3000/api/login,3
+1786929771034,3,01 Login,200,OK,Stress Virtual Users 1-3,text,true,635,227,7,7,http://localhost:3000/api/login,3
+1786929771053,2,02 Product Detail,200,OK,Stress Virtual Users 1-5,text,true,451,338,7,7,http://localhost:3000/api/products/1,2
+1786929771249,4,01 Login,200,OK,Stress Virtual Users 1-7,text,true,635,227,7,7,http://localhost:3000/api/login,4
+1786929771482,3,01 Login,200,OK,Stress Virtual Users 1-2,text,true,635,227,7,7,http://localhost:3000/api/login,3
+1786929771503,3,01 Login,200,OK,Stress Virtual Users 1-4,text,true,635,227,7,7,http://localhost:3000/api/login,3
+1786929771589,2,03 Add Cart,200,OK,Stress Virtual Users 1-5,text,true,294,363,7,7,http://localhost:3000/api/cart,2
+1786929771600,7,04 Checkout,200,OK,Stress Virtual Users 1-6,text,true,314,429,7,7,http://localhost:3000/api/checkout,7
+1786929771617,2,02 Product Detail,200,OK,Stress Virtual Users 1-3,text,true,451,338,7,7,http://localhost:3000/api/products/1,2
+1786929771828,2,02 Product Detail,200,OK,Stress Virtual Users 1-1,text,true,451,338,8,8,http://localhost:3000/api/products/1,2
+1786929772084,2,02 Product Detail,200,OK,Stress Virtual Users 1-7,text,true,451,338,8,8,http://localhost:3000/api/products/1,2
+1786929772189,2,02 Product Detail,200,OK,Stress Virtual Users 1-2,text,true,451,338,8,8,http://localhost:3000/api/products/1,2
+1786929772205,3,03 Add Cart,200,OK,Stress Virtual Users 1-3,text,true,294,363,8,8,http://localhost:3000/api/cart,3
+1786929772281,4,01 Login,200,OK,Stress Virtual Users 1-6,text,true,635,227,8,8,http://localhost:3000/api/login,3
+1786929772374,4,01 Login,200,OK,Stress Virtual Users 1-8,text,true,635,227,8,8,http://localhost:3000/api/login,4
+1786929772377,1,02 Product Detail,200,OK,Stress Virtual Users 1-4,text,true,451,338,8,8,http://localhost:3000/api/products/1,1
+1786929772468,2,03 Add Cart,200,OK,Stress Virtual Users 1-1,text,true,294,363,8,8,http://localhost:3000/api/cart,2
+1786929772588,11,04 Checkout,200,OK,Stress Virtual Users 1-5,text,true,314,429,8,8,http://localhost:3000/api/checkout,11
+1786929772623,2,03 Add Cart,200,OK,Stress Virtual Users 1-7,text,true,294,363,8,8,http://localhost:3000/api/cart,2
+1786929772846,3,03 Add Cart,200,OK,Stress Virtual Users 1-2,text,true,294,363,8,8,http://localhost:3000/api/cart,3
+1786929772861,2,02 Product Detail,200,OK,Stress Virtual Users 1-6,text,true,451,338,8,8,http://localhost:3000/api/products/1,2
+1786929772880,7,04 Checkout,200,OK,Stress Virtual Users 1-3,text,true,314,429,8,8,http://localhost:3000/api/checkout,7
+1786929772983,2,03 Add Cart,200,OK,Stress Virtual Users 1-4,text,true,294,363,8,8,http://localhost:3000/api/cart,2
+1786929773112,2,02 Product Detail,200,OK,Stress Virtual Users 1-8,text,true,451,338,8,8,http://localhost:3000/api/products/1,2
+1786929773154,7,04 Checkout,200,OK,Stress Virtual Users 1-1,text,true,314,429,8,8,http://localhost:3000/api/checkout,7
+1786929773167,4,01 Login,200,OK,Stress Virtual Users 1-5,text,true,635,227,8,8,http://localhost:3000/api/login,4
+1786929773461,2,03 Add Cart,200,OK,Stress Virtual Users 1-6,text,true,294,363,9,9,http://localhost:3000/api/cart,2
+1786929773613,12,04 Checkout,200,OK,Stress Virtual Users 1-2,text,true,314,429,9,9,http://localhost:3000/api/checkout,12
+1786929773617,12,04 Checkout,200,OK,Stress Virtual Users 1-7,text,true,314,429,9,9,http://localhost:3000/api/checkout,12
+1786929773634,3,01 Login,200,OK,Stress Virtual Users 1-1,text,true,635,227,9,9,http://localhost:3000/api/login,3
+1786929773738,4,01 Login,200,OK,Stress Virtual Users 1-9,text,true,635,227,9,9,http://localhost:3000/api/login,4
+1786929773766,3,01 Login,200,OK,Stress Virtual Users 1-3,text,true,635,227,9,9,http://localhost:3000/api/login,3
+1786929773912,2,02 Product Detail,200,OK,Stress Virtual Users 1-5,text,true,451,338,9,9,http://localhost:3000/api/products/1,2
+1786929773918,11,04 Checkout,200,OK,Stress Virtual Users 1-4,text,true,314,429,9,9,http://localhost:3000/api/checkout,11
+1786929774017,3,03 Add Cart,200,OK,Stress Virtual Users 1-8,text,true,294,363,9,9,http://localhost:3000/api/cart,3
+1786929774038,6,04 Checkout,200,OK,Stress Virtual Users 1-6,text,true,314,429,9,9,http://localhost:3000/api/checkout,6
+1786929774085,4,01 Login,200,OK,Stress Virtual Users 1-7,text,true,635,227,9,9,http://localhost:3000/api/login,4
+1786929774305,3,02 Product Detail,200,OK,Stress Virtual Users 1-3,text,true,451,338,9,9,http://localhost:3000/api/products/1,3
+1786929774451,2,01 Login,200,OK,Stress Virtual Users 1-4,text,true,635,227,9,9,http://localhost:3000/api/login,2
+1786929774530,11,04 Checkout,200,OK,Stress Virtual Users 1-8,text,true,314,429,9,9,http://localhost:3000/api/checkout,11
+1786929774564,3,01 Login,200,OK,Stress Virtual Users 1-6,text,true,635,227,9,9,http://localhost:3000/api/login,3
+1786929774588,2,02 Product Detail,200,OK,Stress Virtual Users 1-1,text,true,451,338,9,9,http://localhost:3000/api/products/1,2
+1786929774602,2,02 Product Detail,200,OK,Stress Virtual Users 1-9,text,true,451,338,9,9,http://localhost:3000/api/products/1,2
+1786929774615,3,01 Login,200,OK,Stress Virtual Users 1-2,text,true,635,227,9,9,http://localhost:3000/api/login,3
+1786929774671,2,02 Product Detail,200,OK,Stress Virtual Users 1-7,text,true,451,338,9,9,http://localhost:3000/api/products/1,2
+1786929774715,3,03 Add Cart,200,OK,Stress Virtual Users 1-5,text,true,294,363,9,9,http://localhost:3000/api/cart,3
+1786929775064,3,01 Login,200,OK,Stress Virtual Users 1-8,text,true,635,227,10,10,http://localhost:3000/api/login,3
+1786929775123,1,02 Product Detail,200,OK,Stress Virtual Users 1-4,text,true,451,338,10,10,http://localhost:3000/api/products/1,1
+1786929775144,3,03 Add Cart,200,OK,Stress Virtual Users 1-3,text,true,294,363,10,10,http://localhost:3000/api/cart,3
+1786929775166,2,02 Product Detail,200,OK,Stress Virtual Users 1-2,text,true,451,338,10,10,http://localhost:3000/api/products/1,2
+1786929775196,3,03 Add Cart,200,OK,Stress Virtual Users 1-7,text,true,294,363,10,10,http://localhost:3000/api/cart,3
+1786929775389,2,02 Product Detail,200,OK,Stress Virtual Users 1-6,text,true,451,338,10,10,http://localhost:3000/api/products/1,2
+1786929775396,2,03 Add Cart,200,OK,Stress Virtual Users 1-9,text,true,294,363,10,10,http://localhost:3000/api/cart,2
+1786929775541,8,04 Checkout,200,OK,Stress Virtual Users 1-5,text,true,314,429,10,10,http://localhost:3000/api/checkout,8
+1786929775554,3,03 Add Cart,200,OK,Stress Virtual Users 1-1,text,true,294,363,10,10,http://localhost:3000/api/cart,3
+1786929775560,4,01 Login,200,OK,Stress Virtual Users 1-10,text,true,635,227,10,10,http://localhost:3000/api/login,4
+1786929775652,2,03 Add Cart,200,OK,Stress Virtual Users 1-4,text,true,294,363,10,10,http://localhost:3000/api/cart,2
+1786929775720,3,03 Add Cart,200,OK,Stress Virtual Users 1-2,text,true,294,363,10,10,http://localhost:3000/api/cart,3
+1786929775733,6,04 Checkout,200,OK,Stress Virtual Users 1-7,text,true,314,429,10,10,http://localhost:3000/api/checkout,6
+1786929775900,8,04 Checkout,200,OK,Stress Virtual Users 1-9,text,true,314,429,10,10,http://localhost:3000/api/checkout,8
+1786929776009,2,02 Product Detail,200,OK,Stress Virtual Users 1-8,text,true,451,338,10,10,http://localhost:3000/api/products/1,2
+1786929776057,2,03 Add Cart,200,OK,Stress Virtual Users 1-6,text,true,294,363,10,10,http://localhost:3000/api/cart,2
+1786929776056,6,04 Checkout,200,OK,Stress Virtual Users 1-3,text,true,314,429,10,10,http://localhost:3000/api/checkout,6
+1786929776135,8,04 Checkout,200,OK,Stress Virtual Users 1-4,text,true,314,429,10,10,http://localhost:3000/api/checkout,8
+1786929776229,7,04 Checkout,200,OK,Stress Virtual Users 1-1,text,true,314,429,10,10,http://localhost:3000/api/checkout,7
+1786929776256,2,02 Product Detail,200,OK,Stress Virtual Users 1-10,text,true,451,338,11,11,http://localhost:3000/api/products/1,2
+1786929776300,6,04 Checkout,200,OK,Stress Virtual Users 1-2,text,true,314,429,11,11,http://localhost:3000/api/checkout,6
+1786929776378,3,01 Login,200,OK,Stress Virtual Users 1-5,text,true,635,227,11,11,http://localhost:3000/api/login,3
+1786929776621,3,01 Login,200,OK,Stress Virtual Users 1-4,text,true,635,227,11,11,http://localhost:3000/api/login,3
+1786929776675,3,01 Login,200,OK,Stress Virtual Users 1-9,text,true,635,227,11,11,http://localhost:3000/api/login,3
+1786929776686,4,01 Login,200,OK,Stress Virtual Users 1-7,text,true,635,227,11,11,http://localhost:3000/api/login,4
+1786929776695,2,01 Login,200,OK,Stress Virtual Users 1-1,text,true,635,227,11,11,http://localhost:3000/api/login,2
+1786929776841,8,04 Checkout,200,OK,Stress Virtual Users 1-6,text,true,314,429,11,11,http://localhost:3000/api/checkout,8
+1786929776870,3,03 Add Cart,200,OK,Stress Virtual Users 1-8,text,true,294,363,11,11,http://localhost:3000/api/cart,3
+1786929776946,3,01 Login,200,OK,Stress Virtual Users 1-3,text,true,635,227,11,11,http://localhost:3000/api/login,3
+1786929776961,3,01 Login,200,OK,Stress Virtual Users 1-2,text,true,635,227,11,11,http://localhost:3000/api/login,3
+1786929777033,2,03 Add Cart,200,OK,Stress Virtual Users 1-10,text,true,294,363,11,11,http://localhost:3000/api/cart,2
+1786929777134,3,01 Login,200,OK,Stress Virtual Users 1-11,text,true,635,227,11,11,http://localhost:3000/api/login,3
+1786929777140,2,02 Product Detail,200,OK,Stress Virtual Users 1-5,text,true,451,338,11,11,http://localhost:3000/api/products/1,2
+1786929777173,3,02 Product Detail,200,OK,Stress Virtual Users 1-4,text,true,451,338,11,11,http://localhost:3000/api/products/1,3
+1786929777296,1,02 Product Detail,200,OK,Stress Virtual Users 1-7,text,true,451,338,11,11,http://localhost:3000/api/products/1,1
+1786929777334,2,02 Product Detail,200,OK,Stress Virtual Users 1-9,text,true,451,338,11,11,http://localhost:3000/api/products/1,2
+1786929777422,2,02 Product Detail,200,OK,Stress Virtual Users 1-1,text,true,451,338,11,11,http://localhost:3000/api/products/1,2
+1786929777463,2,02 Product Detail,200,OK,Stress Virtual Users 1-2,text,true,451,338,11,11,http://localhost:3000/api/products/1,2
+1786929777556,12,04 Checkout,200,OK,Stress Virtual Users 1-8,text,true,314,429,11,11,http://localhost:3000/api/checkout,12
+1786929777594,2,02 Product Detail,200,OK,Stress Virtual Users 1-11,text,true,451,338,11,11,http://localhost:3000/api/products/1,2
+1786929777664,2,03 Add Cart,200,OK,Stress Virtual Users 1-5,text,true,294,363,11,11,http://localhost:3000/api/cart,2
+1786929777761,3,01 Login,200,OK,Stress Virtual Users 1-6,text,true,635,227,12,12,http://localhost:3000/api/login,3
+1786929777775,2,03 Add Cart,200,OK,Stress Virtual Users 1-9,text,true,294,363,12,12,http://localhost:3000/api/cart,2
+1786929777809,12,04 Checkout,200,OK,Stress Virtual Users 1-10,text,true,314,429,12,12,http://localhost:3000/api/checkout,12
+1786929777895,2,02 Product Detail,200,OK,Stress Virtual Users 1-3,text,true,451,338,12,12,http://localhost:3000/api/products/1,2
+1786929777947,2,03 Add Cart,200,OK,Stress Virtual Users 1-4,text,true,294,363,12,12,http://localhost:3000/api/cart,2
+1786929778014,2,03 Add Cart,200,OK,Stress Virtual Users 1-2,text,true,294,363,12,12,http://localhost:3000/api/cart,2
+1786929778050,3,03 Add Cart,200,OK,Stress Virtual Users 1-11,text,true,294,363,12,12,http://localhost:3000/api/cart,3
+1786929778078,2,03 Add Cart,200,OK,Stress Virtual Users 1-7,text,true,294,363,12,12,http://localhost:3000/api/cart,2
+1786929778189,8,04 Checkout,200,OK,Stress Virtual Users 1-5,text,true,314,429,12,12,http://localhost:3000/api/checkout,8
+1786929778314,2,02 Product Detail,200,OK,Stress Virtual Users 1-6,text,true,451,338,12,12,http://localhost:3000/api/products/1,2
+1786929778408,3,03 Add Cart,200,OK,Stress Virtual Users 1-1,text,true,294,363,12,12,http://localhost:3000/api/cart,3
+1786929778445,3,03 Add Cart,200,OK,Stress Virtual Users 1-3,text,true,294,363,12,12,http://localhost:3000/api/cart,3
+1786929778485,6,04 Checkout,200,OK,Stress Virtual Users 1-11,text,true,314,429,12,12,http://localhost:3000/api/checkout,6
+1786929778537,3,01 Login,200,OK,Stress Virtual Users 1-10,text,true,635,227,12,12,http://localhost:3000/api/login,3
+1786929778545,3,01 Login,200,OK,Stress Virtual Users 1-8,text,true,635,227,12,12,http://localhost:3000/api/login,3
+1786929778552,4,01 Login,200,OK,Stress Virtual Users 1-12,text,true,635,227,12,12,http://localhost:3000/api/login,4
+1786929778652,7,04 Checkout,200,OK,Stress Virtual Users 1-9,text,true,314,429,12,12,http://localhost:3000/api/checkout,7
+1786929778719,3,01 Login,200,OK,Stress Virtual Users 1-5,text,true,635,227,12,12,http://localhost:3000/api/login,3
+1786929778736,6,04 Checkout,200,OK,Stress Virtual Users 1-4,text,true,314,429,12,12,http://localhost:3000/api/checkout,6
+1786929778871,2,03 Add Cart,200,OK,Stress Virtual Users 1-6,text,true,294,363,12,12,http://localhost:3000/api/cart,2
+1786929778889,7,04 Checkout,200,OK,Stress Virtual Users 1-7,text,true,314,429,12,12,http://localhost:3000/api/checkout,7
+1786929779002,8,04 Checkout,200,OK,Stress Virtual Users 1-2,text,true,314,429,12,12,http://localhost:3000/api/checkout,8
+1786929779017,3,02 Product Detail,200,OK,Stress Virtual Users 1-12,text,true,451,338,12,12,http://localhost:3000/api/products/1,2
+1786929779058,3,01 Login,200,OK,Stress Virtual Users 1-11,text,true,635,227,12,12,http://localhost:3000/api/login,3
+1786929779060,6,04 Checkout,200,OK,Stress Virtual Users 1-1,text,true,314,429,12,12,http://localhost:3000/api/checkout,6
+1786929779187,3,01 Login,200,OK,Stress Virtual Users 1-4,text,true,635,227,12,12,http://localhost:3000/api/login,3
+1786929779283,2,02 Product Detail,200,OK,Stress Virtual Users 1-10,text,true,451,338,13,13,http://localhost:3000/api/products/1,2
+1786929779397,2,02 Product Detail,200,OK,Stress Virtual Users 1-8,text,true,451,338,13,13,http://localhost:3000/api/products/1,2
+1786929779421,12,04 Checkout,200,OK,Stress Virtual Users 1-3,text,true,314,429,13,13,http://localhost:3000/api/checkout,12
+1786929779465,2,03 Add Cart,200,OK,Stress Virtual Users 1-12,text,true,294,363,13,13,http://localhost:3000/api/cart,2
+1786929779574,3,01 Login,200,OK,Stress Virtual Users 1-7,text,true,635,227,13,13,http://localhost:3000/api/login,3
+1786929779593,2,02 Product Detail,200,OK,Stress Virtual Users 1-5,text,true,451,338,13,13,http://localhost:3000/api/products/1,2
+1786929779623,3,01 Login,200,OK,Stress Virtual Users 1-9,text,true,635,227,13,13,http://localhost:3000/api/login,3
+1786929779627,2,01 Login,200,OK,Stress Virtual Users 1-1,text,true,635,227,13,13,http://localhost:3000/api/login,2
+1786929779636,2,02 Product Detail,200,OK,Stress Virtual Users 1-11,text,true,451,338,13,13,http://localhost:3000/api/products/1,2
+1786929779772,7,04 Checkout,200,OK,Stress Virtual Users 1-6,text,true,314,429,13,13,http://localhost:3000/api/checkout,7
+1786929779798,3,01 Login,200,OK,Stress Virtual Users 1-13,text,true,635,227,13,13,http://localhost:3000/api/login,3
+1786929779867,3,01 Login,200,OK,Stress Virtual Users 1-2,text,true,635,227,13,13,http://localhost:3000/api/login,3
+1786929779901,3,01 Login,200,OK,Stress Virtual Users 1-3,text,true,635,227,13,13,http://localhost:3000/api/login,3
+1786929779999,3,03 Add Cart,200,OK,Stress Virtual Users 1-10,text,true,294,363,13,13,http://localhost:3000/api/cart,3
+1786929780049,2,03 Add Cart,200,OK,Stress Virtual Users 1-8,text,true,294,363,13,13,http://localhost:3000/api/cart,2
+1786929780049,4,03 Add Cart,200,OK,Stress Virtual Users 1-5,text,true,294,363,13,13,http://localhost:3000/api/cart,4
+1786929780106,13,04 Checkout,200,OK,Stress Virtual Users 1-12,text,true,314,429,13,13,http://localhost:3000/api/checkout,13
+1786929780106,13,02 Product Detail,200,OK,Stress Virtual Users 1-4,text,true,451,338,13,13,http://localhost:3000/api/products/1,13
+1786929780109,10,02 Product Detail,200,OK,Stress Virtual Users 1-7,text,true,451,338,13,13,http://localhost:3000/api/products/1,10
+1786929780109,10,02 Product Detail,200,OK,Stress Virtual Users 1-9,text,true,451,338,13,13,http://localhost:3000/api/products/1,10
+1786929780119,1,02 Product Detail,200,OK,Stress Virtual Users 1-1,text,true,451,338,13,13,http://localhost:3000/api/products/1,1
+1786929780338,3,03 Add Cart,200,OK,Stress Virtual Users 1-11,text,true,294,363,13,13,http://localhost:3000/api/cart,3
+1786929780513,2,02 Product Detail,200,OK,Stress Virtual Users 1-3,text,true,451,338,13,13,http://localhost:3000/api/products/1,2
+1786929780530,2,03 Add Cart,200,OK,Stress Virtual Users 1-4,text,true,294,363,13,13,http://localhost:3000/api/cart,2
+1786929780563,3,01 Login,200,OK,Stress Virtual Users 1-12,text,true,635,227,13,13,http://localhost:3000/api/login,3
+1786929780599,12,04 Checkout,200,OK,Stress Virtual Users 1-10,text,true,314,429,13,13,http://localhost:3000/api/checkout,12
+1786929780619,2,02 Product Detail,200,OK,Stress Virtual Users 1-13,text,true,451,338,13,13,http://localhost:3000/api/products/1,2
+1786929780642,7,04 Checkout,200,OK,Stress Virtual Users 1-8,text,true,314,429,13,13,http://localhost:3000/api/checkout,7
+1786929780674,2,03 Add Cart,200,OK,Stress Virtual Users 1-9,text,true,294,363,13,13,http://localhost:3000/api/cart,2
+1786929780678,2,01 Login,200,OK,Stress Virtual Users 1-6,text,true,635,227,13,13,http://localhost:3000/api/login,2
+1786929780778,3,02 Product Detail,200,OK,Stress Virtual Users 1-2,text,true,451,338,14,14,http://localhost:3000/api/products/1,3
+1786929780823,2,03 Add Cart,200,OK,Stress Virtual Users 1-7,text,true,294,363,14,14,http://localhost:3000/api/cart,2
+1786929780851,8,04 Checkout,200,OK,Stress Virtual Users 1-5,text,true,314,429,14,14,http://localhost:3000/api/checkout,8
+1786929780862,6,04 Checkout,200,OK,Stress Virtual Users 1-11,text,true,314,429,14,14,http://localhost:3000/api/checkout,6
+1786929780963,2,03 Add Cart,200,OK,Stress Virtual Users 1-3,text,true,294,363,14,14,http://localhost:3000/api/cart,2
+1786929781071,3,03 Add Cart,200,OK,Stress Virtual Users 1-1,text,true,294,363,14,14,http://localhost:3000/api/cart,3
+1786929781154,3,01 Login,200,OK,Stress Virtual Users 1-10,text,true,635,227,14,14,http://localhost:3000/api/login,3
+1786929781246,3,03 Add Cart,200,OK,Stress Virtual Users 1-2,text,true,294,363,14,14,http://localhost:3000/api/cart,3
+1786929781257,7,04 Checkout,200,OK,Stress Virtual Users 1-4,text,true,314,429,14,14,http://localhost:3000/api/checkout,7
+1786929781271,7,04 Checkout,200,OK,Stress Virtual Users 1-7,text,true,314,429,14,14,http://localhost:3000/api/checkout,7
+1786929781328,3,02 Product Detail,200,OK,Stress Virtual Users 1-6,text,true,451,338,14,14,http://localhost:3000/api/products/1,3
+1786929781329,4,01 Login,200,OK,Stress Virtual Users 1-8,text,true,635,227,14,14,http://localhost:3000/api/login,4
+1786929781336,1,02 Product Detail,200,OK,Stress Virtual Users 1-12,text,true,451,338,14,14,http://localhost:3000/api/products/1,1
+1786929781345,3,03 Add Cart,200,OK,Stress Virtual Users 1-13,text,true,294,363,14,14,http://localhost:3000/api/cart,3
+1786929781471,4,01 Login,200,OK,Stress Virtual Users 1-11,text,true,635,227,14,14,http://localhost:3000/api/login,4
+1786929781485,4,01 Login,200,OK,Stress Virtual Users 1-14,text,true,635,227,14,14,http://localhost:3000/api/login,4
+1786929781514,7,04 Checkout,200,OK,Stress Virtual Users 1-1,text,true,314,429,14,14,http://localhost:3000/api/checkout,7
+1786929781531,7,04 Checkout,200,OK,Stress Virtual Users 1-9,text,true,314,429,14,14,http://localhost:3000/api/checkout,7
+1786929781638,2,02 Product Detail,200,OK,Stress Virtual Users 1-10,text,true,451,338,14,14,http://localhost:3000/api/products/1,2
+1786929781789,12,04 Checkout,200,OK,Stress Virtual Users 1-3,text,true,314,429,14,14,http://localhost:3000/api/checkout,12
+1786929781797,5,01 Login,200,OK,Stress Virtual Users 1-5,text,true,635,227,14,14,http://localhost:3000/api/login,5
+1786929781813,3,03 Add Cart,200,OK,Stress Virtual Users 1-6,text,true,294,363,14,14,http://localhost:3000/api/cart,3
+1786929781824,7,04 Checkout,200,OK,Stress Virtual Users 1-2,text,true,314,429,14,14,http://localhost:3000/api/checkout,7
+1786929781845,3,01 Login,200,OK,Stress Virtual Users 1-4,text,true,635,227,14,14,http://localhost:3000/api/login,3
+1786929781893,3,01 Login,200,OK,Stress Virtual Users 1-7,text,true,635,227,14,14,http://localhost:3000/api/login,3
+1786929781933,3,02 Product Detail,200,OK,Stress Virtual Users 1-14,text,true,451,338,14,14,http://localhost:3000/api/products/1,3
+1786929781979,2,03 Add Cart,200,OK,Stress Virtual Users 1-12,text,true,294,363,14,14,http://localhost:3000/api/cart,2
+1786929782009,2,02 Product Detail,200,OK,Stress Virtual Users 1-8,text,true,451,338,14,14,http://localhost:3000/api/products/1,2
+1786929782139,12,04 Checkout,200,OK,Stress Virtual Users 1-13,text,true,314,429,14,14,http://localhost:3000/api/checkout,12
+1786929782217,3,01 Login,200,OK,Stress Virtual Users 1-9,text,true,635,227,14,14,http://localhost:3000/api/login,3
+1786929782250,2,02 Product Detail,200,OK,Stress Virtual Users 1-11,text,true,451,338,15,15,http://localhost:3000/api/products/1,2
+1786929782312,2,03 Add Cart,200,OK,Stress Virtual Users 1-10,text,true,294,363,15,15,http://localhost:3000/api/cart,2
+1786929782344,3,03 Add Cart,200,OK,Stress Virtual Users 1-14,text,true,294,363,15,15,http://localhost:3000/api/cart,3
+1786929782351,1,02 Product Detail,200,OK,Stress Virtual Users 1-7,text,true,451,338,15,15,http://localhost:3000/api/products/1,1
+1786929782372,6,04 Checkout,200,OK,Stress Virtual Users 1-6,text,true,314,429,15,15,http://localhost:3000/api/checkout,6
+1786929782392,2,02 Product Detail,200,OK,Stress Virtual Users 1-5,text,true,451,338,15,15,http://localhost:3000/api/products/1,2
+1786929782516,3,01 Login,200,OK,Stress Virtual Users 1-1,text,true,635,227,15,15,http://localhost:3000/api/login,3
+1786929782608,2,02 Product Detail,200,OK,Stress Virtual Users 1-4,text,true,451,338,15,15,http://localhost:3000/api/products/1,2
+1786929782717,3,01 Login,200,OK,Stress Virtual Users 1-2,text,true,635,227,15,15,http://localhost:3000/api/login,3
+1786929782792,5,01 Login,200,OK,Stress Virtual Users 1-15,text,true,635,227,15,15,http://localhost:3000/api/login,5
+1786929782793,4,01 Login,200,OK,Stress Virtual Users 1-3,text,true,635,227,15,15,http://localhost:3000/api/login,4
+1786929782845,7,04 Checkout,200,OK,Stress Virtual Users 1-12,text,true,314,429,15,15,http://localhost:3000/api/checkout,7
+1786929782853,3,01 Login,200,OK,Stress Virtual Users 1-13,text,true,635,227,15,15,http://localhost:3000/api/login,3
+1786929782883,2,03 Add Cart,200,OK,Stress Virtual Users 1-8,text,true,294,363,15,15,http://localhost:3000/api/cart,2
+1786929782884,6,04 Checkout,200,OK,Stress Virtual Users 1-14,text,true,314,429,15,15,http://localhost:3000/api/checkout,6
+1786929782948,3,02 Product Detail,200,OK,Stress Virtual Users 1-9,text,true,451,338,15,15,http://localhost:3000/api/products/1,3
+1786929782966,2,03 Add Cart,200,OK,Stress Virtual Users 1-5,text,true,294,363,15,15,http://localhost:3000/api/cart,2
+1786929783010,2,03 Add Cart,200,OK,Stress Virtual Users 1-11,text,true,294,363,15,15,http://localhost:3000/api/cart,2
+1786929783182,2,03 Add Cart,200,OK,Stress Virtual Users 1-4,text,true,294,363,15,15,http://localhost:3000/api/cart,2
+1786929783191,3,01 Login,200,OK,Stress Virtual Users 1-6,text,true,635,227,15,15,http://localhost:3000/api/login,3
+1786929783262,3,03 Add Cart,200,OK,Stress Virtual Users 1-7,text,true,294,363,15,15,http://localhost:3000/api/cart,3
+1786929783268,32,04 Checkout,200,OK,Stress Virtual Users 1-10,text,true,314,429,15,15,http://localhost:3000/api/checkout,32
+1786929783267,33,02 Product Detail,200,OK,Stress Virtual Users 1-2,text,true,451,338,15,15,http://localhost:3000/api/products/1,33
+1786929783346,3,01 Login,200,OK,Stress Virtual Users 1-12,text,true,635,227,15,15,http://localhost:3000/api/login,3
+1786929783407,2,02 Product Detail,200,OK,Stress Virtual Users 1-13,text,true,451,338,15,15,http://localhost:3000/api/products/1,2
+1786929783445,8,04 Checkout,200,OK,Stress Virtual Users 1-11,text,true,314,429,15,15,http://localhost:3000/api/checkout,8
+1786929783453,2,03 Add Cart,200,OK,Stress Virtual Users 1-9,text,true,294,363,15,15,http://localhost:3000/api/cart,2
+1786929783457,1,02 Product Detail,200,OK,Stress Virtual Users 1-1,text,true,451,338,15,15,http://localhost:3000/api/products/1,1
+1786929783478,2,01 Login,200,OK,Stress Virtual Users 1-14,text,true,635,227,15,15,http://localhost:3000/api/login,2
+1786929783499,2,02 Product Detail,200,OK,Stress Virtual Users 1-3,text,true,451,338,15,15,http://localhost:3000/api/products/1,2
+1786929783507,2,02 Product Detail,200,OK,Stress Virtual Users 1-15,text,true,451,338,15,15,http://localhost:3000/api/products/1,2
+1786929783516,7,04 Checkout,200,OK,Stress Virtual Users 1-8,text,true,314,429,15,15,http://localhost:3000/api/checkout,7
+1786929783711,2,03 Add Cart,200,OK,Stress Virtual Users 1-2,text,true,294,363,15,15,http://localhost:3000/api/cart,2
+1786929783750,4,02 Product Detail,200,OK,Stress Virtual Users 1-6,text,true,451,338,16,16,http://localhost:3000/api/products/1,4
+1786929783750,13,04 Checkout,200,OK,Stress Virtual Users 1-5,text,true,314,429,16,16,http://localhost:3000/api/checkout,13
+1786929783801,7,04 Checkout,200,OK,Stress Virtual Users 1-7,text,true,314,429,16,16,http://localhost:3000/api/checkout,7
+1786929783834,1,02 Product Detail,200,OK,Stress Virtual Users 1-12,text,true,451,338,16,16,http://localhost:3000/api/products/1,1
+1786929784071,3,03 Add Cart,200,OK,Stress Virtual Users 1-3,text,true,294,363,16,16,http://localhost:3000/api/cart,3
+1786929784100,2,03 Add Cart,200,OK,Stress Virtual Users 1-13,text,true,294,363,16,16,http://localhost:3000/api/cart,2
+1786929784101,3,01 Login,200,OK,Stress Virtual Users 1-8,text,true,635,227,16,16,http://localhost:3000/api/login,3
+1786929784163,12,04 Checkout,200,OK,Stress Virtual Users 1-4,text,true,314,429,16,16,http://localhost:3000/api/checkout,12
+1786929784171,8,04 Checkout,200,OK,Stress Virtual Users 1-2,text,true,314,429,16,16,http://localhost:3000/api/checkout,8
+1786929784261,2,01 Login,200,OK,Stress Virtual Users 1-10,text,true,635,227,16,16,http://localhost:3000/api/login,2
+1786929784283,2,03 Add Cart,200,OK,Stress Virtual Users 1-1,text,true,294,363,16,16,http://localhost:3000/api/cart,2
+1786929784288,3,01 Login,200,OK,Stress Virtual Users 1-16,text,true,635,227,16,16,http://localhost:3000/api/login,3
+1786929784306,2,01 Login,200,OK,Stress Virtual Users 1-11,text,true,635,227,16,16,http://localhost:3000/api/login,2
+1786929784349,2,02 Product Detail,200,OK,Stress Virtual Users 1-14,text,true,451,338,16,16,http://localhost:3000/api/products/1,2
+1786929784449,3,01 Login,200,OK,Stress Virtual Users 1-7,text,true,635,227,16,16,http://localhost:3000/api/login,3
+1786929784456,3,03 Add Cart,200,OK,Stress Virtual Users 1-15,text,true,294,363,16,16,http://localhost:3000/api/cart,3
+1786929784456,13,04 Checkout,200,OK,Stress Virtual Users 1-9,text,true,314,429,16,16,http://localhost:3000/api/checkout,13
+1786929784528,3,03 Add Cart,200,OK,Stress Virtual Users 1-6,text,true,294,363,16,16,http://localhost:3000/api/cart,3
+1786929784550,8,04 Checkout,200,OK,Stress Virtual Users 1-3,text,true,314,429,16,16,http://localhost:3000/api/checkout,7
+1786929784729,2,02 Product Detail,200,OK,Stress Virtual Users 1-8,text,true,451,338,16,16,http://localhost:3000/api/products/1,2
+1786929784736,2,03 Add Cart,200,OK,Stress Virtual Users 1-12,text,true,294,363,16,16,http://localhost:3000/api/cart,2
+1786929784737,3,01 Login,200,OK,Stress Virtual Users 1-5,text,true,635,227,16,16,http://localhost:3000/api/login,3
+1786929784775,3,01 Login,200,OK,Stress Virtual Users 1-2,text,true,635,227,16,16,http://localhost:3000/api/login,3
+1786929784779,6,04 Checkout,200,OK,Stress Virtual Users 1-13,text,true,314,429,16,16,http://localhost:3000/api/checkout,6
+1786929784904,2,02 Product Detail,200,OK,Stress Virtual Users 1-10,text,true,451,338,16,16,http://localhost:3000/api/products/1,2
+1786929784937,1,02 Product Detail,200,OK,Stress Virtual Users 1-16,text,true,451,338,16,16,http://localhost:3000/api/products/1,1
+1786929784952,2,03 Add Cart,200,OK,Stress Virtual Users 1-14,text,true,294,363,16,16,http://localhost:3000/api/cart,2
+1786929785010,3,01 Login,200,OK,Stress Virtual Users 1-9,text,true,635,227,16,16,http://localhost:3000/api/login,3
+1786929785022,2,01 Login,200,OK,Stress Virtual Users 1-4,text,true,635,227,16,16,http://localhost:3000/api/login,2
+1786929785027,1,02 Product Detail,200,OK,Stress Virtual Users 1-11,text,true,451,338,16,16,http://localhost:3000/api/products/1,1
+1786929785094,7,04 Checkout,200,OK,Stress Virtual Users 1-1,text,true,314,429,16,16,http://localhost:3000/api/checkout,7
+1786929785163,2,02 Product Detail,200,OK,Stress Virtual Users 1-7,text,true,451,338,16,16,http://localhost:3000/api/products/1,2
+1786929785290,7,04 Checkout,200,OK,Stress Virtual Users 1-6,text,true,314,429,17,17,http://localhost:3000/api/checkout,7
+1786929785348,2,02 Product Detail,200,OK,Stress Virtual Users 1-2,text,true,451,338,17,17,http://localhost:3000/api/products/1,2
+1786929785354,2,01 Login,200,OK,Stress Virtual Users 1-3,text,true,635,227,17,17,http://localhost:3000/api/login,2
+1786929785445,6,04 Checkout,200,OK,Stress Virtual Users 1-15,text,true,314,429,17,17,http://localhost:3000/api/checkout,6
+1786929785458,3,03 Add Cart,200,OK,Stress Virtual Users 1-11,text,true,294,363,17,17,http://localhost:3000/api/cart,3
+1786929785483,3,03 Add Cart,200,OK,Stress Virtual Users 1-8,text,true,294,363,17,17,http://localhost:3000/api/cart,3
+1786929785480,7,04 Checkout,200,OK,Stress Virtual Users 1-12,text,true,314,429,17,17,http://localhost:3000/api/checkout,7
+1786929785531,2,02 Product Detail,200,OK,Stress Virtual Users 1-5,text,true,451,338,17,17,http://localhost:3000/api/products/1,2
+1786929785648,2,03 Add Cart,200,OK,Stress Virtual Users 1-16,text,true,294,363,17,17,http://localhost:3000/api/cart,2
+1786929785674,3,03 Add Cart,200,OK,Stress Virtual Users 1-10,text,true,294,363,17,17,http://localhost:3000/api/cart,3
+1786929785712,3,03 Add Cart,200,OK,Stress Virtual Users 1-7,text,true,294,363,17,17,http://localhost:3000/api/cart,3
+1786929785719,3,02 Product Detail,200,OK,Stress Virtual Users 1-9,text,true,451,338,17,17,http://localhost:3000/api/products/1,3
+1786929785719,4,01 Login,200,OK,Stress Virtual Users 1-1,text,true,635,227,17,17,http://localhost:3000/api/login,4
+1786929785721,3,01 Login,200,OK,Stress Virtual Users 1-13,text,true,635,227,17,17,http://localhost:3000/api/login,3
+1786929785738,6,04 Checkout,200,OK,Stress Virtual Users 1-14,text,true,314,429,17,17,http://localhost:3000/api/checkout,6
+1786929785765,3,01 Login,200,OK,Stress Virtual Users 1-17,text,true,635,227,17,17,http://localhost:3000/api/login,3
+1786929785807,3,01 Login,200,OK,Stress Virtual Users 1-6,text,true,635,227,17,17,http://localhost:3000/api/login,3
+1786929785920,3,01 Login,200,OK,Stress Virtual Users 1-12,text,true,635,227,17,17,http://localhost:3000/api/login,3
+1786929786013,2,02 Product Detail,200,OK,Stress Virtual Users 1-3,text,true,451,338,17,17,http://localhost:3000/api/products/1,2
+1786929786020,2,02 Product Detail,200,OK,Stress Virtual Users 1-4,text,true,451,338,17,17,http://localhost:3000/api/products/1,2
+1786929786146,3,03 Add Cart,200,OK,Stress Virtual Users 1-5,text,true,294,363,17,17,http://localhost:3000/api/cart,3
+1786929786160,4,01 Login,200,OK,Stress Virtual Users 1-15,text,true,635,227,17,17,http://localhost:3000/api/login,4
+1786929786210,12,04 Checkout,200,OK,Stress Virtual Users 1-8,text,true,314,429,17,17,http://localhost:3000/api/checkout,12
+1786929786215,7,02 Product Detail,200,OK,Stress Virtual Users 1-13,text,true,451,338,17,17,http://localhost:3000/api/products/1,7
+1786929786235,3,02 Product Detail,200,OK,Stress Virtual Users 1-1,text,true,451,338,17,17,http://localhost:3000/api/products/1,2
+1786929786335,6,04 Checkout,200,OK,Stress Virtual Users 1-16,text,true,314,429,17,17,http://localhost:3000/api/checkout,6
+1786929786342,1,03 Add Cart,200,OK,Stress Virtual Users 1-2,text,true,294,363,17,17,http://localhost:3000/api/cart,1
+1786929786387,6,04 Checkout,200,OK,Stress Virtual Users 1-7,text,true,314,429,17,17,http://localhost:3000/api/checkout,6
+1786929786390,7,04 Checkout,200,OK,Stress Virtual Users 1-11,text,true,314,429,17,17,http://localhost:3000/api/checkout,7
+1786929786425,2,03 Add Cart,200,OK,Stress Virtual Users 1-9,text,true,294,363,17,17,http://localhost:3000/api/cart,2
+1786929786463,2,02 Product Detail,200,OK,Stress Virtual Users 1-17,text,true,451,338,17,17,http://localhost:3000/api/products/1,2
+1786929786517,3,01 Login,200,OK,Stress Virtual Users 1-14,text,true,635,227,17,17,http://localhost:3000/api/login,3
+1786929786578,2,02 Product Detail,200,OK,Stress Virtual Users 1-6,text,true,451,338,17,17,http://localhost:3000/api/products/1,2
+1786929786607,7,04 Checkout,200,OK,Stress Virtual Users 1-10,text,true,314,429,17,17,http://localhost:3000/api/checkout,7
+1786929786636,2,03 Add Cart,200,OK,Stress Virtual Users 1-3,text,true,294,363,17,17,http://localhost:3000/api/cart,1
+1786929786644,3,02 Product Detail,200,OK,Stress Virtual Users 1-15,text,true,451,338,17,17,http://localhost:3000/api/products/1,3
+1786929786662,3,03 Add Cart,200,OK,Stress Virtual Users 1-13,text,true,294,363,17,17,http://localhost:3000/api/cart,3
+1786929786732,3,03 Add Cart,200,OK,Stress Virtual Users 1-1,text,true,294,363,17,17,http://localhost:3000/api/cart,3
+1786929786766,3,01 Login,200,OK,Stress Virtual Users 1-8,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929786818,1,02 Product Detail,200,OK,Stress Virtual Users 1-12,text,true,451,338,18,18,http://localhost:3000/api/products/1,1
+1786929786824,3,01 Login,200,OK,Stress Virtual Users 1-11,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929786861,11,04 Checkout,200,OK,Stress Virtual Users 1-5,text,true,314,429,18,18,http://localhost:3000/api/checkout,11
+1786929786880,2,03 Add Cart,200,OK,Stress Virtual Users 1-4,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929787020,3,01 Login,200,OK,Stress Virtual Users 1-7,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929787033,7,04 Checkout,200,OK,Stress Virtual Users 1-2,text,true,314,429,18,18,http://localhost:3000/api/checkout,7
+1786929787071,3,01 Login,200,OK,Stress Virtual Users 1-16,text,true,635,227,18,18,http://localhost:3000/api/login,2
+1786929787150,3,01 Login,200,OK,Stress Virtual Users 1-10,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929787182,3,01 Login,200,OK,Stress Virtual Users 1-18,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929787191,2,02 Product Detail,200,OK,Stress Virtual Users 1-14,text,true,451,338,18,18,http://localhost:3000/api/products/1,2
+1786929787242,7,04 Checkout,200,OK,Stress Virtual Users 1-1,text,true,314,429,18,18,http://localhost:3000/api/checkout,7
+1786929787258,2,03 Add Cart,200,OK,Stress Virtual Users 1-12,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929787290,7,04 Checkout,200,OK,Stress Virtual Users 1-13,text,true,314,429,18,18,http://localhost:3000/api/checkout,7
+1786929787297,2,03 Add Cart,200,OK,Stress Virtual Users 1-15,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929787318,2,02 Product Detail,200,OK,Stress Virtual Users 1-8,text,true,451,338,18,18,http://localhost:3000/api/products/1,2
+1786929787328,6,04 Checkout,200,OK,Stress Virtual Users 1-3,text,true,314,429,18,18,http://localhost:3000/api/checkout,6
+1786929787337,7,04 Checkout,200,OK,Stress Virtual Users 1-9,text,true,314,429,18,18,http://localhost:3000/api/checkout,7
+1786929787373,2,03 Add Cart,200,OK,Stress Virtual Users 1-17,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929787436,2,03 Add Cart,200,OK,Stress Virtual Users 1-6,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929787510,2,02 Product Detail,200,OK,Stress Virtual Users 1-7,text,true,451,338,18,18,http://localhost:3000/api/products/1,2
+1786929787630,2,02 Product Detail,200,OK,Stress Virtual Users 1-11,text,true,451,338,18,18,http://localhost:3000/api/products/1,2
+1786929787635,2,01 Login,200,OK,Stress Virtual Users 1-5,text,true,635,227,18,18,http://localhost:3000/api/login,2
+1786929787688,6,04 Checkout,200,OK,Stress Virtual Users 1-12,text,true,314,429,18,18,http://localhost:3000/api/checkout,6
+1786929787748,6,04 Checkout,200,OK,Stress Virtual Users 1-4,text,true,314,429,18,18,http://localhost:3000/api/checkout,6
+1786929787802,6,04 Checkout,200,OK,Stress Virtual Users 1-15,text,true,314,429,18,18,http://localhost:3000/api/checkout,6
+1786929787808,1,02 Product Detail,200,OK,Stress Virtual Users 1-16,text,true,451,338,18,18,http://localhost:3000/api/products/1,1
+1786929787823,2,02 Product Detail,200,OK,Stress Virtual Users 1-18,text,true,451,338,18,18,http://localhost:3000/api/products/1,2
+1786929787824,2,01 Login,200,OK,Stress Virtual Users 1-13,text,true,635,227,18,18,http://localhost:3000/api/login,2
+1786929787847,3,03 Add Cart,200,OK,Stress Virtual Users 1-8,text,true,294,363,18,18,http://localhost:3000/api/cart,3
+1786929787861,7,04 Checkout,200,OK,Stress Virtual Users 1-17,text,true,314,429,18,18,http://localhost:3000/api/checkout,7
+1786929787907,3,01 Login,200,OK,Stress Virtual Users 1-2,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929787934,2,02 Product Detail,200,OK,Stress Virtual Users 1-10,text,true,451,338,18,18,http://localhost:3000/api/products/1,2
+1786929788037,3,01 Login,200,OK,Stress Virtual Users 1-3,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929788044,3,01 Login,200,OK,Stress Virtual Users 1-9,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929788063,3,03 Add Cart,200,OK,Stress Virtual Users 1-7,text,true,294,363,18,18,http://localhost:3000/api/cart,3
+1786929788087,2,03 Add Cart,200,OK,Stress Virtual Users 1-14,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929788091,3,01 Login,200,OK,Stress Virtual Users 1-1,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929788231,11,04 Checkout,200,OK,Stress Virtual Users 1-6,text,true,314,429,18,18,http://localhost:3000/api/checkout,11
+1786929788302,2,03 Add Cart,200,OK,Stress Virtual Users 1-18,text,true,294,363,19,19,http://localhost:3000/api/cart,2
+1786929788305,3,01 Login,200,OK,Stress Virtual Users 1-12,text,true,635,227,19,19,http://localhost:3000/api/login,3
+1786929788411,3,01 Login,200,OK,Stress Virtual Users 1-4,text,true,635,227,19,19,http://localhost:3000/api/login,3
+1786929788445,3,01 Login,200,OK,Stress Virtual Users 1-15,text,true,635,227,19,19,http://localhost:3000/api/login,3
+1786929788479,2,02 Product Detail,200,OK,Stress Virtual Users 1-13,text,true,451,338,19,19,http://localhost:3000/api/products/1,2
+1786929788508,3,03 Add Cart,200,OK,Stress Virtual Users 1-16,text,true,294,363,19,19,http://localhost:3000/api/cart,3
+1786929788519,2,02 Product Detail,200,OK,Stress Virtual Users 1-9,text,true,451,338,19,19,http://localhost:3000/api/products/1,2
+1786929788521,11,04 Checkout,200,OK,Stress Virtual Users 1-14,text,true,314,429,19,19,http://localhost:3000/api/checkout,11
+1786929788538,6,04 Checkout,200,OK,Stress Virtual Users 1-8,text,true,314,429,19,19,http://localhost:3000/api/checkout,6
+1786929788586,2,02 Product Detail,200,OK,Stress Virtual Users 1-5,text,true,451,338,19,19,http://localhost:3000/api/products/1,2
+1786929788590,3,03 Add Cart,200,OK,Stress Virtual Users 1-11,text,true,294,363,19,19,http://localhost:3000/api/cart,3
+1786929788747,2,02 Product Detail,200,OK,Stress Virtual Users 1-3,text,true,451,338,19,19,http://localhost:3000/api/products/1,2
+1786929788757,12,04 Checkout,200,OK,Stress Virtual Users 1-7,text,true,314,429,19,19,http://localhost:3000/api/checkout,12
+1786929788848,3,01 Login,200,OK,Stress Virtual Users 1-17,text,true,635,227,19,19,http://localhost:3000/api/login,3
+1786929788851,7,04 Checkout,200,OK,Stress Virtual Users 1-18,text,true,314,429,19,19,http://localhost:3000/api/checkout,7
+1786929788865,1,02 Product Detail,200,OK,Stress Virtual Users 1-2,text,true,451,338,19,19,http://localhost:3000/api/products/1,1
+1786929788869,1,02 Product Detail,200,OK,Stress Virtual Users 1-1,text,true,451,338,19,19,http://localhost:3000/api/products/1,1
+1786929788877,2,03 Add Cart,200,OK,Stress Virtual Users 1-10,text,true,294,363,19,19,http://localhost:3000/api/cart,2
+1786929788876,4,01 Login,200,OK,Stress Virtual Users 1-19,text,true,635,227,19,19,http://localhost:3000/api/login,4
+1786929788879,2,02 Product Detail,200,OK,Stress Virtual Users 1-12,text,true,451,338,19,19,http://localhost:3000/api/products/1,2
+1786929789006,7,04 Checkout,200,OK,Stress Virtual Users 1-11,text,true,314,429,19,19,http://localhost:3000/api/checkout,7
+1786929789078,1,02 Product Detail,200,OK,Stress Virtual Users 1-4,text,true,451,338,19,19,http://localhost:3000/api/products/1,1
+1786929789150,3,03 Add Cart,200,OK,Stress Virtual Users 1-3,text,true,294,363,19,19,http://localhost:3000/api/cart,3
+1786929789218,3,01 Login,200,OK,Stress Virtual Users 1-6,text,true,635,227,19,19,http://localhost:3000/api/login,3
+1786929789225,2,03 Add Cart,200,OK,Stress Virtual Users 1-13,text,true,294,363,19,19,http://localhost:3000/api/cart,2
+1786929789273,2,02 Product Detail,200,OK,Stress Virtual Users 1-15,text,true,451,338,19,19,http://localhost:3000/api/products/1,2
+1786929789282,3,01 Login,200,OK,Stress Virtual Users 1-8,text,true,635,227,19,19,http://localhost:3000/api/login,3
+1786929789300,3,03 Add Cart,200,OK,Stress Virtual Users 1-9,text,true,294,363,19,19,http://localhost:3000/api/cart,3
+1786929789295,8,04 Checkout,200,OK,Stress Virtual Users 1-16,text,true,314,429,19,19,http://localhost:3000/api/checkout,8
+1786929789432,2,03 Add Cart,200,OK,Stress Virtual Users 1-5,text,true,294,363,19,19,http://localhost:3000/api/cart,2
+1786929789432,5,01 Login,200,OK,Stress Virtual Users 1-7,text,true,635,227,19,19,http://localhost:3000/api/login,5
+1786929789471,2,03 Add Cart,200,OK,Stress Virtual Users 1-1,text,true,294,363,19,19,http://localhost:3000/api/cart,2
+1786929789489,2,02 Product Detail,200,OK,Stress Virtual Users 1-17,text,true,451,338,19,19,http://localhost:3000/api/products/1,2
+1786929789514,3,01 Login,200,OK,Stress Virtual Users 1-14,text,true,635,227,19,19,http://localhost:3000/api/login,3
+1786929789521,2,03 Add Cart,200,OK,Stress Virtual Users 1-2,text,true,294,363,19,19,http://localhost:3000/api/cart,2
+1786929789713,1,02 Product Detail,200,OK,Stress Virtual Users 1-19,text,true,451,338,19,19,http://localhost:3000/api/products/1,1
+1786929789748,3,01 Login,200,OK,Stress Virtual Users 1-18,text,true,635,227,20,20,http://localhost:3000/api/login,3
+1786929789754,11,04 Checkout,200,OK,Stress Virtual Users 1-9,text,true,314,429,20,20,http://localhost:3000/api/checkout,11
+1786929789790,8,04 Checkout,200,OK,Stress Virtual Users 1-10,text,true,314,429,20,20,http://localhost:3000/api/checkout,8
+1786929789827,2,02 Product Detail,200,OK,Stress Virtual Users 1-6,text,true,451,338,20,20,http://localhost:3000/api/products/1,2
+1786929789830,2,01 Login,200,OK,Stress Virtual Users 1-11,text,true,635,227,20,20,http://localhost:3000/api/login,2
+1786929789836,2,03 Add Cart,200,OK,Stress Virtual Users 1-4,text,true,294,363,20,20,http://localhost:3000/api/cart,2
+1786929789853,2,03 Add Cart,200,OK,Stress Virtual Users 1-12,text,true,294,363,20,20,http://localhost:3000/api/cart,2
+1786929790055,7,04 Checkout,200,OK,Stress Virtual Users 1-1,text,true,314,429,20,20,http://localhost:3000/api/checkout,6
+1786929790082,2,02 Product Detail,200,OK,Stress Virtual Users 1-14,text,true,451,338,19,19,http://localhost:3000/api/products/1,2
+1786929790086,6,04 Checkout,200,OK,Stress Virtual Users 1-3,text,true,314,429,19,19,http://localhost:3000/api/checkout,6
+1786929790096,3,01 Login,200,OK,Stress Virtual Users 1-16,text,true,635,227,19,19,http://localhost:3000/api/login,3
+1786929790097,8,04 Checkout,200,OK,Stress Virtual Users 1-5,text,true,314,429,19,19,http://localhost:3000/api/checkout,8
+1786929790142,8,04 Checkout,200,OK,Stress Virtual Users 1-2,text,true,314,429,19,19,http://localhost:3000/api/checkout,8
+1786929790149,2,03 Add Cart,200,OK,Stress Virtual Users 1-17,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929790147,7,04 Checkout,200,OK,Stress Virtual Users 1-13,text,true,314,429,18,18,http://localhost:3000/api/checkout,7
+1786929790163,2,03 Add Cart,200,OK,Stress Virtual Users 1-19,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929790164,2,02 Product Detail,200,OK,Stress Virtual Users 1-18,text,true,451,338,18,18,http://localhost:3000/api/products/1,2
+1786929790173,2,03 Add Cart,200,OK,Stress Virtual Users 1-15,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929790239,2,02 Product Detail,200,OK,Stress Virtual Users 1-8,text,true,451,338,18,18,http://localhost:3000/api/products/1,2
+1786929790272,3,01 Login,200,OK,Stress Virtual Users 1-9,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929790279,3,01 Login,200,OK,Stress Virtual Users 1-20,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929790280,3,02 Product Detail,200,OK,Stress Virtual Users 1-7,text,true,451,338,18,18,http://localhost:3000/api/products/1,3
+1786929790493,7,04 Checkout,200,OK,Stress Virtual Users 1-12,text,true,314,429,18,18,http://localhost:3000/api/checkout,7
+1786929790532,2,03 Add Cart,200,OK,Stress Virtual Users 1-14,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929790628,2,03 Add Cart,200,OK,Stress Virtual Users 1-6,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929790654,6,04 Checkout,200,OK,Stress Virtual Users 1-4,text,true,314,429,18,18,http://localhost:3000/api/checkout,6
+1786929790764,2,03 Add Cart,200,OK,Stress Virtual Users 1-18,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929790766,1,02 Product Detail,200,OK,Stress Virtual Users 1-9,text,true,451,338,18,18,http://localhost:3000/api/products/1,1
+1786929790767,2,01 Login,200,OK,Stress Virtual Users 1-10,text,true,635,227,18,18,http://localhost:3000/api/login,2
+1786929790782,1,02 Product Detail,200,OK,Stress Virtual Users 1-11,text,true,451,338,18,18,http://localhost:3000/api/products/1,1
+1786929790814,7,04 Checkout,200,OK,Stress Virtual Users 1-19,text,true,314,429,18,18,http://localhost:3000/api/checkout,7
+1786929790821,1,02 Product Detail,200,OK,Stress Virtual Users 1-16,text,true,451,338,18,18,http://localhost:3000/api/products/1,1
+1786929790856,2,02 Product Detail,200,OK,Stress Virtual Users 1-20,text,true,451,338,18,18,http://localhost:3000/api/products/1,2
+1786929790951,7,04 Checkout,200,OK,Stress Virtual Users 1-15,text,true,314,429,18,18,http://localhost:3000/api/checkout,7
+1786929790956,6,04 Checkout,200,OK,Stress Virtual Users 1-17,text,true,314,429,18,18,http://localhost:3000/api/checkout,6
+1786929790966,7,04 Checkout,200,OK,Stress Virtual Users 1-14,text,true,314,429,18,18,http://localhost:3000/api/checkout,7
+1786929790966,8,01 Login,200,OK,Stress Virtual Users 1-13,text,true,635,227,18,18,http://localhost:3000/api/login,8
+1786929790976,3,01 Login,200,OK,Stress Virtual Users 1-5,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929791053,3,01 Login,200,OK,Stress Virtual Users 1-3,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929791138,2,01 Login,200,OK,Stress Virtual Users 1-12,text,true,635,227,18,18,http://localhost:3000/api/login,2
+1786929791186,2,03 Add Cart,200,OK,Stress Virtual Users 1-7,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929791207,2,01 Login,200,OK,Stress Virtual Users 1-4,text,true,635,227,18,18,http://localhost:3000/api/login,2
+1786929791210,2,03 Add Cart,200,OK,Stress Virtual Users 1-8,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929791229,12,04 Checkout,200,OK,Stress Virtual Users 1-18,text,true,314,429,18,18,http://localhost:3000/api/checkout,12
+1786929791291,2,03 Add Cart,200,OK,Stress Virtual Users 1-20,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929791286,7,04 Checkout,200,OK,Stress Virtual Users 1-6,text,true,314,429,18,18,http://localhost:3000/api/checkout,7
+1786929791355,3,03 Add Cart,200,OK,Stress Virtual Users 1-16,text,true,294,363,18,18,http://localhost:3000/api/cart,3
+1786929791371,3,01 Login,200,OK,Stress Virtual Users 1-19,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929791382,3,01 Login,200,OK,Stress Virtual Users 1-17,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929791522,1,02 Product Detail,200,OK,Stress Virtual Users 1-10,text,true,451,338,18,18,http://localhost:3000/api/products/1,1
+1786929791638,3,01 Login,200,OK,Stress Virtual Users 1-14,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929791676,2,02 Product Detail,200,OK,Stress Virtual Users 1-13,text,true,451,338,18,18,http://localhost:3000/api/products/1,2
+1786929791682,2,02 Product Detail,200,OK,Stress Virtual Users 1-12,text,true,451,338,18,18,http://localhost:3000/api/products/1,2
+1786929791715,2,03 Add Cart,200,OK,Stress Virtual Users 1-9,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929791763,2,03 Add Cart,200,OK,Stress Virtual Users 1-11,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929791774,11,04 Checkout,200,OK,Stress Virtual Users 1-7,text,true,314,429,18,18,http://localhost:3000/api/checkout,11
+1786929791821,8,04 Checkout,200,OK,Stress Virtual Users 1-16,text,true,314,429,18,18,http://localhost:3000/api/checkout,8
+1786929791856,1,02 Product Detail,200,OK,Stress Virtual Users 1-5,text,true,451,338,18,18,http://localhost:3000/api/products/1,1
+1786929791899,3,01 Login,200,OK,Stress Virtual Users 1-18,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929791945,3,01 Login,200,OK,Stress Virtual Users 1-15,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929791959,2,03 Add Cart,200,OK,Stress Virtual Users 1-10,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929791972,2,02 Product Detail,200,OK,Stress Virtual Users 1-17,text,true,451,338,18,18,http://localhost:3000/api/products/1,2
+1786929791986,3,01 Login,200,OK,Stress Virtual Users 1-6,text,true,635,227,18,18,http://localhost:3000/api/login,2
+1786929792032,2,02 Product Detail,200,OK,Stress Virtual Users 1-3,text,true,451,338,18,18,http://localhost:3000/api/products/1,2
+1786929792049,1,02 Product Detail,200,OK,Stress Virtual Users 1-4,text,true,451,338,18,18,http://localhost:3000/api/products/1,1
+1786929792100,2,03 Add Cart,200,OK,Stress Virtual Users 1-13,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929792151,11,04 Checkout,200,OK,Stress Virtual Users 1-20,text,true,314,429,18,18,http://localhost:3000/api/checkout,11
+1786929792163,6,04 Checkout,200,OK,Stress Virtual Users 1-8,text,true,314,429,18,18,http://localhost:3000/api/checkout,6
+1786929792211,4,02 Product Detail,200,OK,Stress Virtual Users 1-14,text,true,451,338,18,18,http://localhost:3000/api/products/1,4
+1786929792271,3,01 Login,200,OK,Stress Virtual Users 1-16,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929792367,3,03 Add Cart,200,OK,Stress Virtual Users 1-12,text,true,294,363,18,18,http://localhost:3000/api/cart,3
+1786929792368,3,02 Product Detail,200,OK,Stress Virtual Users 1-19,text,true,451,338,18,18,http://localhost:3000/api/products/1,3
+1786929792378,12,04 Checkout,200,OK,Stress Virtual Users 1-11,text,true,314,429,18,18,http://localhost:3000/api/checkout,12
+1786929792439,2,02 Product Detail,200,OK,Stress Virtual Users 1-18,text,true,451,338,18,18,http://localhost:3000/api/products/1,2
+1786929792467,2,03 Add Cart,200,OK,Stress Virtual Users 1-3,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929792467,7,04 Checkout,200,OK,Stress Virtual Users 1-9,text,true,314,429,18,18,http://localhost:3000/api/checkout,7
+1786929792511,7,04 Checkout,200,OK,Stress Virtual Users 1-10,text,true,314,429,18,18,http://localhost:3000/api/checkout,7
+1786929792622,3,01 Login,200,OK,Stress Virtual Users 1-7,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929792679,7,04 Checkout,200,OK,Stress Virtual Users 1-13,text,true,314,429,18,18,http://localhost:3000/api/checkout,7
+1786929792720,2,03 Add Cart,200,OK,Stress Virtual Users 1-4,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929792724,2,03 Add Cart,200,OK,Stress Virtual Users 1-17,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929792731,4,01 Login,200,OK,Stress Virtual Users 1-8,text,true,635,227,18,18,http://localhost:3000/api/login,4
+1786929792786,3,01 Login,200,OK,Stress Virtual Users 1-20,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929792799,2,03 Add Cart,200,OK,Stress Virtual Users 1-5,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929792842,2,03 Add Cart,200,OK,Stress Virtual Users 1-19,text,true,294,363,18,18,http://localhost:3000/api/cart,2
+1786929792910,2,02 Product Detail,200,OK,Stress Virtual Users 1-15,text,true,451,338,18,18,http://localhost:3000/api/products/1,2
+1786929792949,1,02 Product Detail,200,OK,Stress Virtual Users 1-6,text,true,451,338,18,18,http://localhost:3000/api/products/1,1
+1786929792989,2,02 Product Detail,200,OK,Stress Virtual Users 1-16,text,true,451,338,18,18,http://localhost:3000/api/products/1,2
+1786929793079,2,02 Product Detail,200,OK,Stress Virtual Users 1-7,text,true,451,338,18,18,http://localhost:3000/api/products/1,2
+1786929793180,7,04 Checkout,200,OK,Stress Virtual Users 1-12,text,true,314,429,18,18,http://localhost:3000/api/checkout,7
+1786929793191,3,01 Login,200,OK,Stress Virtual Users 1-11,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929793202,3,03 Add Cart,200,OK,Stress Virtual Users 1-14,text,true,294,363,18,18,http://localhost:3000/api/cart,3
+1786929793235,3,01 Login,200,OK,Stress Virtual Users 1-10,text,true,635,227,18,18,http://localhost:3000/api/login,3
+1786929793258,9,04 Checkout,200,OK,Stress Virtual Users 1-3,text,true,314,429,18,18,http://localhost:3000/api/checkout,9
+1786929793281,7,04 Checkout,200,OK,Stress Virtual Users 1-17,text,true,314,429,17,17,http://localhost:3000/api/checkout,7
+1786929793316,4,01 Login,200,OK,Stress Virtual Users 1-13,text,true,635,227,17,17,http://localhost:3000/api/login,3
+1786929793373,3,03 Add Cart,200,OK,Stress Virtual Users 1-18,text,true,294,363,17,17,http://localhost:3000/api/cart,3
+1786929793375,8,04 Checkout,200,OK,Stress Virtual Users 1-19,text,true,314,429,17,17,http://localhost:3000/api/checkout,8
+1786929793432,2,02 Product Detail,200,OK,Stress Virtual Users 1-20,text,true,451,338,17,17,http://localhost:3000/api/products/1,2
+1786929793474,4,01 Login,200,OK,Stress Virtual Users 1-9,text,true,635,227,17,17,http://localhost:3000/api/login,4
+1786929793531,2,02 Product Detail,200,OK,Stress Virtual Users 1-8,text,true,451,338,17,17,http://localhost:3000/api/products/1,2
+1786929793619,2,03 Add Cart,200,OK,Stress Virtual Users 1-6,text,true,294,363,17,17,http://localhost:3000/api/cart,2
+1786929793627,7,04 Checkout,200,OK,Stress Virtual Users 1-4,text,true,314,429,17,17,http://localhost:3000/api/checkout,7
+1786929793650,7,04 Checkout,200,OK,Stress Virtual Users 1-14,text,true,314,429,16,16,http://localhost:3000/api/checkout,7
+1786929793657,2,03 Add Cart,200,OK,Stress Virtual Users 1-15,text,true,294,363,16,16,http://localhost:3000/api/cart,2
+1786929793787,7,04 Checkout,200,OK,Stress Virtual Users 1-5,text,true,314,429,16,16,http://localhost:3000/api/checkout,6
+1786929793834,3,01 Login,200,OK,Stress Virtual Users 1-17,text,true,635,227,16,16,http://localhost:3000/api/login,3
+1786929793865,2,03 Add Cart,200,OK,Stress Virtual Users 1-16,text,true,294,363,16,16,http://localhost:3000/api/cart,2
+1786929793935,3,03 Add Cart,200,OK,Stress Virtual Users 1-20,text,true,294,363,16,16,http://localhost:3000/api/cart,3
+1786929793960,2,03 Add Cart,200,OK,Stress Virtual Users 1-7,text,true,294,363,16,16,http://localhost:3000/api/cart,2
+1786929794067,2,02 Product Detail,200,OK,Stress Virtual Users 1-11,text,true,451,338,16,16,http://localhost:3000/api/products/1,2
+1786929794076,4,01 Login,200,OK,Stress Virtual Users 1-12,text,true,635,227,16,16,http://localhost:3000/api/login,4
+1786929794105,2,01 Login,200,OK,Stress Virtual Users 1-19,text,true,635,227,16,16,http://localhost:3000/api/login,2
+1786929794111,2,02 Product Detail,200,OK,Stress Virtual Users 1-10,text,true,451,338,16,16,http://localhost:3000/api/products/1,2
+1786929794126,6,04 Checkout,200,OK,Stress Virtual Users 1-6,text,true,314,429,16,16,http://localhost:3000/api/checkout,6
+1786929794140,2,02 Product Detail,200,OK,Stress Virtual Users 1-13,text,true,451,338,16,16,http://localhost:3000/api/products/1,2
+1786929794214,2,02 Product Detail,200,OK,Stress Virtual Users 1-9,text,true,451,338,16,16,http://localhost:3000/api/products/1,2
+1786929794320,7,04 Checkout,200,OK,Stress Virtual Users 1-15,text,true,314,429,16,16,http://localhost:3000/api/checkout,7
+1786929794339,8,04 Checkout,200,OK,Stress Virtual Users 1-18,text,true,314,429,16,16,http://localhost:3000/api/checkout,8
+1786929794406,7,04 Checkout,200,OK,Stress Virtual Users 1-16,text,true,314,429,16,16,http://localhost:3000/api/checkout,7
+1786929794413,5,03 Add Cart,200,OK,Stress Virtual Users 1-8,text,true,294,363,16,16,http://localhost:3000/api/cart,5
+1786929794406,12,04 Checkout,200,OK,Stress Virtual Users 1-7,text,true,314,429,16,16,http://localhost:3000/api/checkout,12
+1786929794465,2,01 Login,200,OK,Stress Virtual Users 1-14,text,true,635,227,16,16,http://localhost:3000/api/login,2
+1786929794475,4,02 Product Detail,200,OK,Stress Virtual Users 1-17,text,true,451,338,16,16,http://localhost:3000/api/products/1,4
+1786929794475,3,01 Login,200,OK,Stress Virtual Users 1-5,text,true,635,227,16,16,http://localhost:3000/api/login,3
+1786929794590,8,04 Checkout,200,OK,Stress Virtual Users 1-20,text,true,314,429,16,16,http://localhost:3000/api/checkout,8
+1786929794614,2,03 Add Cart,200,OK,Stress Virtual Users 1-11,text,true,294,363,16,16,http://localhost:3000/api/cart,2
+1786929794713,2,03 Add Cart,200,OK,Stress Virtual Users 1-10,text,true,294,363,16,16,http://localhost:3000/api/cart,2
+1786929794739,3,01 Login,200,OK,Stress Virtual Users 1-6,text,true,635,227,16,16,http://localhost:3000/api/login,3
+1786929794784,2,02 Product Detail,200,OK,Stress Virtual Users 1-12,text,true,451,338,16,16,http://localhost:3000/api/products/1,2
+1786929794827,3,01 Login,200,OK,Stress Virtual Users 1-7,text,true,635,227,16,16,http://localhost:3000/api/login,3
+1786929794833,1,02 Product Detail,200,OK,Stress Virtual Users 1-19,text,true,451,338,16,16,http://localhost:3000/api/products/1,1
+1786929794837,2,01 Login,200,OK,Stress Virtual Users 1-16,text,true,635,227,16,16,http://localhost:3000/api/login,2
+1786929794950,3,03 Add Cart,200,OK,Stress Virtual Users 1-9,text,true,294,363,16,16,http://localhost:3000/api/cart,3
+1786929795018,2,01 Login,200,OK,Stress Virtual Users 1-15,text,true,635,227,16,16,http://localhost:3000/api/login,2
+1786929795030,2,02 Product Detail,200,OK,Stress Virtual Users 1-14,text,true,451,338,16,16,http://localhost:3000/api/products/1,2
+1786929795084,2,03 Add Cart,200,OK,Stress Virtual Users 1-17,text,true,294,363,16,16,http://localhost:3000/api/cart,2
+1786929795114,3,03 Add Cart,200,OK,Stress Virtual Users 1-13,text,true,294,363,16,16,http://localhost:3000/api/cart,3
+1786929795243,12,04 Checkout,200,OK,Stress Virtual Users 1-10,text,true,314,429,16,16,http://localhost:3000/api/checkout,12
+1786929795260,6,04 Checkout,200,OK,Stress Virtual Users 1-11,text,true,314,429,16,16,http://localhost:3000/api/checkout,6
+1786929795280,7,04 Checkout,200,OK,Stress Virtual Users 1-8,text,true,314,429,16,16,http://localhost:3000/api/checkout,7
+1786929795294,2,01 Login,200,OK,Stress Virtual Users 1-18,text,true,635,227,16,16,http://localhost:3000/api/login,2
+1786929795334,3,03 Add Cart,200,OK,Stress Virtual Users 1-12,text,true,294,363,16,16,http://localhost:3000/api/cart,3
+1786929795429,2,02 Product Detail,200,OK,Stress Virtual Users 1-5,text,true,451,338,16,16,http://localhost:3000/api/products/1,2
+1786929795518,1,02 Product Detail,200,OK,Stress Virtual Users 1-6,text,true,451,338,16,16,http://localhost:3000/api/products/1,1
+1786929795570,3,01 Login,200,OK,Stress Virtual Users 1-20,text,true,635,227,16,16,http://localhost:3000/api/login,3
+1786929795604,2,03 Add Cart,200,OK,Stress Virtual Users 1-14,text,true,294,363,16,16,http://localhost:3000/api/cart,2
+1786929795639,12,04 Checkout,200,OK,Stress Virtual Users 1-9,text,true,314,429,16,16,http://localhost:3000/api/checkout,12
+1786929795687,1,02 Product Detail,200,OK,Stress Virtual Users 1-16,text,true,451,338,16,16,http://localhost:3000/api/products/1,1
+1786929795743,2,03 Add Cart,200,OK,Stress Virtual Users 1-19,text,true,294,363,16,16,http://localhost:3000/api/cart,2
+1786929795772,2,02 Product Detail,200,OK,Stress Virtual Users 1-7,text,true,451,338,16,16,http://localhost:3000/api/products/1,2
+1786929795842,7,04 Checkout,200,OK,Stress Virtual Users 1-13,text,true,314,429,16,16,http://localhost:3000/api/checkout,7
+1786929795855,6,04 Checkout,200,OK,Stress Virtual Users 1-12,text,true,314,429,16,16,http://localhost:3000/api/checkout,6
+1786929795880,6,04 Checkout,200,OK,Stress Virtual Users 1-17,text,true,314,429,16,16,http://localhost:3000/api/checkout,6
+1786929795939,4,01 Login,200,OK,Stress Virtual Users 1-8,text,true,635,227,16,16,http://localhost:3000/api/login,4
+1786929795989,2,02 Product Detail,200,OK,Stress Virtual Users 1-15,text,true,451,338,16,16,http://localhost:3000/api/products/1,2
+1786929796062,8,04 Checkout,200,OK,Stress Virtual Users 1-14,text,true,314,429,16,16,http://localhost:3000/api/checkout,8
+1786929796093,2,02 Product Detail,200,OK,Stress Virtual Users 1-18,text,true,451,338,16,16,http://localhost:3000/api/products/1,2
+1786929796157,4,01 Login,200,OK,Stress Virtual Users 1-10,text,true,635,227,16,16,http://localhost:3000/api/login,4
+1786929796196,3,01 Login,200,OK,Stress Virtual Users 1-11,text,true,635,227,16,16,http://localhost:3000/api/login,3
+1786929796343,2,03 Add Cart,200,OK,Stress Virtual Users 1-5,text,true,294,363,16,16,http://localhost:3000/api/cart,2
+1786929796375,2,03 Add Cart,200,OK,Stress Virtual Users 1-16,text,true,294,363,16,16,http://localhost:3000/api/cart,2
+1786929796380,2,02 Product Detail,200,OK,Stress Virtual Users 1-20,text,true,451,338,16,16,http://localhost:3000/api/products/1,2
+1786929796383,2,03 Add Cart,200,OK,Stress Virtual Users 1-6,text,true,294,363,16,16,http://localhost:3000/api/cart,2
+1786929796400,6,04 Checkout,200,OK,Stress Virtual Users 1-19,text,true,314,429,16,16,http://localhost:3000/api/checkout,6
+1786929796522,3,03 Add Cart,200,OK,Stress Virtual Users 1-15,text,true,294,363,16,16,http://localhost:3000/api/cart,3
+1786929796602,3,01 Login,200,OK,Stress Virtual Users 1-9,text,true,635,227,16,16,http://localhost:3000/api/login,3
+1786929796603,2,02 Product Detail,200,OK,Stress Virtual Users 1-8,text,true,451,338,16,16,http://localhost:3000/api/products/1,2
+1786929796621,2,03 Add Cart,200,OK,Stress Virtual Users 1-7,text,true,294,363,16,16,http://localhost:3000/api/cart,2
+1786929796632,3,01 Login,200,OK,Stress Virtual Users 1-13,text,true,635,227,16,16,http://localhost:3000/api/login,3
+1786929796723,2,03 Add Cart,200,OK,Stress Virtual Users 1-18,text,true,294,363,16,16,http://localhost:3000/api/cart,2
+1786929796751,4,01 Login,200,OK,Stress Virtual Users 1-12,text,true,635,227,16,16,http://localhost:3000/api/login,4
+1786929796808,3,01 Login,200,OK,Stress Virtual Users 1-17,text,true,635,227,16,16,http://localhost:3000/api/login,3
+1786929796964,2,02 Product Detail,200,OK,Stress Virtual Users 1-10,text,true,451,338,16,16,http://localhost:3000/api/products/1,2
+1786929797031,3,01 Login,200,OK,Stress Virtual Users 1-14,text,true,635,227,16,16,http://localhost:3000/api/login,3
+1786929797100,12,04 Checkout,200,OK,Stress Virtual Users 1-5,text,true,314,429,16,16,http://localhost:3000/api/checkout,12
+1786929797134,2,01 Login,200,OK,Stress Virtual Users 1-19,text,true,635,227,15,15,http://localhost:3000/api/login,2
+1786929797157,7,04 Checkout,200,OK,Stress Virtual Users 1-15,text,true,314,429,15,15,http://localhost:3000/api/checkout,7
+1786929797175,2,02 Product Detail,200,OK,Stress Virtual Users 1-11,text,true,451,338,15,15,http://localhost:3000/api/products/1,2
+1786929797264,3,02 Product Detail,200,OK,Stress Virtual Users 1-17,text,true,451,338,15,15,http://localhost:3000/api/products/1,3
+1786929797273,6,04 Checkout,200,OK,Stress Virtual Users 1-6,text,true,314,429,15,15,http://localhost:3000/api/checkout,6
+1786929797309,6,04 Checkout,200,OK,Stress Virtual Users 1-16,text,true,314,429,14,14,http://localhost:3000/api/checkout,6
+1786929797315,3,03 Add Cart,200,OK,Stress Virtual Users 1-20,text,true,294,363,14,14,http://localhost:3000/api/cart,3
+1786929797333,2,02 Product Detail,200,OK,Stress Virtual Users 1-13,text,true,451,338,14,14,http://localhost:3000/api/products/1,2
+1786929797403,3,03 Add Cart,200,OK,Stress Virtual Users 1-8,text,true,294,363,14,14,http://localhost:3000/api/cart,3
+1786929797408,7,04 Checkout,200,OK,Stress Virtual Users 1-7,text,true,314,429,14,14,http://localhost:3000/api/checkout,7
+1786929797510,1,02 Product Detail,200,OK,Stress Virtual Users 1-9,text,true,451,338,13,13,http://localhost:3000/api/products/1,1
+1786929797547,2,02 Product Detail,200,OK,Stress Virtual Users 1-19,text,true,451,338,13,13,http://localhost:3000/api/products/1,2
+1786929797569,7,04 Checkout,200,OK,Stress Virtual Users 1-18,text,true,314,429,13,13,http://localhost:3000/api/checkout,7
+1786929797669,2,03 Add Cart,200,OK,Stress Virtual Users 1-17,text,true,294,363,13,13,http://localhost:3000/api/cart,2
+1786929797734,2,02 Product Detail,200,OK,Stress Virtual Users 1-12,text,true,451,338,13,13,http://localhost:3000/api/products/1,2
+1786929797776,3,03 Add Cart,200,OK,Stress Virtual Users 1-10,text,true,294,363,13,13,http://localhost:3000/api/cart,3
+1786929797820,2,03 Add Cart,200,OK,Stress Virtual Users 1-11,text,true,294,363,13,13,http://localhost:3000/api/cart,2
+1786929797823,2,01 Login,200,OK,Stress Virtual Users 1-15,text,true,635,227,13,13,http://localhost:3000/api/login,2
+1786929797981,2,02 Product Detail,200,OK,Stress Virtual Users 1-14,text,true,451,338,13,13,http://localhost:3000/api/products/1,2
+1786929798056,3,01 Login,200,OK,Stress Virtual Users 1-16,text,true,635,227,13,13,http://localhost:3000/api/login,3
+1786929798067,2,03 Add Cart,200,OK,Stress Virtual Users 1-13,text,true,294,363,13,13,http://localhost:3000/api/cart,2
+1786929798075,2,03 Add Cart,200,OK,Stress Virtual Users 1-9,text,true,294,363,13,13,http://localhost:3000/api/cart,2
+1786929798104,2,03 Add Cart,200,OK,Stress Virtual Users 1-19,text,true,294,363,13,13,http://localhost:3000/api/cart,2
+1786929798202,12,04 Checkout,200,OK,Stress Virtual Users 1-8,text,true,314,429,13,13,http://localhost:3000/api/checkout,12
+1786929798267,7,04 Checkout,200,OK,Stress Virtual Users 1-17,text,true,314,429,13,13,http://localhost:3000/api/checkout,7
+1786929798284,6,04 Checkout,200,OK,Stress Virtual Users 1-20,text,true,314,429,13,13,http://localhost:3000/api/checkout,6
+1786929798308,6,04 Checkout,200,OK,Stress Virtual Users 1-11,text,true,314,429,13,13,http://localhost:3000/api/checkout,6
+1786929798420,3,03 Add Cart,200,OK,Stress Virtual Users 1-14,text,true,294,363,13,13,http://localhost:3000/api/cart,3
+1786929798438,3,01 Login,200,OK,Stress Virtual Users 1-18,text,true,635,227,13,13,http://localhost:3000/api/login,3
+1786929798483,3,03 Add Cart,200,OK,Stress Virtual Users 1-12,text,true,294,363,13,13,http://localhost:3000/api/cart,3
+1786929798484,8,04 Checkout,200,OK,Stress Virtual Users 1-13,text,true,314,429,13,13,http://localhost:3000/api/checkout,8
+1786929798666,2,02 Product Detail,200,OK,Stress Virtual Users 1-15,text,true,451,338,13,13,http://localhost:3000/api/products/1,2
+1786929798677,7,04 Checkout,200,OK,Stress Virtual Users 1-10,text,true,314,429,13,13,http://localhost:3000/api/checkout,7
+1786929798693,2,02 Product Detail,200,OK,Stress Virtual Users 1-16,text,true,451,338,13,13,http://localhost:3000/api/products/1,2
+1786929798726,3,01 Login,200,OK,Stress Virtual Users 1-17,text,true,635,227,13,13,http://localhost:3000/api/login,3
+1786929798832,7,04 Checkout,200,OK,Stress Virtual Users 1-9,text,true,314,429,13,13,http://localhost:3000/api/checkout,7
+1786929798863,9,04 Checkout,200,OK,Stress Virtual Users 1-19,text,true,314,429,13,13,http://localhost:3000/api/checkout,8
+1786929798865,10,04 Checkout,200,OK,Stress Virtual Users 1-14,text,true,314,429,13,13,http://localhost:3000/api/checkout,10
+1786929799010,4,01 Login,200,OK,Stress Virtual Users 1-20,text,true,635,227,13,13,http://localhost:3000/api/login,4
+1786929799075,2,02 Product Detail,200,OK,Stress Virtual Users 1-18,text,true,451,338,13,13,http://localhost:3000/api/products/1,2
+1786929799131,4,01 Login,200,OK,Stress Virtual Users 1-11,text,true,635,227,13,13,http://localhost:3000/api/login,4
+1786929799139,3,01 Login,200,OK,Stress Virtual Users 1-13,text,true,635,227,13,13,http://localhost:3000/api/login,3
+1786929799175,3,01 Login,200,OK,Stress Virtual Users 1-8,text,true,635,227,13,13,http://localhost:3000/api/login,3
+1786929799262,3,01 Login,200,OK,Stress Virtual Users 1-9,text,true,635,227,13,13,http://localhost:3000/api/login,3
+1786929799278,12,04 Checkout,200,OK,Stress Virtual Users 1-12,text,true,314,429,13,13,http://localhost:3000/api/checkout,12
+1786929799306,2,03 Add Cart,200,OK,Stress Virtual Users 1-16,text,true,294,363,13,13,http://localhost:3000/api/cart,2
+1786929799347,4,01 Login,200,OK,Stress Virtual Users 1-19,text,true,635,227,13,13,http://localhost:3000/api/login,4
+1786929799460,3,01 Login,200,OK,Stress Virtual Users 1-14,text,true,635,227,13,13,http://localhost:3000/api/login,3
+1786929799576,2,03 Add Cart,200,OK,Stress Virtual Users 1-15,text,true,294,363,13,13,http://localhost:3000/api/cart,2
+1786929799596,3,02 Product Detail,200,OK,Stress Virtual Users 1-8,text,true,451,338,13,13,http://localhost:3000/api/products/1,3
+1786929799648,4,01 Login,200,OK,Stress Virtual Users 1-10,text,true,635,227,13,13,http://localhost:3000/api/login,3
+1786929799661,2,02 Product Detail,200,OK,Stress Virtual Users 1-17,text,true,451,338,13,13,http://localhost:3000/api/products/1,2
+1786929799684,3,03 Add Cart,200,OK,Stress Virtual Users 1-18,text,true,294,363,13,13,http://localhost:3000/api/cart,3
+1786929799786,12,04 Checkout,200,OK,Stress Virtual Users 1-16,text,true,314,429,13,13,http://localhost:3000/api/checkout,12
+1786929799790,8,02 Product Detail,200,OK,Stress Virtual Users 1-20,text,true,451,338,13,13,http://localhost:3000/api/products/1,8
+1786929799807,2,02 Product Detail,200,OK,Stress Virtual Users 1-19,text,true,451,338,13,13,http://localhost:3000/api/products/1,2
+1786929799941,2,02 Product Detail,200,OK,Stress Virtual Users 1-14,text,true,451,338,13,13,http://localhost:3000/api/products/1,2
+1786929799942,2,02 Product Detail,200,OK,Stress Virtual Users 1-11,text,true,451,338,13,13,http://localhost:3000/api/products/1,2
+1786929799954,1,02 Product Detail,200,OK,Stress Virtual Users 1-13,text,true,451,338,13,13,http://localhost:3000/api/products/1,1
+1786929800020,3,01 Login,200,OK,Stress Virtual Users 1-12,text,true,635,227,13,13,http://localhost:3000/api/login,3
+1786929800147,6,04 Checkout,200,OK,Stress Virtual Users 1-18,text,true,314,429,13,13,http://localhost:3000/api/checkout,6
+1786929800217,7,04 Checkout,200,OK,Stress Virtual Users 1-15,text,true,314,429,13,13,http://localhost:3000/api/checkout,7
+1786929800251,2,02 Product Detail,200,OK,Stress Virtual Users 1-9,text,true,451,338,13,13,http://localhost:3000/api/products/1,2
+1786929800322,3,03 Add Cart,200,OK,Stress Virtual Users 1-17,text,true,294,363,13,13,http://localhost:3000/api/cart,3
+1786929800321,5,01 Login,200,OK,Stress Virtual Users 1-16,text,true,635,227,13,13,http://localhost:3000/api/login,5
+1786929800374,2,03 Add Cart,200,OK,Stress Virtual Users 1-14,text,true,294,363,13,13,http://localhost:3000/api/cart,2
+1786929800465,3,03 Add Cart,200,OK,Stress Virtual Users 1-11,text,true,294,363,13,13,http://localhost:3000/api/cart,3
+1786929800466,3,02 Product Detail,200,OK,Stress Virtual Users 1-10,text,true,451,338,13,13,http://localhost:3000/api/products/1,3
+1786929800569,3,03 Add Cart,200,OK,Stress Virtual Users 1-8,text,true,294,363,13,13,http://localhost:3000/api/cart,2
+1786929800641,2,03 Add Cart,200,OK,Stress Virtual Users 1-19,text,true,294,363,13,13,http://localhost:3000/api/cart,2
+1786929800696,1,02 Product Detail,200,OK,Stress Virtual Users 1-12,text,true,451,338,13,13,http://localhost:3000/api/products/1,1
+1786929800700,1,03 Add Cart,200,OK,Stress Virtual Users 1-20,text,true,294,363,13,13,http://localhost:3000/api/cart,1
+1786929800735,3,01 Login,200,OK,Stress Virtual Users 1-18,text,true,635,227,13,13,http://localhost:3000/api/login,3
+1786929800760,2,02 Product Detail,200,OK,Stress Virtual Users 1-16,text,true,451,338,13,13,http://localhost:3000/api/products/1,2
+1786929800768,3,03 Add Cart,200,OK,Stress Virtual Users 1-13,text,true,294,363,13,13,http://localhost:3000/api/cart,3
+1786929800792,12,04 Checkout,200,OK,Stress Virtual Users 1-17,text,true,314,429,13,13,http://localhost:3000/api/checkout,12
+1786929800922,3,03 Add Cart,200,OK,Stress Virtual Users 1-10,text,true,294,363,13,13,http://localhost:3000/api/cart,3
+1786929800973,7,04 Checkout,200,OK,Stress Virtual Users 1-14,text,true,314,429,13,13,http://localhost:3000/api/checkout,7
+1786929800986,7,04 Checkout,200,OK,Stress Virtual Users 1-11,text,true,314,429,13,13,http://localhost:3000/api/checkout,7
+1786929801006,3,03 Add Cart,200,OK,Stress Virtual Users 1-9,text,true,294,363,13,13,http://localhost:3000/api/cart,3
+1786929801167,8,04 Checkout,200,OK,Stress Virtual Users 1-20,text,true,314,429,13,13,http://localhost:3000/api/checkout,8
+1786929801179,3,01 Login,200,OK,Stress Virtual Users 1-15,text,true,635,227,13,13,http://localhost:3000/api/login,3
+1786929801262,4,01 Login,200,OK,Stress Virtual Users 1-17,text,true,635,227,13,13,http://localhost:3000/api/login,4
+1786929801332,7,04 Checkout,200,OK,Stress Virtual Users 1-13,text,true,314,429,13,13,http://localhost:3000/api/checkout,7
+1786929801484,3,02 Product Detail,200,OK,Stress Virtual Users 1-18,text,true,451,338,13,13,http://localhost:3000/api/products/1,3
+1786929801485,9,04 Checkout,200,OK,Stress Virtual Users 1-19,text,true,314,429,13,13,http://localhost:3000/api/checkout,9
+1786929801516,7,04 Checkout,200,OK,Stress Virtual Users 1-8,text,true,314,429,13,13,http://localhost:3000/api/checkout,7
+1786929801573,2,03 Add Cart,200,OK,Stress Virtual Users 1-12,text,true,294,363,12,12,http://localhost:3000/api/cart,2
+1786929801613,3,01 Login,200,OK,Stress Virtual Users 1-14,text,true,635,227,12,12,http://localhost:3000/api/login,3
+1786929801699,2,03 Add Cart,200,OK,Stress Virtual Users 1-16,text,true,294,363,12,12,http://localhost:3000/api/cart,2
+1786929801699,8,04 Checkout,200,OK,Stress Virtual Users 1-10,text,true,314,429,12,12,http://localhost:3000/api/checkout,8
+1786929801716,5,01 Login,200,OK,Stress Virtual Users 1-11,text,true,635,227,12,12,http://localhost:3000/api/login,5
+1786929801717,5,01 Login,200,OK,Stress Virtual Users 1-20,text,true,635,227,12,12,http://localhost:3000/api/login,5
+1786929801787,7,04 Checkout,200,OK,Stress Virtual Users 1-9,text,true,314,429,12,12,http://localhost:3000/api/checkout,7
+1786929801806,2,02 Product Detail,200,OK,Stress Virtual Users 1-15,text,true,451,338,11,11,http://localhost:3000/api/products/1,2
+1786929801822,2,02 Product Detail,200,OK,Stress Virtual Users 1-17,text,true,451,338,11,11,http://localhost:3000/api/products/1,2
+1786929801888,2,03 Add Cart,200,OK,Stress Virtual Users 1-18,text,true,294,363,11,11,http://localhost:3000/api/cart,2
+1786929802082,3,01 Login,200,OK,Stress Virtual Users 1-19,text,true,635,227,11,11,http://localhost:3000/api/login,3
+1786929802188,3,01 Login,200,OK,Stress Virtual Users 1-13,text,true,635,227,11,11,http://localhost:3000/api/login,3
+1786929802244,7,04 Checkout,200,OK,Stress Virtual Users 1-12,text,true,314,429,11,11,http://localhost:3000/api/checkout,7
+1786929802305,3,02 Product Detail,200,OK,Stress Virtual Users 1-14,text,true,451,338,11,11,http://localhost:3000/api/products/1,3
+1786929802306,6,04 Checkout,200,OK,Stress Virtual Users 1-18,text,true,314,429,11,11,http://localhost:3000/api/checkout,6
+1786929802393,3,01 Login,200,OK,Stress Virtual Users 1-10,text,true,635,227,11,11,http://localhost:3000/api/login,3
+1786929802409,3,03 Add Cart,200,OK,Stress Virtual Users 1-15,text,true,294,363,11,11,http://localhost:3000/api/cart,3
+1786929802462,2,03 Add Cart,200,OK,Stress Virtual Users 1-17,text,true,294,363,11,11,http://localhost:3000/api/cart,2
+1786929802530,1,02 Product Detail,200,OK,Stress Virtual Users 1-20,text,true,451,338,11,11,http://localhost:3000/api/products/1,1
+1786929802573,1,02 Product Detail,200,OK,Stress Virtual Users 1-11,text,true,451,338,11,11,http://localhost:3000/api/products/1,1
+1786929802678,13,04 Checkout,200,OK,Stress Virtual Users 1-16,text,true,314,429,11,11,http://localhost:3000/api/checkout,13
+1786929802905,2,02 Product Detail,200,OK,Stress Virtual Users 1-10,text,true,451,338,11,11,http://localhost:3000/api/products/1,2
+1786929802963,1,02 Product Detail,200,OK,Stress Virtual Users 1-19,text,true,451,338,11,11,http://localhost:3000/api/products/1,1
+1786929802984,2,02 Product Detail,200,OK,Stress Virtual Users 1-13,text,true,451,338,11,11,http://localhost:3000/api/products/1,2
+1786929803115,7,04 Checkout,200,OK,Stress Virtual Users 1-17,text,true,314,429,11,11,http://localhost:3000/api/checkout,7
+1786929803135,2,03 Add Cart,200,OK,Stress Virtual Users 1-14,text,true,294,363,11,11,http://localhost:3000/api/cart,2
+1786929803152,3,01 Login,200,OK,Stress Virtual Users 1-12,text,true,635,227,11,11,http://localhost:3000/api/login,3
+1786929803179,3,01 Login,200,OK,Stress Virtual Users 1-16,text,true,635,227,11,11,http://localhost:3000/api/login,3
+1786929803190,3,03 Add Cart,200,OK,Stress Virtual Users 1-20,text,true,294,363,11,11,http://localhost:3000/api/cart,3
+1786929803214,6,04 Checkout,200,OK,Stress Virtual Users 1-15,text,true,314,429,11,11,http://localhost:3000/api/checkout,6
+1786929803250,3,01 Login,200,OK,Stress Virtual Users 1-18,text,true,635,227,11,11,http://localhost:3000/api/login,3
+1786929803347,3,03 Add Cart,200,OK,Stress Virtual Users 1-11,text,true,294,363,11,11,http://localhost:3000/api/cart,3
+1786929803367,2,03 Add Cart,200,OK,Stress Virtual Users 1-19,text,true,294,363,11,11,http://localhost:3000/api/cart,2
+1786929803407,2,03 Add Cart,200,OK,Stress Virtual Users 1-10,text,true,294,363,11,11,http://localhost:3000/api/cart,2
+1786929803639,2,02 Product Detail,200,OK,Stress Virtual Users 1-16,text,true,451,338,11,11,http://localhost:3000/api/products/1,2
+1786929803642,2,03 Add Cart,200,OK,Stress Virtual Users 1-13,text,true,294,363,11,11,http://localhost:3000/api/cart,2
+1786929803720,4,01 Login,200,OK,Stress Virtual Users 1-15,text,true,635,227,11,11,http://localhost:3000/api/login,4
+1786929803760,12,04 Checkout,200,OK,Stress Virtual Users 1-11,text,true,314,429,11,11,http://localhost:3000/api/checkout,12
+1786929803765,7,02 Product Detail,200,OK,Stress Virtual Users 1-18,text,true,451,338,11,11,http://localhost:3000/api/products/1,7
+1786929803795,2,01 Login,200,OK,Stress Virtual Users 1-17,text,true,635,227,10,10,http://localhost:3000/api/login,2
+1786929803842,7,04 Checkout,200,OK,Stress Virtual Users 1-19,text,true,314,429,10,10,http://localhost:3000/api/checkout,7
+1786929803845,4,02 Product Detail,200,OK,Stress Virtual Users 1-12,text,true,451,338,10,10,http://localhost:3000/api/products/1,4
+1786929803908,6,04 Checkout,200,OK,Stress Virtual Users 1-14,text,true,314,429,10,10,http://localhost:3000/api/checkout,6
+1786929803979,6,04 Checkout,200,OK,Stress Virtual Users 1-20,text,true,314,429,10,10,http://localhost:3000/api/checkout,6
+1786929804063,6,04 Checkout,200,OK,Stress Virtual Users 1-13,text,true,314,429,10,10,http://localhost:3000/api/checkout,6
+1786929804229,2,03 Add Cart,200,OK,Stress Virtual Users 1-18,text,true,294,363,10,10,http://localhost:3000/api/cart,2
+1786929804393,10,04 Checkout,200,OK,Stress Virtual Users 1-10,text,true,314,429,10,10,http://localhost:3000/api/checkout,10
+1786929804478,1,02 Product Detail,200,OK,Stress Virtual Users 1-15,text,true,451,338,9,9,http://localhost:3000/api/products/1,1
+1786929804531,3,01 Login,200,OK,Stress Virtual Users 1-19,text,true,635,227,9,9,http://localhost:3000/api/login,3
+1786929804535,2,03 Add Cart,200,OK,Stress Virtual Users 1-16,text,true,294,363,9,9,http://localhost:3000/api/cart,2
+1786929804535,3,01 Login,200,OK,Stress Virtual Users 1-14,text,true,635,227,9,9,http://localhost:3000/api/login,3
+1786929804554,2,02 Product Detail,200,OK,Stress Virtual Users 1-17,text,true,451,338,9,9,http://localhost:3000/api/products/1,2
+1786929804580,3,01 Login,200,OK,Stress Virtual Users 1-20,text,true,635,227,9,9,http://localhost:3000/api/login,3
+1786929804773,4,01 Login,200,OK,Stress Virtual Users 1-13,text,true,635,227,9,9,http://localhost:3000/api/login,4
+1786929804820,3,03 Add Cart,200,OK,Stress Virtual Users 1-12,text,true,294,363,9,9,http://localhost:3000/api/cart,3
+1786929804894,3,03 Add Cart,200,OK,Stress Virtual Users 1-15,text,true,294,363,9,9,http://localhost:3000/api/cart,3
+1786929804900,13,04 Checkout,200,OK,Stress Virtual Users 1-18,text,true,314,429,9,9,http://localhost:3000/api/checkout,13
+1786929805049,3,02 Product Detail,200,OK,Stress Virtual Users 1-14,text,true,451,338,9,9,http://localhost:3000/api/products/1,3
+1786929805169,12,04 Checkout,200,OK,Stress Virtual Users 1-16,text,true,314,429,9,9,http://localhost:3000/api/checkout,12
+1786929805239,9,04 Checkout,200,OK,Stress Virtual Users 1-12,text,true,314,429,9,9,http://localhost:3000/api/checkout,9
+1786929805338,2,02 Product Detail,200,OK,Stress Virtual Users 1-19,text,true,451,338,8,8,http://localhost:3000/api/products/1,2
+1786929805424,4,01 Login,200,OK,Stress Virtual Users 1-18,text,true,635,227,8,8,http://localhost:3000/api/login,4
+1786929805438,2,03 Add Cart,200,OK,Stress Virtual Users 1-17,text,true,294,363,8,8,http://localhost:3000/api/cart,2
+1786929805502,2,02 Product Detail,200,OK,Stress Virtual Users 1-20,text,true,451,338,8,8,http://localhost:3000/api/products/1,2
+1786929805518,2,02 Product Detail,200,OK,Stress Virtual Users 1-13,text,true,451,338,8,8,http://localhost:3000/api/products/1,2
+1786929805611,7,04 Checkout,200,OK,Stress Virtual Users 1-15,text,true,314,429,8,8,http://localhost:3000/api/checkout,7
+1786929805767,2,03 Add Cart,200,OK,Stress Virtual Users 1-19,text,true,294,363,8,8,http://localhost:3000/api/cart,2
+1786929805798,3,03 Add Cart,200,OK,Stress Virtual Users 1-14,text,true,294,363,8,8,http://localhost:3000/api/cart,3
+1786929806031,3,01 Login,200,OK,Stress Virtual Users 1-16,text,true,635,227,8,8,http://localhost:3000/api/login,3
+1786929806062,3,03 Add Cart,200,OK,Stress Virtual Users 1-20,text,true,294,363,8,8,http://localhost:3000/api/cart,3
+1786929806247,14,04 Checkout,200,OK,Stress Virtual Users 1-17,text,true,314,429,8,8,http://localhost:3000/api/checkout,14
+1786929806325,2,03 Add Cart,200,OK,Stress Virtual Users 1-13,text,true,294,363,8,8,http://localhost:3000/api/cart,2
+1786929806371,2,02 Product Detail,200,OK,Stress Virtual Users 1-18,text,true,451,338,8,8,http://localhost:3000/api/products/1,2
+1786929806418,5,01 Login,200,OK,Stress Virtual Users 1-15,text,true,635,227,8,8,http://localhost:3000/api/login,5
+1786929806418,9,04 Checkout,200,OK,Stress Virtual Users 1-14,text,true,314,429,8,8,http://localhost:3000/api/checkout,9
+1786929806496,7,04 Checkout,200,OK,Stress Virtual Users 1-19,text,true,314,429,7,7,http://localhost:3000/api/checkout,7
+1786929806527,2,02 Product Detail,200,OK,Stress Virtual Users 1-16,text,true,451,338,7,7,http://localhost:3000/api/products/1,2
+1786929806823,6,03 Add Cart,200,OK,Stress Virtual Users 1-18,text,true,294,363,7,7,http://localhost:3000/api/cart,6
+1786929806823,11,04 Checkout,200,OK,Stress Virtual Users 1-13,text,true,314,429,7,7,http://localhost:3000/api/checkout,11
+1786929806918,4,01 Login,200,OK,Stress Virtual Users 1-19,text,true,635,227,6,6,http://localhost:3000/api/login,4
+1786929806982,2,03 Add Cart,200,OK,Stress Virtual Users 1-16,text,true,294,363,6,6,http://localhost:3000/api/cart,2
+1786929807030,8,04 Checkout,200,OK,Stress Virtual Users 1-20,text,true,314,429,6,6,http://localhost:3000/api/checkout,8
+1786929807093,2,02 Product Detail,200,OK,Stress Virtual Users 1-15,text,true,451,338,6,6,http://localhost:3000/api/products/1,2
+1786929807157,3,01 Login,200,OK,Stress Virtual Users 1-17,text,true,635,227,6,6,http://localhost:3000/api/login,3
+1786929807408,12,04 Checkout,200,OK,Stress Virtual Users 1-16,text,true,314,429,6,6,http://localhost:3000/api/checkout,12
+1786929807580,2,03 Add Cart,200,OK,Stress Virtual Users 1-15,text,true,294,363,6,6,http://localhost:3000/api/cart,2
+1786929807642,2,02 Product Detail,200,OK,Stress Virtual Users 1-19,text,true,451,338,6,6,http://localhost:3000/api/products/1,2
+1786929807704,8,04 Checkout,200,OK,Stress Virtual Users 1-18,text,true,314,429,6,6,http://localhost:3000/api/checkout,8
+1786929807735,2,02 Product Detail,200,OK,Stress Virtual Users 1-17,text,true,451,338,6,6,http://localhost:3000/api/products/1,2
+1786929807893,4,01 Login,200,OK,Stress Virtual Users 1-20,text,true,635,227,6,6,http://localhost:3000/api/login,4
+1786929808239,3,03 Add Cart,200,OK,Stress Virtual Users 1-19,text,true,294,363,6,6,http://localhost:3000/api/cart,3
+1786929808286,2,01 Login,200,OK,Stress Virtual Users 1-16,text,true,635,227,6,6,http://localhost:3000/api/login,2
+1786929808301,8,04 Checkout,200,OK,Stress Virtual Users 1-15,text,true,314,429,6,6,http://localhost:3000/api/checkout,8
+1786929808472,4,01 Login,200,OK,Stress Virtual Users 1-18,text,true,635,227,6,6,http://localhost:3000/api/login,3
+1786929808518,4,03 Add Cart,200,OK,Stress Virtual Users 1-17,text,true,294,363,6,6,http://localhost:3000/api/cart,4
+1786929808642,2,02 Product Detail,200,OK,Stress Virtual Users 1-20,text,true,451,338,6,6,http://localhost:3000/api/products/1,2
+1786929808860,2,02 Product Detail,200,OK,Stress Virtual Users 1-16,text,true,451,338,6,6,http://localhost:3000/api/products/1,2
+1786929808938,13,04 Checkout,200,OK,Stress Virtual Users 1-17,text,true,314,429,6,6,http://localhost:3000/api/checkout,13
+1786929809061,2,03 Add Cart,200,OK,Stress Virtual Users 1-20,text,true,294,363,6,6,http://localhost:3000/api/cart,2
+1786929809092,7,04 Checkout,200,OK,Stress Virtual Users 1-19,text,true,314,429,6,6,http://localhost:3000/api/checkout,7
+1786929809277,2,02 Product Detail,200,OK,Stress Virtual Users 1-18,text,true,451,338,6,6,http://localhost:3000/api/products/1,2
+1786929809292,4,01 Login,200,OK,Stress Virtual Users 1-15,text,true,635,227,6,6,http://localhost:3000/api/login,4
+1786929809631,3,01 Login,200,OK,Stress Virtual Users 1-19,text,true,635,227,6,6,http://localhost:3000/api/login,3
+1786929809724,3,01 Login,200,OK,Stress Virtual Users 1-17,text,true,635,227,6,6,http://localhost:3000/api/login,3
+1786929809849,3,03 Add Cart,200,OK,Stress Virtual Users 1-16,text,true,294,363,6,6,http://localhost:3000/api/cart,3
+1786929809895,2,02 Product Detail,200,OK,Stress Virtual Users 1-15,text,true,451,338,6,6,http://localhost:3000/api/products/1,2
+1786929809941,7,04 Checkout,200,OK,Stress Virtual Users 1-20,text,true,314,429,6,6,http://localhost:3000/api/checkout,7
+1786929810217,3,03 Add Cart,200,OK,Stress Virtual Users 1-18,text,true,294,363,6,6,http://localhost:3000/api/cart,3
+1786929810295,16,04 Checkout,200,OK,Stress Virtual Users 1-16,text,true,314,429,6,6,http://localhost:3000/api/checkout,16
+1786929810295,16,02 Product Detail,200,OK,Stress Virtual Users 1-17,text,true,451,338,6,6,http://localhost:3000/api/products/1,16
+1786929810512,2,02 Product Detail,200,OK,Stress Virtual Users 1-19,text,true,451,338,5,5,http://localhost:3000/api/products/1,2
+1786929810588,4,01 Login,200,OK,Stress Virtual Users 1-20,text,true,635,227,5,5,http://localhost:3000/api/login,3
+1786929810636,3,03 Add Cart,200,OK,Stress Virtual Users 1-15,text,true,294,363,5,5,http://localhost:3000/api/cart,3
+1786929810713,13,04 Checkout,200,OK,Stress Virtual Users 1-18,text,true,314,429,5,5,http://localhost:3000/api/checkout,13
+1786929811024,3,03 Add Cart,200,OK,Stress Virtual Users 1-17,text,true,294,363,5,5,http://localhost:3000/api/cart,3
+1786929811180,2,03 Add Cart,200,OK,Stress Virtual Users 1-19,text,true,294,363,5,5,http://localhost:3000/api/cart,2
+1786929811380,4,01 Login,200,OK,Stress Virtual Users 1-18,text,true,635,227,5,5,http://localhost:3000/api/login,4
+1786929811441,7,04 Checkout,200,OK,Stress Virtual Users 1-15,text,true,314,429,5,5,http://localhost:3000/api/checkout,7
+1786929811488,2,02 Product Detail,200,OK,Stress Virtual Users 1-20,text,true,451,338,4,4,http://localhost:3000/api/products/1,2
+1786929811830,13,04 Checkout,200,OK,Stress Virtual Users 1-17,text,true,314,429,4,4,http://localhost:3000/api/checkout,13
+1786929811876,8,04 Checkout,200,OK,Stress Virtual Users 1-19,text,true,314,429,3,3,http://localhost:3000/api/checkout,8
+1786929812156,2,02 Product Detail,200,OK,Stress Virtual Users 1-18,text,true,451,338,3,3,http://localhost:3000/api/products/1,2
+1786929812487,2,03 Add Cart,200,OK,Stress Virtual Users 1-20,text,true,294,363,3,3,http://localhost:3000/api/cart,2
+1786929812702,4,01 Login,200,OK,Stress Virtual Users 1-19,text,true,635,227,3,3,http://localhost:3000/api/login,4
+1786929812902,3,03 Add Cart,200,OK,Stress Virtual Users 1-18,text,true,294,363,3,3,http://localhost:3000/api/cart,3
+1786929813455,8,04 Checkout,200,OK,Stress Virtual Users 1-20,text,true,314,429,3,3,http://localhost:3000/api/checkout,8
+1786929813503,2,02 Product Detail,200,OK,Stress Virtual Users 1-19,text,true,451,338,3,3,http://localhost:3000/api/products/1,2
+1786929813677,7,04 Checkout,200,OK,Stress Virtual Users 1-18,text,true,314,429,3,3,http://localhost:3000/api/checkout,7
+1786929814295,4,01 Login,200,OK,Stress Virtual Users 1-20,text,true,635,227,2,2,http://localhost:3000/api/login,4
+1786929814511,3,03 Add Cart,200,OK,Stress Virtual Users 1-19,text,true,294,363,2,2,http://localhost:3000/api/cart,3
+1786929814943,2,02 Product Detail,200,OK,Stress Virtual Users 1-20,text,true,451,338,2,2,http://localhost:3000/api/products/1,2
+1786929815391,13,04 Checkout,200,OK,Stress Virtual Users 1-19,text,true,314,429,2,2,http://localhost:3000/api/checkout,13
+1786929815578,2,03 Add Cart,200,OK,Stress Virtual Users 1-20,text,true,294,363,1,1,http://localhost:3000/api/cart,2
+1786929816307,7,04 Checkout,200,OK,Stress Virtual Users 1-20,text,true,314,429,1,1,http://localhost:3000/api/checkout,7
+1786929817274,3,01 Login,200,OK,Stress Virtual Users 1-20,text,true,635,227,1,1,http://localhost:3000/api/login,3
+1786929818214,3,02 Product Detail,200,OK,Stress Virtual Users 1-20,text,true,451,338,1,1,http://localhost:3000/api/products/1,3
+1786929818745,3,03 Add Cart,200,OK,Stress Virtual Users 1-20,text,true,294,363,1,1,http://localhost:3000/api/cart,3
+1786929819319,11,04 Checkout,200,OK,Stress Virtual Users 1-20,text,true,314,429,1,1,http://localhost:3000/api/checkout,10
