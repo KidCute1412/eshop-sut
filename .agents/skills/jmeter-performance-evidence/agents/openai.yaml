@@ -1,0 +1,4 @@
+interface:
+  display_name: "JMeter Performance Evidence"
+  short_description: "Run and audit real JMeter performance evidence."
+  default_prompt: "Use this skill to design, execute, analyse, and validate real JMeter API performance-test evidence."
