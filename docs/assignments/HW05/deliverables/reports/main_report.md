@@ -46,9 +46,9 @@ Each plan has a CSV Data Set Config, token extraction, bearer authorization, res
 | Load | 200 | 0 (0.00%) | 5.79 ms | 14 ms | 2 / 75 ms | 38.817 s | 5.152 RPS |
 | Stress | 800 | 0 (0.00%) | 5.21 ms | 13 ms | 1 / 71 ms | 56.712 s | 14.106 RPS |
 | Spike | 500 | 0 (0.00%) | 6.42 ms | 14 ms | 2 / 76 ms | 15.733 s | 31.780 RPS |
-| Endurance | 4,400 | 0 (0.00%) | 3.91 ms | 12 ms | 1 / 80 ms | 640.194 s | 6.873 RPS |
+| Endurance (validated JMX) | 4,400 | 0 (0.00%) | 3.84 ms | 12 ms | 1 / 44 ms | 632.403 s | 6.958 RPS |
 
-Raw sources are `raw-results/{load,stress,spike,endurance}/`; the matching JMeter HTML dashboards are under `html-reports/`. The evidence register maps the required GUI/Task Manager frames to EV-RUN-LOAD, EV-RUN-STRESS, and EV-RUN-SPIKE. The highest executed sustained configuration was the 20-user Stress scenario at 14.106 observed RPS with zero JTL errors. This is a measured lower bound for this local environment, not a claimed maximum capacity, because no resource-saturation failure threshold was reached.
+Raw sources are `raw-results/{load,stress,spike,endurance}/`; the validated endurance source is `raw-results/endurance/23127404_Endurance_VALIDATED_20260817.jtl`, with dashboard `html-reports/endurance-validated/`. The evidence register maps required GUI/Task Manager frames to EV-RUN-LOAD, EV-RUN-STRESS, and EV-RUN-SPIKE. The completed 20-VU stepped profile achieved 24.014 RPS, p95 10 ms, and zero errors over 133.256 seconds; it is the highest completed stepped level. It is reported as a tested stable level, not a fabricated saturation capacity.
 
 ## 5. Defect, recovery, and limitations
 
@@ -61,6 +61,15 @@ Restarting the local backend rebuilt seeded SQLite state; the valid-login reset 
 The AI Audit Report records design, plan, execution-review, and analysis interactions. The key AI-assisted defect was the initial CSV-header configuration; human review retained the failed preflight, corrected the data contract, and used only the final JTL runs for conclusions. The 200–300 word critique is in `reports/ai_critique.md`.
 
 `reports/continuous_performance_proposal.md` defines a commit-aware pipeline, baseline and regression gates, retry/triage route, retention policy, and trade-offs. Optimization suggestions are conditional: migrate from local SQLite only after production evidence shows write contention; profile database query plans before adding indexes; and treat connection-pool changes as inapplicable to the present SQLite process unless the architecture changes.
+
+### AI optimization recommendation review
+
+| AI-proposed optimization | Classification | Evidence-based review |
+| --- | --- | --- |
+| Add indexes for order/cart access paths | Conditional | SQLite supports indexes, but no slow-query plan or endpoint-specific query evidence was captured. Profile the production-like query plan before adding an index. |
+| Enable SQLite WAL or migrate to a server database | Conditional | Final JTLs recorded zero errors, so current evidence does not establish SQLite write contention. Reconsider only if sustained concurrent writes reproduce locking or p95 degradation. |
+| Increase a database connection pool | Not applicable | The SUT uses local SQLite through `sqlite3`, not a client-server pool. A pool setting would not address the observed architecture. |
+| Raise JMeter virtual-user count as an application optimization | Not applicable | Virtual users change test pressure rather than EShop behavior. They are a measurement control, not a product remediation. |
 
 ## 7. External submission links
 

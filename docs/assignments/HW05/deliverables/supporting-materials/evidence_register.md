@@ -14,3 +14,5 @@
 | EV-JTL-STRESS | Final Stress metrics | `../raw-results/stress/23127404_Stress_20260817.jtl` | Verified by summarizer |
 | EV-JTL-SPIKE | Final Spike metrics | `../raw-results/spike/23127404_Spike_20260817.jtl` | Verified by summarizer |
 | EV-JTL-ENDURANCE | Endurance metrics and timing window | `../raw-results/endurance/23127404_Endurance_20260817.jtl` | Verified by summarizer |
+| EV-JTL-ENDURANCE-VALIDATED | Re-runnable validated endurance-plan metrics | `../raw-results/endurance/23127404_Endurance_VALIDATED_20260817.jtl` | Verified by summarizer |
+| EV-THRESHOLD-020VU | Completed stepped 20-VU sustained profile | `../raw-results/threshold/020VU/020VU.jtl` and `../raw-results/threshold/020VU/node-resource-samples.csv` | Verified by summarizer and monitor log |
