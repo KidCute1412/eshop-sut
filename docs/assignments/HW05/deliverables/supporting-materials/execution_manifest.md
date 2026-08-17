@@ -9,7 +9,7 @@
 | Endurance | 2026-08-17 00:49:36 | 4,400/4,400 successful; 10 m 41 s | `../raw-results/endurance/23127404_Endurance_20260817.jtl` | `../html-reports/endurance/` |
 | Endurance (validated plan) | 2026-08-17 (local) | 4,400/4,400 successful; 632.403 s | `../raw-results/endurance/23127404_Endurance_VALIDATED_20260817.jtl` | `../html-reports/endurance-validated/` |
 | Stepped endurance profile, 20 VU | 2026-08-17 (local) | 3,200/3,200 successful; 24.014 RPS; p95 10 ms | `../raw-results/threshold/020VU/020VU.jtl` | `../html-reports/threshold/020VU/` |
-| Lockout verification | 2026-08-17 (local) | invalid #1 401; invalid #2 401; valid after #2 403 | `../bugs/BUG-HW05-LOCKOUT-001.md` | Not applicable |
+| Lockout verification | 2026-08-17 (local) | first invalid attempt: HTTP 401; second invalid attempt: HTTP 401; valid login after second invalid attempt: HTTP 403 | `../bugs/BUG-HW05-LOCKOUT-001.md` | Not applicable |
 
 ## Reproduction configuration
 

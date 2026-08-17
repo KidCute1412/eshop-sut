@@ -28,7 +28,7 @@ The observed sequence is HTTP 401, HTTP 401, then HTTP 403 for the valid-passwor
 
 - `evidence/lockout-reset/EV-LOCKOUT-INVALID-LOGIN-SEQUENCE.png` records the invalid-login sequence.
 - `evidence/lockout-reset/EV-LOCKOUT-RESET-VALID-LOGIN.png` records reset followed by valid HTTP 200.
-- Controlled follow-up result: invalid #1 = 401; invalid #2 = 401; valid after #2 = 403.
+- Controlled follow-up result: first invalid attempt = HTTP 401; second invalid attempt = HTTP 401; valid login after the second invalid attempt = HTTP 403.
 - `backend/server.js` increments `login_attempts` by two for one invalid password; the lock threshold is three.
 
 ## Impact
