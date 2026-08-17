@@ -37,5 +37,6 @@ The report, AI audit, critique, JMX plans, CSV, raw JTL files, HTML dashboards, 
 
 ## External references
 
-- Unlisted Vietnamese demo video:
+- Unlisted Vietnamese performance-testing demo video: https://youtu.be/dgy0Efn27ZE
+- Agent Skill demonstration video: https://youtu.be/NWtyVbHxiXM
 - GitHub Issue BUG-HW05-LOCKOUT-001: https://github.com/KidCute1412/eshop-sut/issues/158

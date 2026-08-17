@@ -73,5 +73,6 @@ The AI Audit Report records design, plan, execution-review, and analysis interac
 
 ## 7. External submission links
 
-- Unlisted Vietnamese demo video (at least six minutes):
+- Unlisted Vietnamese performance-testing demo video (at least six minutes): https://youtu.be/dgy0Efn27ZE
+- Agent Skill demonstration video: https://youtu.be/NWtyVbHxiXM
 - Confirmed GitHub Issue BUG-HW05-LOCKOUT-001: https://github.com/KidCute1412/eshop-sut/issues/158

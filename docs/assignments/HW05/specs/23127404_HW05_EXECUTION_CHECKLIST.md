@@ -27,7 +27,8 @@
 
 | Reference | URL |
 | --- | --- |
-| Unlisted Vietnamese demonstration video | |
+| Unlisted Vietnamese performance-testing demonstration video | https://youtu.be/dgy0Efn27ZE |
+| Agent Skill demonstration video | https://youtu.be/NWtyVbHxiXM |
 | GitHub Issue BUG-HW05-LOCKOUT-001 | |
 
 Final archive name: `23127404_HW05_AI_Performance_100.zip`.
