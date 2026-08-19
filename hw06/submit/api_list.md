@@ -1,0 +1,3 @@
+- FR-03: endpoint `POST /api/forgot-password`, `POST /api/reset-password`
+- FR-09: endpoint `POST /api/apply-coupon`
+- FR-13: endpoint `GET /api/admin/orders`
