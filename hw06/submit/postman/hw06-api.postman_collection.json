@@ -1,0 +1,260 @@
+{
+  "info": {
+    "name": "HW06 API Testing - 23127296",
+    "_postman_id": "hw06-api-23127296",
+    "description": "Data-driven API tests for FR03, FR09, and FR13. Every request injects X-Student-Id.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "FR03 Password Recovery",
+      "item": [
+        {
+          "name": "POST {{path}}",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
+                  "pm.variables.set('authHeader', '');",
+                  "pm.variables.set('request_body', pm.iterationData.get('request_body') || '{}');",
+                  "let rawPath = String(pm.iterationData.get('path') || '');",
+                  "while (rawPath.charAt(0) === '/') rawPath = rawPath.slice(1);",
+                  "pm.variables.set('urlPath', rawPath);",
+                  "const baseUrl = pm.environment.get('baseUrl');",
+                  "const auth = pm.iterationData.get('auth');",
+                  "if (pm.iterationData.get('setup_user')) {",
+                  "  const setupEmail = pm.iterationData.get('email');",
+                  "  pm.sendRequest({ url: baseUrl + '/api/register', method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify({ name: 'FR03 Setup User', email: setupEmail, password: 'OldPassword123!' }) } }, () => {});",
+                  "}",
+                  "if (auth === 'admin' || auth === 'user') {",
+                  "  const credentials = auth === 'admin' ? { email: 'admin@eshop.com', password: 'Admin123!' } : { email: 'test@eshop.com', password: 'Test1234!' };",
+                  "  pm.sendRequest({ url: baseUrl + '/api/login', method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify(credentials) } }, (err, res) => {",
+                  "    if (!err && res.code === 200) pm.variables.set('authHeader', 'Bearer ' + res.json().token);",
+                  "  });",
+                  "} else if (auth === 'invalid') { pm.variables.set('authHeader', 'Bearer invalid.token.value'); }",
+                  "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
+                  "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }",
+                  "if (pm.iterationData.get('setup_token')) {",
+                  "  const email = pm.iterationData.get('email');",
+                  "  const newPassword = pm.iterationData.get('new_password') || 'NewPassword123!';",
+                  "  pm.sendRequest({ url: baseUrl + '/api/register', method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify({ name: 'FR03 User', email, password: 'OldPassword123!' }) } }, () => {",
+                  "    pm.sendRequest({ url: baseUrl + '/api/forgot-password', method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify({ email }) } }, (err, res) => {",
+                  "      const token = (!err && res.code === 200) ? res.json().resetToken : 'bad-token';",
+                  "      pm.variables.set('request_body', JSON.stringify({ email, resetToken: token, newPassword }));",
+                  "    });",
+                  "  });",
+                  "}"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] X-Student-Id header present`, function () { pm.expect(pm.request.headers.get('X-Student-Id')).to.eql(pm.environment.get('studentId')); });",
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] JSON response`, function () { pm.expect(pm.response.headers.get('Content-Type') || '').to.include('application/json'); });",
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] response time`, function () { pm.expect(pm.response.responseTime).to.be.below(3000); });",
+                  "const expectedBug = pm.iterationData.get('expected_bug'); if (expectedBug) console.log('Bug evidence reproduced by ' + pm.iterationData.get('tc_id') + ': ' + expectedBug);",
+                  "const json = pm.response.json();",
+                  "if (pm.response.code === 200) { pm.expect(json).to.have.property('message'); }",
+                  "if (pm.iterationData.get('path') === '/api/forgot-password' && pm.response.code === 200) pm.expect(json).to.have.property('resetToken');",
+                  "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{{request_body}}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/{{urlPath}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "{{urlPath}}"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "FR09 Apply Coupon",
+      "item": [
+        {
+          "name": "POST /api/apply-coupon",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
+                  "pm.variables.set('authHeader', '');",
+                  "pm.variables.set('request_body', pm.iterationData.get('request_body') || '{}');",
+                  "let rawPath = String(pm.iterationData.get('path') || '');",
+                  "while (rawPath.charAt(0) === '/') rawPath = rawPath.slice(1);",
+                  "pm.variables.set('urlPath', rawPath);",
+                  "const baseUrl = pm.environment.get('baseUrl');",
+                  "const auth = pm.iterationData.get('auth');",
+                  "if (pm.iterationData.get('setup_user')) {",
+                  "  const setupEmail = pm.iterationData.get('email');",
+                  "  pm.sendRequest({ url: baseUrl + '/api/register', method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify({ name: 'FR03 Setup User', email: setupEmail, password: 'OldPassword123!' }) } }, () => {});",
+                  "}",
+                  "if (auth === 'admin' || auth === 'user') {",
+                  "  const credentials = auth === 'admin' ? { email: 'admin@eshop.com', password: 'Admin123!' } : { email: 'test@eshop.com', password: 'Test1234!' };",
+                  "  pm.sendRequest({ url: baseUrl + '/api/login', method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify(credentials) } }, (err, res) => {",
+                  "    if (!err && res.code === 200) pm.variables.set('authHeader', 'Bearer ' + res.json().token);",
+                  "  });",
+                  "} else if (auth === 'invalid') { pm.variables.set('authHeader', 'Bearer invalid.token.value'); }",
+                  "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
+                  "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] X-Student-Id header present`, function () { pm.expect(pm.request.headers.get('X-Student-Id')).to.eql(pm.environment.get('studentId')); });",
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] JSON response`, function () { pm.expect(pm.response.headers.get('Content-Type') || '').to.include('application/json'); });",
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] response time`, function () { pm.expect(pm.response.responseTime).to.be.below(3000); });",
+                  "const expectedBug = pm.iterationData.get('expected_bug'); if (expectedBug) console.log('Bug evidence reproduced by ' + pm.iterationData.get('tc_id') + ': ' + expectedBug);",
+                  "const json = pm.response.json();",
+                  "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
+                  "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{{request_body}}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/apply-coupon",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "apply-coupon"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "FR13 Admin Orders",
+      "item": [
+        {
+          "name": "GET /api/admin/orders",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
+                  "pm.variables.set('authHeader', '');",
+                  "pm.variables.set('request_body', pm.iterationData.get('request_body') || '{}');",
+                  "let rawPath = String(pm.iterationData.get('path') || '');",
+                  "while (rawPath.charAt(0) === '/') rawPath = rawPath.slice(1);",
+                  "pm.variables.set('urlPath', rawPath);",
+                  "const baseUrl = pm.environment.get('baseUrl');",
+                  "const auth = pm.iterationData.get('auth');",
+                  "if (pm.iterationData.get('setup_user')) {",
+                  "  const setupEmail = pm.iterationData.get('email');",
+                  "  pm.sendRequest({ url: baseUrl + '/api/register', method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify({ name: 'FR03 Setup User', email: setupEmail, password: 'OldPassword123!' }) } }, () => {});",
+                  "}",
+                  "if (auth === 'admin' || auth === 'user') {",
+                  "  const credentials = auth === 'admin' ? { email: 'admin@eshop.com', password: 'Admin123!' } : { email: 'test@eshop.com', password: 'Test1234!' };",
+                  "  pm.sendRequest({ url: baseUrl + '/api/login', method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify(credentials) } }, (err, res) => {",
+                  "    if (!err && res.code === 200) pm.variables.set('authHeader', 'Bearer ' + res.json().token);",
+                  "  });",
+                  "} else if (auth === 'invalid') { pm.variables.set('authHeader', 'Bearer invalid.token.value'); }",
+                  "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
+                  "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] X-Student-Id header present`, function () { pm.expect(pm.request.headers.get('X-Student-Id')).to.eql(pm.environment.get('studentId')); });",
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] JSON response`, function () { pm.expect(pm.response.headers.get('Content-Type') || '').to.include('application/json'); });",
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] response time`, function () { pm.expect(pm.response.responseTime).to.be.below(3000); });",
+                  "const expectedBug = pm.iterationData.get('expected_bug'); if (expectedBug) console.log('Bug evidence reproduced by ' + pm.iterationData.get('tc_id') + ': ' + expectedBug);",
+                  "const json = pm.response.json();",
+                  "if (pm.response.code === 200) pm.expect(json).to.be.an('array');",
+                  "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authHeader}}"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/orders",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "orders"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+- generate randomly 31-34 VALID test cases, 3-5 INVALID or INCOMPLETE test cases, 5 HUMAN test cases(these test cases should be valid) per API.
+- ensure all templates for the submission are ready even if the content is missing. (missing/undone content must be marked).
+- create run-notes.md includes execution guide step-by-step, guide for all the additional technical requirement, note at the beginning which feature the agent can complete for me.

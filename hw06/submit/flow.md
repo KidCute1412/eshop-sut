@@ -1,83 +1,17 @@
-API Specification File
-        |
-        v
-[1. Read & Normalize Specification]
-        |
-        v
-[2. Extract Endpoints & Parameters]
-        |
-        v
-[3. Equivalence Partitioning]
-        |
-        v
-[4. Boundary Value Analysis]
-        |
-        v
-[5. State Transition Testing]
-        |
-        v
-[6. Security Testing]
-        |
-        v
-[7. Schema Validation]
-        |
-        v
-[8. Fuzz Testing + Error Guessing]
-        |
-        v
-[9. Decision Table Testing]
-        |
-        v
-[10. Deduplicate + Coverage Check]
-        |
-        v
-[11. Ensure >= 35 Tests / Endpoint]
-        |
-        v
-[12. Export Excel]
-        |
-        +--> POST_users.xlsx
-        +--> GET_users_{id}.xlsx
-        +--> POST_orders.xlsx
-        +--> PATCH_orders_{id}_status.xlsxAPI Specification File
-        |
-        v
-[1. Read & Normalize Specification]
-        |
-        v
-[2. Extract Endpoints & Parameters]
-        |
-        v
-[3. Equivalence Partitioning]
-        |
-        v
-[4. Boundary Value Analysis]
-        |
-        v
-[5. State Transition Testing]
-        |
-        v
-[6. Security Testing]
-        |
-        v
-[7. Schema Validation]
-        |
-        v
-[8. Fuzz Testing + Error Guessing]
-        |
-        v
-[9. Decision Table Testing]
-        |
-        v
-[10. Deduplicate + Coverage Check]
-        |
-        v
-[11. Ensure >= 35 Tests / Endpoint]
-        |
-        v
-[12. Export Excel]
-        |
-        +--> POST_users.xlsx
-        +--> GET_users_{id}.xlsx
-        +--> POST_orders.xlsx
-        +--> PATCH_orders_{id}_status.xlsx
+# AI-Driven API Test Generator Flow
+
+```mermaid
+flowchart TD
+    A[API specification] --> B[Normalize endpoint contract]
+    B --> C[Extract parameters, auth, schema, states]
+    C --> D[Generate AI draft cases by technique]
+    D --> E[Human audit: VALID / INVALID / INCOMPLETE]
+    E --> F[Correct invalid and incomplete cases]
+    F --> G[Add five human cases per API]
+    G --> H[Export Excel workbooks]
+    H --> I[Generate Postman data files]
+    I --> J[Run Newman locally and in CI]
+    J --> K[Write bug, CI, audit, and main reports]
+```
+
+> Student action required: the Mermaid diagram is an implementation draft. For the official submission rule that requires a self-drawn diagram, redraw or confirm this design manually and export it as PNG/PDF.

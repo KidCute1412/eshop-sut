@@ -1,0 +1,28 @@
+# Git Commit Log
+
+Current recent commits at generation time:
+
+```text
+97064a8 add hw06 template and agent skill
+28789bc add hw01 and hw02
+be070ce complete hw05
+a8dd44c add load and stress run
+87a3201 add verify for AI
+282e0d6 add template for hw05
+58ea4be docs: package mini API testing submission
+58b2354 fix(test): restore mini API expected status
+b9b904b test: demonstrate intentional CI failure
+c4f4b7f fix(ci): make Newman report step fail on test errors
+faa9ad1 fix(ci): add sqlite3 build fallback
+eaa8958 fix(ci): improve backend startup and health check
+a0038c9 test: add mini API testing for GET /api/products (MSSV: 23127296)
+c5f2341 add missing steps for review AI gap
+3e04b9a update hw04
+2079bf3 hw04: refresh git commit log export
+fb5503d hw04: add bug report, agent skill, AI audit/critique, README, and git log
+44a6d28 hw04: add data-driven Playwright automation for FR-03/FR-09/FR-13
+4c27794 hw03: export full branch commit history to git_commit_log.txt
+b064daa hw03: add README with self-assessment, generated PDFs and Excel checklist
+```
+
+HW06-specific step commits required by assignment: TODO after reviewing generated artifacts. Existing worktree contains unrelated changes, so no automatic commit was created by the agent.

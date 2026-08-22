@@ -1,0 +1,10 @@
+[
+  {
+    "tc_id": "FR09-FAIL-001",
+    "path": "/api/apply-coupon",
+    "request_body": "{\"code\":\"SAVE10\",\"total_amount\":500000,\"user_id\":1}",
+    "auth": "none",
+    "expected_status": 200,
+    "expected_bug": "BUG-FR09-001"
+  }
+]
