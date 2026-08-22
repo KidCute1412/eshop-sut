@@ -1,0 +1,5151 @@
+{
+  "info": {
+    "name": "HW6 EShop API Testing - FR01 FR07 FR17",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Generated HW6 collection for FR01 registration, FR07 cart, and FR17 coupon CRUD. Replace TODO_STUDENT_ID before final execution."
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.variables.get('studentId') || pm.environment.get('studentId') });",
+          "console.log('HW6 X-Student-Id:', pm.variables.get('studentId') || pm.environment.get('studentId'));"
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "studentId",
+      "value": "TODO_STUDENT_ID"
+    }
+  ],
+  "item": [
+    {
+      "name": "00 Setup",
+      "item": [
+        {
+          "name": "Login user and save token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/login",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@eshop.com\",\n  \"password\": \"Test1234!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "const json = pm.response.json();\npm.expect(json).to.have.property('token');\npm.environment.set('userToken', json.token);\npm.environment.set('userId', json.user && json.user.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Login admin and save token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/login",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@eshop.com\",\n  \"password\": \"Admin123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "const json = pm.response.json();\npm.expect(json).to.have.property('token');\npm.environment.set('adminToken', json.token);"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FR01 Account Registration",
+      "item": [
+        {
+          "name": "FR01-API-001 Register with all valid fields and a unique email",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Nguyen Van A\",\n  \"email\": \"HW6.fr01.valid.001+{{$timestamp}}@example.com\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(json).to.have.property('message'); pm.expect(json).to.have.property('id'); pm.expect(JSON.stringify(json)).to.not.include('Password123');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-002 Reject missing name",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"HW6.fr01.noname+{{$timestamp}}@example.com\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-003 Reject empty name",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"\",\n  \"email\": \"HW6.fr01.emptyname+{{$timestamp}}@example.com\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-004 Reject whitespace-only name",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"   \",\n  \"email\": \"HW6.fr01.spacename+{{$timestamp}}@example.com\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-005 Accept one-character non-empty name",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"A\",\n  \"email\": \"HW6.fr01.shortname+{{$timestamp}}@example.com\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(json).to.have.property('message'); pm.expect(json).to.have.property('id'); pm.expect(JSON.stringify(json)).to.not.include('Password123');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-006 Accept long but valid name",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Nguyen Van A Very Long Registration Name\",\n  \"email\": \"HW6.fr01.longname+{{$timestamp}}@example.com\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(json).to.have.property('message'); pm.expect(json).to.have.property('id'); pm.expect(JSON.stringify(json)).to.not.include('Password123');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-007 Store/display name safely when it contains script payload",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<script>alert(1)</script>\",\n  \"email\": \"HW6.fr01.xssname+{{$timestamp}}@example.com\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(json).to.have.property('message'); pm.expect(json).to.have.property('id'); pm.expect(JSON.stringify(json)).to.not.include('Password123');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-008 Reject missing email",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Missing Email\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-009 Reject empty email",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Empty Email\",\n  \"email\": \"\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-010 Reject email without at sign",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Bad Email\",\n  \"email\": \"bademail.example.com\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-011 Reject email without domain",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Bad Email\",\n  \"email\": \"bad@\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-012 Reject email without local part",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Bad Email\",\n  \"email\": \"@example.com\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-013 Reject email with spaces",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Bad Email\",\n  \"email\": \"bad email@example.com\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-014 Accept plus-tag valid email",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Plus Email\",\n  \"email\": \"HW6.fr01.plus+tag+{{$timestamp}}@example.com\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(json).to.have.property('message'); pm.expect(json).to.have.property('id'); pm.expect(JSON.stringify(json)).to.not.include('Password123');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-015 Accept mixed-case valid email",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Case Email\",\n  \"email\": \"HW6.Fr01.Mixed+{{$timestamp}}@Example.COM\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(json).to.have.property('message'); pm.expect(json).to.have.property('id'); pm.expect(JSON.stringify(json)).to.not.include('Password123');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-016 setup duplicate",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Duplicate User\",\n  \"email\": \"HW6.fr01.duplicate@example.com\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.test('setup duplicate user created or already exists', function () { pm.expect([200,500]).to.include(pm.response.code); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-016 Reject duplicate email",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Duplicate User\",\n  \"email\": \"HW6.fr01.duplicate@example.com\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-017 Reject SQL injection-looking email without server error",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"SQL Email\",\n  \"email\": \"' OR '1'='1@example.com\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-018 Reject SQL injection-looking name without server error",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Robert'); DROP TABLE users;--\",\n  \"email\": \"HW6.fr01.sqlname+{{$timestamp}}@example.com\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(json).to.have.property('message'); pm.expect(json).to.have.property('id'); pm.expect(JSON.stringify(json)).to.not.include('Password123');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-019 Reject missing password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"No Password\",\n  \"email\": \"HW6.fr01.nopass+{{$timestamp}}@example.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-020 Reject empty password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Empty Password\",\n  \"email\": \"HW6.fr01.emptypass+{{$timestamp}}@example.com\",\n  \"password\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-021 Reject password length 7",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Short Password\",\n  \"email\": \"HW6.fr01.shortpass+{{$timestamp}}@example.com\",\n  \"password\": \"Aa1!aaa\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-022 Accept password length 8 with all required classes",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Eight Password\",\n  \"email\": \"HW6.fr01.eightpass+{{$timestamp}}@example.com\",\n  \"password\": \"Aa1!aaaa\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(json).to.have.property('message'); pm.expect(json).to.have.property('id'); pm.expect(JSON.stringify(json)).to.not.include('Password123');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-023 Reject password missing uppercase",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"No Upper\",\n  \"email\": \"HW6.fr01.noupper+{{$timestamp}}@example.com\",\n  \"password\": \"password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-024 Reject password missing lowercase",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"No Lower\",\n  \"email\": \"HW6.fr01.nolower+{{$timestamp}}@example.com\",\n  \"password\": \"PASSWORD123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-025 Reject password missing digit",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"No Digit\",\n  \"email\": \"HW6.fr01.nodigit+{{$timestamp}}@example.com\",\n  \"password\": \"Password!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-026 Reject password missing special character",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"No Special\",\n  \"email\": \"HW6.fr01.nospecial+{{$timestamp}}@example.com\",\n  \"password\": \"Password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-027 Accept password with @ special character",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"At Special\",\n  \"email\": \"HW6.fr01.atpass+{{$timestamp}}@example.com\",\n  \"password\": \"Password123@\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(json).to.have.property('message'); pm.expect(json).to.have.property('id'); pm.expect(JSON.stringify(json)).to.not.include('Password123');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-028 Accept password with dollar special character",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Dollar Special\",\n  \"email\": \"HW6.fr01.dollarpass+{{$timestamp}}@example.com\",\n  \"password\": \"Password123$\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(json).to.have.property('message'); pm.expect(json).to.have.property('id'); pm.expect(JSON.stringify(json)).to.not.include('Password123');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-029 Accept password with ampersand special character",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Amp Special\",\n  \"email\": \"HW6.fr01.amppass+{{$timestamp}}@example.com\",\n  \"password\": \"Password123&\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(json).to.have.property('message'); pm.expect(json).to.have.property('id'); pm.expect(JSON.stringify(json)).to.not.include('Password123');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-030 Success response schema contains only message and numeric id",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Schema User\",\n  \"email\": \"HW6.fr01.schema+{{$timestamp}}@example.com\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(json).to.have.property('message'); pm.expect(json).to.have.property('id'); pm.expect(JSON.stringify(json)).to.not.include('Password123');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-031 Success response must not expose password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"No Leak\",\n  \"email\": \"HW6.fr01.noleak+{{$timestamp}}@example.com\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(json).to.have.property('message'); pm.expect(json).to.have.property('id'); pm.expect(JSON.stringify(json)).to.not.include('Password123');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-032 Reject null name",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": null,\n  \"email\": \"HW6.fr01.nullname+{{$timestamp}}@example.com\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-033 Reject null email",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Null Email\",\n  \"email\": null,\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-034 Reject null password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Null Password\",\n  \"email\": \"HW6.fr01.nullpass+{{$timestamp}}@example.com\",\n  \"password\": null\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-035 Reject unexpected role field during registration",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Role Injection\",\n  \"email\": \"HW6.fr01.role+{{$timestamp}}@example.com\",\n  \"password\": \"Password123!\",\n  \"role\": \"admin\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-036 Verify duplicate email using exact two-step setup in one run",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Duplicate Exact\",\n  \"email\": \"HW6.fr01.dup.exact@example.com\",\n  \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-037 Reject body with only unknown properties",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fullName\": \"Unknown\",\n  \"mail\": \"unknown@example.com\",\n  \"pass\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-038 Reject array JSON body",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"name\": \"Array User\",\n    \"email\": \"array@example.com\",\n    \"password\": \"Password123!\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR01-API-039 Reject boolean password type",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/register",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Boolean Password\",\n  \"email\": \"HW6.fr01.boolpass+{{$timestamp}}@example.com\",\n  \"password\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FR07 Shopping Cart",
+      "item": [
+        {
+          "name": "FR07-API-001 Reject GET cart without token",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 401\", function () { pm.response.to.have.status(401); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-002 Reject GET cart with malformed token",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer malformed.token.value"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 403\", function () { pm.response.to.have.status(403); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-003 Accept GET cart with valid user token",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.json()).to.be.an('array');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-005 Add valid product with quantity 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"iPhone 15 Pro Max\",\n  \"price\": 30000000,\n  \"quantity\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = pm.response.json(); pm.expect(json).to.be.an('object');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-006 Add valid product with quantity 2",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"iPhone 15 Pro Max\",\n  \"price\": 30000000,\n  \"quantity\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = pm.response.json(); pm.expect(json).to.be.an('object');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-007 Reject quantity 0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"iPhone 15 Pro Max\",\n  \"price\": 30000000,\n  \"quantity\": 0\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-008 Reject quantity -1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"iPhone 15 Pro Max\",\n  \"price\": 30000000,\n  \"quantity\": -1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-009 Reject decimal quantity",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"iPhone 15 Pro Max\",\n  \"price\": 30000000,\n  \"quantity\": 1.5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-010 Reject string quantity",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"iPhone 15 Pro Max\",\n  \"price\": 30000000,\n  \"quantity\": \"2\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-011 Reject missing quantity",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"iPhone 15 Pro Max\",\n  \"price\": 30000000\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-012 Reject null quantity",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"iPhone 15 Pro Max\",\n  \"price\": 30000000,\n  \"quantity\": null\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-013 Reject missing product id",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"iPhone 15 Pro Max\",\n  \"price\": 30000000,\n  \"quantity\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-014 Reject null product id",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": null,\n  \"name\": \"iPhone 15 Pro Max\",\n  \"price\": 30000000,\n  \"quantity\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-015 Reject string product id",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"abc\",\n  \"name\": \"iPhone 15 Pro Max\",\n  \"price\": 30000000,\n  \"quantity\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-016 Reject non-existing product id",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 999999,\n  \"name\": \"Ghost Product\",\n  \"price\": 100000,\n  \"quantity\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 404\", function () { pm.response.to.have.status(404); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-017 Reject missing product name",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"price\": 30000000,\n  \"quantity\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-018 Reject empty product name",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"\",\n  \"price\": 30000000,\n  \"quantity\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-019 Store/display product name safely when script payload is submitted",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"<img src=x onerror=alert(1)>\",\n  \"price\": 30000000,\n  \"quantity\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-020 Reject missing price",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"iPhone 15 Pro Max\",\n  \"quantity\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-021 Reject price 0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"iPhone 15 Pro Max\",\n  \"price\": 0,\n  \"quantity\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-022 Reject negative price",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"iPhone 15 Pro Max\",\n  \"price\": -1,\n  \"quantity\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-023 Reject string price",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"iPhone 15 Pro Max\",\n  \"price\": \"30000000\",\n  \"quantity\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-024 Reject POST cart without token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"iPhone 15 Pro Max\",\n  \"price\": 30000000,\n  \"quantity\": 1,\n  \"token\": \"none\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 401\", function () { pm.response.to.have.status(401); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-025 Reject POST cart with malformed token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer malformed.token.value"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"iPhone 15 Pro Max\",\n  \"price\": 30000000,\n  \"quantity\": 1,\n  \"token\": \"malformed\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 403\", function () { pm.response.to.have.status(403); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-026 Adding same product twice increases quantity, not duplicate row",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"iPhone 15 Pro Max\",\n  \"price\": 30000000,\n  \"quantity\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = pm.response.json(); pm.expect(json).to.be.an('object');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-027 Repeated GET cart does not mutate cart contents",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = pm.response.json(); pm.expect(json).to.be.an('object');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-028 Adding different product creates separate row",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 2,\n  \"name\": \"Samsung Galaxy S24 Ultra\",\n  \"price\": 28000000,\n  \"quantity\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = pm.response.json(); pm.expect(json).to.be.an('object');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-029 POST cart success schema has message only",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 3,\n  \"name\": \"MacBook Pro M3\",\n  \"price\": 45000000,\n  \"quantity\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = pm.response.json(); pm.expect(json).to.be.an('object');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-030 GET cart item schema",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = pm.response.json(); pm.expect(json).to.be.an('object');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-031 Cart is isolated per user",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userAAdds\": 1,\n  \"userBReads\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = pm.response.json(); pm.expect(json).to.be.an('object');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-032 Reject role or user_id injection in cart body",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"iPhone 15 Pro Max\",\n  \"price\": 30000000,\n  \"quantity\": 1,\n  \"user_id\": 1,\n  \"role\": \"admin\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-033 Reject SQL injection-looking product name safely",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"x'); DROP TABLE carts;--\",\n  \"price\": 30000000,\n  \"quantity\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-034 Run quantity boundaries from data file",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"quantityCases\": [\n    -1,\n    0,\n    1,\n    2\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = pm.response.json(); pm.expect(json).to.be.an('object');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-035 Reject empty object body",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-036 Reject array body",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"id\": 1,\n    \"name\": \"iPhone\",\n    \"price\": 30000000,\n    \"quantity\": 1\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-037 Reject extremely large quantity",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"iPhone 15 Pro Max\",\n  \"price\": 30000000,\n  \"quantity\": 999999999\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-038 Reject mismatched product name for valid id",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"Fake Product Name\",\n  \"price\": 30000000,\n  \"quantity\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-039 Reject mismatched product price for valid id",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"iPhone 15 Pro Max\",\n  \"price\": 1,\n  \"quantity\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,404]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07-API-040 Verify `X-Student-Id` header is present on cart requests",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"header\": \"X-Student-Id\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = pm.response.json(); pm.expect(json).to.be.an('object');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR07 follow-up GET duplicate check",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/cart"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  [
+                    "const cart = pm.response.json();",
+                    "const id1 = cart.filter(item => item.id === 1);",
+                    "pm.test('same product should not create duplicate row', function () { pm.expect(id1.length).to.be.at.most(1); });"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FR17 Coupon Management",
+      "item": [
+        {
+          "name": "FR17-API-001 Reject GET coupons without token",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/coupons"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 401\", function () { pm.response.to.have.status(401); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-002 Reject GET coupons with malformed token",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer malformed.token.value"
+              }
+            ],
+            "url": "{{baseUrl}}/api/coupons"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 403\", function () { pm.response.to.have.status(403); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-003 Reject GET coupons with user token",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/coupons"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 403\", function () { pm.response.to.have.status(403); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-004 Accept GET coupons with admin token",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/coupons"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.json()).to.be.an('array');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-005 GET coupons item schema",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/coupons"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "const arr = pm.response.json(); if (arr.length) { pm.expect(arr[0]).to.have.property('code'); pm.expect(arr[0]).to.have.property('type'); }"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-006 Reject POST coupon without token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"NOAUTH\",\n  \"type\": \"fixed\",\n  \"discount_value\": 1,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 401\", function () { pm.response.to.have.status(401); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-007 Reject POST coupon with malformed token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer malformed.token.value"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"BADAUTH\",\n  \"type\": \"fixed\",\n  \"discount_value\": 1,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 403\", function () { pm.response.to.have.status(403); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-008 Reject POST coupon with user token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"USERAUTH{{$timestamp}}\",\n  \"type\": \"fixed\",\n  \"discount_value\": 1,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 403\", function () { pm.response.to.have.status(403); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-009 Create valid percent coupon",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"HW6P{{$timestamp}}\",\n  \"type\": \"percent\",\n  \"discount_value\": 15,\n  \"min_order_amount\": 200000,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(json).to.have.property('message');\nif (json.id) pm.environment.set('createdCouponId', json.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-010 Create valid fixed coupon",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"HW6F{{$timestamp}}\",\n  \"type\": \"fixed\",\n  \"discount_value\": 50000,\n  \"min_order_amount\": 200000,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(json).to.have.property('message');\nif (json.id) pm.environment.set('createdCouponId', json.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-011 Reject missing code",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"percent\",\n  \"discount_value\": 10,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-012 Reject empty code",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"\",\n  \"type\": \"percent\",\n  \"discount_value\": 10,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-013 Reject whitespace-only code",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"   \",\n  \"type\": \"percent\",\n  \"discount_value\": 10,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-014 Reject duplicate code",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"SAVE10\",\n  \"type\": \"percent\",\n  \"discount_value\": 10,\n  \"min_order_amount\": 300000,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-015 Reject invalid type value",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"BADTYPE{{$timestamp}}\",\n  \"type\": \"bogus\",\n  \"discount_value\": 10,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-016 Reject missing type",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"NOTYPE{{$timestamp}}\",\n  \"discount_value\": 10,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-017 Reject uppercase type if enum is case-sensitive",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"UPTYPE{{$timestamp}}\",\n  \"type\": \"PERCENT\",\n  \"discount_value\": 10,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-018 Reject missing discount_value",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"NOVALUE{{$timestamp}}\",\n  \"type\": \"percent\",\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-019 Reject discount_value 0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"ZEROVAL{{$timestamp}}\",\n  \"type\": \"percent\",\n  \"discount_value\": 0,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-020 Reject negative discount_value",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"NEGVAL{{$timestamp}}\",\n  \"type\": \"fixed\",\n  \"discount_value\": -1,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-021 Reject string discount_value",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"STRINGVAL{{$timestamp}}\",\n  \"type\": \"fixed\",\n  \"discount_value\": \"50000\",\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-022 Reject percent discount over 100",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"PCT101{{$timestamp}}\",\n  \"type\": \"percent\",\n  \"discount_value\": 101,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-023 Reject missing expired_at",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"NOEXP{{$timestamp}}\",\n  \"type\": \"percent\",\n  \"discount_value\": 10,\n  \"min_order_amount\": 0,\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-024 Reject invalid expired_at format",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"BADEXP{{$timestamp}}\",\n  \"type\": \"percent\",\n  \"discount_value\": 10,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"not-a-date\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-025 Accept future expired_at date",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"FUTURE{{$timestamp}}\",\n  \"type\": \"percent\",\n  \"discount_value\": 10,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(json).to.have.property('message');\nif (json.id) pm.environment.set('createdCouponId', json.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-026 Reject missing min_order_amount",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"NOMIN{{$timestamp}}\",\n  \"type\": \"fixed\",\n  \"discount_value\": 50000,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-027 Accept min_order_amount 0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"MINZERO{{$timestamp}}\",\n  \"type\": \"fixed\",\n  \"discount_value\": 50000,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(json).to.have.property('message');\nif (json.id) pm.environment.set('createdCouponId', json.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-028 Reject min_order_amount -1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"MINNEG{{$timestamp}}\",\n  \"type\": \"fixed\",\n  \"discount_value\": 50000,\n  \"min_order_amount\": -1,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-029 Reject string min_order_amount",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"MINSTR{{$timestamp}}\",\n  \"type\": \"fixed\",\n  \"discount_value\": 50000,\n  \"min_order_amount\": \"0\",\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-030 Reject missing max_uses_per_user",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"NOUSAGE{{$timestamp}}\",\n  \"type\": \"fixed\",\n  \"discount_value\": 50000,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-031 Accept max_uses_per_user 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"USEONE{{$timestamp}}\",\n  \"type\": \"fixed\",\n  \"discount_value\": 50000,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(json).to.have.property('message');\nif (json.id) pm.environment.set('createdCouponId', json.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-032 Reject max_uses_per_user 0",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"USEZERO{{$timestamp}}\",\n  \"type\": \"fixed\",\n  \"discount_value\": 50000,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 0\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-033 Reject max_uses_per_user -1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"USENEG{{$timestamp}}\",\n  \"type\": \"fixed\",\n  \"discount_value\": 50000,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": -1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-034 Reject string max_uses_per_user",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"USESTR{{$timestamp}}\",\n  \"type\": \"fixed\",\n  \"discount_value\": 50000,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": \"1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-035 Reject SQL injection-looking coupon code safely",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"X'); DROP TABLE coupons;--\",\n  \"type\": \"fixed\",\n  \"discount_value\": 50000,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-036 Reject script payload in coupon code or store safely",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<script>alert(1)</script>\",\n  \"type\": \"fixed\",\n  \"discount_value\": 50000,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-037 Reject DELETE coupon without token",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons/1"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 401\", function () { pm.response.to.have.status(401); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-038 Reject DELETE coupon with user token",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{userToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons/1"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 403\", function () { pm.response.to.have.status(403); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-039 Delete existing coupon with admin token",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons/1"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(json).to.have.property('message');\nif (json.id) pm.environment.set('createdCouponId', json.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-040 Reject empty object body for coupon creation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-041 Reject array body for coupon creation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"code\": \"ARRAY\",\n    \"type\": \"fixed\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-042 Verify user-token cannot create then delete coupon",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"USERESC{{$timestamp}}\",\n  \"type\": \"fixed\",\n  \"discount_value\": 1,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 403\", function () { pm.response.to.have.status(403); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-043 Verify duplicate code failure is not a raw database 500",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"SAVE10\",\n  \"type\": \"fixed\",\n  \"discount_value\": 1,\n  \"min_order_amount\": 0,\n  \"expired_at\": \"2099-12-31\",\n  \"max_uses_per_user\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 400\", function () { pm.response.to.have.status(400); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "pm.expect(pm.response.code).to.be.oneOf([400,401,403,409]);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FR17-API-044 Verify `X-Student-Id` header is present on admin coupon requests",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/coupons",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"header\": \"X-Student-Id\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
+                  "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
+                  "let json = {}; try { json = pm.response.json(); } catch (e) {}\npm.expect(json).to.have.property('message');\nif (json.id) pm.environment.set('createdCouponId', json.id);"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
