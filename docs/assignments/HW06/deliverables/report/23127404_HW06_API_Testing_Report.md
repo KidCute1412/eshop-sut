@@ -12,7 +12,7 @@ Three APIs were selected from distinct pools: `POST /api/login` (FR-02), `POST /
 | B | 40 | 160 | 281 | 0 | `newman-reports/pool-b/report.json` |
 | C | 40 | 120 | 240 | 0 | `newman-reports/pool-c/report.json` |
 
-All requests inject `X-Student-Id: 23127404`; the Newman console records this with `[HW06 EVIDENCE]`. Pool A runs one isolated fixture per row to prevent lockout state leakage. Pool B uses login → cart → checkout → cart-query workflow. Pool C uses individually seeded fixture orders, then authenticates both roles before the status update.
+All requests inject `X-Student-Id: 23127404`; the Newman console records this with `[HW06 EVIDENCE]`. An authentic Postman Console capture shows the header in a successful request at `postman/screenshots/postman_console_23127404.png`. Pool A runs one isolated fixture per row to prevent lockout state leakage. Pool B uses login → cart → checkout → cart-query workflow. Pool C uses individually seeded fixture orders, then authenticates both roles before the status update.
 
 ## Human audit and extensions
 
