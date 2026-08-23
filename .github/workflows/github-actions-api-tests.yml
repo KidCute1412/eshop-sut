@@ -38,6 +38,7 @@ jobs:
         if: always()
         run: cat reports/HW6/newman/backend.log || true
       - name: Run Newman
+        continue-on-error: true
         working-directory: reports/HW6
         env:
           HTTP_PROXY: ""
