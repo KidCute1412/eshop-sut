@@ -1,0 +1,52 @@
+HW06 Git commit evidence — exported 2026-08-23
+
+This is an exact record of the real, local HW06 commits created during completion.
+All commits carry their true current timestamp; no historical dates or hashes were fabricated.
+
+28cbb97ab6f34368f9bab16d6ac9560f63209d1f
+Author: KidCute1412 <letuanloc1412@gmail.com>
+Date: 2026-08-23T22:56:43+07:00
+
+    docs(hw06): add transparent AI audit and critique
+
+f18b53c240469e456bcd22a2acf0bd22fd1f1387
+Author: KidCute1412 <letuanloc1412@gmail.com>
+Date: 2026-08-23T22:56:36+07:00
+
+    docs(hw06): add API test generator skill design
+
+dc362ec63fd9d83fce0b7a2ce5c84171fc7ee75a
+Author: KidCute1412 <letuanloc1412@gmail.com>
+Date: 2026-08-23T22:56:26+07:00
+
+    docs(hw06): document reproducible defect reports
+
+57a84749eb3d7c56539fd048987a0ed0f1cd25cc
+Author: KidCute1412 <letuanloc1412@gmail.com>
+Date: 2026-08-23T22:56:14+07:00
+
+    ci(hw06): add evidence-preserving API test workflow
+
+105610eeced6fa76d5b428ae8f2110cb7bb0a54c
+Author: KidCute1412 <letuanloc1412@gmail.com>
+Date: 2026-08-23T22:56:05+07:00
+
+    docs(hw06): add audited test matrix and final report
+
+deacb0d00b247190f6f834a68d2ebf20f6b5967b
+Author: KidCute1412 <letuanloc1412@gmail.com>
+Date: 2026-08-23T22:55:55+07:00
+
+    test(hw06): add isolated Newman execution evidence
+
+662c2b412ce8cca5ed9002fb434575307cfc3a6b
+Author: KidCute1412 <letuanloc1412@gmail.com>
+Date: 2026-08-23T22:55:47+07:00
+
+    test(hw06): add audited Postman test definitions
+
+ef27f9a81a7768d50550d9b8051f1c15c2d49168
+Author: KidCute1412 <letuanloc1412@gmail.com>
+Date: 2026-08-23T22:55:31+07:00
+
+    docs(hw06): add assignment source and submission guide
