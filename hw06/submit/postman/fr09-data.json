@@ -7,7 +7,7 @@
     "new_password": "NewPassword123!",
     "setup_token": false,
     "auth": "none",
-    "expected_status": 200,
+    "expected_status": 201,
     "setup_user": false,
     "expected_bug": "BUG-FR09-001"
   },
