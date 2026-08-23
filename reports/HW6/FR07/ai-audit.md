@@ -1,9 +1,5 @@
 # FR07 - AI Audit
 
-## Purpose
-
-This file preserves the detailed prompt and raw AI output for FR07 - Shopping cart. The table below is the AI-generated candidate suite before human review, execution cleanup, and testcase removal. Because it is raw AI output, it may include rows that were later removed from the final `test-cases.md`.
-
 ## AI Prompt
 
 ```text

@@ -1,0 +1,23 @@
+# AI-Driven API Test Generator Design
+
+## System Flowchart
+
+```mermaid
+flowchart LR
+    A["Source Inputs<br/>api_specification.md<br/>README.md<br/>setup_guide.md<br/>HW06 assignment<br/>Student config"]
+    B["Source Loader<br/>Read Markdown<br/>Normalize headings/tables<br/>Extract relevant snippets"]
+    C["Contract Parser<br/>Method/path<br/>Auth and role<br/>Request fields<br/>Response schema<br/>Side effects"]
+    D["Requirement Mapper<br/>Map endpoint to FR-*<br/>Map security to SEC-*<br/>Record ambiguities"]
+    E["Test Strategy Engine<br/>Domain partitions<br/>Boundary values<br/>Security cases<br/>State cases<br/>Schema cases"]
+    F["AI Candidate Generator<br/>Prompt one endpoint at a time<br/>Save raw AI output<br/>Generate candidate table"]
+    G["Rule-Based Validator<br/>Check required columns<br/>Flag unsupported oracle<br/>Check coverage minimum"]
+    H["Human Review Gate<br/>VALID / INVALID / INCOMPLETE<br/>Add human cases<br/>Preserve audit trail"]
+    I["Artifact Exporter<br/>Markdown test cases<br/>Postman collection/env<br/>Newman command/report paths<br/>CI workflow"]
+    J["Execution Evidence Integrator<br/>Parse Newman output<br/>Update actual result/status<br/>Attach evidence links"]
+    K["Final Submission Pack<br/>main-report.md<br/>FR folders<br/>Postman/Newman artifacts<br/>AI audit/critique<br/>CI evidence"]
+
+    A --> B --> C --> D --> E --> F --> G --> H --> I --> J --> K
+
+    H -. "Add missed security/state/schema cases" .-> E
+    G -. "Regenerate weak or incomplete cases" .-> F
+    J -. "Triage failures: SUT bug vs wrong oracle vs setup issue" .-> H
