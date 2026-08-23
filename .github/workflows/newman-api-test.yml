@@ -48,18 +48,35 @@ jobs:
       - name: Install Newman
         run: npm install -g newman
 
-      - name: Run Newman collection and export JSON report
+      - name: Run HW06 Newman collection and export JSON reports
         run: |
-          newman run mini_exercise_api/mini-products.postman_collection.json \
-            --environment mini_exercise_api/mini-local.postman_environment.json \
-            --iteration-data mini_exercise_api/mini-products.data.json \
+          mkdir -p hw06/submit/newman
+
+          newman run hw06/submit/postman/hw06-api.postman_collection.json \
+            --folder "FR03 Password Recovery" \
+            --environment hw06/submit/postman/hw06-local.postman_environment.json \
+            --iteration-data hw06/submit/postman/fr03-data.json \
             --reporters cli,json \
-            --reporter-json-export mini_exercise_api/mini-newman-report.json
+            --reporter-json-export hw06/submit/newman/fr03-newman-report.json
+
+          newman run hw06/submit/postman/hw06-api.postman_collection.json \
+            --folder "FR09 Apply Coupon" \
+            --environment hw06/submit/postman/hw06-local.postman_environment.json \
+            --iteration-data hw06/submit/postman/fr09-data.json \
+            --reporters cli,json \
+            --reporter-json-export hw06/submit/newman/fr09-newman-report.json
+
+          newman run hw06/submit/postman/hw06-api.postman_collection.json \
+            --folder "FR13 Admin Orders" \
+            --environment hw06/submit/postman/hw06-local.postman_environment.json \
+            --iteration-data hw06/submit/postman/fr13-data.json \
+            --reporters cli,json \
+            --reporter-json-export hw06/submit/newman/fr13-newman-report.json
 
       - name: Upload Newman report
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: newman-report
-          path: mini_exercise_api/mini-newman-report.json
+          name: hw06-newman-reports
+          path: hw06/submit/newman/*-newman-report.json
           retention-days: 7

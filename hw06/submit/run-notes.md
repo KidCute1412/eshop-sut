@@ -264,10 +264,14 @@ Then open GitHub Actions, wait for `Newman API Tests` to pass, and update `ci-cd
 
 ### 3. Produce a failing CI run
 
+Important: `.github/workflows/newman-api-test.yml` must run the HW06 collection files under `hw06/submit/postman`. If the workflow still points to `mini_exercise_api/...`, changing `hw06/submit/postman/fr09-data.json` will not affect CI and the run can still pass.
+
+Also make sure the pushed branch name matches the workflow trigger pattern `23127296*`. If you use a temporary branch with a different name, the push workflow may not run.
+
 Use a temporary branch or temporary commit. One simple option is to change one expected status in `hw06/submit/postman/fr09-data.json`, for example set `FR09-001` expected status from `200` to `201`, then commit and push:
 
 ```powershell
-git add hw06/submit/postman/fr09-data.json
+git add .github/workflows/newman-api-test.yml hw06/submit/postman/fr09-data.json
 git commit -m "hw06 demonstrate failing newman oracle"
 git push
 ```
