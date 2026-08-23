@@ -4,6 +4,8 @@
 
 Existing workflow: `.github/workflows/newman-api-test.yml`.
 
+Current local evidence is complete, but CI evidence still requires pushing to GitHub and capturing real workflow screenshots/links.
+
 Recommended HW06 command sequence:
 
 ```yaml
@@ -25,3 +27,13 @@ Recommended HW06 command sequence:
 - Failing commit hash: TODO.
 
 The local files are ready, but remote GitHub Actions screenshots and links cannot be fabricated and must be completed from real runs.
+
+## Local pre-CI result
+
+| API | Iterations | Requests | Assertions | Failed Assertions | Report |
+|---|---:|---:|---:|---:|---|
+| FR03 | 42 | 68 | 168 | 0 | `../newman/fr03-newman-report.json` |
+| FR09 | 37 | 37 | 148 | 0 | `../newman/fr09-newman-report.json` |
+| FR13 | 36 | 68 | 144 | 0 | `../newman/fr13-newman-report.json` |
+
+Local run time: 2026-08-24 00:38-00:39 Asia/Saigon.

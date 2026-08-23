@@ -2,6 +2,7 @@
 
 Local backend: `http://localhost:3000`  
 Student header: `X-Student-Id: 23127296`
+Execution time: 2026-08-24 00:38:55-00:39:22 Asia/Saigon
 
 | API | Data file | Iterations | Requests | Assertions | Failed Assertions | Report |
 |---|---|---:|---:|---:|---:|---|

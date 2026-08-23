@@ -5,11 +5,11 @@
     },
     "item": [
       {
-        "id": "630075f5-8fcd-421c-89f7-f16e3356cb7f",
+        "id": "04c1ad1d-3b84-4a2e-a4ac-fa8e409727c4",
         "name": "FR03 Password Recovery",
         "item": [
           {
-            "id": "8fc1d512-f3f4-4aec-bbb9-56edcf544512",
+            "id": "f7ab714a-34de-4be8-8d77-8f2b161409d6",
             "name": "POST {{path}}",
             "request": {
               "url": {
@@ -43,7 +43,7 @@
               {
                 "listen": "prerequest",
                 "script": {
-                  "id": "8052f0f0-16d4-417a-85bc-29cc75b65aa5",
+                  "id": "cd119b85-5289-4a04-923d-8afb11083a45",
                   "type": "text/javascript",
                   "exec": [
                     "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -82,7 +82,7 @@
               {
                 "listen": "test",
                 "script": {
-                  "id": "a20801bf-f1a4-474c-9764-31ed36186fe1",
+                  "id": "5f1f6ea2-377a-4584-b802-b0f9178ffb0b",
                   "type": "text/javascript",
                   "exec": [
                     "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -103,11 +103,11 @@
         "event": []
       },
       {
-        "id": "12715ea8-5634-46e8-84aa-ae6a027c06cd",
+        "id": "481668f6-4cc0-4771-8974-f44455b28d30",
         "name": "FR09 Apply Coupon",
         "item": [
           {
-            "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+            "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
             "name": "POST /api/apply-coupon",
             "request": {
               "url": {
@@ -142,7 +142,7 @@
               {
                 "listen": "prerequest",
                 "script": {
-                  "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                  "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                   "type": "text/javascript",
                   "exec": [
                     "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -166,13 +166,13 @@
                     "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                     "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                   ],
-                  "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                  "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
                 }
               },
               {
                 "listen": "test",
                 "script": {
-                  "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                  "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                   "type": "text/javascript",
                   "exec": [
                     "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -184,7 +184,7 @@
                     "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                     "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                   ],
-                  "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                  "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
                 }
               }
             ]
@@ -193,11 +193,11 @@
         "event": []
       },
       {
-        "id": "f91e6b3f-8725-4bd1-a343-bfbd14db7c03",
+        "id": "fd2d689a-7d9b-4368-a6ab-247d977f572d",
         "name": "FR13 Admin Orders",
         "item": [
           {
-            "id": "df23d70e-b858-42c6-83aa-55e153721731",
+            "id": "00ad4085-af47-4170-87f4-014fcc250d52",
             "name": "GET /api/admin/orders",
             "request": {
               "url": {
@@ -229,7 +229,7 @@
               {
                 "listen": "prerequest",
                 "script": {
-                  "id": "44fb4136-f7e2-4d83-8f7f-489e6d8e9348",
+                  "id": "79186db2-f894-42b3-a2ee-80119480c8dc",
                   "type": "text/javascript",
                   "exec": [
                     "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -258,7 +258,7 @@
               {
                 "listen": "test",
                 "script": {
-                  "id": "2959d090-3912-4229-89a4-1b45da5514d6",
+                  "id": "f7f2f5fc-ca7e-4266-8831-a2fe21418cd0",
                   "type": "text/javascript",
                   "exec": [
                     "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -310,7 +310,7 @@
     ]
   },
   "globals": {
-    "id": "9fa38540-2e48-495e-a715-898587a1cd98",
+    "id": "4403c05b-cf66-48a4-b8c3-77eab59ce766",
     "values": []
   },
   "run": {
@@ -362,10 +362,10 @@
       }
     },
     "timings": {
-      "responseAverage": 4.540540540540541,
+      "responseAverage": 5.54054054054054,
       "responseMin": 1,
-      "responseMax": 39,
-      "responseSd": 6.087624107595956,
+      "responseMax": 79,
+      "responseSd": 12.925137031203322,
       "dnsAverage": 0,
       "dnsMin": 0,
       "dnsMax": 0,
@@ -374,8 +374,8 @@
       "firstByteMin": 0,
       "firstByteMax": 0,
       "firstByteSd": 0,
-      "started": 1787412186995,
-      "completed": 1787412190196
+      "started": 1787506749057,
+      "completed": 1787506752354
     },
     "executions": [
       {
@@ -388,11 +388,11 @@
           "eof": false,
           "bof": true,
           "cr": false,
-          "ref": "ae966df5-102a-4355-9cb2-72d12a118696",
-          "httpRequestId": "58c73cbb-5b8e-4e38-a3b9-a2b2b311b7a2"
+          "ref": "e6c0ab46-10d7-4d13-a95b-bd9394956e1d",
+          "httpRequestId": "440aaf11-458b-4ca9-9edb-46547a37731a"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -427,7 +427,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -451,13 +451,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -469,7 +469,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -514,7 +514,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "b6b96a8d-8cc2-4f01-ac49-3312f4dfbe96",
+              "value": "fe31bed0-df81-462a-b3af-81e3bd89baa3",
               "system": true
             },
             {
@@ -545,7 +545,7 @@
           }
         },
         "response": {
-          "id": "0313bb34-df86-471d-af52-b900079c4000",
+          "id": "8783deae-e9b3-425a-9adc-9b55d09a7e55",
           "status": "OK",
           "code": 200,
           "header": [
@@ -571,7 +571,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:07 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:09 GMT"
             },
             {
               "key": "Connection",
@@ -716,10 +716,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 39,
+          "responseTime": 27,
           "responseSize": 128
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-001] status",
@@ -741,16 +741,16 @@
       },
       {
         "cursor": {
-          "ref": "1940ea09-7109-4249-83d1-24237beb14a0",
+          "ref": "16bc08f3-b7db-4232-b21c-5e3fd33adf71",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 1,
           "cr": true,
-          "httpRequestId": "53196f21-2e35-4657-a8e3-6ccee90bc8e1"
+          "httpRequestId": "d524be6b-9060-4b8e-ae9b-a4be81832b7b"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -785,7 +785,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -809,13 +809,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -827,7 +827,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -872,7 +872,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "9f14b648-0f4d-4e9a-b264-a39bc7d06a01",
+              "value": "e9bb56bf-73c2-46c8-8f55-53a1a388132d",
               "system": true
             },
             {
@@ -903,7 +903,7 @@
           }
         },
         "response": {
-          "id": "b3363fb4-846b-40c1-a1cd-a608d3173ff7",
+          "id": "956be645-71c1-4b73-8f8e-a882ab76a66f",
           "status": "OK",
           "code": 200,
           "header": [
@@ -929,7 +929,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:07 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:09 GMT"
             },
             {
               "key": "Connection",
@@ -1077,10 +1077,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 9,
+          "responseTime": 79,
           "responseSize": 131
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-002] status",
@@ -1102,16 +1102,16 @@
       },
       {
         "cursor": {
-          "ref": "46e64159-dacb-49b6-b60f-4fda269e7253",
+          "ref": "dcc28fe6-643e-402f-9d3e-55eedfa97a66",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 2,
           "cr": true,
-          "httpRequestId": "cd204ab6-f58c-4563-9b68-a4e32fccdfe0"
+          "httpRequestId": "2faae531-7dc6-40d7-ae8d-15863d10cc30"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -1146,7 +1146,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -1170,13 +1170,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -1188,7 +1188,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -1233,7 +1233,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "241a19f2-348d-400f-992e-7632ad1b4576",
+              "value": "9bc62841-2b42-45c4-b5ed-39e5f3f6b6af",
               "system": true
             },
             {
@@ -1264,7 +1264,7 @@
           }
         },
         "response": {
-          "id": "785e60c4-9f70-4d19-aa0d-dbd668d9d55f",
+          "id": "5d767b12-e0ce-40f0-90f1-8d8ecfd859ce",
           "status": "OK",
           "code": 200,
           "header": [
@@ -1290,7 +1290,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:07 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:09 GMT"
             },
             {
               "key": "Connection",
@@ -1440,10 +1440,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 5,
+          "responseTime": 6,
           "responseSize": 133
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-003] status",
@@ -1465,16 +1465,16 @@
       },
       {
         "cursor": {
-          "ref": "9bc5d815-2803-4361-8173-c34367884ae4",
+          "ref": "cc4668d0-7b0f-46e5-8cee-2f7353764aee",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 3,
           "cr": true,
-          "httpRequestId": "847d10dd-e2aa-4711-9f3b-ce7f06847cd9"
+          "httpRequestId": "f2d36a8c-c52f-4738-9652-de812c84bafe"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -1509,7 +1509,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -1533,13 +1533,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -1551,7 +1551,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -1596,7 +1596,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "b4c30fce-8ce0-4924-bd41-7a1c9b0d8af6",
+              "value": "ebfd8319-8517-4f62-985b-a81b0b637621",
               "system": true
             },
             {
@@ -1627,7 +1627,7 @@
           }
         },
         "response": {
-          "id": "7a75427b-f1a5-4de1-9562-e60fb9e12017",
+          "id": "2f038e7a-428f-44e5-bfb7-19fa9adf1e1e",
           "status": "OK",
           "code": 200,
           "header": [
@@ -1653,7 +1653,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:07 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:09 GMT"
             },
             {
               "key": "Connection",
@@ -1798,10 +1798,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 3,
+          "responseTime": 5,
           "responseSize": 128
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-004] status",
@@ -1823,16 +1823,16 @@
       },
       {
         "cursor": {
-          "ref": "dd8f6487-a5e1-40e9-958e-5d166d2f0013",
+          "ref": "e2b6363f-4d97-485f-9167-4d9596427a73",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 4,
           "cr": true,
-          "httpRequestId": "cd3ed21e-60ae-4c8e-8605-852e94cd8687"
+          "httpRequestId": "b5ad97e8-46a1-4bad-9981-53f8573b2a78"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -1867,7 +1867,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -1891,13 +1891,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -1909,7 +1909,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -1954,7 +1954,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "4249dcf8-a4e3-4086-8a7f-ebdbe994cfbd",
+              "value": "be7ae85b-3aa8-4a5a-ad56-acd15f0a1c43",
               "system": true
             },
             {
@@ -1985,7 +1985,7 @@
           }
         },
         "response": {
-          "id": "33bab2b3-9e24-4349-9b6b-6545457d23a1",
+          "id": "854b6460-ac71-474c-b53f-82e1067225f3",
           "status": "OK",
           "code": 200,
           "header": [
@@ -2011,7 +2011,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:07 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:09 GMT"
             },
             {
               "key": "Connection",
@@ -2159,10 +2159,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 7,
+          "responseTime": 2,
           "responseSize": 131
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-005] status",
@@ -2184,16 +2184,16 @@
       },
       {
         "cursor": {
-          "ref": "64d9eb93-26a5-4059-949b-f56779e8ca54",
+          "ref": "bc2c4d1f-c7c2-41a9-b9d2-a299420729c3",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 5,
           "cr": true,
-          "httpRequestId": "d4a74f89-f5d3-4c47-977e-7aaf1fd49e62"
+          "httpRequestId": "72db0886-dee9-4aae-8efb-2c192c3393ae"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -2228,7 +2228,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -2252,13 +2252,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -2270,7 +2270,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -2315,7 +2315,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "e3942d82-ab33-4288-bfcd-e0ab41192318",
+              "value": "d7261f63-34ba-4b3f-b667-5e3cab9f3bb8",
               "system": true
             },
             {
@@ -2346,7 +2346,7 @@
           }
         },
         "response": {
-          "id": "5ccdfe71-e26b-45b4-8c98-6c51b8406341",
+          "id": "209ef4a3-85ab-4b32-bec3-a0390a9d05dc",
           "status": "OK",
           "code": 200,
           "header": [
@@ -2372,7 +2372,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:07 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:09 GMT"
             },
             {
               "key": "Connection",
@@ -2519,10 +2519,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 5,
+          "responseTime": 3,
           "responseSize": 130
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-006] status",
@@ -2544,16 +2544,16 @@
       },
       {
         "cursor": {
-          "ref": "48f8f2cf-20c1-48ac-9890-a2b2ce21deae",
+          "ref": "d816408a-0b75-4102-9936-abfa8c40ba38",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 6,
           "cr": true,
-          "httpRequestId": "b8638442-b2f5-496e-a411-4b37383bb0aa"
+          "httpRequestId": "39b9d83f-04c0-4bbc-98a4-0f42e9b1c61b"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -2588,7 +2588,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -2612,13 +2612,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -2630,7 +2630,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -2675,7 +2675,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "e329be50-2920-44bb-8759-0a5bc505e558",
+              "value": "242a5bea-d41e-477f-be0c-3fc5faea0fa8",
               "system": true
             },
             {
@@ -2706,7 +2706,7 @@
           }
         },
         "response": {
-          "id": "d4377a18-a415-4c81-9f41-cb5ac485993f",
+          "id": "2b7a2c20-df38-4772-a6c6-2484ecc09623",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -2732,7 +2732,335 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:07 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:09 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              34,
+              58,
+              34,
+              196,
+              144,
+              198,
+              161,
+              110,
+              32,
+              104,
+              195,
+              160,
+              110,
+              103,
+              32,
+              99,
+              104,
+              198,
+              176,
+              97,
+              32,
+              196,
+              145,
+              225,
+              187,
+              167,
+              32,
+              103,
+              105,
+              195,
+              161,
+              32,
+              116,
+              114,
+              225,
+              187,
+              139,
+              32,
+              116,
+              225,
+              187,
+              145,
+              105,
+              32,
+              116,
+              104,
+              105,
+              225,
+              187,
+              131,
+              117,
+              32,
+              51,
+              48,
+              48,
+              46,
+              48,
+              48,
+              48,
+              32,
+              226,
+              130,
+              171,
+              32,
+              196,
+              145,
+              225,
+              187,
+              131,
+              32,
+              195,
+              161,
+              112,
+              32,
+              100,
+              225,
+              187,
+              165,
+              110,
+              103,
+              32,
+              109,
+              195,
+              163,
+              32,
+              110,
+              195,
+              160,
+              121,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 8,
+          "responseSize": 98
+        },
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
+        "assertions": [
+          {
+            "assertion": "[FR09-007] status",
+            "skipped": false
+          },
+          {
+            "assertion": "[FR09-007] X-Student-Id header present",
+            "skipped": false
+          },
+          {
+            "assertion": "[FR09-007] JSON response",
+            "skipped": false
+          },
+          {
+            "assertion": "[FR09-007] response time",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "6608a7b4-b6fc-4744-a51a-ac2cd6ef7e31",
+          "length": 1,
+          "cycles": 37,
+          "position": 0,
+          "iteration": 7,
+          "cr": true,
+          "httpRequestId": "98a1aa3c-f8d4-4c72-8c6a-01ae4109f2b2"
+        },
+        "item": {
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
+          "name": "POST /api/apply-coupon",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "apply-coupon"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{{request_body}}"
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
+                  "pm.variables.set('authHeader', '');",
+                  "pm.variables.set('request_body', pm.iterationData.get('request_body') || '{}');",
+                  "let rawPath = String(pm.iterationData.get('path') || '');",
+                  "while (rawPath.charAt(0) === '/') rawPath = rawPath.slice(1);",
+                  "pm.variables.set('urlPath', rawPath);",
+                  "const baseUrl = pm.environment.get('baseUrl');",
+                  "const auth = pm.iterationData.get('auth');",
+                  "if (pm.iterationData.get('setup_user')) {",
+                  "  const setupEmail = pm.iterationData.get('email');",
+                  "  pm.sendRequest({ url: baseUrl + '/api/register', method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify({ name: 'FR03 Setup User', email: setupEmail, password: 'OldPassword123!' }) } }, () => {});",
+                  "}",
+                  "if (auth === 'admin' || auth === 'user') {",
+                  "  const credentials = auth === 'admin' ? { email: 'admin@eshop.com', password: 'Admin123!' } : { email: 'test@eshop.com', password: 'Test1234!' };",
+                  "  pm.sendRequest({ url: baseUrl + '/api/login', method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify(credentials) } }, (err, res) => {",
+                  "    if (!err && res.code === 200) pm.variables.set('authHeader', 'Bearer ' + res.json().token);",
+                  "  });",
+                  "} else if (auth === 'invalid') { pm.variables.set('authHeader', 'Bearer invalid.token.value'); }",
+                  "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
+                  "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
+                ],
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] X-Student-Id header present`, function () { pm.expect(pm.request.headers.get('X-Student-Id')).to.eql(pm.environment.get('studentId')); });",
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] JSON response`, function () { pm.expect(pm.response.headers.get('Content-Type') || '').to.include('application/json'); });",
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] response time`, function () { pm.expect(pm.response.responseTime).to.be.below(3000); });",
+                  "const expectedBug = pm.iterationData.get('expected_bug'); if (expectedBug) console.log('Bug evidence reproduced by ' + pm.iterationData.get('tc_id') + ': ' + expectedBug);",
+                  "const json = pm.response.json();",
+                  "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
+                  "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
+                ],
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "api",
+              "apply-coupon"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-Student-Id",
+              "value": "23127296"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "abbfdc87-2e2b-46b3-ace7-ef3d0d6249a0",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "51",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\"code\":\"SAVE10\",\"total_amount\":299999,\"user_id\":1}"
+          }
+        },
+        "response": {
+          "id": "1bfe0b34-7d37-4dd7-899b-33981b400ec3",
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "98"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"62-jbiIxglY77nZImtomx8bPvimMK4\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 23 Aug 2026 17:39:09 GMT"
             },
             {
               "key": "Connection",
@@ -2850,335 +3178,7 @@
           "responseTime": 3,
           "responseSize": 98
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
-        "assertions": [
-          {
-            "assertion": "[FR09-007] status",
-            "skipped": false
-          },
-          {
-            "assertion": "[FR09-007] X-Student-Id header present",
-            "skipped": false
-          },
-          {
-            "assertion": "[FR09-007] JSON response",
-            "skipped": false
-          },
-          {
-            "assertion": "[FR09-007] response time",
-            "skipped": false
-          }
-        ]
-      },
-      {
-        "cursor": {
-          "ref": "1c8a693a-106e-4032-862c-e2295d52ad2c",
-          "length": 1,
-          "cycles": 37,
-          "position": 0,
-          "iteration": 7,
-          "cr": true,
-          "httpRequestId": "e4ba3a1f-0081-4d70-907c-696604ef656b"
-        },
-        "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
-          "name": "POST /api/apply-coupon",
-          "request": {
-            "url": {
-              "path": [
-                "api",
-                "apply-coupon"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "X-Student-Id",
-                "value": "{{studentId}}"
-              }
-            ],
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{{request_body}}"
-            }
-          },
-          "response": [],
-          "event": [
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
-                "type": "text/javascript",
-                "exec": [
-                  "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
-                  "pm.variables.set('authHeader', '');",
-                  "pm.variables.set('request_body', pm.iterationData.get('request_body') || '{}');",
-                  "let rawPath = String(pm.iterationData.get('path') || '');",
-                  "while (rawPath.charAt(0) === '/') rawPath = rawPath.slice(1);",
-                  "pm.variables.set('urlPath', rawPath);",
-                  "const baseUrl = pm.environment.get('baseUrl');",
-                  "const auth = pm.iterationData.get('auth');",
-                  "if (pm.iterationData.get('setup_user')) {",
-                  "  const setupEmail = pm.iterationData.get('email');",
-                  "  pm.sendRequest({ url: baseUrl + '/api/register', method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify({ name: 'FR03 Setup User', email: setupEmail, password: 'OldPassword123!' }) } }, () => {});",
-                  "}",
-                  "if (auth === 'admin' || auth === 'user') {",
-                  "  const credentials = auth === 'admin' ? { email: 'admin@eshop.com', password: 'Admin123!' } : { email: 'test@eshop.com', password: 'Test1234!' };",
-                  "  pm.sendRequest({ url: baseUrl + '/api/login', method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify(credentials) } }, (err, res) => {",
-                  "    if (!err && res.code === 200) pm.variables.set('authHeader', 'Bearer ' + res.json().token);",
-                  "  });",
-                  "} else if (auth === 'invalid') { pm.variables.set('authHeader', 'Bearer invalid.token.value'); }",
-                  "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
-                  "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
-                ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
-              }
-            },
-            {
-              "listen": "test",
-              "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
-                "type": "text/javascript",
-                "exec": [
-                  "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
-                  "pm.test(`[${pm.iterationData.get('tc_id')}] X-Student-Id header present`, function () { pm.expect(pm.request.headers.get('X-Student-Id')).to.eql(pm.environment.get('studentId')); });",
-                  "pm.test(`[${pm.iterationData.get('tc_id')}] JSON response`, function () { pm.expect(pm.response.headers.get('Content-Type') || '').to.include('application/json'); });",
-                  "pm.test(`[${pm.iterationData.get('tc_id')}] response time`, function () { pm.expect(pm.response.responseTime).to.be.below(3000); });",
-                  "const expectedBug = pm.iterationData.get('expected_bug'); if (expectedBug) console.log('Bug evidence reproduced by ' + pm.iterationData.get('tc_id') + ': ' + expectedBug);",
-                  "const json = pm.response.json();",
-                  "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
-                  "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
-                ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
-              }
-            }
-          ]
-        },
-        "request": {
-          "url": {
-            "protocol": "http",
-            "port": "3000",
-            "path": [
-              "api",
-              "apply-coupon"
-            ],
-            "host": [
-              "localhost"
-            ],
-            "query": [],
-            "variable": []
-          },
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            },
-            {
-              "key": "X-Student-Id",
-              "value": "23127296"
-            },
-            {
-              "key": "User-Agent",
-              "value": "PostmanRuntime/7.39.1",
-              "system": true
-            },
-            {
-              "key": "Accept",
-              "value": "*/*",
-              "system": true
-            },
-            {
-              "key": "Cache-Control",
-              "value": "no-cache",
-              "system": true
-            },
-            {
-              "key": "Postman-Token",
-              "value": "24c6e8ec-7b35-44e8-8ec6-51e0c0442d1b",
-              "system": true
-            },
-            {
-              "key": "Host",
-              "value": "localhost:3000",
-              "system": true
-            },
-            {
-              "key": "Accept-Encoding",
-              "value": "gzip, deflate, br",
-              "system": true
-            },
-            {
-              "key": "Connection",
-              "value": "keep-alive",
-              "system": true
-            },
-            {
-              "key": "Content-Length",
-              "value": "51",
-              "system": true
-            }
-          ],
-          "method": "POST",
-          "body": {
-            "mode": "raw",
-            "raw": "{\"code\":\"SAVE10\",\"total_amount\":299999,\"user_id\":1}"
-          }
-        },
-        "response": {
-          "id": "381ce33e-38c0-4e0a-98d6-66b1bf2f4d3a",
-          "status": "Bad Request",
-          "code": 400,
-          "header": [
-            {
-              "key": "X-Powered-By",
-              "value": "Express"
-            },
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": "*"
-            },
-            {
-              "key": "Content-Type",
-              "value": "application/json; charset=utf-8"
-            },
-            {
-              "key": "Content-Length",
-              "value": "98"
-            },
-            {
-              "key": "ETag",
-              "value": "W/\"62-jbiIxglY77nZImtomx8bPvimMK4\""
-            },
-            {
-              "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:07 GMT"
-            },
-            {
-              "key": "Connection",
-              "value": "keep-alive"
-            },
-            {
-              "key": "Keep-Alive",
-              "value": "timeout=5"
-            }
-          ],
-          "stream": {
-            "type": "Buffer",
-            "data": [
-              123,
-              34,
-              101,
-              114,
-              114,
-              111,
-              114,
-              34,
-              58,
-              34,
-              196,
-              144,
-              198,
-              161,
-              110,
-              32,
-              104,
-              195,
-              160,
-              110,
-              103,
-              32,
-              99,
-              104,
-              198,
-              176,
-              97,
-              32,
-              196,
-              145,
-              225,
-              187,
-              167,
-              32,
-              103,
-              105,
-              195,
-              161,
-              32,
-              116,
-              114,
-              225,
-              187,
-              139,
-              32,
-              116,
-              225,
-              187,
-              145,
-              105,
-              32,
-              116,
-              104,
-              105,
-              225,
-              187,
-              131,
-              117,
-              32,
-              51,
-              48,
-              48,
-              46,
-              48,
-              48,
-              48,
-              32,
-              226,
-              130,
-              171,
-              32,
-              196,
-              145,
-              225,
-              187,
-              131,
-              32,
-              195,
-              161,
-              112,
-              32,
-              100,
-              225,
-              187,
-              165,
-              110,
-              103,
-              32,
-              109,
-              195,
-              163,
-              32,
-              110,
-              195,
-              160,
-              121,
-              34,
-              125
-            ]
-          },
-          "cookie": [],
-          "responseTime": 4,
-          "responseSize": 98
-        },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-008] status",
@@ -3200,16 +3200,16 @@
       },
       {
         "cursor": {
-          "ref": "1c372e37-1b1d-4088-b984-3ff789ef074a",
+          "ref": "977178b0-ef39-4aef-9fe7-35c54fa6d380",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 8,
           "cr": true,
-          "httpRequestId": "0272465d-2c7e-4836-829a-091e82ac42ab"
+          "httpRequestId": "15aa1a4d-d839-4567-9a3f-bd910d269dc1"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -3244,7 +3244,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -3268,13 +3268,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -3286,7 +3286,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -3331,7 +3331,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "4f9402d2-013b-4a0c-8c0f-f7a9b71684b8",
+              "value": "5b571a5b-7b63-4e5c-8ed0-1f86bf034ae7",
               "system": true
             },
             {
@@ -3362,7 +3362,7 @@
           }
         },
         "response": {
-          "id": "096adb28-5ac6-4639-a8c2-b15982b6ea16",
+          "id": "b557fc5f-fde4-40a8-a1ce-e7e1f645882f",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -3388,7 +3388,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:07 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:09 GMT"
             },
             {
               "key": "Connection",
@@ -3503,10 +3503,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 10,
+          "responseTime": 5,
           "responseSize": 98
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-009] status",
@@ -3528,16 +3528,16 @@
       },
       {
         "cursor": {
-          "ref": "3a106f2e-8b24-4ade-b313-f48cc962e1df",
+          "ref": "29f7ac3d-23ad-4bf5-b540-e4249f4475d5",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 9,
           "cr": true,
-          "httpRequestId": "eb917658-7ada-49b7-9e5b-39e30ba33dcf"
+          "httpRequestId": "99e77b2e-7a76-448f-985f-8d94a70df6cd"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -3572,7 +3572,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -3596,13 +3596,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -3614,7 +3614,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -3659,7 +3659,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "e185139e-5c60-4dc0-b305-a2d27a3e6b0e",
+              "value": "1aaa2b25-7c88-4e64-aee5-c2f1a0618dd1",
               "system": true
             },
             {
@@ -3690,7 +3690,7 @@
           }
         },
         "response": {
-          "id": "90a16be4-8173-43b1-aa60-01fe48b11040",
+          "id": "03959645-466d-4b24-bef8-e6811816107f",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -3716,7 +3716,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:07 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:09 GMT"
             },
             {
               "key": "Connection",
@@ -3777,10 +3777,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 9,
+          "responseTime": 3,
           "responseSize": 44
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-010] status",
@@ -3802,16 +3802,16 @@
       },
       {
         "cursor": {
-          "ref": "008d010c-afb7-485b-9b0e-13ac5399bb44",
+          "ref": "63caffae-5890-47dc-ad4f-a7c1d153f421",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 10,
           "cr": true,
-          "httpRequestId": "6aa729ee-5675-426a-91d1-00bd09ec8c7d"
+          "httpRequestId": "d3a728c7-df40-4f50-bda7-602dcd4e4755"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -3846,7 +3846,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -3870,13 +3870,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -3888,7 +3888,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -3933,7 +3933,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "a3970236-793e-4bff-9c5d-0695a715b1fb",
+              "value": "1256e62c-fc3d-4e0e-80d2-d462b22814e3",
               "system": true
             },
             {
@@ -3964,7 +3964,7 @@
           }
         },
         "response": {
-          "id": "237e1923-c7e2-4c8b-a5e7-957cd4d2d4f5",
+          "id": "d4ba479a-5837-4cce-bf54-d7614f48450a",
           "status": "Not Found",
           "code": 404,
           "header": [
@@ -3990,7 +3990,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:07 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:10 GMT"
             },
             {
               "key": "Connection",
@@ -4086,10 +4086,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 5,
+          "responseTime": 2,
           "responseSize": 79
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-011] status",
@@ -4111,16 +4111,16 @@
       },
       {
         "cursor": {
-          "ref": "446d8e5d-27e4-4b5f-9279-f3a28896d6e4",
+          "ref": "0f19d03c-6ed3-4619-8f47-9f331a1e80a4",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 11,
           "cr": true,
-          "httpRequestId": "f22c0545-8fa7-4710-8b66-70468dddd153"
+          "httpRequestId": "c6845fd0-3aad-45da-aeb4-6fb48250d917"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -4155,7 +4155,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -4179,13 +4179,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -4197,7 +4197,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -4242,7 +4242,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "03f73252-278b-4082-a810-20bf23a8ccba",
+              "value": "efe4f8f4-a48f-4164-80cf-22b77130ac93",
               "system": true
             },
             {
@@ -4273,7 +4273,7 @@
           }
         },
         "response": {
-          "id": "30d4f2a0-fdbe-4873-a25e-b1773ed4172c",
+          "id": "a5168627-2167-4f1e-9825-75d4626f3676",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -4299,7 +4299,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:08 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:10 GMT"
             },
             {
               "key": "Connection",
@@ -4360,10 +4360,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 3,
+          "responseTime": 1,
           "responseSize": 44
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-012] status",
@@ -4385,16 +4385,16 @@
       },
       {
         "cursor": {
-          "ref": "98e8b15c-a2a7-4071-953e-bbf805f9d32c",
+          "ref": "716eef3c-13a7-46e2-b3fe-9357f8d48ab7",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 12,
           "cr": true,
-          "httpRequestId": "d85f28c0-0894-4268-89e3-41c167a89e0e"
+          "httpRequestId": "057f1902-83e1-40ef-b56f-4fc0dfd2bf98"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -4429,7 +4429,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -4453,13 +4453,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -4471,7 +4471,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -4516,7 +4516,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "382da1b8-92bf-448e-b5fd-1664137a88fa",
+              "value": "e2e5c1af-5fd0-49a8-aa97-e9820728fd57",
               "system": true
             },
             {
@@ -4547,7 +4547,7 @@
           }
         },
         "response": {
-          "id": "0dc5eaa2-944f-401e-8117-12dc4f9eb262",
+          "id": "3ad60ed4-876c-4765-ad1a-f35222353717",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -4573,7 +4573,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:08 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:10 GMT"
             },
             {
               "key": "Connection",
@@ -4637,7 +4637,7 @@
           "responseTime": 2,
           "responseSize": 44
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-013] status",
@@ -4659,16 +4659,16 @@
       },
       {
         "cursor": {
-          "ref": "e03ab077-34bd-49fb-9fd7-148af5ccdfa1",
+          "ref": "43c14c06-9176-400f-87c5-1f21f464728b",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 13,
           "cr": true,
-          "httpRequestId": "725661b6-924b-4c93-bcb5-ba7c33cff1b7"
+          "httpRequestId": "ba3afb82-6017-452f-af5b-f3b7577e28f3"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -4703,7 +4703,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -4727,13 +4727,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -4745,7 +4745,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -4790,7 +4790,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "7c6989d4-f658-4136-90fa-b36916aef943",
+              "value": "29e7ad1d-eb1e-41e4-a261-8a9879df7e26",
               "system": true
             },
             {
@@ -4821,7 +4821,7 @@
           }
         },
         "response": {
-          "id": "f6363a65-654e-4717-8a17-feae8b7ea545",
+          "id": "fc3fe6cb-ef24-4416-9602-917b19c1c0b5",
           "status": "Not Found",
           "code": 404,
           "header": [
@@ -4847,7 +4847,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:08 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:10 GMT"
             },
             {
               "key": "Connection",
@@ -4943,10 +4943,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 2,
+          "responseTime": 3,
           "responseSize": 79
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-014] status",
@@ -4968,16 +4968,16 @@
       },
       {
         "cursor": {
-          "ref": "a3369970-0399-4863-83e9-28ca6eb984ba",
+          "ref": "246a6aa6-0900-46aa-9fa6-7e8287b76668",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 14,
           "cr": true,
-          "httpRequestId": "7c489a2b-7da3-4177-aa2f-5dd3d39950d6"
+          "httpRequestId": "32dc32bc-5059-4109-83cd-e2cf5900f33a"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -5012,7 +5012,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -5036,13 +5036,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -5054,7 +5054,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -5099,7 +5099,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "0afda3ca-2c0e-4879-8f0d-2c46ddf9fd2e",
+              "value": "c69324ff-fa39-473f-81ec-84279f1c9b8c",
               "system": true
             },
             {
@@ -5130,7 +5130,7 @@
           }
         },
         "response": {
-          "id": "46a2ad4f-e847-4698-9273-db243a1df700",
+          "id": "ed3aee44-e2db-4626-b6e6-0892d621803f",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -5156,7 +5156,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:08 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:10 GMT"
             },
             {
               "key": "Connection",
@@ -5271,10 +5271,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 3,
+          "responseTime": 2,
           "responseSize": 98
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-015] status",
@@ -5296,16 +5296,16 @@
       },
       {
         "cursor": {
-          "ref": "052be1c8-ea1a-406f-b86c-e8ebabf1e529",
+          "ref": "30edf932-6878-42dc-a8b0-b4ff6c981844",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 15,
           "cr": true,
-          "httpRequestId": "d904fc9e-24e0-4178-b933-aa447aef31f4"
+          "httpRequestId": "e2e799a4-607f-4d0f-9b71-fe2fa86362a5"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -5340,7 +5340,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -5364,13 +5364,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -5382,7 +5382,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -5427,7 +5427,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "bb04224b-dffe-40bd-ad61-cb91ceea717b",
+              "value": "dc415ec5-feb2-4e97-8b59-148abdd3e8ed",
               "system": true
             },
             {
@@ -5458,7 +5458,7 @@
           }
         },
         "response": {
-          "id": "ccda91c9-9f2e-46a0-8a4b-62b682bd7bcc",
+          "id": "fa2ed9f2-4479-466a-ada1-f348f9a0e60d",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -5484,7 +5484,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:08 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:10 GMT"
             },
             {
               "key": "Connection",
@@ -5602,7 +5602,7 @@
           "responseTime": 2,
           "responseSize": 98
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-016] status",
@@ -5624,16 +5624,16 @@
       },
       {
         "cursor": {
-          "ref": "c5ba38ed-cc57-4d9c-b61e-0d1a5a2a5f0f",
+          "ref": "1e7efc7a-e156-41bd-8d97-261239c2b2a7",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 16,
           "cr": true,
-          "httpRequestId": "1a863649-ff2e-4c92-a663-0fd452a08dd6"
+          "httpRequestId": "c7ea7640-ca1c-468e-ad7a-2f94e1f297d9"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -5668,7 +5668,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -5692,13 +5692,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -5710,7 +5710,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -5755,7 +5755,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "6746e939-41ed-43b8-83af-0edee9925457",
+              "value": "8c2505f1-a397-4fd1-b537-afc1069ecc3f",
               "system": true
             },
             {
@@ -5786,7 +5786,7 @@
           }
         },
         "response": {
-          "id": "eaaeb1af-8780-42f1-8e58-6eefb3888450",
+          "id": "14c86081-eccb-441f-bfd7-a3c51f6f22c0",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -5812,335 +5812,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:08 GMT"
-            },
-            {
-              "key": "Connection",
-              "value": "keep-alive"
-            },
-            {
-              "key": "Keep-Alive",
-              "value": "timeout=5"
-            }
-          ],
-          "stream": {
-            "type": "Buffer",
-            "data": [
-              123,
-              34,
-              101,
-              114,
-              114,
-              111,
-              114,
-              34,
-              58,
-              34,
-              196,
-              144,
-              198,
-              161,
-              110,
-              32,
-              104,
-              195,
-              160,
-              110,
-              103,
-              32,
-              99,
-              104,
-              198,
-              176,
-              97,
-              32,
-              196,
-              145,
-              225,
-              187,
-              167,
-              32,
-              103,
-              105,
-              195,
-              161,
-              32,
-              116,
-              114,
-              225,
-              187,
-              139,
-              32,
-              116,
-              225,
-              187,
-              145,
-              105,
-              32,
-              116,
-              104,
-              105,
-              225,
-              187,
-              131,
-              117,
-              32,
-              53,
-              48,
-              48,
-              46,
-              48,
-              48,
-              48,
-              32,
-              226,
-              130,
-              171,
-              32,
-              196,
-              145,
-              225,
-              187,
-              131,
-              32,
-              195,
-              161,
-              112,
-              32,
-              100,
-              225,
-              187,
-              165,
-              110,
-              103,
-              32,
-              109,
-              195,
-              163,
-              32,
-              110,
-              195,
-              160,
-              121,
-              34,
-              125
-            ]
-          },
-          "cookie": [],
-          "responseTime": 3,
-          "responseSize": 98
-        },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
-        "assertions": [
-          {
-            "assertion": "[FR09-017] status",
-            "skipped": false
-          },
-          {
-            "assertion": "[FR09-017] X-Student-Id header present",
-            "skipped": false
-          },
-          {
-            "assertion": "[FR09-017] JSON response",
-            "skipped": false
-          },
-          {
-            "assertion": "[FR09-017] response time",
-            "skipped": false
-          }
-        ]
-      },
-      {
-        "cursor": {
-          "ref": "13cedef7-ca50-4c77-9489-92ba2abca15b",
-          "length": 1,
-          "cycles": 37,
-          "position": 0,
-          "iteration": 17,
-          "cr": true,
-          "httpRequestId": "fa7874b1-27db-4944-8315-b24e0b5a1d56"
-        },
-        "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
-          "name": "POST /api/apply-coupon",
-          "request": {
-            "url": {
-              "path": [
-                "api",
-                "apply-coupon"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "X-Student-Id",
-                "value": "{{studentId}}"
-              }
-            ],
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{{request_body}}"
-            }
-          },
-          "response": [],
-          "event": [
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
-                "type": "text/javascript",
-                "exec": [
-                  "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
-                  "pm.variables.set('authHeader', '');",
-                  "pm.variables.set('request_body', pm.iterationData.get('request_body') || '{}');",
-                  "let rawPath = String(pm.iterationData.get('path') || '');",
-                  "while (rawPath.charAt(0) === '/') rawPath = rawPath.slice(1);",
-                  "pm.variables.set('urlPath', rawPath);",
-                  "const baseUrl = pm.environment.get('baseUrl');",
-                  "const auth = pm.iterationData.get('auth');",
-                  "if (pm.iterationData.get('setup_user')) {",
-                  "  const setupEmail = pm.iterationData.get('email');",
-                  "  pm.sendRequest({ url: baseUrl + '/api/register', method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify({ name: 'FR03 Setup User', email: setupEmail, password: 'OldPassword123!' }) } }, () => {});",
-                  "}",
-                  "if (auth === 'admin' || auth === 'user') {",
-                  "  const credentials = auth === 'admin' ? { email: 'admin@eshop.com', password: 'Admin123!' } : { email: 'test@eshop.com', password: 'Test1234!' };",
-                  "  pm.sendRequest({ url: baseUrl + '/api/login', method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify(credentials) } }, (err, res) => {",
-                  "    if (!err && res.code === 200) pm.variables.set('authHeader', 'Bearer ' + res.json().token);",
-                  "  });",
-                  "} else if (auth === 'invalid') { pm.variables.set('authHeader', 'Bearer invalid.token.value'); }",
-                  "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
-                  "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
-                ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
-              }
-            },
-            {
-              "listen": "test",
-              "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
-                "type": "text/javascript",
-                "exec": [
-                  "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
-                  "pm.test(`[${pm.iterationData.get('tc_id')}] X-Student-Id header present`, function () { pm.expect(pm.request.headers.get('X-Student-Id')).to.eql(pm.environment.get('studentId')); });",
-                  "pm.test(`[${pm.iterationData.get('tc_id')}] JSON response`, function () { pm.expect(pm.response.headers.get('Content-Type') || '').to.include('application/json'); });",
-                  "pm.test(`[${pm.iterationData.get('tc_id')}] response time`, function () { pm.expect(pm.response.responseTime).to.be.below(3000); });",
-                  "const expectedBug = pm.iterationData.get('expected_bug'); if (expectedBug) console.log('Bug evidence reproduced by ' + pm.iterationData.get('tc_id') + ': ' + expectedBug);",
-                  "const json = pm.response.json();",
-                  "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
-                  "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
-                ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
-              }
-            }
-          ]
-        },
-        "request": {
-          "url": {
-            "protocol": "http",
-            "port": "3000",
-            "path": [
-              "api",
-              "apply-coupon"
-            ],
-            "host": [
-              "localhost"
-            ],
-            "query": [],
-            "variable": []
-          },
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            },
-            {
-              "key": "X-Student-Id",
-              "value": "23127296"
-            },
-            {
-              "key": "User-Agent",
-              "value": "PostmanRuntime/7.39.1",
-              "system": true
-            },
-            {
-              "key": "Accept",
-              "value": "*/*",
-              "system": true
-            },
-            {
-              "key": "Cache-Control",
-              "value": "no-cache",
-              "system": true
-            },
-            {
-              "key": "Postman-Token",
-              "value": "69381d77-18f5-40b3-9fe6-f62f33956a24",
-              "system": true
-            },
-            {
-              "key": "Host",
-              "value": "localhost:3000",
-              "system": true
-            },
-            {
-              "key": "Accept-Encoding",
-              "value": "gzip, deflate, br",
-              "system": true
-            },
-            {
-              "key": "Connection",
-              "value": "keep-alive",
-              "system": true
-            },
-            {
-              "key": "Content-Length",
-              "value": "50",
-              "system": true
-            }
-          ],
-          "method": "POST",
-          "body": {
-            "mode": "raw",
-            "raw": "{\"code\":\"BIGBUY\",\"total_amount\":\"abc\",\"user_id\":1}"
-          }
-        },
-        "response": {
-          "id": "c59cd97c-85c6-4ed6-8b5f-afd0eccb8f3b",
-          "status": "Bad Request",
-          "code": 400,
-          "header": [
-            {
-              "key": "X-Powered-By",
-              "value": "Express"
-            },
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": "*"
-            },
-            {
-              "key": "Content-Type",
-              "value": "application/json; charset=utf-8"
-            },
-            {
-              "key": "Content-Length",
-              "value": "98"
-            },
-            {
-              "key": "ETag",
-              "value": "W/\"62-1ekZeLPr5hGMzTkp9j2lh5wkgP8\""
-            },
-            {
-              "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:08 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:10 GMT"
             },
             {
               "key": "Connection",
@@ -6258,38 +5930,38 @@
           "responseTime": 2,
           "responseSize": 98
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
-            "assertion": "[FR09-018] status",
+            "assertion": "[FR09-017] status",
             "skipped": false
           },
           {
-            "assertion": "[FR09-018] X-Student-Id header present",
+            "assertion": "[FR09-017] X-Student-Id header present",
             "skipped": false
           },
           {
-            "assertion": "[FR09-018] JSON response",
+            "assertion": "[FR09-017] JSON response",
             "skipped": false
           },
           {
-            "assertion": "[FR09-018] response time",
+            "assertion": "[FR09-017] response time",
             "skipped": false
           }
         ]
       },
       {
         "cursor": {
-          "ref": "82c5759c-b157-4da0-9126-2a947391fe01",
+          "ref": "3d5d58b3-302b-4d75-b725-e32733665b1b",
           "length": 1,
           "cycles": 37,
           "position": 0,
-          "iteration": 18,
+          "iteration": 17,
           "cr": true,
-          "httpRequestId": "1cc6b617-1207-401a-8d06-66ac640516d8"
+          "httpRequestId": "e3d8d4a1-2296-4adf-b660-5802b3186605"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -6324,7 +5996,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -6348,13 +6020,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -6366,7 +6038,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -6411,7 +6083,335 @@
             },
             {
               "key": "Postman-Token",
-              "value": "938ca430-5d1e-412e-9037-f840951ee0e5",
+              "value": "14c9f6de-1c20-4e3c-b94c-8a08926eb65d",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "50",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\"code\":\"BIGBUY\",\"total_amount\":\"abc\",\"user_id\":1}"
+          }
+        },
+        "response": {
+          "id": "807d4e59-3352-4629-9cec-049327abc771",
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "98"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"62-1ekZeLPr5hGMzTkp9j2lh5wkgP8\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 23 Aug 2026 17:39:10 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              34,
+              58,
+              34,
+              196,
+              144,
+              198,
+              161,
+              110,
+              32,
+              104,
+              195,
+              160,
+              110,
+              103,
+              32,
+              99,
+              104,
+              198,
+              176,
+              97,
+              32,
+              196,
+              145,
+              225,
+              187,
+              167,
+              32,
+              103,
+              105,
+              195,
+              161,
+              32,
+              116,
+              114,
+              225,
+              187,
+              139,
+              32,
+              116,
+              225,
+              187,
+              145,
+              105,
+              32,
+              116,
+              104,
+              105,
+              225,
+              187,
+              131,
+              117,
+              32,
+              53,
+              48,
+              48,
+              46,
+              48,
+              48,
+              48,
+              32,
+              226,
+              130,
+              171,
+              32,
+              196,
+              145,
+              225,
+              187,
+              131,
+              32,
+              195,
+              161,
+              112,
+              32,
+              100,
+              225,
+              187,
+              165,
+              110,
+              103,
+              32,
+              109,
+              195,
+              163,
+              32,
+              110,
+              195,
+              160,
+              121,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 2,
+          "responseSize": 98
+        },
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
+        "assertions": [
+          {
+            "assertion": "[FR09-018] status",
+            "skipped": false
+          },
+          {
+            "assertion": "[FR09-018] X-Student-Id header present",
+            "skipped": false
+          },
+          {
+            "assertion": "[FR09-018] JSON response",
+            "skipped": false
+          },
+          {
+            "assertion": "[FR09-018] response time",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "8ad080a9-b75c-444a-a860-dba7db8f5f69",
+          "length": 1,
+          "cycles": 37,
+          "position": 0,
+          "iteration": 18,
+          "cr": true,
+          "httpRequestId": "180452ca-31f7-45d4-b217-ecfafa431020"
+        },
+        "item": {
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
+          "name": "POST /api/apply-coupon",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "apply-coupon"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{{request_body}}"
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
+                  "pm.variables.set('authHeader', '');",
+                  "pm.variables.set('request_body', pm.iterationData.get('request_body') || '{}');",
+                  "let rawPath = String(pm.iterationData.get('path') || '');",
+                  "while (rawPath.charAt(0) === '/') rawPath = rawPath.slice(1);",
+                  "pm.variables.set('urlPath', rawPath);",
+                  "const baseUrl = pm.environment.get('baseUrl');",
+                  "const auth = pm.iterationData.get('auth');",
+                  "if (pm.iterationData.get('setup_user')) {",
+                  "  const setupEmail = pm.iterationData.get('email');",
+                  "  pm.sendRequest({ url: baseUrl + '/api/register', method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify({ name: 'FR03 Setup User', email: setupEmail, password: 'OldPassword123!' }) } }, () => {});",
+                  "}",
+                  "if (auth === 'admin' || auth === 'user') {",
+                  "  const credentials = auth === 'admin' ? { email: 'admin@eshop.com', password: 'Admin123!' } : { email: 'test@eshop.com', password: 'Test1234!' };",
+                  "  pm.sendRequest({ url: baseUrl + '/api/login', method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify(credentials) } }, (err, res) => {",
+                  "    if (!err && res.code === 200) pm.variables.set('authHeader', 'Bearer ' + res.json().token);",
+                  "  });",
+                  "} else if (auth === 'invalid') { pm.variables.set('authHeader', 'Bearer invalid.token.value'); }",
+                  "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
+                  "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
+                ],
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] X-Student-Id header present`, function () { pm.expect(pm.request.headers.get('X-Student-Id')).to.eql(pm.environment.get('studentId')); });",
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] JSON response`, function () { pm.expect(pm.response.headers.get('Content-Type') || '').to.include('application/json'); });",
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] response time`, function () { pm.expect(pm.response.responseTime).to.be.below(3000); });",
+                  "const expectedBug = pm.iterationData.get('expected_bug'); if (expectedBug) console.log('Bug evidence reproduced by ' + pm.iterationData.get('tc_id') + ': ' + expectedBug);",
+                  "const json = pm.response.json();",
+                  "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
+                  "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
+                ],
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "api",
+              "apply-coupon"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-Student-Id",
+              "value": "23127296"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "0ab1e3d0-4de8-4155-bfc7-49c90c666d01",
               "system": true
             },
             {
@@ -6442,7 +6442,7 @@
           }
         },
         "response": {
-          "id": "8fc7bf2f-aaee-4546-9ae8-96f72dfcaa2b",
+          "id": "a734600c-8a7a-40dc-a040-8470648b9f95",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -6468,7 +6468,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:08 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:10 GMT"
             },
             {
               "key": "Connection",
@@ -6586,7 +6586,7 @@
           "responseTime": 3,
           "responseSize": 98
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-019] status",
@@ -6608,16 +6608,16 @@
       },
       {
         "cursor": {
-          "ref": "49b54502-e1b5-46d4-8d42-1fef54e615d2",
+          "ref": "ff1823ee-cfdc-43de-83a2-6ac1d1ce7017",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 19,
           "cr": true,
-          "httpRequestId": "7a3e06a0-e886-4f25-b970-23313610f850"
+          "httpRequestId": "5f0cd65a-d6b9-49e8-b88a-54d6e587914f"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -6652,7 +6652,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -6676,13 +6676,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -6694,7 +6694,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -6739,7 +6739,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "584de87e-583c-4647-a7a4-2b9523534432",
+              "value": "ddcd5ca3-1186-4eb7-9fa0-134762c4350a",
               "system": true
             },
             {
@@ -6770,7 +6770,7 @@
           }
         },
         "response": {
-          "id": "6f7e7c0b-c6a1-4776-b05b-50c7a6379d50",
+          "id": "a73f2840-574f-47c5-a63f-e0e85833224b",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -6796,7 +6796,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:08 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:10 GMT"
             },
             {
               "key": "Connection",
@@ -6911,10 +6911,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 3,
+          "responseTime": 2,
           "responseSize": 98
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-020] status",
@@ -6936,16 +6936,16 @@
       },
       {
         "cursor": {
-          "ref": "8cfe5d65-0738-4978-ab2b-f33a1e597c24",
+          "ref": "bbdbf068-fbd8-4c1e-aff2-9062895eee75",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 20,
           "cr": true,
-          "httpRequestId": "1c58f02d-eeb3-40e1-be05-8591184c1298"
+          "httpRequestId": "5bf131ce-8b68-4dd1-b827-9d15c640ab4d"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -6980,7 +6980,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -7004,13 +7004,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -7022,7 +7022,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -7067,7 +7067,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "a5aee380-8e50-488e-b7c9-baacaf8bc6b1",
+              "value": "8578275d-2ddd-4e48-a752-37acb2661621",
               "system": true
             },
             {
@@ -7098,7 +7098,7 @@
           }
         },
         "response": {
-          "id": "ac89f1f4-800e-4318-93a7-58a867c1513d",
+          "id": "68196a79-b567-4748-b876-9bca0e6495a6",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -7124,7 +7124,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:08 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:10 GMT"
             },
             {
               "key": "Connection",
@@ -7242,7 +7242,7 @@
           "responseTime": 3,
           "responseSize": 98
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-021] status",
@@ -7264,16 +7264,16 @@
       },
       {
         "cursor": {
-          "ref": "2e236cfc-02bc-4c7c-8027-3236f00c528f",
+          "ref": "3a5d19b4-67fb-4b66-a4bf-69492532cf05",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 21,
           "cr": true,
-          "httpRequestId": "9853fdd1-fb9d-4487-ab4c-3f2a5b490920"
+          "httpRequestId": "ce4cf8cd-2ec8-4cc2-ae74-aa7914d7fabb"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -7308,7 +7308,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -7332,13 +7332,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -7350,7 +7350,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -7395,7 +7395,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "96106ad9-3e0c-479f-b4ab-98d3e61d1a69",
+              "value": "aa88f849-da2c-4ae4-8616-3e5cde406ef8",
               "system": true
             },
             {
@@ -7426,7 +7426,7 @@
           }
         },
         "response": {
-          "id": "673e16a8-304e-4f9c-86ab-c21bff22d6ed",
+          "id": "4d40ca1f-362e-4f3e-aed5-87928964cf72",
           "status": "OK",
           "code": 200,
           "header": [
@@ -7452,7 +7452,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:08 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:11 GMT"
             },
             {
               "key": "Connection",
@@ -7609,7 +7609,7 @@
           "responseTime": 4,
           "responseSize": 137
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-022] status",
@@ -7631,16 +7631,16 @@
       },
       {
         "cursor": {
-          "ref": "9e2d5689-b3e5-4505-89fd-d3ee6bababc7",
+          "ref": "ba0eacb0-dabd-463b-b699-e27fc9c57af2",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 22,
           "cr": true,
-          "httpRequestId": "b422070a-d5ad-4eb7-8003-2181309ee9b7"
+          "httpRequestId": "f07c1df6-d12a-4526-823b-d3adaba0d137"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -7675,7 +7675,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -7699,13 +7699,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -7717,7 +7717,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -7762,7 +7762,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "1eb8ecc7-5c95-4f1d-9266-324b1fc803de",
+              "value": "42fc2992-9de8-4f8c-88ab-0a062d6759ce",
               "system": true
             },
             {
@@ -7793,7 +7793,7 @@
           }
         },
         "response": {
-          "id": "4bfbd225-3880-4f66-9e44-64d56937391a",
+          "id": "59853ac6-9b5b-46ef-bef3-b30a98e8c324",
           "status": "Not Found",
           "code": 404,
           "header": [
@@ -7819,7 +7819,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:09 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:11 GMT"
             },
             {
               "key": "Connection",
@@ -7918,7 +7918,7 @@
           "responseTime": 2,
           "responseSize": 79
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-023] status",
@@ -7940,16 +7940,16 @@
       },
       {
         "cursor": {
-          "ref": "3ddb19d6-69a2-4888-a746-f1479cef626f",
+          "ref": "15249076-0016-4de9-9b3e-feff4738749b",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 23,
           "cr": true,
-          "httpRequestId": "300a3db4-c7d5-48f4-b24e-93b82a5d2ed5"
+          "httpRequestId": "77d60da8-5c31-4544-a83a-5ede4e880d47"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -7984,7 +7984,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -8008,13 +8008,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -8026,7 +8026,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -8071,7 +8071,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "6302f6be-d290-42ff-9c93-996968e1284b",
+              "value": "51c29a3c-d85a-4687-b9c1-699fb8fbf5b1",
               "system": true
             },
             {
@@ -8102,7 +8102,7 @@
           }
         },
         "response": {
-          "id": "ed7317ed-67fa-4e38-b967-e1b2193f8c60",
+          "id": "d8d509d1-52a0-47c1-9cf8-ec574aab05ce",
           "status": "Not Found",
           "code": 404,
           "header": [
@@ -8128,316 +8128,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:09 GMT"
-            },
-            {
-              "key": "Connection",
-              "value": "keep-alive"
-            },
-            {
-              "key": "Keep-Alive",
-              "value": "timeout=5"
-            }
-          ],
-          "stream": {
-            "type": "Buffer",
-            "data": [
-              123,
-              34,
-              101,
-              114,
-              114,
-              111,
-              114,
-              34,
-              58,
-              34,
-              77,
-              195,
-              163,
-              32,
-              103,
-              105,
-              225,
-              186,
-              163,
-              109,
-              32,
-              103,
-              105,
-              195,
-              161,
-              32,
-              107,
-              104,
-              195,
-              180,
-              110,
-              103,
-              32,
-              116,
-              225,
-              187,
-              147,
-              110,
-              32,
-              116,
-              225,
-              186,
-              161,
-              105,
-              32,
-              104,
-              111,
-              225,
-              186,
-              183,
-              99,
-              32,
-              196,
-              145,
-              195,
-              163,
-              32,
-              98,
-              225,
-              187,
-              139,
-              32,
-              118,
-              195,
-              180,
-              32,
-              104,
-              105,
-              225,
-              187,
-              135,
-              117,
-              32,
-              104,
-              195,
-              179,
-              97,
-              34,
-              125
-            ]
-          },
-          "cookie": [],
-          "responseTime": 3,
-          "responseSize": 79
-        },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
-        "assertions": [
-          {
-            "assertion": "[FR09-024] status",
-            "skipped": false
-          },
-          {
-            "assertion": "[FR09-024] X-Student-Id header present",
-            "skipped": false
-          },
-          {
-            "assertion": "[FR09-024] JSON response",
-            "skipped": false
-          },
-          {
-            "assertion": "[FR09-024] response time",
-            "skipped": false
-          }
-        ]
-      },
-      {
-        "cursor": {
-          "ref": "75281a91-e017-475b-a510-5a085be18cc2",
-          "length": 1,
-          "cycles": 37,
-          "position": 0,
-          "iteration": 24,
-          "cr": true,
-          "httpRequestId": "a63293a5-dfab-421d-a765-c8da83d29c31"
-        },
-        "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
-          "name": "POST /api/apply-coupon",
-          "request": {
-            "url": {
-              "path": [
-                "api",
-                "apply-coupon"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "X-Student-Id",
-                "value": "{{studentId}}"
-              }
-            ],
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{{request_body}}"
-            }
-          },
-          "response": [],
-          "event": [
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
-                "type": "text/javascript",
-                "exec": [
-                  "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
-                  "pm.variables.set('authHeader', '');",
-                  "pm.variables.set('request_body', pm.iterationData.get('request_body') || '{}');",
-                  "let rawPath = String(pm.iterationData.get('path') || '');",
-                  "while (rawPath.charAt(0) === '/') rawPath = rawPath.slice(1);",
-                  "pm.variables.set('urlPath', rawPath);",
-                  "const baseUrl = pm.environment.get('baseUrl');",
-                  "const auth = pm.iterationData.get('auth');",
-                  "if (pm.iterationData.get('setup_user')) {",
-                  "  const setupEmail = pm.iterationData.get('email');",
-                  "  pm.sendRequest({ url: baseUrl + '/api/register', method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify({ name: 'FR03 Setup User', email: setupEmail, password: 'OldPassword123!' }) } }, () => {});",
-                  "}",
-                  "if (auth === 'admin' || auth === 'user') {",
-                  "  const credentials = auth === 'admin' ? { email: 'admin@eshop.com', password: 'Admin123!' } : { email: 'test@eshop.com', password: 'Test1234!' };",
-                  "  pm.sendRequest({ url: baseUrl + '/api/login', method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify(credentials) } }, (err, res) => {",
-                  "    if (!err && res.code === 200) pm.variables.set('authHeader', 'Bearer ' + res.json().token);",
-                  "  });",
-                  "} else if (auth === 'invalid') { pm.variables.set('authHeader', 'Bearer invalid.token.value'); }",
-                  "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
-                  "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
-                ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
-              }
-            },
-            {
-              "listen": "test",
-              "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
-                "type": "text/javascript",
-                "exec": [
-                  "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
-                  "pm.test(`[${pm.iterationData.get('tc_id')}] X-Student-Id header present`, function () { pm.expect(pm.request.headers.get('X-Student-Id')).to.eql(pm.environment.get('studentId')); });",
-                  "pm.test(`[${pm.iterationData.get('tc_id')}] JSON response`, function () { pm.expect(pm.response.headers.get('Content-Type') || '').to.include('application/json'); });",
-                  "pm.test(`[${pm.iterationData.get('tc_id')}] response time`, function () { pm.expect(pm.response.responseTime).to.be.below(3000); });",
-                  "const expectedBug = pm.iterationData.get('expected_bug'); if (expectedBug) console.log('Bug evidence reproduced by ' + pm.iterationData.get('tc_id') + ': ' + expectedBug);",
-                  "const json = pm.response.json();",
-                  "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
-                  "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
-                ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
-              }
-            }
-          ]
-        },
-        "request": {
-          "url": {
-            "protocol": "http",
-            "port": "3000",
-            "path": [
-              "api",
-              "apply-coupon"
-            ],
-            "host": [
-              "localhost"
-            ],
-            "query": [],
-            "variable": []
-          },
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            },
-            {
-              "key": "X-Student-Id",
-              "value": "23127296"
-            },
-            {
-              "key": "User-Agent",
-              "value": "PostmanRuntime/7.39.1",
-              "system": true
-            },
-            {
-              "key": "Accept",
-              "value": "*/*",
-              "system": true
-            },
-            {
-              "key": "Cache-Control",
-              "value": "no-cache",
-              "system": true
-            },
-            {
-              "key": "Postman-Token",
-              "value": "52f288dc-5141-4224-b351-3603b9896a23",
-              "system": true
-            },
-            {
-              "key": "Host",
-              "value": "localhost:3000",
-              "system": true
-            },
-            {
-              "key": "Accept-Encoding",
-              "value": "gzip, deflate, br",
-              "system": true
-            },
-            {
-              "key": "Connection",
-              "value": "keep-alive",
-              "system": true
-            },
-            {
-              "key": "Content-Length",
-              "value": "70",
-              "system": true
-            }
-          ],
-          "method": "POST",
-          "body": {
-            "mode": "raw",
-            "raw": "{\"code\":\"<script>alert(1)</script>\",\"total_amount\":600000,\"user_id\":1}"
-          }
-        },
-        "response": {
-          "id": "d63a27d2-bd59-4d12-b296-7d07817e9494",
-          "status": "Not Found",
-          "code": 404,
-          "header": [
-            {
-              "key": "X-Powered-By",
-              "value": "Express"
-            },
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": "*"
-            },
-            {
-              "key": "Content-Type",
-              "value": "application/json; charset=utf-8"
-            },
-            {
-              "key": "Content-Length",
-              "value": "79"
-            },
-            {
-              "key": "ETag",
-              "value": "W/\"4f-Zi25GXkQG92bS4EOxPGgD4Fb01I\""
-            },
-            {
-              "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:09 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:11 GMT"
             },
             {
               "key": "Connection",
@@ -8536,38 +8227,38 @@
           "responseTime": 2,
           "responseSize": 79
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
-            "assertion": "[FR09-025] status",
+            "assertion": "[FR09-024] status",
             "skipped": false
           },
           {
-            "assertion": "[FR09-025] X-Student-Id header present",
+            "assertion": "[FR09-024] X-Student-Id header present",
             "skipped": false
           },
           {
-            "assertion": "[FR09-025] JSON response",
+            "assertion": "[FR09-024] JSON response",
             "skipped": false
           },
           {
-            "assertion": "[FR09-025] response time",
+            "assertion": "[FR09-024] response time",
             "skipped": false
           }
         ]
       },
       {
         "cursor": {
-          "ref": "486089f2-5fd5-49f6-8eaf-9cd5ae8ebcde",
+          "ref": "80994c29-1598-4f60-9524-1f6e3fb1c820",
           "length": 1,
           "cycles": 37,
           "position": 0,
-          "iteration": 25,
+          "iteration": 24,
           "cr": true,
-          "httpRequestId": "20489001-0aca-49de-bfc7-4f31b3e7ec96"
+          "httpRequestId": "7f1e5001-a5e5-4566-b7ff-2a7af768f064"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -8602,7 +8293,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -8626,13 +8317,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -8644,7 +8335,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -8689,7 +8380,316 @@
             },
             {
               "key": "Postman-Token",
-              "value": "9c178b24-9461-40d1-8252-166cac98b0a5",
+              "value": "ad1d4372-d07b-4ad4-804a-7df00cd2c62c",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "70",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\"code\":\"<script>alert(1)</script>\",\"total_amount\":600000,\"user_id\":1}"
+          }
+        },
+        "response": {
+          "id": "91041376-fc0d-45a4-b0a2-7f297fff7d72",
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "79"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"4f-Zi25GXkQG92bS4EOxPGgD4Fb01I\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 23 Aug 2026 17:39:11 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              34,
+              58,
+              34,
+              77,
+              195,
+              163,
+              32,
+              103,
+              105,
+              225,
+              186,
+              163,
+              109,
+              32,
+              103,
+              105,
+              195,
+              161,
+              32,
+              107,
+              104,
+              195,
+              180,
+              110,
+              103,
+              32,
+              116,
+              225,
+              187,
+              147,
+              110,
+              32,
+              116,
+              225,
+              186,
+              161,
+              105,
+              32,
+              104,
+              111,
+              225,
+              186,
+              183,
+              99,
+              32,
+              196,
+              145,
+              195,
+              163,
+              32,
+              98,
+              225,
+              187,
+              139,
+              32,
+              118,
+              195,
+              180,
+              32,
+              104,
+              105,
+              225,
+              187,
+              135,
+              117,
+              32,
+              104,
+              195,
+              179,
+              97,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 3,
+          "responseSize": 79
+        },
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
+        "assertions": [
+          {
+            "assertion": "[FR09-025] status",
+            "skipped": false
+          },
+          {
+            "assertion": "[FR09-025] X-Student-Id header present",
+            "skipped": false
+          },
+          {
+            "assertion": "[FR09-025] JSON response",
+            "skipped": false
+          },
+          {
+            "assertion": "[FR09-025] response time",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "e51f49fc-c45b-4220-b7c2-0934262f5b5a",
+          "length": 1,
+          "cycles": 37,
+          "position": 0,
+          "iteration": 25,
+          "cr": true,
+          "httpRequestId": "f91db85c-768e-47c2-9f13-e11c335da747"
+        },
+        "item": {
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
+          "name": "POST /api/apply-coupon",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "apply-coupon"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "X-Student-Id",
+                "value": "{{studentId}}"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{{request_body}}"
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
+                  "pm.variables.set('authHeader', '');",
+                  "pm.variables.set('request_body', pm.iterationData.get('request_body') || '{}');",
+                  "let rawPath = String(pm.iterationData.get('path') || '');",
+                  "while (rawPath.charAt(0) === '/') rawPath = rawPath.slice(1);",
+                  "pm.variables.set('urlPath', rawPath);",
+                  "const baseUrl = pm.environment.get('baseUrl');",
+                  "const auth = pm.iterationData.get('auth');",
+                  "if (pm.iterationData.get('setup_user')) {",
+                  "  const setupEmail = pm.iterationData.get('email');",
+                  "  pm.sendRequest({ url: baseUrl + '/api/register', method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify({ name: 'FR03 Setup User', email: setupEmail, password: 'OldPassword123!' }) } }, () => {});",
+                  "}",
+                  "if (auth === 'admin' || auth === 'user') {",
+                  "  const credentials = auth === 'admin' ? { email: 'admin@eshop.com', password: 'Admin123!' } : { email: 'test@eshop.com', password: 'Test1234!' };",
+                  "  pm.sendRequest({ url: baseUrl + '/api/login', method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify(credentials) } }, (err, res) => {",
+                  "    if (!err && res.code === 200) pm.variables.set('authHeader', 'Bearer ' + res.json().token);",
+                  "  });",
+                  "} else if (auth === 'invalid') { pm.variables.set('authHeader', 'Bearer invalid.token.value'); }",
+                  "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
+                  "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
+                ],
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] X-Student-Id header present`, function () { pm.expect(pm.request.headers.get('X-Student-Id')).to.eql(pm.environment.get('studentId')); });",
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] JSON response`, function () { pm.expect(pm.response.headers.get('Content-Type') || '').to.include('application/json'); });",
+                  "pm.test(`[${pm.iterationData.get('tc_id')}] response time`, function () { pm.expect(pm.response.responseTime).to.be.below(3000); });",
+                  "const expectedBug = pm.iterationData.get('expected_bug'); if (expectedBug) console.log('Bug evidence reproduced by ' + pm.iterationData.get('tc_id') + ': ' + expectedBug);",
+                  "const json = pm.response.json();",
+                  "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
+                  "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
+                ],
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "api",
+              "apply-coupon"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-Student-Id",
+              "value": "23127296"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "fed0f66c-6e64-4f96-85ad-f45fd1d54bae",
               "system": true
             },
             {
@@ -8720,7 +8720,7 @@
           }
         },
         "response": {
-          "id": "e5d21876-b0b2-41f9-948a-65ae586e8f28",
+          "id": "27780210-d5d4-4bbc-9523-10b191a6ef50",
           "status": "Not Found",
           "code": 404,
           "header": [
@@ -8746,7 +8746,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:09 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:11 GMT"
             },
             {
               "key": "Connection",
@@ -8842,10 +8842,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 3,
+          "responseTime": 2,
           "responseSize": 79
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-026] status",
@@ -8867,16 +8867,16 @@
       },
       {
         "cursor": {
-          "ref": "27c8c2b6-457d-45f2-9de1-a035f0414a4e",
+          "ref": "6f719b19-182c-4745-acde-382a6d1aaefa",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 26,
           "cr": true,
-          "httpRequestId": "e7e80774-8eb0-4479-b0d5-8b685b54a0a8"
+          "httpRequestId": "89d14046-76af-47d1-acbd-2af70ad9dcd5"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -8911,7 +8911,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -8935,13 +8935,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -8953,7 +8953,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -8998,7 +8998,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "dd41f199-197f-4d7e-9ccd-4bf150774c37",
+              "value": "bd10adb3-f9ba-4c57-9db4-e46723e9b9c9",
               "system": true
             },
             {
@@ -9029,7 +9029,7 @@
           }
         },
         "response": {
-          "id": "ea5b4d65-7ae4-41d4-a684-b9a117a224a1",
+          "id": "f67d7c73-a8d5-4db9-910f-d8a89447096b",
           "status": "Not Found",
           "code": 404,
           "header": [
@@ -9055,7 +9055,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:09 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:11 GMT"
             },
             {
               "key": "Connection",
@@ -9151,10 +9151,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 3,
+          "responseTime": 2,
           "responseSize": 79
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-027] status",
@@ -9176,16 +9176,16 @@
       },
       {
         "cursor": {
-          "ref": "561a3ed7-d385-4158-affe-324b6fcddb2a",
+          "ref": "f9ae353d-fbd5-4de0-b904-7040eae5598b",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 27,
           "cr": true,
-          "httpRequestId": "035ec2a2-4684-4b51-a697-deba56fd2168"
+          "httpRequestId": "a305d0db-30d6-4dde-ae4b-53561cf1da9f"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -9220,7 +9220,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -9244,13 +9244,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -9262,7 +9262,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -9307,7 +9307,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "b4070cbd-a814-4057-951f-21990a684a1b",
+              "value": "44794356-69d3-4a9e-8ceb-ba346806af82",
               "system": true
             },
             {
@@ -9338,7 +9338,7 @@
           }
         },
         "response": {
-          "id": "e1b8c7fe-a301-4d63-9d58-db6d17281b5a",
+          "id": "e85351e5-164e-4836-92a2-219773b43508",
           "status": "Not Found",
           "code": 404,
           "header": [
@@ -9364,7 +9364,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:09 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:11 GMT"
             },
             {
               "key": "Connection",
@@ -9463,7 +9463,7 @@
           "responseTime": 3,
           "responseSize": 79
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-028] status",
@@ -9485,16 +9485,16 @@
       },
       {
         "cursor": {
-          "ref": "e6b1e8e3-7d7e-4b07-b2da-32f199e957bc",
+          "ref": "92e9d7cc-97f8-49c9-8118-2d92115a274b",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 28,
           "cr": true,
-          "httpRequestId": "74461510-aa35-4866-a350-bcf40ca441a0"
+          "httpRequestId": "38cd5f50-5da4-4c9a-9198-1c20709962df"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -9529,7 +9529,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -9553,13 +9553,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -9571,7 +9571,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -9616,7 +9616,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "5b65ffde-2a02-4e8e-bdd8-d6c598b1ca96",
+              "value": "eca15045-3ca2-4b18-ae88-e81040b5c14a",
               "system": true
             },
             {
@@ -9647,7 +9647,7 @@
           }
         },
         "response": {
-          "id": "bd446f9d-7ae3-4233-a8f0-7c7a5441e4e7",
+          "id": "3e8622ea-599c-4921-9aa5-4154ed8dd4a1",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -9673,7 +9673,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:09 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:11 GMT"
             },
             {
               "key": "Connection",
@@ -9734,10 +9734,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 1,
+          "responseTime": 2,
           "responseSize": 44
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-029] status",
@@ -9759,16 +9759,16 @@
       },
       {
         "cursor": {
-          "ref": "15d54733-77fb-471a-8bfe-1042b0c18ff3",
+          "ref": "a4dc6930-7dbe-419c-9622-ff7c5ae1cbcb",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 29,
           "cr": true,
-          "httpRequestId": "a72fb32f-69b2-4a18-94e8-bfeba6a53f01"
+          "httpRequestId": "2ae506f7-02f8-4b23-be83-abf30dc3ad46"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -9803,7 +9803,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -9827,13 +9827,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -9845,7 +9845,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -9890,7 +9890,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "9ad66f77-b7a2-4df8-82c6-d631ff71bb5f",
+              "value": "84ff1d4f-74ca-4e68-ba2c-f356b597d39a",
               "system": true
             },
             {
@@ -9921,7 +9921,7 @@
           }
         },
         "response": {
-          "id": "9b5a1a8a-2830-4665-bdb6-17556780347f",
+          "id": "51ede888-0c36-48f3-b06f-4fb3b9278035",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -9947,7 +9947,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:09 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:11 GMT"
             },
             {
               "key": "Connection",
@@ -10062,10 +10062,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 2,
+          "responseTime": 3,
           "responseSize": 98
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-030] status",
@@ -10087,16 +10087,16 @@
       },
       {
         "cursor": {
-          "ref": "fabe7eee-fe77-4967-a8da-ae040118a5cf",
+          "ref": "450acac0-569e-4b68-ac9f-aa66b8b929c7",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 30,
           "cr": true,
-          "httpRequestId": "7849dae1-1e87-4d36-98f2-ee850e417fc2"
+          "httpRequestId": "c873efee-1fa2-4ece-8367-08b509b3b0a8"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -10131,7 +10131,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -10155,13 +10155,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -10173,7 +10173,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -10218,7 +10218,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "d00b9e5c-2292-486c-ae37-5cf457b84a7b",
+              "value": "fbb3ae2d-d55e-42d1-af90-a139828ff00a",
               "system": true
             },
             {
@@ -10249,7 +10249,7 @@
           }
         },
         "response": {
-          "id": "436c64c0-53e4-4844-9077-138072528d74",
+          "id": "b9192c32-7396-47f6-bb1d-192361ad4093",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -10275,7 +10275,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:09 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:11 GMT"
             },
             {
               "key": "Connection",
@@ -10336,10 +10336,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 2,
+          "responseTime": 1,
           "responseSize": 44
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-031] status",
@@ -10361,16 +10361,16 @@
       },
       {
         "cursor": {
-          "ref": "a677a2c8-307f-4d8a-a23b-1f6d8ae673cf",
+          "ref": "9fd4d177-8acd-403a-9c09-6011308aa6d0",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 31,
           "cr": true,
-          "httpRequestId": "00a0d50f-6e62-4112-a79b-9747fd9c44ba"
+          "httpRequestId": "f4caaa6c-766d-485a-9708-a0cc10e20dff"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -10405,7 +10405,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -10429,13 +10429,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -10447,7 +10447,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -10492,7 +10492,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "2f2c8ff5-4888-4eaf-b5e2-facb50b6fb25",
+              "value": "4e95464c-f390-4541-8d24-2bffdd6d0cdc",
               "system": true
             },
             {
@@ -10523,7 +10523,7 @@
           }
         },
         "response": {
-          "id": "e4f73d28-7ac8-4958-b173-a6149cb30599",
+          "id": "5f3c8963-51d4-45c9-aaa8-723c9eed437b",
           "status": "OK",
           "code": 200,
           "header": [
@@ -10549,7 +10549,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:09 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:11 GMT"
             },
             {
               "key": "Connection",
@@ -10697,7 +10697,7 @@
           "responseTime": 3,
           "responseSize": 128
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-032] status",
@@ -10719,16 +10719,16 @@
       },
       {
         "cursor": {
-          "ref": "e5e47063-374f-4f0b-8ff5-8b5bd00bf754",
+          "ref": "7af49b05-6ed9-472d-bd8e-b25939ba2e0f",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 32,
           "cr": true,
-          "httpRequestId": "03bde050-530e-48a2-84ef-5245b8c045f8"
+          "httpRequestId": "22642aa3-c90c-4ab8-8be2-a68c84e6b703"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -10763,7 +10763,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -10787,13 +10787,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -10805,7 +10805,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -10850,7 +10850,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "b82ee71b-08d4-4088-8970-2c29968773f7",
+              "value": "84668e8c-16d4-4c61-a497-c3e3e44234b6",
               "system": true
             },
             {
@@ -10881,7 +10881,7 @@
           }
         },
         "response": {
-          "id": "a234b146-75e2-45dc-8c2e-84a9a71535c8",
+          "id": "15bc2c1b-3dc5-465b-a931-192dd467ee18",
           "status": "OK",
           "code": 200,
           "header": [
@@ -10907,7 +10907,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:09 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:11 GMT"
             },
             {
               "key": "Connection",
@@ -11052,10 +11052,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 3,
+          "responseTime": 4,
           "responseSize": 128
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-033] status",
@@ -11077,16 +11077,16 @@
       },
       {
         "cursor": {
-          "ref": "35ccec9d-1337-401e-b32f-b7da3d6a58ce",
+          "ref": "5be8ec64-0bd6-4afb-9631-ce404056c221",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 33,
           "cr": true,
-          "httpRequestId": "9f8acd7a-8bf2-4282-978f-47ff07b83c5c"
+          "httpRequestId": "cc940cfd-e72d-4ec7-9846-e4df3e0680e7"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -11121,7 +11121,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -11145,13 +11145,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -11163,7 +11163,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -11208,7 +11208,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "4b747823-5fdf-490c-a0d6-b805b69e1c84",
+              "value": "09708677-0c90-4a60-994e-f1160a0eef04",
               "system": true
             },
             {
@@ -11239,7 +11239,7 @@
           }
         },
         "response": {
-          "id": "be7a979a-2940-480c-841d-26d6779e8dc9",
+          "id": "9946604b-f89d-40aa-921b-d1b4d46be2af",
           "status": "OK",
           "code": 200,
           "header": [
@@ -11265,7 +11265,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:09 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:12 GMT"
             },
             {
               "key": "Connection",
@@ -11410,10 +11410,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 3,
+          "responseTime": 2,
           "responseSize": 128
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-034] status",
@@ -11435,16 +11435,16 @@
       },
       {
         "cursor": {
-          "ref": "efd85d28-ca20-468c-9b22-174bc324036b",
+          "ref": "7337269f-452e-4ee4-9c7a-1e58f289123a",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 34,
           "cr": true,
-          "httpRequestId": "c87b1485-2866-461f-9b29-8d91b9fd16e9"
+          "httpRequestId": "204094a8-249a-4b83-af62-da03f8785994"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -11479,7 +11479,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -11503,13 +11503,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -11521,7 +11521,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -11566,7 +11566,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "1fab4b30-6794-442a-8683-9983003ee51f",
+              "value": "c51b7224-3495-4ef3-bc3c-3e094d2c7250",
               "system": true
             },
             {
@@ -11597,7 +11597,7 @@
           }
         },
         "response": {
-          "id": "75afcdf5-ca35-43a4-945a-aba529e00a03",
+          "id": "587e99f4-0ef0-40c5-b75c-6803f9509a5e",
           "status": "OK",
           "code": 200,
           "header": [
@@ -11623,7 +11623,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:09 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:12 GMT"
             },
             {
               "key": "Connection",
@@ -11768,10 +11768,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 3,
+          "responseTime": 2,
           "responseSize": 128
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-035] status",
@@ -11793,16 +11793,16 @@
       },
       {
         "cursor": {
-          "ref": "e398f8a2-eb5a-43cc-8735-b9355376e9cd",
+          "ref": "f3e85153-a59f-4d58-84b4-3e1b17d0e58f",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 35,
           "cr": true,
-          "httpRequestId": "22edbb94-0bf8-4b4d-a85f-7a146bd9caf1"
+          "httpRequestId": "e28ca1d8-b87c-4877-b5b5-26403125b50f"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -11837,7 +11837,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -11861,13 +11861,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -11879,7 +11879,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -11924,7 +11924,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "3dc2f2d8-5bfa-442e-96f5-47b600415484",
+              "value": "d5b2722a-99c7-41a1-ae4f-b2b879224bea",
               "system": true
             },
             {
@@ -11955,7 +11955,7 @@
           }
         },
         "response": {
-          "id": "e95f7ea0-46c5-4558-909d-6db21aad57d2",
+          "id": "755b64d2-7816-4383-a25c-7b3665b9d14d",
           "status": "OK",
           "code": 200,
           "header": [
@@ -11981,7 +11981,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:10 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:12 GMT"
             },
             {
               "key": "Connection",
@@ -12129,7 +12129,7 @@
           "responseTime": 3,
           "responseSize": 128
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-036] status",
@@ -12151,16 +12151,16 @@
       },
       {
         "cursor": {
-          "ref": "1e736af2-fd73-4acc-8d82-119da9cb764f",
+          "ref": "fafd81e3-f3f6-4119-917c-89db7d836ef8",
           "length": 1,
           "cycles": 37,
           "position": 0,
           "iteration": 36,
           "cr": true,
-          "httpRequestId": "d34558cf-0060-4c64-adc6-69eb01d6eb44"
+          "httpRequestId": "4b5386d5-0b6d-4d80-8b13-41bccfcc7793"
         },
         "item": {
-          "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+          "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
           "name": "POST /api/apply-coupon",
           "request": {
             "url": {
@@ -12195,7 +12195,7 @@
             {
               "listen": "prerequest",
               "script": {
-                "id": "3848d3b8-556c-498e-8e05-85cd3daab1e9",
+                "id": "8d6bba77-4e2f-4e7c-80a5-1a25c82edd96",
                 "type": "text/javascript",
                 "exec": [
                   "pm.request.headers.upsert({ key: 'X-Student-Id', value: pm.environment.get('studentId') });",
@@ -12219,13 +12219,13 @@
                   "else if (auth === 'expired') { pm.variables.set('authHeader', 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjF9.bad'); }",
                   "else if (auth === 'malformed') { pm.variables.set('authHeader', 'Token abc'); }"
                 ],
-                "_lastExecutionId": "d9e432f6-252f-4ae5-94b2-13d041db1f8d"
+                "_lastExecutionId": "013a65af-acf6-40e6-a31b-50fb564c5970"
               }
             },
             {
               "listen": "test",
               "script": {
-                "id": "f4307f97-d77b-401b-bc60-37fd7cc33ec4",
+                "id": "520cc647-e0e9-43df-a98c-af70be11fe60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(`[${pm.iterationData.get('tc_id')}] status`, function () { pm.response.to.have.status(Number(pm.iterationData.get('expected_status'))); });",
@@ -12237,7 +12237,7 @@
                   "if (pm.response.code === 200) { pm.expect(json).to.have.property('success', true); pm.expect(json).to.have.property('discount_amount'); pm.expect(json).to.have.property('final_amount'); }",
                   "if (pm.response.code >= 400) pm.expect(json).to.have.property('error');"
                 ],
-                "_lastExecutionId": "7d98f36b-fd93-49ab-89f3-291d80265001"
+                "_lastExecutionId": "17375742-d521-4005-a852-0d432a300dd6"
               }
             }
           ]
@@ -12282,7 +12282,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "2cc6c74d-3730-48f7-8a0e-53983b18c128",
+              "value": "ad2016c2-d084-4477-92bc-82aeaff57564",
               "system": true
             },
             {
@@ -12313,7 +12313,7 @@
           }
         },
         "response": {
-          "id": "0fa249e0-2016-4c01-9a87-e95a0c7a5f5f",
+          "id": "98c186e1-8b6e-48ac-be1a-6eab8a6f4ee1",
           "status": "OK",
           "code": 200,
           "header": [
@@ -12339,7 +12339,7 @@
             },
             {
               "key": "Date",
-              "value": "Sat, 22 Aug 2026 15:23:10 GMT"
+              "value": "Sun, 23 Aug 2026 17:39:12 GMT"
             },
             {
               "key": "Connection",
@@ -12484,10 +12484,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 3,
+          "responseTime": 2,
           "responseSize": 128
         },
-        "id": "25455e8d-a88c-4b3f-b361-ee293a683e36",
+        "id": "92ec6ea5-b86c-4602-bc18-93a3a3d1084e",
         "assertions": [
           {
             "assertion": "[FR09-037] status",

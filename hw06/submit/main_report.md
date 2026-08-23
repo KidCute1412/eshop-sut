@@ -2,7 +2,8 @@
 
 **Student ID:** 23127296  
 **Student:** Nguyen Thanh Luan  
-**Generated at:** 2026-08-22 22:30 Asia/Saigon
+**Generated at:** 2026-08-22 22:30 Asia/Saigon  
+**Latest local execution:** 2026-08-24 00:38-00:39 Asia/Saigon
 
 ## Scope
 
@@ -56,7 +57,7 @@ Detailed bug report is in `bug-reports/bug_report.md`. GitHub issue links/screen
 
 ## Execution Result
 
-Local Newman execution was completed against `http://localhost:3000` with `X-Student-Id: 23127296` injected by the pre-request script.
+Local Newman execution was completed on 2026-08-24 00:38-00:39 Asia/Saigon against `http://localhost:3000` with `X-Student-Id: 23127296` injected by the pre-request script.
 
 | API | Iterations | Requests | Assertions | Failed Assertions |
 |---|---:|---:|---:|---:|
@@ -66,6 +67,16 @@ Local Newman execution was completed against `http://localhost:3000` with `X-Stu
 | **Total** | **115** | **173** | **460** | **0** |
 
 JSON reports are stored in `newman/fr03-newman-report.json`, `newman/fr09-newman-report.json`, and `newman/fr13-newman-report.json`.
+
+## Remaining Evidence To Complete
+
+The local API execution evidence is complete. The following items still require real external evidence and must not be fabricated:
+
+- GitHub Issues for the documented bugs, each with a screenshot and issue URL.
+- GitHub Actions passing run link and screenshot after pushing the HW06 workflow.
+- GitHub Actions failing run link and screenshot from a temporary secure-oracle failing commit.
+- Optional Newman HTML reports if the grader expects HTML in addition to the generated JSON reports.
+- A manually confirmed self-drawn/exported generator diagram image and optional demonstration video link.
 
 ## AI Audit Declaration
 

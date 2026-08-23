@@ -1,7 +1,8 @@
 # HW06 Submission - API Testing
 
 **Student ID:** 23127296  
-**Student:** Nguyen Thanh Luan
+**Student:** Nguyen Thanh Luan  
+**Latest local execution:** 2026-08-24 00:38-00:39 Asia/Saigon
 
 ## Self Assessment
 
@@ -26,6 +27,19 @@
 | Newman iterations executed | 115 |
 | Newman assertions executed | 460 |
 | Newman failed assertions | 0 |
+
+## Remaining Manual Evidence
+
+| Item | Status |
+|---|---|
+| Local Newman JSON reports | Done |
+| Main report Markdown/PDF | Done |
+| AI audit and critique Markdown/PDF | Done |
+| GitHub bug issue URLs/screenshots | TODO |
+| CI passing run URL/screenshot | TODO |
+| CI failing run URL/screenshot | TODO |
+| Self-drawn generator diagram image | TODO if not already exported manually |
+| Optional demo video link | TODO if required by lecturer/TA |
 
 ## Key Files
 
