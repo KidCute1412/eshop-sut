@@ -2744,7 +2744,7 @@
                 "exec": [
                   "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
                   "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
-                  "let json = pm.response.json(); pm.expect(json).to.be.an('object');"
+                  "let json = pm.response.json(); pm.expect(json).to.be.an('array');"
                 ]
               }
             }
@@ -2864,7 +2864,7 @@
                 "exec": [
                   "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
                   "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
-                  "let json = pm.response.json(); pm.expect(json).to.be.an('object');"
+                  "let json = pm.response.json(); pm.expect(json).to.be.an('array');"
                 ]
               }
             }
@@ -3285,11 +3285,9 @@
                 "exec": [
                   "pm.test(\"Expected status 200\", function () { pm.response.to.have.status(200); });",
                   "pm.test(\"X-Student-Id is configured\", function () { pm.expect(pm.variables.get(\"studentId\") || pm.environment.get(\"studentId\")).to.not.eql(\"TODO_STUDENT_ID\"); });",
-                  [
-                    "const cart = pm.response.json();",
-                    "const id1 = cart.filter(item => item.id === 1);",
-                    "pm.test('same product should not create duplicate row', function () { pm.expect(id1.length).to.be.at.most(1); });"
-                  ]
+                  "const cart = pm.response.json();",
+                  "const id1 = cart.filter(item => item.id === 1);",
+                  "pm.test('same product should not create duplicate row', function () { pm.expect(id1.length).to.be.at.most(1); });"
                 ]
               }
             }
