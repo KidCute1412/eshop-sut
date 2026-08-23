@@ -1,0 +1,384 @@
+{
+  "generated_at": "2026-08-23T15:23:46.653Z",
+  "student_id": "23127404",
+  "target": "http://127.0.0.1:3000",
+  "pools": {
+    "a": {
+      "cases": [
+        {
+          "tc_id": "TC-LOGIN-01",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-01.json",
+          "requests": 1,
+          "assertions": 5,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-02",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-02.json",
+          "requests": 1,
+          "assertions": 5,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-03",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-03.json",
+          "requests": 1,
+          "assertions": 5,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-04",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-04.json",
+          "requests": 1,
+          "assertions": 5,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-05",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-05.json",
+          "requests": 1,
+          "assertions": 5,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-06",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-06.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-07",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-07.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-08",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-08.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-09",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-09.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-10",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-10.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-11",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-11.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-12",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-12.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-13",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-13.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-14",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-14.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-15",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-15.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-16",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-16.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-17",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-17.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-18",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-18.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-19",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-19.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-20",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-20.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-21",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-21.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-22",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-22.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-23",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-23.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-24",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-24.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-25",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-25.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-26",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-26.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-27",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-27.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-28",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-28.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-29",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-29.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-30",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-30.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-31",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-31.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-32",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-32.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-33",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-33.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-34",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-34.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "TC-LOGIN-35",
+          "json": "newman-reports/pool-a/cases/TC-LOGIN-35.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "EXT-LOGIN-01",
+          "json": "newman-reports/pool-a/cases/EXT-LOGIN-01.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0,
+          "post_login_state": {
+            "login_attempts": 2,
+            "locked_until": null
+          }
+        },
+        {
+          "tc_id": "EXT-LOGIN-02",
+          "json": "newman-reports/pool-a/cases/EXT-LOGIN-02.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0,
+          "post_login_state": {
+            "login_attempts": 4,
+            "locked_until": "2026-08-23T15:26:13.215Z"
+          }
+        },
+        {
+          "tc_id": "EXT-LOGIN-03",
+          "json": "newman-reports/pool-a/cases/EXT-LOGIN-03.json",
+          "requests": 1,
+          "assertions": 4,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "EXT-LOGIN-04",
+          "json": "newman-reports/pool-a/cases/EXT-LOGIN-04.json",
+          "requests": 1,
+          "assertions": 5,
+          "failed_assertions": 0,
+          "failures": 0
+        },
+        {
+          "tc_id": "EXT-LOGIN-05",
+          "json": "newman-reports/pool-a/cases/EXT-LOGIN-05.json",
+          "requests": 1,
+          "assertions": 5,
+          "failed_assertions": 0,
+          "failures": 0
+        }
+      ],
+      "totals": {
+        "cases": 40,
+        "requests": 40,
+        "assertions": 167,
+        "failed_assertions": 0,
+        "failures": 0
+      }
+    },
+    "b": {
+      "cases": [
+        {
+          "tc_id": null,
+          "json": "newman-reports/pool-b/report.json",
+          "requests": 160,
+          "assertions": 281,
+          "failed_assertions": 0,
+          "failures": 0
+        }
+      ],
+      "totals": {
+        "cases": 40,
+        "requests": 160,
+        "assertions": 281,
+        "failed_assertions": 0,
+        "failures": 0
+      }
+    },
+    "c": {
+      "cases": [
+        {
+          "tc_id": null,
+          "json": "newman-reports/pool-c/report.json",
+          "requests": 120,
+          "assertions": 240,
+          "failed_assertions": 0,
+          "failures": 0
+        }
+      ],
+      "totals": {
+        "cases": 40,
+        "requests": 120,
+        "assertions": 240,
+        "failed_assertions": 0,
+        "failures": 0
+      }
+    }
+  }
+}

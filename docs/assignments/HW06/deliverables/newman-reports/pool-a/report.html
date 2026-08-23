@@ -1,0 +1,45 @@
+<!doctype html><meta charset="utf-8"><title>HW06 Newman evidence — Pool A</title>
+<style>body{font:14px system-ui;margin:2rem}table{border-collapse:collapse;width:100%}th,td{border:1px solid #bbb;padding:.45rem;text-align:left}th{background:#eef}code{white-space:pre-wrap}</style>
+<h1>HW06 verified Newman evidence — Pool A</h1><p>Student ID: 23127404 · Target: http://127.0.0.1:3000</p>
+<p>This HTML index is generated from the preserved raw Newman JSON; it is not a screenshot or a simulated Newman interface.</p>
+<ul><li>Primary cases: 40</li><li>HTTP requests: 40</li><li>Assertions: 167</li><li>Newman failures: 0</li></ul>
+<table><thead><tr><th>ID</th><th>Scenario</th><th>Contract</th><th>Observed</th><th>Result</th><th>Raw evidence</th></tr></thead><tbody><tr><td>TC-LOGIN-01</td><td>Valid administrator credentials</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-01.json</td></tr>
+<tr><td>TC-LOGIN-02</td><td>Valid customer credentials</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-02.json</td></tr>
+<tr><td>TC-LOGIN-03</td><td>Success schema: token and user identity</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-03.json</td></tr>
+<tr><td>TC-LOGIN-04</td><td>JWT is returned for valid authentication</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-04.json</td></tr>
+<tr><td>TC-LOGIN-05</td><td>Login response time is below 2 seconds</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-05.json</td></tr>
+<tr><td>TC-LOGIN-06</td><td>Unregistered email</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-06.json</td></tr>
+<tr><td>TC-LOGIN-07</td><td>Empty email</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-07.json</td></tr>
+<tr><td>TC-LOGIN-08</td><td>Empty password</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-08.json</td></tr>
+<tr><td>TC-LOGIN-09</td><td>Email without at sign</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-09.json</td></tr>
+<tr><td>TC-LOGIN-10</td><td>Email without top-level domain</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-10.json</td></tr>
+<tr><td>TC-LOGIN-11</td><td>Leading/trailing whitespace</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-11.json</td></tr>
+<tr><td>TC-LOGIN-12</td><td>XSS payload in email</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-12.json</td></tr>
+<tr><td>TC-LOGIN-13</td><td>SQL injection authentication bypass payload</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-13.json</td></tr>
+<tr><td>TC-LOGIN-14</td><td>UNION SQL injection payload</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-14.json</td></tr>
+<tr><td>TC-LOGIN-15</td><td>Wrong password for unknown user</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-15.json</td></tr>
+<tr><td>TC-LOGIN-16</td><td>Case-variant email</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-16.json</td></tr>
+<tr><td>TC-LOGIN-17</td><td>Incorrect password</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-17.json</td></tr>
+<tr><td>TC-LOGIN-18</td><td>Unknown user and empty password</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-18.json</td></tr>
+<tr><td>TC-LOGIN-19</td><td>Short but unregistered address</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-19.json</td></tr>
+<tr><td>TC-LOGIN-20</td><td>Long email input</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-20.json</td></tr>
+<tr><td>TC-LOGIN-21</td><td>Plus-address input</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-21.json</td></tr>
+<tr><td>TC-LOGIN-22</td><td>Special-character email input</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-22.json</td></tr>
+<tr><td>TC-LOGIN-23</td><td>Newline in password</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-23.json</td></tr>
+<tr><td>TC-LOGIN-24</td><td>Whitespace password</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-24.json</td></tr>
+<tr><td>TC-LOGIN-25</td><td>SQL payload in password</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-25.json</td></tr>
+<tr><td>TC-LOGIN-26</td><td>Long password input</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-26.json</td></tr>
+<tr><td>TC-LOGIN-27</td><td>Password trailing whitespace</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-27.json</td></tr>
+<tr><td>TC-LOGIN-28</td><td>NUL-like email boundary</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-28.json</td></tr>
+<tr><td>TC-LOGIN-29</td><td>Punctuation email input</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-29.json</td></tr>
+<tr><td>TC-LOGIN-30</td><td>Repeated unknown-user handling</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-30.json</td></tr>
+<tr><td>TC-LOGIN-31</td><td>Representative invalid partition</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-31.json</td></tr>
+<tr><td>TC-LOGIN-32</td><td>Representative invalid partition 2</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-32.json</td></tr>
+<tr><td>TC-LOGIN-33</td><td>Representative invalid partition 3</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-33.json</td></tr>
+<tr><td>TC-LOGIN-34</td><td>Representative invalid partition 4</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-34.json</td></tr>
+<tr><td>TC-LOGIN-35</td><td>Representative invalid partition 5</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-a/cases/TC-LOGIN-35.json</td></tr>
+<tr><td>EXT-LOGIN-01</td><td>One failed password increments the counter by +2 rather than +1.</td><td>401</td><td>401</td><td>BUG DETECTED</td><td>newman-reports/pool-a/cases/EXT-LOGIN-01.json</td></tr>
+<tr><td>EXT-LOGIN-02</td><td>With two prior failures, a further wrong password sets the lock but still returns 401.</td><td>403</td><td>401</td><td>BUG DETECTED</td><td>newman-reports/pool-a/cases/EXT-LOGIN-02.json</td></tr>
+<tr><td>EXT-LOGIN-03</td><td>An active lock lasts 180 seconds instead of the specified 30 seconds.</td><td>403</td><td>403</td><td>BUG DETECTED</td><td>newman-reports/pool-a/cases/EXT-LOGIN-03.json</td></tr>
+<tr><td>EXT-LOGIN-04</td><td>Successful login exposes the stored plaintext password in the user response.</td><td>200</td><td>200</td><td>BUG DETECTED</td><td>newman-reports/pool-a/cases/EXT-LOGIN-04.json</td></tr>
+<tr><td>EXT-LOGIN-05</td><td>Successful login resets a pre-existing failure counter.</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-a/cases/EXT-LOGIN-05.json</td></tr></tbody></table>

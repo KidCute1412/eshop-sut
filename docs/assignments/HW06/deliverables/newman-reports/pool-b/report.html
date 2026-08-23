@@ -1,0 +1,45 @@
+<!doctype html><meta charset="utf-8"><title>HW06 Newman evidence — Pool B</title>
+<style>body{font:14px system-ui;margin:2rem}table{border-collapse:collapse;width:100%}th,td{border:1px solid #bbb;padding:.45rem;text-align:left}th{background:#eef}code{white-space:pre-wrap}</style>
+<h1>HW06 verified Newman evidence — Pool B</h1><p>Student ID: 23127404 · Target: http://127.0.0.1:3000</p>
+<p>This HTML index is generated from the preserved raw Newman JSON; it is not a screenshot or a simulated Newman interface.</p>
+<ul><li>Primary cases: 40</li><li>HTTP requests: 160</li><li>Assertions: 281</li><li>Newman failures: 0</li></ul>
+<table><thead><tr><th>ID</th><th>Scenario</th><th>Contract</th><th>Observed</th><th>Result</th><th>Raw evidence</th></tr></thead><tbody><tr><td>TC-CHK-01</td><td>Standard cart checkout</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-02</td><td>Vietnamese address</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-03</td><td>Multiline address</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-04</td><td>One-VND client total</td><td>200</td><td>200</td><td>BUG DETECTED</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-05</td><td>Zero client total</td><td>200</td><td>200</td><td>BUG DETECTED</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-06</td><td>Negative client total</td><td>200</td><td>200</td><td>BUG DETECTED</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-07</td><td>High client total</td><td>200</td><td>200</td><td>BUG DETECTED</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-08</td><td>Empty address</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-09</td><td>Whitespace address</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-10</td><td>XSS address</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-11</td><td>SQL-like address</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-12</td><td>Long address</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-13</td><td>Missing amount</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-14</td><td>Missing address</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-15</td><td>Empty JSON body</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-16</td><td>Malformed bearer token</td><td>403</td><td>403</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-17</td><td>Missing bearer token</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-18</td><td>Customer bearer token</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-19</td><td>Decimal amount</td><td>200</td><td>200</td><td>BUG DETECTED</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-20</td><td>String amount</td><td>200</td><td>200</td><td>BUG DETECTED</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-21</td><td>Null amount</td><td>200</td><td>200</td><td>BUG DETECTED</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-22</td><td>Unicode address</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-23</td><td>Emoji address</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-24</td><td>Representative valid partition 1</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-25</td><td>Representative valid partition 2</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-26</td><td>Representative valid partition 3</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-27</td><td>Representative valid partition 4</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-28</td><td>Representative valid partition 5</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-29</td><td>Representative valid partition 6</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-30</td><td>Representative valid partition 7</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-31</td><td>Representative valid partition 8</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-32</td><td>Representative valid partition 9</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-33</td><td>Representative valid partition 10</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-34</td><td>Representative valid partition 11</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>TC-CHK-35</td><td>Representative valid partition 12</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>EXT-CHK-01</td><td>Checkout succeeds even when no cart setup request is sent.</td><td>400</td><td>200</td><td>BUG DETECTED</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>EXT-CHK-02</td><td>Server persists a tampered one-VND amount instead of recalculating cart value.</td><td>200</td><td>200</td><td>BUG DETECTED</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>EXT-CHK-03</td><td>Cart still contains the added item after successful checkout.</td><td>200</td><td>200</td><td>BUG DETECTED</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>EXT-CHK-04</td><td>Rapid-repeat representative checkout request.</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr>
+<tr><td>EXT-CHK-05</td><td>Checkout success schema contains a numeric order identifier.</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-b/report.json</td></tr></tbody></table>

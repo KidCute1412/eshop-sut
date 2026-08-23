@@ -1,0 +1,457 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "HW06 Pool A — Login-23127404"
+    },
+    "item": [
+      {
+        "id": "89b6f9b7-7ca4-4129-a342-84ed4eaf2cd4",
+        "name": "POST /api/login",
+        "request": {
+          "url": {
+            "path": [
+              "api",
+              "login"
+            ],
+            "host": [
+              "{{baseUrl}}"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{{loginPayload}}"
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "prerequest",
+            "script": {
+              "id": "39d7a344-d4b3-4f19-bc8e-28e2c8211fc1",
+              "type": "text/javascript",
+              "exec": [
+                "const tc = pm.iterationData.get('tc_id');",
+                "pm.request.headers.upsert({key: 'X-Student-Id', value: pm.environment.get('studentId') || '23127404'});",
+                "console.log('[HW06 EVIDENCE] ' + tc + ' X-Student-Id=' + pm.request.headers.get('X-Student-Id'));",
+                "const p = {email: pm.iterationData.get('email'), password: pm.iterationData.get('password')}; pm.variables.set('loginPayload', JSON.stringify(p));"
+              ],
+              "_lastExecutionId": "7579efef-3c3f-4c09-aa0e-b6de49817f0c"
+            }
+          },
+          {
+            "listen": "test",
+            "script": {
+              "id": "efd5e4b1-c240-4076-82e3-1dce92bb5def",
+              "type": "text/javascript",
+              "exec": [
+                "const tc=pm.iterationData.get('tc_id'), expected=Number(pm.iterationData.get('expected_status')), body=pm.response.json();",
+                "pm.test('['+tc+'] observed HTTP status',()=>pm.response.to.have.status(expected));",
+                "pm.test('['+tc+'] JSON content type',()=>pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+                "pm.test('['+tc+'] response time',()=>pm.expect(pm.response.responseTime).to.be.below(2000));",
+                "if (pm.iterationData.get('expect_token') === true || pm.iterationData.get('expect_token') === 'true') pm.test('['+tc+'] token/user schema',()=>{pm.expect(body.token).to.be.a('string').and.not.empty; pm.expect(body.user).to.be.an('object');});",
+                "if (pm.iterationData.get('expect_error') === true || pm.iterationData.get('expect_error') === 'true') pm.test('['+tc+'] error schema',()=>pm.expect(body.error).to.be.a('string').and.not.empty);",
+                "if (pm.iterationData.get('observed_password_leak') === true || pm.iterationData.get('observed_password_leak') === 'true') pm.test('['+tc+'] observed known defect / secure field behavior',()=>pm.expect(body.user).to.have.property('password'));"
+              ],
+              "_lastExecutionId": "f3516a0a-6588-4aca-9e81-15b60cd7a6ca"
+            }
+          }
+        ]
+      }
+    ],
+    "event": [],
+    "variable": [],
+    "info": {
+      "_postman_id": "HW06 Pool A — Login-23127404",
+      "name": "HW06 Pool A — Login",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "description": {
+        "content": "One primary login assertion per isolated data row.",
+        "type": "text/plain"
+      }
+    }
+  },
+  "environment": {
+    "id": "hw06-local-23127404",
+    "name": "HW06 Local EShop",
+    "values": [
+      {
+        "type": "any",
+        "value": "http://127.0.0.1:3000",
+        "key": "baseUrl"
+      },
+      {
+        "type": "any",
+        "value": "23127404",
+        "key": "studentId"
+      }
+    ]
+  },
+  "globals": {
+    "id": "a6938233-c7b9-4d80-90b6-cdcfba335c90",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 4,
+        "pending": 0,
+        "failed": 0
+      },
+      "testScripts": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 38,
+      "responseMin": 38,
+      "responseMax": 38,
+      "responseSd": 0,
+      "dnsAverage": 0,
+      "dnsMin": 0,
+      "dnsMax": 0,
+      "dnsSd": 0,
+      "firstByteAverage": 0,
+      "firstByteMin": 0,
+      "firstByteMax": 0,
+      "firstByteSd": 0,
+      "started": 1787498595052,
+      "completed": 1787498595188
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 1,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "221f7fa5-64b3-40a7-9ea6-a82d21bd91cd",
+          "httpRequestId": "19a38132-1e71-46c7-aa73-d8f88a5fbd61"
+        },
+        "item": {
+          "id": "89b6f9b7-7ca4-4129-a342-84ed4eaf2cd4",
+          "name": "POST /api/login",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "login"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{{loginPayload}}"
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "39d7a344-d4b3-4f19-bc8e-28e2c8211fc1",
+                "type": "text/javascript",
+                "exec": [
+                  "const tc = pm.iterationData.get('tc_id');",
+                  "pm.request.headers.upsert({key: 'X-Student-Id', value: pm.environment.get('studentId') || '23127404'});",
+                  "console.log('[HW06 EVIDENCE] ' + tc + ' X-Student-Id=' + pm.request.headers.get('X-Student-Id'));",
+                  "const p = {email: pm.iterationData.get('email'), password: pm.iterationData.get('password')}; pm.variables.set('loginPayload', JSON.stringify(p));"
+                ],
+                "_lastExecutionId": "7579efef-3c3f-4c09-aa0e-b6de49817f0c"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "efd5e4b1-c240-4076-82e3-1dce92bb5def",
+                "type": "text/javascript",
+                "exec": [
+                  "const tc=pm.iterationData.get('tc_id'), expected=Number(pm.iterationData.get('expected_status')), body=pm.response.json();",
+                  "pm.test('['+tc+'] observed HTTP status',()=>pm.response.to.have.status(expected));",
+                  "pm.test('['+tc+'] JSON content type',()=>pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+                  "pm.test('['+tc+'] response time',()=>pm.expect(pm.response.responseTime).to.be.below(2000));",
+                  "if (pm.iterationData.get('expect_token') === true || pm.iterationData.get('expect_token') === 'true') pm.test('['+tc+'] token/user schema',()=>{pm.expect(body.token).to.be.a('string').and.not.empty; pm.expect(body.user).to.be.an('object');});",
+                  "if (pm.iterationData.get('expect_error') === true || pm.iterationData.get('expect_error') === 'true') pm.test('['+tc+'] error schema',()=>pm.expect(body.error).to.be.a('string').and.not.empty);",
+                  "if (pm.iterationData.get('observed_password_leak') === true || pm.iterationData.get('observed_password_leak') === 'true') pm.test('['+tc+'] observed known defect / secure field behavior',()=>pm.expect(body.user).to.have.property('password'));"
+                ],
+                "_lastExecutionId": "f3516a0a-6588-4aca-9e81-15b60cd7a6ca"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "api",
+              "login"
+            ],
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-Student-Id",
+              "value": "23127404"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "ed62639f-a77b-4ad7-8522-9e6666c05141",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "127.0.0.1:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "49",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\"email\":\"test@eshop.com\",\"password\":\"Test1234!\"}"
+          }
+        },
+        "response": {
+          "id": "928508cf-b3fc-4df8-965b-ad52f46db213",
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "68"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"44-KZB1VpWvhEruWm7sn+zv3Ce0ya4\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 23 Aug 2026 15:23:15 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              34,
+              58,
+              34,
+              84,
+              195,
+              160,
+              105,
+              32,
+              107,
+              104,
+              111,
+              225,
+              186,
+              163,
+              110,
+              32,
+              196,
+              145,
+              195,
+              163,
+              32,
+              98,
+              225,
+              187,
+              139,
+              32,
+              107,
+              104,
+              195,
+              179,
+              97,
+              46,
+              32,
+              86,
+              117,
+              105,
+              32,
+              108,
+              195,
+              178,
+              110,
+              103,
+              32,
+              116,
+              104,
+              225,
+              187,
+              173,
+              32,
+              108,
+              225,
+              186,
+              161,
+              105,
+              32,
+              115,
+              97,
+              117,
+              46,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 38,
+          "responseSize": 68
+        },
+        "id": "89b6f9b7-7ca4-4129-a342-84ed4eaf2cd4",
+        "assertions": [
+          {
+            "assertion": "[EXT-LOGIN-03] observed HTTP status",
+            "skipped": false
+          },
+          {
+            "assertion": "[EXT-LOGIN-03] JSON content type",
+            "skipped": false
+          },
+          {
+            "assertion": "[EXT-LOGIN-03] response time",
+            "skipped": false
+          },
+          {
+            "assertion": "[EXT-LOGIN-03] error schema",
+            "skipped": false
+          }
+        ]
+      }
+    ],
+    "transfers": {
+      "responseTotal": 68
+    },
+    "failures": [],
+    "error": null
+  }
+}

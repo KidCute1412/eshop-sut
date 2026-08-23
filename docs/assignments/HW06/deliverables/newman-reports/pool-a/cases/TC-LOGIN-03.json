@@ -1,0 +1,764 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "HW06 Pool A — Login-23127404"
+    },
+    "item": [
+      {
+        "id": "6bb6e9a4-57e4-47b9-bde9-8ed669ecea97",
+        "name": "POST /api/login",
+        "request": {
+          "url": {
+            "path": [
+              "api",
+              "login"
+            ],
+            "host": [
+              "{{baseUrl}}"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{{loginPayload}}"
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "prerequest",
+            "script": {
+              "id": "f4fcbf45-b23a-449d-a179-20929bd7e3d6",
+              "type": "text/javascript",
+              "exec": [
+                "const tc = pm.iterationData.get('tc_id');",
+                "pm.request.headers.upsert({key: 'X-Student-Id', value: pm.environment.get('studentId') || '23127404'});",
+                "console.log('[HW06 EVIDENCE] ' + tc + ' X-Student-Id=' + pm.request.headers.get('X-Student-Id'));",
+                "const p = {email: pm.iterationData.get('email'), password: pm.iterationData.get('password')}; pm.variables.set('loginPayload', JSON.stringify(p));"
+              ],
+              "_lastExecutionId": "264ff7cc-2529-40e4-a012-54b955dd65d4"
+            }
+          },
+          {
+            "listen": "test",
+            "script": {
+              "id": "be49e1de-5edf-4d67-85f2-0aa8fefdcb7f",
+              "type": "text/javascript",
+              "exec": [
+                "const tc=pm.iterationData.get('tc_id'), expected=Number(pm.iterationData.get('expected_status')), body=pm.response.json();",
+                "pm.test('['+tc+'] observed HTTP status',()=>pm.response.to.have.status(expected));",
+                "pm.test('['+tc+'] JSON content type',()=>pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+                "pm.test('['+tc+'] response time',()=>pm.expect(pm.response.responseTime).to.be.below(2000));",
+                "if (pm.iterationData.get('expect_token') === true || pm.iterationData.get('expect_token') === 'true') pm.test('['+tc+'] token/user schema',()=>{pm.expect(body.token).to.be.a('string').and.not.empty; pm.expect(body.user).to.be.an('object');});",
+                "if (pm.iterationData.get('expect_error') === true || pm.iterationData.get('expect_error') === 'true') pm.test('['+tc+'] error schema',()=>pm.expect(body.error).to.be.a('string').and.not.empty);",
+                "if (pm.iterationData.get('observed_password_leak') === true || pm.iterationData.get('observed_password_leak') === 'true') pm.test('['+tc+'] observed known defect / secure field behavior',()=>pm.expect(body.user).to.have.property('password'));"
+              ],
+              "_lastExecutionId": "eafb2894-7125-4ee6-9dc3-2ea008378326"
+            }
+          }
+        ]
+      }
+    ],
+    "event": [],
+    "variable": [],
+    "info": {
+      "_postman_id": "HW06 Pool A — Login-23127404",
+      "name": "HW06 Pool A — Login",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "description": {
+        "content": "One primary login assertion per isolated data row.",
+        "type": "text/plain"
+      }
+    }
+  },
+  "environment": {
+    "id": "hw06-local-23127404",
+    "name": "HW06 Local EShop",
+    "values": [
+      {
+        "type": "any",
+        "value": "http://127.0.0.1:3000",
+        "key": "baseUrl"
+      },
+      {
+        "type": "any",
+        "value": "23127404",
+        "key": "studentId"
+      }
+    ]
+  },
+  "globals": {
+    "id": "24b4bc9e-b62a-425f-9a4f-2b783f5521cb",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 2,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "testScripts": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 36,
+      "responseMin": 36,
+      "responseMax": 36,
+      "responseSd": 0,
+      "dnsAverage": 0,
+      "dnsMin": 0,
+      "dnsMax": 0,
+      "dnsSd": 0,
+      "firstByteAverage": 0,
+      "firstByteMin": 0,
+      "firstByteMax": 0,
+      "firstByteSd": 0,
+      "started": 1787498531106,
+      "completed": 1787498531239
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 1,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "fe3f3872-bc2d-4760-9327-d8fe8a1fc7e2",
+          "httpRequestId": "d0074804-8a21-4e18-8930-f413787ce5d1"
+        },
+        "item": {
+          "id": "6bb6e9a4-57e4-47b9-bde9-8ed669ecea97",
+          "name": "POST /api/login",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "login"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{{loginPayload}}"
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "f4fcbf45-b23a-449d-a179-20929bd7e3d6",
+                "type": "text/javascript",
+                "exec": [
+                  "const tc = pm.iterationData.get('tc_id');",
+                  "pm.request.headers.upsert({key: 'X-Student-Id', value: pm.environment.get('studentId') || '23127404'});",
+                  "console.log('[HW06 EVIDENCE] ' + tc + ' X-Student-Id=' + pm.request.headers.get('X-Student-Id'));",
+                  "const p = {email: pm.iterationData.get('email'), password: pm.iterationData.get('password')}; pm.variables.set('loginPayload', JSON.stringify(p));"
+                ],
+                "_lastExecutionId": "264ff7cc-2529-40e4-a012-54b955dd65d4"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "be49e1de-5edf-4d67-85f2-0aa8fefdcb7f",
+                "type": "text/javascript",
+                "exec": [
+                  "const tc=pm.iterationData.get('tc_id'), expected=Number(pm.iterationData.get('expected_status')), body=pm.response.json();",
+                  "pm.test('['+tc+'] observed HTTP status',()=>pm.response.to.have.status(expected));",
+                  "pm.test('['+tc+'] JSON content type',()=>pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json'));",
+                  "pm.test('['+tc+'] response time',()=>pm.expect(pm.response.responseTime).to.be.below(2000));",
+                  "if (pm.iterationData.get('expect_token') === true || pm.iterationData.get('expect_token') === 'true') pm.test('['+tc+'] token/user schema',()=>{pm.expect(body.token).to.be.a('string').and.not.empty; pm.expect(body.user).to.be.an('object');});",
+                  "if (pm.iterationData.get('expect_error') === true || pm.iterationData.get('expect_error') === 'true') pm.test('['+tc+'] error schema',()=>pm.expect(body.error).to.be.a('string').and.not.empty);",
+                  "if (pm.iterationData.get('observed_password_leak') === true || pm.iterationData.get('observed_password_leak') === 'true') pm.test('['+tc+'] observed known defect / secure field behavior',()=>pm.expect(body.user).to.have.property('password'));"
+                ],
+                "_lastExecutionId": "eafb2894-7125-4ee6-9dc3-2ea008378326"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "api",
+              "login"
+            ],
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-Student-Id",
+              "value": "23127404"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "bf29cce8-ede8-46ba-a70b-0f29da9f90b4",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "127.0.0.1:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "50",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\"email\":\"admin@eshop.com\",\"password\":\"Admin123!\"}"
+          }
+        },
+        "response": {
+          "id": "0a183748-29f0-4563-b254-50e3cc7ff392",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "371"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"173-YaJBZoAeP+rDxiJ6+8MsgpNYLr8\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 23 Aug 2026 15:22:11 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              76,
+              111,
+              103,
+              105,
+              110,
+              32,
+              115,
+              117,
+              99,
+              99,
+              101,
+              115,
+              115,
+              102,
+              117,
+              108,
+              34,
+              44,
+              34,
+              116,
+              111,
+              107,
+              101,
+              110,
+              34,
+              58,
+              34,
+              101,
+              121,
+              74,
+              104,
+              98,
+              71,
+              99,
+              105,
+              79,
+              105,
+              74,
+              73,
+              85,
+              122,
+              73,
+              49,
+              78,
+              105,
+              73,
+              115,
+              73,
+              110,
+              82,
+              53,
+              99,
+              67,
+              73,
+              54,
+              73,
+              107,
+              112,
+              88,
+              86,
+              67,
+              74,
+              57,
+              46,
+              101,
+              121,
+              74,
+              112,
+              90,
+              67,
+              73,
+              54,
+              77,
+              83,
+              119,
+              105,
+              99,
+              109,
+              57,
+              115,
+              90,
+              83,
+              73,
+              54,
+              73,
+              109,
+              70,
+              107,
+              98,
+              87,
+              108,
+              117,
+              73,
+              105,
+              119,
+              105,
+              97,
+              87,
+              70,
+              48,
+              73,
+              106,
+              111,
+              120,
+              78,
+              122,
+              103,
+              51,
+              78,
+              68,
+              107,
+              52,
+              78,
+              84,
+              77,
+              120,
+              102,
+              81,
+              46,
+              83,
+              106,
+              85,
+              122,
+              54,
+              112,
+              85,
+              104,
+              103,
+              89,
+              79,
+              68,
+              103,
+              74,
+              54,
+              84,
+              97,
+              74,
+              49,
+              56,
+              68,
+              69,
+              117,
+              82,
+              109,
+              77,
+              77,
+              69,
+              100,
+              51,
+              88,
+              109,
+              55,
+              57,
+              95,
+              56,
+              55,
+              45,
+              71,
+              70,
+              87,
+              109,
+              107,
+              34,
+              44,
+              34,
+              117,
+              115,
+              101,
+              114,
+              34,
+              58,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              49,
+              44,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              65,
+              100,
+              109,
+              105,
+              110,
+              32,
+              85,
+              115,
+              101,
+              114,
+              34,
+              44,
+              34,
+              101,
+              109,
+              97,
+              105,
+              108,
+              34,
+              58,
+              34,
+              97,
+              100,
+              109,
+              105,
+              110,
+              64,
+              101,
+              115,
+              104,
+              111,
+              112,
+              46,
+              99,
+              111,
+              109,
+              34,
+              44,
+              34,
+              112,
+              97,
+              115,
+              115,
+              119,
+              111,
+              114,
+              100,
+              34,
+              58,
+              34,
+              65,
+              100,
+              109,
+              105,
+              110,
+              49,
+              50,
+              51,
+              33,
+              34,
+              44,
+              34,
+              114,
+              111,
+              108,
+              101,
+              34,
+              58,
+              34,
+              97,
+              100,
+              109,
+              105,
+              110,
+              34,
+              44,
+              34,
+              108,
+              111,
+              103,
+              105,
+              110,
+              95,
+              97,
+              116,
+              116,
+              101,
+              109,
+              112,
+              116,
+              115,
+              34,
+              58,
+              48,
+              44,
+              34,
+              108,
+              111,
+              99,
+              107,
+              101,
+              100,
+              95,
+              117,
+              110,
+              116,
+              105,
+              108,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              114,
+              101,
+              115,
+              101,
+              116,
+              95,
+              116,
+              111,
+              107,
+              101,
+              110,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              115,
+              104,
+              105,
+              112,
+              112,
+              105,
+              110,
+              103,
+              95,
+              97,
+              100,
+              100,
+              114,
+              101,
+              115,
+              115,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              44,
+              34,
+              112,
+              104,
+              111,
+              110,
+              101,
+              34,
+              58,
+              110,
+              117,
+              108,
+              108,
+              125,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 36,
+          "responseSize": 371
+        },
+        "id": "6bb6e9a4-57e4-47b9-bde9-8ed669ecea97",
+        "assertions": [
+          {
+            "assertion": "[TC-LOGIN-03] observed HTTP status",
+            "skipped": false
+          },
+          {
+            "assertion": "[TC-LOGIN-03] JSON content type",
+            "skipped": false
+          },
+          {
+            "assertion": "[TC-LOGIN-03] response time",
+            "skipped": false
+          },
+          {
+            "assertion": "[TC-LOGIN-03] token/user schema",
+            "skipped": false
+          },
+          {
+            "assertion": "[TC-LOGIN-03] observed known defect / secure field behavior",
+            "skipped": false
+          }
+        ]
+      }
+    ],
+    "transfers": {
+      "responseTotal": 371
+    },
+    "failures": [],
+    "error": null
+  }
+}

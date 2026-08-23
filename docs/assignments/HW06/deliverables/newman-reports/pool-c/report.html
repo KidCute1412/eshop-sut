@@ -1,0 +1,45 @@
+<!doctype html><meta charset="utf-8"><title>HW06 Newman evidence — Pool C</title>
+<style>body{font:14px system-ui;margin:2rem}table{border-collapse:collapse;width:100%}th,td{border:1px solid #bbb;padding:.45rem;text-align:left}th{background:#eef}code{white-space:pre-wrap}</style>
+<h1>HW06 verified Newman evidence — Pool C</h1><p>Student ID: 23127404 · Target: http://127.0.0.1:3000</p>
+<p>This HTML index is generated from the preserved raw Newman JSON; it is not a screenshot or a simulated Newman interface.</p>
+<ul><li>Primary cases: 40</li><li>HTTP requests: 120</li><li>Assertions: 240</li><li>Newman failures: 0</li></ul>
+<table><thead><tr><th>ID</th><th>Scenario</th><th>Contract</th><th>Observed</th><th>Result</th><th>Raw evidence</th></tr></thead><tbody><tr><td>TC-ADM-01</td><td>Valid pending to confirmed</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-02</td><td>Valid pending to canceled</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-03</td><td>Valid confirmed to shipping</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-04</td><td>Valid confirmed to canceled</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-05</td><td>Valid shipping to delivered</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-06</td><td>Terminal delivered to pending rejected</td><td>400</td><td>400</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-07</td><td>Terminal delivered to canceled rejected</td><td>400</td><td>400</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-08</td><td>Terminal canceled to confirmed rejected</td><td>400</td><td>400</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-09</td><td>Backward shipping to pending rejected</td><td>400</td><td>400</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-10</td><td>Skipped transition rejected</td><td>400</td><td>400</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-11</td><td>Skipped terminal transition rejected</td><td>400</td><td>400</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-12</td><td>Invalid enum rejected</td><td>400</td><td>400</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-13</td><td>Empty status rejected</td><td>400</td><td>400</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-14</td><td>Unknown enum rejected</td><td>400</td><td>400</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-15</td><td>Missing authentication rejected</td><td>401</td><td>401</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-16</td><td>Malformed token rejected</td><td>403</td><td>403</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-17</td><td>Customer token changes an admin order</td><td>403</td><td>200</td><td>BUG DETECTED</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-18</td><td>Canceled terminal order becomes delivered</td><td>400</td><td>200</td><td>BUG DETECTED</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-19</td><td>Self transition rejected</td><td>400</td><td>400</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-20</td><td>Confirmed self transition rejected</td><td>400</td><td>400</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-21</td><td>Shipping self transition rejected</td><td>400</td><td>400</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-22</td><td>Delivered terminal transition rejected</td><td>400</td><td>400</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-23</td><td>Canceled terminal transition rejected</td><td>400</td><td>400</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-24</td><td>String null enum rejected</td><td>400</td><td>400</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-25</td><td>Numeric-looking enum rejected</td><td>400</td><td>400</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-26</td><td>Case-variant enum rejected</td><td>400</td><td>400</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-27</td><td>Trailing-space enum rejected</td><td>400</td><td>400</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-28</td><td>Leading-space enum rejected</td><td>400</td><td>400</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-29</td><td>XSS status rejected</td><td>400</td><td>400</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-30</td><td>SQL-like status rejected</td><td>400</td><td>400</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-31</td><td>Nonexistent order identifier</td><td>404</td><td>404</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-32</td><td>Negative order identifier</td><td>404</td><td>404</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-33</td><td>String order identifier</td><td>404</td><td>404</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-34</td><td>SQL-like path identifier</td><td>404</td><td>404</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>TC-ADM-35</td><td>Large integer identifier</td><td>404</td><td>404</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>EXT-ADM-01</td><td>Repeat RBAC privilege-escalation reproduction.</td><td>403</td><td>200</td><td>BUG DETECTED</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>EXT-ADM-02</td><td>Repeat terminal canceled-to-delivered reproduction.</td><td>400</td><td>200</td><td>BUG DETECTED</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>EXT-ADM-03</td><td>Persisted valid state transition response.</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>EXT-ADM-04</td><td>Order identifier zero is not found.</td><td>404</td><td>404</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr>
+<tr><td>EXT-ADM-05</td><td>Success response includes its documented message.</td><td>200</td><td>200</td><td>PASS</td><td>newman-reports/pool-c/report.json</td></tr></tbody></table>
