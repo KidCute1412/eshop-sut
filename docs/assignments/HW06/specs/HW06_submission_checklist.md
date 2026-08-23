@@ -19,7 +19,7 @@ This tracker is derived from `2026.HW06.API Testing_En.pdf`. It records only ver
 1. [ ] Confirm the API triple is not duplicated by another member of the group and confirm the Moodle deadline.
 2. [ ] Push this branch to the public GitHub repository. The workflow is configured for `23127404-LeTuanLoc`, `main`, and `master`.
 3. [ ] Run one collection in Postman and save an authentic Console screenshot with expanded request headers showing `X-Student-Id: 23127404`.
-4. [ ] Create six GitHub Issues using `deliverables/bugs/github-issues/BUG-HW06-01.md` through `BUG-HW06-06.md`; copy each issue URL into `bug-report.md` and save its real browser capture as `bugs/screenshots/bug_01.png` through `bug_06.png`.
+4. [x] Created six GitHub Issues (#162–#167), linked them in `bug-report.md`, and saved their real browser captures as `bugs/screenshots/bug_01.png` through `bug_06.png`.
 5. [ ] Obtain a green GitHub Actions run. Record its commit hash and URL and capture `cicd/screenshots/ci-pass.png`.
 6. [ ] Create one temporary, intentional-failure commit, capture its red GitHub Actions run as `cicd/screenshots/ci-fail.png`, record its hash/URL, then revert the intentional change and obtain a final green run.
 7. [ ] Review the Mermaid designs yourself, make any needed design changes, and export the final `architecture_diagram.png` and `flow_diagram.png`. Do not present an AI-generated image as self-drawn.

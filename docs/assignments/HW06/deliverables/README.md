@@ -17,8 +17,8 @@ The 120 cases consist of 105 AI-generated cases and 15 human-extended cases. `BU
 
 ## Required human-account placeholders
 
-- Public repository: `PENDING HUMAN ACTION — insert public GitHub URL after push`.
-- Six GitHub Issue URLs and screenshots: `PENDING HUMAN ACTION — create issues from bugs/bug-report.md and replace bugs/screenshots/bug_01.png` through `bug_06.png` with real GitHub Issue-page screenshots.
+- Repository: [KidCute1412/eshop-sut](https://github.com/KidCute1412/eshop-sut).
+- Six GitHub Issues and real page captures: [#162](https://github.com/KidCute1412/eshop-sut/issues/162), [#163](https://github.com/KidCute1412/eshop-sut/issues/163), [#164](https://github.com/KidCute1412/eshop-sut/issues/164), [#165](https://github.com/KidCute1412/eshop-sut/issues/165), [#166](https://github.com/KidCute1412/eshop-sut/issues/166), and [#167](https://github.com/KidCute1412/eshop-sut/issues/167). The matching images are `bugs/screenshots/bug_01.png` through `bug_06.png`.
 - CI pass/fail Action URLs, commit hashes, and screenshots: `PENDING HUMAN ACTION`.
 - YouTube unlisted skill demonstration: `<YouTube-URL-Agent-Skill>`.
 - Postman Console proof of `X-Student-Id: 23127404`: `PENDING HUMAN ACTION`.

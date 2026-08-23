@@ -22,6 +22,8 @@ All AI-generated rows were marked `VALID` after reconciliation with the requirem
 
 The six reproducible root defects are listed in `bugs/bug-report.md`. The checkout defects are one root cause (the endpoint does not consult cart state) with multiple demonstrated consequences: empty checkout, amount tampering, and cart not cleared.
 
+The corresponding public GitHub Issues are [#162](https://github.com/KidCute1412/eshop-sut/issues/162), [#163](https://github.com/KidCute1412/eshop-sut/issues/163), [#164](https://github.com/KidCute1412/eshop-sut/issues/164), [#165](https://github.com/KidCute1412/eshop-sut/issues/165), [#166](https://github.com/KidCute1412/eshop-sut/issues/166), and [#167](https://github.com/KidCute1412/eshop-sut/issues/167). Their authentic page captures are stored in `bugs/screenshots/`.
+
 ## Postman/Newman features
 
 Collections, local environment, iteration data, variables, pre-request scripts, Chai assertions, JSON reporting, workflow fixtures, and Newman CLI were used. Mock servers and monitors were not used and are not claimed.
