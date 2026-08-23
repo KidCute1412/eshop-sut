@@ -1,0 +1,2 @@
+case_id,email,password,token_role,endpoint_id,request_body,expected_status,expected_key
+API-001,test@eshop.com,Test1234!,user,login,"{}",200,token

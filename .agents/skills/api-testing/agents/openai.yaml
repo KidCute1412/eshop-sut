@@ -1,0 +1,4 @@
+interface:
+  display_name: "API Testing"
+  short_description: "HW6 API test generation, Newman execution, CI, and reporting"
+  default_prompt: "Use $api-testing to generate, audit, execute, and report HW6 API tests for three EShop APIs."
