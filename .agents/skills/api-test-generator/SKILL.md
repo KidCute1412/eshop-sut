@@ -43,19 +43,19 @@ flowchart TD
 
 ### 1. Batch Mode (Generate All 3 Homework API Suites)
 ```powershell
-python deliverables/agent-skills/api-test-generator/generator.py --all --output_dir "output_suite"
+python .agents/skills/api-test-generator/generator.py --all --output_dir "output_suite"
 ```
 
 ### 2. Single Endpoint Mode
 ```powershell
 # Pool A: Login
-python deliverables/agent-skills/api-test-generator/generator.py --endpoint "/api/login" --method POST --output_dir "out_login"
+python .agents/skills/api-test-generator/generator.py --endpoint "/api/login" --method POST --output_dir "out_login"
 
 # Pool B: Checkout
-python deliverables/agent-skills/api-test-generator/generator.py --endpoint "/api/checkout" --method POST --output_dir "out_checkout"
+python .agents/skills/api-test-generator/generator.py --endpoint "/api/checkout" --method POST --output_dir "out_checkout"
 
 # Pool C: Admin Order State Machine
-python deliverables/agent-skills/api-test-generator/generator.py --endpoint "/api/admin/orders/:id/status" --method PUT --output_dir "out_admin"
+python .agents/skills/api-test-generator/generator.py --endpoint "/api/admin/orders/:id/status" --method PUT --output_dir "out_admin"
 ```
 
 ### 3. Generated Outputs
