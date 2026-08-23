@@ -39,7 +39,16 @@ jobs:
         run: cat reports/HW6/newman/backend.log || true
       - name: Run Newman
         working-directory: reports/HW6
-        run: npx newman run postman/HW06_FR01_FR07_FR17.postman_collection.json -e postman/HW06_local.postman_environment.json --env-var studentId=23127539 --reporters cli,html --reporter-html-export newman/report.html
+        env:
+          HTTP_PROXY: ""
+          HTTPS_PROXY: ""
+          ALL_PROXY: ""
+          http_proxy: ""
+          https_proxy: ""
+          all_proxy: ""
+          NO_PROXY: "localhost,127.0.0.1"
+          no_proxy: "localhost,127.0.0.1"
+        run: npx newman run postman/HW06_FR01_FR07_FR17.postman_collection.json -e postman/HW06_local.postman_environment.json --env-var baseUrl=http://127.0.0.1:3000 --env-var studentId=23127539 --reporters cli,html --reporter-html-export newman/report.html
       - name: Upload Newman report
         uses: actions/upload-artifact@v4
         if: always()

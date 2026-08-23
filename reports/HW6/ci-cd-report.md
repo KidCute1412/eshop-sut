@@ -4,8 +4,8 @@
 
 - Workflow file draft: ci/github-actions-api-tests.yml
 - Tool: Newman
-- Backend startup: npm install in backend, node database.js, mkdir reports/HW6/newman, node server.js in background, wait-on with 60s timeout
-- Command: newman run reports/HW6/postman/HW06_FR01_FR07_FR17.postman_collection.json -e reports/HW6/postman/HW06_local.postman_environment.json --env-var studentId=<StudentID> --reporters cli,html --reporter-html-export reports/HW6/newman/report.html
+- Backend startup: npm install in backend, node database.js, mkdir reports/HW6/newman, node server.js in background, wait-on with 60s timeout; Newman clears proxy variables and uses baseUrl=http://127.0.0.1:3000
+- Command: newman run reports/HW6/postman/HW06_FR01_FR07_FR17.postman_collection.json -e reports/HW6/postman/HW06_local.postman_environment.json --env-var baseUrl=http://127.0.0.1:3000 --env-var studentId=<StudentID> --reporters cli,html --reporter-html-export reports/HW6/newman/report.html
 - Artifact: Newman HTML report
 
 ## Passing Run
