@@ -1,7 +1,7 @@
 flowchart TD
   A[Read API specification] --> B[Generate candidate cases]
   B --> C[Human audit: VALID / INVALID / INCOMPLETE]
-  C --> D[Add state and security extensions]
+  C --> D[Add state/security extensions]
   D --> E[Run isolated local fixtures]
   E --> F[Preserve raw Newman JSON]
-  F --> G[Derive reports and bug register]
+  F --> G[Derive reports and bugs]
