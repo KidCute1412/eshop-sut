@@ -7,7 +7,7 @@
     "audit_label": "VALID",
     "audit_reason": "Oracle reconciled against README.md requirements and live SUT behavior.",
     "contract_status": 200,
-    "expected_status": 999,
+    "expected_status": 200,
     "email": "admin@eshop.com",
     "password": "Admin123!",
     "expect_token": true,
