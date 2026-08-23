@@ -15,7 +15,7 @@ Evidence timestamp: `2026-08-23T15:23:46.653Z`
 
 The 120 cases consist of 105 AI-generated cases and 15 human-extended cases. `BUG DETECTED` means the test reproduced the observed vulnerable behavior while preserving the contrary contract oracle in Excel and the main report.
 
-## Required human-account placeholders
+## External-account evidence
 
 - Repository: [KidCute1412/eshop-sut](https://github.com/KidCute1412/eshop-sut).
 - Six GitHub Issues and real page captures: [#162](https://github.com/KidCute1412/eshop-sut/issues/162), [#163](https://github.com/KidCute1412/eshop-sut/issues/163), [#164](https://github.com/KidCute1412/eshop-sut/issues/164), [#165](https://github.com/KidCute1412/eshop-sut/issues/165), [#166](https://github.com/KidCute1412/eshop-sut/issues/166), and [#167](https://github.com/KidCute1412/eshop-sut/issues/167). The matching images are `bugs/screenshots/bug_01.png` through `bug_06.png`.
