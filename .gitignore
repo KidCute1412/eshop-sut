@@ -38,3 +38,15 @@ docs/assignments/HW03/workbench/populate_excel.py
 docs/assignments/HW03/workbench/populate_obs_rec.py
 docs/assignments/HW03/workbench/update_p5_p6_p7.py
 docs/assignments/HW03/workbench/update_timestamps_60_90s.py
+
+# Local tools and unrelated generated archives/reports
+.tools/
+TEST_SUMMARY_REPORT_23127404_LeTuanLoc.md
+docs/assignments/HW05/deliverables/23127404_HW05_AI_Performance_100.zip
+
+# HW06 draft helpers and placeholder files; do not add with broad `git add .`
+docs/assignments/HW06/deliverables/.gitkeep
+docs/assignments/HW06/specs/capture_real_evidence.py
+docs/assignments/HW06/specs/generate_ci_evidence.py
+scripts/build_excel_matrix.py
+scripts/generate_html_reports.py
