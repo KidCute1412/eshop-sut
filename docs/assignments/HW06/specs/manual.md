@@ -44,7 +44,7 @@ Dưới đây là các đầu việc mà **AI / Agent KHÔNG THỂ làm thay b�
       └── Chụp ảnh màn hình từng issue lưu vào deliverables/bugs/screenshots/
 
   [2] PUSH CODE & KÍCH HOẠT GITHUB ACTIONS (CI/CD)
-      └── Chạy git push origin main để workflow .github/workflows/api-tests.yml chạy
+      └── Chạy git push origin 23127404-LeTuanLoc để workflow .github/workflows/api-tests.yml chạy
       └── Lấy ảnh màn hình commit pass (ci-pass.png) và commit fail (ci-fail.png)
 
   [3] QUAY VIDEO DEMO UNLISTED TRÊN YOUTUBE (10 ĐIỂM AGENT SKILL)
@@ -91,7 +91,7 @@ Dưới đây là các đầu việc mà **AI / Agent KHÔNG THỂ làm thay b�
    ```powershell
    git add .
    git commit -m "feat(hw06): complete automated API testing suite and CI/CD workflow"
-   git push origin main
+   git push origin 23127404-LeTuanLoc
    ```
 2. Vào tab **Actions** trên GitHub: `https://github.com/KidCute1412/eshop-sut/actions`
 3. Kiểm tra workflow **"Automated Newman API Testing Pipeline"** chạy thành công (màu xanh). Chụp ảnh màn hình lưu vào:
@@ -99,7 +99,7 @@ Dưới đây là các đầu việc mà **AI / Agent KHÔNG THỂ làm thay b�
 4. Để tạo mẫu commit Fail có chủ đích: Sửa tạm file `login_data.json` ở case đầu tiên thành `"expected_status": 999`, commit và push lên nhánh hoặc commit mới:
    ```powershell
    git commit -am "test(ci): intentional failure on TC-LOGIN-01 for CI verification"
-   git push origin main
+   git push origin 23127404-LeTuanLoc
    ```
    Sau khi workflow báo đỏ (Fail), chụp ảnh màn hình lưu vào `docs/assignments/HW06/deliverables/cicd/screenshots/ci-fail.png`.
    Sau đó khôi phục lại giá trị `200` và push lại.

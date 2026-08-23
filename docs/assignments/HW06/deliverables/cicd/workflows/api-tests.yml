@@ -2,9 +2,9 @@ name: Automated Newman API Testing Pipeline
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main, master, 23127404-LeTuanLoc ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main, master, 23127404-LeTuanLoc ]
   workflow_dispatch:
 
 jobs:
