@@ -71,13 +71,180 @@ The following items require manual action because they need real external eviden
 
 ### 1. Create GitHub bug issues
 
-Use the three bug sections in `bug-reports/bug_report.md` as issue bodies:
+Create three separate GitHub Issues using the issue bodies below:
 
 1. `BUG-FR09-001 - Percent coupon formula returns negative discount`
 2. `BUG-FR13-001 - Admin orders endpoint accepts any valid user token`
 3. `BUG-FR09-002 - Coupon application is public despite using user_id-sensitive rules`
 
 After creating each issue, update the line `GitHub issue screenshot/link: TODO` with the real issue URL and screenshot filename.
+
+#### Issue body for BUG-FR09-001
+
+````markdown
+## Description
+
+The `POST /api/apply-coupon` endpoint calculates percentage coupon discounts incorrectly. For a percent coupon such as `SAVE10`, the backend treats the percentage value as a multiplier in the wrong formula, which produces a negative discount and an inflated final amount.
+
+## Affected endpoint
+
+`POST /api/apply-coupon`
+
+## Steps to reproduce
+
+1. Start the backend with `cd backend && node server.js`.
+2. Send a request to `POST http://localhost:3000/api/apply-coupon`.
+3. Use this request body:
+
+```json
+{
+  "code": "SAVE10",
+  "total_amount": 500000,
+  "user_id": 1
+}
+```
+
+4. Observe the returned `discount` and `final_amount`.
+
+## Expected result
+
+For a 10 percent coupon on `500000`, the discount should be `50000` and the final amount should be `450000`.
+
+## Actual result
+
+The implementation calculates the discount with `Math.floor(total_amount * (1 - coupon.discount_value))`. With `discount_value = 10`, this becomes a negative discount and makes the final amount larger than the original amount.
+
+Observed example:
+
+- `discount`: `-4500000`
+- `final_amount`: `5000000`
+
+## Impact
+
+This is a high severity pricing bug. Customers may see incorrect checkout totals, coupon validation becomes unreliable, and the system can return impossible financial values.
+
+## Evidence
+
+- Test cases: `FR09-001`, `FR09-004`, `FR09-006`, and the human formula oracle case.
+- Local Newman report: `hw06/submit/newman/fr09-newman-report.json`.
+- Source location: `backend/server.js`, percentage coupon branch in `/api/apply-coupon`.
+
+## Suggested fix
+
+For percentage coupons, calculate the discount as:
+
+```js
+Math.floor(total_amount * coupon.discount_value / 100)
+```
+````
+
+#### Issue body for BUG-FR13-001
+
+````markdown
+## Description
+
+The `GET /api/admin/orders` endpoint allows any authenticated user to access the admin order list. The endpoint validates that the JWT is valid, but it does not verify that the authenticated user has the `admin` role.
+
+## Affected endpoint
+
+`GET /api/admin/orders`
+
+## Steps to reproduce
+
+1. Start the backend with `cd backend && node server.js`.
+2. Log in as a normal non-admin user and obtain a valid JWT.
+3. Send a request to `GET http://localhost:3000/api/admin/orders` using that normal user's token:
+
+```http
+Authorization: Bearer <normal_user_token>
+```
+
+4. Observe that the endpoint returns the order list instead of rejecting the request.
+
+## Expected result
+
+Only admin users should be able to access all orders. A normal authenticated user should receive `403 Forbidden`.
+
+## Actual result
+
+The endpoint returns admin order data for a normal authenticated user because it only calls `authenticateToken` and does not check `req.user.role === "admin"`.
+
+## Impact
+
+This is a critical authorization bug. A normal user can access order information that should be restricted to administrators, which may expose customer, order, and business data.
+
+## Evidence
+
+- Test cases: `FR13-006` through `FR13-010`, plus the human IDOR/role tests.
+- Local Newman report: `hw06/submit/newman/fr13-newman-report.json`.
+- Source location: `backend/server.js`, `app.get("/api/admin/orders", authenticateToken, ...)`.
+
+## Suggested fix
+
+Add an admin authorization middleware after token authentication, for example:
+
+```js
+if (req.user.role !== "admin") {
+  return res.status(403).json({ error: "Admin access required" });
+}
+```
+````
+
+#### Issue body for BUG-FR09-002
+
+````markdown
+## Description
+
+The `POST /api/apply-coupon` endpoint is public even though coupon eligibility and usage checks depend on user-specific rules. The endpoint trusts the optional `user_id` value sent in the request body instead of deriving the user identity from an authenticated token.
+
+## Affected endpoint
+
+`POST /api/apply-coupon`
+
+## Steps to reproduce
+
+1. Start the backend with `cd backend && node server.js`.
+2. Send a request to `POST http://localhost:3000/api/apply-coupon` without an `Authorization` header.
+3. Include a body with a coupon code, amount, and any `user_id` value:
+
+```json
+{
+  "code": "SAVE10",
+  "total_amount": 500000,
+  "user_id": 1
+}
+```
+
+4. Observe that the endpoint processes the coupon request even though the caller is unauthenticated.
+
+## Expected result
+
+Coupon application should require authentication when user-specific coupon usage or eligibility rules are enforced. The backend should identify the user from the verified JWT, not from a client-supplied `user_id`.
+
+## Actual result
+
+The endpoint accepts unauthenticated requests and trusts `user_id` from the request body. This creates a trust-boundary issue because a client can omit or change `user_id`.
+
+## Impact
+
+This is a medium severity security and business-logic bug. A caller may bypass per-user coupon rules, test another user's coupon eligibility, or produce inconsistent coupon usage behavior.
+
+## Evidence
+
+- Test cases: `BUG-FR09-002` and related FR09 trust-boundary cases.
+- Local Newman report: `hw06/submit/newman/fr09-newman-report.json`.
+- Source location: `backend/server.js`, `/api/apply-coupon`.
+
+## Suggested fix
+
+Require authentication for coupon application when user-specific checks are used, and derive the user id from the token:
+
+```js
+const userId = req.user.id;
+```
+
+Do not trust `user_id` from the request body for authorization or eligibility decisions.
+````
 
 ### 2. Produce a passing CI run
 

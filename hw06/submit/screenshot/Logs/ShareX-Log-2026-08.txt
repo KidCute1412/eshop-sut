@@ -1,0 +1,53 @@
+﻿2026-08-24 01:12:57.608 - ShareX starting.
+2026-08-24 01:12:57.613 - Version: 18.0.1
+2026-08-24 01:12:57.613 - Build: Release
+2026-08-24 01:12:57.614 - Command line: "C:\Program Files\ShareX\ShareX.dll"
+2026-08-24 01:12:57.614 - Personal path: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\hw06\submit\screenshot
+2026-08-24 01:12:57.614 - Personal path detection method: PersonalPath.cfg file (C:\Users\Windows\Documents\ShareX\PersonalPath.cfg)
+2026-08-24 01:12:57.615 - Operating system: Windows 10 Pro (64-bit)
+2026-08-24 01:12:57.615 - .NET version: 9.0.8
+2026-08-24 01:12:57.616 - Running as elevated process: False
+2026-08-24 01:12:57.914 - ApplicationConfig file does not exist: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\hw06\submit\screenshot\ApplicationConfig.json
+2026-08-24 01:12:57.914 - ApplicationConfig file does not exist: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\hw06\submit\screenshot\ApplicationConfig.json.temp
+2026-08-24 01:12:57.914 - ApplicationConfig file does not exist: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\hw06\submit\screenshot\Backup\ApplicationConfig.json
+2026-08-24 01:12:57.914 - Loading new ApplicationConfig instance.
+2026-08-24 01:12:59.583 - UploadersConfig file does not exist: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\hw06\submit\screenshot\UploadersConfig.json
+2026-08-24 01:12:59.583 - UploadersConfig file does not exist: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\hw06\submit\screenshot\UploadersConfig.json.temp
+2026-08-24 01:12:59.583 - UploadersConfig file does not exist: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\hw06\submit\screenshot\Backup\UploadersConfig.json
+2026-08-24 01:12:59.583 - Loading new UploadersConfig instance.
+2026-08-24 01:12:59.585 - Language changed to: Tiếng Việt (Việt Nam)
+2026-08-24 01:12:59.586 - MainForm init started.
+2026-08-24 01:12:59.620 - HotkeysConfig file does not exist: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\hw06\submit\screenshot\HotkeysConfig.json
+2026-08-24 01:12:59.620 - HotkeysConfig file does not exist: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\hw06\submit\screenshot\HotkeysConfig.json.temp
+2026-08-24 01:12:59.620 - HotkeysConfig file does not exist: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\hw06\submit\screenshot\Backup\HotkeysConfig.json
+2026-08-24 01:12:59.620 - Loading new HotkeysConfig instance.
+2026-08-24 01:13:00.267 - MainForm init finished.
+2026-08-24 01:13:00.546 - Hotkey registered: Hotkey: Ctrl + Print Screen, Description: Chụp theo vùng, Job: RectangleRegion
+2026-08-24 01:13:00.546 - Hotkey registered: Hotkey: Print Screen, Description: Chụp toàn màn hình, Job: PrintScreen
+2026-08-24 01:13:00.546 - Hotkey registered: Hotkey: Alt + Print Screen, Description: Chụp cửa sổ đang hoạt động, Job: ActiveWindow
+2026-08-24 01:13:00.546 - Hotkey registered: Hotkey: Shift + Print Screen, Description: Bắt đầu/Dừng ghi lại màn hình sử dụng vùng tự chọn, Job: ScreenRecorder
+2026-08-24 01:13:00.546 - Hotkey registered: Hotkey: Ctrl + Shift + Print Screen, Description: Bắt đầu/Dừng ghi lại màn hình (dạng ảnh GIF) sử dụng vùng tự chọn, Job: ScreenRecorderGIF
+2026-08-24 01:13:00.547 - HotkeyManager started.
+2026-08-24 01:13:00.548 - WatchFolderManager started.
+2026-08-24 01:13:00.585 - Startup time: 10003 ms
+2026-08-24 01:13:34.985 - Hotkey triggered. Hotkey: Ctrl + Print Screen, Description: Chụp theo vùng, Job: RectangleRegion
+2026-08-24 01:13:34.988 - Executing: Chụp theo vùng
+2026-08-24 01:13:42.666 - Task in queue. Job: Job, Type: Image, Host: Imgur
+2026-08-24 01:13:42.749 - Task status: Preparing
+2026-08-24 01:13:42.799 - Image copied to clipboard.
+2026-08-24 01:13:42.827 - Image saved to file: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\hw06\submit\screenshot\Screenshots\2026-08\Z7gALIAvK9.png
+2026-08-24 01:13:44.959 - Task completed. File name: Z7gALIAvK9.png, Duration: 2207 ms
+2026-08-24 01:15:21.355 - Hotkey triggered. Hotkey: Ctrl + Print Screen, Description: Chụp theo vùng, Job: RectangleRegion
+2026-08-24 01:15:21.356 - Executing: Chụp theo vùng
+2026-08-24 01:15:27.972 - Task in queue. Job: Job, Type: Image, Host: 
+2026-08-24 01:15:27.992 - Task status: Preparing
+2026-08-24 01:15:28.021 - Image copied to clipboard.
+2026-08-24 01:15:28.037 - Image saved to file: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\hw06\submit\screenshot\Screenshots\2026-08\2ceighG9nl.png
+2026-08-24 01:15:28.066 - Task completed. File name: 2ceighG9nl.png, Duration: 74 ms
+2026-08-24 01:16:40.939 - Hotkey triggered. Hotkey: Ctrl + Print Screen, Description: Chụp theo vùng, Job: RectangleRegion
+2026-08-24 01:16:40.939 - Executing: Chụp theo vùng
+2026-08-24 01:16:44.966 - Task in queue. Job: Job, Type: Image, Host: 
+2026-08-24 01:16:44.980 - Task status: Preparing
+2026-08-24 01:16:45.009 - Image copied to clipboard.
+2026-08-24 01:16:45.025 - Image saved to file: D:\daihoc\HK3-2026\26-KIEM-THU\hw\hw2\group\eshop-sut\hw06\submit\screenshot\Screenshots\2026-08\rJW2wBOLOD.png
+2026-08-24 01:16:45.061 - Task completed. File name: rJW2wBOLOD.png, Duration: 82 ms
