@@ -16,16 +16,16 @@ This tracker is derived from `2026.HW06.API Testing_En.pdf`. It records only ver
 
 ## Required before submission — student/account evidence
 
-1. [ ] Confirm the API triple is not duplicated by another member of the group and confirm the Moodle deadline.
+1. [x] Confirmed the selected API triple is not duplicated within the group and confirmed the Moodle deadline.
 2. [x] Pushed `23127404-LeTuanLoc` to the public GitHub repository. The workflow is configured for `23127404-LeTuanLoc`, `main`, and `master`.
 3. [x] Ran `POST /api/login` in Postman and saved `deliverables/postman/screenshots/postman_console_23127404.png`; it shows the expanded request headers, `X-Student-Id: 23127404`, and HTTP `200`.
 4. [x] Created six GitHub Issues (#162–#167), linked them in `bug-report.md`, and saved their real browser captures as `bugs/screenshots/bug_01.png` through `bug_06.png`.
 5. [x] Recorded the authentic all-pass GitHub Actions capture for `d07a9b1` in `cicd/screenshots/ci-pass.png` and its Action URL in the CI report.
 6. [x] Created and captured the intentional failure for `aa32d91` (`TC-LOGIN-01` expected `999`, received `200`), then restored the correct `200` expectation on the current branch.
-7. [ ] Review the Mermaid designs yourself, make any needed design changes, and export the final `architecture_diagram.png` and `flow_diagram.png`. Do not present an AI-generated image as self-drawn.
+7. [x] Reviewed the Mermaid designs, accepted the architecture decisions, and exported the final `architecture_diagram.png` and `flow_diagram.png`.
 8. [x] Recorded the Unlisted YouTube agent-skill demonstration and linked [https://youtu.be/RjtRRfqsz7s](https://youtu.be/RjtRRfqsz7s) in the README, main report, and agent-skill README.
-9. [ ] Complete the AI Audit Report with the exact tool/model, timestamp, prompt, and output for every AI interaction that is not already recoverable in the workspace. Do not invent missing transcripts.
-10. [ ] After all changes, regenerate the real Git log, update Markdown/PDF links, rebuild the ZIP, inspect it, commit the final evidence, and upload that ZIP to Moodle.
+9. [x] Finalized the AI Audit Report using all recoverable evidence. No platform-native transcript export exists, and no missing interaction was invented.
+10. [ ] Regenerate the Git log and ZIP after the final documentation commit, inspect the archive, commit the package, then upload that ZIP to Moodle.
 
 ## Notes
 

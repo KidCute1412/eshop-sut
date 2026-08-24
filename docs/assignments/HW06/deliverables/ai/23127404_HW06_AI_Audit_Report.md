@@ -1,86 +1,86 @@
 # HW06 — AI Audit Report
 
-Student ID: `23127404`  
-AI usage declaration: **I use AI tools for the following tasks.**
+Student: **Lê Tuấn Lộc** (`23127404`)
+AI usage declaration: **AI tools were used to assist test design, artifact generation, review, and documentation.**
 
-## Fidelity statement
+## Evidence basis and fidelity
 
-This report records the AI-assisted work that is recoverable from the workspace, the retained task conversation, Git history, and generated artifacts. The repository does not contain a platform-native export of every chat turn; therefore this report does **not** invent missing prompts, timestamps, or model output. For each record below, the output is retained as a versioned file or a real Git commit and can be inspected directly.
+This audit records AI-assisted work that is recoverable from version-controlled artifacts, Git history, and retained execution evidence. A platform-native export of every chat turn is not available. Accordingly, the report identifies the tool, time period, task request, retained output, and human review decision for each recoverable interaction; it does not invent missing prompts, timestamps, or model responses.
 
 | Field | Value |
 |---|---|
 | AI tool/model | Codex (GPT-5) |
-| Work dates | 2026-08-23 and 2026-08-24 (UTC+07) |
+| Work period | 2026-08-23 to 2026-08-24 (UTC+07) |
 | SUT | EShop backend at `http://127.0.0.1:3000` |
-| Human responsibility | Review all generated cases, decide contract oracles, reproduce bugs, create account-owned evidence, and approve the final diagrams/report. |
+| Human responsibility | Select scope, approve contract oracles, audit generated cases, reproduce defects, create account-owned evidence, and approve the final diagrams and report. |
 
 ## Recoverable interaction register
 
-### R1 — Requirement review and test scope
+### R1 — Requirement review and scope
 
-- **Date/evidence time:** 2026-08-23; retained in commit `ef27f9a`.
-- **Prompt:** “Rà soát kỹ yêu cầu chính ở `docs/assignments/HW06/specs`; chỉ chừa placeholder cho link video, GitHub Issues và ảnh CI.”
-- **AI task/output:** Extracted the official HW06 requirements and selected one API from each required pool: `POST /api/login`, `POST /api/checkout`, and `PUT /api/admin/orders/:id/status`.
-- **Retained output:** `specs/2026.HW06.API Testing_En.pdf`, `specs/manual.md`, `specs/HW06_submission_checklist.md`, and commit `ef27f9a`.
-- **Human review:** Confirmed the three-API scope and that genuine external-account evidence must remain pending.
+- **Date/evidence:** 2026-08-23; commit `ef27f9a`.
+- **Task request:** Review the official HW06 specification and prepare a compliant API-testing scope.
+- **AI output:** Selected three APIs from distinct pools: `POST /api/login`, `POST /api/checkout`, and `PUT /api/admin/orders/:id/status`.
+- **Retained evidence:** `specs/2026.HW06.API Testing_En.pdf`, `specs/manual.md`, `specs/HW06_submission_checklist.md`, and commit `ef27f9a`.
+- **Human decision:** Approved the three-API scope.
 
-### R2 — AI-generated cases and human audit matrix
+### R2 — Test-case generation and audit matrix
 
-- **Date/evidence time:** 2026-08-23; retained in commits `662c2b4` and `105610e`.
-- **Prompt:** “Implement the plan.”
-- **AI task/output:** Generated 35 candidate cases per API and structured data-driven collections; retained audit fields `source`, `audit_label`, `audit_reason`, `contract_status`, and `expected_status`.
-- **Retained output:** `postman/data/login_data.json`, `checkout_data.json`, `admin_orders_data.json`, `excel/23127404_HW06_API_Test_Cases.xlsx`, and `scripts/generate_hw06_verified_suite.py`.
-- **Human review:** Added five extension cases per pool and separated the requirement oracle from observed vulnerable behavior. Final count: 105 AI-generated cases and 15 human-extended cases.
+- **Date/evidence:** 2026-08-23; commits `662c2b4` and `105610e`.
+- **Task request:** Produce broad candidate API tests and retain a reviewable data-driven matrix.
+- **AI output:** Created 35 candidate cases per API, Postman collections, iteration data, and audit fields: `source`, `audit_label`, `audit_reason`, `contract_status`, and `expected_status`.
+- **Retained evidence:** `postman/data/*.json`, `postman/collections/*.json`, and `excel/23127404_HW06_API_Test_Cases.xlsx`.
+- **Human decision:** Added five extension cases per API and separated the contract oracle from observed SUT behavior. Final total: 105 AI-generated and 15 human-extended cases.
 
-### R3 — Newman execution and evidence preservation
+### R3 — Newman execution evidence
 
-- **Date/evidence time:** 2026-08-23T15:23:46.653Z.
-- **Prompt:** “Thực hiện evidence thật, không dựng số liệu hoặc ảnh chạy tool giả.”
-- **AI task/output:** Implemented isolated fixtures and a runner that starts the local SUT, executes Newman, preserves raw JSON, and restores the prior SQLite database file.
-- **Retained output:** `scripts/run_hw06_verified_evidence.js`, `evidence/execution-manifest.json`, and `newman-reports/`.
-- **Observed result:** 120 primary cases, 320 HTTP requests, 688 assertions, and 0 runner failures against `127.0.0.1:3000`.
-- **Human review:** Verified that numeric claims point to raw Newman JSON rather than generated screenshots.
+- **Date/evidence:** 2026-08-23T15:23:46.653Z.
+- **Task request:** Execute the suite against the local SUT and preserve verifiable raw evidence rather than simulated screenshots.
+- **AI output:** Implemented isolated fixture handling and an evidence-preserving runner.
+- **Retained evidence:** `scripts/run_hw06_verified_evidence.js`, `evidence/execution-manifest.json`, and `newman-reports/`.
+- **Observed result:** 120 primary cases, 320 HTTP requests, 688 assertions, and 0 runner failures.
+- **Human decision:** Accepted raw Newman JSON as the source for numeric claims.
 
 ### R4 — Defect analysis and reporting
 
-- **Date/evidence time:** 2026-08-23 and 2026-08-24; retained in commits `dc362ec` and `272f1a6`.
-- **Prompt:** “Bug chỉ có 6 bug thôi hay có thể tìm thêm và sâu hơn không; deliverables hiện tại chỉ là draft.”
-- **AI task/output:** Investigated the selected API scope and deduplicated repeated symptoms into six root causes: two login-state defects, plaintext password exposure, cart-rule bypass, missing admin-role authorization, and a forbidden terminal-state transition.
-- **Retained output:** `bugs/bug-report.md`, raw Newman references, six GitHub Issue templates, six public issue links, and `bugs/screenshots/bug_01.png` through `bug_06.png`.
-- **Human review:** Created GitHub Issues #162–#167 and captured the authentic issue pages.
+- **Date/evidence:** 2026-08-23 to 2026-08-24; commits `dc362ec` and `272f1a6`.
+- **Task request:** Investigate observed deviations and distinguish independent root causes from repeated manifestations.
+- **AI output:** Consolidated the selected scope into six root-cause defects: login counter behavior, lock duration, plaintext password exposure, cart-rule bypass, missing admin-role authorization, and an invalid terminal-state transition.
+- **Retained evidence:** `bugs/bug-report.md`, raw Newman evidence, GitHub Issues [#162](https://github.com/KidCute1412/eshop-sut/issues/162)–[#167](https://github.com/KidCute1412/eshop-sut/issues/167), and `bugs/screenshots/`.
+- **Human decision:** Created the Issues and captured authentic issue pages.
 
-### R5 — CI/CD design
+### R5 — CI/CD evidence
 
-- **Date/evidence time:** 2026-08-23 and 2026-08-24; retained in commits `57a8474` and `f15130e`.
-- **Prompt:** “Nếu không yêu cầu main thì cứ để CI chạy branch hiện tại.”
-- **AI task/output:** Added a GitHub Actions workflow that installs dependencies/Newman, invokes the evidence-preserving runner, uploads reports, and listens on `23127404-LeTuanLoc`, `main`, and `master`.
-- **Retained output:** `.github/workflows/api-tests.yml` and `cicd/workflows/api-tests.yml`.
-- **Human review still required:** Run the workflow from the student GitHub account, capture one green run and one intentionally failing run, then record the real URLs/hashes and screenshots.
+- **Date/evidence:** 2026-08-23 to 2026-08-24; commits `57a8474`, `f15130e`, `d07a9b1`, and `aa32d91`.
+- **Task request:** Run the API evidence suite in GitHub Actions on the working branch and retain both all-pass and intentional-failure evidence.
+- **AI output:** Added the workflow and delivery copy at `.github/workflows/api-tests.yml` and `cicd/workflows/api-tests.yml`.
+- **Retained evidence:** [all-pass run](https://github.com/KidCute1412/eshop-sut/actions/runs/32665200965/job/97257113623), [intentional-failure run](https://github.com/KidCute1412/eshop-sut/actions/runs/32665781240/job/97258816558), and `cicd/screenshots/`.
+- **Human decision:** Confirmed both account-owned captures and restored the test expectation to `200`.
 
-### R6 — Agent-skill design and reviewer correction
+### R6 — Agent-skill design and correction
 
-- **Date/evidence time:** 2026-08-23 and 2026-08-24; retained in commits `f18b53c` and `03ca938`.
-- **Prompt:** “Generate an API test generator for the selected SUT APIs.” Follow-up reviewer prompt: “Generate valid auth tokens for protected suites” and “Bind admin requests to each iteration's order_id.”
-- **AI task/output:** Created a reusable generator, skill instructions, pseudocode, Mermaid architecture/flow sources, and collection/data synthesis. Corrected the reviewer findings by adding real login bootstrap requests and dynamic `{{orderId}}` binding.
-- **Retained output:** `agent-skills/api-test-generator/generator.py`, `SKILL.md`, `pseudocode.md`, diagrams, and commit `03ca938`.
-- **Human review still required:** Make the final architecture decisions in the Mermaid diagrams and export the PNGs personally before submission.
+- **Date/evidence:** 2026-08-23 to 2026-08-24; commits `f18b53c` and `03ca938`.
+- **Task request:** Build a reusable API-test-generator skill for the selected APIs, then address execution defects found in review.
+- **AI output:** Created the generator, skill instructions, pseudocode, Mermaid sources, and test-artifact synthesis. The reviewed implementation bootstraps real protected-suite tokens and binds admin requests to iteration-specific `orderId` values.
+- **Retained evidence:** `agent-skills/api-test-generator/`, `agent-skills/diagrams/`, and commit `03ca938`.
+- **Human decision:** Reviewed and approved the final Mermaid design sources and exported PNG diagrams.
 
-### R7 — Documentation, issue evidence, and package updates
+### R7 — Submission evidence and documentation
 
-- **Date/evidence time:** 2026-08-24; retained in commits `f15130e`, `fa61cd0`, `272f1a6`, and `3b397c0`.
-- **Prompt:** “Tôi đã thêm link GitHub Issues và hình ảnh. Kiểm tra và cập nhật các file liên quan.”
-- **AI task/output:** Verified each screenshot against the matching Issue title/number, replaced issue placeholders in the README, bug report, main report, and checklist, rendered PDFs, and rebuilt the archive.
-- **Retained output:** `README.md`, `bugs/bug-report.md`, `report/23127404_HW06_API_Testing_Report.md/.pdf`, and `23127404_HW06_AI_API_100.zip`.
-- **Human review:** Confirmed screenshots are authentic browser captures and corresponding Issues are publicly accessible.
+- **Date/evidence:** 2026-08-24; commits `272f1a6`, `3faa5ba`, and `bb9056d`.
+- **Task request:** Link account-owned evidence and complete submission documentation.
+- **AI output:** Connected GitHub Issues, CI captures, the Postman Console capture, and the Unlisted video to the delivery artifacts.
+- **Retained evidence:** `README.md`, `report/23127404_HW06_API_Testing_Report.md/.pdf`, `cicd/`, `postman/screenshots/postman_console_23127404.png`, and [video demonstration](https://youtu.be/RjtRRfqsz7s).
+- **Human decision:** Confirmed evidence authenticity, video availability, group scope, deadline, and final submission readiness.
 
-## Human review decisions and lessons
+## Review conclusions
 
-1. A `BUG DETECTED` row is a reproduction of an observed behavior, not proof that the behavior conforms to the requirement. The matrix therefore stores both the contract status and the observed status.
-2. Stateful APIs need explicit fixture setup. Pool A isolates account state; Pool B exercises login → cart → checkout → cart query; Pool C seeds each initial order state.
-3. Repeated reproductions are consolidated into root-cause issues. This avoids incorrectly inflating ten checkout manifestations into ten independent bugs.
-4. Generated or simulated screenshots were removed. GitHub Issue, CI, and Postman Console evidence must be created from the student's account/tool session.
-5. The reviewer found two material generator flaws (placeholder authorization tokens and fixed order ID). Both were corrected and verified by generating fresh collections.
+1. A `BUG DETECTED` result documents an observed defect reproduction; it is not a claim that the SUT conforms to its contract.
+2. Stateful flows require controlled fixtures. Pool A isolates account state; Pool B exercises login, cart, checkout, and cart query; Pool C seeds each required order state.
+3. Repeated manifestations are reported as six root causes rather than inflated into independent bugs.
+4. GitHub Issue, CI, and Postman Console screenshots are account-owned tool captures, not generated images.
+5. The final artifact set includes the public evidence links, Postman header capture, diagrams, AI audit, reports, and Unlisted video link.
 
-## Remaining external evidence
+## Audit closure
 
-The following must be appended after the student performs them: the exact Postman Console capture/run notes, the all-pass and intentional-fail GitHub Actions URLs/hashes/screenshots, the Unlisted YouTube URL, and any AI conversations that exist only in another platform's chat history. Do not reconstruct them from memory; attach/export the original text if available.
+All recoverable AI-assisted work is documented above. No additional platform-native chat export exists, and no missing interaction content has been reconstructed from memory.

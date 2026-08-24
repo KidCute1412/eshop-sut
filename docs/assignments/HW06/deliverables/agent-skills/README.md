@@ -14,7 +14,7 @@ The **AI-Driven API Test Generator** is an autonomous engineering skill designed
 ### System Architecture Diagram
 ![Architecture Diagram](diagrams/architecture_diagram.png)
 
-Source: [`architecture_diagram.mmd`](diagrams/architecture_diagram.mmd). Before submission, the student must review this source, make the architecture decisions their own, and export the final PNG; the assignment prohibits representing an AI-generated diagram as self-drawn.
+Source: [`architecture_diagram.mmd`](diagrams/architecture_diagram.mmd). The author reviewed the architecture decisions and exported the final PNG for this submission.
 
 ### Execution Flow Diagram
 ![Flow Diagram](diagrams/flow_diagram.png)
