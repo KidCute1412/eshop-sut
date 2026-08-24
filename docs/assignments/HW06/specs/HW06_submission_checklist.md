@@ -23,7 +23,7 @@ This tracker is derived from `2026.HW06.API Testing_En.pdf`. It records only ver
 5. [x] Recorded the authentic all-pass GitHub Actions capture for `d07a9b1` in `cicd/screenshots/ci-pass.png` and its Action URL in the CI report.
 6. [x] Created and captured the intentional failure for `aa32d91` (`TC-LOGIN-01` expected `999`, received `200`), then restored the correct `200` expectation on the current branch.
 7. [ ] Review the Mermaid designs yourself, make any needed design changes, and export the final `architecture_diagram.png` and `flow_diagram.png`. Do not present an AI-generated image as self-drawn.
-8. [ ] Record one 5–8 minute Unlisted YouTube demo of the generator and a real test run; add its URL to the README, main report, and agent-skill README.
+8. [x] Recorded the Unlisted YouTube agent-skill demonstration and linked [https://youtu.be/RjtRRfqsz7s](https://youtu.be/RjtRRfqsz7s) in the README, main report, and agent-skill README.
 9. [ ] Complete the AI Audit Report with the exact tool/model, timestamp, prompt, and output for every AI interaction that is not already recoverable in the workspace. Do not invent missing transcripts.
 10. [ ] After all changes, regenerate the real Git log, update Markdown/PDF links, rebuild the ZIP, inspect it, commit the final evidence, and upload that ZIP to Moodle.
 

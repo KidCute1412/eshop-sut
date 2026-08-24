@@ -78,6 +78,6 @@ python deliverables/agent-skills/api-test-generator/generator.py --endpoint "/ap
 
 ## 4. Video Demonstration & Authorship Proofs
 
-- **YouTube Unlisted Demo URL:** `<YouTube-URL-Agent-Skill>`
+- **YouTube Unlisted Demo URL:** [https://youtu.be/RjtRRfqsz7s](https://youtu.be/RjtRRfqsz7s)
 - **Live Terminal Proofs:** Includes `whoami`, `hostname`, and automated generator runs.
 - **Attributable Header:** Injects `X-Student-Id: 23127404` automatically across all synthesized Postman requests.
