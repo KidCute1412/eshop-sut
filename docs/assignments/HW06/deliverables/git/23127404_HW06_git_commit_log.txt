@@ -1,4 +1,4 @@
-HW06 Git commit evidence — snapshot through 65f6e4b (2026-08-24)
+HW06 Git commit evidence — snapshot through bb9056d (2026-08-24)
 
 This is the real `git log --oneline` history for HW06 paths and the HW06 CI
 workflow at the time of export. Hashes, commit messages, and timestamps were
@@ -32,3 +32,8 @@ aa32d91 test(ci): intentional failure
 62c6b35 docs(hw06): add agent skill video demo script
 3faa5ba docs(hw06): add Postman header evidence
 65f6e4b docs(hw06): synchronize CI evidence checklist
+ebff32d docs(hw06): refresh submission commit log
+03dae36 docs(hw06): center video on live agent skill invocation
+645d9fe docs(hw06): let agent select video demo skills
+51470a5 docs(hw06): make video demo commands location-safe
+bb9056d docs(hw06): add unlisted agent demo video
