@@ -25,7 +25,8 @@ This tracker is derived from `2026.HW06.API Testing_En.pdf`. It records only ver
 7. [x] Reviewed the Mermaid designs, accepted the architecture decisions, and exported the final `architecture_diagram.png` and `flow_diagram.png`.
 8. [x] Recorded the Unlisted YouTube agent-skill demonstration and linked [https://youtu.be/RjtRRfqsz7s](https://youtu.be/RjtRRfqsz7s) in the README, main report, and agent-skill README.
 9. [x] Finalized the AI Audit Report using all recoverable evidence. No platform-native transcript export exists, and no missing interaction was invented.
-10. [ ] Regenerate the Git log and ZIP after the final documentation commit, inspect the archive, commit the package, then upload that ZIP to Moodle.
+10. [x] Regenerated the Git log and ZIP after the final documentation commit and inspected the archive before packaging.
+11. [ ] Upload `23127404_HW06_AI_API_100.zip` to Moodle before the confirmed deadline.
 
 ## Notes
 
