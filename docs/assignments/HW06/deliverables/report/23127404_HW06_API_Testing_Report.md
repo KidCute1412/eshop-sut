@@ -1,5 +1,7 @@
 # HW06 — API Testing Report
 
+Student: **Lê Tuấn Lộc** (`23127404`)
+
 ## Scope and method
 
 Three APIs were selected from distinct pools: `POST /api/login` (FR-02), `POST /api/checkout` (FR-08), and `PUT /api/admin/orders/:id/status` (FR-10/FR-18). Every pool contains 35 AI-generated cases reviewed by a human and 5 human extensions. The final matrix records a contract oracle separately from the observed-SUT oracle; this prevents a known defect reproducer from being misreported as a conforming result.
