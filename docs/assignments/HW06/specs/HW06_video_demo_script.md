@@ -3,7 +3,7 @@
 **Target duration:** 6–7 minutes  
 **Language:** Vietnamese  
 **Upload setting:** YouTube **Unlisted**  
-**Purpose:** Demonstrate authorship, the generator's design, one live generation, the generated artifacts, and one real Newman execution. Do not edit or simulate terminal output.
+**Purpose:** Demonstrate an AI agent invoking the `api-test-generator` skill, inspect the generated artifacts, and run one real Newman execution. Do not edit or simulate agent, terminal, or test output.
 
 ## Before recording
 
@@ -12,6 +12,7 @@
    - this script;
    - `deliverables/agent-skills/README.md`;
    - `deliverables/agent-skills/diagrams/architecture_diagram.mmd` and `flow_diagram.mmd`;
+   - a fresh Codex/agent chat opened at this repository, with no prewritten response;
    - a PowerShell terminal at the repository root;
    - optionally, Postman with the Pool A collection imported.
 3. Keep private tokens, cookies, passwords, and browser tabs unrelated to the assignment off-screen. The supplied local demo account is acceptable only inside the test data; do not read its password aloud.
@@ -54,7 +55,25 @@ Mention the two design decisions visible in the diagrams:
 - protected suites bootstrap fresh user/admin tokens rather than use placeholder JWTs;
 - order-status requests bind `order_id` from iteration data, so every boundary/not-found row targets the intended order.
 
-### 2:20–3:20 — Show source and pseudocode
+### 2:20–3:45 — Invoke the agent skill live
+
+Keep the agent chat and the terminal visible. In a **new** chat, type this prompt yourself and submit it:
+
+```text
+Use the api-test-generator skill for HW06. Read docs/assignments/HW06/deliverables/openapi/eshop-openapi.yaml and generate a fresh POST /api/login suite into a temporary output directory. Explain which EP, BVA, and security partitions you generated. Do not modify the submission deliverables.
+```
+
+Say while it runs:
+
+> Đây là một agent đang được yêu cầu dùng skill `api-test-generator`, không chỉ chạy một script rời. Em cho agent đọc OpenAPI của HW06, sinh bộ test mới cho login vào thư mục tạm và giải thích các partition. Em giữ output tạm ngoài deliverables để không làm thay đổi evidence đã nộp.
+
+Show the agent's acknowledgement that it is using the skill, its inspected input, and the real terminal/tool call it performs. Do not cut away a failure; if it needs a local prerequisite, resolve it on camera or re-record only after it genuinely succeeds.
+
+After the generated files appear, open the output folder and show its collection/data JSON. Say:
+
+> Đây là output vừa được agent tạo thông qua skill: data file chứa case ID, input và expected status; collection chứa request, pre-request header và assertion. Output tự động vẫn cần human audit trước khi trở thành test suite cuối.
+
+### 3:45–4:30 — Show source and pseudocode
 
 Open these files side-by-side:
 
@@ -71,9 +90,9 @@ Scroll only to the relevant code blocks; do not imply you wrote code you cannot 
 & 'D:\Python\Python312\python.exe' docs/assignments/HW06/deliverables/agent-skills/api-test-generator/generator.py --help
 ```
 
-### 3:20–4:15 — Live generator run
+### Fallback only if the agent UI is unavailable
 
-Generate a fresh Pool A demo into the system temporary directory (this does not alter the submission files):
+Do **not** present this fallback as an agent invocation. It only proves the underlying executable used by the skill. Generate the same temporary Pool A demo with:
 
 ```powershell
 $demoOutput = Join-Path $env:TEMP 'hw06-generator-demo'
@@ -81,11 +100,7 @@ $demoOutput = Join-Path $env:TEMP 'hw06-generator-demo'
 Get-ChildItem -LiteralPath $demoOutput
 ```
 
-Open the generated `*_data.json` and `*.postman_collection.json`. Say:
-
-> Đây là output vừa được generator tạo trong thư mục tạm. Data file chứa case ID, input và expected status. Collection chứa request, pre-request header và assertion. Đây là output sinh tự động; các case cuối cùng trong deliverables vẫn được kiểm tra lại bằng human audit.
-
-### 4:15–5:25 — Show testing techniques and audit
+### 4:30–5:35 — Show testing techniques and audit
 
 Open `deliverables/postman/data/login_data.json` and show representative rows: a valid login, invalid credentials, boundary/lockout, and a security case. Then open the Excel workbook or `deliverables/ai/23127404_HW06_AI_Audit_Report.md`.
 
@@ -95,7 +110,7 @@ Say:
 
 Do not call a reproduced defect a passing contract result. Explain that the test report separates the contract oracle from observed SUT behavior.
 
-### 5:25–6:20 — Real Newman execution and evidence
+### 5:35–6:30 — Real Newman execution and evidence
 
 Run one real data-driven Pool A iteration. Keep the backend terminal visible if practical:
 
@@ -109,11 +124,11 @@ Say:
 
 If `npx.cmd newman` is unavailable, do **not** fake the run. Show the already preserved raw report and state that the live command was blocked by the local dependency; fix the environment, then re-record this segment.
 
-### 6:20–6:50 — Defects, CI, and close
+### 6:30–7:00 — Defects, CI, and close
 
 Open `deliverables/bugs/bug-report.md`, then `deliverables/cicd/23127404_HW06_CICD_Report.md`. Say:
 
-> Bài ghi nhận sáu root-cause bugs, đã tạo GitHub Issues và lưu ảnh chụp thật. CI chạy các collection bằng Newman; report có một run đỏ có chủ đích và run xanh sau khi khôi phục dữ liệu test. Toàn bộ raw evidence, report và ZIP đều nằm trong thư mục HW06.
+> Bài ghi nhận sáu root-cause bugs, đã tạo GitHub Issues và lưu ảnh chụp thật. CI chạy các collection bằng Newman và report lưu một run xanh cùng một run đỏ có chủ đích. Toàn bộ raw evidence, report và ZIP đều nằm trong thư mục HW06.
 
 Close with:
 
