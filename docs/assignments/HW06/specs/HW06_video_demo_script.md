@@ -28,6 +28,7 @@ Say:
 In PowerShell, run and leave the output visible briefly:
 
 ```powershell
+Set-Location 'D:\HCMUS\Third Year\Software Testing\eshop-sut'
 whoami
 hostname
 git branch --show-current
@@ -87,7 +88,7 @@ Say:
 Scroll only to the relevant code blocks; do not imply you wrote code you cannot explain. Briefly show the `--help` output:
 
 ```powershell
-& 'D:\Python\Python312\python.exe' docs/assignments/HW06/deliverables/agent-skills/api-test-generator/generator.py --help
+& 'D:\Python\Python312\python.exe' '.\docs\assignments\HW06\deliverables\agent-skills\api-test-generator\generator.py' --help
 ```
 
 ### Fallback only if the agent UI is unavailable
@@ -96,7 +97,7 @@ Do **not** present this fallback as an agent invocation. It only proves the unde
 
 ```powershell
 $demoOutput = Join-Path $env:TEMP 'hw06-generator-demo'
-& 'D:\Python\Python312\python.exe' docs/assignments/HW06/deliverables/agent-skills/api-test-generator/generator.py --endpoint '/api/login' --method POST --output_dir $demoOutput
+& 'D:\Python\Python312\python.exe' '.\docs\assignments\HW06\deliverables\agent-skills\api-test-generator\generator.py' --endpoint '/api/login' --method POST --output_dir $demoOutput
 Get-ChildItem -LiteralPath $demoOutput
 ```
 
