@@ -55,19 +55,19 @@ Mention the two design decisions visible in the diagrams:
 - protected suites bootstrap fresh user/admin tokens rather than use placeholder JWTs;
 - order-status requests bind `order_id` from iteration data, so every boundary/not-found row targets the intended order.
 
-### 2:20–3:45 — Invoke the agent skill live
+### 2:20–3:45 — Ask the agent to generate tests live
 
 Keep the agent chat and the terminal visible. In a **new** chat, type this prompt yourself and submit it:
 
 ```text
-Use the api-test-generator skill for HW06. Read docs/assignments/HW06/deliverables/openapi/eshop-openapi.yaml and generate a fresh POST /api/login suite into a temporary output directory. Explain which EP, BVA, and security partitions you generated. Do not modify the submission deliverables.
+Read `docs/assignments/HW06/deliverables/openapi/eshop-openapi.yaml`. Create a fresh API test suite for `POST /api/login`, covering equivalence partitions, boundary values, and relevant security cases. Export it to a temporary output directory, explain the generated partitions, and do not modify the submission deliverables.
 ```
 
 Say while it runs:
 
-> Đây là một agent đang được yêu cầu dùng skill `api-test-generator`, không chỉ chạy một script rời. Em cho agent đọc OpenAPI của HW06, sinh bộ test mới cho login vào thư mục tạm và giải thích các partition. Em giữ output tạm ngoài deliverables để không làm thay đổi evidence đã nộp.
+> Đây là một agent nhận yêu cầu tạo API test suite. Agent tự chọn skill và công cụ phù hợp, đọc OpenAPI của HW06, sinh bộ test mới cho login vào thư mục tạm và giải thích các partition. Em giữ output tạm ngoài deliverables để không làm thay đổi evidence đã nộp.
 
-Show the agent's acknowledgement that it is using the skill, its inspected input, and the real terminal/tool call it performs. Do not cut away a failure; if it needs a local prerequisite, resolve it on camera or re-record only after it genuinely succeeds.
+Show the agent inspecting the input and the real terminal/tool call it performs. If the UI displays a selected skill, leave it visible, but do not force or claim a skill choice the agent did not make. Do not cut away a failure; if it needs a local prerequisite, resolve it on camera or re-record only after it genuinely succeeds.
 
 After the generated files appear, open the output folder and show its collection/data JSON. Say:
 
